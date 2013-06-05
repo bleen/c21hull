@@ -1,0 +1,14 @@
+==================================== CORE ======================================
+
+
+
+
+================================== CONTRIB =====================================
+________________________________________________________________________________
+AUTOCOMPLETE DELUX
+  * The autocomplete_delux module does not properly respond to some keys (ex.
+    the ESC or DELETE keys) in Chrome. This patch fixes the issue
+
+    -- PATCH --
+    https://drupal.org/node/2012742#comment-7501674
+

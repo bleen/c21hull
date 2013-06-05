@@ -391,7 +391,7 @@
 
     var clear = false;
 
-    jqObject.keypress(function (event) {
+    jqObject.keydown(function (event) {
       var value = jqObject.val();
       // If a comma was entered and there is none or more then one comma,or the
       // enter key was entered, then enter the new term.
