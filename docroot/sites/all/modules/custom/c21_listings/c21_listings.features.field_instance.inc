@@ -100,14 +100,14 @@ function c21_listings_field_default_field_instances() {
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: crawl, finished, unfinished',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 34,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 42,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -121,26 +121,16 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Basement',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
-        'available_options' => 'none|None
-crawl|Crawl
-finished|Finished
-unfinished|Unfinished',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => 'Other',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
       ),
-      'type' => 'select_or_other',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 36,
     ),
   );
@@ -525,19 +515,59 @@ unfinished|Unfinished',
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_floors'
+  $field_instances['node-listing-field_listing_floors'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'ex: hardwood, linoleum, tile, carpet, vinyl',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 44,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_floors',
+    'label' => 'Floors',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 38,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_garage'
   $field_instances['node-listing-field_listing_garage'] = array(
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: 1-car, 2-car',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 33,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 41,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -551,26 +581,16 @@ unfinished|Unfinished',
     'label' => 'Garage',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
-        'available_options' => 'none|None
-1_car|1-Car
-2_cars|2-Cars
-',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => 'Other',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
       ),
-      'type' => 'select_or_other',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 35,
     ),
   );
@@ -580,14 +600,14 @@ unfinished|Unfinished',
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: electric, oil, propane',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 26,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -601,25 +621,16 @@ unfinished|Unfinished',
     'label' => 'Heat',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
-        'available_options' => 'electric|Electric
-oil|Oil
-propane|Propane',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => 'Other',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
       ),
-      'type' => 'select_or_other_buttons',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 28,
     ),
   );
@@ -629,14 +640,14 @@ propane|Propane',
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: full, partial, unknown',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 27,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -654,9 +665,12 @@ propane|Propane',
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 29,
     ),
   );
@@ -959,14 +973,14 @@ propane|Propane',
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: gravel, paved, dirt',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 28,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 40,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -980,25 +994,16 @@ propane|Propane',
     'label' => 'Road Surface',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
-        'available_options' => 'dirt|Dirt
-gravel|Gravel
-paved|Paved',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => 'Other',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
       ),
-      'type' => 'select_or_other',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 30,
     ),
   );
@@ -1008,14 +1013,14 @@ paved|Paved',
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: septic, septic needed, central',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 23,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1029,26 +1034,16 @@ paved|Paved',
     'label' => 'Sewage',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
-        'available_options' => 'septic|Septic
-septic_needed|Septic Needed
-central|Central
-none|None',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => 'Other',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
       ),
-      'type' => 'select_or_other',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 24,
     ),
   );
@@ -1394,19 +1389,59 @@ none|None',
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_walls'
+  $field_instances['node-listing-field_listing_walls'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'ex: sheetrock, wood, paneling',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 45,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_walls',
+    'label' => 'Walls',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 39,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_water'
   $field_instances['node-listing-field_listing_water'] = array(
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: central, well, well needed',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 24,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1420,26 +1455,16 @@ none|None',
     'label' => 'Water',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
-        'available_options' => 'central|Central
-well| Well
-well_needed|Well Needed
-none|None',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => 'Other',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
       ),
-      'type' => 'select_or_other',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 26,
     ),
   );
@@ -1486,14 +1511,14 @@ none|None',
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: single pane, double pane',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 35,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 43,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1507,24 +1532,16 @@ none|None',
     'label' => 'Windows',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'select_or_other',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
-        'available_options' => 'single_pane|Single Pane
-double_pane|Double Pane',
-        'available_options_php' => '',
-        'markup_available_options_php' => '&lt;none&gt;',
-        'other' => 'Other',
-        'other_size' => 60,
-        'other_title' => 'Other',
-        'other_unknown_defaults' => 'other',
-        'sort_options' => 0,
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'size' => 60,
       ),
-      'type' => 'select_or_other',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 37,
     ),
   );
@@ -1636,6 +1653,7 @@ double_pane|Double Pane',
   t('Dues');
   t('Featured Photo');
   t('Fireplace');
+  t('Floors');
   t('Garage');
   t('Heat');
   t('Insulation');
@@ -1656,11 +1674,22 @@ double_pane|Double Pane',
   t('Taxes');
   t('Values less than 100 will be considered a percentage, otherwise a dollar amount');
   t('Virtual Tour');
+  t('Walls');
   t('Water');
   t('Water Extras');
   t('Windows');
   t('Year Built');
   t('Zoning');
+  t('ex: 1-car, 2-car');
+  t('ex: central, well, well needed');
+  t('ex: crawl, finished, unfinished');
+  t('ex: electric, oil, propane');
+  t('ex: full, partial, unknown');
+  t('ex: gravel, paved, dirt');
+  t('ex: hardwood, linoleum, tile, carpet, vinyl');
+  t('ex: septic, septic needed, central');
+  t('ex: sheetrock, wood, paneling');
+  t('ex: single pane, double pane');
 
   return $field_instances;
 }
