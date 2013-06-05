@@ -42,6 +42,11 @@ function c21_listings_field_group_info() {
       16 => 'field_listing_windows',
       17 => 'field_listing_floors',
       18 => 'field_listing_walls',
+      19 => 'field_listing_additional_bldg',
+      20 => 'field_listing_school_district',
+      21 => 'field_listing_furniture',
+      22 => 'field_listing_electric_company',
+      23 => 'field_listing_personal_property',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -68,12 +73,13 @@ function c21_listings_field_group_info() {
     'label' => 'Details',
     'weight' => '4',
     'children' => array(
-      0 => 'group_listing_general_info',
-      1 => 'group_listing_images_videos',
-      2 => 'group_listing_building_info',
-      3 => 'group_listing_location_info',
-      4 => 'group_listing_sellers',
+      0 => 'group_listing_measurements',
+      1 => 'group_listing_building_info',
+      2 => 'group_listing_general_info',
+      3 => 'group_listing_images_videos',
+      4 => 'group_listing_location_info',
       5 => 'group_listing_notes',
+      6 => 'group_listing_sellers',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -164,7 +170,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = 'group_listing_details';
   $field_group->data = array(
     'label' => 'Location Information',
-    'weight' => '11',
+    'weight' => '13',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -189,7 +195,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = 'group_listing_details';
   $field_group->data = array(
     'label' => 'Notes',
-    'weight' => '13',
+    'weight' => '15',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -214,7 +220,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = 'group_listing_details';
   $field_group->data = array(
     'label' => 'Sellers',
-    'weight' => '12',
+    'weight' => '14',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(

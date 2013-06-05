@@ -9,6 +9,14 @@
  */
 function c21_listings_taxonomy_default_vocabularies() {
   return array(
+    'listing_additional_building' => array(
+      'name' => 'Listing Additional Building',
+      'machine_name' => 'listing_additional_building',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'listing_basement' => array(
       'name' => 'Listing Basement',
       'machine_name' => 'listing_basement',
@@ -17,6 +25,14 @@ function c21_listings_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -4,
     ),
+    'listing_electric_company' => array(
+      'name' => 'Listing Electric Company',
+      'machine_name' => 'listing_electric_company',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 3,
+    ),
     'listing_floors' => array(
       'name' => 'Listing Floors',
       'machine_name' => 'listing_floors',
@@ -24,6 +40,14 @@ function c21_listings_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -2,
+    ),
+    'listing_furniture' => array(
+      'name' => 'Listing Furniture',
+      'machine_name' => 'listing_furniture',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 2,
     ),
     'listing_garage' => array(
       'name' => 'Listing Garage',
@@ -56,6 +80,14 @@ function c21_listings_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -6,
+    ),
+    'listing_school_district' => array(
+      'name' => 'Listing School District',
+      'machine_name' => 'listing_school_district',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 1,
     ),
     'listing_sewage' => array(
       'name' => 'Listing Sewage',
@@ -95,7 +127,7 @@ function c21_listings_taxonomy_default_vocabularies() {
       'description' => 'Use tags to group articles on similar topics into categories.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 1,
+      'weight' => 4,
     ),
   );
 }

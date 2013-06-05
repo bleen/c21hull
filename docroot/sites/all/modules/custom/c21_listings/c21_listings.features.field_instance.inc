@@ -56,6 +56,49 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_additional_bldg'
+  $field_instances['node-listing-field_listing_additional_bldg'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'ex: shed',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 46,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_additional_bldg',
+    'label' => 'Additional Building',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 40,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_agent'
   $field_instances['node-listing-field_listing_agent'] = array(
     'bundle' => 'listing',
@@ -135,6 +178,366 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_bathroom1_b'
+  $field_instances['node-listing-field_listing_bathroom1_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom1_b',
+    'label' => 'Bathroom 1 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 74,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bathroom1_f1'
+  $field_instances['node-listing-field_listing_bathroom1_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom1_f1',
+    'label' => 'Bathroom 1 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 72,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bathroom1_f2'
+  $field_instances['node-listing-field_listing_bathroom1_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom1_f2',
+    'label' => 'Bathroom 1 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 73,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bathroom2_b'
+  $field_instances['node-listing-field_listing_bathroom2_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom2_b',
+    'label' => 'Bathroom 2 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 77,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bathroom2_f1'
+  $field_instances['node-listing-field_listing_bathroom2_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom2_f1',
+    'label' => 'Bathroom 2 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 75,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bathroom2_f2'
+  $field_instances['node-listing-field_listing_bathroom2_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom2_f2',
+    'label' => 'Bathroom 2 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 76,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bathroom3_b'
+  $field_instances['node-listing-field_listing_bathroom3_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom3_b',
+    'label' => 'Bathroom 3 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 80,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bathroom3_f1'
+  $field_instances['node-listing-field_listing_bathroom3_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom3_f1',
+    'label' => 'Bathroom 3 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 78,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bathroom3_f2'
+  $field_instances['node-listing-field_listing_bathroom3_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bathroom3_f2',
+    'label' => 'Bathroom 3 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 79,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_bathrooms'
   $field_instances['node-listing-field_listing_bathrooms'] = array(
     'bundle' => 'listing',
@@ -178,6 +581,486 @@ function c21_listings_field_default_field_instances() {
       'settings' => array(),
       'type' => 'numberfield',
       'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom1_b'
+  $field_instances['node-listing-field_listing_bedroom1_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom1_b',
+    'label' => 'Bedroom 1 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 83,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom1_f1'
+  $field_instances['node-listing-field_listing_bedroom1_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom1_f1',
+    'label' => 'Bedroom 1 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 81,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom1_f2'
+  $field_instances['node-listing-field_listing_bedroom1_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom1_f2',
+    'label' => 'Bedroom 1 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 82,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom2_b'
+  $field_instances['node-listing-field_listing_bedroom2_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom2_b',
+    'label' => 'Bedroom 2 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 86,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom2_f1'
+  $field_instances['node-listing-field_listing_bedroom2_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom2_f1',
+    'label' => 'Bedroom 2 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 84,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom2_f2'
+  $field_instances['node-listing-field_listing_bedroom2_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom2_f2',
+    'label' => 'Bedroom 2 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 85,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom3_b'
+  $field_instances['node-listing-field_listing_bedroom3_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom3_b',
+    'label' => 'Bedroom 3 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 89,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom3_f1'
+  $field_instances['node-listing-field_listing_bedroom3_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom3_f1',
+    'label' => 'Bedroom 3 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 87,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom3_f2'
+  $field_instances['node-listing-field_listing_bedroom3_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom3_f2',
+    'label' => 'Bedroom 3 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 88,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom4_b'
+  $field_instances['node-listing-field_listing_bedroom4_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom4_b',
+    'label' => 'Bedroom 4 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 92,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom4_f1'
+  $field_instances['node-listing-field_listing_bedroom4_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom4_f1',
+    'label' => 'Bedroom 4 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 90,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_bedroom4_f2'
+  $field_instances['node-listing-field_listing_bedroom4_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_bedroom4_f2',
+    'label' => 'Bedroom 4 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 91,
     ),
   );
 
@@ -357,6 +1240,246 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_din_kitchen_b'
+  $field_instances['node-listing-field_listing_din_kitchen_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_din_kitchen_b',
+    'label' => 'Dining/Kitchen | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 71,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_din_kitchen_f1'
+  $field_instances['node-listing-field_listing_din_kitchen_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_din_kitchen_f1',
+    'label' => 'Dining/Kitchen | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 69,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_din_kitchen_f2'
+  $field_instances['node-listing-field_listing_din_kitchen_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_din_kitchen_f2',
+    'label' => 'Dining/Kitchen | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 70,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_dining_room_b'
+  $field_instances['node-listing-field_listing_dining_room_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_dining_room_b',
+    'label' => 'Dining Room | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 62,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_dining_room_f1'
+  $field_instances['node-listing-field_listing_dining_room_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_dining_room_f1',
+    'label' => 'Dining Room | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 60,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_dining_room_f2'
+  $field_instances['node-listing-field_listing_dining_room_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_dining_room_f2',
+    'label' => 'Dining Room | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 61,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_dues'
   $field_instances['node-listing-field_listing_dues'] = array(
     'bundle' => 'listing',
@@ -400,6 +1523,169 @@ function c21_listings_field_default_field_instances() {
       'settings' => array(),
       'type' => 'numberfield',
       'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_electric_company'
+  $field_instances['node-listing-field_listing_electric_company'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'ex: Met De, PP & L, O & R, PCL & P',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 49,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_electric_company',
+    'label' => 'Electric Company',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 43,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_family_room_b'
+  $field_instances['node-listing-field_listing_family_room_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_family_room_b',
+    'label' => 'Family Room | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 95,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_family_room_f1'
+  $field_instances['node-listing-field_listing_family_room_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_family_room_f1',
+    'label' => 'Family Room | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 93,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_family_room_f2'
+  $field_instances['node-listing-field_listing_family_room_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_family_room_f2',
+    'label' => 'Family Room | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 94,
     ),
   );
 
@@ -555,6 +1841,49 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_furniture'
+  $field_instances['node-listing-field_listing_furniture'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'ex: Negotiable',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 48,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_furniture',
+    'label' => 'Furniture',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 42,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_garage'
   $field_instances['node-listing-field_listing_garage'] = array(
     'bundle' => 'listing',
@@ -675,6 +2004,246 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_kitchen_b'
+  $field_instances['node-listing-field_listing_kitchen_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_kitchen_b',
+    'label' => 'Kitchen | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 65,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_kitchen_f1'
+  $field_instances['node-listing-field_listing_kitchen_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_kitchen_f1',
+    'label' => 'Kitchen | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 63,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_kitchen_f2'
+  $field_instances['node-listing-field_listing_kitchen_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_kitchen_f2',
+    'label' => 'Kitchen | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 64,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_laundry_b'
+  $field_instances['node-listing-field_listing_laundry_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_laundry_b',
+    'label' => 'Laundry | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 98,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_laundry_f1'
+  $field_instances['node-listing-field_listing_laundry_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_laundry_f1',
+    'label' => 'Laundry | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 96,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_laundry_f2'
+  $field_instances['node-listing-field_listing_laundry_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_laundry_f2',
+    'label' => 'Laundry | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 97,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_list_date'
   $field_instances['node-listing-field_listing_list_date'] = array(
     'bundle' => 'listing',
@@ -774,6 +2343,246 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_liv_din_b'
+  $field_instances['node-listing-field_listing_liv_din_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_liv_din_b',
+    'label' => 'Living/Dining Room | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 68,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_liv_din_f1'
+  $field_instances['node-listing-field_listing_liv_din_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_liv_din_f1',
+    'label' => 'Living/Dining Room | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 66,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_liv_din_f2'
+  $field_instances['node-listing-field_listing_liv_din_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_liv_din_f2',
+    'label' => 'Living/Dining Room | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 67,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_living_room_b'
+  $field_instances['node-listing-field_listing_living_room_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_living_room_b',
+    'label' => 'Living Room | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 59,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_living_room_f1'
+  $field_instances['node-listing-field_listing_living_room_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_living_room_f1',
+    'label' => 'Living Room | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 57,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_living_room_f2'
+  $field_instances['node-listing-field_listing_living_room_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_living_room_f2',
+    'label' => 'Living Room | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 58,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_lockbox_key'
   $field_instances['node-listing-field_listing_lockbox_key'] = array(
     'bundle' => 'listing',
@@ -853,6 +2662,287 @@ function c21_listings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_other1_b'
+  $field_instances['node-listing-field_listing_other1_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_other1_b',
+    'label' => 'Other 1 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 101,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_other1_f1'
+  $field_instances['node-listing-field_listing_other1_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_other1_f1',
+    'label' => 'Other 1 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 99,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_other1_f2'
+  $field_instances['node-listing-field_listing_other1_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_other1_f2',
+    'label' => 'Other 1 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 100,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_other2_b'
+  $field_instances['node-listing-field_listing_other2_b'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_other2_b',
+    'label' => 'Other 2 | Basement',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 104,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_other2_f1'
+  $field_instances['node-listing-field_listing_other2_f1'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_other2_f1',
+    'label' => 'Other 2 | Floor 1',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 102,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_other2_f2'
+  $field_instances['node-listing-field_listing_other2_f2'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_other2_f2',
+    'label' => 'Other 2 | Floor 2',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 103,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_personal_property'
+  $field_instances['node-listing-field_listing_personal_property'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 50,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_personal_property',
+    'label' => 'Personal Property',
+    'placeholder' => 'List any personal property included in this sale',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 44,
     ),
   );
 
@@ -1008,6 +3098,49 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_school_district'
+  $field_instances['node-listing-field_listing_school_district'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'ex: E. Stroudsburg, Wallenpaupack, Delaware Vally - DV, Delaware Vally - DD, Delaware Vally - SH',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 47,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_school_district',
+    'label' => 'School District',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 41,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_sewage'
   $field_instances['node-listing-field_listing_sewage'] = array(
     'bundle' => 'listing',
@@ -1126,6 +3259,144 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_sq_ft_above'
+  $field_instances['node-listing-field_listing_sq_ft_above'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 51,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_sq_ft_above',
+    'label' => 'Square Footage Above',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => 'sq. ft.',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'numberfield',
+      'weight' => 45,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_sq_ft_below'
+  $field_instances['node-listing-field_listing_sq_ft_below'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 52,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_sq_ft_below',
+    'label' => 'Square Footage Below',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => 'sq. ft.',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'numberfield',
+      'weight' => 46,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_sq_ft_finished'
+  $field_instances['node-listing-field_listing_sq_ft_finished'] = array(
+    'bundle' => 'listing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 53,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_sq_ft_finished',
+    'label' => 'Square Footage Finished',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => 'sq. ft.',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'numberfield',
+      'weight' => 47,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_status'
   $field_instances['node-listing-field_listing_status'] = array(
     'bundle' => 'listing',
@@ -1213,7 +3484,7 @@ function c21_listings_field_default_field_instances() {
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: lakefront, new construction, foreclosure',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1238,12 +3509,13 @@ function c21_listings_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 3,
     ),
   );
@@ -1643,31 +3915,87 @@ function c21_listings_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Acreage');
+  t('Additional Building');
   t('Agent');
   t('Basement');
+  t('Bathroom 1 | Basement');
+  t('Bathroom 1 | Floor 1');
+  t('Bathroom 1 | Floor 2');
+  t('Bathroom 2 | Basement');
+  t('Bathroom 2 | Floor 1');
+  t('Bathroom 2 | Floor 2');
+  t('Bathroom 3 | Basement');
+  t('Bathroom 3 | Floor 1');
+  t('Bathroom 3 | Floor 2');
   t('Bathrooms');
+  t('Bedroom 1 | Basement');
+  t('Bedroom 1 | Floor 1');
+  t('Bedroom 1 | Floor 2');
+  t('Bedroom 2 | Basement');
+  t('Bedroom 2 | Floor 1');
+  t('Bedroom 2 | Floor 2');
+  t('Bedroom 3 | Basement');
+  t('Bedroom 3 | Floor 1');
+  t('Bedroom 3 | Floor 2');
+  t('Bedroom 4 | Basement');
+  t('Bedroom 4 | Floor 1');
+  t('Bedroom 4 | Floor 2');
   t('Bedrooms');
   t('Comission');
   t('Decks');
   t('Description');
+  t('Dining Room | Basement');
+  t('Dining Room | Floor 1');
+  t('Dining Room | Floor 2');
+  t('Dining/Kitchen | Basement');
+  t('Dining/Kitchen | Floor 1');
+  t('Dining/Kitchen | Floor 2');
   t('Dues');
+  t('Electric Company');
+  t('Family Room | Basement');
+  t('Family Room | Floor 1');
+  t('Family Room | Floor 2');
   t('Featured Photo');
   t('Fireplace');
   t('Floors');
+  t('Furniture');
   t('Garage');
   t('Heat');
   t('Insulation');
+  t('Kitchen | Basement');
+  t('Kitchen | Floor 1');
+  t('Kitchen | Floor 2');
+  t('Laundry | Basement');
+  t('Laundry | Floor 1');
+  t('Laundry | Floor 2');
   t('List Date');
   t('List Price');
   t('Listing Type');
+  t('Living Room | Basement');
+  t('Living Room | Floor 1');
+  t('Living Room | Floor 2');
+  t('Living/Dining Room | Basement');
+  t('Living/Dining Room | Floor 1');
+  t('Living/Dining Room | Floor 2');
   t('Lockbox/Key');
   t('MLS #');
+  t('Other 1 | Basement');
+  t('Other 1 | Floor 1');
+  t('Other 1 | Floor 2');
+  t('Other 2 | Basement');
+  t('Other 2 | Floor 1');
+  t('Other 2 | Floor 2');
+  t('Personal Property');
   t('Photos');
   t('Porch');
   t('Road Surface');
+  t('School District');
   t('Sewage');
   t('Sewage Extras');
   t('Siding');
+  t('Square Footage Above');
+  t('Square Footage Below');
+  t('Square Footage Finished');
   t('Status');
   t('Style');
   t('Tags');
@@ -1681,13 +4009,18 @@ function c21_listings_field_default_field_instances() {
   t('Year Built');
   t('Zoning');
   t('ex: 1-car, 2-car');
+  t('ex: E. Stroudsburg, Wallenpaupack, Delaware Vally - DV, Delaware Vally - DD, Delaware Vally - SH');
+  t('ex: Met De, PP & L, O & R, PCL & P');
+  t('ex: Negotiable');
   t('ex: central, well, well needed');
   t('ex: crawl, finished, unfinished');
   t('ex: electric, oil, propane');
   t('ex: full, partial, unknown');
   t('ex: gravel, paved, dirt');
   t('ex: hardwood, linoleum, tile, carpet, vinyl');
+  t('ex: lakefront, new construction, foreclosure');
   t('ex: septic, septic needed, central');
+  t('ex: shed');
   t('ex: sheetrock, wood, paneling');
   t('ex: single pane, double pane');
 
