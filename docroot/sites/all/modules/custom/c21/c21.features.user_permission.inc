@@ -120,6 +120,15 @@ function c21_user_default_permissions() {
     'module' => 'block',
   );
 
+  // Exported permission: administer ckeditor.
+  $permissions['administer ckeditor'] = array(
+    'name' => 'administer ckeditor',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'ckeditor',
+  );
+
   // Exported permission: administer content types.
   $permissions['administer content types'] = array(
     'name' => 'administer content types',
@@ -314,6 +323,15 @@ function c21_user_default_permissions() {
     'module' => 'path',
   );
 
+  // Exported permission: customize ckeditor.
+  $permissions['customize ckeditor'] = array(
+    'name' => 'customize ckeditor',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'ckeditor',
+  );
+
   // Exported permission: customize shortcut links.
   $permissions['customize shortcut links'] = array(
     'name' => 'customize shortcut links',
@@ -435,17 +453,14 @@ function c21_user_default_permissions() {
     'module' => 'shortcut',
   );
 
-  // Exported permission: use text format filtered_html.
-  $permissions['use text format filtered_html'] = array(
-    'name' => 'use text format filtered_html',
-    'roles' => array(),
-    'module' => 'filter',
-  );
-
-  // Exported permission: use text format full_html.
-  $permissions['use text format full_html'] = array(
-    'name' => 'use text format full_html',
-    'roles' => array(),
+  // Exported permission: use text format rich_text.
+  $permissions['use text format rich_text'] = array(
+    'name' => 'use text format rich_text',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'agent' => 'agent',
+      'staff' => 'staff',
+    ),
     'module' => 'filter',
   );
 
