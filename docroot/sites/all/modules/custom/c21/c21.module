@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the c21 feature.
+ */
+
+include_once 'c21.features.inc';
