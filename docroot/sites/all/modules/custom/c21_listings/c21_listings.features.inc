@@ -12,6 +12,10 @@ function c21_listings_ctools_plugin_api() {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
+  list($module, $api) = func_get_args();
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
 }
 
 /**
@@ -19,6 +23,14 @@ function c21_listings_ctools_plugin_api() {
  */
 function c21_listings_node_info() {
   $items = array(
+    'agent' => array(
+      'name' => t('Agent'),
+      'base' => 'node_content',
+      'description' => t('An <em>agent</em> describes a member of the Century21 Roy B. Hull team who represents specific listings for sale.'),
+      'has_title' => '1',
+      'title_label' => t('Name'),
+      'help' => '',
+    ),
     'listing' => array(
       'name' => t('Listing'),
       'base' => 'node_content',

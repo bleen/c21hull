@@ -7,8 +7,15 @@
 ________________________________________________________________________________
 AUTOCOMPLETE DELUX
   * The autocomplete_delux module does not properly respond to some keys (ex.
-    the ESC or DELETE keys) in Chrome. This patch fixes the issue
+    the ESC or DELETE keys) in Chrome. This patch fixes the issue:
 
     -- PATCH --
     https://drupal.org/node/2012742#comment-7501674
 
+
+MASKED_INPUT
+  * There is a typo in the hook_requirments so that the jQuery library will
+    never be loaded.
+
+    -- PATCH --
+    https://drupal.org/node/1555020
