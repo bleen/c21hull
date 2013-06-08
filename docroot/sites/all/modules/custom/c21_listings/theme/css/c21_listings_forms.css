@@ -1,0 +1,13 @@
+.rooms table {
+  width: 75%;
+}
+.rooms td {
+  padding: 5px;
+  max-width: 100px;
+}
+.rooms td:first-child {
+  width: 20%;
+  font-weight: bold;
+  text-align: right;
+}
+

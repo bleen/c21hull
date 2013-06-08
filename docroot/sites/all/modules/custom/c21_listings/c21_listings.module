@@ -5,3 +5,25 @@
  */
 
 include_once 'c21_listings.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function c21_listings_theme($existing, $type, $theme, $path) {
+  $theme_hooks = array(
+    'c21_listings_room_measurements_form' => array(
+      'render element' => 'form',
+      'file' => 'theme/c21_listings_forms.inc',
+    ),
+  );
+
+  return $theme_hooks;
+}
+
+/**
+ * hook_field_group_build_pre_render_alter().
+ */
+function c21_listings_field_group_build_pre_render_alter(&$element) {
+  $element['#attached']['css'][] = drupal_get_path('module', 'c21_listings') . '/theme/css/c21_listings_forms.css';
+  $element['group_listing_details']['group_listing_measurements']['group_listing_rooms']['#theme'][] = 'c21_listings_room_measurements_form';
+}
