@@ -19,3 +19,7 @@ MASKED_INPUT
 
     -- PATCH --
     https://drupal.org/node/1555020
+
+DATE
+  * It's annoying to always see the date_migrate_example module on the features
+    page so we made it hidden by adding "hidden = TRUE" to its .info file.
