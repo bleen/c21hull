@@ -4,9 +4,8 @@
  * Theme functions for the listings form.
  */
 
-function theme_c21_listings_room_measurements_form($variables) {
+function theme_c21_listings_render_rooms_group($variables) {
   $form = $variables['form'];
-  // dpm($form, 'form');
 
   $floors = array(
     'fl1' => t('Floor 1'),

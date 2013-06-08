@@ -1,0 +1,65 @@
+.node-listing-form .container-inline-date {
+  clear: none;
+}
+.node-listing-form .container-inline-date .date-padding {
+  padding: 0;
+}
+.node-listing-form .field-name-field-listing-list-date .start-date-wrapper {
+  max-width: 225px;
+  float: left;
+}
+
+.node-listing-form .rooms td {
+  padding: 5px;
+  max-width: 100px;
+}
+.node-listing-form .rooms td:first-child {
+  width: 20%;
+  font-weight: bold;
+  text-align: right;
+}
+
+.node-listing-form #edit-field-listing-lot,
+.node-listing-form #edit-field-listing-block,
+.node-listing-form #edit-field-listing-section {
+  width: 31%;
+  float: left;
+  margin-right: 3.3%;
+}
+.node-listing-form #edit-field-listing-section {
+  margin-right: 0;
+}
+.node-listing-form #edit-field-listing-street {
+  clear: left;
+}
+.node-listing-form .field-name-field-seller-first-name,
+.node-listing-form .field-name-field-seller-last-name {
+  width: 49%;
+  float: left;
+  margin-bottom: 1em;
+}
+.node-listing-form .field-name-field-seller-first-name {
+  margin-right: 2%;
+}
+.node-listing-form .field-name-field-seller-address {
+  clear: left;
+}
+.node-listing-form .locality-block .form-item {
+  max-width: 35%;
+}
+.node-listing-form .field-name-field-seller-email-address,
+.node-listing-form .field-name-field-seller-phone-number {
+  width: 25%;
+  float: left;
+  margin-right: 2em;
+}
+.node-listing-form .field-name-field-seller-email-type,
+.node-listing-form .field-name-field-seller-phone-type {
+  width: 20%;
+  float: left;
+}
+.node-listing-form #field-seller-phone-values .form-submit,
+.node-listing-form #field-seller-email-values .form-submit {
+  position: relative;
+  top: 19px;
+}

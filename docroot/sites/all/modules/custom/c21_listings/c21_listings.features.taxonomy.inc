@@ -25,6 +25,14 @@ function c21_listings_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => -4,
     ),
+    'listing_development' => array(
+      'name' => 'Listing Development',
+      'machine_name' => 'listing_development',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'listing_electric_company' => array(
       'name' => 'Listing Electric Company',
       'machine_name' => 'listing_electric_company',
@@ -96,6 +104,14 @@ function c21_listings_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => -10,
+    ),
+    'listing_township' => array(
+      'name' => 'Listing Township',
+      'machine_name' => 'listing_township',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
     ),
     'listing_walls' => array(
       'name' => 'Listing Walls',

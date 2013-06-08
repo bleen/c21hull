@@ -11,7 +11,7 @@ include_once 'c21_listings.features.inc';
  */
 function c21_listings_theme($existing, $type, $theme, $path) {
   $theme_hooks = array(
-    'c21_listings_room_measurements_form' => array(
+    'c21_listings_render_rooms_group' => array(
       'render element' => 'form',
       'file' => 'theme/c21_listings_forms.inc',
     ),
@@ -21,9 +21,47 @@ function c21_listings_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * hook_field_group_build_pre_render_alter().
+ * Implements hook_form_FORM_ID_alter().
+ */
+function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
+  // Add custom CSS and JS files for this form.
+  $form['#attached']['css'][] = drupal_get_path('module', 'c21_listings') . '/css/c21_listings_forms.css';
+  $form['#attached']['js'][] = drupal_get_path('module', 'c21_listings') . '/js/c21_listings_forms.js';
+
+  // MLS # should only be displayed for "exclusive" listings.
+  $form['field_listing_mls']['#states'] = array(
+    'visible' => array(
+      //':select[name="field_listing_type[und]"]' => array(
+      '#edit-field-listing-type-und' => array(
+        array('value' => 'exclusive'),
+        array('value' => 'exclusive_right'),
+      ),
+    ),
+  );
+
+  // Remove the fieldset from "Year Built".
+  $form['field_listing_year_built'][LANGUAGE_NONE][0]['#theme_wrappers'] = array('form_element');
+
+}
+
+/**
+ * Implements hook_field_group_build_pre_render_alter().
  */
 function c21_listings_field_group_build_pre_render_alter(&$element) {
-  $element['#attached']['css'][] = drupal_get_path('module', 'c21_listings') . '/theme/css/c21_listings_forms.css';
-  $element['group_listing_details']['group_listing_measurements']['group_listing_rooms']['#theme'][] = 'c21_listings_room_measurements_form';
+  $element['group_listing_details']['group_listing_measurements']['group_listing_rooms']['#theme'][] = 'c21_listings_render_rooms_group';
+}
+
+/**
+ * Implements hook_field_group_build_pre_render_alter().
+ */
+function c21_listings_date_combo_process_alter(&$element, $form_state, $context) {
+  $element['show_todate']['#access'] = FALSE;
+  unset($element['value']['#description']);
+  unset($element['value']['#attributes']);
+  unset($element['value2']['#description']);
+  unset($element['value2']['#title']);
+  unset($element['value2']['#attributes']);
+
+  $element['value']['#wrapper_attributes']['class'] = array('start-date-wrapper');
+  $element['value2']['#wrapper_attributes']['class'] = array('end-date-wrapper');
 }

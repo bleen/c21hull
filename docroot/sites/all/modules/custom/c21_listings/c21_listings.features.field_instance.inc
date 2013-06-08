@@ -45,6 +45,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Address',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -57,13 +58,13 @@ function c21_listings_field_default_field_instances() {
         'format_handlers' => array(
           'address' => 'address',
           'address-hide-country' => 'address-hide-country',
-          'organisation' => 'organisation',
+          'organisation' => 0,
           'name-full' => 0,
           'name-oneline' => 0,
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -93,6 +94,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Email',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => 'Add another email address',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -100,7 +102,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -125,6 +127,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -135,7 +138,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -160,6 +163,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -170,7 +174,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -200,6 +204,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Phone',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => 'Add another phone number',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -207,144 +212,6 @@ function c21_listings_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_seller_email-field_seller_phone_number'
-  $field_instances['field_collection_item-field_seller_email-field_seller_phone_number'] = array(
-    'bundle' => 'field_seller_email',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_seller_phone_number',
-    'label' => 'Phone Number',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'masked_input',
-      'settings' => array(
-        'mask' => '(999) 999-9999',
-        'placeholder' => '_',
-        'size' => 60,
-      ),
-      'type' => 'masked_input',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_seller_email-field_seller_phone_type'
-  $field_instances['field_collection_item-field_seller_email-field_seller_phone_type'] = array(
-    'bundle' => 'field_seller_email',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Local',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_seller_phone_type',
-    'label' => 'Phone Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_seller_phone-field_seller_email_address'
-  $field_instances['field_collection_item-field_seller_phone-field_seller_email_address'] = array(
-    'bundle' => 'field_seller_phone',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_seller_email_address',
-    'label' => 'Email Address',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'html5_tools',
-      'settings' => array(),
-      'type' => 'emailwidget',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_seller_phone-field_seller_email_type'
-  $field_instances['field_collection_item-field_seller_phone-field_seller_email_type'] = array(
-    'bundle' => 'field_seller_phone',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Personal',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_seller_email_type',
-    'label' => 'Email Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
       'weight' => 2,
     ),
   );
@@ -379,6 +246,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Primary office',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -416,6 +284,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Status',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -458,6 +327,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Acreage',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -469,7 +339,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 15,
+      'weight' => 12,
     ),
   );
 
@@ -499,6 +369,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Additional Building',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -544,6 +415,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Agent',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -581,6 +453,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -621,6 +494,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 1 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -661,6 +535,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 1 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -701,6 +576,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 1 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -741,6 +617,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 2 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -781,6 +658,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 2 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -821,6 +699,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 2 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -861,6 +740,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 3 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -901,6 +781,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 3 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -941,6 +822,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathroom 3 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -986,6 +868,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bathrooms',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -1027,6 +910,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 1 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1067,6 +951,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 1 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1107,6 +992,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 1 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1147,6 +1033,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 2 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1187,6 +1074,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 2 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1227,6 +1115,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 2 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1267,6 +1156,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 3 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1307,6 +1197,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 3 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1347,6 +1238,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 3 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1387,6 +1279,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 4 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1427,6 +1320,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 4 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1467,6 +1361,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedroom 4 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1512,6 +1407,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Bedrooms',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => 99,
       'min' => 0,
       'prefix' => '',
@@ -1554,6 +1450,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1564,7 +1461,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 111,
+      'weight' => 109,
     ),
   );
 
@@ -1599,6 +1496,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Comission',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '$',
@@ -1610,7 +1508,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -1641,6 +1539,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1682,6 +1581,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -1707,10 +1607,10 @@ function c21_listings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 59,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 67,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1724,14 +1624,21 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Development',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 109,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 112,
     ),
   );
 
@@ -1761,6 +1668,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Dining/Kitchen | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1801,6 +1709,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Dining/Kitchen | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1841,6 +1750,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Dining/Kitchen | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1881,6 +1791,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Dining Room | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1921,6 +1832,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Dining Room | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1961,6 +1873,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Dining Room | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2002,6 +1915,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -2047,10 +1961,11 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Dues',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '$',
-      'suffix' => '/month',
+      'suffix' => '/year',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2058,7 +1973,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 17,
+      'weight' => 14,
     ),
   );
 
@@ -2088,6 +2003,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Electric Company',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2131,6 +2047,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Family Room | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2171,6 +2088,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Family Room | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2211,6 +2129,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Family Room | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2254,6 +2173,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
       'default_image' => 0,
       'file_directory' => 'listing-photos/featured',
       'file_extensions' => 'png gif jpg jpeg',
@@ -2323,6 +2243,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2363,6 +2284,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Floors',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2403,6 +2325,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Furniture',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2446,6 +2369,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Garage',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2453,6 +2377,9 @@ function c21_listings_field_default_field_instances() {
       'module' => 'autocomplete_deluxe',
       'settings' => array(
         'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
@@ -2486,6 +2413,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Heat',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2526,6 +2454,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Insulation',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2566,6 +2495,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Kitchen | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2606,6 +2536,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Kitchen | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2646,6 +2577,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Kitchen | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2686,6 +2618,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Laundry | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2726,6 +2659,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Laundry | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2766,6 +2700,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Laundry | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2811,6 +2746,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'List Date',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -2824,12 +2760,13 @@ function c21_listings_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 9,
+      'weight' => 17,
     ),
   );
 
@@ -2864,6 +2801,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'List Price',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '$',
@@ -2875,7 +2813,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -2905,6 +2843,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Living/Dining Room | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2945,6 +2884,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Living/Dining Room | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2985,6 +2925,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Living/Dining Room | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3025,6 +2966,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Living Room | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3065,6 +3007,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Living Room | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3105,6 +3048,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Living Room | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3146,6 +3090,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3156,7 +3101,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 16,
     ),
   );
 
@@ -3187,6 +3132,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3197,48 +3143,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 110,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_miscellaneous'
-  $field_instances['node-listing-field_listing_miscellaneous'] = array(
-    'bundle' => 'listing',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 56,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_miscellaneous',
-    'label' => 'Miscellaneous',
-    'placeholder' => '',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 2,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 106,
+      'weight' => 108,
     ),
   );
 
@@ -3269,6 +3174,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => 'ex: 12-3456',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3312,7 +3218,26 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 0,
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3352,6 +3277,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Other 1 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3392,6 +3318,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Other 1 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3432,6 +3359,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Other 1 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3472,6 +3400,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Other 2 | Basement',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3512,6 +3441,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Other 2 | Floor 1',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3552,6 +3482,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Other 2 | Floor 2',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3593,7 +3524,26 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => 'List any personal property included in this sale',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 0,
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3636,6 +3586,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
       'default_image' => 0,
       'file_directory' => 'listing-photos',
       'file_extensions' => 'png gif jpg jpeg',
@@ -3705,6 +3656,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3745,6 +3697,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Road Surface',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3785,6 +3738,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'School District',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3829,6 +3783,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3839,7 +3794,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 112,
+      'weight' => 110,
     ),
   );
 
@@ -3875,6 +3830,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Seller',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => 'Add another seller',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3891,7 +3847,7 @@ function c21_listings_field_default_field_instances() {
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'ex: septic, septic needed, central',
+    'description' => 'ex: septic, septic needed, central, shared, existing permit',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -3912,6 +3868,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Sewage',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3919,47 +3876,13 @@ function c21_listings_field_default_field_instances() {
       'module' => 'autocomplete_deluxe',
       'settings' => array(
         'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 24,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_sewage_extras'
-  $field_instances['node-listing-field_listing_sewage_extras'] = array(
-    'bundle' => 'listing',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 22,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_sewage_extras',
-    'label' => 'Sewage Extras',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 25,
     ),
   );
 
@@ -3990,6 +3913,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -4001,47 +3925,6 @@ function c21_listings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 31,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_special_notes'
-  $field_instances['node-listing-field_listing_special_notes'] = array(
-    'bundle' => 'listing',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 58,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_special_notes',
-    'label' => 'Special Notes',
-    'placeholder' => '',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 108,
     ),
   );
 
@@ -4076,6 +3959,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Square Footage Above',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -4122,6 +4006,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Square Footage Below',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -4168,6 +4053,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Square Footage Finished',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -4213,6 +4099,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Status',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4251,6 +4138,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -4261,7 +4149,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 114,
+      'weight' => 111,
     ),
   );
 
@@ -4292,6 +4180,7 @@ function c21_listings_field_default_field_instances() {
     'placeholder' => '',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -4302,7 +4191,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -4332,6 +4221,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Tags',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4371,20 +4261,38 @@ function c21_listings_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_listing_tax_map',
     'label' => 'Tax Map #',
+    'placeholder' => '',
     'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'masked_input',
+      'module' => 'text',
       'settings' => array(
-        'mask' => '999.99-99-99.999',
-        'placeholder' => '_',
         'size' => 60,
       ),
-      'type' => 'masked_input',
+      'type' => 'text_textfield',
       'weight' => 107,
     ),
   );
@@ -4420,6 +4328,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Taxes',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'max' => '',
       'min' => '',
       'prefix' => '$',
@@ -4431,7 +4340,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 16,
+      'weight' => 13,
     ),
   );
 
@@ -4444,10 +4353,10 @@ function c21_listings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 63,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 68,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4461,13 +4370,20 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Township',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 113,
     ),
   );
@@ -4502,6 +4418,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Listing Type',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4546,6 +4463,7 @@ function c21_listings_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'custom_add_another' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -4593,6 +4511,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Walls',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4612,7 +4531,7 @@ function c21_listings_field_default_field_instances() {
     'bundle' => 'listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'ex: central, well, well needed',
+    'description' => 'ex: central, well, well needed, shared',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -4633,6 +4552,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Water',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4640,47 +4560,13 @@ function c21_listings_field_default_field_instances() {
       'module' => 'autocomplete_deluxe',
       'settings' => array(
         'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 26,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_water_extras'
-  $field_instances['node-listing-field_listing_water_extras'] = array(
-    'bundle' => 'listing',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 25,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_water_extras',
-    'label' => 'Water Extras',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 27,
     ),
   );
 
@@ -4710,6 +4596,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Windows',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4755,9 +4642,10 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Year Built',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'blank',
+      'custom_add_another' => '',
+      'default_value' => 'strtotime',
       'default_value2' => 'same',
-      'default_value_code' => '',
+      'default_value_code' => '-30 years',
       'default_value_code2' => '',
       'user_register_form' => FALSE,
     ),
@@ -4807,6 +4695,7 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Zoning',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4814,7 +4703,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -4863,8 +4752,6 @@ function c21_listings_field_default_field_instances() {
   t('Dues');
   t('Electric Company');
   t('Email');
-  t('Email Address');
-  t('Email Type');
   t('Family Room | Basement');
   t('Family Room | Floor 1');
   t('Family Room | Floor 2');
@@ -4895,7 +4782,6 @@ function c21_listings_field_default_field_instances() {
   t('Lockbox/Key');
   t('Lot');
   t('MLS #');
-  t('Miscellaneous');
   t('Notes');
   t('Other 1 | Basement');
   t('Other 1 | Floor 1');
@@ -4905,8 +4791,6 @@ function c21_listings_field_default_field_instances() {
   t('Other 2 | Floor 2');
   t('Personal Property');
   t('Phone');
-  t('Phone Number');
-  t('Phone Type');
   t('Photos');
   t('Porch');
   t('Primary office');
@@ -4915,9 +4799,7 @@ function c21_listings_field_default_field_instances() {
   t('Section');
   t('Seller');
   t('Sewage');
-  t('Sewage Extras');
   t('Siding');
-  t('Special Notes');
   t('Square Footage Above');
   t('Square Footage Below');
   t('Square Footage Finished');
@@ -4932,7 +4814,6 @@ function c21_listings_field_default_field_instances() {
   t('Virtual Tour');
   t('Walls');
   t('Water');
-  t('Water Extras');
   t('Windows');
   t('Year Built');
   t('Zoning');
@@ -4940,14 +4821,14 @@ function c21_listings_field_default_field_instances() {
   t('ex: E. Stroudsburg, Wallenpaupack, Delaware Vally - DV, Delaware Vally - DD, Delaware Vally - SH');
   t('ex: Met De, PP & L, O & R, PCL & P');
   t('ex: Negotiable');
-  t('ex: central, well, well needed');
+  t('ex: central, well, well needed, shared');
   t('ex: crawl, finished, unfinished');
   t('ex: electric, oil, propane');
   t('ex: full, partial, unknown');
   t('ex: gravel, paved, dirt');
   t('ex: hardwood, linoleum, tile, carpet, vinyl');
   t('ex: lakefront, new construction, foreclosure');
-  t('ex: septic, septic needed, central');
+  t('ex: septic, septic needed, central, shared, existing permit');
   t('ex: shed');
   t('ex: sheetrock, wood, paneling');
   t('ex: single pane, double pane');

@@ -948,39 +948,31 @@ function c21_listings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listing_development',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
-        'Birchwood Lakes' => 'Birchwood Lakes',
-        'Crescent Lake' => 'Crescent Lake',
-        'Conashaugh Lakes' => 'Conashaugh Lakes',
-        'Cranberry Ridge' => 'Cranberry Ridge',
-        'Gold Key Lake' => 'Gold Key Lake',
-        'Hemlock Farms' => 'Hemlock Farms',
-        'Lake Adventure' => 'Lake Adventure',
-        'Marcel Lake' => 'Marcel Lake',
-        'Old Marcel Lake' => 'Old Marcel Lake',
-        'Pocono Mountain Lake Estates' => 'Pocono Mountain Lake Estates',
-        'Pocono Mountain Lake Forest' => 'Pocono Mountain Lake Forest',
-        'Pocono Mountain Ranchlands' => 'Pocono Mountain Ranchlands',
-        'Pocono Mountain Woodland Lakes' => 'Pocono Mountain Woodland Lakes',
-        'Pocono Mountain Water Forest' => 'Pocono Mountain Water Forest',
-        'Sunrise Lake' => 'Sunrise Lake',
-        'Traces of Lattimore' => 'Traces of Lattimore',
-        'Wild Acres' => 'Wild Acres',
-        'Other' => 'Other',
+        0 => array(
+          'vocabulary' => 'listing_development',
+          'parent' => 0,
+        ),
       ),
-      'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_listing_din_kitchen_b'
@@ -1455,7 +1447,7 @@ function c21_listings_field_default_field_bases() {
   // Exported field_base: 'field_listing_garage'
   $field_bases['field_listing_garage'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listing_garage',
@@ -2010,33 +2002,6 @@ function c21_listings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_listing_miscellaneous'
-  $field_bases['field_listing_miscellaneous'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_miscellaneous',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
   // Exported field_base: 'field_listing_mls'
   $field_bases['field_listing_mls'] = array(
     'active' => 1,
@@ -2503,32 +2468,6 @@ function c21_listings_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_listing_sewage_extras'
-  $field_bases['field_listing_sewage_extras'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_sewage_extras',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'shared' => 'Shared',
-        'permit' => 'Existing septic permit',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_listing_siding'
   $field_bases['field_listing_siding'] = array(
     'active' => 1,
@@ -2536,35 +2475,6 @@ function c21_listings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listing_siding',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_listing_special_notes'
-  $field_bases['field_listing_special_notes'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_special_notes',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -2762,7 +2672,7 @@ function c21_listings_field_default_field_bases() {
   // Exported field_base: 'field_listing_tax_map'
   $field_bases['field_listing_tax_map'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listing_tax_map',
@@ -2815,41 +2725,31 @@ function c21_listings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listing_township',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
-        'Blooming Grove' => 'Blooming Grove',
-        'Delaware' => 'Delaware',
-        'Dingman' => 'Dingman',
-        'Dyberry' => 'Dyberry',
-        'Highland' => 'Highland',
-        'Honesdale' => 'Honesdale',
-        'Lackawaxen' => 'Lackawaxen',
-        'Lackawaxen TWP' => 'Lackawaxen TWP',
-        'Lake' => 'Lake',
-        'Lehman' => 'Lehman',
-        'Lumberland' => 'Lumberland',
-        'Matamoras' => 'Matamoras',
-        'Milford' => 'Milford',
-        'Milford Boro' => 'Milford Boro',
-        'Paupack' => 'Paupack',
-        'Paupack TWP' => 'Paupack TWP',
-        'Porter' => 'Porter',
-        'Shohola' => 'Shohola',
-        'Westfall' => 'Westfall',
-        'Other' => 'Other',
+        0 => array(
+          'vocabulary' => 'listing_township',
+          'parent' => 0,
+        ),
       ),
-      'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_listing_type'
@@ -2975,31 +2875,6 @@ function c21_listings_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_listing_water_extras'
-  $field_bases['field_listing_water_extras'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_water_extras',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'shared' => 'Shared',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_listing_windows'
