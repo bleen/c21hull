@@ -2050,7 +2050,7 @@ function c21_listings_field_default_field_instances() {
       'max' => '',
       'min' => '',
       'prefix' => '$',
-      'suffix' => ' /month',
+      'suffix' => '/month',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4423,7 +4423,7 @@ function c21_listings_field_default_field_instances() {
       'max' => '',
       'min' => '',
       'prefix' => '$',
-      'suffix' => ' /month',
+      'suffix' => '/year',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
