@@ -42,6 +42,8 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
   // Remove the fieldset from "Year Built".
   $form['field_listing_year_built'][LANGUAGE_NONE][0]['#theme_wrappers'] = array('form_element');
 
+  // Create a new revision on every edit.
+  $form['revision_information']['revision']['#default_value'] = TRUE;
 }
 
 /**

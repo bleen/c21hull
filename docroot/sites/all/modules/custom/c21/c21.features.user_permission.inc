@@ -143,6 +143,22 @@ function c21_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: administer field collections.
+  $permissions['administer field collections'] = array(
+    'name' => 'administer field collections',
+    'roles' => array(),
+    'module' => 'field_collection',
+  );
+
+  // Exported permission: administer fieldgroups.
+  $permissions['administer fieldgroups'] = array(
+    'name' => 'administer fieldgroups',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_group',
+  );
+
   // Exported permission: administer filters.
   $permissions['administer filters'] = array(
     'name' => 'administer filters',
@@ -185,10 +201,7 @@ function c21_user_default_permissions() {
   // Exported permission: administer nodes.
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'staff' => 'staff',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -405,6 +418,13 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: enter page revision log entry.
+  $permissions['enter page revision log entry'] = array(
+    'name' => 'enter page revision log entry',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
   // Exported permission: flush caches.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
@@ -428,6 +448,44 @@ function c21_user_default_permissions() {
     'module' => 'pathauto',
   );
 
+  // Exported permission: override page authored on option.
+  $permissions['override page authored on option'] = array(
+    'name' => 'override page authored on option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override page promote to front page option.
+  $permissions['override page promote to front page option'] = array(
+    'name' => 'override page promote to front page option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override page published option.
+  $permissions['override page published option'] = array(
+    'name' => 'override page published option',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override page revision option.
+  $permissions['override page revision option'] = array(
+    'name' => 'override page revision option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override page sticky option.
+  $permissions['override page sticky option'] = array(
+    'name' => 'override page sticky option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
   // Exported permission: revert revisions.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
@@ -440,6 +498,48 @@ function c21_user_default_permissions() {
     'name' => 'select account cancellation method',
     'roles' => array(),
     'module' => 'user',
+  );
+
+  // Exported permission: show format selection for field_collection_item.
+  $permissions['show format selection for field_collection_item'] = array(
+    'name' => 'show format selection for field_collection_item',
+    'roles' => array(),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: show format selection for node.
+  $permissions['show format selection for node'] = array(
+    'name' => 'show format selection for node',
+    'roles' => array(),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: show format selection for taxonomy_term.
+  $permissions['show format selection for taxonomy_term'] = array(
+    'name' => 'show format selection for taxonomy_term',
+    'roles' => array(),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: show format selection for user.
+  $permissions['show format selection for user'] = array(
+    'name' => 'show format selection for user',
+    'roles' => array(),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: show format tips.
+  $permissions['show format tips'] = array(
+    'name' => 'show format tips',
+    'roles' => array(),
+    'module' => 'better_formats',
+  );
+
+  // Exported permission: show more format tips link.
+  $permissions['show more format tips link'] = array(
+    'name' => 'show more format tips link',
+    'roles' => array(),
+    'module' => 'better_formats',
   );
 
   // Exported permission: switch shortcut sets.

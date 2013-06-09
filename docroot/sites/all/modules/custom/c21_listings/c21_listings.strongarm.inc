@@ -167,9 +167,160 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_agent_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_agent_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_listing_pattern';
+  $strongarm->value = 'listing/[node:title]';
+  $export['pathauto_node_listing_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_additional_building_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_additional_building_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_basement_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_basement_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_development_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_development_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_electric_company_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_electric_company_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_floors_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_floors_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_furniture_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_furniture_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_garage_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_garage_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_heat_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_heat_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_insulation_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_insulation_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_road_surface_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_road_surface_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_school_district_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_school_district_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_sewage_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_sewage_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_township_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_township_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_walls_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_walls_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_water_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_water_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_listing_windows_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_listing_windows_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'representative_image_field_node_listing';
   $strongarm->value = 'field_listing_featured_photo';
   $export['representative_image_field_node_listing'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'representative_image_field_node_seller';
+  $strongarm->value = '';
+  $export['representative_image_field_node_seller'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'representative_image_listing';
+  $strongarm->value = array(
+    0 => 'node',
+  );
+  $export['representative_image_listing'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'representative_image_seller';
+  $strongarm->value = array(
+    0 => 'node',
+  );
+  $export['representative_image_seller'] = $strongarm;
 
   return $export;
 }

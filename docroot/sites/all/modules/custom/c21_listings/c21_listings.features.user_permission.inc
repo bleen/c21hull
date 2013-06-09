@@ -130,6 +130,20 @@ function c21_listings_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: delete terms in 16.
+  $permissions['delete terms in 16'] = array(
+    'name' => 'delete terms in 16',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: delete terms in 17.
+  $permissions['delete terms in 17'] = array(
+    'name' => 'delete terms in 17',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: delete terms in 2.
   $permissions['delete terms in 2'] = array(
     'name' => 'delete terms in 2',
@@ -320,6 +334,20 @@ function c21_listings_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: edit terms in 16.
+  $permissions['edit terms in 16'] = array(
+    'name' => 'edit terms in 16',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: edit terms in 17.
+  $permissions['edit terms in 17'] = array(
+    'name' => 'edit terms in 17',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: edit terms in 2.
   $permissions['edit terms in 2'] = array(
     'name' => 'edit terms in 2',
@@ -398,6 +426,120 @@ function c21_listings_user_default_permissions() {
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
+  );
+
+  // Exported permission: enter agent revision log entry.
+  $permissions['enter agent revision log entry'] = array(
+    'name' => 'enter agent revision log entry',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: enter listing revision log entry.
+  $permissions['enter listing revision log entry'] = array(
+    'name' => 'enter listing revision log entry',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override agent authored by option.
+  $permissions['override agent authored by option'] = array(
+    'name' => 'override agent authored by option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override agent authored on option.
+  $permissions['override agent authored on option'] = array(
+    'name' => 'override agent authored on option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override agent promote to front page option.
+  $permissions['override agent promote to front page option'] = array(
+    'name' => 'override agent promote to front page option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override agent published option.
+  $permissions['override agent published option'] = array(
+    'name' => 'override agent published option',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override agent revision option.
+  $permissions['override agent revision option'] = array(
+    'name' => 'override agent revision option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override agent sticky option.
+  $permissions['override agent sticky option'] = array(
+    'name' => 'override agent sticky option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing authored by option.
+  $permissions['override listing authored by option'] = array(
+    'name' => 'override listing authored by option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing authored on option.
+  $permissions['override listing authored on option'] = array(
+    'name' => 'override listing authored on option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing promote to front page option.
+  $permissions['override listing promote to front page option'] = array(
+    'name' => 'override listing promote to front page option',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing published option.
+  $permissions['override listing published option'] = array(
+    'name' => 'override listing published option',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing revision option.
+  $permissions['override listing revision option'] = array(
+    'name' => 'override listing revision option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing sticky option.
+  $permissions['override listing sticky option'] = array(
+    'name' => 'override listing sticky option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override page authored by option.
+  $permissions['override page authored by option'] = array(
+    'name' => 'override page authored by option',
+    'roles' => array(),
+    'module' => 'override_node_options',
   );
 
   return $permissions;
