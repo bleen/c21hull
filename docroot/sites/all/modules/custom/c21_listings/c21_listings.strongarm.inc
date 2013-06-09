@@ -61,7 +61,7 @@ function c21_listings_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
       ),
       'display' => array(),
@@ -132,7 +132,7 @@ function c21_listings_strongarm() {
   $strongarm->name = 'node_options_listing';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
+    1 => 'revision',
   );
   $export['node_options_listing'] = $strongarm;
 

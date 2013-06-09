@@ -466,10 +466,7 @@ function c21_listings_user_default_permissions() {
   // Exported permission: override agent published option.
   $permissions['override agent published option'] = array(
     'name' => 'override agent published option',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'staff' => 'staff',
-    ),
+    'roles' => array(),
     'module' => 'override_node_options',
   );
 
