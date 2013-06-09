@@ -13,6 +13,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_listing_seller-field_seller_address'
   $field_instances['field_collection_item-field_listing_seller-field_seller_address'] = array(
     'bundle' => 'field_listing_seller',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'element_key' => 'field_collection_item|field_listing_seller|field_seller_address|und|0',
@@ -46,6 +48,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -71,6 +74,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_listing_seller-field_seller_email'
   $field_instances['field_collection_item-field_listing_seller-field_seller_email'] = array(
     'bundle' => 'field_listing_seller',
+    'custom_add_another' => 'Add another email address',
+    'custom_remove' => 'Remove email address',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -94,7 +99,8 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Email',
     'required' => 0,
     'settings' => array(
-      'custom_add_another' => 'Add another email address',
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -109,6 +115,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_listing_seller-field_seller_first_name'
   $field_instances['field_collection_item-field_listing_seller-field_seller_first_name'] = array(
     'bundle' => 'field_listing_seller',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -128,6 +136,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -145,6 +154,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_listing_seller-field_seller_last_name'
   $field_instances['field_collection_item-field_listing_seller-field_seller_last_name'] = array(
     'bundle' => 'field_listing_seller',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -164,6 +175,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -181,6 +193,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_listing_seller-field_seller_phone'
   $field_instances['field_collection_item-field_listing_seller-field_seller_phone'] = array(
     'bundle' => 'field_listing_seller',
+    'custom_add_another' => 'Add another phone number',
+    'custom_remove' => 'Remove phone number',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -204,7 +218,8 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Phone',
     'required' => 1,
     'settings' => array(
-      'custom_add_another' => 'Add another phone number',
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -219,6 +234,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-agent-field_agent_bio'
   $field_instances['node-agent-field_agent_bio'] = array(
     'bundle' => 'agent',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -262,6 +279,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -279,6 +297,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-agent-field_agent_primary_office'
   $field_instances['node-agent-field_agent_primary_office'] = array(
     'bundle' => 'agent',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'value' => 'dingmans_ferry',
@@ -307,6 +327,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -321,6 +342,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-agent-field_agent_status'
   $field_instances['node-agent-field_agent_status'] = array(
     'bundle' => 'agent',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -345,6 +368,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -359,6 +383,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_acreage'
   $field_instances['node-listing-field_listing_acreage'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -388,6 +414,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -406,6 +433,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_additional_bldg'
   $field_instances['node-listing-field_listing_additional_bldg'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: shed',
@@ -430,6 +459,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -450,6 +480,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_agent'
   $field_instances['node-listing-field_listing_agent'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -476,6 +508,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -490,6 +523,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_basement'
   $field_instances['node-listing-field_listing_basement'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: crawl, finished, unfinished',
@@ -514,6 +549,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -531,6 +567,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom1_b'
   $field_instances['node-listing-field_listing_bathroom1_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -555,6 +593,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -572,6 +611,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom1_f1'
   $field_instances['node-listing-field_listing_bathroom1_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -596,6 +637,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -613,6 +655,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom1_f2'
   $field_instances['node-listing-field_listing_bathroom1_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -637,6 +681,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -654,6 +699,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom2_b'
   $field_instances['node-listing-field_listing_bathroom2_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -678,6 +725,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -695,6 +743,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom2_f1'
   $field_instances['node-listing-field_listing_bathroom2_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -719,6 +769,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -736,6 +787,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom2_f2'
   $field_instances['node-listing-field_listing_bathroom2_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -760,6 +813,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -777,6 +831,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom3_b'
   $field_instances['node-listing-field_listing_bathroom3_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -801,6 +857,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -818,6 +875,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom3_f1'
   $field_instances['node-listing-field_listing_bathroom3_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -842,6 +901,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -859,6 +919,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathroom3_f2'
   $field_instances['node-listing-field_listing_bathroom3_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -883,6 +945,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -900,6 +963,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bathrooms'
   $field_instances['node-listing-field_listing_bathrooms'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -929,6 +994,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -947,6 +1013,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom1_b'
   $field_instances['node-listing-field_listing_bedroom1_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -971,6 +1039,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -988,6 +1057,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom1_f1'
   $field_instances['node-listing-field_listing_bedroom1_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1012,6 +1083,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1029,6 +1101,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom1_f2'
   $field_instances['node-listing-field_listing_bedroom1_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1053,6 +1127,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1070,6 +1145,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom2_b'
   $field_instances['node-listing-field_listing_bedroom2_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1094,6 +1171,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1111,6 +1189,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom2_f1'
   $field_instances['node-listing-field_listing_bedroom2_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1135,6 +1215,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1152,6 +1233,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom2_f2'
   $field_instances['node-listing-field_listing_bedroom2_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1176,6 +1259,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1193,6 +1277,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom3_b'
   $field_instances['node-listing-field_listing_bedroom3_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1217,6 +1303,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1234,6 +1321,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom3_f1'
   $field_instances['node-listing-field_listing_bedroom3_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1258,6 +1347,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1275,6 +1365,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom3_f2'
   $field_instances['node-listing-field_listing_bedroom3_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1299,6 +1391,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1316,6 +1409,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom4_b'
   $field_instances['node-listing-field_listing_bedroom4_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1340,6 +1435,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1357,6 +1453,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom4_f1'
   $field_instances['node-listing-field_listing_bedroom4_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1381,6 +1479,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1398,6 +1497,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedroom4_f2'
   $field_instances['node-listing-field_listing_bedroom4_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1422,6 +1523,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1439,6 +1541,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_bedrooms'
   $field_instances['node-listing-field_listing_bedrooms'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1468,6 +1572,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => 99,
       'min' => 0,
       'prefix' => '',
@@ -1486,6 +1591,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_block'
   $field_instances['node-listing-field_listing_block'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1511,6 +1618,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1528,6 +1636,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_comission'
   $field_instances['node-listing-field_listing_comission'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Values less than 100 will be considered a percentage, otherwise a dollar amount',
@@ -1557,6 +1667,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '$',
@@ -1575,6 +1686,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_decks'
   $field_instances['node-listing-field_listing_decks'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1600,6 +1713,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1617,6 +1731,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_description'
   $field_instances['node-listing-field_listing_description'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1642,6 +1758,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -1661,6 +1778,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_development'
   $field_instances['node-listing-field_listing_development'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1685,6 +1804,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1705,6 +1825,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_din_kitchen_b'
   $field_instances['node-listing-field_listing_din_kitchen_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1729,6 +1851,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1746,6 +1869,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_din_kitchen_f1'
   $field_instances['node-listing-field_listing_din_kitchen_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1770,6 +1895,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1787,6 +1913,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_din_kitchen_f2'
   $field_instances['node-listing-field_listing_din_kitchen_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1811,6 +1939,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1828,6 +1957,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_dining_room_b'
   $field_instances['node-listing-field_listing_dining_room_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1852,6 +1983,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1869,6 +2001,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_dining_room_f1'
   $field_instances['node-listing-field_listing_dining_room_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1893,6 +2027,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1910,6 +2045,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_dining_room_f2'
   $field_instances['node-listing-field_listing_dining_room_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1934,6 +2071,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1951,6 +2089,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_directions'
   $field_instances['node-listing-field_listing_directions'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1976,6 +2116,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -1993,6 +2134,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_dues'
   $field_instances['node-listing-field_listing_dues'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2022,6 +2165,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '$',
@@ -2040,6 +2184,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_electric_company'
   $field_instances['node-listing-field_listing_electric_company'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: Met De, PP & L, O & R, PCL & P',
@@ -2064,6 +2210,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2084,6 +2231,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_family_room_b'
   $field_instances['node-listing-field_listing_family_room_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2108,6 +2257,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2125,6 +2275,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_family_room_f1'
   $field_instances['node-listing-field_listing_family_room_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2149,6 +2301,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2166,6 +2319,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_family_room_f2'
   $field_instances['node-listing-field_listing_family_room_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2190,6 +2345,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2207,6 +2363,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_featured_photo'
   $field_instances['node-listing-field_listing_featured_photo'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2234,6 +2392,7 @@ function c21_listings_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'file_directory' => 'listing-photos/featured',
       'file_extensions' => 'png gif jpg jpeg',
@@ -2279,6 +2438,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_fireplace'
   $field_instances['node-listing-field_listing_fireplace'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2304,6 +2465,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2321,6 +2483,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_floors'
   $field_instances['node-listing-field_listing_floors'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: hardwood, linoleum, tile, carpet, vinyl',
@@ -2345,6 +2509,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2362,6 +2527,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_furniture'
   $field_instances['node-listing-field_listing_furniture'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: Negotiable',
@@ -2386,6 +2553,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2406,6 +2574,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_garage'
   $field_instances['node-listing-field_listing_garage'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: 1-car, 2-car',
@@ -2430,6 +2600,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2450,6 +2621,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_heat'
   $field_instances['node-listing-field_listing_heat'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: electric, oil, propane',
@@ -2474,6 +2647,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2491,6 +2665,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_insulation'
   $field_instances['node-listing-field_listing_insulation'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: full, partial, unknown',
@@ -2515,6 +2691,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2532,6 +2709,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_kitchen_b'
   $field_instances['node-listing-field_listing_kitchen_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2556,6 +2735,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2573,6 +2753,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_kitchen_f1'
   $field_instances['node-listing-field_listing_kitchen_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2597,6 +2779,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2614,6 +2797,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_kitchen_f2'
   $field_instances['node-listing-field_listing_kitchen_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2638,6 +2823,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2655,6 +2841,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_laundry_b'
   $field_instances['node-listing-field_listing_laundry_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2679,6 +2867,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2696,6 +2885,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_laundry_f1'
   $field_instances['node-listing-field_listing_laundry_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2720,6 +2911,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2737,6 +2929,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_laundry_f2'
   $field_instances['node-listing-field_listing_laundry_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2761,6 +2955,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2778,6 +2973,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_list_date'
   $field_instances['node-listing-field_listing_list_date'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2807,6 +3004,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -2833,6 +3031,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_list_price'
   $field_instances['node-listing-field_listing_list_price'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2862,6 +3062,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '$',
@@ -2880,6 +3081,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_liv_din_b'
   $field_instances['node-listing-field_listing_liv_din_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2904,6 +3107,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2921,6 +3125,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_liv_din_f1'
   $field_instances['node-listing-field_listing_liv_din_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2945,6 +3151,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2962,6 +3169,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_liv_din_f2'
   $field_instances['node-listing-field_listing_liv_din_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2986,6 +3195,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3003,6 +3213,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_living_room_b'
   $field_instances['node-listing-field_listing_living_room_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3027,6 +3239,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3044,6 +3257,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_living_room_f1'
   $field_instances['node-listing-field_listing_living_room_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3068,6 +3283,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3085,6 +3301,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_living_room_f2'
   $field_instances['node-listing-field_listing_living_room_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3109,6 +3327,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3126,6 +3345,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_lockbox_key'
   $field_instances['node-listing-field_listing_lockbox_key'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3151,6 +3372,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3168,6 +3390,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_lot'
   $field_instances['node-listing-field_listing_lot'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3193,6 +3417,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3210,6 +3435,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_mls'
   $field_instances['node-listing-field_listing_mls'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3235,6 +3462,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3254,6 +3482,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_notes'
   $field_instances['node-listing-field_listing_notes'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3297,6 +3527,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -3314,6 +3545,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_other1_b'
   $field_instances['node-listing-field_listing_other1_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3338,6 +3571,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3355,6 +3589,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_other1_f1'
   $field_instances['node-listing-field_listing_other1_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3379,6 +3615,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3396,6 +3633,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_other1_f2'
   $field_instances['node-listing-field_listing_other1_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3420,6 +3659,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3437,6 +3677,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_other2_b'
   $field_instances['node-listing-field_listing_other2_b'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3461,6 +3703,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3478,6 +3721,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_other2_f1'
   $field_instances['node-listing-field_listing_other2_f1'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3502,6 +3747,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3519,6 +3765,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_other2_f2'
   $field_instances['node-listing-field_listing_other2_f2'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3543,6 +3791,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3560,6 +3809,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_personal_property'
   $field_instances['node-listing-field_listing_personal_property'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3603,6 +3854,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -3620,6 +3872,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_photos'
   $field_instances['node-listing-field_listing_photos'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3647,6 +3901,7 @@ function c21_listings_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'file_directory' => 'listing-photos',
       'file_extensions' => 'png gif jpg jpeg',
@@ -3692,6 +3947,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_porch'
   $field_instances['node-listing-field_listing_porch'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3717,6 +3974,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3734,6 +3992,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_road_surface'
   $field_instances['node-listing-field_listing_road_surface'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: gravel, paved, dirt',
@@ -3758,6 +4018,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3775,6 +4036,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_school_district'
   $field_instances['node-listing-field_listing_school_district'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: E. Stroudsburg, Wallenpaupack, Delaware Vally - DV, Delaware Vally - DD, Delaware Vally - SH',
@@ -3799,6 +4062,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3819,6 +4083,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_section'
   $field_instances['node-listing-field_listing_section'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3844,6 +4110,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3861,6 +4128,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_seller'
   $field_instances['node-listing-field_listing_seller'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => 'Add another seller',
+    'custom_remove' => 'Remove seller',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3890,7 +4159,8 @@ function c21_listings_field_default_field_instances() {
     'label' => 'Seller',
     'required' => 1,
     'settings' => array(
-      'custom_add_another' => 'Add another seller',
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3905,6 +4175,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_sewage'
   $field_instances['node-listing-field_listing_sewage'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: septic, septic needed, central, shared, existing permit',
@@ -3929,6 +4201,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3949,6 +4222,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_siding'
   $field_instances['node-listing-field_listing_siding'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3974,6 +4249,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -3991,6 +4267,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_sq_ft_above'
   $field_instances['node-listing-field_listing_sq_ft_above'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4020,6 +4298,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -4038,6 +4317,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_sq_ft_below'
   $field_instances['node-listing-field_listing_sq_ft_below'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4067,6 +4348,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -4085,6 +4367,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_sq_ft_finished'
   $field_instances['node-listing-field_listing_sq_ft_finished'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4114,6 +4398,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -4132,6 +4417,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_status'
   $field_instances['node-listing-field_listing_status'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'value' => 'for_sale',
@@ -4160,6 +4447,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4174,6 +4462,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_street'
   $field_instances['node-listing-field_listing_street'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4199,6 +4489,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -4216,6 +4507,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_style'
   $field_instances['node-listing-field_listing_style'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4241,6 +4534,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -4258,6 +4552,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_tags'
   $field_instances['node-listing-field_listing_tags'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: lakefront, new construction, foreclosure',
@@ -4282,6 +4578,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4300,6 +4597,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_tax_map'
   $field_instances['node-listing-field_listing_tax_map'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4343,6 +4642,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -4360,6 +4660,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_taxes'
   $field_instances['node-listing-field_listing_taxes'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4389,6 +4691,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '$',
@@ -4407,6 +4710,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_township'
   $field_instances['node-listing-field_listing_township'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4431,6 +4736,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4451,6 +4757,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_type'
   $field_instances['node-listing-field_listing_type'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'value' => 'open_listing',
@@ -4479,6 +4787,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4493,6 +4802,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_virtual_tour'
   $field_instances['node-listing-field_listing_virtual_tour'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4524,6 +4835,7 @@ function c21_listings_field_default_field_instances() {
         'title' => '',
       ),
       'custom_add_another' => '',
+      'custom_remove' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -4548,6 +4860,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_walls'
   $field_instances['node-listing-field_listing_walls'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: sheetrock, wood, paneling',
@@ -4572,6 +4886,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4589,6 +4904,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_water'
   $field_instances['node-listing-field_listing_water'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: central, well, well needed, shared',
@@ -4613,6 +4930,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4633,6 +4951,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_windows'
   $field_instances['node-listing-field_listing_windows'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'ex: single pane, double pane',
@@ -4657,6 +4977,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4674,6 +4995,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_year_built'
   $field_instances['node-listing-field_listing_year_built'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -4703,6 +5026,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'strtotime',
       'default_value2' => 'same',
       'default_value_code' => '-30 years',
@@ -4728,6 +5052,8 @@ function c21_listings_field_default_field_instances() {
   // Exported field_instance: 'node-listing-field_listing_zoning'
   $field_instances['node-listing-field_listing_zoning'] = array(
     'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => array(
       0 => array(
         'value' => 'residential',
@@ -4756,6 +5082,7 @@ function c21_listings_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
