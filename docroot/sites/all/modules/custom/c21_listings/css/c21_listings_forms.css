@@ -1,3 +1,7 @@
+.node-listing-form .form-item .form-item {
+  margin-bottom: 0;
+}
+
 .node-listing-form .container-inline-date {
   clear: none;
 }
@@ -62,4 +66,11 @@
 .node-listing-form #field-seller-email-values .form-submit {
   position: relative;
   top: 19px;
+}
+.node-listing-form .field-name-field-listing-list-date .fromto {
+  display: inline-block;
+  float: left;
+  position: relative;
+  top: 5px;
+  padding: 0 5px;
 }

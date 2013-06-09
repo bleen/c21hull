@@ -426,7 +426,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -1679,7 +1679,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -2177,7 +2177,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -3024,7 +3024,7 @@ function c21_listings_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 17,
+      'weight' => 7,
     ),
   );
 
@@ -3074,7 +3074,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -3383,7 +3383,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -3475,7 +3475,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'masked_input',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -4455,7 +4455,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -4545,7 +4545,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -4703,7 +4703,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -5090,7 +5090,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 

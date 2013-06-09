@@ -39,7 +39,8 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
     ),
   );
 
-  // Remove the fieldset from "Year Built".
+  // Remove the fieldset from "List Date" and "Year Built".
+  $form['field_listing_list_date'][LANGUAGE_NONE][0]['#theme_wrappers'] = array('form_element');
   $form['field_listing_year_built'][LANGUAGE_NONE][0]['#theme_wrappers'] = array('form_element');
 
   // Rename the publishing options field.
@@ -56,7 +57,7 @@ function c21_listings_field_group_build_pre_render_alter(&$element) {
 }
 
 /**
- * Implements hook_field_group_build_pre_render_alter().
+ * Implements hook_date_combo_process_alter().
  */
 function c21_listings_date_combo_process_alter(&$element, $form_state, $context) {
   $element['show_todate']['#access'] = FALSE;
@@ -69,3 +70,18 @@ function c21_listings_date_combo_process_alter(&$element, $form_state, $context)
   $element['value']['#wrapper_attributes']['class'] = array('start-date-wrapper');
   $element['value2']['#wrapper_attributes']['class'] = array('end-date-wrapper');
 }
+
+/**
+ * Implements hook_date_popup_process_alter().
+ */
+function c21_listings_date_popup_process_alter(&$element, $form_state, $context) {
+  if ($context['form'][$element['#field']['field_name']][LANGUAGE_NONE][0]['#type'] == 'date_combo') {
+    if ($element['#date_title'] == 'List Date End date' && $context['form'][$element['#field']['field_name']][LANGUAGE_NONE][0]['#type'] == 'date_combo') {
+      $element['#prefix'] = '<span class="fromto">to</span>';
+    }
+    $element['date']['#description'] = '';
+  }
+
+}
+
+
