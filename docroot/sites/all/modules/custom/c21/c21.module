@@ -5,3 +5,10 @@
  */
 
 include_once 'c21.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function c21_form_agent_node_form_alter(&$form, $fom_state) {
+  $form['title']['#placeholder'] = t('Roy B. Hull, Owner');
+}
