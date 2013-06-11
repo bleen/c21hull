@@ -13,6 +13,27 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_node_agent';
+  $strongarm->value = '1';
+  $export['auto_entitylabel_node_agent'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_pattern_node_agent';
+  $strongarm->value = '[node:field-agent-last-name] [node:field-agent-first-name]';
+  $export['auto_entitylabel_pattern_node_agent'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_php_node_agent';
+  $strongarm->value = 0;
+  $export['auto_entitylabel_php_node_agent'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_field_collection_item__field_listing_seller';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -61,7 +82,7 @@ function c21_listings_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '7',
         ),
       ),
       'display' => array(),

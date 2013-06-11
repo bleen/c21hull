@@ -13,6 +13,8 @@ function c21_field_default_field_instances() {
   // Exported field_instance: 'node-page-body'
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -40,6 +42,7 @@ function c21_field_default_field_instances() {
     'required' => FALSE,
     'settings' => array(
       'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => TRUE,
       'text_processing' => 1,
       'user_register_form' => FALSE,

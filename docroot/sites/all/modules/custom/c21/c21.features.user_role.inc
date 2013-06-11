@@ -19,7 +19,7 @@ function c21_user_default_roles() {
   // Exported role: agent.
   $roles['agent'] = array(
     'name' => 'agent',
-    'weight' => 3,
+    'weight' => 5,
   );
 
   // Exported role: staff.
