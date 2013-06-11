@@ -231,6 +231,188 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_seller_email-field_seller_email_address'
+  $field_instances['field_collection_item-field_seller_email-field_seller_email_address'] = array(
+    'bundle' => 'field_seller_email',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_seller_email_address',
+    'label' => 'Email Address',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'emailwidget',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_seller_email-field_seller_email_type'
+  $field_instances['field_collection_item-field_seller_email-field_seller_email_type'] = array(
+    'bundle' => 'field_seller_email',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_seller_email_type',
+    'label' => 'Email Type',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_seller_phone-field_seller_phone_number'
+  $field_instances['field_collection_item-field_seller_phone-field_seller_phone_number'] = array(
+    'bundle' => 'field_seller_phone',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_seller_phone_number',
+    'label' => 'Phone Number',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'masked_input',
+      'settings' => array(
+        'mask' => '',
+        'placeholder' => '_',
+        'size' => 60,
+      ),
+      'type' => 'masked_input',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_seller_phone-field_seller_phone_type'
+  $field_instances['field_collection_item-field_seller_phone-field_seller_phone_type'] = array(
+    'bundle' => 'field_seller_phone',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_seller_phone_type',
+    'label' => 'Phone Type',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-agent-field_agent_bio'
   $field_instances['node-agent-field_agent_bio'] = array(
     'bundle' => 'agent',
@@ -5345,6 +5527,8 @@ function c21_listings_field_default_field_instances() {
   t('Dues');
   t('Electric Company');
   t('Email');
+  t('Email Address');
+  t('Email Type');
   t('Family Room | Basement');
   t('Family Room | Floor 1');
   t('Family Room | Floor 2');
@@ -5384,6 +5568,8 @@ function c21_listings_field_default_field_instances() {
   t('Other 2 | Floor 2');
   t('Personal Property');
   t('Phone');
+  t('Phone Number');
+  t('Phone Type');
   t('Photo');
   t('Photos');
   t('Porch');
