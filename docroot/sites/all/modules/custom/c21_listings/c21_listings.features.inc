@@ -28,7 +28,7 @@ function c21_listings_node_info() {
       'base' => 'node_content',
       'description' => t('An <em>agent</em> describes a member of the Century21 Roy B. Hull team who represents specific listings for sale.'),
       'has_title' => '1',
-      'title_label' => t('Name'),
+      'title_label' => t('Full Name'),
       'help' => '',
     ),
     'listing' => array(

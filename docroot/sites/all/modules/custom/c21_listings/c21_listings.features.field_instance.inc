@@ -476,69 +476,6 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-agent-field_agent_first_name'
-  $field_instances['node-agent-field_agent_first_name'] = array(
-    'bundle' => 'agent',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_agent_first_name',
-    'label' => 'First Name',
-    'placeholder' => '',
-    'required' => 1,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'plain_text' => 'plain_text',
-          'rich_text' => 'rich_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'rich_text' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-agent-field_agent_last_name'
   $field_instances['node-agent-field_agent_last_name'] = array(
     'bundle' => 'agent',
@@ -546,7 +483,7 @@ function c21_listings_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This is used for sorting purposes only. Do not include initials or suffixes. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5589,6 +5526,7 @@ function c21_listings_field_default_field_instances() {
   t('Tags');
   t('Tax Map #');
   t('Taxes');
+  t('This is used for sorting purposes only. Do not include initials or suffixes. ');
   t('Township');
   t('Values less than 100 will be considered a percentage, otherwise a dollar amount');
   t('Virtual Tour');
