@@ -290,7 +290,7 @@ function c21_listings_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -344,7 +344,11 @@ function c21_listings_field_default_field_instances() {
     'bundle' => 'agent',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'current',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -375,8 +379,8 @@ function c21_listings_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 3,
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
