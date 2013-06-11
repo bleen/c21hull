@@ -1,0 +1,9 @@
+name = "C21Hull Data Migration"
+description = "Module to migrate the old site content to Drupal 7"
+package = "Migration"
+core = 7.x
+
+dependencies[] = migrate
+
+files[] = c21_migration.migrate.inc
+files[] = includes/user.inc
