@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * Implements hook_migrate_api().
+ */
 function c21_migration_migrate_api() {
   $api = array(
     'api' => 2,
     'migrations' => array(
       'c21User' => array(
         'class_name' => 'C21UserMigration',
+      ),
+      'c21Agent' => array(
+        'class_name' => 'C21AgentMigration',
       ),
     ),
   );

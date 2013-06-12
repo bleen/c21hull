@@ -7,3 +7,4 @@ dependencies[] = migrate
 
 files[] = c21_migration.migrate.inc
 files[] = includes/user.inc
+files[] = includes/agent.inc
