@@ -712,6 +712,7 @@ abstract class Migration extends MigrationBase {
             self::displayMessage($message);
           }
         }
+
       }
       catch (MigrateException $e) {
         $this->map->saveIDMapping($this->sourceValues, array(),
@@ -1171,7 +1172,9 @@ abstract class Migration extends MigrationBase {
   protected function applyMappings() {
     $this->destinationValues = new stdClass;
     foreach ($this->getFieldMappings() as $mapping) {
+
       $destination = $mapping->getDestinationField();
+
       // Skip mappings with no destination (source fields marked DNM)
       if ($destination) {
         $source = $mapping->getSourceField();
@@ -1205,6 +1208,7 @@ abstract class Migration extends MigrationBase {
         // If a source migration is supplied, use the current value for this field
         // to look up a destination ID from the provided migration
         $source_migration = $mapping->getSourceMigration();
+
         if ($source_migration && isset($destination_values)) {
           $destination_values = $this->handleSourceMigration($source_migration, $destination_values, $default, $this);
         }
@@ -1216,7 +1220,6 @@ abstract class Migration extends MigrationBase {
             $destination_values = call_user_func($callback, $destination_values);
           }
         }
-
         // If specified, assure a unique value for this property.
         $dedupe = $mapping->getDedupe();
         if ($dedupe && isset($destination_values)) {

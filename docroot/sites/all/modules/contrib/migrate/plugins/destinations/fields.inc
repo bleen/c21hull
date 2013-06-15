@@ -57,7 +57,7 @@ class MigrateFieldsEntityHandler extends MigrateDestinationHandler {
         // Check the default field handler last.
         migrate_instrument_start('MigrateDefaultFieldHandler->fields');
         $subfields = call_user_func(
-          array('MigrateDefaultFieldHandler', 'fields'), $type, $instance,
+          array(new MigrateDefaultFieldHandler, 'fields'), $type, $instance,
             $migration);
         migrate_instrument_stop('MigrateDefaultFieldHandler->fields');
         foreach ($subfields as $subfield_name => $subfield_label) {
@@ -170,7 +170,7 @@ class MigrateDefaultFieldHandler extends MigrateFieldHandler {
         $first = FALSE;
       }
       else {
-        $fields[$column_name] = $column_info['description'];
+        $fields[$column_name] = empty($column_info['description']) ? $column_name : $column_info['description'];
       }
     }
     return $fields;

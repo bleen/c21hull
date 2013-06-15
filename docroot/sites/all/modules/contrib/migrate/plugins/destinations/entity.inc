@@ -136,6 +136,7 @@ abstract class MigrateDestinationEntity extends MigrateDestination {
 
     // Call any general entity handlers (in particular, the builtin field handler)
     migrate_handler_invoke_all('Entity', 'prepare', $entity, $source_row);
+
     // Then call any entity-specific handlers
     migrate_handler_invoke_all($this->entityType, 'prepare', $entity, $source_row);
 

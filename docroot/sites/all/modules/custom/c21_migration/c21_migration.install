@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_enable().
+ */
+function c21_migration_enable() {
+  module_load_include('inc', 'c21_migration', 'c21_migration.migrate');
+  $api = c21_migration_migrate_api();
+  $migrations = $api['migrations'];
+
+  foreach($migrations as $migration => $migration_data) {
+    Migration::registerMigration($migration_data['class_name'], $migration);
+  }
+}
+
+/**
+ * Implements hook_disable().
+ */
+function c21_migration_disable() {
+  module_load_include('inc', 'c21_migration', 'c21_migration.migrate');
+  $api = c21_migration_migrate_api();
+  $migrations = $api['migrations'];
+
+  foreach($migrations as $migration => $migration_data) {
+    Migration::deregisterMigration($migration);
+  }
+}

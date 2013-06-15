@@ -11,7 +11,7 @@ class C21AgentMigration extends C21Migration {
     // Setup the source object for the user data.
     $query = Database::getConnection('default', 'legacy')
          ->select('agents', 'a')
-         ->fields('a', array('id', 'full_name', 'last_name', 'bio'));
+         ->fields('a', array('id', 'full_name', 'last_name', 'bio', 'status'));
     $this->source = new MigrateSourceSQL($query, array(), NULL, array('map_joinable' => FALSE));
 
     // Setup the destination object.
@@ -24,7 +24,7 @@ class C21AgentMigration extends C21Migration {
           'type' => 'int',
           'not null' => TRUE,
           'description' => 'Agent ID.',
-          'alias' => 'id',
+          'alias' => 'a',
         )
       ),
       MigrateDestinationNode::getKeySchema()
@@ -34,9 +34,15 @@ class C21AgentMigration extends C21Migration {
     $this->addFieldMapping('title', 'full_name');
     $this->addFieldMapping('field_agent_last_name', 'last_name');
     $this->addFieldMapping('body', 'bio');
+    $this->addFieldMapping('field_agent_status', 'status')
+         ->callbacks(array($this, 'callbackProcessAgentStatus'));
 
+    // All agents will be created by user 1.
     $this->addFieldMapping('uid')
          ->defaultValue(1);
+  }
 
+  function callbackProcessAgentStatus($value) {
+    return $value ? 'current' : 'former';
   }
 }

@@ -1,0 +1,319 @@
+<?php
+
+/**
+ * @file
+ * Defines the migration of taxonomy data.
+ */
+
+
+/**
+ * Defines the migration fo rthe Listing Sewage taxonomy.
+ */
+class C21TermsListingMigration extends C21Migration {
+
+  private $vocabulary;
+
+  public function __construct($arguments, $vocabulary) {
+    parent::__construct($arguments);
+    $this->vocabulary = $vocabulary;
+    $this->description = t('c21hull.com terms - %vocab', array('%vocab' => $this->vocabulary['name']));
+
+    // Setup the source object for the tag data.
+    $query = Database::getConnection('default', 'legacy')
+         ->select($this->vocabulary['table'])
+         ->fields($this->vocabulary['table'], array($this->vocabulary['column']))
+         ->groupBy($this->vocabulary['column']);
+    $this->source = new MigrateSourceSQL($query, array(), NULL, array('map_joinable' => FALSE));
+
+    // Setup the destination object.
+    $this->destination = new MigrateDestinationTerm('listing_' . $this->vocabulary['column']);
+
+    // Setup the mapping object.
+    $this->map = new MigrateSQLMap($this->machineName,
+        array(
+          $this->vocabulary['column'] =>  array(
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'description' => $this->vocabulary['description'],
+          )
+        ),
+        MigrateDestinationTerm::getKeySchema()
+    );
+
+    $this->addFieldMapping('name', $this->vocabulary['column']);
+  }
+
+  function prepareRow($source_row) {
+    $normalize_function = 'normalize' . str_replace(' ', '', ucwords($this->vocabulary['name']));
+    if (method_exists($this, $normalize_function)) {
+      $source_row->{$this->vocabulary['column']} = $this->{$normalize_function}($source_row->{$this->vocabulary['column']});
+    }
+    else {
+      $source_row->{$this->vocabulary['column']} = $this->normalize($source_row->{$this->vocabulary['column']});
+    }
+
+    if ($source_row->{$this->vocabulary['column']} === FALSE) {
+      return FALSE;
+    }
+
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Sewage taxonomy.
+ */
+class C21TermsListingSewageMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'sewage',
+      'table' => 'listing_building_dtl',
+      'column' => 'sewage',
+      'description' => t('Sewage Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingWaterMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'water',
+      'table' => 'listing_building_dtl',
+      'column' => 'water',
+      'description' => t('Water Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingHeatMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'heat',
+      'table' => 'listing_building_dtl',
+      'column' => 'heat',
+      'description' => t('Heat Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingInsulationMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'insulation',
+      'table' => 'listing_building_dtl',
+      'column' => 'insulation',
+      'description' => t('Insulation Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingRoadSurfaceMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'road surface',
+      'table' => 'listing_building_dtl',
+      'column' => 'road_surface',
+      'description' => t('Road Surface Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingGarageMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'garage',
+      'table' => 'listing_building_dtl',
+      'column' => 'garage',
+      'description' => t('Garage Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingBasementMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'basement',
+      'table' => 'listing_building_dtl',
+      'column' => 'basement',
+      'description' => t('Basement Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingWindowsMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'windows',
+      'table' => 'listing_building_dtl',
+      'column' => 'windows',
+      'description' => t('Windows Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingFloorsMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'floors',
+      'table' => 'listing_building_dtl',
+      'column' => 'floors',
+      'description' => t('Floors Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingWallsMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'walls',
+      'table' => 'listing_building_dtl',
+      'column' => 'walls',
+      'description' => t('Walls Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingAdditionalBuildingMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'additional building',
+      'table' => 'listing_building_dtl',
+      'column' => 'add_building',
+      'description' => t('Additional Building Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingSchoolDistrictMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'school district',
+      'table' => 'listing_building_dtl',
+      'column' => 'school_district',
+      'description' => t('School District'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingFurnitureMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'furniture',
+      'table' => 'listing_building_dtl',
+      'column' => 'furniture',
+      'description' => t('Furniture'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingElectricCompanyMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'electric company',
+      'table' => 'listing_building_dtl',
+      'column' => 'electric_company',
+      'description' => t('Electric Company'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingDevelopmentMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'development',
+      'table' => 'listing_location_dtl',
+      'column' => 'development',
+      'description' => t('Development'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration fo rthe Listing Water taxonomy.
+ */
+class C21TermsListingTownshipMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'township',
+      'table' => 'listing_location_dtl',
+      'column' => 'township',
+      'description' => t('Township'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+
