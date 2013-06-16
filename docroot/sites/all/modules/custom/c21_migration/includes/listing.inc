@@ -13,6 +13,7 @@ class C21ListingMigration extends C21Migration {
     $source_fields = array(
       'nid' => t('The numeric portion of the listing id from the old site.'),
       'tags' => t('General taxonomy terms (Lakeview, Foreclosure, etc...)'),
+      'list_date' => t('The list date range for the listing.'),
     );
     $query = Database::getConnection('default', 'legacy')
           ->select('listings', 'l');
@@ -42,25 +43,51 @@ class C21ListingMigration extends C21Migration {
       MigrateDestinationNode::getKeySchema()
     );
 
-
+    // Handle simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
+    $this->addSimpleFieldMappings(array('list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style'));
 
-    // Migrate requires is_new to be TRUE when predefining an nid.
+    // Map the nid from the listing_id. Migrate requires is_new to be TRUE
+    // when predefining an nid.
     $this->addFieldMapping('is_new')
          ->defaultValue('TRUE');
 
+    // Map agent(s).
     $this->addFieldMapping('field_listing_agent', 'agent')
          ->separator('/')
          ->callbacks(array($this, 'callbackProcessListingAgent'));
+
+    // Map the description.
     $this->addFieldMapping('field_listing_description', 'blurb');
     $this->addFieldMapping('field_listing_description:format', NULL)
          ->defaultValue('rich_text');
+
+    // Map tags.
     $this->addFieldMapping('field_listing_tags', 'tags')
          ->separator(',');
+
+    // Map listing type.
+    $this->addFieldMapping('field_listing_type', 'listing_type')
+         ->callbacks(array($this, 'callbackProcessListingType'));
+
+    // Map listing status.
+    $this->addFieldMapping('field_listing_status', 'status')
+         ->callbacks(array($this, 'callbackProcessListingStatus'));
+
+    // Map zoning.
+    $this->addFieldMapping('field_listing_zoning', 'zoning')
+         ->callbacks(array($this, 'callbackProcessListingZoning'));
+
+    // Map the lockbox field.
+    $this->addFieldMapping('field_listing_lockbox_key', 'lockbox');
+
+    // Map the VR Tour link.
+    $this->addFieldMapping('field_listing_virtual_tour', 'tour_link');
+
   }
 
   function prepareRow($source_row) {
-    if (parent::prepareRow($current_row) === FALSE) {
+    if (parent::prepareRow($source_row) === FALSE) {
       return FALSE;
     }
 
@@ -96,6 +123,21 @@ class C21ListingMigration extends C21Migration {
       $source_row->tags[] = 'Fine & Unique';
     }
     $source_row->tags = implode(',', $source_row->tags);
+
+    // Handle the list date.
+    $list_date_data = array(
+      'from' => $source_row->start_date != "0000-00-00" ? $source_row->start_date : NULL,
+      'to' => $source_row->end_date != "0000-00-00" ? $source_row->end_date : NULL,
+    );
+    $source_row->list_date = drupal_json_encode($list_date_data);
+
+    // Remove list price and commission of $0.
+    if ($source_row->list_price == 0) {
+      $source_row->list_price = '';
+    }
+    if ($source_row->commission == 0) {
+      $source_row->commission = '';
+    }
 
     return TRUE;
   }
@@ -177,4 +219,39 @@ class C21ListingMigration extends C21Migration {
 
     return $ids;
   }
+
+  function callbackProcessListingType($value) {
+    return str_replace(' ', '_', $value);
+  }
+
+  function callbackProcessListingStatus($value) {
+    switch($value) {
+      case 'forsale':
+        $value = 'for_sale';
+        break;
+      case 'expired':
+        $value = 'inactive';
+        break;
+      case 'soldoutside':
+        $value = 'sold';
+        break;
+      case 'wdperminently':
+      case 'wdtemp':
+        $value = 'withdrawn';
+        break;
+    }
+
+    return $value;
+  }
+
+  function callbackProcessListingZoning($value) {
+    switch($value) {
+      case 'rescomm':
+        $value = 'res_comm';
+        break;
+    }
+
+    return $value;
+  }
+
 }

@@ -6,79 +6,94 @@
 function c21_migration_migrate_api() {
   $api = array(
     'api' => 2,
+    'groups' => array(
+      'listing_basic' => array(
+        'title' => t('Basic Data'),
+        'description' => 'Users',
+      ),
+      'listing_content' => array(
+        'title' => t('Listing Content'),
+      ),
+      'listing_vocabularies' => array(
+        'title' => t('Listing Vocabularies'),
+      ),
+    ),
     'migrations' => array(
       'c21User' => array(
         'class_name' => 'C21UserMigration',
+        'group_name' => 'listing_basic',
       ),
       'c21Agent' => array(
         'class_name' => 'C21AgentMigration',
+        'group_name' => 'listing_content',
       ),
       'c21Listing' => array(
         'class_name' => 'C21ListingMigration',
+        'group_name' => 'listing_content',
       ),
       'c21TermsListingSewage' => array(
         'class_name' => 'C21TermsListingSewageMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingWater' => array(
         'class_name' => 'C21TermsListingWaterMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingHeat' => array(
         'class_name' => 'C21TermsListingHeatMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingInsulation' => array(
         'class_name' => 'C21TermsListingInsulationMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingRoadSurface' => array(
         'class_name' => 'C21TermsListingRoadSurfaceMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingGarage' => array(
         'class_name' => 'C21TermsListingGarageMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingBasement' => array(
         'class_name' => 'C21TermsListingBasementMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingWindows' => array(
         'class_name' => 'C21TermsListingWindowsMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingFloors' => array(
         'class_name' => 'C21TermsListingFloorsMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingWalls' => array(
         'class_name' => 'C21TermsListingWallsMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingAdditionalBuilding' => array(
         'class_name' => 'C21TermsListingAdditionalBuildingMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingSchoolDistrict' => array(
         'class_name' => 'C21TermsListingSchoolDistrictMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingFurniture' => array(
         'class_name' => 'C21TermsListingFurnitureMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingElectricCompany' => array(
         'class_name' => 'C21TermsListingElectricCompanyMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingDevelopment' => array(
         'class_name' => 'C21TermsListingDevelopmentMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingTownship' => array(
         'class_name' => 'C21TermsListingTownshipMigration',
-        'group' => 'Listing Vocabularies',
+        'group_name' => 'listing_vocabularies',
       ),
     ),
   );
@@ -96,6 +111,23 @@ abstract class C21Migration extends Migration {
       new MigrateTeamMember('Alexander Ross', 'alex@bleen.net', t('Technical Lead')),
       new MigrateTeamMember('Robin Gruen', 'rgruen@c21hull.com', t('Product Owner')),
     );
+  }
+
+  /**
+   * Shortcut for creating mapings that map a source of 'foo' to a destination
+   * of 'field_[context]_foo'.
+   *
+   * @param array $fields
+   *   An array of source field names.
+   *
+   * @param  string $context (optional)
+   *   The context of the field being mapped to. This is typically the name of
+   *   the content type.
+   */
+  protected function addSimpleFieldMappings($fields, $context = 'listing') {
+    foreach ($fields as $field) {
+      $this->addFieldMapping('field_' . $context . '_' . $field, $field);
+    }
   }
 
   public function normalize(&$value, $matches = array(), $contains = array(), $lowercase = TRUE) {
@@ -396,6 +428,7 @@ drush_print('NO MATCH: ' . $value);
   }
 
   public function normalizeWindows($value, $delimiter = ",", $return_all = FALSE) {
+    $matches = array();
     $contains = array(
       'andersen' => 'andersen',
       'insulated' => 'insulated',
@@ -427,9 +460,7 @@ drush_print('NO MATCH: ' . $value);
   }
 
   public function normalizeFloors($value, $delimiter = ",", $return_all = FALSE) {
-    $matches = array(
-
-    );
+    $matches = array();
     $contains = array(
       'laminent' => 'laminate',
       'laminant' => 'laminate',

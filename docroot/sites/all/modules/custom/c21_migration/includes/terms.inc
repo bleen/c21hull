@@ -26,7 +26,7 @@ class C21TermsListingMigration extends C21Migration {
     $this->source = new MigrateSourceSQL($query, array(), NULL, array('map_joinable' => FALSE));
 
     // Setup the destination object.
-    $this->destination = new MigrateDestinationTerm('listing_' . $this->vocabulary['column']);
+    $this->destination = new MigrateDestinationTerm($this->vocabulary['vocabulary']);
 
     // Setup the mapping object.
     $this->map = new MigrateSQLMap($this->machineName,
@@ -69,6 +69,7 @@ class C21TermsListingSewageMigration extends C21TermsListingMigration {
       'name' => 'sewage',
       'table' => 'listing_building_dtl',
       'column' => 'sewage',
+      'vocabulary' => 'listing_sewage',
       'description' => t('Sewage Terms'),
     );
 
@@ -85,6 +86,7 @@ class C21TermsListingWaterMigration extends C21TermsListingMigration {
       'name' => 'water',
       'table' => 'listing_building_dtl',
       'column' => 'water',
+      'vocabulary' => 'listing_water',
       'description' => t('Water Terms'),
     );
 
@@ -101,6 +103,7 @@ class C21TermsListingHeatMigration extends C21TermsListingMigration {
       'name' => 'heat',
       'table' => 'listing_building_dtl',
       'column' => 'heat',
+      'vocabulary' => 'listing_heat',
       'description' => t('Heat Terms'),
     );
 
@@ -117,6 +120,7 @@ class C21TermsListingInsulationMigration extends C21TermsListingMigration {
       'name' => 'insulation',
       'table' => 'listing_building_dtl',
       'column' => 'insulation',
+      'vocabulary' => 'listing_insulation',
       'description' => t('Insulation Terms'),
     );
 
@@ -133,6 +137,7 @@ class C21TermsListingRoadSurfaceMigration extends C21TermsListingMigration {
       'name' => 'road surface',
       'table' => 'listing_building_dtl',
       'column' => 'road_surface',
+      'vocabulary' => 'listing_road_surface',
       'description' => t('Road Surface Terms'),
     );
 
@@ -149,6 +154,7 @@ class C21TermsListingGarageMigration extends C21TermsListingMigration {
       'name' => 'garage',
       'table' => 'listing_building_dtl',
       'column' => 'garage',
+      'vocabulary' => 'listing_garage',
       'description' => t('Garage Terms'),
     );
 
@@ -165,6 +171,7 @@ class C21TermsListingBasementMigration extends C21TermsListingMigration {
       'name' => 'basement',
       'table' => 'listing_building_dtl',
       'column' => 'basement',
+      'vocabulary' => 'listing_basement',
       'description' => t('Basement Terms'),
     );
 
@@ -181,6 +188,7 @@ class C21TermsListingWindowsMigration extends C21TermsListingMigration {
       'name' => 'windows',
       'table' => 'listing_building_dtl',
       'column' => 'windows',
+      'vocabulary' => 'listing_windows',
       'description' => t('Windows Terms'),
     );
 
@@ -197,6 +205,7 @@ class C21TermsListingFloorsMigration extends C21TermsListingMigration {
       'name' => 'floors',
       'table' => 'listing_building_dtl',
       'column' => 'floors',
+      'vocabulary' => 'listing_floors',
       'description' => t('Floors Terms'),
     );
 
@@ -213,6 +222,7 @@ class C21TermsListingWallsMigration extends C21TermsListingMigration {
       'name' => 'walls',
       'table' => 'listing_building_dtl',
       'column' => 'walls',
+      'vocabulary' => 'listing_walls',
       'description' => t('Walls Terms'),
     );
 
@@ -229,6 +239,7 @@ class C21TermsListingAdditionalBuildingMigration extends C21TermsListingMigratio
       'name' => 'additional building',
       'table' => 'listing_building_dtl',
       'column' => 'add_building',
+      'vocabulary' => 'listing_additional_building',
       'description' => t('Additional Building Terms'),
     );
 
@@ -245,6 +256,7 @@ class C21TermsListingSchoolDistrictMigration extends C21TermsListingMigration {
       'name' => 'school district',
       'table' => 'listing_building_dtl',
       'column' => 'school_district',
+      'vocabulary' => 'listing_school_district',
       'description' => t('School District'),
     );
 
@@ -261,6 +273,7 @@ class C21TermsListingFurnitureMigration extends C21TermsListingMigration {
       'name' => 'furniture',
       'table' => 'listing_building_dtl',
       'column' => 'furniture',
+      'vocabulary' => 'listing_furniture',
       'description' => t('Furniture'),
     );
 
@@ -277,6 +290,7 @@ class C21TermsListingElectricCompanyMigration extends C21TermsListingMigration {
       'name' => 'electric company',
       'table' => 'listing_building_dtl',
       'column' => 'electric_company',
+      'vocabulary' => 'listing_electric_company',
       'description' => t('Electric Company'),
     );
 
@@ -293,6 +307,7 @@ class C21TermsListingDevelopmentMigration extends C21TermsListingMigration {
       'name' => 'development',
       'table' => 'listing_location_dtl',
       'column' => 'development',
+      'vocabulary' => 'listing_development',
       'description' => t('Development'),
     );
 
@@ -309,6 +324,7 @@ class C21TermsListingTownshipMigration extends C21TermsListingMigration {
       'name' => 'township',
       'table' => 'listing_location_dtl',
       'column' => 'township',
+      'vocabulary' => 'listing_township',
       'description' => t('Township'),
     );
 
