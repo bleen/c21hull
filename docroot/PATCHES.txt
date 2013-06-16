@@ -23,3 +23,10 @@ MASKED_INPUT
 DATE
   * It's annoying to always see the date_migrate_example module on the features
     page so we made it hidden by adding "hidden = TRUE" to its .info file.
+
+  * The date_migrate submodule needs to be patched to work with the latest
+    version of migrate.
+
+    -- PATCH --
+    https://drupal.org/node/1832544#comment-6694946
+
