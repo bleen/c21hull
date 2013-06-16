@@ -96,6 +96,32 @@ function c21_listings_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_agent_primary_office'
+  $field_bases['field_agent_primary_office'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_agent_primary_office',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'dingmans_ferry' => 'Dingman\'s Ferry',
+        'milford' => 'Milford',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_agent_status'
   $field_bases['field_agent_status'] = array(
     'active' => 1,
@@ -932,6 +958,26 @@ function c21_listings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listing_comission',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'precision' => 10,
+      'scale' => 2,
+    ),
+    'translatable' => 0,
+    'type' => 'number_decimal',
+  );
+
+  // Exported field_base: 'field_listing_commission'
+  $field_bases['field_listing_commission'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_commission',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,

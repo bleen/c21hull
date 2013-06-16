@@ -108,7 +108,7 @@ function c21_listings_field_group_info() {
       3 => 'field_listing_list_date',
       4 => 'field_listing_zoning',
       5 => 'field_listing_list_price',
-      6 => 'field_listing_comission',
+      6 => 'field_listing_commission',
       7 => 'field_listing_lockbox_key',
       8 => 'field_listing_style',
       9 => 'field_listing_acreage',

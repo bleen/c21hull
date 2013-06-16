@@ -614,6 +614,51 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-agent-field_agent_primary_office'
+  $field_instances['node-agent-field_agent_primary_office'] = array(
+    'bundle' => 'agent',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 'dingmans_ferry',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_agent_primary_office',
+    'label' => 'Primary office',
+    'required' => 1,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-agent-field_agent_status'
   $field_instances['node-agent-field_agent_status'] = array(
     'bundle' => 'agent',
@@ -1943,6 +1988,56 @@ function c21_listings_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_listing_comission',
     'label' => 'Comission',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'max' => '',
+      'min' => '',
+      'prefix' => '$',
+      'suffix' => '%',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'numberfield',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_commission'
+  $field_instances['node-listing-field_listing_commission'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Values less than 100 will be considered a percentage, otherwise a dollar amount',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_commission',
+    'label' => 'Commission',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -5085,7 +5180,7 @@ function c21_listings_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'ex: http://www.example.com/tour.htm',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5406,6 +5501,7 @@ function c21_listings_field_default_field_instances() {
   t('Bio');
   t('Block');
   t('Comission');
+  t('Commission');
   t('Decks');
   t('Description');
   t('Development');
@@ -5465,6 +5561,7 @@ function c21_listings_field_default_field_instances() {
   t('Photo');
   t('Photos');
   t('Porch');
+  t('Primary office');
   t('Road Surface');
   t('School District');
   t('Section');
@@ -5499,6 +5596,7 @@ function c21_listings_field_default_field_instances() {
   t('ex: full, partial, unknown');
   t('ex: gravel, paved, dirt');
   t('ex: hardwood, linoleum, tile, carpet, vinyl');
+  t('ex: http://www.example.com/tour.htm');
   t('ex: lakefront, new construction, foreclosure');
   t('ex: septic, septic needed, central, shared, existing permit');
   t('ex: shed');
