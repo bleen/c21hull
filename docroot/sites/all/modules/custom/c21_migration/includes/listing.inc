@@ -14,6 +14,12 @@ class C21ListingMigration extends C21Migration {
       'nid' => t('The numeric portion of the listing id from the old site.'),
       'tags' => t('General taxonomy terms (Lakeview, Foreclosure, etc...)'),
       'list_date' => t('The list date range for the listing.'),
+      'featured_photo_filename' => t('Featured photo file'),
+      'featured_photo_source_dir' => t('Featured photo source directory'),
+      'featured_photo_destination_file' => t('Featured photo destination filename'),
+      'photos_filenames' => t('Photo files'),
+      'photos_source_dir' => t('Photo source directory'),
+      'photos_destination_files' => t('Photo destination filename'),
     );
     $query = Database::getConnection('default', 'legacy')
           ->select('listings', 'l');
@@ -45,44 +51,42 @@ class C21ListingMigration extends C21Migration {
 
     // Handle simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
-    $this->addSimpleFieldMappings(array('list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style'));
+    $this->addSimpleFieldMappings(array('list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section'));
 
-    // Map the nid from the listing_id. Migrate requires is_new to be TRUE
-    // when predefining an nid.
+    // Handle standard field mappings
     $this->addFieldMapping('is_new')
          ->defaultValue('TRUE');
-
-    // Map agent(s).
     $this->addFieldMapping('field_listing_agent', 'agent')
          ->separator('/')
          ->callbacks(array($this, 'callbackProcessListingAgent'));
-
-    // Map the description.
     $this->addFieldMapping('field_listing_description', 'blurb');
-    $this->addFieldMapping('field_listing_description:format', NULL)
-         ->defaultValue('rich_text');
-
-    // Map tags.
     $this->addFieldMapping('field_listing_tags', 'tags')
          ->separator(',');
-
-    // Map listing type.
+    $this->addFieldMapping('field_listing_description:format', NULL)
+         ->defaultValue('rich_text');
     $this->addFieldMapping('field_listing_type', 'listing_type')
          ->callbacks(array($this, 'callbackProcessListingType'));
-
-    // Map listing status.
     $this->addFieldMapping('field_listing_status', 'status')
          ->callbacks(array($this, 'callbackProcessListingStatus'));
-
-    // Map zoning.
     $this->addFieldMapping('field_listing_zoning', 'zoning')
          ->callbacks(array($this, 'callbackProcessListingZoning'));
-
-    // Map the lockbox field.
     $this->addFieldMapping('field_listing_lockbox_key', 'lockbox');
-
-    // Map the VR Tour link.
     $this->addFieldMapping('field_listing_virtual_tour', 'tour_link');
+    $this->addFieldMapping('field_listing_tax_map', 'tax_map_num');
+    $this->addFieldMapping('field_listing_street', 'street_road');
+    $this->addFieldMapping('field_listing_notes', 'additional_info');
+
+    $this->addFieldMapping('field_listing_featured_photo', 'featured_photo_filename');
+    $this->addFieldMapping('field_listing_featured_photo:source_dir', 'featured_photo_source_dir');
+    $this->addFieldMapping('field_listing_featured_photo:destination_file', 'featured_photo_destination_file');
+    $this->addFieldMapping('field_listing_featured_photo:file_replace')
+        ->defaultValue(FILE_EXISTS_RENAME);
+    $this->addFieldMapping('field_listing_photos', 'photos_filenames');
+    $this->addFieldMapping('field_listing_photos:source_dir', 'photos_source_dir');
+    $this->addFieldMapping('field_listing_photos:destination_file', 'photos_destination_files');
+    $this->addFieldMapping('field_listing_photos:file_replace')
+        ->defaultValue(FILE_EXISTS_RENAME);
+
 
   }
 
@@ -104,9 +108,35 @@ class C21ListingMigration extends C21Migration {
     }
 
     // Remove test data.
+    // @todo: make this more generic.
     if (stripos($source->agent, 'test') !== FALSE) {
       return FALSE;
     }
+
+    // Prepare images for import.
+    $source_dir = variable_get('environment', 'local') ? '/Users/alex/Sites/c21hull/source_files' : '/home/hull/c21hull.com/listings/photos';
+    $source_dir .= '/' . $source_row->listing_id;
+    $photos = scandir($source_dir);
+    $filenames = array();
+    $destination_filenames = array();
+
+    $source_row->featured_photo_filename = $source_row->primary_photo . '_lg.jpg';
+    $source_row->featured_photo_destination_file = $source_row->nid . '.jpg';
+    $source_row->featured_photo_source_dir = $source_dir;
+    foreach ($photos as $photo) {
+      $file = pathinfo($photo);
+      list($num, $size) = explode('_', $file['filename']);
+      if ($file['extension'] == 'jpg' && $size == 'lg') {
+        $filenames[] = $file['basename'];
+        $destination_filenames[] = $source_row->nid . '_' . $num  . '.' . $file['extension'];
+      }
+      else {
+        continue;
+      }
+    }
+    $source_row->photos_filenames = $filenames;
+    $source_row->photos_destination_files = $destination_filenames;
+    $source_row->photos_source_dir = $source_dir;
 
     // Setup "tags".
     $source_row->tags = array();
