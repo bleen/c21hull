@@ -565,4 +565,37 @@ drush_print('NO MATCH: ' . $value);
     return $this->normalize($value, $matches, $contains);
   }
 
+  protected function getFloors() {
+    $floors = array(
+      '1' => array('title' => 'Floor 1', 'destination' => 'f1'),
+      '2' => array('title' => 'Floor 2', 'destination' => 'f2'),
+      '0' => array('title' => 'Basement', 'destination' => 'b'),
+    );
+
+    return $floors;
+  }
+
+  protected function getRooms() {
+    $rooms = array(
+      'livingroom' => array('title' => 'Living Room', 'destination' => 'living_room'),
+      'diningroom' => array('title' => 'Dining Room', 'destination' => 'dining_room'),
+      'kitchen' => array('title' => 'Kitchen', 'destination' => 'kitchen'),
+      'livdinroom' => array('title' => 'Living/Dining Room', 'destination' => 'liv_din_room'),
+      'dinkitchen' => array('title' => 'Dining/Kitchen', 'destination' => 'din_kitchen'),
+      'bath1' => array('title' => 'Bathroom 1', 'destination' => 'bathroom1'),
+      'bath2' => array('title' => 'Bathroom 2', 'destination' => 'bathroom2'),
+      'bath3' => array('title' => 'Bathroom 3', 'destination' => 'bathroom3'),
+      'bedroom1' => array('title' => 'Bedroom 1', 'destination' => 'bedroom1'),
+      'bedroom2' => array('title' => 'Bedroom 2', 'destination' => 'bedroom2'),
+      'bedroom3' => array('title' => 'Bedroom 3', 'destination' => 'bedroom3'),
+      'bedroom4' => array('title' => 'Bedroom 4', 'destination' => 'bedroom4'),
+      'family_room' => array('title' => 'Family Room', 'destination' => 'family_room'),
+      'laundry' => array('title' => 'Laundry', 'destination' => 'laundry'),
+      'other1' => array('title' => 'Other 1', 'destination' => 'other1'),
+      'other2' => array('title' => 'Other 2', 'destination' => 'other2'),
+    );
+
+    return $rooms;
+  }
+
 }

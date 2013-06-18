@@ -10,33 +10,7 @@ class C21ListingMigration extends C21Migration {
     $this->dependencies = array('c21Agent');
 
     // Setup the source object for the listing data.
-    $source_fields = array(
-      'nid' => t('The numeric portion of the listing id from the old site.'),
-      'tags' => t('General taxonomy terms (Lakeview, Foreclosure, etc...)'),
-      'list_date' => t('The list date range for the listing.'),
-      'featured_photo_filename' => t('Featured photo file'),
-      'featured_photo_source_dir' => t('Featured photo source directory'),
-      'featured_photo_destination_file' => t('Featured photo destination filename'),
-      'photos_filenames' => t('Photo files'),
-      'photos_source_dir' => t('Photo source directory'),
-      'photos_destination_files' => t('Photo destination filename'),
-      'sewage' => t('Sewage terms'),
-      'water' => t('Water terms'),
-      'heat' => t('Heat terms'),
-      'insulation' => t('Insula terms'),
-      'road_surface' => t('Road surface terms'),
-      'garage' => t('Garage terms'),
-      'basement' => t('Basement terms'),
-      'windows' => t('Windows terms'),
-      'floors' => t('Floors terms'),
-      'walls' => t('Walls terms'),
-      'add_building' => t('Add building terms'),
-      'furniture' => t('Furniture terms'),
-      'electric_company' => t('Electric terms'),
-      'school_district' => t('School terms'),
-      'development' => t('Development terms'),
-      'township' => t('Township terms'),
-    );
+    $source_fields = $this->getSourceFields();
     $query = Database::getConnection('default', 'legacy')
           ->select('listings', 'l');
     $query->join('listing_building_dtl', 'lbd', 'l.listing_id = lbd.listing_id');
@@ -67,7 +41,7 @@ class C21ListingMigration extends C21Migration {
 
     // Handle simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
-    $this->addSimpleFieldMappings(array('list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section'));
+    $this->addSimpleFieldMappings(array('list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
 
     // Handle standard field mappings
     $this->addFieldMapping('is_new')
@@ -135,6 +109,13 @@ class C21ListingMigration extends C21Migration {
          ->separator(',');
     $this->addFieldMapping('field_listing_township', 'township')
          ->separator(',');
+
+    foreach ($this->getRooms() as $room => $room_data) {
+      foreach ($this->getFloors() as $floor => $floor_data) {
+        $this->addFieldMapping('field_listing_' . $room_data['destination'] . '_' . $floor_data['destination'], $room . '_' . $floor);
+      }
+    }
+
   }
 
   function prepareRow($source_row) {
@@ -155,7 +136,7 @@ class C21ListingMigration extends C21Migration {
     }
 
     // Remove test data.
-    // @todo: make this more generic.
+// @todo: make this more generic.
     if (stripos($source->agent, 'test') !== FALSE) {
       return FALSE;
     }
@@ -194,6 +175,9 @@ class C21ListingMigration extends C21Migration {
     $extra_water_fields = array(
       'shared' => 'shared',
     );
+    $extra_development_fields = array(
+      'spec_notes' => '@value',
+    );
 
     $source_row->sewage = $this->prepareListingTerms($source_row, 'sewage', 'normalizeSewage', $extra_sewage_fields);
     $source_row->water = $this->prepareListingTerms($source_row, 'water', 'normalizeWater', $extra_water_fields);
@@ -212,6 +196,28 @@ class C21ListingMigration extends C21Migration {
     $source_row->development = $this->prepareListingTerms($source_row, 'development');
     $source_row->township = $this->prepareListingTerms($source_row, 'township');
 
+    // Prepare measurements.
+    foreach ($this->getRooms() as $room => $room_data) {
+      foreach ($this->getFloors() as $floor => $floor_data) {
+        $query = Database::getConnection('default', 'legacy')
+          ->select('listing_measurements', 'lm')
+          ->fields('lm', array('measurement'))
+          ->condition('listing_id', $source_row->listing_id)
+          ->condition('floor', $floor)
+          ->condition('room', $room);
+
+        $measurement = Database::getConnection('default', 'legacy')
+          ->select('listing_measurements', 'lm')
+          ->fields('lm', array('measurement'))
+          ->condition('listing_id', $source_row->listing_id)
+          ->condition('floor', $floor)
+          ->condition('room', $room)
+          ->execute()
+          ->fetchField();
+
+        $source_row->{$room . '_' . $floor} = is_null($measurement) ? '' : $measurement;
+      }
+    }
 
     // Handle the list date.
     $list_date_data = array(
@@ -229,6 +235,45 @@ class C21ListingMigration extends C21Migration {
     }
 
     return TRUE;
+  }
+
+  function getSourceFields() {
+    $source_fields = array(
+      'nid' => t('The numeric portion of the listing id from the old site.'),
+      'tags' => t('General taxonomy terms (Lakeview, Foreclosure, etc...)'),
+      'list_date' => t('The list date range for the listing.'),
+      'featured_photo_filename' => t('Featured photo file'),
+      'featured_photo_source_dir' => t('Featured photo source directory'),
+      'featured_photo_destination_file' => t('Featured photo destination filename'),
+      'photos_filenames' => t('Photo files'),
+      'photos_source_dir' => t('Photo source directory'),
+      'photos_destination_files' => t('Photo destination filename'),
+      'sewage' => t('Sewage terms'),
+      'water' => t('Water terms'),
+      'heat' => t('Heat terms'),
+      'insulation' => t('Insula terms'),
+      'road_surface' => t('Road surface terms'),
+      'garage' => t('Garage terms'),
+      'basement' => t('Basement terms'),
+      'windows' => t('Windows terms'),
+      'floors' => t('Floors terms'),
+      'walls' => t('Walls terms'),
+      'add_building' => t('Add building terms'),
+      'furniture' => t('Furniture terms'),
+      'electric_company' => t('Electric terms'),
+      'school_district' => t('School terms'),
+      'development' => t('Development terms'),
+      'township' => t('Township terms'),
+    );
+
+    // Add fields for `Measurment` fields.
+    foreach ($this->getRooms() as $room => $room_data) {
+      foreach ($this->getFloors() as $floor => $floor_data) {
+        $source_fields[$room . '_' . $floor] = $room_data['title'] . ' measurements (' . $floor_data['title'] . ')';
+      }
+    }
+
+    return $source_fields;
   }
 
   function prepareListingTags($source_row) {
@@ -258,7 +303,7 @@ class C21ListingMigration extends C21Migration {
 
     foreach ($extra_fields as $extra_field => $additional_term) {
       if ($source_row->{$extra_field}) {
-        $terms[] = $additional_term;
+        $terms[] = $additional_term == '@value' ? $source_row->{$extra_field} : $additional_term;
       }
     }
 
@@ -331,7 +376,6 @@ class C21ListingMigration extends C21Migration {
               ->condition('n.title', "%$val%", 'LIKE')
               ->fields('n', array('nid'));
         $nid = $query->execute()->fetchField();
-        if (empty($nid)){drush_print_r($val);}
         $ids[] = $nid;
       }
     }
