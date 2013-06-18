@@ -161,7 +161,7 @@ class C21ListingMigration extends C21Migration {
     }
 
     // Prepare images for import.
-    $source_dir = variable_get('environment', 'local') ? '/Users/alex/Sites/c21hull/source_files' : '/home/hull/c21hull.com/listings/photos';
+    $source_dir = variable_get('environment', 'local') ? '/Users/alex/Sites/c21hull/source_files/photos' : '/home/hull/c21hull.com/listings/photos';
     $source_dir .= '/' . $source_row->listing_id;
     $photos = scandir($source_dir);
     $filenames = array();
