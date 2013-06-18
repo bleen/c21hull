@@ -45,18 +45,20 @@ class C21TermsListingMigration extends C21Migration {
   }
 
   function prepareRow($source_row) {
+    $normalized_values = array();
     $normalize_function = 'normalize' . str_replace(' ', '', ucwords($this->vocabulary['name']));
-    if (method_exists($this, $normalize_function)) {
-      $source_row->{$this->vocabulary['column']} = $this->{$normalize_function}($source_row->{$this->vocabulary['column']});
-    }
-    else {
-      $source_row->{$this->vocabulary['column']} = $this->normalize($source_row->{$this->vocabulary['column']});
+    $normalize_function = method_exists($this, $normalize_function) ? $normalize_function : 'normalize';
+    $delimiters = $this->normalizeDelimiters($this->vocabulary['column']);
+
+    $terms = $this->explodeTerms($source_row->{$this->vocabulary['column']}, $delimiters);
+    foreach ($terms as $term) {
+      $normalized_value = $this->{$normalize_function}($source_row->{$this->vocabulary['column']});
+      if (!empty($normalized_value)) {
+        $normalized_values[] = $normalized_value;
+      }
     }
 
-    if ($source_row->{$this->vocabulary['column']} === FALSE) {
-      return FALSE;
-    }
-
+    $source_row->{$this->vocabulary['column']} = !empty($normalized_values) ? implode(',', $normalized_values) : FALSE;
   }
 }
 

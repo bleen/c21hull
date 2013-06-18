@@ -20,6 +20,22 @@ class C21ListingMigration extends C21Migration {
       'photos_filenames' => t('Photo files'),
       'photos_source_dir' => t('Photo source directory'),
       'photos_destination_files' => t('Photo destination filename'),
+      'sewage' => t('Sewage terms'),
+      'water' => t('Water terms'),
+      'heat' => t('Heat terms'),
+      'insulation' => t('Insula terms'),
+      'road_surface' => t('Road surface terms'),
+      'garage' => t('Garage terms'),
+      'basement' => t('Basement terms'),
+      'windows' => t('Windows terms'),
+      'floors' => t('Floors terms'),
+      'walls' => t('Walls terms'),
+      'add_building' => t('Add building terms'),
+      'furniture' => t('Furniture terms'),
+      'electric_company' => t('Electric terms'),
+      'school_district' => t('School terms'),
+      'development' => t('Development terms'),
+      'township' => t('Township terms'),
     );
     $query = Database::getConnection('default', 'legacy')
           ->select('listings', 'l');
@@ -87,7 +103,38 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('field_listing_photos:file_replace')
         ->defaultValue(FILE_EXISTS_RENAME);
 
-
+    $this->addFieldMapping('field_listing_sewage', 'sewage')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_water', 'water')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_heat', 'heat')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_insulation', 'insulation')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_road_surface', 'road_surface')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_garage', 'garage')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_basement', 'basement')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_windows', 'windows')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_floors', 'floors')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_walls', 'walls')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_additional_bldg', 'add_building')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_furniture', 'furniture')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_electric_company', 'electric_company')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_school_district', 'school_district')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_development', 'development')
+         ->separator(',');
+    $this->addFieldMapping('field_listing_township', 'township')
+         ->separator(',');
   }
 
   function prepareRow($source_row) {
@@ -138,21 +185,33 @@ class C21ListingMigration extends C21Migration {
     $source_row->photos_destination_files = $destination_filenames;
     $source_row->photos_source_dir = $source_dir;
 
-    // Setup "tags".
-    $source_row->tags = array();
-    if ($source_row->is_lakefront) {
-      $source_row->tags[] = 'Lakefront';
-    }
-    if ($source_row->is_newconstruction) {
-      $source_row->tags[] = 'New Construction';
-    }
-    if ($source_row->is_foreclosure) {
-      $source_row->tags[] = 'Foreclosure';
-    }
-    if ($source_row->is_fine) {
-      $source_row->tags[] = 'Fine & Unique';
-    }
-    $source_row->tags = implode(',', $source_row->tags);
+    // Prepare taxonomy terms.
+    $source_row->tags = $this->prepareListingTags($source_row);
+    $extra_sewage_fields = array(
+      'shared' => 'shared',
+      'septic_permit' => 'existing septic permit',
+    );
+    $extra_water_fields = array(
+      'shared' => 'shared',
+    );
+
+    $source_row->sewage = $this->prepareListingTerms($source_row, 'sewage', 'normalizeSewage', $extra_sewage_fields);
+    $source_row->water = $this->prepareListingTerms($source_row, 'water', 'normalizeWater', $extra_water_fields);
+    $source_row->heat = $this->prepareListingTerms($source_row, 'heat', 'normalizeHeat');
+    $source_row->insulation = $this->prepareListingTerms($source_row, 'insulation');
+    $source_row->road_surface = $this->prepareListingTerms($source_row, 'road_surface', 'normalizeRoadSurface');
+    $source_row->garage = $this->prepareListingTerms($source_row, 'garage', 'normalizeGarage');
+    $source_row->basement = $this->prepareListingTerms($source_row, 'basement', 'normalizeBasement');
+    $source_row->windows = $this->prepareListingTerms($source_row, 'windows', 'normalizeWindows');
+    $source_row->floors = $this->prepareListingTerms($source_row, 'floors', 'normalizeFloors');
+    $source_row->walls = $this->prepareListingTerms($source_row, 'walls', 'normalizeWalls');
+    $source_row->add_building = $this->prepareListingTerms($source_row, 'add_building', 'normalizeAdditionalBuilding');
+    $source_row->school_district = $this->prepareListingTerms($source_row, 'school_district');
+    $source_row->furniture = $this->prepareListingTerms($source_row, 'furniture', 'normalizeFurniture');
+    $source_row->electric_company = $this->prepareListingTerms($source_row, 'electric_company');
+    $source_row->development = $this->prepareListingTerms($source_row, 'development');
+    $source_row->township = $this->prepareListingTerms($source_row, 'township');
+
 
     // Handle the list date.
     $list_date_data = array(
@@ -172,8 +231,38 @@ class C21ListingMigration extends C21Migration {
     return TRUE;
   }
 
-  function callbackProcessListingTags($value){
-    return $value;
+  function prepareListingTags($source_row) {
+    $tags = array();
+    if ($source_row->is_lakefront) {
+      $tags[] = 'Lakefront';
+    }
+    if ($source_row->is_newconstruction) {
+      $tags[] = 'New Construction';
+    }
+    if ($source_row->is_foreclosure) {
+      $tags[] = 'Foreclosure';
+    }
+    if ($source_row->is_fine) {
+      $tags[] = 'Fine & Unique';
+    }
+    return implode(',', $tags);
+  }
+
+  function prepareListingTerms($source_row, $field, $normalize_function = 'normalize', $extra_fields = array()) {
+    $delimiters = $this->normalizeDelimiters($field);
+    $source_terms = $this->explodeTerms($source_row->{$field}, $delimiters);
+
+    foreach ($source_terms as $source_term) {
+      $terms[] = $this->{$normalize_function}($source_term);
+    }
+
+    foreach ($extra_fields as $extra_field => $additional_term) {
+      if ($source_row->{$extra_field}) {
+        $terms[] = $additional_term;
+      }
+    }
+
+    return implode(',', $terms);
   }
 
   function callbackProcessListingAgent($values) {

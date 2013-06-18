@@ -130,34 +130,37 @@ abstract class C21Migration extends Migration {
     }
   }
 
-  public function normalize(&$value, $matches = array(), $contains = array(), $lowercase = TRUE) {
-    if (empty($value)) {
-      return FALSE;
-    }
+  protected function explodeTerms($value, $delimiters) {
+    $delimiters =  is_string($delimiters) ? array($delimiters) : $delimiters;
+    $delimiters = preg_quote(implode('', $delimiters));
 
-    $value = $lowercase ? strtolower($value) : $value;
+    return empty($delimiters) ? array($value) : preg_split("{[" . $delimiters . "]}", $value, NULL, PREG_SPLIT_NO_EMPTY);
+  }
+
+  protected function normalize($value, $matches = array(), $contains = array()) {
+    $value = strtolower($value);
 
     // Add a set of `contains` and `matches` for invalid and junk data.
     $matches = array_merge($matches, array(
-      '*' => FALSE,
-      '**' => FALSE,
-      '***' => FALSE,
-      '****' => FALSE,
-      '*****' => FALSE,
-      '******' => FALSE,
-      '*******' => FALSE,
-      '********' => FALSE,
-      '*********' => FALSE,
-      'x' => FALSE,
-      'xx' => FALSE,
-      'xxx' => FALSE,
-      'xxxx' => FALSE,
-      'xxxxx' => FALSE,
-      'xxxxxx' => FALSE,
-      'xxxxxxx' => FALSE,
-      'xxxxxxxx' => FALSE,
-      'xxxxxxxxx' => FALSE,
-      'xxxxxxxxxx' => FALSE,
+      '*' => '',
+      '**' => '',
+      '***' => '',
+      '****' => '',
+      '*****' => '',
+      '******' => '',
+      '*******' => '',
+      '********' => '',
+      '*********' => '',
+      'x' => '',
+      'xx' => '',
+      'xxx' => '',
+      'xxxx' => '',
+      'xxxxx' => '',
+      'xxxxxx' => '',
+      'xxxxxxx' => '',
+      'xxxxxxxx' => '',
+      'xxxxxxxxx' => '',
+      'xxxxxxxxxx' => '',
       'uk' => 'unknown',
       'unknown' => 'unknown',
       'u/k' => 'unknown',
@@ -171,12 +174,12 @@ abstract class C21Migration extends Migration {
       '????' => 'unknown',
       'tbd' => 'to be determined',
       'none' => 'none',
-      'test' => FALSE,
-      'n/a' => FALSE,
-      'n / a' => FALSE,
+      'test' => '',
+      'n/a' => '',
+      'n / a' => '',
       'mixed' => 'various',
       'various' => 'various',
-      'see ' => FALSE,
+      'see ' => '',
     ));
 
     // Matches should always be checked first.
@@ -198,11 +201,51 @@ drush_print('NO MATCH: ' . $value);
     return trim($value);
   }
 
-  public function normalizeSewage($value, $delimiter = ",", $return_all = FALSE) {
-    $matches = array(
-      'septic needed - expired permit' => 'septic needed,permit required',
-      'septic/cesspool' => 'septic,cesspool',
-    );
+  protected function normalizeDelimiters($vocabulary) {
+    $delimiters = array();
+
+    switch ($vocabulary) {
+      case 'sewage':
+      case 'water':
+      case 'road_surface':
+        $delimiters[] = '/';
+        break;
+      case 'heat':
+        $delimiters[] = '/';
+        $delimiters[] = ',';
+        $delimiters[] = '+';
+        break;
+      case 'garage':
+        $delimiters[] = '/';
+        $delimiters[] = '&';
+        break;
+      case 'basement':
+      case 'floors':
+        $delimiters[] = ',';
+        break;
+      case 'windows':
+      case 'furniture':
+        $delimiters[] = '/';
+        $delimiters[] = ',';
+        $delimiters[] = '&';
+        break;
+      case 'walls':
+        $delimiters[] = '/';
+        $delimiters[] = ',';
+        break;
+      case 'add_building':
+        $delimiters[] = '/';
+        $delimiters[] = ',';
+        $delimiters[] = '+';
+        $delimiters[] = '&';
+        break;
+    }
+
+    return $delimiters;
+  }
+
+  protected function normalizeSewage($value) {
+    $matches = array();
     $contains = array(
       'septic needed' => 'septic needed',
       'septics' => 'septic (multiple)',
@@ -212,18 +255,10 @@ drush_print('NO MATCH: ' . $value);
       'permit' => 'permit required',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeWater($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeWater($value) {
     $matches = array();
     $contains = array(
       'well needed' => 'well needed',
@@ -236,18 +271,10 @@ drush_print('NO MATCH: ' . $value);
       'permit req' => 'permit required',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeHeat($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeHeat($value) {
     $matches = array(
     );
     $contains = array(
@@ -294,18 +321,10 @@ drush_print('NO MATCH: ' . $value);
       'gas' => 'gas',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeRoadSurface($value, $delimiter = "/", $return_all = FALSE) {
+  protected function normalizeRoadSurface($value, $delimiter = "/", $force_string = FALSE) {
     $matches = array(
       't & c' => 'tar & chip',
     );
@@ -315,18 +334,10 @@ drush_print('NO MATCH: ' . $value);
       'undeveloped' => 'dirt',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeGarage($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeGarage($value) {
     $matches = array(
       'garage' => '1 car',
       'yes' => '1 car',
@@ -375,18 +386,10 @@ drush_print('NO MATCH: ' . $value);
       '5 bay' => '5 cars',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeBasement($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeBasement($value) {
     $matches = array(
       't & c' => 'tar & chip',
     );
@@ -400,6 +403,7 @@ drush_print('NO MATCH: ' . $value);
       'partial' => 'partially finished',
       'part fin' => 'partially finished',
       'part. fin' => 'partially finished',
+      'part fin.' => 'partially finished',
       'part' => 'partially finished',
       'unfinished' => 'unfinished',
       'finished' => 'finished',
@@ -416,18 +420,10 @@ drush_print('NO MATCH: ' . $value);
       'crwal' => 'crawl',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeWindows($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeWindows($value) {
     $matches = array();
     $contains = array(
       'andersen' => 'andersen',
@@ -448,18 +444,10 @@ drush_print('NO MATCH: ' . $value);
       'sp' => 'single pane',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeFloors($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeFloors($value) {
     $matches = array();
     $contains = array(
       'laminent' => 'laminate',
@@ -498,18 +486,10 @@ drush_print('NO MATCH: ' . $value);
       'wood' => 'wood',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeWalls($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeWalls($value) {
     $matches = array();
     $contains = array(
       'concrete' => 'concrete',
@@ -536,18 +516,10 @@ drush_print('NO MATCH: ' . $value);
       'mix' => 'various',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeAdditionalBuilding($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeAdditionalBuilding($value) {
     $matches = array();
     $contains = array(
       'greenhouse' => 'greenhouse',
@@ -571,22 +543,14 @@ drush_print('NO MATCH: ' . $value);
       'barn' => 'barn',
       'sheds' => 'sheds (multiple)',
       'shed' => 'shed',
-      'garage' => FALSE,
+      'garage' => '',
       'multiple' => 'multiple',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
 
-  public function normalizeFurniture($value, $delimiter = ",", $return_all = FALSE) {
+  protected function normalizeFurniture($value) {
     $matches = array();
     $contains = array(
       'all' => 'all',
@@ -598,14 +562,7 @@ drush_print('NO MATCH: ' . $value);
       'furnished' => 'furnished',
     );
 
-    $normalized = $this->normalize($value, $matches, $contains);
-
-    if (is_string($normalized)) {
-      $normalized_values = explode($delimiter, $normalized);
-      return $return_all ? $normalized_values : $normalized_values[0];
-    }
-    else {
-      return $normalized;
-    }
+    return $this->normalize($value, $matches, $contains);
   }
+
 }
