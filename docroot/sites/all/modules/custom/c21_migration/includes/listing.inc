@@ -46,6 +46,9 @@ class C21ListingMigration extends C21Migration {
     // Handle standard field mappings
     $this->addFieldMapping('is_new')
          ->defaultValue('TRUE');
+    $this->addFieldMapping('uid', 'created_by')
+         ->sourceMigration('c21User');
+    $this->addFieldMapping('created', 'creation_date');
     $this->addFieldMapping('field_listing_agent', 'agent')
          ->separator('/')
          ->callbacks(array($this, 'callbackProcessListingAgent'));
@@ -134,6 +137,9 @@ class C21ListingMigration extends C21Migration {
     if (empty($source_row->title)) {
       $source_row->title = ($source_row->status == 'forsale' ? 'For sale' : 'Unavailable') . ' in ' . $source_row->township;
     }
+
+    // Prepare the creation date.
+    $source_row->creation_date = strtotime($source_row->creation_date);
 
     // Remove test data.
 // @todo: make this more generic.
@@ -237,6 +243,25 @@ class C21ListingMigration extends C21Migration {
     }
 
     return TRUE;
+  }
+
+  /**
+   * Definition for Migration complete() method
+   */
+  function complete($entity, $row) {
+    // Create an object with our redirect parameters
+    if (module_exists('redirect') && isset($entity->type) && $entity->type == 'listing') {
+      $redirect = new stdClass();
+
+      redirect_object_prepare($redirect, array(
+        'source' => 'listings/browse.htm?listing_id=' . $row->listing_id,
+        'source_options' => array(),
+        'redirect' => 'node/' . $entity->nid,
+        'redirect_options' => array(),
+        'language' => LANGUAGE_NONE,
+      ));
+      redirect_save($redirect);
+    }
   }
 
   function getSourceFields() {

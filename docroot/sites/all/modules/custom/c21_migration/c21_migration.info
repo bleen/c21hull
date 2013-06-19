@@ -5,6 +5,7 @@ core = 7.x
 
 dependencies[] = migrate
 dependencies[] = date_migrate
+dependencies[] = redirect
 
 files[] = c21_migration.migrate.inc
 files[] = includes/user.inc
