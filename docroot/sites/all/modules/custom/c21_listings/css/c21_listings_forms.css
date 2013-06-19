@@ -95,3 +95,7 @@
 .node-listing-form .field-name-field-seller-internal-only input:checked+label {
   color: #C33;
 }
+
+.node-listing-form .show-agents {
+  padding-left: 1em;
+}

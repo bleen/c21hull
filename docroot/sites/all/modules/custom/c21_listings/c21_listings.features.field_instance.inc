@@ -426,7 +426,7 @@ function c21_listings_field_default_field_instances() {
       'active' => 1,
       'module' => 'masked_input',
       'settings' => array(
-        'mask' => '',
+        'mask' => '(999) 999-9999 x99999',
         'placeholder' => '_',
         'size' => 60,
       ),
@@ -865,7 +865,7 @@ function c21_listings_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'To select multiple Agents, hold down CTRL (or COMMAND on a mac) while clicking',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5621,6 +5621,7 @@ function c21_listings_field_default_field_instances() {
   t('Tax Map #');
   t('Taxes');
   t('This is used for sorting purposes only. Do not include initials or suffixes. ');
+  t('To select multiple Agents, hold down CTRL (or COMMAND on a mac) while clicking');
   t('Township');
   t('Values less than 100 will be considered a percentage, otherwise a dollar amount');
   t('Virtual Tour');

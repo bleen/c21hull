@@ -6,6 +6,17 @@
 
 include_once 'c21_listings.features.inc';
 
+function c21_listings_menu() {
+  $items['ajax/agents'] = array(
+    'title' => 'List Agents',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access administration pages'),
+    'page callback' => 'c21_listing_get_agents',
+  );
+
+  return $items;
+}
+
 /**
  * Implements hook_theme().
  */
@@ -87,5 +98,39 @@ function c21_listings_date_popup_process_alter(&$element, $form_state, $context)
   }
 
 }
+
+/**
+ * Returns a list of agents with basic meta data.
+ * @return array
+ *   An array agents, keyed by nid, including 'full_name', 'last_name',
+ *   'current_office', and 'status'.
+ */
+function c21_listing_get_agents() {
+  $agents = array();
+
+  $result = db_select('node', 'n')
+    ->fields('n', array('nid'))
+    ->condition('type', 'agent')
+    ->condition('status', 1)
+    ->orderBy('title')
+    ->execute();
+  while ($record = $result->fetchAssoc()) {
+    $agent = node_load($record['nid']);
+
+    $agents[$record['nid']] = array(
+      'full_name' => $agent->title,
+      'last_name' => $agent->name,
+      'current_office' => $agent->field_agent_primary_office[LANGUAGE_NONE][0]['value'],
+      'status' => $agent->field_agent_status[LANGUAGE_NONE][0]['value'],
+    );
+  }
+
+  print drupal_json_output($agents);
+  exit();
+}
+
+
+
+
 
 
