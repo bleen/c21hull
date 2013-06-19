@@ -29,7 +29,7 @@ class C21SellerMigration extends C21Migration {
 
     $source_query = Database::getConnection('default', 'legacy')
          ->select('listing_sellers', 'ls')
-         ->fields('ls', array('listing_id', 'disp_order', 'firstname', 'lastname', 'company', 'address', 'city', 'state', 'zip'))
+         ->fields('ls', array('listing_id', 'disp_order', 'firstname', 'lastname', 'company', 'address', 'city', 'state', 'zip', 'office_only'))
          ->orderBy('disp_order');
 
     $this->source = new MigrateSourceSQL($source_query, array(), NULL, array('map_joinable' => FALSE));
@@ -43,6 +43,7 @@ class C21SellerMigration extends C21Migration {
     $this->addFieldMapping('field_seller_first_name', 'firstname');
     $this->addFieldMapping('field_seller_last_name', 'lastname');
     $this->addFieldMapping('field_seller_company', 'company');
+    $this->addFieldMapping('field_seller_internal_only', 'office_only');
 
     $this->addFieldMapping('field_seller_address', NULL)
          ->defaultValue('US');

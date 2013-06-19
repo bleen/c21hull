@@ -48,6 +48,9 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
   $form['options']['status']['#title'] = t('Active listing');
   $form['options']['promote']['#title'] = t('Featured listing');
   $form['options']['sticky']['#access'] = FALSE;
+
+  $form['field_listing_bathrooms'][LANGUAGE_NONE][0]['value']['#step'] = .5;
+  $form['field_listing_acreage'][LANGUAGE_NONE][0]['value']['#step'] = .001;
 }
 
 /**

@@ -77,3 +77,21 @@
   top: 5px;
   padding: 0 5px;
 }
+.node-listing-form #field-listing-seller-values td {
+  position: relative;
+}
+.node-listing-form .field-name-field-seller-internal-only {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #666;
+  text-align: right;
+  max-width: 50%;
+}
+.node-listing-form .field-name-field-seller-internal-only input+label {
+  color: #666;
+  font-weight: bold;
+}
+.node-listing-form .field-name-field-seller-internal-only input:checked+label {
+  color: #C33;
+}
