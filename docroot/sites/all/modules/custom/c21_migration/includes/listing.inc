@@ -144,27 +144,29 @@ class C21ListingMigration extends C21Migration {
     // Prepare images for import.
     $source_dir = variable_get('environment', 'local') ? '/Users/alex/Sites/c21hull/source_files/photos' : '/home/hull/c21hull.com/listings/photos';
     $source_dir .= '/' . $source_row->listing_id;
-    $photos = scandir($source_dir);
-    $filenames = array();
-    $destination_filenames = array();
+    if (file_exists($source_dir)) {
+      $photos = scandir($source_dir);
+      $filenames = array();
+      $destination_filenames = array();
 
-    $source_row->featured_photo_filename = $source_row->primary_photo . '_lg.jpg';
-    $source_row->featured_photo_destination_file = $source_row->nid . '.jpg';
-    $source_row->featured_photo_source_dir = $source_dir;
-    foreach ($photos as $photo) {
-      $file = pathinfo($photo);
-      list($num, $size) = explode('_', $file['filename']);
-      if ($file['extension'] == 'jpg' && $size == 'lg') {
-        $filenames[] = $file['basename'];
-        $destination_filenames[] = $source_row->nid . '_' . $num  . '.' . $file['extension'];
+      $source_row->featured_photo_filename = $source_row->primary_photo . '_lg.jpg';
+      $source_row->featured_photo_destination_file = $source_row->nid . '.jpg';
+      $source_row->featured_photo_source_dir = $source_dir;
+      foreach ($photos as $photo) {
+        $file = pathinfo($photo);
+        list($num, $size) = explode('_', $file['filename']);
+        if ($file['extension'] == 'jpg' && $size == 'lg') {
+          $filenames[] = $file['basename'];
+          $destination_filenames[] = $source_row->nid . '_' . $num  . '.' . $file['extension'];
+        }
+        else {
+          continue;
+        }
       }
-      else {
-        continue;
-      }
+      $source_row->photos_filenames = $filenames;
+      $source_row->photos_destination_files = $destination_filenames;
+      $source_row->photos_source_dir = $source_dir;
     }
-    $source_row->photos_filenames = $filenames;
-    $source_row->photos_destination_files = $destination_filenames;
-    $source_row->photos_source_dir = $source_dir;
 
     // Prepare taxonomy terms.
     $source_row->tags = $this->prepareListingTags($source_row);
@@ -294,6 +296,8 @@ class C21ListingMigration extends C21Migration {
   }
 
   function prepareListingTerms($source_row, $field, $normalize_function = 'normalize', $extra_fields = array()) {
+    $terms = array();
+
     $delimiters = $this->normalizeDelimiters($field);
     $source_terms = $this->explodeTerms($source_row->{$field}, $delimiters);
 

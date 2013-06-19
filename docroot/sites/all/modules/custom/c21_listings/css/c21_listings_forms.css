@@ -45,6 +45,9 @@
 .node-listing-form .field-name-field-seller-first-name {
   margin-right: 2%;
 }
+.node-listing-form .field-name-field-seller-company {
+  clear: left;
+}
 .node-listing-form .field-name-field-seller-address {
   clear: left;
 }

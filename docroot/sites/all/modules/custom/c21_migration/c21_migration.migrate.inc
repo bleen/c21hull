@@ -95,6 +95,34 @@ function c21_migration_migrate_api() {
         'class_name' => 'C21TermsListingTownshipMigration',
         'group_name' => 'listing_vocabularies',
       ),
+      'c21Seller' => array(
+        'class_name' => 'C21SellerMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21SellerHomePhone' => array(
+        'class_name' => 'C21SellerHomePhoneMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21SellerBusinessPhone' => array(
+        'class_name' => 'C21SellerBusinessPhoneMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21SellerLocalPhone' => array(
+        'class_name' => 'C21SellerLocalPhoneMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21SellerCellPhone' => array(
+        'class_name' => 'C21SellerCellPhoneMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21SellerFaxPhone' => array(
+        'class_name' => 'C21SellerFaxMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21SellerEmail' => array(
+        'class_name' => 'C21SellerEmailMigration',
+        'group_name' => 'listing_content',
+      ),
     ),
   );
   return $api;
