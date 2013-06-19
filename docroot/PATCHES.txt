@@ -30,3 +30,8 @@ DATE
     -- PATCH --
     https://drupal.org/node/1832544#comment-6694946
 
+FIELD_COLLECTION
+  * Adding a migrate handler for field collections.
+
+    -- PATCH --
+    https://drupal.org/node/1175082#comment-7424400
