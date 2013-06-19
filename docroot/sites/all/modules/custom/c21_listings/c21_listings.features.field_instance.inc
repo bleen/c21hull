@@ -273,7 +273,7 @@ function c21_listings_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_seller_phone',
     'label' => 'Phone',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -792,7 +792,7 @@ function c21_listings_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_listing_acreage',
     'label' => 'Acreage',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -2182,7 +2182,7 @@ function c21_listings_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_listing_development',
     'label' => 'Development',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -3405,7 +3405,7 @@ function c21_listings_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -3856,7 +3856,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'masked_input',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -4538,7 +4538,7 @@ function c21_listings_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_listing_seller',
     'label' => 'Seller',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -4836,7 +4836,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -4867,8 +4867,26 @@ function c21_listings_field_default_field_instances() {
     'field_name' => 'field_listing_street',
     'label' => 'Street',
     'placeholder' => '',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'text_processing' => 0,
@@ -4912,8 +4930,26 @@ function c21_listings_field_default_field_instances() {
     'field_name' => 'field_listing_style',
     'label' => 'Style',
     'placeholder' => '',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'text_processing' => 0,
@@ -5002,7 +5038,7 @@ function c21_listings_field_default_field_instances() {
     'field_name' => 'field_listing_tax_map',
     'label' => 'Tax Map #',
     'placeholder' => '',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -5114,7 +5150,7 @@ function c21_listings_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_listing_township',
     'label' => 'Township',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -5471,7 +5507,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 

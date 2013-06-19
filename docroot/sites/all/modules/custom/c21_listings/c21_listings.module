@@ -47,6 +47,7 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
   $form['options']['#title'] = t('Listing options');
   $form['options']['status']['#title'] = t('Active listing');
   $form['options']['promote']['#title'] = t('Featured listing');
+  $form['options']['sticky']['#access'] = FALSE;
 }
 
 /**

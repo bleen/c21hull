@@ -48,6 +48,8 @@ class C21ListingMigration extends C21Migration {
          ->defaultValue('TRUE');
     $this->addFieldMapping('uid', 'created_by')
          ->sourceMigration('c21User');
+    $this->addFieldMapping('status', 'is_hidden');
+    $this->addFieldMapping('promote', 'is_featured');
     $this->addFieldMapping('created', 'creation_date');
     $this->addFieldMapping('field_listing_agent', 'agent')
          ->separator('/')
@@ -68,6 +70,10 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('field_listing_tax_map', 'tax_map_num');
     $this->addFieldMapping('field_listing_street', 'street_road');
     $this->addFieldMapping('field_listing_notes', 'additional_info');
+    $this->addFieldMapping('field_listing_notes:format', NULL)
+         ->defaultValue('rich_text');
+    $this->addFieldMapping('field_listing_personal_property:format', NULL)
+         ->defaultValue('rich_text');
 
     $this->addFieldMapping('field_listing_featured_photo', 'featured_photo_filename');
     $this->addFieldMapping('field_listing_featured_photo:source_dir', 'featured_photo_source_dir');
@@ -138,8 +144,9 @@ class C21ListingMigration extends C21Migration {
       $source_row->title = ($source_row->status == 'forsale' ? 'For sale' : 'Unavailable') . ' in ' . $source_row->township;
     }
 
-    // Prepare the creation date.
+    // Prepare the creation date, status, etc...
     $source_row->creation_date = strtotime($source_row->creation_date);
+    $source_row->is_hidden = !$source_row->is_hidden;
 
     // Remove test data.
 // @todo: make this more generic.
