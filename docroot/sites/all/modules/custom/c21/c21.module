@@ -12,3 +12,17 @@ include_once 'c21.features.inc';
 function c21_form_agent_node_form_alter(&$form, $fom_state) {
   $form['title']['#placeholder'] = t('Roy B. Hull, Owner');
 }
+
+/**
+ * Implements hook_workbench_content_alter().
+ */
+function c21_workbench_content_alter(&$output) {
+  $output['c21_workbench_edits_by_user'] = $output['workbench_edited'];
+  $output['c21_workbench_edits_by_user']['#view'] = 'c21_workbench_edits_by_user';
+  unset($output['workbench_edited']);
+
+  $output['c21_workbench_recent_content'] = $output['workbench_recent_content'];
+  $output['c21_workbench_recent_content']['#view'] = 'c21_workbench_recent_content';
+  unset($output['workbench_recent_content']);
+
+}

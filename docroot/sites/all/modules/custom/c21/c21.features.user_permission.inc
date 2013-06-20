@@ -106,6 +106,18 @@ function c21_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: access workbench.
+  $permissions['access workbench'] = array(
+    'name' => 'access workbench',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'agent' => 'agent',
+      'authenticated user' => 'authenticated user',
+      'staff' => 'staff',
+    ),
+    'module' => 'workbench',
+  );
+
   // Exported permission: administer actions.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -286,6 +298,13 @@ function c21_user_default_permissions() {
     'name' => 'administer views',
     'roles' => array(),
     'module' => 'views',
+  );
+
+  // Exported permission: administer workbench.
+  $permissions['administer workbench'] = array(
+    'name' => 'administer workbench',
+    'roles' => array(),
+    'module' => 'workbench',
   );
 
   // Exported permission: block IP addresses.

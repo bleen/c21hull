@@ -208,6 +208,47 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_listing_seller-field_seller_internal_only'
+  $field_instances['field_collection_item-field_listing_seller-field_seller_internal_only'] = array(
+    'bundle' => 'field_listing_seller',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_seller_internal_only',
+    'label' => 'Internal Only',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_listing_seller-field_seller_last_name'
   $field_instances['field_collection_item-field_listing_seller-field_seller_last_name'] = array(
     'bundle' => 'field_listing_seller',
@@ -5571,6 +5612,7 @@ function c21_listings_field_default_field_instances() {
   t('Garage');
   t('Heat');
   t('Insulation');
+  t('Internal Only');
   t('Kitchen | Basement');
   t('Kitchen | Floor 1');
   t('Kitchen | Floor 2');
