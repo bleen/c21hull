@@ -379,7 +379,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'emailwidget',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -414,7 +414,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -467,12 +467,12 @@ function c21_listings_field_default_field_instances() {
       'active' => 1,
       'module' => 'masked_input',
       'settings' => array(
-        'mask' => '(999) 999-9999 x99999',
+        'mask' => '(999) 999-9999',
         'placeholder' => '_',
         'size' => 60,
       ),
       'type' => 'masked_input',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -507,7 +507,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 

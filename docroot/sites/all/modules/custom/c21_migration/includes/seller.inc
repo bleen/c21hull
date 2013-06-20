@@ -104,7 +104,7 @@ class C21SellerPhoneEmailMigration extends C21Migration {
     );
   }
 
-  function formatPhoneNumber($number) {
+  function formatPhoneNumber($number, $mode = 'full') {
     $pattern = '/\D*\(?(\d{3})?\)?\D*(\d{3})\D*(\d{4})\D*(\d{1,8})?/';
     if (preg_match($pattern, $number, $match)) {
       if ($match[3]) {
@@ -125,7 +125,15 @@ class C21SellerPhoneEmailMigration extends C21Migration {
       return $number;
     }
 
-    return $ext ? $num . ' x' . $ext : $num;
+    switch ($mode) {
+      case 'number':
+        return $num;
+      case 'extension':
+        return $ext;
+      case 'full':
+      default:
+        return $ext ? $num . ' x' . $ext : $num;
+    }
   }
 
 }
@@ -139,6 +147,7 @@ class C21SellerHomePhoneMigration extends C21SellerPhoneEmailMigration {
     $this->description = t('c21hull.com seller home phone numbers');
 
     $this->addFieldMapping('field_seller_phone_number', 'home_phone');
+    $this->addFieldMapping('field_seller_phone_extension', 'home_phone_extension');
     $this->addFieldMapping('field_seller_phone_type', NULL)
          ->defaultValue('Home');
   }
@@ -152,7 +161,8 @@ class C21SellerHomePhoneMigration extends C21SellerPhoneEmailMigration {
       return FALSE;
     }
 
-    $source_row->home_phone = $this->formatPhoneNumber($source_row->home_phone);
+    $source_row->home_phone = $this->formatPhoneNumber($source_row->home_phone, 'number');
+    $source_row->home_phone_extension = $this->formatPhoneNumber($source_row->home_phone, 'extension');
   }
 }
 
@@ -165,6 +175,7 @@ class C21SellerBusinessPhoneMigration extends C21SellerPhoneEmailMigration {
     $this->description = t('c21hull.com seller home phone numbers');
 
     $this->addFieldMapping('field_seller_phone_number', 'business_phone');
+    $this->addFieldMapping('field_seller_phone_extension', 'business_phone_extension');
     $this->addFieldMapping('field_seller_phone_type', NULL)
          ->defaultValue('Business');
   }
@@ -178,7 +189,8 @@ class C21SellerBusinessPhoneMigration extends C21SellerPhoneEmailMigration {
       return FALSE;
     }
 
-    $source_row->business_phone = $this->formatPhoneNumber($source_row->business_phone);
+    $source_row->business_phone = $this->formatPhoneNumber($source_row->business_phone, 'number');
+    $source_row->business_phone_extension = $this->formatPhoneNumber($source_row->business_phone, 'extension');
   }
 }
 
@@ -191,6 +203,7 @@ class C21SellerLocalPhoneMigration extends C21SellerPhoneEmailMigration {
     $this->description = t('c21hull.com seller local phone numbers');
 
     $this->addFieldMapping('field_seller_phone_number', 'local_phone');
+    $this->addFieldMapping('field_seller_phone_extension', 'local_phone_extension');
     $this->addFieldMapping('field_seller_phone_type', NULL)
          ->defaultValue('Local');
   }
@@ -204,7 +217,8 @@ class C21SellerLocalPhoneMigration extends C21SellerPhoneEmailMigration {
       return FALSE;
     }
 
-    $source_row->local_phone = $this->formatPhoneNumber($source_row->local_phone);
+    $source_row->local_phone = $this->formatPhoneNumber($source_row->local_phone, 'number');
+    $source_row->local_phone_extension = $this->formatPhoneNumber($source_row->local_phone, 'extension');
   }
 }
 
@@ -217,6 +231,7 @@ class C21SellerCellPhoneMigration extends C21SellerPhoneEmailMigration {
     $this->description = t('c21hull.com seller cell phone numbers');
 
     $this->addFieldMapping('field_seller_phone_number', 'cell_phone');
+    $this->addFieldMapping('field_seller_phone_extension', 'cell_phone_extension');
     $this->addFieldMapping('field_seller_phone_type', NULL)
          ->defaultValue('Cell');
   }
@@ -230,7 +245,8 @@ class C21SellerCellPhoneMigration extends C21SellerPhoneEmailMigration {
       return FALSE;
     }
 
-    $source_row->cell_phone = $this->formatPhoneNumber($source_row->cell_phone);
+    $source_row->cell_phone = $this->formatPhoneNumber($source_row->cell_phone, 'number');
+    $source_row->cell_phone_extension = $this->formatPhoneNumber($source_row->cell_phone, 'extension');
   }
 }
 
@@ -243,6 +259,7 @@ class C21SellerFaxMigration extends C21SellerPhoneEmailMigration {
     $this->description = t('c21hull.com seller fax numbers');
 
     $this->addFieldMapping('field_seller_phone_number', 'fax');
+    $this->addFieldMapping('field_seller_phone_extension', 'fax_extension');
     $this->addFieldMapping('field_seller_phone_type', NULL)
          ->defaultValue('Fax');
   }
@@ -256,7 +273,8 @@ class C21SellerFaxMigration extends C21SellerPhoneEmailMigration {
       return FALSE;
     }
 
-    $source_row->fax = $this->formatPhoneNumber($source_row->fax);
+    $source_row->fax = $this->formatPhoneNumber($source_row->fax, 'number');
+    $source_row->fax_extension = $this->formatPhoneNumber($source_row->fax, 'extension');
   }
 }
 

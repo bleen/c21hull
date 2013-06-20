@@ -55,7 +55,11 @@ function c21_listings_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'redirect' => array(
+          'weight' => '2',
+        ),
+      ),
       'display' => array(),
     ),
   );
@@ -68,7 +72,11 @@ function c21_listings_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'redirect' => array(
+          'weight' => '3',
+        ),
+      ),
       'display' => array(),
     ),
   );

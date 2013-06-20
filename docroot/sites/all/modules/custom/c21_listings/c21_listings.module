@@ -34,6 +34,13 @@ function c21_listings_theme($existing, $type, $theme, $path) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
+function c21_listings_form_agent_node_form_alter(&$form, $fom_state) {
+  $form['title']['#placeholder'] = t('Roy B. Hull, Owner');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
 function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
   // Add custom CSS and JS files for this form.
   $form['#attached']['css'][] = drupal_get_path('module', 'c21_listings') . '/css/c21_listings_forms.css';

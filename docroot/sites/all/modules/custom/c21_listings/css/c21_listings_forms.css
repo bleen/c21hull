@@ -55,14 +55,18 @@
   max-width: 35%;
 }
 .node-listing-form .field-name-field-seller-email-address,
-.node-listing-form .field-name-field-seller-phone-number {
+.node-listing-form .field-name-field-seller-phone-number,
+.node-listing-form .field-name-field-seller-phone-extension {
   width: 25%;
   float: left;
   margin-right: 2em;
 }
+.node-listing-form .field-name-field-seller-phone-extension {
+  width: 10%;
+}
 .node-listing-form .field-name-field-seller-email-type,
 .node-listing-form .field-name-field-seller-phone-type {
-  width: 20%;
+  width: 10%;
   float: left;
 }
 .node-listing-form #field-seller-phone-values .form-submit,
