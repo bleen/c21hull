@@ -1,0 +1,32 @@
+<?php
+
+function drealty_office_install() {
+
+}
+
+function drealty_office_schema() {
+  $schema = array();
+
+  $schema['drealty_office'] = array(
+    'description' => 'Table to hold listing data',
+    'fields' => array(
+      'id' => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE, 'description' => 'The internal Id'),
+      'label' => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE, 'default' => '', 'description' => 'The title for this listing, defaults to rets id.'),
+      'uid' => array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'description' => 'UID of the user that created the listing.'),
+      'type' => array('type' => 'varchar', 'length' => 50, 'not null' => TRUE, 'default' => '', 'description' => "The {listing_type} of this listing."),
+      'conid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'description' => 'The connection Id'),
+      'hash' => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE, 'default' => '', 'description' => 'MD5 Hash used to determine if a listing has changed.'),
+      'class' => array('type' => 'int', 'not null' => FALSE, 'default' => 0, 'description' => 'The Resource Class from the MLS'),
+      'created' => array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'description' => 'Date the listing was created in the system.'),
+      'changed' => array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'description' => 'Last date the listing was changed/updated in the system'),
+      'rets_imported' => array('type' => 'int', 'unsigned' => TRUE, 'size' => 'tiny', 'not null' => FALSE, 'default' => 1, 'description' => 'Is this a user submitted listing or mls imported'),
+      'rets_key' => array('type' => 'varchar', 'length' => 64, 'not null' => FALSE, 'default' => NULL, 'description' => 'A unique identifier for this record from the source system. Typically this is the MLS #, however systems like Interealty use a sysid field. Select the apporpriate field.'),
+      'rets_id' => array('type' => 'varchar', 'length' => 64, 'not null' => FALSE, 'default' => NULL, 'description' => 'The unique MLS # used to look up an individual listing.'),
+      'rets_status' => array('type' => 'varchar', 'length' => 64, 'not null' => FALSE, 'default' => NULL, 'description' => 'RETS status field. This status field is used to build the default query.'),
+      'active' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 1, 'description' => 'Wether a listing is active or not. Active listings are listings that appear in the RETS Feed. Inactive Listings have since been removed from the feeed.')
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}
