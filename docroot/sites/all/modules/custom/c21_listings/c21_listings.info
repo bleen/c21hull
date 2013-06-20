@@ -1,4 +1,5 @@
 name = c21 Listings
+description = Manages the features and functionality of real estate listings and associated data.
 core = 7.x
 package = Features
 php = 5.2.4
