@@ -35,3 +35,17 @@ FIELD_COLLECTION
 
     -- PATCH --
     https://drupal.org/node/1175082#comment-7424400
+
+REPRESENTATIVE_IMAGE
+  * There is a bug where revision views dont work unless the vid field is
+    included in the view.
+
+    -- PATCH --
+    https://drupal.org/node/2023831
+
+  * An error message appears when view has a representative image field and you
+    choose "link to content".
+
+    -- PATCH --
+    https://drupal.org/node/2023833#comment-7559157
+
