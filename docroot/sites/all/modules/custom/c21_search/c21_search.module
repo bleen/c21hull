@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the c21 Search feature.
+ */
+
+include_once 'c21_search.features.inc';
