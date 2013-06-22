@@ -18,7 +18,7 @@ function c21_search_apachesolr_search_default_searchers() {
   $searcher->description = 'Core Search';
   $searcher->search_path = 'search/site';
   $searcher->page_title = 'Site';
-  $searcher->env_id = 'hosted_solr_support';
+  $searcher->env_id = $conf['hosting_environment'] == 'local' ? 'local_solr' : 'hosted_solr_support';
   $searcher->settings = array(
     'apachesolr_search_search_type' => 'custom',
     'apachesolr_search_per_page' => 10,
