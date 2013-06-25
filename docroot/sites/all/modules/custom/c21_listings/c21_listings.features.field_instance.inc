@@ -848,7 +848,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 13,
+      'weight' => 15,
     ),
   );
 
@@ -2233,7 +2233,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 12,
+      'weight' => 14,
     ),
   );
 
@@ -2731,7 +2731,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 15,
+      'weight' => 17,
     ),
   );
 
@@ -3641,7 +3641,7 @@ function c21_listings_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -3691,7 +3691,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -4000,7 +4000,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 19,
     ),
   );
 
@@ -4092,7 +4092,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'masked_input',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -5072,7 +5072,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -5198,7 +5198,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 18,
     ),
   );
 
@@ -5356,7 +5356,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 14,
+      'weight' => 16,
     ),
   );
 
@@ -5412,20 +5412,18 @@ function c21_listings_field_default_field_instances() {
     'bundle' => 'listing',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'value' => 'open_listing',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 70,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5448,7 +5446,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -5743,7 +5741,70 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing_type-field_listing_type_fine_print'
+  $field_instances['node-listing_type-field_listing_type_fine_print'] = array(
+    'bundle' => 'listing_type',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_type_fine_print',
+    'label' => 'Fine Print',
+    'placeholder' => '',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 0,
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
     ),
   );
 
@@ -5803,6 +5864,7 @@ function c21_listings_field_default_field_instances() {
   t('Family Room | Floor 1');
   t('Family Room | Floor 2');
   t('Featured Photo');
+  t('Fine Print');
   t('Fireplace');
   t('First Name');
   t('Floors');

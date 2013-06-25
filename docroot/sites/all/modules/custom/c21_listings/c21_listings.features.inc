@@ -39,6 +39,14 @@ function c21_listings_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'listing_type' => array(
+      'name' => t('Listing Type'),
+      'base' => 'node_content',
+      'description' => t('Use <em>listing type</em> to define a new type of listing like "Open", "Exclusive" or "Exclusive Right"'),
+      'has_title' => '1',
+      'title_label' => t('Name'),
+      'help' => '',
+    ),
   );
   return $items;
 }

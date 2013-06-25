@@ -2963,24 +2963,69 @@ function c21_listings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listing_type',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        'open_listing' => 'Open Listing',
-        'exclusive' => 'Exclusive',
-        'exclusive_right' => 'Exclusive Right',
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 1,
+          ),
+        ),
+        'sort' => array(
+          'direction' => 'ASC',
+          'property' => 'title',
+          'type' => 'property',
+        ),
+        'target_bundles' => array(
+          'listing_type' => 'listing_type',
+        ),
       ),
-      'allowed_values_function' => '',
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_listing_type_fine_print'
+  $field_bases['field_listing_type_fine_print'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_type_fine_print',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_listing_virtual_tour'

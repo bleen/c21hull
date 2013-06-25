@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function c21_listings_install() {
+  $query = new EntityFieldQuery();
+  $entities = $query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'listing_type')
+                    ->execute();
+  $nodes = empty($entities) ? array() : node_load_multiple(array_keys($entities['node']));
+
+  if (empty($nodes)) {
+
+    $listing_types = array(
+      'Open',
+      'Exclusive',
+      'Exclusive Right',
+    );
+
+    foreach ($listing_types as $listing_type) {
+      $values = array(
+        'type' => 'listing_type',
+        'uid' => 1,
+        'status' => 1,
+        'comment' => 0,
+        'promote' => 0,
+      );
+      $entity = entity_create('node', $values);
+      $ewrapper = entity_metadata_wrapper('node', $entity);
+      $ewrapper->title->set($listing_type);
+
+      $ewrapper->save(true);
+      entity_save('node', $entity);
+    }
+  }
+}

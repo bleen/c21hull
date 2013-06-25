@@ -30,6 +30,15 @@ function c21_listings_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create listing_type content.
+  $permissions['create listing_type content'] = array(
+    'name' => 'create listing_type content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any agent content.
   $permissions['delete any agent content'] = array(
     'name' => 'delete any agent content',
@@ -50,6 +59,15 @@ function c21_listings_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any listing_type content.
+  $permissions['delete any listing_type content'] = array(
+    'name' => 'delete any listing_type content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete own agent content.
   $permissions['delete own agent content'] = array(
     'name' => 'delete own agent content',
@@ -66,6 +84,15 @@ function c21_listings_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'staff' => 'staff',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own listing_type content.
+  $permissions['delete own listing_type content'] = array(
+    'name' => 'delete own listing_type content',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -244,6 +271,15 @@ function c21_listings_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any listing_type content.
+  $permissions['edit any listing_type content'] = array(
+    'name' => 'edit any listing_type content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit own agent content.
   $permissions['edit own agent content'] = array(
     'name' => 'edit own agent content',
@@ -260,6 +296,15 @@ function c21_listings_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'staff' => 'staff',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own listing_type content.
+  $permissions['edit own listing_type content'] = array(
+    'name' => 'edit own listing_type content',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -442,6 +487,13 @@ function c21_listings_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
+  // Exported permission: enter listing_type revision log entry.
+  $permissions['enter listing_type revision log entry'] = array(
+    'name' => 'enter listing_type revision log entry',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
   // Exported permission: override agent authored by option.
   $permissions['override agent authored by option'] = array(
     'name' => 'override agent authored by option',
@@ -528,6 +580,48 @@ function c21_listings_user_default_permissions() {
   // Exported permission: override listing sticky option.
   $permissions['override listing sticky option'] = array(
     'name' => 'override listing sticky option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing_type authored by option.
+  $permissions['override listing_type authored by option'] = array(
+    'name' => 'override listing_type authored by option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing_type authored on option.
+  $permissions['override listing_type authored on option'] = array(
+    'name' => 'override listing_type authored on option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing_type promote to front page option.
+  $permissions['override listing_type promote to front page option'] = array(
+    'name' => 'override listing_type promote to front page option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing_type published option.
+  $permissions['override listing_type published option'] = array(
+    'name' => 'override listing_type published option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing_type revision option.
+  $permissions['override listing_type revision option'] = array(
+    'name' => 'override listing_type revision option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override listing_type sticky option.
+  $permissions['override listing_type sticky option'] = array(
+    'name' => 'override listing_type sticky option',
     'roles' => array(),
     'module' => 'override_node_options',
   );

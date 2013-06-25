@@ -419,7 +419,19 @@ class C21ListingMigration extends C21Migration {
   }
 
   function callbackProcessListingType($value) {
-    return str_replace(' ', '_', $value);
+    $query = new EntityFieldQuery();
+    $entities = $query->entityCondition('entity_type', 'node')
+                      ->entityCondition('bundle', 'listing_type')
+                      ->execute();
+    $nodes = node_load_multiple(array_keys($entities['node']));
+    foreach ($nodes as $nid => $node) {
+      if (strtolower($value) == strtolower($node->title)) {
+        $value = $nid;
+        break;
+      }
+    }
+
+    return $value;
   }
 
   function callbackProcessListingStatus($value) {
