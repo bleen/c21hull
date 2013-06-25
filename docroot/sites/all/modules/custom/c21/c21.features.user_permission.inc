@@ -10,6 +10,17 @@
 function c21_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access PDF version.
+  $permissions['access PDF version'] = array(
+    'name' => 'access PDF version',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'agent' => 'agent',
+      'staff' => 'staff',
+    ),
+    'module' => 'print_pdf',
+  );
+
   // Exported permission: access administration menu.
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
@@ -81,6 +92,13 @@ function c21_user_default_permissions() {
       'staff' => 'staff',
     ),
     'module' => 'overlay',
+  );
+
+  // Exported permission: access print.
+  $permissions['access print'] = array(
+    'name' => 'access print',
+    'roles' => array(),
+    'module' => 'print',
   );
 
   // Exported permission: access site in maintenance mode.
@@ -233,6 +251,20 @@ function c21_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: administer print.
+  $permissions['administer print'] = array(
+    'name' => 'administer print',
+    'roles' => array(),
+    'module' => 'print',
+  );
+
+  // Exported permission: administer redirects.
+  $permissions['administer redirects'] = array(
+    'name' => 'administer redirects',
+    'roles' => array(),
+    'module' => 'redirect',
+  );
+
   // Exported permission: administer shortcuts.
   $permissions['administer shortcuts'] = array(
     'name' => 'administer shortcuts',
@@ -305,6 +337,15 @@ function c21_user_default_permissions() {
     'name' => 'administer workbench',
     'roles' => array(),
     'module' => 'workbench',
+  );
+
+  // Exported permission: advanced migration information.
+  $permissions['advanced migration information'] = array(
+    'name' => 'advanced migration information',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'migrate_ui',
   );
 
   // Exported permission: block IP addresses.
@@ -458,6 +499,22 @@ function c21_user_default_permissions() {
     'name' => 'manage features',
     'roles' => array(),
     'module' => 'features',
+  );
+
+  // Exported permission: migration information.
+  $permissions['migration information'] = array(
+    'name' => 'migration information',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'migrate_ui',
+  );
+
+  // Exported permission: node-specific print configuration.
+  $permissions['node-specific print configuration'] = array(
+    'name' => 'node-specific print configuration',
+    'roles' => array(),
+    'module' => 'print',
   );
 
   // Exported permission: notify of path changes.
