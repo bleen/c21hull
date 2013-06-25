@@ -69,7 +69,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Details',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'group_listing_building_info',
       1 => 'group_listing_general_info',
@@ -309,6 +309,9 @@ function c21_listings_field_group_info() {
       45 => 'field_listing_laundry_b',
       46 => 'field_listing_other1_b',
       47 => 'field_listing_other2_b',
+      48 => 'field_listing_bedroom5_b',
+      49 => 'field_listing_bedroom5_f1',
+      50 => 'field_listing_bedroom5_f2',
     ),
     'format_type' => 'div',
     'format_settings' => array(

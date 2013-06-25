@@ -938,7 +938,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -1960,7 +1960,7 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
-// Exported field_instance: 'node-listing-field_listing_bedroom5_b'
+  // Exported field_instance: 'node-listing-field_listing_bedroom5_b'
   $field_instances['node-listing-field_listing_bedroom5_b'] = array(
     'bundle' => 'listing',
     'custom_add_another' => '',
@@ -2000,7 +2000,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 92,
+      'weight' => 95,
     ),
   );
 
@@ -2044,7 +2044,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 90,
+      'weight' => 93,
     ),
   );
 
@@ -2088,7 +2088,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 91,
+      'weight' => 94,
     ),
   );
 
@@ -2325,7 +2325,7 @@ function c21_listings_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -2822,7 +2822,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 95,
+      'weight' => 98,
     ),
   );
 
@@ -2866,7 +2866,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 93,
+      'weight' => 96,
     ),
   );
 
@@ -2910,7 +2910,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 94,
+      'weight' => 97,
     ),
   );
 
@@ -3216,6 +3216,69 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_id_prefix'
+  $field_instances['node-listing-field_listing_id_prefix'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 69,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_id_prefix',
+    'label' => 'Listing ID',
+    'placeholder' => 'PMLE',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 4,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_insulation'
   $field_instances['node-listing-field_listing_insulation'] = array(
     'bundle' => 'listing',
@@ -3432,7 +3495,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 98,
+      'weight' => 101,
     ),
   );
 
@@ -3476,7 +3539,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 96,
+      'weight' => 99,
     ),
   );
 
@@ -3520,7 +3583,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 97,
+      'weight' => 100,
     ),
   );
 
@@ -4136,7 +4199,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 101,
+      'weight' => 104,
     ),
   );
 
@@ -4180,7 +4243,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 99,
+      'weight' => 102,
     ),
   );
 
@@ -4224,7 +4287,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 100,
+      'weight' => 103,
     ),
   );
 
@@ -4268,7 +4331,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 104,
+      'weight' => 107,
     ),
   );
 
@@ -4312,7 +4375,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 102,
+      'weight' => 105,
     ),
   );
 
@@ -4356,7 +4419,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 103,
+      'weight' => 106,
     ),
   );
 
@@ -5180,7 +5243,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -5713,6 +5776,9 @@ function c21_listings_field_default_field_instances() {
   t('Bedroom 4 | Basement');
   t('Bedroom 4 | Floor 1');
   t('Bedroom 4 | Floor 2');
+  t('Bedroom 5 | Basement');
+  t('Bedroom 5 | Floor 1');
+  t('Bedroom 5 | Floor 2');
   t('Bedrooms');
   t('Bio');
   t('Block');
@@ -5754,6 +5820,7 @@ function c21_listings_field_default_field_instances() {
   t('Laundry | Floor 2');
   t('List Date');
   t('List Price');
+  t('Listing ID');
   t('Listing Type');
   t('Living Room | Basement');
   t('Living Room | Floor 1');

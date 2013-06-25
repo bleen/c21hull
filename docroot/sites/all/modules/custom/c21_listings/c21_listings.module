@@ -46,10 +46,12 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
   $form['#attached']['css'][] = drupal_get_path('module', 'c21_listings') . '/css/c21_listings_forms.css';
   $form['#attached']['js'][] = drupal_get_path('module', 'c21_listings') . '/js/c21_listings_forms.js';
 
+  // Add the listing id number as a suffix to the listing id prefix field.
+  $form['field_listing_id_prefix'][LANGUAGE_NONE][0]['value']['#field_suffix'] = ' &ndash; ' . (isset($form['#node']->nid) ? $form['#node']->nid : '#####');
+
   // MLS # should only be displayed for "exclusive" listings.
   $form['field_listing_mls']['#states'] = array(
     'visible' => array(
-      //':select[name="field_listing_type[und]"]' => array(
       '#edit-field-listing-type-und' => array(
         array('value' => 'exclusive'),
         array('value' => 'exclusive_right'),

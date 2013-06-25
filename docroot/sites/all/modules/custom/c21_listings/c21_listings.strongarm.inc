@@ -111,13 +111,13 @@ function c21_listings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '7',
         ),
       ),
       'display' => array(),
