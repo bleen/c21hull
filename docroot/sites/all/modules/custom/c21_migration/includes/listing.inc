@@ -132,6 +132,11 @@ class C21ListingMigration extends C21Migration {
       return FALSE;
     }
 
+    // Remove listings whose id starts with two digits.
+    if (preg_match('/^[0-9]{2}-{1}/', $source_row->listing_id)) {
+      return FALSE;
+    }
+
     // Get the numeric portion of the listing id.
     list($town, $id) = explode('-', $source_row->listing_id);
     $source_row->nid = $id;
@@ -147,12 +152,6 @@ class C21ListingMigration extends C21Migration {
     // Prepare the creation date, status, etc...
     $source_row->creation_date = strtotime($source_row->creation_date);
     $source_row->is_hidden = !$source_row->is_hidden;
-
-    // Remove test data.
-// @todo: make this more generic.
-    if (stripos($source->agent, 'test') !== FALSE) {
-      return FALSE;
-    }
 
     // Prepare images for import.
     $source_dir = variable_get('environment', 'local') ? '/Users/alex/Sites/c21hull/source_files/photos' : '/home/hull/c21hull.com/listings/photos';
