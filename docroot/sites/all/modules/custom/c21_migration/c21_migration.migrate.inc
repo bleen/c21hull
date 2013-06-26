@@ -179,6 +179,14 @@ abstract class C21Migration extends Migration {
     return $terms;
   }
 
+  public function validListingId($lsting_id) {
+    if (!preg_match('/^[a-z]{2,5}-{1}[0-9]{3,5}/i', $lsting_id)) {
+      return FALSE;
+    }
+
+    return TRUE;
+  }
+
   protected function normalize($value, $matches = array(), $contains = array()) {
     $value = strtolower($value);
 

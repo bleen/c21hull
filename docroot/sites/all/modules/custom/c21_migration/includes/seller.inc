@@ -52,6 +52,18 @@ class C21SellerMigration extends C21Migration {
     $this->addFieldMapping('field_seller_address:administrative_area', 'state');
     $this->addFieldMapping('field_seller_address:postal_code', 'zip');
   }
+
+  function prepareRow($source_row) {
+    if (parent::prepareRow($source_row) === FALSE) {
+      return FALSE;
+    }
+
+    // Ignore sellers who have crap Listing IDs.
+    if (!$this->validListingId($source_row->listing_id)) {
+      return FALSE;
+    }
+
+  }
 }
 
 class C21SellerPhoneEmailMigration extends C21Migration {

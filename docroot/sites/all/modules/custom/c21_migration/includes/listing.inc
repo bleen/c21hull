@@ -133,7 +133,7 @@ class C21ListingMigration extends C21Migration {
     }
 
     // Remove listings whose id starts with two digits.
-    if (preg_match('/^[0-9]{2}-{1}/', $source_row->listing_id)) {
+    if (!$this->validListingId($source_row->listing_id)) {
       return FALSE;
     }
 
