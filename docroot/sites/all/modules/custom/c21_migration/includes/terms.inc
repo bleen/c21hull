@@ -50,11 +50,13 @@ class C21TermsListingMigration extends C21Migration {
     $normalize_function = method_exists($this, $normalize_function) ? $normalize_function : 'normalize';
     $delimiters = $this->normalizeDelimiters($this->vocabulary['column']);
 
-    $terms = $this->explodeTerms($source_row->{$this->vocabulary['column']}, $delimiters);
+    $terms = strtolower($source_row->{$this->vocabulary['column']});
+    $terms = $this->explodeTerms($terms, $delimiters);
     foreach ($terms as $term) {
-      $normalized_value = $this->{$normalize_function}($source_row->{$this->vocabulary['column']});
+      $term = trim($term);
+      $normalized_value = $this->{$normalize_function}($term);
       if (!empty($normalized_value)) {
-        $normalized_values[] = $normalized_value;
+        $normalized_values[] = trim($normalized_value);
       }
     }
 

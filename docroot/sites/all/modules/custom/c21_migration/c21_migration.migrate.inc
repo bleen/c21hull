@@ -162,7 +162,21 @@ abstract class C21Migration extends Migration {
     $delimiters =  is_string($delimiters) ? array($delimiters) : $delimiters;
     $delimiters = preg_quote(implode('', $delimiters));
 
-    return empty($delimiters) ? array($value) : preg_split("{[" . $delimiters . "]}", $value, NULL, PREG_SPLIT_NO_EMPTY);
+    // Before we explode, make some manual exceptions.
+    $value = preg_replace('/\s{1}w{1}\/{1}/i', ' with ', $value);
+
+    // Split and cleanup.
+    $terms = empty($delimiters) ? array($value) : preg_split("{[" . $delimiters . "]}", $value, NULL, PREG_SPLIT_NO_EMPTY);
+    if (!empty($terms)) {
+      for ($i = 0; $term = $terms[$i]; $i++) {
+        $terms[$i] = trim($term);
+        if (strlen($term) < 2) {
+          unset($terms[$i]);
+        }
+      }
+    }
+
+    return $terms;
   }
 
   protected function normalize($value, $matches = array(), $contains = array()) {
@@ -224,7 +238,7 @@ abstract class C21Migration extends Migration {
         return trim($normalized);
       }
     }
-drush_print('NO MATCH: ' . $value);
+// drush_print('NO MATCH: ' . $value);
     // As a fallback, return the value itself.
     return trim($value);
   }
