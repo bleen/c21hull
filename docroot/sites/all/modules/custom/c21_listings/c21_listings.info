@@ -415,6 +415,7 @@ features[variable][] = pathauto_taxonomy_term_listing_township_pattern
 features[variable][] = pathauto_taxonomy_term_listing_walls_pattern
 features[variable][] = pathauto_taxonomy_term_listing_water_pattern
 features[variable][] = pathauto_taxonomy_term_listing_windows_pattern
+features[variable][] = representative_image_agent
 features[variable][] = representative_image_field_node_agent
 features[variable][] = representative_image_field_node_listing
 features[variable][] = representative_image_field_node_seller
