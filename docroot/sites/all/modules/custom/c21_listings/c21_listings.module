@@ -32,6 +32,38 @@ function c21_listings_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * Implements hook_field_formatter_info().
+ */
+function c21_listings_field_formatter_info() {
+  $info = array(
+    'listing_id' => array(
+      'label' => t('Listing Id'),
+      'field types' => array('text'),
+      'description' => t('Displays Text as a Listing Id by appending "-[nid]".'),
+    ),
+  );
+
+  return $info;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function c21_listings_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  switch ($display['type']) {
+    case 'listing_id':
+      foreach ($items as $delta => $item) {
+        $element[$delta]['#markup'] = strtoupper($item['safe_value']) . '-' . $entity->nid;
+     }
+      break;
+  }
+
+  return $element;
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function c21_listings_form_agent_node_form_alter(&$form, $fom_state) {
@@ -138,7 +170,13 @@ function c21_listing_get_agents() {
   exit();
 }
 
-
+/**
+ * Theme function for the listing_id field formatter.
+ */
+function theme_c21_listings_listing_id($variables) {
+dpm($variables);
+  return strtoupper($variables['prefix']) . '-' . $variables['nid'];
+}
 
 
 
