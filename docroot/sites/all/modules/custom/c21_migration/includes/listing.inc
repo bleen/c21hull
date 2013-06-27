@@ -41,7 +41,7 @@ class C21ListingMigration extends C21Migration {
 
     // Handle simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
-    $this->addSimpleFieldMappings(array('list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
+    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
 
     // Handle standard field mappings
     $this->addFieldMapping('is_new')
@@ -79,12 +79,12 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('field_listing_featured_photo:source_dir', 'featured_photo_source_dir');
     $this->addFieldMapping('field_listing_featured_photo:destination_file', 'featured_photo_destination_file');
     $this->addFieldMapping('field_listing_featured_photo:file_replace')
-        ->defaultValue(FILE_EXISTS_RENAME);
+        ->defaultValue(FILE_EXISTS_REUSE);
     $this->addFieldMapping('field_listing_photos', 'photos_filenames');
     $this->addFieldMapping('field_listing_photos:source_dir', 'photos_source_dir');
     $this->addFieldMapping('field_listing_photos:destination_file', 'photos_destination_files');
     $this->addFieldMapping('field_listing_photos:file_replace')
-        ->defaultValue(FILE_EXISTS_RENAME);
+        ->defaultValue(FILE_EXISTS_REUSE);
 
     $this->addFieldMapping('field_listing_sewage', 'sewage')
          ->separator(',');
@@ -138,11 +138,9 @@ class C21ListingMigration extends C21Migration {
     }
 
     // Get the numeric portion of the listing id.
-    list($town, $id) = explode('-', $source_row->listing_id);
+    list($prefix, $id) = explode('-', $source_row->listing_id);
     $source_row->nid = $id;
-    if (!is_numeric($id)) {
-      return FALSE;
-    }
+    $source_row->id_prefix = $prefix;
 
     // Make certain the title is present.
     if (empty($source_row->title)) {
@@ -255,18 +253,22 @@ class C21ListingMigration extends C21Migration {
    * Definition for Migration complete() method
    */
   function complete($entity, $row) {
-    // Create an object with our redirect parameters
-    if (module_exists('redirect') && isset($entity->type) && $entity->type == 'listing') {
-      $redirect = new stdClass();
+    if (module_exists('redirect')) {
+      $source_url = 'listings/browse.htm?listing_id=' . $row->listing_id;
 
-      redirect_object_prepare($redirect, array(
-        'source' => 'listings/browse.htm?listing_id=' . $row->listing_id,
-        'source_options' => array(),
-        'redirect' => 'node/' . $entity->nid,
-        'redirect_options' => array(),
-        'language' => LANGUAGE_NONE,
-      ));
-      redirect_save($redirect);
+      // If one doesnt iexist, create an object with our redirect parameters.
+      if (isset($entity->type) && $entity->type == 'listing' && !redirect_load_by_source($source_url)) {
+        $redirect = new stdClass();
+
+        redirect_object_prepare($redirect, array(
+          'source' => $source_url,
+          'source_options' => array(),
+          'redirect' => 'node/' . $entity->nid,
+          'redirect_options' => array(),
+          'language' => LANGUAGE_NONE,
+        ));
+        redirect_save($redirect);
+      }
     }
   }
 
