@@ -5,6 +5,7 @@ package = Features
 php = 5.2.4
 version = 7.x-1.0
 project = c21
+dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = better_formats
 dependencies[] = block

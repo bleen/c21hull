@@ -367,9 +367,9 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['field_listing_type']['id'] = 'field_listing_type';
   $handler->display->display_options['fields']['field_listing_type']['table'] = 'field_data_field_listing_type';
   $handler->display->display_options['fields']['field_listing_type']['field'] = 'field_listing_type';
-  $handler->display->display_options['fields']['field_listing_type']['click_sort_column'] = 'value';
-  $handler->display->display_options['fields']['field_listing_type']['type'] = 'list_default';
-  $handler->display->display_options['fields']['field_listing_type']['group_column'] = 'value';
+  $handler->display->display_options['fields']['field_listing_type']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
@@ -420,25 +420,6 @@ function c21_views_default_views() {
   $handler->display->display_options['filters']['field_listing_mls_value']['expose']['operator'] = 'field_listing_mls_value_op';
   $handler->display->display_options['filters']['field_listing_mls_value']['expose']['identifier'] = 'field_listing_mls_value';
   $handler->display->display_options['filters']['field_listing_mls_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    5 => 0,
-    4 => 0,
-  );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_listing_type_value']['id'] = 'field_listing_type_value';
-  $handler->display->display_options['filters']['field_listing_type_value']['table'] = 'field_data_field_listing_type';
-  $handler->display->display_options['filters']['field_listing_type_value']['field'] = 'field_listing_type_value';
-  $handler->display->display_options['filters']['field_listing_type_value']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_listing_type_value']['value'] = array();
-  $handler->display->display_options['filters']['field_listing_type_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_listing_type_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_listing_type_value']['expose']['operator_id'] = 'field_listing_type_value_op';
-  $handler->display->display_options['filters']['field_listing_type_value']['expose']['label'] = 'Listing Type';
-  $handler->display->display_options['filters']['field_listing_type_value']['expose']['operator'] = 'field_listing_type_value_op';
-  $handler->display->display_options['filters']['field_listing_type_value']['expose']['identifier'] = 'field_listing_type_value';
-  $handler->display->display_options['filters']['field_listing_type_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
