@@ -20,9 +20,23 @@ function c21_search_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'apachesolr_default_environment';
+  $strongarm->value = 'solr';
+  $export['apachesolr_default_environment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'apachesolr_failure';
   $strongarm->value = 'apachesolr:show_error';
   $export['apachesolr_failure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'apachesolr_search_default_search_page';
+  $strongarm->value = 'core_search';
+  $export['apachesolr_search_default_search_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -31,12 +45,13 @@ function c21_search_strongarm() {
   $strongarm->value = array(
     'mlt-001' => array(
       'name' => 'More like this',
+      'mlt_env_id' => 'local_solr',
       'num_results' => '5',
       'mlt_fl' => array(
         'label' => 'label',
         'taxonomy_names' => 'taxonomy_names',
+        'tm_vid_14_names' => 'tm_vid_14_names',
       ),
-      'mlt_env_id' => 'solr',
       'mlt_mintf' => '1',
       'mlt_mindf' => '1',
       'mlt_minwl' => '3',
