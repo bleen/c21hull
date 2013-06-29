@@ -212,12 +212,6 @@
  */
 
 $databases = array();
-/**
- * Include an environment specific settings.php file.
- * */
-if (file_exists('../settings.local.php')) {
-  include '../settings.local.php';
-}
 
 /**
  * Access control for update.php script.

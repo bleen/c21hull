@@ -346,15 +346,11 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['representative_image']['field'] = 'representative_image';
   $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
   $handler->display->display_options['fields']['representative_image']['image_link'] = 'content';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = 'Listing ID';
-  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['text'] = '[field_listing_township]-[nid]';
-  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]';
+  /* Field: Content: Listing ID */
+  $handler->display->display_options['fields']['field_listing_id_prefix']['id'] = 'field_listing_id_prefix';
+  $handler->display->display_options['fields']['field_listing_id_prefix']['table'] = 'field_data_field_listing_id_prefix';
+  $handler->display->display_options['fields']['field_listing_id_prefix']['field'] = 'field_listing_id_prefix';
+  $handler->display->display_options['fields']['field_listing_id_prefix']['type'] = 'listing_id';
   /* Field: Content: Agent */
   $handler->display->display_options['fields']['field_listing_agent']['id'] = 'field_listing_agent';
   $handler->display->display_options['fields']['field_listing_agent']['table'] = 'field_data_field_listing_agent';
