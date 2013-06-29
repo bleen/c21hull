@@ -47,7 +47,7 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1372465534,
+    'apachesolr_index_updated' => 1372553272,
     'apachesolr_last_optimize' => 1372465282,
   );
   $environment->index_bundles = array(
@@ -70,7 +70,7 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1372469601',
+        'last_changed' => '1372472654',
         'last_entity_id' => '10375',
       ),
       'redirect' => array(
@@ -94,11 +94,12 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1372469758,
-    'apachesolr_last_optimize' => 1372465282,
+    'apachesolr_index_updated' => 1372553272,
+    'apachesolr_last_optimize' => 1372553272,
     'apachesolr_search_changed_boost' => '0:0',
     'apachesolr_search_comment_boost' => '0:0',
     'apachesolr_search_date_boost' => '4:200.0',
+    'apachesolr_search_facet_pages' => '',
     'apachesolr_search_promote_boost' => '3.0',
     'apachesolr_search_sticky_boost' => '0',
     'apachesolr_search_type_boosts' => array(

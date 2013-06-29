@@ -11,6 +11,25 @@ APACHESOLR
     -- PATCH --
     https://drupal.org/node/1965210#comment-7417388
 
+  * In order for numeric filters to work proerly in apachesolr_views I had to
+    modify the makeFilterQuery() function by removing the "$" from the regex
+    that checks for range querys:
+
+    !preg_match('/^[\[\{]\S+ TO \S+[\]\}]$/', $filter['#value'])
+      ...beocame
+    !preg_match('/^[\[\{]\S+ TO \S+[\]\}]/', $filter['#value'])
+
+    For more details, see this issue: https://drupal.org/node/2031495
+    There is no patch because this change does not solve the generic case of
+    multiple exposed filters. What if one is text and one is numeric? The text
+    should be quoted, but the range shouldnt.
+
+APACHESOLR_VIEWS
+  * Adding support for exposed filters on numeric fields.
+
+    -- PATCH --
+    https://drupal.org/node/1807028#comment-7597271
+
 AUTOCOMPLETE DELUX
   * The autocomplete_delux module does not properly respond to some keys (ex.
     the ESC or DELETE keys) in Chrome. This patch fixes the issue:
