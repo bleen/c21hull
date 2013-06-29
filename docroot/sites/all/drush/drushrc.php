@@ -24,6 +24,7 @@ $enable_modules = array(
   'c21' => 1,
   'c21_listings' => 1,
   'c21_migration' => 1,
+  'c21_search' => 1,
   'syslog' => 1,
 );
 $disable_modules = array(
