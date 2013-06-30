@@ -127,7 +127,7 @@ function c21_search_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Apache Solr: entity_id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['table'] = 'apachesolr__local_solr';
   $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
@@ -135,13 +135,16 @@ function c21_search_views_default_views() {
   $handler->display->display_options['fields']['entity_id']['element_type'] = '0';
   $handler->display->display_options['fields']['entity_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entity_id']['element_wrapper_type'] = '0';
-  /* Filter criterion: Apache Solr: fts_field_listing_list_price */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['fts_field_listing_list_price']['id'] = 'fts_field_listing_list_price';
   $handler->display->display_options['filters']['fts_field_listing_list_price']['table'] = 'apachesolr__local_solr';
   $handler->display->display_options['filters']['fts_field_listing_list_price']['field'] = 'fts_field_listing_list_price';
   $handler->display->display_options['filters']['fts_field_listing_list_price']['operator'] = 'between';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['value']['min'] = '150000';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['value']['max'] = '750000';
+  $handler->display->display_options['filters']['fts_field_listing_list_price']['value'] = array(
+    'min' => '150000',
+    'max' => '750000',
+    'value' => '',
+  );
   $handler->display->display_options['filters']['fts_field_listing_list_price']['group'] = 1;
   $handler->display->display_options['filters']['fts_field_listing_list_price']['exposed'] = TRUE;
   $handler->display->display_options['filters']['fts_field_listing_list_price']['expose']['operator_id'] = 'fts_field_listing_list_price_op';
@@ -155,13 +158,16 @@ function c21_search_views_default_views() {
     5 => 0,
     4 => 0,
   );
-  /* Filter criterion: Apache Solr: its_field_listing_bedrooms */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['id'] = 'its_field_listing_bedrooms';
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['table'] = 'apachesolr__local_solr';
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['field'] = 'its_field_listing_bedrooms';
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['operator'] = 'between';
-  $handler->display->display_options['filters']['its_field_listing_bedrooms']['value']['min'] = '1';
-  $handler->display->display_options['filters']['its_field_listing_bedrooms']['value']['max'] = '4';
+  $handler->display->display_options['filters']['its_field_listing_bedrooms']['value'] = array(
+    'min' => '1',
+    'max' => '4',
+    'value' => '',
+  );
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['group'] = 1;
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['exposed'] = TRUE;
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['expose']['operator_id'] = 'its_field_listing_bedrooms_op';
@@ -175,13 +181,16 @@ function c21_search_views_default_views() {
     5 => 0,
     4 => 0,
   );
-  /* Filter criterion: Apache Solr: fts_field_listing_bathrooms */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['id'] = 'fts_field_listing_bathrooms';
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['table'] = 'apachesolr__local_solr';
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['field'] = 'fts_field_listing_bathrooms';
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['operator'] = 'between';
-  $handler->display->display_options['filters']['fts_field_listing_bathrooms']['value']['min'] = '1.5';
-  $handler->display->display_options['filters']['fts_field_listing_bathrooms']['value']['max'] = '4';
+  $handler->display->display_options['filters']['fts_field_listing_bathrooms']['value'] = array(
+    'min' => '1.5',
+    'max' => '4',
+    'value' => '',
+  );
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['group'] = 1;
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['exposed'] = TRUE;
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['expose']['operator_id'] = 'fts_field_listing_bathrooms_op';
@@ -195,13 +204,16 @@ function c21_search_views_default_views() {
     5 => 0,
     4 => 0,
   );
-  /* Filter criterion: Apache Solr: fts_field_listing_acreage */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['fts_field_listing_acreage']['id'] = 'fts_field_listing_acreage';
   $handler->display->display_options['filters']['fts_field_listing_acreage']['table'] = 'apachesolr__local_solr';
   $handler->display->display_options['filters']['fts_field_listing_acreage']['field'] = 'fts_field_listing_acreage';
   $handler->display->display_options['filters']['fts_field_listing_acreage']['operator'] = 'between';
-  $handler->display->display_options['filters']['fts_field_listing_acreage']['value']['min'] = '1.5';
-  $handler->display->display_options['filters']['fts_field_listing_acreage']['value']['max'] = '4';
+  $handler->display->display_options['filters']['fts_field_listing_acreage']['value'] = array(
+    'min' => '1.5',
+    'max' => '4',
+    'value' => '',
+  );
   $handler->display->display_options['filters']['fts_field_listing_acreage']['group'] = 1;
   $handler->display->display_options['filters']['fts_field_listing_acreage']['exposed'] = TRUE;
   $handler->display->display_options['filters']['fts_field_listing_acreage']['expose']['operator_id'] = 'fts_field_listing_acreage_op';

@@ -47,7 +47,7 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1372553272,
+    'apachesolr_index_updated' => 1372599626,
     'apachesolr_last_optimize' => 1372465282,
   );
   $environment->index_bundles = array(
