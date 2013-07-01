@@ -1,1 +1,19 @@
 <?php
+
+/**
+ * Implements hook_install().
+ */
+function c21_install() {
+  // Create an empty page callback for the homepage and set the default homepage
+  // to point to it.
+  $callback = new stdClass();
+
+  $callback->path = 'home';
+  $callback->page_title = t('Homepage');
+  $callback->created = REQUEST_TIME;
+  $callback->changed = REQUEST_TIME;
+
+  empty_page_save_callback($callback);
+
+  variable_set('site_frontpage', 'home');
+}
