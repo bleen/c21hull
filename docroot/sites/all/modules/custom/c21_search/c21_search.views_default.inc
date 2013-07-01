@@ -234,6 +234,7 @@ function c21_search_views_default_views() {
 
   /* Display: Search Listings Page */
   $handler = $view->new_display('page', 'Search Listings Page', 'page');
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'search/listings';
   $export['c21_search_listings'] = $view;
 

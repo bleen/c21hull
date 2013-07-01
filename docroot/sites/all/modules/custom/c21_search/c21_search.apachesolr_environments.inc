@@ -47,7 +47,7 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1372631120,
+    'apachesolr_index_updated' => 1372642167,
     'apachesolr_last_optimize' => 1372465282,
   );
   $environment->index_bundles = array(
@@ -94,8 +94,8 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1372553272,
-    'apachesolr_last_optimize' => 1372553272,
+    'apachesolr_index_updated' => 1372642167,
+    'apachesolr_last_optimize' => 1372642167,
     'apachesolr_search_changed_boost' => '0:0',
     'apachesolr_search_comment_boost' => '0:0',
     'apachesolr_search_date_boost' => '4:200.0',

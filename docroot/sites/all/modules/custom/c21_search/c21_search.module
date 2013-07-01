@@ -7,7 +7,7 @@
 include_once 'c21_search.features.inc';
 
 /**
- * Integrates hook_apachesolr_index_document_build_ENTITYTYPE().
+ * Implements hook_apachesolr_index_document_build_ENTITY_TYPE().
  */
 function c21_search_apachesolr_index_document_build_listing(ApacheSolrDocument &$document, $entity, $env_id) {
   if ($entity->type == 'listing') {
@@ -18,5 +18,20 @@ function c21_search_apachesolr_index_document_build_listing(ApacheSolrDocument &
     $document->addField('fs_field_bathrooms', $entity->field_listing_bathrooms['und'][0]['value']);
     $document->addField('fs_field_acreage', $entity->field_listing_acreage['und'][0]['value']);
     $document->addField('is_field_sq_ft', $entity->field_listing_sq_ft_above['und'][0]['value'] + $entity->field_listing_sq_ft_below['und'][0]['value']);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
+  switch ($form['#id']) {
+    case 'views-exposed-form-c21-search-listings-page':
+      // Add some placeholder text to the search field.
+      $form['keyword']['#placeholder'] = t('Listing ID, MLS#, keywords, etc.');
+
+      // Add javascript to handle the facet sliders.
+      $form['#attached']['js'][] = drupal_get_path('module', 'c21_search') . '/js/c21_search.js';
+      break;
   }
 }
