@@ -111,6 +111,27 @@ function c21_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_compression_type';
+  $strongarm->value = 'min';
+  $export['jquery_update_compression_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_cdn';
+  $strongarm->value = 'google';
+  $export['jquery_update_jquery_cdn'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_version';
+  $strongarm->value = '1.7';
+  $export['jquery_update_jquery_version'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_page';
   $strongarm->value = array(
     0 => 'status',
@@ -505,8 +526,8 @@ function c21_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'views_block_hashes';
   $strongarm->value = array(
-    'b9efce5f9de478ed390efcf7c815f2f5' => 'c21_workbench_edits_by_user-block_1',
     'bdeec0c6a6d8fcdcd6969bf1225f3520' => 'c21_workbench_recent_content-block_1',
+    'b9efce5f9de478ed390efcf7c815f2f5' => 'c21_workbench_edits_by_user-block_1',
     '9cf22433e0efbd8b206c8e4c2edb177c' => 'workbench_recent_content-block_1',
   );
   $export['views_block_hashes'] = $strongarm;

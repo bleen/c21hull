@@ -1,0 +1,12 @@
+input {
+  width: 100%;
+  font-size: 1.25em;
+  padding: .15em;
+  border: 1px solid #aaa;
+  @include border-radius();
+}
+
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+}

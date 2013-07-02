@@ -31,7 +31,18 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
       $form['keyword']['#placeholder'] = t('Listing ID, MLS#, keywords, etc.');
 
       // Add javascript to handle the facet sliders.
+      // $form['#attached']['js'][] = drupal_get_path('theme','escrow') . '/js/jquery.hammer.min.js';
       $form['#attached']['js'][] = drupal_get_path('module', 'c21_search') . '/js/c21_search.js';
+
+      // Add a toggle.
+      $form['toggle'] = array(
+        '#type' => 'markup',
+        '#markup' => '<div class="toggle">' . t('Search') . '</div>',
+      );
+      $element_to_insert['filter-toggle'] = array(
+        'value' => 'toggle',
+      );
+      $form['#info'] = array_merge($element_to_insert, $form['#info']);
       break;
   }
 }

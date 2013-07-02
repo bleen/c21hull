@@ -29,11 +29,13 @@ function escrow_preprocess_maintenance_page(&$vars, $hook) {
  */
 function escrow_modernizr_load_alter(&$load) {
 
-  // We will check for touch events, and if we do load the hammer.js script.
-  $load[] = array(
-    'test' => 'Modernizr.touch',
-    'yep'  => array('/'. drupal_get_path('theme','escrow') . '/javascripts/hammer.js'),
-  );
+  // // We will check for touch events, and if we do load the hammer.js script.
+  // $load[] = array(
+  //   // 'test' => 'Modernizr.touch',
+  //   'test' => 'Modernizr.localstorage',
+  //   'yep'  => array('/'. drupal_get_path('theme','escrow') . '/js/jquery.hammer.min.js'),
+  // );
+
 
   return $load;
 }
@@ -46,7 +48,6 @@ function escrow_modernizr_load_alter(&$load) {
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function escrow_preprocess_html(&$vars) {
 
 }

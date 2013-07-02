@@ -1,0 +1,47 @@
+#block-views-exp-c21-search-listings-page {
+  position: fixed;
+  bottom: -1px;
+  left: 50%;
+  width: 96%;
+  margin-left: -48%;
+  padding: 1em;
+
+  &.open {
+    @include transition-property('bottom');
+    @include transition-duration(.35s);
+    bottom: -1px;
+  }
+  &.closed {
+    @include transition-property('bottom');
+    @include transition-duration(.35s);
+    bottom: -250px;
+  }
+
+  div.views-widget-filter-fts_field_listing_list_price,
+  div.views-widget-filter-keyword,
+  div.views-submit-button {
+    width: 100%;
+  }
+  .views-exposed-widget {
+    position: relative;
+    width: 30%;
+    padding: 0 0 1.25em 0;
+    margin-bottom: .25em;
+    margin-right: 5%;
+
+    &:nth-last-child(2) {
+      margin-right: 0;
+    }
+
+    .slider-num {
+      position: absolute;
+      bottom: 0;
+    }
+    .slider-num-min {
+      left: .5em;
+    }
+    .slider-num-max {
+      right: .5em;
+    }
+  }
+}
