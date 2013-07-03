@@ -355,7 +355,7 @@ abstract class MigrationBase {
     // Support for legacy code passing a group object as the first parameter.
     if (is_object($arguments) && is_a($arguments, 'MigrateGroup')) {
       $this->group = $arguments;
-      $this->arguments = array('group_name' => $arguments->getName());
+      $this->arguments['group_name'] = $arguments->getName();
       if (!self::$groupArgumentWarning &&
           variable_get('migrate_deprecation_warnings', 1)) {
         self::displayMessage(t('Passing a group object to a migration ' .
@@ -591,6 +591,14 @@ abstract class MigrationBase {
         self::displayMessage(t('No migration class !class found',
           array('!class' => $class_name)));
         return NULL;
+      }
+      if (isset($arguments['dependencies'])) {
+        $migrations[$machine_name_key]->setHardDependencies(
+          $arguments['dependencies']);
+      }
+      if (isset($arguments['soft_dependencies'])) {
+        $migrations[$machine_name_key]->setSoftDependencies(
+          $arguments['soft_dependencies']);
       }
     }
     return $migrations[$machine_name_key];
