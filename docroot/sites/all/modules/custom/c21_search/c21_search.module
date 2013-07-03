@@ -30,9 +30,10 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
       // Add some placeholder text to the search field.
       $form['keyword']['#placeholder'] = t('Listing ID, MLS#, keywords, etc.');
 
-      // Add javascript to handle the facet sliders.
-      // $form['#attached']['js'][] = drupal_get_path('theme','escrow') . '/js/jquery.hammer.min.js';
+      // Add javascript to handle the facet sliders. Note that touch-punch does
+      // not work when added asyncronously via "yesnope".
       $form['#attached']['js'][] = drupal_get_path('module', 'c21_search') . '/js/c21_search.js';
+      $form['#attached']['js'][] = drupal_get_path('theme', 'escrow') . '/js/jquery.ui.touch-punch.min.js';
 
       // Add a toggle.
       $form['toggle'] = array(

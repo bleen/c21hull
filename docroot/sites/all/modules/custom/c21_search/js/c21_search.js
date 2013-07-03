@@ -29,11 +29,10 @@ Drupal.behaviors.c21SearchForm = {
     yepnope({
       test: Modernizr.touch,
       yep: {
-        'hammer': '/sites/all/themes/escrow/js/jquery.hammer.min.js',
-        'touch-punch': '/sites/all/themes/escrow/js/jquery.ui.touch-punch.min.js'
+        'hammer': '/sites/all/themes/escrow/js/jquery.hammer.min.js'
       },
       callback: {
-        'touch-punch': function (url, result, key) {
+        'hammer': function (url, result, key) {
           Drupal.c21Search.toggleFormTouch();
         }
       }
@@ -47,12 +46,12 @@ Drupal.behaviors.c21SearchForm = {
 
 // Handle the opening and closing of the form based on a drag gesture.
 Drupal.c21Search.toggleFormTouch = function () {
-  hammertime = $('#block-views-exp-c21-search-listings-page').hammer({drag_block_vertical: true});
+  hammertime = $('#block-views-exp-c21-search-listings-page .toggle').hammer({drag_block_vertical: true});
   hammertime.on("dragup", function(event) {
-    hammertime.removeClass('closed').addClass('open');
+    $('#block-views-exp-c21-search-listings-page').removeClass('closed').addClass('open');
   });
   hammertime.on("dragdown", function(event) {
-    hammertime.removeClass('open').addClass('closed');
+    $('#block-views-exp-c21-search-listings-page').removeClass('open').addClass('closed');
   });
 };
 
