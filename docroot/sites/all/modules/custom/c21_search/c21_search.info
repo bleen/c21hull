@@ -11,6 +11,7 @@ dependencies[] = apachesolr_views
 dependencies[] = better_exposed_filters
 dependencies[] = c21_listings
 dependencies[] = ctools
+dependencies[] = facetapi
 dependencies[] = features
 dependencies[] = search
 dependencies[] = strongarm
