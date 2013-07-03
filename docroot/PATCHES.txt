@@ -30,6 +30,12 @@ APACHESOLR_VIEWS
     -- PATCH --
     https://drupal.org/node/1807028#comment-7597271
 
+AURORA
+  * Changing the default viewport meta tag to use 1.0 instead of just 1.
+
+    -- PATCH --
+    https://drupal.org/node/2033585
+
 AUTOCOMPLETE DELUX
   * The autocomplete_delux module does not properly respond to some keys (ex.
     the ESC or DELETE keys) in Chrome. This patch fixes the issue:
