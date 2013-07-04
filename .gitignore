@@ -1,3 +1,5 @@
 project/*
 source_files
 docroot/favicon.*
+docroot/FirePHPCore
+docroot/core
