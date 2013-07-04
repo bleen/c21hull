@@ -38,30 +38,32 @@ Drupal.behaviors.c21SearchForm = {
       }
     });
 
-    // Add click support for toggling the form for those
+    // Add click support for toggling the form for those devices not supporting
+    // touch.
     Drupal.c21Search.toggleFormClick();
+    $('.search-form').removeClass('open').addClass('closed');
 
   }
 };
 
 // Handle the opening and closing of the form based on a drag gesture.
 Drupal.c21Search.toggleFormTouch = function () {
-  hammertime = $('#block-views-exp-c21-search-listings-page .toggle').hammer({drag_block_vertical: true});
+  hammertime = $('.search-form .toggle').hammer({drag_block_vertical: true});
   hammertime.on("dragup", function(event) {
-    $('#block-views-exp-c21-search-listings-page').removeClass('closed').addClass('open');
+    $('.search-form').removeClass('closed').addClass('open');
   });
   hammertime.on("dragdown", function(event) {
-    $('#block-views-exp-c21-search-listings-page').removeClass('open').addClass('closed');
+    $('.search-form').removeClass('open').addClass('closed');
   });
 };
 
 // Handle the opening and closing of the form based on a drag gesture.
 Drupal.c21Search.toggleFormClick = function () {
   if (!Modernizr.touch) {
-    console.log($('#block-views-exp-c21-search-listings-page .toggle'));
-    $('#block-views-exp-c21-search-listings-page .toggle').toggle(
-      function() { $('#block-views-exp-c21-search-listings-page').removeClass('open').addClass('closed'); },
-      function() { $('#block-views-exp-c21-search-listings-page').removeClass('closed').addClass('open'); }
+    console.log($('.search-form .toggle'));
+    $('.search-form .toggle').toggle(
+      function() { $('.search-form').removeClass('closed').addClass('open'); },
+      function() { $('.search-form').removeClass('open').addClass('closed'); }
     );
   }
 };

@@ -14,7 +14,7 @@
   &.closed {
     @include transition-property('bottom');
     @include transition-duration(.35s);
-    bottom: -250px;
+    bottom: -325px;
   }
 
   div.views-widget-filter-fts_field_listing_list_price,
