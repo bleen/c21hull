@@ -14,9 +14,8 @@ function c21_user_default_permissions() {
   $permissions['access PDF version'] = array(
     'name' => 'access PDF version',
     'roles' => array(
-      'administrator' => 'administrator',
-      'agent' => 'agent',
-      'staff' => 'staff',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'print_pdf',
   );
@@ -83,6 +82,15 @@ function c21_user_default_permissions() {
     'module' => 'contextual',
   );
 
+  // Exported permission: access devel information.
+  $permissions['access devel information'] = array(
+    'name' => 'access devel information',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'devel',
+  );
+
   // Exported permission: access overlay.
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
@@ -136,11 +144,60 @@ function c21_user_default_permissions() {
     'module' => 'workbench',
   );
 
+  // Exported permission: admin_classes.
+  $permissions['admin_classes'] = array(
+    'name' => 'admin_classes',
+    'roles' => array(),
+    'module' => 'ds_ui',
+  );
+
+  // Exported permission: admin_display_suite.
+  $permissions['admin_display_suite'] = array(
+    'name' => 'admin_display_suite',
+    'roles' => array(),
+    'module' => 'ds',
+  );
+
+  // Exported permission: admin_fields.
+  $permissions['admin_fields'] = array(
+    'name' => 'admin_fields',
+    'roles' => array(),
+    'module' => 'ds_ui',
+  );
+
+  // Exported permission: admin_view_modes.
+  $permissions['admin_view_modes'] = array(
+    'name' => 'admin_view_modes',
+    'roles' => array(),
+    'module' => 'ds_ui',
+  );
+
   // Exported permission: administer actions.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
     'roles' => array(),
     'module' => 'system',
+  );
+
+  // Exported permission: administer block classes.
+  $permissions['administer block classes'] = array(
+    'name' => 'administer block classes',
+    'roles' => array(),
+    'module' => 'block_class',
+  );
+
+  // Exported permission: administer block semantics.
+  $permissions['administer block semantics'] = array(
+    'name' => 'administer block semantics',
+    'roles' => array(),
+    'module' => 'borealis_sb',
+  );
+
+  // Exported permission: administer blockify.
+  $permissions['administer blockify'] = array(
+    'name' => 'administer blockify',
+    'roles' => array(),
+    'module' => 'blockify',
   );
 
   // Exported permission: administer blocks.
@@ -153,9 +210,7 @@ function c21_user_default_permissions() {
   // Exported permission: administer ckeditor.
   $permissions['administer ckeditor'] = array(
     'name' => 'administer ckeditor',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'ckeditor',
   );
 
@@ -164,6 +219,20 @@ function c21_user_default_permissions() {
     'name' => 'administer content types',
     'roles' => array(),
     'module' => 'node',
+  );
+
+  // Exported permission: administer contexts.
+  $permissions['administer contexts'] = array(
+    'name' => 'administer contexts',
+    'roles' => array(),
+    'module' => 'context_ui',
+  );
+
+  // Exported permission: administer empty page callbacks.
+  $permissions['administer empty page callbacks'] = array(
+    'name' => 'administer empty page callbacks',
+    'roles' => array(),
+    'module' => 'empty_page',
   );
 
   // Exported permission: administer features.
@@ -183,9 +252,7 @@ function c21_user_default_permissions() {
   // Exported permission: administer fieldgroups.
   $permissions['administer fieldgroups'] = array(
     'name' => 'administer fieldgroups',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_group',
   );
 
@@ -212,6 +279,13 @@ function c21_user_default_permissions() {
     'module' => 'menu',
   );
 
+  // Exported permission: administer modernizr.
+  $permissions['administer modernizr'] = array(
+    'name' => 'administer modernizr',
+    'roles' => array(),
+    'module' => 'modernizr',
+  );
+
   // Exported permission: administer module filter.
   $permissions['administer module filter'] = array(
     'name' => 'administer module filter',
@@ -222,9 +296,7 @@ function c21_user_default_permissions() {
   // Exported permission: administer modules.
   $permissions['administer modules'] = array(
     'name' => 'administer modules',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'system',
   );
 
@@ -263,6 +335,20 @@ function c21_user_default_permissions() {
     'name' => 'administer redirects',
     'roles' => array(),
     'module' => 'redirect',
+  );
+
+  // Exported permission: administer responsive image settings.
+  $permissions['administer responsive image settings'] = array(
+    'name' => 'administer responsive image settings',
+    'roles' => array(),
+    'module' => 'borealis_ri',
+  );
+
+  // Exported permission: administer responsive image styles.
+  $permissions['administer responsive image styles'] = array(
+    'name' => 'administer responsive image styles',
+    'roles' => array(),
+    'module' => 'borealis_ri',
   );
 
   // Exported permission: administer shortcuts.
@@ -342,10 +428,8 @@ function c21_user_default_permissions() {
   // Exported permission: advanced migration information.
   $permissions['advanced migration information'] = array(
     'name' => 'advanced migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'migrate_ui',
+    'roles' => array(),
+    'module' => 'migrate',
   );
 
   // Exported permission: block IP addresses.
@@ -376,6 +460,8 @@ function c21_user_default_permissions() {
     'name' => 'change own username',
     'roles' => array(
       'administrator' => 'administrator',
+      'agent' => 'agent',
+      'staff' => 'staff',
     ),
     'module' => 'user',
   );
@@ -399,9 +485,7 @@ function c21_user_default_permissions() {
   // Exported permission: customize ckeditor.
   $permissions['customize ckeditor'] = array(
     'name' => 'customize ckeditor',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'ckeditor',
   );
 
@@ -485,6 +569,13 @@ function c21_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
+  // Exported permission: execute php code.
+  $permissions['execute php code'] = array(
+    'name' => 'execute php code',
+    'roles' => array(),
+    'module' => 'devel',
+  );
+
   // Exported permission: flush caches.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
@@ -504,10 +595,8 @@ function c21_user_default_permissions() {
   // Exported permission: migration information.
   $permissions['migration information'] = array(
     'name' => 'migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'migrate_ui',
+    'roles' => array(),
+    'module' => 'migrate',
   );
 
   // Exported permission: node-specific print configuration.
@@ -534,7 +623,9 @@ function c21_user_default_permissions() {
   // Exported permission: override page promote to front page option.
   $permissions['override page promote to front page option'] = array(
     'name' => 'override page promote to front page option',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'override_node_options',
   );
 
@@ -543,7 +634,6 @@ function c21_user_default_permissions() {
     'name' => 'override page published option',
     'roles' => array(
       'administrator' => 'administrator',
-      'staff' => 'staff',
     ),
     'module' => 'override_node_options',
   );
@@ -627,6 +717,29 @@ function c21_user_default_permissions() {
       'staff' => 'staff',
     ),
     'module' => 'shortcut',
+  );
+
+  // Exported permission: switch users.
+  $permissions['switch users'] = array(
+    'name' => 'switch users',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'devel',
+  );
+
+  // Exported permission: use text format filtered_html.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(),
+    'module' => 'filter',
+  );
+
+  // Exported permission: use text format full_html.
+  $permissions['use text format full_html'] = array(
+    'name' => 'use text format full_html',
+    'roles' => array(),
+    'module' => 'filter',
   );
 
   // Exported permission: use text format rich_text.

@@ -160,14 +160,20 @@ function c21_listings_user_default_permissions() {
   // Exported permission: delete terms in 16.
   $permissions['delete terms in 16'] = array(
     'name' => 'delete terms in 16',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: delete terms in 17.
   $permissions['delete terms in 17'] = array(
     'name' => 'delete terms in 17',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -382,14 +388,20 @@ function c21_listings_user_default_permissions() {
   // Exported permission: edit terms in 16.
   $permissions['edit terms in 16'] = array(
     'name' => 'edit terms in 16',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: edit terms in 17.
   $permissions['edit terms in 17'] = array(
     'name' => 'edit terms in 17',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
     'module' => 'taxonomy',
   );
 

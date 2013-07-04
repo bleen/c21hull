@@ -20,6 +20,45 @@ function c21_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'blockify_blocks';
+  $strongarm->value = array(
+    'blockify-logo' => 'blockify-logo',
+    'blockify-page-title' => 'blockify-page-title',
+    'blockify-breadcrumb' => 'blockify-breadcrumb',
+    'blockify-tabs' => 'blockify-tabs',
+    'blockify-messages' => 'blockify-messages',
+    'blockify-actions' => 'blockify-actions',
+    'blockify-feed-icons' => 'blockify-feed-icons',
+    'blockify-site-name' => 0,
+    'blockify-site-slogan' => 0,
+  );
+  $export['blockify_blocks'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'borealis_responsive_builds';
+  $strongarm->value = array(
+    'respondsmall' => 250,
+    'respondmedium' => 437.5,
+    'respondlarge' => 765.625,
+    'respondxl' => 1339.84375,
+    'respondxl2' => 2344.7265625,
+    'respondxl3' => 4103.27148438,
+    'respondxl4' => 7180.72509766,
+  );
+  $export['borealis_responsive_builds'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'borealis_ri_children';
+  $strongarm->value = array();
+  $export['borealis_ri_children'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_page';
   $strongarm->value = 0;
   $export['comment_page'] = $strongarm;
