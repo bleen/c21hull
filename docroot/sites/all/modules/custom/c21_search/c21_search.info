@@ -74,7 +74,6 @@ features[user_permission][] = administer search
 features[user_permission][] = search content
 features[user_permission][] = use advanced search
 features[variable][] = apachesolr_cron_limit
-features[variable][] = apachesolr_default_environment
 features[variable][] = apachesolr_failure
 features[variable][] = apachesolr_search_default_search_page
 features[variable][] = apachesolr_search_mlt_blocks
