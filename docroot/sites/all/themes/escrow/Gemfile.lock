@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.5)
+    animation (0.1.alpha.3)
+      compass (>= 0.12.0)
+      sass (>= 3.2.0.alpha.95)
     breakpoint (2.0.5)
       compass (>= 0.12.1)
       sass (>= 3.2.0)
@@ -48,6 +51,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  animation (~> 0.1.alpha.3)
   breakpoint (~> 2.0.2)
   compass-aurora (~> 3.0.0)
   compass-normalize (~> 1.4.3)

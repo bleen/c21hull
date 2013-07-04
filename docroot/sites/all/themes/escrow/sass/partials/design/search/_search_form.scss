@@ -1,6 +1,10 @@
-#block-views-exp-c21-search-listings-page {
+.search-form {
   border: 1px solid #ccc;
   background: #fff;
+
+  &.closed {
+    @include animation(bounce 2s);
+  }
 
   .views-exposed-widget {
     .slider-num {
