@@ -10,13 +10,13 @@ class drealtyDaemon {
 
   /**
    *
-   * @var drealtyConnection
+   * @var drealtyConnection 
    */
   protected $dc;
 
   /**
    *
-   * @var drealtyMetaData
+   * @var drealtyMetaData 
    */
   protected $dm;
 
@@ -80,7 +80,7 @@ class drealtyDaemon {
    * @param drealtyConnectionEntity $connection
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
-   * @param string $entity_type
+   * @param string $entity_type 
    */
   private function ProcessRetsClass(drealtyConnectionEntity $connection, $resource, $class, $entity_type) {
 
@@ -148,7 +148,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $key_field
-   * @return int
+   * @return int 
    */
   function fetch_listings_offset_not_supported_key(drealtyConnectionEntity $connection, $resource, $class, $key_field) {
     $rets = $this->dc->rets;
@@ -236,7 +236,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $key_field
-   * @return int
+   * @return int 
    */
   function fetch_listings_offset_not_supported_price(drealtyConnectionEntity $connection, $resource, $class, $key_field) {
     $rets = $this->dc->rets;
@@ -316,7 +316,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $query
-   * @return int
+   * @return int 
    */
   function fetch_listings_offset_supported_default(drealtyConnectionEntity $connection, $resource, $class, $query) {
     $offset = 0;
@@ -502,7 +502,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $entity_type
-   * @param int $chunk_count
+   * @param int $chunk_count 
    */
   protected function process_results(drealtyConnectionEntity $connection, $resource, $class, $entity_type) {
 
@@ -541,7 +541,7 @@ class drealtyDaemon {
         drupal_alter('drealty_import_rets_item', $rets_item, $item_context);
 
 
-        // this listing either doesn't exist in the IDX or has changed.
+        // this listing either doesn't exist in the IDX or has changed. 
         // determine if we need to update or create a new one.
         if (isset($existing_items[$rets_item[$id]])) {
           // this listing exists so we'll get a reference to it and set the values to what came to us in the RETS result
@@ -619,10 +619,10 @@ class drealtyDaemon {
 
   /**
    * Function to handle the logic of what to do with expired listings
-   *
+   * 
    * @param array $in_rets
    * @param array $conid
-   * @param drealtyRetsClass $class
+   * @param drealtyRetsClass $class 
    */
   protected function handle_expired($in_rets, $conid, $class) {
     $results = db_select('drealty_listing', 'dl')
@@ -695,7 +695,7 @@ class drealtyDaemon {
    * @param int $conid
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
-   * @return type
+   * @return type 
    */
   public function process_images($conid, $resource, $class) {
 
@@ -896,7 +896,34 @@ class drealtyDaemon {
           //get the default country code if one exists for the address
           $field_info = field_info_instance($entity_type, $mapping->field_name, $class->bundle);
           $item->{$mapping->field_name}[LANGUAGE_NONE][0]['country'] = isset($field_info['default_value'][0]['country']) ? $field_info['default_value'][0]['country'] : 'US';
-          $item->{$mapping->field_name}[LANGUAGE_NONE][0]['thoroughfare'] = isset($rets_item[$mapping->data['address_1']]) ? $rets_item[$mapping->data['address_1']] : NULL;
+          if(isset($mapping->data['address_1']) && isset($rets_item[$mapping->data['address_1']])) {
+            $item->{$mapping->field_name}[LANGUAGE_NONE][0]['thoroughfare'] = $rets_item[$mapping->data['address_1']];
+            if(isset($mapping->data['address_1_1']) && isset($rets_item[$mapping->data['address_1_1']])) {
+              $item->{$mapping->field_name}[LANGUAGE_NONE][0]['thoroughfare'] .= " " . $rets_item[$mapping->data['address_1_1']];
+            }
+            if(isset($mapping->data['address_1_2']) && isset($rets_item[$mapping->data['address_1_2']])) {
+              $item->{$mapping->field_name}[LANGUAGE_NONE][0]['thoroughfare'] .= " " . $rets_item[$mapping->data['address_1_2']];
+            }
+            if(isset($mapping->data['address_1_3']) && isset($rets_item[$mapping->data['address_1_3']])) {
+              $item->{$mapping->field_name}[LANGUAGE_NONE][0]['thoroughfare'] .= " " . $rets_item[$mapping->data['address_1_3']];
+            }
+          } else {
+            $item->{$mapping->field_name}[LANGUAGE_NONE][0]['thoroughfare'] = NULL;
+          }
+          if(isset($mapping->data['address_2']) && isset($rets_item[$mapping->data['address_2']])) {
+            $item->{$mapping->field_name}[LANGUAGE_NONE][0]['premise'] = $rets_item[$mapping->data['address_2']];
+            if(isset($mapping->data['address_2_1']) && isset($rets_item[$mapping->data['address_2_1']])) {
+              $item->{$mapping->field_name}[LANGUAGE_NONE][0]['premise'] .= " " . $rets_item[$mapping->data['address_2_1']];
+            }
+            if(isset($mapping->data['address_2_2']) && isset($rets_item[$mapping->data['address_2_2']])) {
+              $item->{$mapping->field_name}[LANGUAGE_NONE][0]['premise'] .= " " . $rets_item[$mapping->data['address_2_2']];
+            }
+            if(isset($mapping->data['address_2_3']) && isset($rets_item[$mapping->data['address_2_3']])) {
+              $item->{$mapping->field_name}[LANGUAGE_NONE][0]['premise'] .= " " . $rets_item[$mapping->data['address_2_3']];
+            }
+          } else {
+            $item->{$mapping->field_name}[LANGUAGE_NONE][0]['premise'] = NULL;
+          }
           $item->{$mapping->field_name}[LANGUAGE_NONE][0]['premise'] = isset($mapping->data['address_2']) ? $rets_item[$mapping->data['address_2']] : NULL;
           $item->{$mapping->field_name}[LANGUAGE_NONE][0]['locality'] = isset($mapping->data['city']) ? $rets_item[$mapping->data['city']] : NULL;
           $item->{$mapping->field_name}[LANGUAGE_NONE][0]['administrative_area'] = isset($mapping->data['state']) ? $rets_item[$mapping->data['state']] : NULL;

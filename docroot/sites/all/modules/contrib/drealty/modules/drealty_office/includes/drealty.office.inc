@@ -44,15 +44,15 @@ class DrealtyOffice extends Entity {
 }
 
 class DrealtyOfficeController extends EntityAPIController {
-
+  
   public function __construct($entityType) {
     parent::__construct($entityType);
   }
-
+  
   public function buildContent($entity, $view_mode = 'full', $langcode = NULL, $content = array()) {
     return parent::buildContent($entity, $view_mode, $langcode, $content);
   }
-
+  
   public function save($entity, DatabaseTransaction $transaction = NULL) {
     parent::save($entity, $transaction);
   }

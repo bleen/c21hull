@@ -85,7 +85,7 @@ function drealty_geocoder_google($address, $options = array()) {
     if (empty($geometries))
       return;
 
-    // Check if we should return all results as a compound geometry
+    // Check if we should return all results as a compound geometry  
     if (isset($options['all_results'])) {
       if ($options['all_results']) {
         return geoPHP::geometryReduce($geometries);

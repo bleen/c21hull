@@ -50,3 +50,4 @@ function _drealty_geocoder_yahoo_geometry(&$data) {
   }
   return new Point($data->ResultSet->Results[0]->longitude, $data->ResultSet->Results[0]->latitude);
 }
+

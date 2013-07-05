@@ -8,7 +8,7 @@
  * Implements hook_install().
  */
 function drealty_lead_install() {
-
+	
 	if (!field_info_field('field_drealty_lead_name')) {
 		field_create_field(array(
 			'field_name' => 'field_drealty_lead_name',
@@ -20,7 +20,7 @@ function drealty_lead_install() {
 			'type' => 'text',
 		));
 	}
-
+	
 	if (!field_info_field('field_drealty_lead_email')) {
 		field_create_field(array(
 			'field_name' => 'field_drealty_lead_email',
@@ -32,7 +32,7 @@ function drealty_lead_install() {
 			'type' => 'text',
 		));
 	}
-
+	
 	if (!field_info_field('field_drealty_lead_phone')) {
 		field_create_field(array(
 			'field_name' => 'field_drealty_lead_phone',
@@ -44,7 +44,7 @@ function drealty_lead_install() {
 			'type' => 'text',
 		));
 	}
-
+	
 	if (!field_info_field('field_drealty_lead_mls_id')) {
 		field_create_field(array(
 			'field_name' => 'field_drealty_lead_mls_id',
@@ -56,7 +56,7 @@ function drealty_lead_install() {
 			'type' => 'text',
 		));
 	}
-
+	
 	if (!field_info_field('field_drealty_lead_question')) {
 		field_create_field(array(
 			'field_name' => 'field_drealty_lead_question',
@@ -68,7 +68,7 @@ function drealty_lead_install() {
 			'type' => 'text_long',
 		));
 	}
-
+	
 	if (!field_info_instance('drealty_lead', 'field_drealty_lead_name', 'drealty_lead')) {
 		field_create_instance(array(
 			'field_name' => 'field_drealty_lead_name',
@@ -78,7 +78,7 @@ function drealty_lead_install() {
 			'bundle' => 'drealty_lead',
 		));
 	}
-
+	
 	if (!field_info_instance('drealty_lead', 'field_drealty_lead_email', 'drealty_lead')) {
 		field_create_instance(array(
 			'field_name' => 'field_drealty_lead_email',
@@ -88,7 +88,7 @@ function drealty_lead_install() {
 			'bundle' => 'drealty_lead',
 		));
 	}
-
+	
 	if (!field_info_instance('drealty_lead', 'field_drealty_lead_phone', 'drealty_lead')) {
 		field_create_instance(array(
 			'field_name' => 'field_drealty_lead_phone',
@@ -98,7 +98,7 @@ function drealty_lead_install() {
 			'bundle' => 'drealty_lead',
 		));
 	}
-
+	
 	if (!field_info_instance('drealty_lead', 'field_drealty_lead_mls_id', 'drealty_lead')) {
 		field_create_instance(array(
 			'field_name' => 'field_drealty_lead_mls_id',
@@ -108,7 +108,7 @@ function drealty_lead_install() {
 			'bundle' => 'drealty_lead',
 		));
 	}
-
+	
 	if (!field_info_instance('drealty_lead', 'field_drealty_lead_question', 'drealty_lead')) {
 		field_create_instance(array(
 			'field_name' => 'field_drealty_lead_question',
@@ -133,7 +133,7 @@ function drealty_lead_uninstall() {
   foreach ($leads as $lead) {
     entity_delete('drealty_lead', $id);
   }
-
+	
 	field_attach_delete_bundle('drealty_lead', 'drealty_lead');
 	field_purge_batch(10);
 }
@@ -146,12 +146,12 @@ function drealty_lead_schema() {
 		'description' => 'Base table to store dRealty Leads.',
 		'fields' => array(
 			'id' => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE, 'description' => 'Lead primary key.'),
-			'uid' => array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'description' => 'The user who created this lead. Defaults to 1 if created by a non Drupal user.'),
+			'uid' => array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'description' => 'The user who created this lead. Defaults to 1 if created by a non Drupal user.'),      
 			'created' => array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'description' => 'Date the lead was created in the system.'),
       'changed' => array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'description' => 'Last date the lead was changed/updated in the system'),
     ),
     'primary key' => array('id'),
 	);
-
+	
 	return $schema;
 }

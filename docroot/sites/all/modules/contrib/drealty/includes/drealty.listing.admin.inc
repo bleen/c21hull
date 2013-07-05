@@ -190,7 +190,7 @@ function drealty_listing_admin_overview($form, &$form_state, $arg) {
       'id' => $listing->id,
       'mls_id' => array('data' => array('#type' => 'link', '#title' => $listing->rets_id, '#href' => 'drealty_listing/' . $listing->id)),
       'title' => $listing->label,
-      'type' => $listing->type,
+      'type' => $listing->type,      
       'updated' => format_date($listing->changed, 'short'),
       'operations' => theme('links', array('links' => $links, 'attributes' => array('class' => array('links', 'inline', 'operations')))),
     );
@@ -232,7 +232,7 @@ function drealty_listing_edit_form($form, &$form_state, $op, $listing) {
 
 
   if ($listing->rets_imported) {
-
+    
   }
 
   field_attach_form('drealty_listing', $listing, $form, $form_state);
@@ -455,3 +455,4 @@ function drealty_listing_type_form_submit(&$form, &$form_state) {
 function drealty_listing_type_form_submit_delete(&$form, &$form_state) {
   $form_state['redirect'] = 'admin/drealty/drealty_listings/manage/' . $form_state['drealty_listing_type']->type . '/delete';
 }
+

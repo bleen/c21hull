@@ -186,7 +186,7 @@ function drealty_menu_local_tasks_alter(&$data, $router_item, $root_path) {
  * @param type $form
  * @param array $form_state
  * @param drealtyListing $listing
- * @return type
+ * @return type 
  */
 function drealty_update_single_listing($form, &$form_state, $listing = NULL) {
 
@@ -754,11 +754,53 @@ function drealty_form_field_ui_field_edit_form_addressfield(&$form, &$form_state
           '#autocomplete_path' => "admin/drealty/fields_autocomplete/$connection->conid/$class->systemname",
           '#default_value' => isset($field_mappings[$form['#instance']['field_name']]->data['address_1']) ? $fields[$field_mappings[$form['#instance']['field_name']]->data['address_1']]->systemname . ' - ' . $fields[$field_mappings[$form['#instance']['field_name']]->data['address_1']]->longname : NULL,
         );
+        $mform['rets_field']['address_1_1'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Address 1 Additional 1'),
+          '#autocomplete_path' => "admin/drealty/fields_autocomplete/$connection->conid/$class->systemname",
+          '#default_value' => isset($field_mappings[$form['#instance']['field_name']]->data['address_1_1']) ? $fields[$field_mappings[$form['#instance']['field_name']]->data['address_1_1']]->systemname . ' - ' . $fields[$field_mappings[$form['#instance']['field_name']]->data['address_1_1']]->longname : NULL,
+          '#description' => t('Provides support for multiple RETS fields in a single address line.  Will be separated with a space.')
+        );
+        $mform['rets_field']['address_1_2'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Address 1 Additional 2'),
+          '#autocomplete_path' => "admin/drealty/fields_autocomplete/$connection->conid/$class->systemname",
+          '#default_value' => isset($field_mappings[$form['#instance']['field_name']]->data['address_1_2']) ? $fields[$field_mappings[$form['#instance']['field_name']]->data['address_1_2']]->systemname . ' - ' . $fields[$field_mappings[$form['#instance']['field_name']]->data['address_1_2']]->longname : NULL,
+          '#description' => t('Provides support for multiple RETS fields in a single address line.  Will be separated with a space.')
+        );
+        $mform['rets_field']['address_1_3'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Address 1 Additional 3'),
+          '#autocomplete_path' => "admin/drealty/fields_autocomplete/$connection->conid/$class->systemname",
+          '#default_value' => isset($field_mappings[$form['#instance']['field_name']]->data['address_1_3']) ? $fields[$field_mappings[$form['#instance']['field_name']]->data['address_1_3']]->systemname . ' - ' . $fields[$field_mappings[$form['#instance']['field_name']]->data['address_1_3']]->longname : NULL,
+          '#description' => t('Provides support for multiple RETS fields in a single address line.  Will be separated with a space.')
+        );
         $mform['rets_field']['address_2'] = array(
           '#type' => 'textfield',
           '#title' => t('Address 2'),
           '#autocomplete_path' => "admin/drealty/fields_autocomplete/$connection->conid/$class->systemname",
           '#default_value' => isset($field_mappings[$form['#instance']['field_name']]->data['address_2']) ? $fields[$field_mappings[$form['#instance']['field_name']]->data['address_2']]->systemname . ' - ' . $fields[$field_mappings[$form['#instance']['field_name']]->data['address_2']]->longname : NULL,
+        );
+        $mform['rets_field']['address_2_1'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Address 2 Additional 1'),
+          '#autocomplete_path' => "admin/drealty/fields_autocomplete/$connection->conid/$class->systemname",
+          '#default_value' => isset($field_mappings[$form['#instance']['field_name']]->data['address_2_1']) ? $fields[$field_mappings[$form['#instance']['field_name']]->data['address_2_1']]->systemname . ' - ' . $fields[$field_mappings[$form['#instance']['field_name']]->data['address_2_1']]->longname : NULL,
+          '#description' => t('Provides support for multiple RETS fields in a single address line.  Will be separated with a space.')
+        );
+        $mform['rets_field']['address_2_2'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Address 2 Additional 2'),
+          '#autocomplete_path' => "admin/drealty/fields_autocomplete/$connection->conid/$class->systemname",
+          '#default_value' => isset($field_mappings[$form['#instance']['field_name']]->data['address_2_2']) ? $fields[$field_mappings[$form['#instance']['field_name']]->data['address_2_2']]->systemname . ' - ' . $fields[$field_mappings[$form['#instance']['field_name']]->data['address_2_2']]->longname : NULL,
+          '#description' => t('Provides support for multiple RETS fields in a single address line.  Will be separated with a space.')
+        );
+        $mform['rets_field']['address_2_3'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Address 2 Additional 3'),
+          '#autocomplete_path' => "admin/drealty/fields_autocomplete/$connection->conid/$class->systemname",
+          '#default_value' => isset($field_mappings[$form['#instance']['field_name']]->data['address_2_3']) ? $fields[$field_mappings[$form['#instance']['field_name']]->data['address_2_3']]->systemname . ' - ' . $fields[$field_mappings[$form['#instance']['field_name']]->data['address_2_3']]->longname : NULL,
+          '#description' => t('Provides support for multiple RETS fields in a single address line.  Will be separated with a space.')
         );
         $mform['rets_field']['city'] = array(
           '#type' => 'textfield',
@@ -1254,7 +1296,7 @@ function drealty_path_alias_types() {
 }
 
 /**
- * Implements hook_entity_insert()
+ * Implements hook_entity_insert() 
  */
 function drealty_entity_insert($entity, $entity_type) {
   if (module_exists('pathauto') && $entity_type == 'drealty_listing') {

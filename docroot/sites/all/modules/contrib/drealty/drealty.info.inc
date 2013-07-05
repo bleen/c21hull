@@ -3,7 +3,7 @@
 /**
  *
  * Implements hook_entity_property_info
- *
+ * 
  */
 function drealty_entity_property_info() {
   $info = array();

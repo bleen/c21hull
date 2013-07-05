@@ -28,7 +28,7 @@ class DrealtyOfficeUIController extends EntityDefaultUIController {
         'file path' => drupal_get_path('module', $this->entityInfo['module']) . '/includes',
         'type' => MENU_NORMAL_ITEM,
       );
-
+    
 
     $items['drealty_office/' . $wildcard] = array(
       'title callback' => 'drealty_office_page_title',
@@ -176,7 +176,7 @@ function drealty_office_admin_overview($form, &$form_state, $arg) {
     $options[$listing->id] = array(
       'mls_id' => array('data' => array('#type' => 'link', '#title' => $listing->rets_id, '#href' => 'drealty_office/' . $listing->id)),
       'title' => $listing->label,
-      'type' => $listing->type,
+      'type' => $listing->type,      
       'updated' => format_date($listing->changed, 'short'),
       'operations' => theme('links', array('links' => $links, 'attributes' => array('class' => array('links', 'inline', 'operations')))),
     );
@@ -218,7 +218,7 @@ function drealty_office_edit_form($form, &$form_state, $op, $listing) {
 
 
   if ($listing->rets_imported) {
-
+    
   }
 
   field_attach_form('drealty_office', $listing, $form, $form_state);

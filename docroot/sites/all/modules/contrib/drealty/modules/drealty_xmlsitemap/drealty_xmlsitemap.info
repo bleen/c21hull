@@ -1,13 +1,11 @@
-name = dRealty Office(s)
-description = Provides the ability to import Real Estate Offices from a RETS Provider.
+name = dRealty XMLSitemap
+description = Integrates dRealty listings with XMLSitemap.
 core = 7.x
 package = Real Estate
 
-
 dependencies[] = drealty
+dependencies[] = xmlsitemap
 
-files[] = includes/drealty.office.admin.inc
-files[] = includes/drealty.office.inc
 ; Information added by drupal.org packaging script on 2013-05-12
 version = "7.x-3.0-beta4+4-dev"
 core = "7.x"

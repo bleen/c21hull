@@ -2,7 +2,7 @@
 Changes 6.x to 7.x
 --------------------------------------------------------------------
 
-one of the biggest changes is the removal of the batch api import method, in order to import listings
+one of the biggest changes is the removal of the batch api import method, in order to import listings 
 you'll need to use the following drush commands:
 
 Importing:

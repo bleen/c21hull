@@ -8,7 +8,7 @@ CONTENTS OF THIS FILE
  * Installation
  * Geocoding
 
-INTRODUCTION
+INTRODUCTION 
 ------------
 
 dRealty is a comprehensive module for Drupal 7 that provides RETS integration capabilities for your Drupal site.
@@ -44,7 +44,7 @@ REQUIRED MODULES: Field, Entity API (dev)
 
 11. Go back to admin/drealty/ and select Drealty Property Types. 'Property Types' are actually bundles we are creating, like Content Types. You can create as many as you like, or just use the provided 'Basic Drealty Listing'.
 
-12. Select 'Manage Fields' on the bundle of your choice (either Basic Drealty Listing or the one you created). The following screen looks just like a Content Type screen. dRealty works with Fields in core, so simply start adding the fields you want to have on this property type bundle. For example, create a Price field as Integer. On the next screen, dRealty will allow you to 'map' the field to its RETS equivalent. Start typing 'price' in the mapping input- it will autocomplete and find results for you, and select the Price field. For example, in Innovia systems, it will be ListPrice.
+12. Select 'Manage Fields' on the bundle of your choice (either Basic Drealty Listing or the one you created). The following screen looks just like a Content Type screen. dRealty works with Fields in core, so simply start adding the fields you want to have on this property type bundle. For example, create a Price field as Integer. On the next screen, dRealty will allow you to 'map' the field to its RETS equivalent. Start typing 'price' in the mapping input- it will autocomplete and find results for you, and select the Price field. For example, in Innovia systems, it will be ListPrice. 
 
 You now have the basics setup to begin importing listings. If you have Drush, fire up console and do 'drush -d rets-import' to see it work. Repeat the steps above to setup additional property type bundles for different property classes.
 
