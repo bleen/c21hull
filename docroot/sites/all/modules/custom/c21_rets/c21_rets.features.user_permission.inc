@@ -13,28 +13,36 @@ function c21_rets_user_default_permissions() {
   // Exported permission: access drealty admin.
   $permissions['access drealty admin'] = array(
     'name' => 'access drealty admin',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'drealty',
   );
 
   // Exported permission: administer drealty connections.
   $permissions['administer drealty connections'] = array(
     'name' => 'administer drealty connections',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'drealty',
   );
 
   // Exported permission: administer drealty_listing types.
   $permissions['administer drealty_listing types'] = array(
     'name' => 'administer drealty_listing types',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'drealty',
   );
 
   // Exported permission: administer drealty_listings.
   $permissions['administer drealty_listings'] = array(
     'name' => 'administer drealty_listings',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'drealty',
   );
 
@@ -43,7 +51,6 @@ function c21_rets_user_default_permissions() {
     'name' => 'bypass drealty access',
     'roles' => array(
       'administrator' => 'administrator',
-      'staff' => 'staff',
     ),
     'module' => 'drealty',
   );
@@ -53,7 +60,6 @@ function c21_rets_user_default_permissions() {
     'name' => 'create drealty listing',
     'roles' => array(
       'administrator' => 'administrator',
-      'staff' => 'staff',
     ),
     'module' => 'drealty',
   );
@@ -81,7 +87,6 @@ function c21_rets_user_default_permissions() {
     'name' => 'edit any drealty listing',
     'roles' => array(
       'administrator' => 'administrator',
-      'staff' => 'staff',
     ),
     'module' => 'drealty',
   );
@@ -91,7 +96,6 @@ function c21_rets_user_default_permissions() {
     'name' => 'edit own drealty listing',
     'roles' => array(
       'administrator' => 'administrator',
-      'staff' => 'staff',
     ),
     'module' => 'drealty',
   );
@@ -101,10 +105,6 @@ function c21_rets_user_default_permissions() {
     'name' => 'view drealty listing',
     'roles' => array(
       'administrator' => 'administrator',
-      'agent' => 'agent',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'staff' => 'staff',
     ),
     'module' => 'drealty',
   );

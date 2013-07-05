@@ -64,14 +64,27 @@ function c21_search_apachesolr_environments() {
   $environment->url = 'http://localhost:8080/solr/c21hull';
   $environment->service_class = '';
   $environment->conf = array(
+    'apachesolr_access_always_add_grants' => 0,
     'apachesolr_index_last' => array(
+      'drealty_listing' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'drealty_listing_type' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'drealty_connection_entity' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
       'field_collection_item' => array(
         'last_changed' => 0,
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1372472654',
-        'last_entity_id' => '10375',
+        'last_changed' => '1373031476',
+        'last_entity_id' => '8519',
       ),
       'redirect' => array(
         'last_changed' => 0,
@@ -94,8 +107,9 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1372961511,
-    'apachesolr_last_optimize' => 1372961511,
+    'apachesolr_index_updated' => 1373052291,
+    'apachesolr_last_optimize' => 1373052291,
+    'apachesolr_read_only' => '0',
     'apachesolr_search_changed_boost' => '0:0',
     'apachesolr_search_comment_boost' => '0:0',
     'apachesolr_search_date_boost' => '4:200.0',
@@ -245,6 +259,9 @@ function c21_search_apachesolr_environments() {
     ),
   );
   $environment->index_bundles = array(
+    'drealty_listing' => array(
+      0 => 'mls_residential',
+    ),
     'node' => array(
       0 => 'listing',
     ),
