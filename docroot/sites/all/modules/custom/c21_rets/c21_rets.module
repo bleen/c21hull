@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the c21 RETS feature.
  */
+
+include_once 'c21_rets.features.inc';

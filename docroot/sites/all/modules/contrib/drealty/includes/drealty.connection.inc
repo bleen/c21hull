@@ -359,7 +359,7 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
   public function create(array $values = array()) {
     // Add values that are specific to our Model
     $values += array(
-      'conid' => NULL,
+      'conid' => 1, // This is normally set to NULL. We make it 1 to get around a features export bug [#2035301].
       'name' => NULL,
       'login_url' => NULL,
       'username' => NULL,

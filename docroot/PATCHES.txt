@@ -53,6 +53,14 @@ DATE
     -- PATCH --
     https://drupal.org/node/1832544#comment-6694946
 
+DREALTY
+  * Exporting the drealty connection to a feature causes things to blow up. See
+    https://drupal.org/node/2035301 for details. In the mean time I changed one
+    line in drealty.connection.inc. In the
+    drealtyConnectionEntityContoller->create() function I changed the default
+    value of conid from NULL to 1. This only works for c21hull because we will
+    only ever have one connection.
+
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
 
