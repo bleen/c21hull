@@ -1,0 +1,107 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ *   Indexer for the user entities for the Apachesolr module.
+ */
+
+function drealty_apachesolr_apachesolr_entity_info_alter(&$entity_info) {
+  $entity_info['drealty_listing']['indexable'] = TRUE;
+  $entity_info['drealty_listing']['status callback'][] = 'drealty_apachesolr_status_callback';
+  $entity_info['drealty_listing']['document callback'][] = 'drealty_apachesolr_document_callback';
+  $entity_info['drealty_listing']['reindex callback'] = 'drealty_apachesolr_reindex_callback';
+  $entity_info['drealty_listing']['result callback'] = 'drealty_apachesolr_result_callback';
+  $entity_info['drealty_listing']['index_table'] = 'apachesolr_index_entities_drealty_property_type';
+}
+
+/**
+ * Status callback for ApacheSolr, for listings.
+ */
+function drealty_apachesolr_status_callback($entity_id, $entity_type) {
+  $listing = drealty_listing_load($entity_id, TRUE);
+  return ($listing->active);
+}
+
+/**
+ * Builds the listing-specific information for a Solr document.
+ *
+ * @param ApacheSolrDocument $document
+ *   The Solr document we are building up.
+ * @param stdClass $entity
+ *   The entity we are indexing.
+ * @param string $entity_type
+ *   The type of entity we're dealing with.
+ */
+function drealty_apachesolr_document_callback(ApacheSolrDocument $document, $listing, $entity_type) {
+  $document->id = $listing->id;
+
+  // Title is a required field.
+  $document->label = apachesolr_clean_text($listing->label);
+
+  // Build the user body.
+  $build = drealty_listing_view($listing, 'search');
+  unset($build['#theme']);
+  $document->content = apachesolr_clean_text(drupal_render($build));
+
+  $document->bs_status = $listing->active;
+  $document->created = apachesolr_date_iso($listing->created);
+
+  //  Generic usecase for future reference. Callbacks can
+  //  allow you to send back multiple documents
+  $documents = array();
+  $documents[] = $document;
+  return $documents;
+}
+
+/**
+ * Reindexing callback for ApacheSolr, for listings.
+ */
+function drealty_apachesolr_reindex_callback() {
+  $indexer_table = apachesolr_get_indexer_table('drealty_listing');
+  $transaction = db_transaction();
+  $env_id = apachesolr_default_environment();
+
+  try {
+    db_delete($indexer_table)
+      ->condition('entity_type', 'drealty_listing')
+      ->execute();
+
+    $bundles = apachesolr_get_index_bundles($env_id, 'drealty_listing');
+    foreach ($bundles as $bundle) {
+      $select = db_select('drealty_listing', 'dl');
+      $select->addExpression("'drealty_listing'", 'entity_type');
+      $select->addExpression("'" . $bundle . "'", 'bundle');
+      $select->addField('dl', 'id', 'entity_id');
+      $select->addField('dl', 'active', 'status');
+      $select->addExpression(REQUEST_TIME, 'changed');
+
+      $insert = db_insert($indexer_table)
+        ->fields(array('entity_id', 'status', 'entity_type', 'bundle', 'changed'))
+        ->from($select)
+        ->execute();
+    }
+  }
+  catch (Exception $e) {
+    $transaction->rollback();
+    drupal_set_message($e->getMessage(), 'error');
+    watchdog_exception('Apache Solr', $e);
+    return FALSE;
+  }
+
+  return TRUE;
+}
+
+/**
+ * Callback function for listing search results.
+ *
+ * @param stdClass $document
+ *   The result document from Apache Solr.
+ * @param array $result
+ *   The result array for this record to which to add.
+ */
+function drealty_apachesolr_result_callback($document, &$result, &$extra) {
+  // Not good for performance, but the results look good.
+  // $listing = drealty_listing_load($document->entity_id); // This *might* be $document->id
+  // $result['snippet'] = drupal_render(drealty_listing_view($listing, 'search'));
+}

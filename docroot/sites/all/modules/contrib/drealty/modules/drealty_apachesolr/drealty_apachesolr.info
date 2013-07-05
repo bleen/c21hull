@@ -1,0 +1,6 @@
+name = Apache Solr dRealty
+description = Index MLS listings imported with drealty.
+dependencies[] = drealty
+dependencies[] = apachesolr_search
+package = Search Toolkit
+core = 7.x

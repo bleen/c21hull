@@ -60,6 +60,10 @@ DREALTY
     drealtyConnectionEntityContoller->create() function I changed the default
     value of conid from NULL to 1. This only works for c21hull because we will
     only ever have one connection.
+  * Added support for drealty listings to be indexed by the apachesolr module.
+
+    -- PATCH --
+    https://drupal.org/node/2035573 (original post)
 
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
