@@ -71,6 +71,11 @@ DREALTY
     -- PATCH --
     https://drupal.org/node/2035701#comment-7618585
 
+  * Fixed a php5.4 wanring when running "drush ri -v"
+
+    -- PATCH --
+    https://drupal.org/node/2035717#comment-7618601
+
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
 

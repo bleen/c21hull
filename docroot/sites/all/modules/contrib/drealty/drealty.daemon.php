@@ -10,13 +10,13 @@ class drealtyDaemon {
 
   /**
    *
-   * @var drealtyConnection 
+   * @var drealtyConnection
    */
   protected $dc;
 
   /**
    *
-   * @var drealtyMetaData 
+   * @var drealtyMetaData
    */
   protected $dm;
 
@@ -80,7 +80,7 @@ class drealtyDaemon {
    * @param drealtyConnectionEntity $connection
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
-   * @param string $entity_type 
+   * @param string $entity_type
    */
   private function ProcessRetsClass(drealtyConnectionEntity $connection, $resource, $class, $entity_type) {
 
@@ -148,7 +148,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $key_field
-   * @return int 
+   * @return int
    */
   function fetch_listings_offset_not_supported_key(drealtyConnectionEntity $connection, $resource, $class, $key_field) {
     $rets = $this->dc->rets;
@@ -236,7 +236,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $key_field
-   * @return int 
+   * @return int
    */
   function fetch_listings_offset_not_supported_price(drealtyConnectionEntity $connection, $resource, $class, $key_field) {
     $rets = $this->dc->rets;
@@ -316,7 +316,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $query
-   * @return int 
+   * @return int
    */
   function fetch_listings_offset_supported_default(drealtyConnectionEntity $connection, $resource, $class, $query) {
     $offset = 0;
@@ -502,7 +502,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $entity_type
-   * @param int $chunk_count 
+   * @param int $chunk_count
    */
   protected function process_results(drealtyConnectionEntity $connection, $resource, $class, $entity_type) {
 
@@ -541,11 +541,12 @@ class drealtyDaemon {
         drupal_alter('drealty_import_rets_item', $rets_item, $item_context);
 
 
-        // this listing either doesn't exist in the IDX or has changed. 
+        // this listing either doesn't exist in the IDX or has changed.
         // determine if we need to update or create a new one.
         if (isset($existing_items[$rets_item[$id]])) {
           // this listing exists so we'll get a reference to it and set the values to what came to us in the RETS result
-          $item = reset(entity_load($entity_type, array($existing_items[$rets_item[$id]]->id)));
+          $entities = array($existing_items[$rets_item[$id]]->id);
+          $item = reset(entity_load($entity_type, $entities));
           $is_new = FALSE;
         } else {
           $item = entity_create($entity_type, array('conid' => $connection->conid, 'type' => $class->bundle));
@@ -619,10 +620,10 @@ class drealtyDaemon {
 
   /**
    * Function to handle the logic of what to do with expired listings
-   * 
+   *
    * @param array $in_rets
    * @param array $conid
-   * @param drealtyRetsClass $class 
+   * @param drealtyRetsClass $class
    */
   protected function handle_expired($in_rets, $conid, $class) {
     $results = db_select('drealty_listing', 'dl')
@@ -695,7 +696,7 @@ class drealtyDaemon {
    * @param int $conid
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
-   * @return type 
+   * @return type
    */
   public function process_images($conid, $resource, $class) {
 
