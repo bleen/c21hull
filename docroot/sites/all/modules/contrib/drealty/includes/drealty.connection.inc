@@ -18,25 +18,25 @@ class drealtyConnection {
 
   /**
    *
-   * @var phRETS 
+   * @var phRETS
    */
   public $rets = NULL;
 
   /**
    *
-   * @var string 
+   * @var string
    */
   private $error_string = '';
 
   /**
    *
-   * @var bool 
+   * @var bool
    */
   private $connected = FALSE;
 
   /**
    *
-   * @var drealtyConnectionEntity 
+   * @var drealtyConnectionEntity
    */
   private $current_connection = NULL;
 
@@ -171,17 +171,17 @@ class drealtyConnection {
 
   /**
    *
-   * @return drealtyConnectionEntity[] 
+   * @return drealtyConnectionEntity[]
    */
   public function FetchConnections() {
 		return entity_load('drealty_connection_entity');
   }
-	
+
 	/**
    *
    * @return configured drealtyConnectionEntity
    */
-     
+
   public function FetchConfiguredConnections() {
     $query = db_select('drealty_connections', 'c');
     $query->distinct();
@@ -189,7 +189,7 @@ class drealtyConnection {
     $query->condition('c.active', 1)
           ->condition('c.status', 1)
           ->fields('c');
-        		
+
     $connections = $query->execute()->fetchAllKeyed();
     return entity_load('drealty_connection_entity', array_keys($connections));
   }
@@ -197,7 +197,7 @@ class drealtyConnection {
   /**
    *
    * @param int $id
-   * @return drealtyConnectionEntity 
+   * @return drealtyConnectionEntity
    */
   public function FetchConnection($id) {
     $connection = entity_load('drealty_connection_entity', array($id));
@@ -243,7 +243,7 @@ class drealtyConnectionEntity extends Entity {
 
   /**
    *
-   * @return drealtyRetsResource[] 
+   * @return drealtyRetsResource[]
    */
   public function Resources() {
     $dm = new drealtyMetaData();
@@ -252,7 +252,7 @@ class drealtyConnectionEntity extends Entity {
 
   /**
    *
-   * @return drealtyResourceMapping[] 
+   * @return drealtyResourceMapping[]
    */
   public function ResourceMappings() {
     $dm = new drealtyMetaData();
@@ -262,7 +262,7 @@ class drealtyConnectionEntity extends Entity {
   /**
    *
    * @param drealtyRetsResource $resource
-   * @return drealtyRetsClass[] 
+   * @return drealtyRetsClass[]
    */
   public function FetchClasses($resource = NULL) {
     $dm = new drealtyMetaData();
@@ -271,7 +271,7 @@ class drealtyConnectionEntity extends Entity {
 
   /**
    *
-   * @return drealtyRetsClass[] 
+   * @return drealtyRetsClass[]
    */
   public function FetchEnabledClasses() {
     $dm = new drealtyMetaData();
@@ -281,7 +281,7 @@ class drealtyConnectionEntity extends Entity {
   /**
    *
    * @param drealtyRetsResource $resource
-   * @return drealtyRetsField[] 
+   * @return drealtyRetsField[]
    */
   public function FetchFields($resource, $class) {
     $dm = new drealtyMetaData();
@@ -308,7 +308,7 @@ class drealtyConnectionEntity extends Entity {
    * @param string $systemname
    * @param int $class
    * @param string $field_api_type
-   * @param array $data 
+   * @param array $data
    */
   public function CreateFieldMapMapping($rid, $field_name, $systemname, $class_id, $field_api_type = 'drealty', $data = NULL, $hash_exclude = 0) {
     // remove any mapping and create a new one
@@ -359,7 +359,7 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
   public function create(array $values = array()) {
     // Add values that are specific to our Model
     $values += array(
-      'conid' => NULL,
+      'conid' => 1,
       'name' => NULL,
       'login_url' => NULL,
       'username' => NULL,
@@ -382,7 +382,7 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
   /**
    *
    * @param drealtyConnectionEntity $entity
-   * @param string $prefix 
+   * @param string $prefix
    */
   public function export($entity, $prefix = '') {
     $entity->active = 0;
@@ -548,13 +548,13 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
 }
 
 class drealty_no_active_connection_exception extends Exception {
-  
+
 }
 
 class drealty_rets_disconnect_exception extends Exception {
-  
+
 }
 
 class drealty_rets_connection_exception extends Exception {
-  
+
 }
