@@ -7,17 +7,15 @@
 ________________________________________________________________________________
 APACHESOLR
   * There is a bug that causes the "More Like this" configuration form to break.
-
-    -- PATCH --
-    https://drupal.org/node/1965210#comment-7417388
+      PATCH: https://drupal.org/node/1965210#comment-7417388
 
   * In order for numeric filters to work proerly in apachesolr_views I had to
     modify the makeFilterQuery() function by removing the "$" from the regex
     that checks for range querys:
 
-    !preg_match('/^[\[\{]\S+ TO \S+[\]\}]$/', $filter['#value'])
-      ...beocame
-    !preg_match('/^[\[\{]\S+ TO \S+[\]\}]/', $filter['#value'])
+      !preg_match('/^[\[\{]\S+ TO \S+[\]\}]$/', $filter['#value'])
+        ...beocame
+      !preg_match('/^[\[\{]\S+ TO \S+[\]\}]/', $filter['#value'])
 
     For more details, see this issue: https://drupal.org/node/2031495
     There is no patch because this change does not solve the generic case of
@@ -26,22 +24,16 @@ APACHESOLR
 
 APACHESOLR_VIEWS
   * Adding support for exposed filters on numeric fields.
-
-    -- PATCH --
-    https://drupal.org/node/1807028#comment-7597271
+      PATCH: https://drupal.org/node/1807028#comment-7597271
 
 AURORA
   * Changing the default viewport meta tag to use 1.0 instead of just 1.
-
-    -- PATCH --
-    https://drupal.org/node/2033585
+      PATCH: https://drupal.org/node/2033585
 
 AUTOCOMPLETE DELUX
   * The autocomplete_delux module does not properly respond to some keys (ex.
     the ESC or DELETE keys) in Chrome. This patch fixes the issue:
-
-    -- PATCH --
-    https://drupal.org/node/2012742#comment-7501674
+      PATCH: https://drupal.org/node/2012742#comment-7501674
 
 DATE
   * It's annoying to always see the date_migrate_example module on the features
@@ -49,9 +41,7 @@ DATE
 
   * The date_migrate submodule needs to be patched to work with the latest
     version of migrate.
-
-    -- PATCH --
-    https://drupal.org/node/1832544#comment-6694946
+      PATCH: https://drupal.org/node/1832544#comment-6694946
 
 DREALTY
   * Exporting the drealty connection to a feature causes things to blow up. See
@@ -62,48 +52,32 @@ DREALTY
     only ever have one connection.
 
   * Added support for drealty listings to be indexed by the apachesolr module.
-
-    -- PATCH --
-    https://drupal.org/node/2035573 (original post)
+      PATCH: https://drupal.org/node/2035573 (original post)
 
   * Removed a conflicting drush alias.
-
-    -- PATCH --
-    https://drupal.org/node/2035701#comment-7618585
+      PATCH: https://drupal.org/node/2035701#comment-7618585
 
   * Fixed a php5.4 wanring when running "drush ri -v"
-
-    -- PATCH --
-    https://drupal.org/node/2035717#comment-7618601
+      PATCH: https://drupal.org/node/2035717#comment-7618601
 
   * Fixing an error that occurs when exporting a listing type with featurs.
-
-    -- PATCH --
-    https://drupal.org/node/2035731#comment-7618671
+      PATCH: https://drupal.org/node/2035731#comment-7618671
 
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
-
-    -- PATCH --
-    https://drupal.org/node/1175082#comment-7424400
+      PATCH: https://drupal.org/node/1175082#comment-7424400
 
 MASKED_INPUT
   * There is a typo in the hook_requirments so that the jQuery library will
     never be loaded.
-
-    -- PATCH --
-    https://drupal.org/node/1555020
+      PATCH: https://drupal.org/node/1555020
 
 REPRESENTATIVE_IMAGE
   * There is a bug where revision views dont work unless the vid field is
     included in the view.
-
-    -- PATCH --
-    https://drupal.org/node/2023831
+      PATCH: https://drupal.org/node/2023831 (original post)
 
   * An error message appears when view has a representative image field and you
     choose "link to content".
-
-    -- PATCH --
-    https://drupal.org/node/2023833#comment-7559157
+      PATCH: https://drupal.org/node/2023833#comment-7559157
 
