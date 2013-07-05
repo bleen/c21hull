@@ -76,6 +76,11 @@ DREALTY
     -- PATCH --
     https://drupal.org/node/2035717#comment-7618601
 
+  * Fixing an error that occurs when exporting a listing type with featurs.
+
+    -- PATCH --
+    https://drupal.org/node/2035731#comment-7618671
+
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
 

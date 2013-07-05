@@ -97,13 +97,13 @@ class DrealtyListing extends Entity {
 }
 
 /**
- * 
+ *
  */
 class DrealtyListingController extends EntityAPIController {
 
   /**
    *
-   * @param type $entityType 
+   * @param type $entityType
    */
   public function __construct($entityType) {
     parent::__construct($entityType);
@@ -115,7 +115,7 @@ class DrealtyListingController extends EntityAPIController {
    * @param type $view_mode
    * @param type $langcode
    * @param type $content
-   * @return string 
+   * @return string
    */
   public function buildContent($entity, $view_mode = 'full', $langcode = NULL, $content = array()) {
     $content = parent::buildContent($entity, $view_mode, $langcode, $content);
@@ -174,7 +174,7 @@ class DrealtyListingTypeController extends EntityAPIControllerExportable {
    *
    * @param DrealtyListingType $entity
    * @param string $prefix
-   * @return string 
+   * @return string
    */
   public function export($entity, $prefix = '') {
     $vars = get_object_vars($entity);
@@ -182,19 +182,21 @@ class DrealtyListingTypeController extends EntityAPIControllerExportable {
     if ($this->nameKey != $this->idKey) {
       unset($vars[$this->idKey]);
     }
-    $info = $entity->entityInfo();
-    $instances = field_info_instances($info['bundle of'], $entity->type);
 
-    $fields = array();
-    foreach ($instances as &$instance) {
-      $field = field_info_field($instance['field_name']);
-      unset($field['id'], $field['bundles'], $field['storage']);
-      $fields[$instance['field_name']] = $field;
-      unset($instance['bundle']);
+    if ($entity->type) {
+      $info = $entity->entityInfo();
+      $instances = field_info_instances($info['bundle of'], $entity->type);
+      $fields = array();
+      foreach ($instances as &$instance) {
+        $field = field_info_field($instance['field_name']);
+        unset($field['id'], $field['bundles'], $field['storage']);
+        $fields[$instance['field_name']] = $field;
+        unset($instance['bundle']);
+      }
+
+      $vars['fields'] = $fields;
+      $vars['field_instances'] = $instances;
     }
-
-    $vars['fields'] = $fields;
-    $vars['field_instances'] = $instances;
 
     return entity_var_json_export($vars, $prefix);
   }
