@@ -32,6 +32,28 @@ function c21_listings_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * Implements hook_node_view().
+ */
+function c21_listings_node_view($node, $view_mode) {
+  dpm($node, 'node');
+
+  if ($node->type == 'listing' && !empty($node->field_listing_virtual_tour)) {
+    // drupal_add_css(drupal_get_path('module', 'print') . '/css/printlinks.css'); @todo: add css for virtual tours
+    $links['c21_virtual_tour_link'] = $node->field_listing_virtual_tour[LANGUAGE_NONE][0];
+    $links['c21_virtual_tour_link']['title'] = t('Take a virtual tour');
+    $links['c21_virtual_tour_link']['href'] = $links['c21_virtual_tour_link']['url'];
+
+    $link_content = array(
+      '#theme' => 'links',
+      '#links' => $links,
+      '#attributes' => array('class' => array('links', 'inline')),
+    );
+
+    $node->content['links']['c21_virtual_tour_link'] = $link_content;
+  }
+}
+
+/**
  * Implements hook_field_formatter_info().
  */
 function c21_listings_field_formatter_info() {
@@ -155,6 +177,7 @@ function c21_listing_get_agents() {
     ->condition('status', 1)
     ->orderBy('title')
     ->execute();
+
   while ($record = $result->fetchAssoc()) {
     $agent = node_load($record['nid']);
 
@@ -174,7 +197,6 @@ function c21_listing_get_agents() {
  * Theme function for the listing_id field formatter.
  */
 function theme_c21_listings_listing_id($variables) {
-dpm($variables);
   return strtoupper($variables['prefix']) . '-' . $variables['nid'];
 }
 
