@@ -823,6 +823,18 @@ function c21_listings_field_default_field_instances() {
         'type' => 'number_decimal',
         'weight' => 13,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 13,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -862,6 +874,13 @@ function c21_listings_field_default_field_instances() {
     'description' => 'ex: shed',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 36,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -917,6 +936,15 @@ function c21_listings_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 2,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -952,6 +980,13 @@ function c21_listings_field_default_field_instances() {
     'description' => 'ex: crawl, finished, unfinished',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 32,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -1002,6 +1037,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 58,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 58,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1040,6 +1082,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 57,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1090,6 +1139,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 56,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 56,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1128,6 +1184,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 55,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1178,6 +1241,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 59,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 59,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1216,6 +1286,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 60,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1266,6 +1343,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 64,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 64,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1304,6 +1388,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 63,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1354,6 +1445,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 54,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 54,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1392,6 +1490,18 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 21,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
@@ -1448,6 +1558,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 61,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 61,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1486,6 +1603,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 46,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1536,6 +1660,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 45,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 45,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1574,6 +1705,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 87,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1624,6 +1762,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 85,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 85,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1662,6 +1807,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 91,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1712,6 +1864,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 88,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 88,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1750,6 +1909,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 81,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1800,6 +1966,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 67,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 67,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1838,6 +2011,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 80,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1888,6 +2068,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 76,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 76,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1926,6 +2113,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 78,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -1976,6 +2170,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 90,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 90,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2014,6 +2215,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 62,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -2064,6 +2272,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 83,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 83,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2102,6 +2317,18 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 20,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
@@ -2158,6 +2385,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 98,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 98,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2197,6 +2431,18 @@ function c21_listings_field_default_field_instances() {
     'description' => 'Values less than 100 will be considered a percentage, otherwise a dollar amount',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 10,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
@@ -2253,6 +2499,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 25,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 25,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2292,6 +2545,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -2345,6 +2605,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 103,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 103,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2386,6 +2653,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 75,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -2436,6 +2710,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 77,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 77,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2474,6 +2755,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 79,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -2524,6 +2812,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 74,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 74,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2562,6 +2857,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 73,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -2612,6 +2914,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 68,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 68,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2650,6 +2959,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 95,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -2706,6 +3022,18 @@ function c21_listings_field_default_field_instances() {
         'type' => 'number_decimal',
         'weight' => 15,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 15,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2745,6 +3073,13 @@ function c21_listings_field_default_field_instances() {
     'description' => 'ex: Met De, PP & L, O & R, PCL & P',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 39,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -2798,6 +3133,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 70,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 70,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2836,6 +3178,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 72,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -2886,6 +3235,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 71,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 71,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2923,6 +3279,16 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 17,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -3005,6 +3371,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 23,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 23,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3050,6 +3423,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 34,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 34,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3088,6 +3468,13 @@ function c21_listings_field_default_field_instances() {
     'description' => 'ex: Negotiable',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 38,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -3141,6 +3528,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 31,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 31,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3188,6 +3582,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 28,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 28,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3226,6 +3627,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'c21_listings',
+        'settings' => array(),
+        'type' => 'listing_id',
+        'weight' => 0,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'c21_listings',
         'settings' => array(),
@@ -3295,6 +3703,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 29,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 29,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3333,6 +3748,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 92,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -3383,6 +3805,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 93,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 93,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3421,6 +3850,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 94,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -3471,6 +3907,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 89,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 89,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3509,6 +3952,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 82,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -3559,6 +4009,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 84,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 84,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3596,6 +4053,19 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 7,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
@@ -3666,6 +4136,18 @@ function c21_listings_field_default_field_instances() {
         'type' => 'number_decimal',
         'weight' => 9,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3705,6 +4187,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 86,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -3755,6 +4244,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 69,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 69,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3793,6 +4289,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 66,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -3843,6 +4346,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 48,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 48,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3881,6 +4391,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 47,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -3931,6 +4448,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 44,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 44,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3969,6 +4493,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -4020,6 +4551,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 97,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 97,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4059,6 +4597,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -4106,6 +4651,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 102,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -4175,6 +4727,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 53,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 53,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4213,6 +4772,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 50,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -4263,6 +4829,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 51,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 51,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4301,6 +4874,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 49,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -4351,6 +4931,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 52,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 52,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4395,6 +4982,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 65,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 65,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4433,6 +5027,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 40,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -4495,6 +5096,16 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 18,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -4577,6 +5188,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 24,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 24,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4616,6 +5234,13 @@ function c21_listings_field_default_field_instances() {
     'description' => 'ex: gravel, paved, dirt',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 30,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -4666,6 +5291,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 37,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 37,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4707,6 +5339,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 99,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -4764,6 +5403,19 @@ function c21_listings_field_default_field_instances() {
         'type' => 'field_collection_view',
         'weight' => 101,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 101,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4799,6 +5451,13 @@ function c21_listings_field_default_field_instances() {
     'description' => 'ex: septic, septic needed, central, shared, existing permit',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 26,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -4852,6 +5511,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 22,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 22,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4891,6 +5557,18 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 41,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
@@ -4952,6 +5630,18 @@ function c21_listings_field_default_field_instances() {
         'type' => 'number_integer',
         'weight' => 42,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 42,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4991,6 +5681,18 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 43,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'number',
         'settings' => array(
@@ -5051,6 +5753,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 6,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5086,6 +5795,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 100,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -5155,6 +5871,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 12,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5218,6 +5941,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 4,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5257,6 +5987,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 96,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
@@ -5331,6 +6068,18 @@ function c21_listings_field_default_field_instances() {
         'type' => 'number_decimal',
         'weight' => 14,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 14,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5370,6 +6119,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 104,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -5425,6 +6181,15 @@ function c21_listings_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 1,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5460,6 +6225,13 @@ function c21_listings_field_default_field_instances() {
     'description' => 'ex: http://www.example.com/tour.htm',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 16,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'link',
         'settings' => array(),
@@ -5524,6 +6296,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 35,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 35,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5562,6 +6341,13 @@ function c21_listings_field_default_field_instances() {
     'description' => 'ex: central, well, well needed, shared',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 27,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -5615,6 +6401,13 @@ function c21_listings_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 33,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 33,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5652,6 +6445,19 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 19,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
@@ -5714,6 +6520,13 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+      'search_result' => array(
         'label' => 'above',
         'module' => 'list',
         'settings' => array(),

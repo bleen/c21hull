@@ -84,7 +84,7 @@ function c21_search_apachesolr_environments() {
       ),
       'node' => array(
         'last_changed' => '1373031476',
-        'last_entity_id' => '8519',
+        'last_entity_id' => '8632',
       ),
       'redirect' => array(
         'last_changed' => 0,
@@ -107,7 +107,7 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1373052291,
+    'apachesolr_index_updated' => 1373075311,
     'apachesolr_last_optimize' => 1373052291,
     'apachesolr_read_only' => '0',
     'apachesolr_search_changed_boost' => '0:0',

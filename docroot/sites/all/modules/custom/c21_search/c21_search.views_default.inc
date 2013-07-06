@@ -137,6 +137,14 @@ function c21_search_views_default_views() {
   $handler->display->display_options['fields']['entity_id']['element_type'] = '0';
   $handler->display->display_options['fields']['entity_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entity_id']['element_wrapper_type'] = '0';
+  /* Field: Apache Solr: entity_type */
+  $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['label'] = '';
+  $handler->display->display_options['fields']['entity_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['entity_type']['element_default_classes'] = FALSE;
   /* Filter criterion: Apache Solr: Search */
   $handler->display->display_options['filters']['keyword']['id'] = 'keyword';
   $handler->display->display_options['filters']['keyword']['table'] = 'apachesolr__local_solr';
