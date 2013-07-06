@@ -3,12 +3,12 @@
 /**
  * Override or insert variables into the maintenance page template.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("maintenance_page" in this case.)
  */
-function escrow_preprocess_maintenance_page(&$vars, $hook) {
+function escrow_preprocess_maintenance_page(&$variables, $hook) {
   // When a variable is manipulated or added in preprocess_html or
   // preprocess_page, that same work is probably needed for the maintenance page
   // as well, so we can just re-use those functions to do that work here.
@@ -18,7 +18,7 @@ function escrow_preprocess_maintenance_page(&$vars, $hook) {
   // This preprocessor will also be used if the db is inactive. To ensure your
   // theme is used, add the following line to your settings.php file:
   // $conf['maintenance_theme'] = 'escrow';
-  // Also, check $vars['db_is_active'] before doing any db queries.
+  // Also, check $variables['db_is_active'] before doing any db queries.
 }
 
 /**
@@ -43,12 +43,12 @@ function escrow_modernizr_load_alter(&$load) {
 /**
  * Implements hook_preprocess_html()
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-function escrow_preprocess_html(&$vars) {
+function escrow_preprocess_html(&$variables) {
 
 }
 
@@ -84,26 +84,26 @@ function escrow_preprocess_views_view_field(&$variables) {
 /**
  * Override or insert variables into the page template.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function escrow_preprocess_page(&$vars) {
+function escrow_preprocess_page(&$variables) {
 
 }
 
 /**
  * Override or insert variables into the region templates.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("region" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function escrow_preprocess_region(&$vars, $hook) {
+function escrow_preprocess_region(&$variables, $hook) {
 
 }
 // */
@@ -111,13 +111,13 @@ function escrow_preprocess_region(&$vars, $hook) {
 /**
  * Override or insert variables into the block templates.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function escrow_preprocess_block(&$vars, $hook) {
+function escrow_preprocess_block(&$variables, $hook) {
 
 }
 // */
@@ -125,13 +125,13 @@ function escrow_preprocess_block(&$vars, $hook) {
 /**
  * Override or insert variables into the entity template.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("entity" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function escrow_preprocess_entity(&$vars, $hook) {
+function escrow_preprocess_entity(&$variables, $hook) {
 
 }
 // */
@@ -139,27 +139,27 @@ function escrow_preprocess_entity(&$vars, $hook) {
 /**
  * Override or insert variables into the node template.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function escrow_preprocess_node(&$vars, $hook) {
-  $node = $vars['node'];
+function escrow_preprocess_node(&$variables, $hook) {
+  $node = $variables['node'];
 }
 // */
 
 /**
  * Override or insert variables into the field template.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("field" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function escrow_preprocess_field(&$vars, $hook) {
+function escrow_preprocess_field(&$variables, $hook) {
 
 }
 // */
@@ -167,26 +167,26 @@ function escrow_preprocess_field(&$vars, $hook) {
 /**
  * Override or insert variables into the comment template.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  * @param $hook
  *   The name of the template being rendered ("comment" in this case.)
  */
 /* -- Delete this line if you want to use this function
-function escrow_preprocess_comment(&$vars, $hook) {
-  $comment = $vars['comment'];
+function escrow_preprocess_comment(&$variables, $hook) {
+  $comment = $variables['comment'];
 }
 // */
 
 /**
  * Override or insert variables into the views template.
  *
- * @param $vars
+ * @param $variables
  *   An array of variables to pass to the theme template.
  */
 /* -- Delete this line if you want to use this function
-function escrow_preprocess_views_view(&$vars) {
-  $view = $vars['view'];
+function escrow_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
 }
 // */
 
