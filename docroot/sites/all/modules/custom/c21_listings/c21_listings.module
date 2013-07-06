@@ -35,8 +35,6 @@ function c21_listings_theme($existing, $type, $theme, $path) {
  * Implements hook_node_view().
  */
 function c21_listings_node_view($node, $view_mode) {
-  dpm($node, 'node');
-
   if ($node->type == 'listing' && !empty($node->field_listing_virtual_tour)) {
     // drupal_add_css(drupal_get_path('module', 'print') . '/css/printlinks.css'); @todo: add css for virtual tours
     $links['c21_virtual_tour_link'] = $node->field_listing_virtual_tour[LANGUAGE_NONE][0];
