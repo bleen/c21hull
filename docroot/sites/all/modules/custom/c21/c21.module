@@ -6,6 +6,17 @@
 
 include_once 'c21.features.inc';
 
+// Give each of the date format types a machine name.
+define('C21_DATE_TYPE_VERY_SHORT', 'c21_date_type_very_short');
+define('C21_DATE_TYPE_VERY_LONG', 'c21_date_type_very_long');
+
+// Define the date formats to be passed to date().
+define('C21_DATE_FORMAT_VERY_SHORT', 'Y');
+define('C21_DATE_FORMAT_SHORT', 'M d, Y');
+define('C21_DATE_FORMAT_MEDIUM', 'F d, Y');
+define('C21_DATE_FORMAT_LONG', 'F d Y, g:ia');
+define('C21_DATE_FORMAT_VERY_LONG', 'l, F d Y, g:ia');
+
 /**
  * Implements hook_workbench_content_alter().
  */
@@ -18,4 +29,49 @@ function c21_workbench_content_alter(&$output) {
   $output['c21_workbench_recent_content']['#view'] = 'c21_workbench_recent_content';
   unset($output['workbench_recent_content']);
 
+}
+
+/**
+ * Implements hook_date_formats().
+ */
+function c21_date_formats() {
+  $formats = array();
+
+  $formats[] = array(
+    'type' => C21_DATE_TYPE_VERY_SHORT,
+    'format' => C21_DATE_FORMAT_VERY_SHORT,
+    'locales' => array(),
+  );
+  $formats[] = array(
+    'type' => 'short',
+    'format' => C21_DATE_FORMAT_SHORT,
+    'locales' => array(),
+  );
+  $formats[] = array(
+    'type' => 'medium',
+    'format' => C21_DATE_FORMAT_MEDIUM,
+    'locales' => array(),
+  );
+  $formats[] = array(
+    'type' => 'long',
+    'format' => C21_DATE_FORMAT_LONG,
+    'locales' => array(),
+  );
+  $formats[] = array(
+    'type' => C21_DATE_TYPE_VERY_LONG,
+    'format' => C21_DATE_FORMAT_VERY_LONG,
+    'locales' => array(),
+  );
+
+  return $formats;
+}
+
+/**
+ * Implements hook_date_format_types().
+ */
+function c21_date_format_types() {
+  $types = array();
+  $types[C21_DATE_TYPE_VERY_SHORT] = t('Very Short');
+  $types[C21_DATE_TYPE_VERY_LONG] = t('Very Long');
+  return $types;
 }
