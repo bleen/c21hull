@@ -96,6 +96,9 @@ function c21_listings_strongarm() {
         'path' => array(
           'weight' => '7',
         ),
+        'redirect' => array(
+          'weight' => '8',
+        ),
       ),
       'display' => array(),
     ),
