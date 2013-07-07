@@ -23,6 +23,13 @@ function c21_listings_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function c21_listings_views_api() {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function c21_listings_node_info() {

@@ -64,6 +64,7 @@ dependencies[] = wysiwyg_filter
 features[ckeditor_profile][] = CKEditor Global Profile
 features[ckeditor_profile][] = RichText
 features[context][] = every-page
+features[context][] = homepage
 features[ctools][] = context:context:3
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0

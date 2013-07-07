@@ -692,6 +692,7 @@ function c21_strongarm() {
   $strongarm->name = 'views_block_hashes';
   $strongarm->value = array(
     'bdeec0c6a6d8fcdcd6969bf1225f3520' => 'c21_workbench_recent_content-block_1',
+    '964ecad519128c5b59d0f4917f6399da' => 'c21_recently_added_listings-block',
     'b9efce5f9de478ed390efcf7c815f2f5' => 'c21_workbench_edits_by_user-block_1',
     '9cf22433e0efbd8b206c8e4c2edb177c' => 'workbench_recent_content-block_1',
   );
