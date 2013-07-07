@@ -70,16 +70,6 @@ function aurora_process_maintenance_page(&$vars, $hook) {
  * Implements hook_preprocess_html()
  */
 function aurora_preprocess_html(&$vars) {
-  // Viewport!
-  $viewport = array(
-    '#tag' => 'meta',
-    '#attributes' => array(
-      'name' => 'viewport',
-      'content' => 'width=device-width, initial-scale=1',
-    ),
-  );
-  drupal_add_html_head($viewport, 'viewport');
-
   if (theme_get_setting('aurora_enable_chrome_frame')) {
     // Force IE to use most up-to-date render engine.
     $xua = array(
