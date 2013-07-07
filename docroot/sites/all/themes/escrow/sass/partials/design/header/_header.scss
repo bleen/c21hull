@@ -1,7 +1,5 @@
-#logo a {
-  display: block;
-  width: 300px;
-  height: 190px;
+#logo {
+  background-size: contain;
   @include replace-text('../images/c21hull_logo.svg');
 
   @include degrade-from(svg, false) {

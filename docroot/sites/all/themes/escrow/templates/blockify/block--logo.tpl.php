@@ -1,8 +1,6 @@
-<span id="logo">
-  <a href="/" title="<?php print $sitename; ?>" rel="home">
-    <?php print $sitename; ?>
-  </a>
-</span>
+<a id="logo" href="/" title="<?php print $sitename; ?>" rel="home">
+  <?php print $sitename; ?>
+</a>
 <ul id="offices">
   <li>
     <span class="office-name">Dingman's Ferry</span>
