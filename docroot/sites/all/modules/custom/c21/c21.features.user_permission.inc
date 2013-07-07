@@ -172,6 +172,13 @@ function c21_user_default_permissions() {
     'module' => 'ds_ui',
   );
 
+  // Exported permission: administer @font-your-face.
+  $permissions['administer @font-your-face'] = array(
+    'name' => 'administer @font-your-face',
+    'roles' => array(),
+    'module' => 'fontyourface',
+  );
+
   // Exported permission: administer actions.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -261,6 +268,13 @@ function c21_user_default_permissions() {
     'name' => 'administer filters',
     'roles' => array(),
     'module' => 'filter',
+  );
+
+  // Exported permission: administer flexslider.
+  $permissions['administer flexslider'] = array(
+    'name' => 'administer flexslider',
+    'roles' => array(),
+    'module' => 'flexslider',
   );
 
   // Exported permission: administer image styles.
@@ -664,6 +678,13 @@ function c21_user_default_permissions() {
     'name' => 'select account cancellation method',
     'roles' => array(),
     'module' => 'user',
+  );
+
+  // Exported permission: show format selection for drealty_listing.
+  $permissions['show format selection for drealty_listing'] = array(
+    'name' => 'show format selection for drealty_listing',
+    'roles' => array(),
+    'module' => 'better_formats',
   );
 
   // Exported permission: show format selection for field_collection_item.

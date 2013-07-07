@@ -4,10 +4,10 @@
 <ul id="offices">
   <li>
     <span class="office-name">Dingman's Ferry</span>
-    <a href="tel://1-800-458-4855">1-800-458-4855</a>
+    <a class="office-phone" href="tel://1-800-458-4855">1-800-458-4855</a>
   </li>
   <li>
     <span class="office-name">Milford</span>
-    <a href="tel://1-877-296-9921">1-877-296-9921</a>
+    <a class="office-phone" href="tel://1-877-296-9921">1-877-296-9921</a>
   </li>
 </ul>

@@ -1,0 +1,9 @@
+#logo {
+  display: block;
+  @include intrinsic-ratio(3/2, 45%);
+
+  @include breakpoint($bp500) {
+    @include intrinsic-ratio(3/2, 33%, "*", false);
+  }
+
+}

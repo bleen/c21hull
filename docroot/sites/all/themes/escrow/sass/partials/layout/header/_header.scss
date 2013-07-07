@@ -1,0 +1,26 @@
+#header {
+  @include clearfix();
+  margin-top: 1em;
+}
+
+#logo {
+  display: block;
+  @include float-span(3, 'first');
+  width: 180px;
+  height: 120px;
+}
+
+#offices {
+  @include float-span(3, 'last');
+
+  .office-phone {
+    display: block;
+    font-size: $font_size_callout;
+    font-weight: bold;
+  }
+
+  li:first-child {
+    margin-top: .45em;
+    margin-bottom: 1.15em;
+  }
+}

@@ -3,6 +3,8 @@ description = 'Escrow theme based on the Aurora base theme.'
 core = '7.x'
 base theme = 'aurora'
 
+fonts[google_fonts_api][] = "Muli&subset=latin#regular"
+
 ; ========================================
 ; Regions
 ; ========================================
