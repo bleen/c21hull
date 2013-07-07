@@ -40,8 +40,8 @@ function c21_context_default_contexts() {
         'blockify-blockify-logo' => array(
           'module' => 'blockify',
           'delta' => 'blockify-logo',
-          'region' => 'main_prefix',
-          'weight' => '-10',
+          'region' => 'header',
+          'weight' => '-9',
         ),
         'blockify-blockify-tabs' => array(
           'module' => 'blockify',
