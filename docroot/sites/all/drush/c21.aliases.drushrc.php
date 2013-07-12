@@ -5,7 +5,7 @@ $aliases['local'] = array(
   'env' => 'local',
   'ssh-options' => '-o StrictHostKeyChecking=no',
   'sites-subdir' => 'default',
-  'uri' => 'http://local.c21hull:8888',
+  'uri' => 'http://local.c21hull',
 );
 
 /* ==========================  R E M O T E ============== */
