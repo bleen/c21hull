@@ -20,6 +20,7 @@ function c21_context_default_contexts() {
     'path' => array(
       'values' => array(
         '~admin/*' => '~admin/*',
+        '~node/*/edit' => '~node/*/edit',
       ),
     ),
     'sitewide' => array(
