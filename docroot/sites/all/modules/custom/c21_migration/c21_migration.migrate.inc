@@ -47,10 +47,6 @@ function c21_migration_migrate_api() {
         'class_name' => 'C21TermsListingInsulationMigration',
         'group_name' => 'listing_vocabularies',
       ),
-      'c21TermsListingRoadSurface' => array(
-        'class_name' => 'C21TermsListingRoadSurfaceMigration',
-        'group_name' => 'listing_vocabularies',
-      ),
       'c21TermsListingGarage' => array(
         'class_name' => 'C21TermsListingGarageMigration',
         'group_name' => 'listing_vocabularies',
@@ -77,14 +73,6 @@ function c21_migration_migrate_api() {
       ),
       'c21TermsListingSchoolDistrict' => array(
         'class_name' => 'C21TermsListingSchoolDistrictMigration',
-        'group_name' => 'listing_vocabularies',
-      ),
-      'c21TermsListingFurniture' => array(
-        'class_name' => 'C21TermsListingFurnitureMigration',
-        'group_name' => 'listing_vocabularies',
-      ),
-      'c21TermsListingElectricCompany' => array(
-        'class_name' => 'C21TermsListingElectricCompanyMigration',
         'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingDevelopment' => array(
@@ -257,9 +245,6 @@ abstract class C21Migration extends Migration {
     switch ($vocabulary) {
       case 'sewage':
       case 'water':
-      case 'road_surface':
-        $delimiters[] = '/';
-        break;
       case 'heat':
         $delimiters[] = '/';
         $delimiters[] = ',';
@@ -369,19 +354,6 @@ abstract class C21Migration extends Migration {
       'natural' => 'natural gas',
       'town gas' => 'town gas',
       'gas' => 'gas',
-    );
-
-    return $this->normalize($value, $matches, $contains);
-  }
-
-  protected function normalizeRoadSurface($value, $delimiter = "/", $force_string = FALSE) {
-    $matches = array(
-      't & c' => 'tar & chip',
-    );
-    $contains = array(
-      't&c' => 'tar & chip',
-      'paved' => 'paved',
-      'undeveloped' => 'dirt',
     );
 
     return $this->normalize($value, $matches, $contains);

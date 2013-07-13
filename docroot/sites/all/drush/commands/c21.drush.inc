@@ -76,7 +76,6 @@ function drush_c21_site_install() {
   drush_core_site_install_version('standard', $form_options);
 
   node_type_delete('article');
-  drush_features_revert_all();
 }
 
 /**

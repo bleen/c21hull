@@ -1400,40 +1400,6 @@ function c21_listings_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_listing_electric_company'
-  $field_bases['field_listing_electric_company'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_electric_company',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'listing_electric_company',
-          'parent' => 0,
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_listing_family_room_b'
   $field_bases['field_listing_family_room_b'] = array(
     'active' => 1,
@@ -1606,40 +1572,6 @@ function c21_listings_field_default_field_bases() {
       'allowed_values' => array(
         0 => array(
           'vocabulary' => 'listing_floors',
-          'parent' => 0,
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_listing_furniture'
-  $field_bases['field_listing_furniture'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_furniture',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'listing_furniture',
           'parent' => 0,
         ),
       ),
@@ -1951,6 +1883,33 @@ function c21_listings_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_listing_legacy_data'
+  $field_bases['field_listing_legacy_data'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_legacy_data',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_listing_list_date'
@@ -2551,40 +2510,6 @@ function c21_listings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_listing_road_surface'
-  $field_bases['field_listing_road_surface'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_road_surface',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'listing_road_surface',
-          'parent' => 0,
-        ),
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_listing_school_district'
   $field_bases['field_listing_school_district'] = array(
     'active' => 1,
@@ -2796,12 +2721,9 @@ function c21_listings_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'for_sale' => 'For Sale',
-        'sale_pending' => 'Sale Pending',
-        'sold_by_c21hull' => 'Sold by Century21 Roy B. Hull',
-        'sold_outside' => 'Sold Outside',
-        'withdrawn_temporarily' => 'Withdrawn Temporarily',
-        'withdrawn_permanently' => 'Withdrawn Permanently',
-        'expired' => 'Expired',
+        'pending' => 'Sale Pending',
+        'sold' => 'Sold',
+        'withdrawn' => 'Withdrawn',
         'inactive' => 'Inactive',
       ),
       'allowed_values_function' => '',

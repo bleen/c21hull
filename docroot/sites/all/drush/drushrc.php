@@ -23,7 +23,6 @@ $command_specific['c21-site-install'] = $command_specific['site-install'];
 $enable_modules = array(
   'c21' => 1,
   'c21_listings' => 1,
-  'c21_migration' => 1,
   'c21_search' => 1,
   'syslog' => 1,
 );
@@ -44,7 +43,6 @@ $options['environments'] = array(
       'devel_generate' => 1,
       'ds_ui' => 1,
       'ds_devel' => 1,
-      'migrate_ui' => 1,
       'search_krumo' => 1,
       'testing' => 1,
     ),
@@ -52,6 +50,13 @@ $options['environments'] = array(
     'settings' => array(
       'preprocess_css' => 0,
       'preprocess_js' => 0,
+    ),
+  ),
+  'migration' => array(
+    // The list of modules to enabled (1) or disable (0).
+    'modules' => array(
+      'migrate_ui' => 1,
+      'c21_migration' => 1,
     ),
   ),
   'prod' => array(
@@ -66,6 +71,7 @@ $options['environments'] = array(
       'migrate_ui' => 0,
       'search_krumo' => 0,
       'testing' => 0,
+      'c21_migration' => 0,
     ),
     // The list of variables to configure.
     'settings' => array(

@@ -2839,15 +2839,43 @@ function c21_listings_field_default_field_instances() {
         'weight' => 5,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_listing_description',
     'label' => 'Description',
     'placeholder' => '',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'display_summary' => 1,
+      'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -3378,65 +3406,6 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listing-field_listing_electric_company'
-  $field_instances['node-listing-field_listing_electric_company'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'ex: Met De, PP & L, O & R, PCL & P',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 39,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 43,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 98,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 98,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_electric_company',
-    'label' => 'Electric Company',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'autocomplete_deluxe',
-      'settings' => array(
-        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
-        'delimiter' => '',
-        'limit' => 10,
-        'min_length' => 0,
-        'size' => 60,
-      ),
-      'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 43,
-    ),
-  );
-
   // Exported field_instance: 'node-listing-field_listing_family_room_b'
   $field_instances['node-listing-field_listing_family_room_b'] = array(
     'bundle' => 'listing',
@@ -3814,65 +3783,6 @@ function c21_listings_field_default_field_instances() {
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 38,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_furniture'
-  $field_instances['node-listing-field_listing_furniture'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'ex: Negotiable',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 38,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 42,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 92,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 92,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_furniture',
-    'label' => 'Furniture',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'autocomplete_deluxe',
-      'settings' => array(
-        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
-        'delimiter' => '',
-        'limit' => 10,
-        'min_length' => 0,
-        'size' => 60,
-      ),
-      'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 42,
     ),
   );
 
@@ -4457,6 +4367,91 @@ function c21_listings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 100,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_legacy_data'
+  $field_instances['node-listing-field_listing_legacy_data'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 105,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'code',
+    'field_name' => 'field_listing_legacy_data',
+    'label' => 'Legacy Data',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 25,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 117,
     ),
   );
 
@@ -5751,62 +5746,6 @@ function c21_listings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 33,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_road_surface'
-  $field_instances['node-listing-field_listing_road_surface'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'ex: gravel, paved, dirt',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 30,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 36,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_road_surface',
-    'label' => 'Road Surface',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'autocomplete_deluxe',
-      'settings' => array(
-        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
-        'size' => 60,
-      ),
-      'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 30,
     ),
   );
 
@@ -7290,7 +7229,6 @@ function c21_listings_field_default_field_instances() {
   t('Dining/Kitchen | Floor 2');
   t('Directions');
   t('Dues');
-  t('Electric Company');
   t('Email');
   t('Email Address');
   t('Email Type');
@@ -7302,7 +7240,6 @@ function c21_listings_field_default_field_instances() {
   t('Fireplace');
   t('First Name');
   t('Floors');
-  t('Furniture');
   t('Garage');
   t('Heat');
   t('Insulation');
@@ -7314,6 +7251,7 @@ function c21_listings_field_default_field_instances() {
   t('Laundry | Basement');
   t('Laundry | Floor 1');
   t('Laundry | Floor 2');
+  t('Legacy Data');
   t('List Date');
   t('List Price');
   t('Listing ID');
@@ -7342,7 +7280,6 @@ function c21_listings_field_default_field_instances() {
   t('Photos');
   t('Porch');
   t('Primary Office');
-  t('Road Surface');
   t('School District');
   t('Section');
   t('Seller');
@@ -7369,13 +7306,10 @@ function c21_listings_field_default_field_instances() {
   t('Zoning');
   t('ex: 1-car, 2-car');
   t('ex: E. Stroudsburg, Wallenpaupack, Delaware Vally - DV, Delaware Vally - DD, Delaware Vally - SH');
-  t('ex: Met De, PP & L, O & R, PCL & P');
-  t('ex: Negotiable');
   t('ex: central, well, well needed, shared');
   t('ex: crawl, finished, unfinished');
   t('ex: electric, oil, propane');
   t('ex: full, partial, unknown');
-  t('ex: gravel, paved, dirt');
   t('ex: hardwood, linoleum, tile, carpet, vinyl');
   t('ex: http://www.example.com/tour.htm');
   t('ex: lakefront, new construction, foreclosure');

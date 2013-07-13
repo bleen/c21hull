@@ -135,23 +135,6 @@ class C21TermsListingInsulationMigration extends C21TermsListingMigration {
 /**
  * Defines the migration fo rthe Listing Water taxonomy.
  */
-class C21TermsListingRoadSurfaceMigration extends C21TermsListingMigration {
-  public function __construct($arguments) {
-    $vocabulary = array(
-      'name' => 'road surface',
-      'table' => 'listing_building_dtl',
-      'column' => 'road_surface',
-      'vocabulary' => 'listing_road_surface',
-      'description' => t('Road Surface Terms'),
-    );
-
-    parent::__construct($arguments, $vocabulary);
-  }
-}
-
-/**
- * Defines the migration fo rthe Listing Water taxonomy.
- */
 class C21TermsListingGarageMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
     $vocabulary = array(
@@ -262,40 +245,6 @@ class C21TermsListingSchoolDistrictMigration extends C21TermsListingMigration {
       'column' => 'school_district',
       'vocabulary' => 'listing_school_district',
       'description' => t('School District'),
-    );
-
-    parent::__construct($arguments, $vocabulary);
-  }
-}
-
-/**
- * Defines the migration fo rthe Listing Water taxonomy.
- */
-class C21TermsListingFurnitureMigration extends C21TermsListingMigration {
-  public function __construct($arguments) {
-    $vocabulary = array(
-      'name' => 'furniture',
-      'table' => 'listing_building_dtl',
-      'column' => 'furniture',
-      'vocabulary' => 'listing_furniture',
-      'description' => t('Furniture'),
-    );
-
-    parent::__construct($arguments, $vocabulary);
-  }
-}
-
-/**
- * Defines the migration fo rthe Listing Water taxonomy.
- */
-class C21TermsListingElectricCompanyMigration extends C21TermsListingMigration {
-  public function __construct($arguments) {
-    $vocabulary = array(
-      'name' => 'electric company',
-      'table' => 'listing_building_dtl',
-      'column' => 'electric_company',
-      'vocabulary' => 'listing_electric_company',
-      'description' => t('Electric Company'),
     );
 
     parent::__construct($arguments, $vocabulary);

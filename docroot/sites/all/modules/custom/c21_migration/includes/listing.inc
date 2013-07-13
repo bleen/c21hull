@@ -39,11 +39,11 @@ class C21ListingMigration extends C21Migration {
       MigrateDestinationNode::getKeySchema()
     );
 
-    // Handle simple mappings.
+    // Map simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
     $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
 
-    // Handle standard field mappings
+    // Map standard field mappings
     $this->addFieldMapping('is_new')
          ->defaultValue('TRUE');
     $this->addFieldMapping('uid', 'created_by')
@@ -75,6 +75,7 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('field_listing_personal_property:format', NULL)
          ->defaultValue('rich_text');
 
+    // Map "Photos".
     $this->addFieldMapping('field_listing_featured_photo', 'featured_photo_filename');
     $this->addFieldMapping('field_listing_featured_photo:source_dir', 'featured_photo_source_dir');
     $this->addFieldMapping('field_listing_featured_photo:destination_file', 'featured_photo_destination_file');
@@ -86,6 +87,7 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('field_listing_photos:file_replace')
         ->defaultValue(FILE_EXISTS_REUSE);
 
+    // Map taxonomies term reference fields.
     $this->addFieldMapping('field_listing_sewage', 'sewage')
          ->separator(',');
     $this->addFieldMapping('field_listing_water', 'water')
@@ -93,8 +95,6 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('field_listing_heat', 'heat')
          ->separator(',');
     $this->addFieldMapping('field_listing_insulation', 'insulation')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_road_surface', 'road_surface')
          ->separator(',');
     $this->addFieldMapping('field_listing_garage', 'garage')
          ->separator(',');
@@ -108,10 +108,6 @@ class C21ListingMigration extends C21Migration {
          ->separator(',');
     $this->addFieldMapping('field_listing_additional_bldg', 'add_building')
          ->separator(',');
-    $this->addFieldMapping('field_listing_furniture', 'furniture')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_electric_company', 'electric_company')
-         ->separator(',');
     $this->addFieldMapping('field_listing_school_district', 'school_district')
          ->separator(',');
     $this->addFieldMapping('field_listing_development', 'development')
@@ -119,11 +115,15 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('field_listing_township', 'township')
          ->separator(',');
 
+    // Map room Measurements.
     foreach ($this->getRooms() as $room => $room_data) {
       foreach ($this->getFloors() as $floor => $floor_data) {
         $this->addFieldMapping('field_listing_' . $room_data['destination'] . '_' . $floor_data['destination'], $room . '_' . $floor);
       }
     }
+
+    // Map legacy data.
+    $this->addFieldMapping('field_listing_legacy_data', 'legacy_data');
 
   }
 
@@ -195,7 +195,6 @@ class C21ListingMigration extends C21Migration {
     $source_row->water = $this->prepareListingTerms($source_row, 'water', 'normalizeWater', $extra_water_fields);
     $source_row->heat = $this->prepareListingTerms($source_row, 'heat', 'normalizeHeat');
     $source_row->insulation = $this->prepareListingTerms($source_row, 'insulation');
-    $source_row->road_surface = $this->prepareListingTerms($source_row, 'road_surface', 'normalizeRoadSurface');
     $source_row->garage = $this->prepareListingTerms($source_row, 'garage', 'normalizeGarage');
     $source_row->basement = $this->prepareListingTerms($source_row, 'basement', 'normalizeBasement');
     $source_row->windows = $this->prepareListingTerms($source_row, 'windows', 'normalizeWindows');
@@ -203,8 +202,6 @@ class C21ListingMigration extends C21Migration {
     $source_row->walls = $this->prepareListingTerms($source_row, 'walls', 'normalizeWalls');
     $source_row->add_building = $this->prepareListingTerms($source_row, 'add_building', 'normalizeAdditionalBuilding');
     $source_row->school_district = $this->prepareListingTerms($source_row, 'school_district');
-    $source_row->furniture = $this->prepareListingTerms($source_row, 'furniture', 'normalizeFurniture');
-    $source_row->electric_company = $this->prepareListingTerms($source_row, 'electric_company');
     $source_row->development = $this->prepareListingTerms($source_row, 'development');
     $source_row->township = $this->prepareListingTerms($source_row, 'township');
 
@@ -231,20 +228,23 @@ class C21ListingMigration extends C21Migration {
       }
     }
 
-    // Handle the list date.
+    // Prepare the list date.
     $list_date_data = array(
       'from' => $source_row->start_date != "0000-00-00" ? $source_row->start_date : NULL,
       'to' => $source_row->end_date != "0000-00-00" ? $source_row->end_date : NULL,
     );
     $source_row->list_date = drupal_json_encode($list_date_data);
 
-    // Remove list price and commission of $0.
+    // Prepare the list price and commission by removing 0 values.
     if ($source_row->list_price == 0) {
       $source_row->list_price = '';
     }
     if ($source_row->commission == 0) {
       $source_row->commission = '';
     }
+
+    // Prepare the legacy data.
+    $source_row->legacy_data = json_encode($source_row, JSON_PRETTY_PRINT);
 
     return TRUE;
   }
@@ -287,15 +287,12 @@ class C21ListingMigration extends C21Migration {
       'water' => t('Water terms'),
       'heat' => t('Heat terms'),
       'insulation' => t('Insula terms'),
-      'road_surface' => t('Road surface terms'),
       'garage' => t('Garage terms'),
       'basement' => t('Basement terms'),
       'windows' => t('Windows terms'),
       'floors' => t('Floors terms'),
       'walls' => t('Walls terms'),
       'add_building' => t('Add building terms'),
-      'furniture' => t('Furniture terms'),
-      'electric_company' => t('Electric terms'),
       'school_district' => t('School terms'),
       'development' => t('Development terms'),
       'township' => t('Township terms'),
@@ -441,9 +438,14 @@ class C21ListingMigration extends C21Migration {
       case 'forsale':
         $value = 'for_sale';
         break;
+      case 'pending':
+        $value = 'pending';
+        break;
       case 'expired':
+      case 'inactive':
         $value = 'inactive';
         break;
+      case 'sold':
       case 'soldoutside':
         $value = 'sold';
         break;
