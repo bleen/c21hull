@@ -28,10 +28,10 @@ function c21_listings_default_fe_block_settings() {
         'theme' => 'bartik',
         'weight' => 0,
       ),
-      'seven' => array(
+      'escrow' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'escrow',
         'weight' => 0,
       ),
     ),

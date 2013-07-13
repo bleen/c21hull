@@ -75,6 +75,7 @@ function c21_listings_field_group_info() {
       4 => 'group_listing_measurements',
       5 => 'group_listing_notes',
       6 => 'group_listing_sellers',
+      7 => 'group_listing_legacy_data',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -229,7 +230,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = 'group_listing_details';
   $field_group->data = array(
     'label' => 'Notes',
-    'weight' => '15',
+    'weight' => '14',
     'children' => array(
       0 => 'field_listing_notes',
     ),

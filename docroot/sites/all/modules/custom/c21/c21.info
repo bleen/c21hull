@@ -268,7 +268,6 @@ features[variable][] = print_urls_anchors
 features[variable][] = site_default_country
 features[variable][] = site_mail
 features[variable][] = site_name
-features[variable][] = theme_default
 features[variable][] = user_admin_role
 features[variable][] = user_default_timezone
 features[variable][] = user_picture_dimensions
@@ -293,4 +292,7 @@ features[variable][] = views_ui_show_sql_query
 features[variable][] = views_ui_show_sql_query_where
 features[views_view][] = c21_workbench_edits_by_user
 features[views_view][] = c21_workbench_recent_content
+
+features_exclude[variable][] = theme_default
+
 project path = sites/all/modules/custom
