@@ -87,6 +87,7 @@ function c21_listings_field_formatter_view($entity_type, $entity, $field, $insta
  * Implements hook_form_FORM_ID_alter().
  */
 function c21_listings_form_agent_node_form_alter(&$form, $fom_state) {
+  // Set a placeholder for the name field.
   $form['title']['#placeholder'] = t('Roy B. Hull, Owner');
 }
 
@@ -123,6 +124,13 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
 
   $form['field_listing_bathrooms'][LANGUAGE_NONE][0]['value']['#step'] = .5;
   $form['field_listing_acreage'][LANGUAGE_NONE][0]['value']['#step'] = .001;
+
+  // Hide the "legacy data" field if its empty and for non-admins.
+  $form['field_listing_legacy_data']['#disabled'] = TRUE;
+  if (!user_access('administer site configuration') || empty($form['field_listing_legacy_data'][LANGUAGE_NONE][0]['value']['#default_value'])) {
+    $form['field_listing_legacy_data']['#access'] = FALSE;
+  }
+
 }
 
 /**
