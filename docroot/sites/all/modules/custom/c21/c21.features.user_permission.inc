@@ -680,13 +680,6 @@ function c21_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: show format selection for drealty_listing.
-  $permissions['show format selection for drealty_listing'] = array(
-    'name' => 'show format selection for drealty_listing',
-    'roles' => array(),
-    'module' => 'better_formats',
-  );
-
   // Exported permission: show format selection for field_collection_item.
   $permissions['show format selection for field_collection_item'] = array(
     'name' => 'show format selection for field_collection_item',

@@ -166,7 +166,6 @@ features[user_permission][] = override page revision option
 features[user_permission][] = override page sticky option
 features[user_permission][] = revert revisions
 features[user_permission][] = select account cancellation method
-features[user_permission][] = show format selection for drealty_listing
 features[user_permission][] = show format selection for field_collection_item
 features[user_permission][] = show format selection for node
 features[user_permission][] = show format selection for taxonomy_term
