@@ -1013,7 +1013,7 @@ function c21_listings_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'To select multiple Agents, hold down CTRL (or COMMAND on a mac) while clicking',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1047,7 +1047,9 @@ function c21_listings_field_default_field_instances() {
         'weight' => 77,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_listing_agent',
     'label' => 'Agent',
     'required' => 1,
@@ -1060,7 +1062,7 @@ function c21_listings_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 1,
     ),
   );
@@ -7295,7 +7297,6 @@ function c21_listings_field_default_field_instances() {
   t('Tax Map #');
   t('Taxes');
   t('This is used for sorting purposes only. Do not include initials or suffixes. ');
-  t('To select multiple Agents, hold down CTRL (or COMMAND on a mac) while clicking');
   t('Township');
   t('Values less than 100 will be considered a percentage, otherwise a dollar amount');
   t('Virtual Tour');

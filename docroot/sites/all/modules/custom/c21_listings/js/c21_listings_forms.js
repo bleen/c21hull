@@ -3,25 +3,17 @@
     attach: function(context, settings) {
       // Hide the "former" agents and add a "show former agents" link.
       $.get('/ajax/agents', function(agents) {
-        $('select[name^="field_listing_agent"] option:not(:selected)').each(function(context) {
+        $('.field-name-field-listing-agent .form-checkboxes .form-item input:not(:checked)').each(function(context) {
           if (agents[$(this).val()]['status'] === 'former') {
-            $(this).remove();
+            $(this).parent('.form-item').hide();
           }
         });
 
-        $('select[name^="field_listing_agent"]').after('<a href="" class="show-agents">Show former agents</a>');
+        $('.field-name-field-listing-agent .form-type-checkboxes > label').append('<a href="" class="show-agents">Show former agents</a>');
         $('.show-agents').click(function(event) {
           event.preventDefault();
-
-          for (var aid in agents) {
-            if (agents[aid]['status'] === 'former') {
-              $('select[name^="field_listing_agent"]').append(
-                $("<option></option>").attr("value", aid).text(agents[aid]['full_name'])
-              );
-              $('select[name^="field_listing_agent"]').height("150");
-              $('.show-agents').remove();
-            }
-          }
+          $('.field-name-field-listing-agent .form-checkboxes .form-item').fadeIn('slow');
+          $(this).hide();
         });
       });
 

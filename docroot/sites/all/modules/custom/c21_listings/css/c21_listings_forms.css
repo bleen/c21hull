@@ -23,6 +23,19 @@
   text-align: right;
 }
 
+.node-listing-form .field-name-field-listing-agent {
+  margin-bottom: 1em;
+  overflow: auto;
+}
+.node-listing-form .field-name-field-listing-agent .form-checkboxes .form-item {
+  float: left;
+  width: 200px;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .node-listing-form #edit-field-listing-lot,
 .node-listing-form #edit-field-listing-block,
 .node-listing-form #edit-field-listing-section {
