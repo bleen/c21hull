@@ -3,5 +3,3 @@ drush env dev -y
 drush env migration -y
 drush fra --force -y
 drush cc all -y
-drush mreg
-drush ms
