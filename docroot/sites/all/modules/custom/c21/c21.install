@@ -4,6 +4,9 @@
  * Implements hook_install().
  */
 function c21_install() {
+  // Enabe the escrow theme.
+  theme_enable(array('escrow'));
+
   // Create an empty page callback for the homepage and set the default homepage
   // to point to it.
   $callback = new stdClass();
@@ -14,6 +17,5 @@ function c21_install() {
   $callback->changed = REQUEST_TIME;
 
   empty_page_save_callback($callback);
-
   variable_set('site_frontpage', 'home');
 }
