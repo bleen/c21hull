@@ -60,7 +60,6 @@ Drupal.c21Search.toggleFormTouch = function () {
 // Handle the opening and closing of the form based on a drag gesture.
 Drupal.c21Search.toggleFormClick = function () {
   if (!Modernizr.touch) {
-    console.log($('.search-form .toggle'));
     $('.search-form .toggle').toggle(
       function() { $('.search-form').removeClass('closed').addClass('open'); },
       function() { $('.search-form').removeClass('open').addClass('closed'); }
