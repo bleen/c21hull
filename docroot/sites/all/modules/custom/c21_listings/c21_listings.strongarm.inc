@@ -145,10 +145,10 @@ function c21_listings_strongarm() {
           'weight' => '2',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
       ),
       'display' => array(),

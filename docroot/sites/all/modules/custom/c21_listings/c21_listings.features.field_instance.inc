@@ -4451,7 +4451,7 @@ function c21_listings_field_default_field_instances() {
         'rows' => 25,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
