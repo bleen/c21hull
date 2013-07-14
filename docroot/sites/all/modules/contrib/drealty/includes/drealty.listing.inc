@@ -208,15 +208,15 @@ class DrealtyListingTypeController extends EntityAPIControllerExportable {
       foreach ($entity->fields as $field) {
         if (!field_read_field($field['field_name'], array('include_inactive' => TRUE))) {
           field_create_field($field);
-        } else {
-          drupal_set_message(t('Skipped creating field %field. A field with this name already exists.', array('%field' => $field['field_name'])), 'warning');
         }
       }
 
       if (isset($entity->field_instances)) {
         foreach ($entity->field_instances as $instance) {
           $instance['bundle'] = $entity->type;
-          field_create_instance($instance);
+          if (!field_info_instance($instance['entity_type'], $instance['field_name'], $instance['bundle'])) {
+            field_create_instance($instance);
+          }
         }
       }
     }

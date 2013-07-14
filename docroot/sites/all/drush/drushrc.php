@@ -23,6 +23,7 @@ $command_specific['c21-site-install'] = $command_specific['site-install'];
 $enable_modules = array(
   'c21' => 1,
   'c21_listings' => 1,
+  'c21_rets' => 1,
   'c21_search' => 1,
   'syslog' => 1,
 );

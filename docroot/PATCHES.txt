@@ -63,8 +63,12 @@ DREALTY
   * Fixed a php5.4 wanring when running "drush ri -v"
       PATCH: https://drupal.org/node/2035717#comment-7618601
 
-  * Fixing an error that occurs when exporting a listing type with featurs.
+  * Fixing an error that occurs when exporting a listing type with features.
       PATCH: https://drupal.org/node/2035731#comment-7618671
+
+  * Fixing an error that occurs when enabling a feature with an exported listing
+    type.
+      PATCH: https://drupal.org/node/1931250#comment-7125064
 
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
