@@ -34,6 +34,12 @@ function c21_listings_default_fe_block_settings() {
         'theme' => 'escrow',
         'weight' => 0,
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
     ),
     'title' => '',
     'visibility' => 0,
