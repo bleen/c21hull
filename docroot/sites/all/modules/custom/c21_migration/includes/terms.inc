@@ -60,7 +60,12 @@ class C21TermsListingMigration extends C21Migration {
       }
     }
 
-    $source_row->{$this->vocabulary['column']} = !empty($normalized_values) ? implode(',', $normalized_values) : FALSE;
+    if (!empty($normalized_values)) {
+      $source_row->{$this->vocabulary['column']} = implode(',', $normalized_values);
+    }
+    else {
+      return FALSE;
+    }
   }
 }
 
