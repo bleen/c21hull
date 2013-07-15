@@ -3940,14 +3940,18 @@ function c21_listings_field_default_field_instances() {
         'weight' => 96,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_listing_id_prefix',
     'label' => 'Listing ID',
-    'placeholder' => 'PMLE',
+    'placeholder' => '',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'filtered_html' => 0,
+          'full_html' => 0,
           'plain_text' => 'plain_text',
           'rich_text' => 'rich_text',
         ),
@@ -3955,6 +3959,12 @@ function c21_listings_field_default_field_instances() {
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
