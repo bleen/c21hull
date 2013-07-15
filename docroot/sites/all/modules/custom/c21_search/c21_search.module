@@ -61,6 +61,7 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
  * Returns a array of taxonomy terms for use with #options in a form field.
  */
 function _c21_search_taxonomy_options_array($machine_name, $text_transform = '') {
+  $options = array();
   $text_transform = function_exists($text_transform) ? $text_transform : '';
 
   $vocabulary = taxonomy_vocabulary_machine_name_load($machine_name);
