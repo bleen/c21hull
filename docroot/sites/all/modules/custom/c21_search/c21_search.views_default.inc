@@ -161,6 +161,41 @@ function c21_search_views_default_views() {
     5 => 0,
     4 => 0,
   );
+  /* Filter criterion: Apache Solr: im_field_listing_township */
+  $handler->display->display_options['filters']['im_field_listing_township']['id'] = 'im_field_listing_township';
+  $handler->display->display_options['filters']['im_field_listing_township']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['im_field_listing_township']['field'] = 'im_field_listing_township';
+  $handler->display->display_options['filters']['im_field_listing_township']['group'] = 1;
+  $handler->display->display_options['filters']['im_field_listing_township']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['im_field_listing_township']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['im_field_listing_township']['expose']['label'] = 'Township';
+  $handler->display->display_options['filters']['im_field_listing_township']['expose']['operator'] = 'im_field_listing_township_op';
+  $handler->display->display_options['filters']['im_field_listing_township']['expose']['identifier'] = 'im_field_listing_township';
+  $handler->display->display_options['filters']['im_field_listing_township']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Apache Solr: im_field_listing_school_district */
+  $handler->display->display_options['filters']['im_field_listing_school_district']['id'] = 'im_field_listing_school_district';
+  $handler->display->display_options['filters']['im_field_listing_school_district']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['im_field_listing_school_district']['field'] = 'im_field_listing_school_district';
+  $handler->display->display_options['filters']['im_field_listing_school_district']['group'] = 1;
+  $handler->display->display_options['filters']['im_field_listing_school_district']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['im_field_listing_school_district']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['im_field_listing_school_district']['expose']['label'] = 'School District';
+  $handler->display->display_options['filters']['im_field_listing_school_district']['expose']['operator'] = 'im_field_listing_school_district_op';
+  $handler->display->display_options['filters']['im_field_listing_school_district']['expose']['identifier'] = 'im_field_listing_school_district';
+  $handler->display->display_options['filters']['im_field_listing_school_district']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['im_field_listing_school_district']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
   /* Filter criterion: Apache Solr: fts_field_listing_list_price */
   $handler->display->display_options['filters']['fts_field_listing_list_price']['id'] = 'fts_field_listing_list_price';
   $handler->display->display_options['filters']['fts_field_listing_list_price']['table'] = 'apachesolr__local_solr';

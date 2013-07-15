@@ -14,7 +14,11 @@
   &.closed {
     @include transition-property('bottom');
     @include transition-duration(.35s);
-    bottom: -325px;
+    bottom: -375px;
+  }
+
+  select {
+    width: 100%;
   }
 
   div.views-widget-filter-fts_field_listing_list_price,
@@ -29,7 +33,13 @@
     margin-bottom: .25em;
     margin-right: 5%;
 
-    &:nth-last-child(2) {
+    &.views-widget-filter-im_field_listing_township,
+    &.views-widget-filter-im_field_listing_school_district {
+      width: 47.5%;
+    }
+
+    &.views-widget-filter-fts_field_listing_acreage,
+    &.views-widget-filter-im_field_listing_school_district {
       margin-right: 0;
     }
 

@@ -54,9 +54,9 @@ class C21TermsListingMigration extends C21Migration {
     $terms = $this->explodeTerms($terms, $delimiters);
     foreach ($terms as $term) {
       $term = trim($term);
-      $normalized_value = $this->{$normalize_function}($term);
+      $normalized_value = trim($this->{$normalize_function}($term));
       if (!empty($normalized_value)) {
-        $normalized_values[] = trim($normalized_value);
+        $normalized_values[] = $normalized_value;
       }
     }
 

@@ -30,6 +30,15 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
       // Add some placeholder text to the search field.
       $form['keyword']['#placeholder'] = t('Listing ID, MLS#, keywords, etc.');
 
+      // Convert town and school fields to select boxes.
+      $form['im_field_listing_township']['#type'] = 'select';
+      $form['im_field_listing_township']['#empty_option'] = t('- Any -');
+      $form['im_field_listing_township']['#options'] = _c21_search_taxonomy_options_array('listing_township', 'ucwords');
+
+      $form['im_field_listing_school_district']['#type'] = 'select';
+      $form['im_field_listing_school_district']['#empty_option'] = t('- Any -');
+      $form['im_field_listing_school_district']['#options'] = _c21_search_taxonomy_options_array('listing_school_district');
+
       // Add javascript to handle the facet sliders. Note that touch-punch does
       // not work when added asyncronously via "yesnope".
       $form['#attached']['js'][] = drupal_get_path('module', 'c21_search') . '/js/c21_search.js';
@@ -47,3 +56,19 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
       break;
   }
 }
+
+/**
+ * Returns a array of taxonomy terms for use with #options in a form field.
+ */
+function _c21_search_taxonomy_options_array($machine_name, $text_transform = '') {
+  $text_transform = function_exists($text_transform) ? $text_transform : '';
+
+  $vocabulary = taxonomy_vocabulary_machine_name_load($machine_name);
+  $terms = taxonomy_get_tree($vocabulary->vid);
+  foreach ($terms as $term) {
+    $options[$term->tid] = empty($text_transform) ? $term->name : $text_transform($term->name);
+  }
+  return $options;
+}
+
+
