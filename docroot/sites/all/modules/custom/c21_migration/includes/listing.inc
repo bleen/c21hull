@@ -80,12 +80,12 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('field_listing_featured_photo:source_dir', 'featured_photo_source_dir');
     $this->addFieldMapping('field_listing_featured_photo:destination_file', 'featured_photo_destination_file');
     $this->addFieldMapping('field_listing_featured_photo:file_replace')
-        ->defaultValue(-1); // This should be FILE_EXISTS_REUSE. See https://drupal.org/node/2041639.
+        ->defaultValue(MigrateFile::FILE_EXISTS_REUSE);
     $this->addFieldMapping('field_listing_photos', 'photos_filenames');
     $this->addFieldMapping('field_listing_photos:source_dir', 'photos_source_dir');
     $this->addFieldMapping('field_listing_photos:destination_file', 'photos_destination_files');
     $this->addFieldMapping('field_listing_photos:file_replace')
-        ->defaultValue(-1); // This should be FILE_EXISTS_REUSE. See https://drupal.org/node/2041639.
+        ->defaultValue(MigrateFile::FILE_EXISTS_REUSE);
 
     // Map taxonomies term reference fields.
     $this->addFieldMapping('field_listing_sewage', 'sewage')
