@@ -5,6 +5,7 @@
   width: 96%;
   margin-left: -48%;
   padding: 1em;
+  z-index: 100;
 
   &.open {
     @include transition-property('bottom');
