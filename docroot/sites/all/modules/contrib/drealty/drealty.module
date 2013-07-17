@@ -186,7 +186,7 @@ function drealty_menu_local_tasks_alter(&$data, $router_item, $root_path) {
  * @param type $form
  * @param array $form_state
  * @param drealtyListing $listing
- * @return type 
+ * @return type
  */
 function drealty_update_single_listing($form, &$form_state, $listing = NULL) {
 
@@ -723,7 +723,7 @@ function drealty_form_field_ui_field_edit_form_addressfield(&$form, &$form_state
   $dc = new drealtyConnection();
   $dm = new drealtyMetaData();
 
-  $connections = $dc->FetchConnections();
+  $connections = $dc->FetchConfiguredConnections();
   foreach ($connections as $connection) {
 
     $query = db_select('drealty_classes', 'c');
@@ -1296,7 +1296,7 @@ function drealty_path_alias_types() {
 }
 
 /**
- * Implements hook_entity_insert() 
+ * Implements hook_entity_insert()
  */
 function drealty_entity_insert($entity, $entity_type) {
   if (module_exists('pathauto') && $entity_type == 'drealty_listing') {

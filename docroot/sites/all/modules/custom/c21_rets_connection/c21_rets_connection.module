@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the c21 RETS feature.
+ */
+
+include_once 'c21_rets_connection.features.inc';

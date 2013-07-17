@@ -14,7 +14,6 @@ dependencies[] = html5_tools
 dependencies[] = image
 dependencies[] = number
 dependencies[] = text
-features[drealty_connection_entity][] = pike_wayne_mls
 features[drealty_listing_type][] = mls_residential_listing
 features[features_api][] = api:2
 features[user_permission][] = access drealty admin

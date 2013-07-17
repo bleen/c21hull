@@ -1,0 +1,16 @@
+name = c21 RETS Connection (Do not enable - see README.md)
+description = Manages the RETS server connection.
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.0
+project = c21_rets_connection
+
+; See the README.md for details as to why this is hidden.
+hidden = TRUE
+
+dependencies[] = drealty
+dependencies[] = features
+features[drealty_connection_entity][] = pike_wayne_mls
+features[features_api][] = api:2
+project path = sites/all/modules/custom

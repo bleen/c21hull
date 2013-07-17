@@ -32,6 +32,7 @@ $disable_modules = array(
   'comment' => 0,
   'dblog' => 0,
   'toolbar' => 0,
+  'shortcut' => 0,
   'dashboard' => 0,
 );
 $options['environments'] = array(
