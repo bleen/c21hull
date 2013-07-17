@@ -78,28 +78,20 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'node_link' => array(
-      'weight' => '6',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'field_listing_bathrooms' => array(
+    'field_listing_sq_ft_finished' => array(
       'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
-    'field_listing_bedrooms' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
-    'field_listing_list_price' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
+        'ft' => array(
+          'lb' => 'Square Feet',
+        ),
       ),
     ),
   );
@@ -160,12 +152,12 @@ function c21_listings_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_listing_id_prefix',
-        2 => 'field_listing_mls',
-        3 => 'field_listing_featured_photo',
-        4 => 'field_listing_photos',
-        5 => 'field_listing_list_price',
-        6 => 'field_listing_description',
+        1 => 'field_listing_mls',
+        2 => 'field_listing_featured_photo',
+        3 => 'field_listing_photos',
+        4 => 'field_listing_list_price',
+        5 => 'field_listing_description',
+        6 => 'field_listing_street',
         7 => 'field_listing_bedrooms',
         8 => 'field_listing_bathrooms',
         9 => 'field_listing_garage',
@@ -181,12 +173,12 @@ function c21_listings_ds_layout_settings_info() {
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'field_listing_id_prefix' => 'ds_content',
       'field_listing_mls' => 'ds_content',
       'field_listing_featured_photo' => 'ds_content',
       'field_listing_photos' => 'ds_content',
       'field_listing_list_price' => 'ds_content',
       'field_listing_description' => 'ds_content',
+      'field_listing_street' => 'ds_content',
       'field_listing_bedrooms' => 'ds_content',
       'field_listing_bathrooms' => 'ds_content',
       'field_listing_garage' => 'ds_content',
@@ -259,21 +251,25 @@ function c21_listings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'field_listing_featured_photo',
-        2 => 'field_listing_list_price',
-        3 => 'field_listing_bedrooms',
-        4 => 'field_listing_bathrooms',
-        5 => 'field_listing_description',
-        6 => 'node_link',
+        0 => 'field_listing_mls',
+        1 => 'title',
+        2 => 'field_listing_featured_photo',
+        3 => 'field_listing_list_price',
+        4 => 'field_listing_bedrooms',
+        5 => 'field_listing_bathrooms',
+        6 => 'field_listing_sq_ft_finished',
+        7 => 'field_listing_description',
+        8 => 'node_link',
       ),
     ),
     'fields' => array(
+      'field_listing_mls' => 'ds_content',
       'title' => 'ds_content',
       'field_listing_featured_photo' => 'ds_content',
       'field_listing_list_price' => 'ds_content',
       'field_listing_bedrooms' => 'ds_content',
       'field_listing_bathrooms' => 'ds_content',
+      'field_listing_sq_ft_finished' => 'ds_content',
       'field_listing_description' => 'ds_content',
       'node_link' => 'ds_content',
     ),
