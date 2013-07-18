@@ -1,8 +1,0 @@
-#logo {
-  background-size: contain;
-  @include replace-text('../images/c21hull_logo.svg');
-
-  @include degrade-from(svg, false) {
-    @include replace-text('../images/c21hull_logo.png');
-  }
-}

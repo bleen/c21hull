@@ -345,6 +345,41 @@ ini_set('session.cookie_lifetime', 2000000);
 $conf['theme_default'] = 'escrow';
 # $conf['anonymous'] = 'Visitor';
 
+$conf['theme_escrow_settings'] = array (
+  'toggle_node_user_picture' => 0,
+  'toggle_comment_user_picture' => '1',
+  'toggle_comment_user_verification' => '1',
+  'default_logo' => 1,
+  'logo_path' => '',
+  'logo_upload' => '',
+  'default_favicon' => 1,
+  'favicon_path' => '',
+  'favicon_upload' => '',
+  'hide_recomended_modules' => 1,
+  'aurora_enable_chrome_frame' => 1,
+  'aurora_min_ie_support' => '8',
+  'aurora_html_tags' => 1,
+  'aurora_typekit_id' => '0',
+  'aurora_livereload' => '35729',
+  'aurora_livereload_port' => '',
+  'magic_embedded_mqs' => 1,
+  'magic_css_excludes' => 'system/system.menus.css',
+  'magic_footer_js' => 1,
+  'magic_library_head' => 0,
+  'magic_experimental_js' => 0,
+  'magic_js_excludes' => '',
+  'magic_rebuild_registry' => 1,
+  'magic_viewport_indicator' => 1,
+  'magic_modernizr_debug' => 0,
+  'magic_performance__active_tab' => 'edit-css',
+  'magic_css_excludes_regex' => 
+  array (
+    'exclude' => '/^(modules\\/system\\/system\\.menus\\.css)$/',
+    'include' => '',
+  ),
+  'magic_js_excludes_regex' => false,
+);
+
 /**
  * A custom theme can be set for the offline page. This applies when the site
  * is explicitly set to maintenance mode through the administration page or when
