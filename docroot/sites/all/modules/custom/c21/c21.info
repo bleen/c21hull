@@ -55,7 +55,6 @@ dependencies[] = print
 dependencies[] = print_pdf
 dependencies[] = redirect
 dependencies[] = representative_image
-dependencies[] = shortcut
 dependencies[] = strongarm
 dependencies[] = system
 dependencies[] = taxonomy
