@@ -7,7 +7,6 @@ version = 7.x-1.0
 project = c21_listings
 dependencies[] = addressfield
 dependencies[] = autocomplete_deluxe
-dependencies[] = c21_listings
 dependencies[] = ctools
 dependencies[] = custom_add_another
 dependencies[] = date
