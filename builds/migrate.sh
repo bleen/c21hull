@@ -1,3 +1,4 @@
+drush env migration -y
 drush mreg
 drush mi c21User
 drush mi --group=listing_vocabularies
