@@ -1,4 +1,6 @@
 .search-form {
+  border: 1px solid #ccc;
+  background: #fff;
   position: fixed;
   bottom: -1px;
   left: 50%;
@@ -13,6 +15,7 @@
     bottom: -1px;
   }
   &.closed {
+    @include animation(bounce 2s);
     @include transition-property('bottom');
     @include transition-duration(.35s);
     bottom: -375px;
@@ -47,6 +50,7 @@
     .slider-num {
       position: absolute;
       bottom: 0;
+      color: #333;
     }
     .slider-num-min {
       left: .5em;

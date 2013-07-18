@@ -19,16 +19,6 @@ $legacy-support-for-mozilla: false;
 @import 'partials/global/base';
 
 ////////////////////////
-// Import Style Guide
+// Import Components
 ////////////////////////
-@import 'partials/styleguide/style-guide';
-
-////////////////////////
-// Import Layout
-////////////////////////
-@import 'partials/layout/layout';
-
-////////////////////////
-// Import Design
-////////////////////////
-@import 'partials/design/design';
+@import 'partials/components/components';

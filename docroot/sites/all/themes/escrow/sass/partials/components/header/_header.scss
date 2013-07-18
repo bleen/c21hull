@@ -8,6 +8,12 @@
   @include float-span(3, 'first');
   width: 180px;
   height: 120px;
+  background-size: contain;
+  @include replace-text('../images/c21hull_logo.svg');
+
+  @include degrade-from(svg, false) {
+    @include replace-text('../images/c21hull_logo.png');
+  }
 }
 
 #offices {
@@ -15,7 +21,7 @@
 
   .office-phone {
     display: block;
-    font-size: $font_size_callout;
+    font-size: $font_size_title;
     font-weight: bold;
   }
 
