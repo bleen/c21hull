@@ -1,11 +1,15 @@
 body {
   font-family: 'Muli', 'Hevetica', 'Arial';
-  padding: 0 .5em;
+  padding: 0 $spacing_default;
 }
 
 a {
   color: #000;
   text-decoration: none;
+}
+
+#main {
+  margin-top: 1em;
 }
 
 #page-title {
@@ -19,6 +23,11 @@ a {
       display: inline;
     }
   }
+}
+
+.label-inline {
+  display: inline-block;
+  margin-right: $spacing_default;
 }
 
 li.krumo-footnote {

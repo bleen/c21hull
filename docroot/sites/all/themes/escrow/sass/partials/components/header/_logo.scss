@@ -1,5 +1,15 @@
 #logo {
   display: block;
+  @include float-span(3, 'first');
+  width: 180px;
+  height: 120px;
+  background-size: contain;
+  @include replace-text('../images/c21hull_logo.svg');
+
+  @include degrade-from(svg, false) {
+    @include replace-text('../images/c21hull_logo.png');
+  }
+
   @include intrinsic-ratio(3/2, 45%);
 
   @include breakpoint($bp500) {

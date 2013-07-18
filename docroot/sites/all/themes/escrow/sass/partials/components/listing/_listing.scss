@@ -2,6 +2,31 @@
   .links {
     &.inline {
       text-align: right;
+
+      a {
+        display: inline-block;
+        padding: $spacing_default;
+        background: #999;
+        color: #fff;
+        @include border-radius();
+      }
     }
+  }
+
+  .mls-number {
+    color: #999;
+    font-size: .75em;
+  }
+
+  .list-price {
+    font-size: $font_size_title;
+    display: block;
+    position: relative;
+    padding: $spacing_default;
+    margin-bottom: -1 * (.7 * $font_size_title + (2 * $spacing_default));
+    top: -1 * (.8 * $font_size_title + (2 * $spacing_default));
+    background: rgba(255,255,255,.65);
+    text-align: right;
+    font-weight: bold;
   }
 }
