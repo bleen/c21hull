@@ -42,6 +42,11 @@ function c21_listings_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'field_listing_featured_photo' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_listing_list_price' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -66,6 +71,11 @@ function c21_listings_ds_field_settings_info() {
           'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
+      ),
+    ),
+    'field_listing_photos' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );

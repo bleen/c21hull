@@ -3599,7 +3599,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'c21wide',
         ),
         'type' => 'image',
         'weight' => 3,
@@ -5636,7 +5636,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'c21wide',
         ),
         'type' => 'image',
         'weight' => 5,
