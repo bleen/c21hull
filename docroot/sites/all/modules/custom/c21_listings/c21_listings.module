@@ -35,19 +35,36 @@ function c21_listings_theme($existing, $type, $theme, $path) {
  * Implements hook_node_view().
  */
 function c21_listings_node_view($node, $view_mode) {
-  if ($node->type == 'listing' && !empty($node->field_listing_virtual_tour)) {
-    // drupal_add_css(drupal_get_path('module', 'print') . '/css/printlinks.css'); @todo: add css for virtual tours
-    $links['c21_virtual_tour_link'] = $node->field_listing_virtual_tour[LANGUAGE_NONE][0];
-    $links['c21_virtual_tour_link']['title'] = t('Take a virtual tour');
-    $links['c21_virtual_tour_link']['href'] = $links['c21_virtual_tour_link']['url'];
+  if ($node->type == 'listing') {
+    // Add the virtual tour link.
+    if (!empty($node->field_listing_virtual_tour)) {
+      // drupal_add_css(drupal_get_path('module', 'print') . '/css/printlinks.css'); @todo: add css for virtual tours
+      $links['c21_virtual_tour_link'] = $node->field_listing_virtual_tour[LANGUAGE_NONE][0];
+      $links['c21_virtual_tour_link']['title'] = t('Take a virtual tour');
+      $links['c21_virtual_tour_link']['href'] = $links['c21_virtual_tour_link']['url'];
 
-    $link_content = array(
-      '#theme' => 'links',
-      '#links' => $links,
-      '#attributes' => array('class' => array('links', 'inline')),
-    );
+      $link_content = array(
+        '#theme' => 'links',
+        '#links' => $links,
+        '#attributes' => array('class' => array('links', 'inline')),
+      );
 
-    $node->content['links']['c21_virtual_tour_link'] = $link_content;
+      $node->content['links']['c21_virtual_tour_link'] = $link_content;
+    }
+
+    // Add js for the featured photo.
+    if ($view_mode == 'full') {
+      // This method causes borealis to stop working ?!?
+      // $node->content['#attached']['js'][] = array(
+      //   'data' => drupal_get_path('module', 'c21_listings') . '/js/c21_listings.js',
+      //   'options' => array(
+      //     'group' => JS_DEFAULT,
+      //     'scope' => 'footer',
+      //     'weight' => 100,
+      //   ),
+      // );
+      drupal_add_js(drupal_get_path('module','c21_listings') . '/js/c21_listings.js', array('scope' => 'footer'));
+    }
   }
 }
 
