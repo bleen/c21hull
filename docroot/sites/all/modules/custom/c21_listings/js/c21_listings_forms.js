@@ -1,5 +1,5 @@
 (function ($) {
-  Drupal.behaviors.features = {
+  Drupal.behaviors.c21_listings = {
     attach: function(context, settings) {
       // Hide the "former" agents and add a "show former agents" link.
       $.get('/ajax/agents', function(agents) {
