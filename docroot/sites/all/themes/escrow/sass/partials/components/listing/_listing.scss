@@ -51,4 +51,18 @@
   .agents {
     clear: both;
   }
+
+  @include breakpoint($bp500) {
+    .group_listing_statistics {
+      @include float-span(2, 'first');
+    }
+    .group_listing_location_details {
+      @include float-span(2);
+    }
+    .agents {
+      @include float-span(2, 'last');
+      clear: none;
+    }
+  }
+
 }
