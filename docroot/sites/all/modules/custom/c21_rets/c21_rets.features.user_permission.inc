@@ -105,6 +105,8 @@ function c21_rets_user_default_permissions() {
     'name' => 'view drealty listing',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'drealty',
   );

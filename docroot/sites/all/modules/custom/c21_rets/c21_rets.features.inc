@@ -5,6 +5,16 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function c21_rets_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_default_drealty_listing_type().
  */
 function c21_rets_default_drealty_listing_type() {
@@ -469,9 +479,9 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "image",
+            "weight" : "1",
             "settings" : { "image_style" : "", "image_link" : "" },
-            "module" : "image",
-            "weight" : 0
+            "module" : "image"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -521,13 +531,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "text_default",
-            "settings" : [],
-            "module" : "text",
-            "weight" : 1
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "20", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -591,9 +595,9 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "text_default",
+            "weight" : "0",
             "settings" : [],
-            "module" : "text",
-            "weight" : 2
+            "module" : "text"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -644,14 +648,14 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "number_decimal",
+            "weight" : "2",
             "settings" : {
               "thousand_separator" : " ",
               "decimal_separator" : ".",
               "scale" : 2,
               "prefix_suffix" : true
             },
-            "module" : "number",
-            "weight" : 3
+            "module" : "number"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -715,9 +719,9 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "text_default",
+            "weight" : "3",
             "settings" : [],
-            "module" : "text",
-            "weight" : 4
+            "module" : "text"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -779,13 +783,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "text_default",
-            "settings" : [],
-            "module" : "text",
-            "weight" : 5
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -846,13 +844,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "text_default",
-            "settings" : [],
-            "module" : "text",
-            "weight" : 6
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -913,13 +905,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "text_default",
-            "settings" : [],
-            "module" : "text",
-            "weight" : 7
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "16", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -980,13 +966,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "text_default",
-            "settings" : [],
-            "module" : "text",
-            "weight" : 8
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "17", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -1050,9 +1030,9 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "text_default",
+            "weight" : "11",
             "settings" : [],
-            "module" : "text",
-            "weight" : 9
+            "module" : "text"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -1114,13 +1094,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "text_default",
-            "settings" : [],
-            "module" : "text",
-            "weight" : 10
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "18", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -1181,13 +1155,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "text_default",
-            "settings" : [],
-            "module" : "text",
-            "weight" : 11
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "19", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -1237,14 +1205,14 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "number_integer",
+            "weight" : "4",
             "settings" : {
               "thousand_separator" : " ",
               "decimal_separator" : ".",
               "scale" : 0,
               "prefix_suffix" : true
             },
-            "module" : "number",
-            "weight" : 13
+            "module" : "number"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -1294,14 +1262,14 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "number_decimal",
+            "weight" : "5",
             "settings" : {
               "thousand_separator" : " ",
               "decimal_separator" : ".",
               "scale" : 2,
               "prefix_suffix" : true
             },
-            "module" : "number",
-            "weight" : 14
+            "module" : "number"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -1365,9 +1333,9 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "text_default",
+            "weight" : "10",
             "settings" : [],
-            "module" : "text",
-            "weight" : 15
+            "module" : "text"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -1429,13 +1397,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "text_default",
-            "settings" : [],
-            "module" : "text",
-            "weight" : 16
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -1499,9 +1461,9 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "text_default",
+            "weight" : "12",
             "settings" : [],
-            "module" : "text",
-            "weight" : 17
+            "module" : "text"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -1552,14 +1514,14 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "number_decimal",
+            "weight" : "7",
             "settings" : {
               "thousand_separator" : " ",
               "decimal_separator" : ".",
               "scale" : 2,
               "prefix_suffix" : true
             },
-            "module" : "number",
-            "weight" : 18
+            "module" : "number"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -1609,14 +1571,14 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "number_integer",
+            "weight" : "6",
             "settings" : {
               "thousand_separator" : " ",
               "decimal_separator" : ".",
               "scale" : 0,
               "prefix_suffix" : true
             },
-            "module" : "number",
-            "weight" : 19
+            "module" : "number"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
@@ -1663,18 +1625,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "display" : {
-          "default" : {
-            "label" : "above",
-            "type" : "number_decimal",
-            "settings" : {
-              "thousand_separator" : " ",
-              "decimal_separator" : ".",
-              "scale" : 2,
-              "prefix_suffix" : true
-            },
-            "module" : "number",
-            "weight" : 20
-          },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
@@ -1737,9 +1688,9 @@ function c21_rets_default_drealty_listing_type() {
           "default" : {
             "label" : "above",
             "type" : "text_default",
+            "weight" : "9",
             "settings" : [],
-            "module" : "text",
-            "weight" : 21
+            "module" : "text"
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
