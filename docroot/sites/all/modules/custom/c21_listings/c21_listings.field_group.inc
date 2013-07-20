@@ -158,6 +158,39 @@ function c21_listings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_location_details|node|listing|full';
+  $field_group->group_name = 'group_listing_location_details';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Location Details',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_listing_development',
+      1 => 'field_listing_school_district',
+      2 => 'field_listing_township',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Location Details',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_location_details|node|listing|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_listing_location_info|node|listing|form';
   $field_group->group_name = 'group_listing_location_info';
   $field_group->entity_type = 'node';
@@ -354,6 +387,41 @@ function c21_listings_field_group_info() {
     ),
   );
   $export['group_listing_sellers|node|listing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_statistics|node|listing|full';
+  $field_group->group_name = 'group_listing_statistics';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Statistics',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_listing_acreage',
+      1 => 'field_listing_bathrooms',
+      2 => 'field_listing_bedrooms',
+      3 => 'field_listing_garage',
+      4 => 'field_listing_year_built',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Statistics',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_statistics|node|listing|full'] = $field_group;
 
   return $export;
 }

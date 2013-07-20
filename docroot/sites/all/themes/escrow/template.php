@@ -46,7 +46,6 @@ function escrow_process($variables, $hook) {
  * Implements hook_preprocess_node().
  */
 function escrow_preprocess_node(&$variables) {
-  dpm($variables['type']);
   if ($variables['type'] == 'listing') {
     drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
   }

@@ -905,12 +905,12 @@ function c21_listings_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
+          'prefix_suffix' => 0,
           'scale' => 2,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 12,
+        'weight' => 11,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1032,7 +1032,7 @@ function c21_listings_field_default_field_instances() {
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1658,7 +1658,7 @@ function c21_listings_field_default_field_instances() {
           'thousand_separator' => ',',
         ),
         'type' => 'number_decimal',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -2578,7 +2578,7 @@ function c21_listings_field_default_field_instances() {
           'thousand_separator' => ',',
         ),
         'type' => 'number_integer',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -2824,7 +2824,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -2914,7 +2914,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -3602,7 +3602,7 @@ function c21_listings_field_default_field_instances() {
           'image_style' => 'c21wide',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -3809,7 +3809,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -4567,7 +4567,7 @@ function c21_listings_field_default_field_instances() {
           'thousand_separator' => ',',
         ),
         'type' => 'number_decimal',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -5087,7 +5087,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -5639,7 +5639,7 @@ function c21_listings_field_default_field_instances() {
           'image_style' => 'c21wide',
         ),
         'type' => 'image',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -5782,7 +5782,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 11,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -6473,7 +6473,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -6668,7 +6668,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -7035,7 +7035,7 @@ function c21_listings_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'search_result' => array(
         'label' => 'above',

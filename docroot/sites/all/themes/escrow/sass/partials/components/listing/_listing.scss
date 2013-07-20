@@ -29,4 +29,26 @@
     text-align: right;
     font-weight: bold;
   }
+
+  .description {
+    margin: $spacing_default 0 (2 * $spacing_default) 0;
+  }
+
+  .group_listing_statistics {
+    @include float-span(3, 'first');
+
+    .stat {
+      diaplay: block;
+      width: 3em;
+      white-space: nowrap;
+      float: left;
+    }
+  }
+  .group_listing_location_details {
+    @include float-span(3, 'last');
+  }
+
+  .agents {
+    clear: both;
+  }
 }
