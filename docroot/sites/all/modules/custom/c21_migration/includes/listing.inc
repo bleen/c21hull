@@ -183,6 +183,25 @@ class C21ListingMigration extends C21Migration {
       $source_row->photos_source_dir = $source_dir;
     }
 
+    // Special handling for school district. All the "Del" values are actually
+    // the names of schools in the Deleware Valley district. We should alter
+    // those values to be "Deleware valley" and add the school name to the
+    // notes field.
+    if (strpos($source_row->school_district, 'Del Val -') === 0) {
+      switch ($source_row->school_district) {
+        case 'Del Val - DD':
+          $source_row->additional_info .= ' | Dingman-Deleware Elementary';
+          break;
+        case 'Del Val - DV':
+          $source_row->additional_info .= ' | Deleware Valley Elementary';
+          break;
+        case 'Del Val - SH':
+          $source_row->additional_info .= ' | Shohola Elementary';
+          break;
+      }
+      $source_row->school_district = 'Delaware Valley';
+    }
+
     // Prepare taxonomy terms.
     $source_row->tags = $this->prepareListingTags($source_row);
     $extra_sewage_fields = array(

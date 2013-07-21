@@ -2680,7 +2680,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 109,
+      'weight' => 108,
     ),
   );
 
@@ -2949,7 +2949,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 112,
+      'weight' => 111,
     ),
   );
 
@@ -5062,7 +5062,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 108,
+      'weight' => 107,
     ),
   );
 
@@ -5768,7 +5768,7 @@ function c21_listings_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'ex: E. Stroudsburg, Wallenpaupack, Delaware Vally - DV, Delaware Vally - DD, Delaware Vally - SH',
+    'description' => 'ex: Deleware Valley, E. Stroudsburg, Wallenpaupack, Other',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5797,7 +5797,9 @@ function c21_listings_field_default_field_instances() {
         'weight' => 23,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_listing_school_district',
     'label' => 'School District',
     'required' => 0,
@@ -5817,7 +5819,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 41,
+      'weight' => 113,
     ),
   );
 
@@ -5874,7 +5876,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 110,
+      'weight' => 109,
     ),
   );
 
@@ -6373,7 +6375,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 111,
+      'weight' => 110,
     ),
   );
 
@@ -6581,7 +6583,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 107,
+      'weight' => 106,
     ),
   );
 
@@ -6703,7 +6705,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 113,
+      'weight' => 112,
     ),
   );
 
@@ -7322,7 +7324,7 @@ function c21_listings_field_default_field_instances() {
   t('Year Built');
   t('Zoning');
   t('ex: 1-car, 2-car');
-  t('ex: E. Stroudsburg, Wallenpaupack, Delaware Vally - DV, Delaware Vally - DD, Delaware Vally - SH');
+  t('ex: Deleware Valley, E. Stroudsburg, Wallenpaupack');
   t('ex: central, well, well needed, shared');
   t('ex: crawl, finished, unfinished');
   t('ex: electric, oil, propane');
