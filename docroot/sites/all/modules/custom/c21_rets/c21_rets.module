@@ -5,3 +5,55 @@
  */
 
 include_once 'c21_rets.features.inc';
+
+/**
+ * Implements hook_entity_load().
+ */
+function c21_rets_entity_load($entities, $type) {
+  if ($type == 'drealty_listing') {
+    foreach ($entities as $id => $listing) {
+      if ($listing->type == "mls_residential_listing") {
+        $listing->label = _c21_rets_build_listing_title($listing);
+      }
+    }
+  }
+}
+
+/**
+ * Creates a human-readible title for an MLS listing.
+ *
+ * @param  drealtyListing $listing
+ *
+ * @return string
+ */
+function _c21_rets_build_listing_title($listing) {
+  $stats_values = array();
+  $stats_fields = array(
+    'bedroom' => 'bedrooms',
+    'bathroom' => 'bathrooms',
+  );
+  $superlatives = array(
+    t('great find'),
+    t('worth a look'),
+    t('check this out'),
+  );
+
+  foreach ($stats_fields as $label => $field) {
+    $value = $listing->{'field_mls_' . $field}[LANGUAGE_NONE][0]['value'];
+    if (is_numeric($value)) {
+      $stats_values[] = $value . ' ' . $label;
+    }
+  }
+  $township = $listing->field_mls_city[LANGUAGE_NONE][0]['value'];
+
+  if (empty($stats_values)) {
+    $stats_values[] = $superlatives[array_rand($superlatives)];
+  }
+
+  $title = ucwords(implode(', ', $stats_values));
+  if (!empty($township)) {
+    $title .= ' in ' . $township;
+  }
+
+  return $title;
+}
