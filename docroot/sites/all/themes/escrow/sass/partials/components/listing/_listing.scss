@@ -1,4 +1,5 @@
-.node-type-listing {
+.node-type-listing,
+.entity-drealty-listing {
   .links {
     &.inline {
       text-align: right;
@@ -34,7 +35,7 @@
     margin: $spacing_default 0 (2 * $spacing_default) 0;
   }
 
-  .group_listing_statistics {
+  .group_statistics, {
     @include float-span(3, 'first');
 
     .stat {
@@ -44,7 +45,7 @@
       float: left;
     }
   }
-  .group_listing_location_details {
+  .group_location_details {
     @include float-span(3, 'last');
   }
 
@@ -53,10 +54,10 @@
   }
 
   @include breakpoint($bp500) {
-    .group_listing_statistics {
+    .group_statistics {
       @include float-span(2, 'first');
     }
-    .group_listing_location_details {
+    .group_location_details {
       @include float-span(2);
     }
     .agents {
@@ -65,4 +66,24 @@
     }
   }
 
+}
+
+.entity-drealty-listing {
+  .photos {
+    max-height: 25em;
+    overflow: auto;
+
+    @include breakpoint($bp500) {
+      @include clearfix();
+      img {
+        float: left;
+        width: 49%;
+        margin-bottom: $spacing_default;
+
+        &:nth-child(odd) {
+          margin-right: 2%;
+        }
+      }
+    }
+  }
 }

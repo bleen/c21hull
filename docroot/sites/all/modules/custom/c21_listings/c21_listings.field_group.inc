@@ -176,12 +176,12 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Location Details',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => 'group_location_details',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
-        'speed' => 'fast',
+        'speed' => 'none',
       ),
       'formatter' => 'open',
     ),
@@ -411,12 +411,12 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Statistics',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => 'group_statistics',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
-        'speed' => 'fast',
+        'speed' => 'none',
       ),
       'formatter' => 'open',
     ),

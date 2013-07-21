@@ -40,12 +40,12 @@ function c21_strongarm() {
   $strongarm->name = 'borealis_responsive_builds';
   $strongarm->value = array(
     'respondsmall' => 250,
-    'respondmedium' => 437.5,
-    'respondlarge' => 765.625,
-    'respondxl' => 1339.84375,
-    'respondxl2' => 2344.7265625,
-    'respondxl3' => 4103.27148438,
-    'respondxl4' => 7180.72509766,
+    'respondmedium' => 500,
+    'respondlarge' => 1000,
+    'respondxl' => 2000,
+    'respondxl2' => 4000,
+    'respondxl3' => 8000,
+    'respondxl4' => 16000,
   );
   $export['borealis_responsive_builds'] = $strongarm;
 
