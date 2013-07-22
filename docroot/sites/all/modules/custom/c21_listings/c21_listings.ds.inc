@@ -344,19 +344,66 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+      ),
     ),
-    'node_link' => array(
-      'weight' => '8',
-      'label' => 'hidden',
-      'format' => 'default',
+    'field_listing_bathrooms' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'bathrooms',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_bedrooms' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'bedrooms',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_list_price' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'list-price',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
     ),
     'field_listing_sq_ft_finished' => array(
       'formatter_settings' => array(
         'ft' => array(
+          'func' => 'theme_ds_field_expert',
           'lb' => 'Square Feet',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'square-feet',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -513,26 +560,24 @@ function c21_listings_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_listing_mls',
-        1 => 'title',
-        2 => 'field_listing_featured_photo',
+        1 => 'field_listing_featured_photo',
+        2 => 'title',
         3 => 'field_listing_list_price',
         4 => 'field_listing_bedrooms',
         5 => 'field_listing_bathrooms',
         6 => 'field_listing_sq_ft_finished',
-        7 => 'field_listing_description',
-        8 => 'node_link',
+        7 => 'field_listing_school_district',
       ),
     ),
     'fields' => array(
       'field_listing_mls' => 'ds_content',
-      'title' => 'ds_content',
       'field_listing_featured_photo' => 'ds_content',
+      'title' => 'ds_content',
       'field_listing_list_price' => 'ds_content',
       'field_listing_bedrooms' => 'ds_content',
       'field_listing_bathrooms' => 'ds_content',
       'field_listing_sq_ft_finished' => 'ds_content',
-      'field_listing_description' => 'ds_content',
-      'node_link' => 'ds_content',
+      'field_listing_school_district' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
