@@ -13,7 +13,7 @@ function c21_search_apachesolr_index_document_build_listing(ApacheSolrDocument &
   if ($entity->type == 'listing') {
     $document->addField('ts_field_listing_id', $entity->field_listing_id_prefix['und'][0]['value'] . '-' . $entity->nid);
     $document->addField('ts_field_mls', $entity->field_listing_mls['und'][0]['value']);
-    $document->addField('fs_field_list_price', $entity->field_listing_list_price['und'][0]['value']);
+    $document->addField('fs_field_list_price', round($entity->field_listing_list_price['und'][0]['value']));
     $document->addField('is_field_bedrooms', $entity->field_listing_bedrooms['und'][0]['value']);
     $document->addField('fs_field_bathrooms', $entity->field_listing_bathrooms['und'][0]['value']);
     $document->addField('fs_field_acreage', $entity->field_listing_acreage['und'][0]['value']);
@@ -28,7 +28,7 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
   switch ($form['#id']) {
     case 'views-exposed-form-c21-search-listings-page':
       // Add some placeholder text to the search field.
-      $form['keyword']['#placeholder'] = t('Listing ID, MLS#, keywords, etc.');
+      $form['keyword']['#placeholder'] = t('MLS#, keywords, etc.');
 
       // Convert town and school fields to select boxes.
       $form['im_field_listing_township']['#type'] = 'select';
@@ -53,8 +53,29 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
         'value' => 'toggle',
       );
       $form['#info'] = array_merge($element_to_insert, $form['#info']);
+
+      // Add a custom validation function.
+      $form['#validate'][] = 'c21_search_form_validate';
       break;
   }
+}
+
+/**
+ * Form validation function.
+ */
+function c21_search_form_validate($form, &$form_state) {
+  foreach ($form_state['view']->filter as $field => $filter) {
+    if ($filter->definition['handler'] == 'apachesolr_views_handler_filter_numeric' && $filter->operator == 'between') {
+      // If the inputted value is the maximum allowed value, increase it so that
+      // all search results will be returned.
+      if (isset($form_state['view']->exposed_input[$field]['max'])) {
+        if ($form_state['values'][$field]['max'] >= $form_state['view']->exposed_input[$field]['max']) {
+          $form_state['values'][$field]['max'] = 10000000;
+        }
+      }
+    }
+  }
+
 }
 
 /**

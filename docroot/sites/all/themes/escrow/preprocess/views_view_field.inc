@@ -1,14 +1,22 @@
 <?php
 
 if ($variables['view']->name == "c21_search_listings" && $variables['field']->field == "entity_id") {
-
   // For the saerch listing view, convert the entity_id field into a
   // fully rendered entity.
   switch($variables['row']->entity_type){
     case 'node':
-      $node = node_load($variables['row']->entity_id);
-      $node_build = node_view($node, 'search_result');
-      $variables['output'] = drupal_render($node_build);
+      try {
+        $node = node_load($variables['row']->entity_id);
+        if (empty($node)) {
+          throw new Exception("Search index has returned an invalid entity id. Try rebuilding the index.");
+        }
+
+        $node_build = node_view($node, 'teaser');
+        $variables['output'] = drupal_render($node_build);
+      }
+      catch (exception $e) {
+        watchdog('search', $e->getMessage(), array(), WATCHDOG_ERROR);
+      }
       break;
 
     case 'drealty_listing':

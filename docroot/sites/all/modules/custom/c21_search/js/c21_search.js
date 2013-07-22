@@ -18,11 +18,18 @@ Drupal.behaviors.c21SearchForm = {
         .hide();
 
       $(this).bind("slide", function(event, ui) {
-        widget.find('.slider-num-min').html(Drupal.c21Search.commaSeparateNumber(ui.values[0]));
-        widget.find('.slider-num-max').html(Drupal.c21Search.commaSeparateNumber(ui.values[1]));
+        min = Drupal.c21Search.commaSeparateNumber(ui.values[0]);
+        max = Drupal.c21Search.commaSeparateNumber(ui.values[1]);
+
+        // If the max value is currently the maximum possible value then change
+        // it to be "Any".
+        if (ui.values[1] >= $(this).slider("option", "max")) {
+          max = Drupal.t('Any');
+        }
+
+        widget.find('.slider-num-min').html(min);
+        widget.find('.slider-num-max').html(max);
       });
-      widget.find('.slider-num-min').html(Drupal.c21Search.commaSeparateNumber($(this).slider("values", 0)));
-      widget.find('.slider-num-max').html(Drupal.c21Search.commaSeparateNumber($(this).slider("values", 1)));
     });
 
     // Include jquery.hammer.min.js and call the toggle form.
