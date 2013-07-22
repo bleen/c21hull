@@ -435,13 +435,17 @@ function c21_listings_field_default_field_instances() {
         'weight' => 3,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_seller_phone_number',
     'label' => 'Phone Number',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'filtered_html' => 0,
+          'full_html' => 0,
           'plain_text' => 'plain_text',
           'rich_text' => 'rich_text',
         ),
@@ -449,6 +453,12 @@ function c21_listings_field_default_field_instances() {
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
@@ -467,7 +477,7 @@ function c21_listings_field_default_field_instances() {
       'active' => 1,
       'module' => 'masked_input',
       'settings' => array(
-        'mask' => '(999) 999-9999',
+        'mask' => '(999) 999-9999? x99999',
         'placeholder' => '_',
         'size' => 60,
       ),
@@ -521,7 +531,7 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -585,10 +595,9 @@ function c21_listings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -647,17 +656,17 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
+        'module' => 'c21_listings',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
+        'type' => 'us_phone_number',
+        'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
+        'module' => 'c21_listings',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'us_phone_number',
         'weight' => 2,
       ),
     ),
@@ -700,10 +709,14 @@ function c21_listings_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'html5_tools',
-      'settings' => array(),
-      'type' => 'telwidget',
+      'active' => 1,
+      'module' => 'masked_input',
+      'settings' => array(
+        'mask' => '(999) 999-9999? x99999',
+        'placeholder' => '_',
+        'size' => 60,
+      ),
+      'type' => 'masked_input',
       'weight' => 4,
     ),
   );
@@ -717,21 +730,21 @@ function c21_listings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'content',
+          'image_style' => 'c21square',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -802,10 +815,9 @@ function c21_listings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 0,
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -849,10 +861,9 @@ function c21_listings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -7324,7 +7335,7 @@ function c21_listings_field_default_field_instances() {
   t('Year Built');
   t('Zoning');
   t('ex: 1-car, 2-car');
-  t('ex: Deleware Valley, E. Stroudsburg, Wallenpaupack');
+  t('ex: Deleware Valley, E. Stroudsburg, Wallenpaupack, Other');
   t('ex: central, well, well needed, shared');
   t('ex: crawl, finished, unfinished');
   t('ex: electric, oil, propane');

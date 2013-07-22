@@ -427,6 +427,7 @@ features[variable][] = pathauto_taxonomy_term_listing_windows_pattern
 features[variable][] = representative_image_agent
 features[variable][] = representative_image_field_node_agent
 features[variable][] = representative_image_field_node_listing
+features[variable][] = representative_image_field_node_listing_type
 features[variable][] = representative_image_field_node_seller
 features[variable][] = representative_image_listing
 features[variable][] = representative_image_seller

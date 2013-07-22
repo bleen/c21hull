@@ -21,11 +21,30 @@ function c21_listings_ds_field_settings_info() {
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+      ),
     ),
-    'node_link' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
+    'field_agent_phone_number' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_agent_photo' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'figure',
+          'fi-cl' => 'headshot',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
     ),
   );
   $export['node|agent|teaser'] = $ds_fieldsetting;
@@ -67,11 +86,17 @@ function c21_listings_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'div',
+          'ow-el' => 'aside',
           'ow-cl' => 'agents',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'agent',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
         ),
       ),
     ),
@@ -353,28 +378,23 @@ function c21_listings_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'agent';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_2col_fluid';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
+      'ds_content' => array(
         0 => 'field_agent_photo',
-      ),
-      'right' => array(
         1 => 'title',
         2 => 'field_agent_phone_number',
-        3 => 'node_link',
       ),
     ),
     'fields' => array(
-      'field_agent_photo' => 'left',
-      'title' => 'right',
-      'field_agent_phone_number' => 'right',
-      'node_link' => 'right',
+      'field_agent_photo' => 'ds_content',
+      'title' => 'ds_content',
+      'field_agent_phone_number' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

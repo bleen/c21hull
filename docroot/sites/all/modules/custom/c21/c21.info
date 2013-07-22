@@ -275,6 +275,7 @@ features[variable][] = print_sourceurl_enabled
 features[variable][] = print_sourceurl_forcenode
 features[variable][] = print_urls
 features[variable][] = print_urls_anchors
+features[variable][] = representative_image_field_node_page
 features[variable][] = site_default_country
 features[variable][] = site_mail
 features[variable][] = site_name

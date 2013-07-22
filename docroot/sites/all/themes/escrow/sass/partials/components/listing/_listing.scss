@@ -50,7 +50,15 @@
   }
 
   .agents {
-    clear: both;
+    .phone-number {
+      white-space: nowrap;
+    }
+
+    @include float-span(6, 'last');
+
+    .headshot {
+      @include float-span(2, 'first');
+    }
   }
 
   @include breakpoint($bp500) {
@@ -62,7 +70,10 @@
     }
     .agents {
       @include float-span(2, 'last');
-      clear: none;
+
+      .headshot {
+        width: 25%;
+      }
     }
   }
 

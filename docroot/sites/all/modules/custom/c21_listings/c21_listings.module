@@ -76,7 +76,12 @@ function c21_listings_field_formatter_info() {
     'listing_id' => array(
       'label' => t('Listing Id'),
       'field types' => array('text'),
-      'description' => t('Displays Text as a Listing Id by appending "-[nid]".'),
+      'description' => t('Displays text as a Listing Id by appending "-[nid]".'),
+    ),
+    'us_phone_number' => array(
+      'label' => t('Telephone Number (US)'),
+      'field types' => array('text'),
+      'description' => t('Displays text as a tel: link'),
     ),
   );
 
@@ -93,10 +98,19 @@ function c21_listings_field_formatter_view($entity_type, $entity, $field, $insta
     case 'listing_id':
       foreach ($items as $delta => $item) {
         $element[$delta]['#markup'] = strtoupper($item['safe_value']) . '-' . $entity->nid;
-     }
+      }
       break;
+    case 'us_phone_number':
+      foreach ($items as $delta => $item) {
+        $element[$delta]['#theme'] = 'link';
+        $element[$delta]['#text'] = $item['safe_value'];
+        $element[$delta]['#path'] = _c21_format_phone_number_link($item['safe_value']);
+        $element[$delta]['#options'] = array(
+          'attributes' => array('class' => array('phone-number us-phone-number')),
+          'html' => FALSE,
+        );
+      }
   }
-
   return $element;
 }
 
@@ -223,6 +237,21 @@ function theme_c21_listings_listing_id($variables) {
   return strtoupper($variables['prefix']) . '-' . $variables['nid'];
 }
 
+/**
+ * Format a phone number to be appropraite for use in the href of a tel: link.
+ *
+ * @param  string $phone_number
+ *   A human readible phone number.
+ *
+ * @return string
+ *   The formatted phone number beginning with "tel:". The strings "ext" and "x"
+ *   will be replaced with a "+".
+ */
+function _c21_format_phone_number_link($phone_number) {
+  $formatted_phone_number = preg_replace("/x|ext|ext./i", '+', $phone_number);
+  $formatted_phone_number = preg_replace("/[^0-9,+]/i", '', $formatted_phone_number);
 
+  return 'tel:' . $formatted_phone_number;
+}
 
 

@@ -54,8 +54,8 @@ function c21_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'borealis_ri_children';
   $strongarm->value = array(
-    0 => 'c21square',
-    1 => 'c21wide',
+    0 => 'c21wide',
+    1 => 'c21square',
   );
   $export['borealis_ri_children'] = $strongarm;
 
@@ -679,6 +679,13 @@ function c21_strongarm() {
   $strongarm->name = 'print_urls_anchors';
   $strongarm->value = 0;
   $export['print_urls_anchors'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'representative_image_field_node_page';
+  $strongarm->value = '';
+  $export['representative_image_field_node_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
