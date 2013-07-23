@@ -88,11 +88,17 @@ function c21_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-c21_featured_listings-block' => array(
+          'module' => 'views',
+          'delta' => 'c21_featured_listings-block',
+          'region' => 'content',
+          'weight' => '-24',
+        ),
         'views-964ecad519128c5b59d0f4917f6399da' => array(
           'module' => 'views',
           'delta' => '964ecad519128c5b59d0f4917f6399da',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-23',
         ),
       ),
     ),
