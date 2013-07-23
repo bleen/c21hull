@@ -17,10 +17,12 @@ APACHESOLR
         ...became
       !preg_match('/^[\[\{]\S+ TO \S+[\]\}]/', $filter['#value'])
 
-    For more details, see this issue: https://drupal.org/node/2031495
-    There is no patch because this change does not solve the generic case of
-    multiple exposed filters. What if one is text and one is numeric? The text
-    should be quoted, but the range shouldnt.
+    For more details, see this issue (original post):
+    https://drupal.org/node/2031495
+
+    In addition, this patch allows for multiple filters:
+    https://drupal.org/node/2031495#comment-7672681
+
 
 APACHESOLR_VIEWS
   * Adding support for exposed filters on numeric fields.

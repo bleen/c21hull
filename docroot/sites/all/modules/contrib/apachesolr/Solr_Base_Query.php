@@ -432,32 +432,36 @@ class SolrBaseQuery extends SolrFilterSubQuery implements DrupalSolrQueryInterfa
 
   protected function addFq($string, $index = NULL) {
     $string = trim($string);
-    $local = '';
-    $exclude = FALSE;
-    $name = NULL;
-    $value = NULL;
 
-    // Check if we are dealing with an exclude
-    if (preg_match('/^-(.*)/', $string, $matches)) {
-      $exclude = TRUE;
-      $string = $matches[1];
+    $filters = explode(' AND ', $string);
+    foreach ($filters as $filter) {
+      $local = '';
+      $exclude = FALSE;
+      $name = NULL;
+      $value = NULL;
+
+      // Check if we are dealing with an exclude
+      if (preg_match('/^-(.*)/', $filter, $matches)) {
+        $exclude = TRUE;
+        $filter = $matches[1];
+      }
+
+      // If {!something} is found as first character then this is a local value
+      if (preg_match('/\{!([^}]+)\}(.*)/', $filter, $matches)) {
+        $local = $matches[1];
+        $filter = $matches[2];
+      }
+
+      // Anything that has a name and value check if we have a : in the string.
+      if (strstr($filter, ':')) {
+        list($name, $value) = explode(":", $filter, 2);
+      }
+      else {
+        $value = $filter;
+      }
+      $this->addFilter($name, $value, $exclude, $local);
     }
 
-    // If {!something} is found as first character then this is a local value
-    if (preg_match('/\{!([^}]+)\}(.*)/', $string, $matches)) {
-      $local = $matches[1];
-      $string = $matches[2];
-    }
-
-    // Anything that has a name and value
-    // check if we have a : in the string
-    if (strstr($string, ':')) {
-      list($name, $value) = explode(":", $string, 2);
-    }
-    else {
-      $value = $string;
-    }
-    $this->addFilter($name, $value, $exclude, $local);
     return $this;
   }
 
