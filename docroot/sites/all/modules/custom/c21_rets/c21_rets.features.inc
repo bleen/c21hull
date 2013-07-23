@@ -493,7 +493,14 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "hidden",
+            "type" : "image",
+            "weight" : "1",
+            "settings" : { "image_style" : "c21wide", "image_link" : "content" },
+            "module" : "image"
+          }
         },
         "required" : 0,
         "description" : "",
@@ -542,7 +549,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "17", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "20", "settings" : [] }
         },
         "required" : 1,
         "description" : "",
@@ -609,7 +617,14 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "inline",
+            "type" : "text_default",
+            "weight" : "0",
+            "settings" : [],
+            "module" : "text"
+          }
         },
         "required" : 0,
         "description" : "",
@@ -667,7 +682,19 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "hidden",
+            "type" : "number_decimal",
+            "weight" : "2",
+            "settings" : {
+              "thousand_separator" : ",",
+              "decimal_separator" : ".",
+              "scale" : "2",
+              "prefix_suffix" : 1
+            },
+            "module" : "number"
+          }
         },
         "required" : 0,
         "description" : "",
@@ -727,7 +754,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -788,7 +816,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "11", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -849,7 +878,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -910,7 +940,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "16", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -971,7 +1002,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "17", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -1038,7 +1070,8 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "7", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -1099,7 +1132,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "18", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -1160,7 +1194,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "16", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "19", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -1218,7 +1253,19 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "inline",
+            "type" : "number_integer",
+            "weight" : "3",
+            "settings" : {
+              "thousand_separator" : ",",
+              "prefix_suffix" : 1,
+              "decimal_separator" : ".",
+              "scale" : 0
+            },
+            "module" : "number"
+          }
         },
         "required" : 0,
         "description" : "",
@@ -1275,7 +1322,19 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "inline",
+            "type" : "number_decimal",
+            "weight" : "4",
+            "settings" : {
+              "thousand_separator" : ",",
+              "decimal_separator" : ".",
+              "scale" : "1",
+              "prefix_suffix" : 1
+            },
+            "module" : "number"
+          }
         },
         "required" : 0,
         "description" : "",
@@ -1341,7 +1400,8 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -1402,7 +1462,8 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "10", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -1469,7 +1530,14 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "above",
+            "type" : "text_default",
+            "weight" : "6",
+            "settings" : [],
+            "module" : "text"
+          }
         },
         "required" : 0,
         "description" : "",
@@ -1527,7 +1595,13 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "inline",
+            "type" : "hidden",
+            "weight" : "10",
+            "settings" : []
+          }
         },
         "required" : 0,
         "description" : "",
@@ -1584,7 +1658,8 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : { "label" : "inline", "type" : "hidden", "weight" : "9", "settings" : [] }
         },
         "required" : 0,
         "description" : "",
@@ -1630,7 +1705,19 @@ function c21_rets_default_drealty_listing_type() {
           "default" : { "label" : "above", "type" : "hidden", "weight" : "9", "settings" : [] },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "inline",
+            "type" : "number_decimal",
+            "weight" : "5",
+            "settings" : {
+              "thousand_separator" : " ",
+              "decimal_separator" : ".",
+              "scale" : 2,
+              "prefix_suffix" : true
+            },
+            "module" : "number"
+          }
         },
         "required" : 0,
         "description" : "",
@@ -1696,7 +1783,13 @@ function c21_rets_default_drealty_listing_type() {
           },
           "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
           "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
-          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "teaser" : {
+            "label" : "inline",
+            "type" : "hidden",
+            "weight" : "11",
+            "settings" : []
+          }
         },
         "required" : 0,
         "description" : "",
