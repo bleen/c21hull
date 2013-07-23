@@ -165,7 +165,7 @@ class C21ListingMigration extends C21Migration {
       foreach ($photos as $photo) {
         $file = pathinfo($photo);
         list($num, $size) = explode('_', $file['filename']);
-        if ($file['extension'] == 'jpg' && $size == 'lg') {
+        if ($file['extension'] == 'jpg' && $size == 'lg' && $num != $source_row->primary_photo) {
           $filenames[] = $file['basename'];
           if (is_numeric($num)) {
             $destination_filenames[] = $source_row->nid . '_' . $num  . '.' . $file['extension'];
