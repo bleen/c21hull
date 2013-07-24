@@ -17,6 +17,17 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'agent';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => 'full-name',
+        'ft' => array(),
+      ),
+    ),
     'field_agent_photo' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -41,18 +52,13 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
         'wrapper' => 'h2',
-        'class' => '',
-        'ft' => array(),
-      ),
-    ),
-    'field_agent_phone_number' => array(
-      'formatter_settings' => array(
+        'class' => 'full-name',
         'ft' => array(),
       ),
     ),
@@ -453,12 +459,14 @@ function c21_listings_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_agent_photo',
-        1 => 'field_agent_phone_number',
-        2 => 'field_agent_bio',
+        1 => 'title',
+        2 => 'field_agent_phone_number',
+        3 => 'field_agent_bio',
       ),
     ),
     'fields' => array(
       'field_agent_photo' => 'ds_content',
+      'title' => 'ds_content',
       'field_agent_phone_number' => 'ds_content',
       'field_agent_bio' => 'ds_content',
     ),
@@ -482,15 +490,17 @@ function c21_listings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_agent_photo',
-        1 => 'title',
+        0 => 'title',
+        1 => 'field_agent_photo',
         2 => 'field_agent_phone_number',
+        3 => 'field_agent_bio',
       ),
     ),
     'fields' => array(
-      'field_agent_photo' => 'ds_content',
       'title' => 'ds_content',
+      'field_agent_photo' => 'ds_content',
       'field_agent_phone_number' => 'ds_content',
+      'field_agent_bio' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

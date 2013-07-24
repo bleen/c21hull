@@ -5,7 +5,7 @@
 
 body {
   font-family: 'Muli', 'Hevetica', 'Arial';
-  padding: 0 $spacing_default;
+  padding: 0 $spacing_default (8 * $spacing_default) $spacing_default;
 }
 
 a {
@@ -20,6 +20,12 @@ a {
 #page-title {
   font-size: $font_size_title;
   font-weight: bold;
+}
+
+.more-link {
+  display: inline-block;
+  padding: 0 (.5 * $spacing_default);
+  color: #cf0;
 }
 
 .links {
