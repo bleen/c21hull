@@ -489,6 +489,16 @@ function c21_user_default_permissions() {
     'module' => 'clone',
   );
 
+  // Exported permission: create aggregation_page_detail content.
+  $permissions['create aggregation_page_detail content'] = array(
+    'name' => 'create aggregation_page_detail content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: create page content.
   $permissions['create page content'] = array(
     'name' => 'create page content',
@@ -512,11 +522,31 @@ function c21_user_default_permissions() {
     'module' => 'ckeditor',
   );
 
+  // Exported permission: delete any aggregation_page_detail content.
+  $permissions['delete any aggregation_page_detail content'] = array(
+    'name' => 'delete any aggregation_page_detail content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any page content.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own aggregation_page_detail content.
+  $permissions['delete own aggregation_page_detail content'] = array(
+    'name' => 'delete own aggregation_page_detail content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
     ),
     'module' => 'node',
   );
@@ -556,11 +586,31 @@ function c21_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
+  // Exported permission: edit any aggregation_page_detail content.
+  $permissions['edit any aggregation_page_detail content'] = array(
+    'name' => 'edit any aggregation_page_detail content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any page content.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own aggregation_page_detail content.
+  $permissions['edit own aggregation_page_detail content'] = array(
+    'name' => 'edit own aggregation_page_detail content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'staff' => 'staff',
     ),
     'module' => 'node',
   );
@@ -572,6 +622,13 @@ function c21_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: enter aggregation_page_detail revision log entry.
+  $permissions['enter aggregation_page_detail revision log entry'] = array(
+    'name' => 'enter aggregation_page_detail revision log entry',
+    'roles' => array(),
+    'module' => 'override_node_options',
   );
 
   // Exported permission: enter page revision log entry.
@@ -623,6 +680,48 @@ function c21_user_default_permissions() {
     'name' => 'notify of path changes',
     'roles' => array(),
     'module' => 'pathauto',
+  );
+
+  // Exported permission: override aggregation_page_detail authored by option.
+  $permissions['override aggregation_page_detail authored by option'] = array(
+    'name' => 'override aggregation_page_detail authored by option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override aggregation_page_detail authored on option.
+  $permissions['override aggregation_page_detail authored on option'] = array(
+    'name' => 'override aggregation_page_detail authored on option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override aggregation_page_detail promote to front page option.
+  $permissions['override aggregation_page_detail promote to front page option'] = array(
+    'name' => 'override aggregation_page_detail promote to front page option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override aggregation_page_detail published option.
+  $permissions['override aggregation_page_detail published option'] = array(
+    'name' => 'override aggregation_page_detail published option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override aggregation_page_detail revision option.
+  $permissions['override aggregation_page_detail revision option'] = array(
+    'name' => 'override aggregation_page_detail revision option',
+    'roles' => array(),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override aggregation_page_detail sticky option.
+  $permissions['override aggregation_page_detail sticky option'] = array(
+    'name' => 'override aggregation_page_detail sticky option',
+    'roles' => array(),
+    'module' => 'override_node_options',
   );
 
   // Exported permission: override page authored on option.

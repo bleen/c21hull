@@ -42,6 +42,14 @@ function c21_listings_node_info() {
       'title_label' => t('Display Name'),
       'help' => '',
     ),
+    'aggregation_page_detail' => array(
+      'name' => t('Aggregation Page Detail'),
+      'base' => 'node_content',
+      'description' => t('Use <em>aggregation page details</em> to create a details section that should appear on a specific aggregation page (aka taxonomy term page). '),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'listing' => array(
       'name' => t('Listing'),
       'base' => 'node_content',
