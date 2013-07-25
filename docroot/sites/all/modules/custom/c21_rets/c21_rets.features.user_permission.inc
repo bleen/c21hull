@@ -100,6 +100,15 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
+  // Exported permission: show format selection for drealty_listing.
+  $permissions['show format selection for drealty_listing'] = array(
+    'name' => 'show format selection for drealty_listing',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'better_formats',
+  );
+
   // Exported permission: view drealty listing.
   $permissions['view drealty listing'] = array(
     'name' => 'view drealty listing',
