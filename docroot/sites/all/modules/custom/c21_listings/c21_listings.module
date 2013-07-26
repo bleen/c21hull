@@ -36,6 +36,36 @@ function c21_listings_theme($existing, $type, $theme, $path) {
  */
 function c21_listings_node_view($node, $view_mode) {
   if ($node->type == 'listing') {
+    // Add a map link.
+    if (isset($node->field_listing_lot[LANGUAGE_NONE][0]['safe_value']) && isset($node->field_listing_street[LANGUAGE_NONE][0]['safe_value']) && isset($node->field_listing_township[LANGUAGE_NONE][0]['taxonomy_term']->name)) {
+      $lot = $node->field_listing_lot[LANGUAGE_NONE][0]['safe_value'];
+      $street = $node->field_listing_street[LANGUAGE_NONE][0]['safe_value'];
+      $town = $node->field_listing_township[LANGUAGE_NONE][0]['taxonomy_term']->name;
+
+      $links['c21_map_link'] = array(
+        'title' => t('See map'),
+        'href' => 'http://maps.google.com/maps',
+        'query' => array(
+          'q' => $lot . ' ' . $street . ', ' . $town . ', PA', // Search query.
+          'hl' => 'en', // Language.
+          'iwloc' => 'A', // Information Bubble [A|''].
+          'z' => 12, // Zoom.
+          't' => 'm', // Map type.
+        ),
+        'attributes' => array(
+          'target' => '_blank',
+        ),
+      );
+
+      $link_content = array(
+        '#theme' => 'links',
+        '#links' => $links,
+        '#attributes' => array('class' => array('links', 'inline')),
+      );
+
+      $node->content['links']['c21_map_link'] = $link_content;
+    }
+
     // Add the virtual tour link.
     if (!empty($node->field_listing_virtual_tour)) {
       // drupal_add_css(drupal_get_path('module', 'print') . '/css/printlinks.css'); @todo: add css for virtual tours
