@@ -364,10 +364,20 @@ class DrupalDefaultEntityController implements DrupalEntityControllerInterface {
     // Exclude any entities loaded from cache if they don't match $conditions.
     // This ensures the same behavior whether loading from memory or database.
     if ($conditions) {
-      foreach ($entities as $entity) {
+      foreach ($entities as $key => $entity) {
         $entity_values = (array) $entity;
-        if (array_diff_assoc($conditions, $entity_values)) {
-          unset($entities[$entity->{$this->idKey}]);
+        foreach ($conditions as $condition_key => $condition_value) {
+          if (is_array($condition_value)) {
+            if (!isset($entity_values[$condition_key])) {
+              unset($entities[$key]);
+            }
+            elseif (!in_array($entity_values[$condition_key], $condition_value)) {
+              unset($entities[$key]);
+            }
+          }
+          elseif (!isset($entity_values[$condition_key]) || $entity_values[$condition_key] != $condition_value) {
+            unset($entities[$key]);
+          }
         }
       }
     }
