@@ -46,8 +46,30 @@ function escrow_process($variables, $hook) {
  * Implements hook_preprocess_node().
  */
 function escrow_preprocess_node(&$variables) {
-  if ($variables['type'] == 'listing') {
-    drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
+  switch ($variables['type']) {
+    case 'listing':
+      drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
+      break;
+
+    case 'agent':
+      $variables['meet_our_agents'] = array(
+        '#theme' => 'link',
+        '#string' => t('Meet Our Agents'),
+        '#path' => 'agents',
+        '#options' => array(
+          'attributes' => array(
+            'class' => array('meet-our-agents'),
+          ),
+        ),
+      );
+
+      $options =  array(
+        'attributes' => array(
+          'class' => array('meet-our-agents'),
+        ),
+      );
+      $variables['meet_our_agents'] = l(t('Meet Our Agents'), 'agents', $options);
+      break;
   }
 }
 

@@ -443,6 +443,28 @@ function c21_listings_ds_field_settings_info() {
 }
 
 /**
+ * Implements hook_ds_custom_fields_info().
+ */
+function c21_listings_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'meet_our_agents';
+  $ds_field->label = 'Meet Our Agents';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'agent|teaser
+agent|micro_teaser';
+  $ds_field->properties = array();
+  $export['meet_our_agents'] = $ds_field;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function c21_listings_ds_layout_settings_info() {

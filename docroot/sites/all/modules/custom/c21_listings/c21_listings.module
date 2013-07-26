@@ -52,19 +52,12 @@ function c21_listings_node_view($node, $view_mode) {
       $node->content['links']['c21_virtual_tour_link'] = $link_content;
     }
 
-    // Add js for the featured photo.
     if ($view_mode == 'full') {
-      // This method causes borealis to stop working ?!?
-      // $node->content['#attached']['js'][] = array(
-      //   'data' => drupal_get_path('module', 'c21_listings') . '/js/c21_listings.js',
-      //   'options' => array(
-      //     'group' => JS_DEFAULT,
-      //     'scope' => 'footer',
-      //     'weight' => 100,
-      //   ),
-      // );
+      // Add js for the featured photo.
+      // Using #attached causes borealis to stop working ?!?
       drupal_add_js(drupal_get_path('module','c21_listings') . '/js/c21_listings.js', array('scope' => 'footer'));
     }
+
   }
 }
 
