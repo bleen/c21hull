@@ -202,7 +202,6 @@ features[user_role][] = agent
 features[user_role][] = staff
 features[variable][] = admin_theme
 features[variable][] = blockify_blocks
-features[variable][] = borealis_responsive_builds
 features[variable][] = borealis_ri_children
 features[variable][] = clone_menu_links
 features[variable][] = clone_method

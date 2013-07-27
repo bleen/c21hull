@@ -37,21 +37,6 @@ function c21_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'borealis_responsive_builds';
-  $strongarm->value = array(
-    'respondsmall' => 250,
-    'respondmedium' => 500,
-    'respondlarge' => 1000,
-    'respondxl' => 2000,
-    'respondxl2' => 4000,
-    'respondxl3' => 8000,
-    'respondxl4' => 16000,
-  );
-  $export['borealis_responsive_builds'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'borealis_ri_children';
   $strongarm->value = array(
     0 => 'c21wide',
