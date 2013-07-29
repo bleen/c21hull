@@ -351,7 +351,7 @@ function c21_listings_views_default_views() {
   $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'c21 Taxonomy term';
+  $view->human_name = 'c21 Taxonomy Term';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

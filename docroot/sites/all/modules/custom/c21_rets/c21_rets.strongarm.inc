@@ -39,7 +39,11 @@ function c21_rets_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'redirect' => array(
+          'weight' => '21',
+        ),
+      ),
       'display' => array(),
     ),
   );

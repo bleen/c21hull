@@ -273,10 +273,10 @@ function c21_rets_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 18,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -300,65 +300,42 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 0,
       ),
     ),
     'drealty' => array(
       'hash_exclude' => 0,
       'mappings' => array(
         '1_3_A' => array(
-          'class_id' => 1,
+          'class_id' => 3,
           'conid' => 1,
           'rets_field' => 'LIST_39 - City (Post Office)',
           'rid' => 3,
         ),
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'drealty_listing',
     'fences_wrapper' => 'div',
     'field_name' => 'field_mls_city',
     'label' => 'City',
-    'placeholder' => '',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'rich_text' => 'rich_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'rich_text' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
         'size' => 60,
       ),
-      'type' => 'text_textfield',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 9,
     ),
   );
@@ -374,10 +351,10 @@ function c21_rets_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 19,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -401,66 +378,43 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 0,
       ),
     ),
     'drealty' => array(
       'hash_exclude' => 0,
       'mappings' => array(
         '1_3_A' => array(
-          'class_id' => 1,
+          'class_id' => 3,
           'conid' => 1,
           'rets_field' => 'LIST_77 - Location/Development',
           'rid' => 3,
         ),
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'drealty_listing',
     'fences_wrapper' => 'div',
     'field_name' => 'field_mls_development',
     'label' => 'Development',
-    'placeholder' => '',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'rich_text' => 'rich_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'rich_text' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 14,
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 15,
     ),
   );
 
@@ -1041,10 +995,10 @@ function c21_rets_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 20,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1066,68 +1020,44 @@ function c21_rets_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'drealty' => array(
       'hash_exclude' => 0,
       'mappings' => array(
         '1_3_A' => array(
-          'class_id' => 1,
+          'class_id' => 3,
           'conid' => 1,
           'rets_field' => 'LIST_93 - School District',
           'rid' => 3,
         ),
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'drealty_listing',
     'fences_wrapper' => 'div',
     'field_name' => 'field_mls_school_district',
     'label' => 'School District',
-    'placeholder' => '',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'rich_text' => 'rich_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'rich_text' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'autocomplete_deluxe',
       'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
         'size' => 60,
       ),
-      'type' => 'text_textfield',
+      'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 16,
     ),
   );
@@ -1808,7 +1738,7 @@ function c21_rets_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 

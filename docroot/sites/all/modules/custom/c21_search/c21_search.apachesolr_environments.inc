@@ -52,9 +52,11 @@ function c21_search_apachesolr_environments() {
   );
   $environment->index_bundles = array(
     'node' => array(
-      0 => 'listing',
-      1 => 'listing_type',
-      2 => 'page',
+      0 => 'agent',
+      1 => 'aggregation_page_detail',
+      2 => 'listing',
+      3 => 'listing_type',
+      4 => 'page',
     ),
   );
   $export['hosted_solr_support'] = $environment;
@@ -68,8 +70,8 @@ function c21_search_apachesolr_environments() {
   $environment->conf = array(
     'apachesolr_index_last' => array(
       'drealty_listing' => array(
-        'last_changed' => '1374459851',
-        'last_entity_id' => '2527',
+        'last_changed' => 0,
+        'last_entity_id' => 0,
       ),
       'drealty_listing_type' => array(
         'last_changed' => 0,
@@ -84,8 +86,8 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1374459851',
-        'last_entity_id' => '8745',
+        'last_changed' => 0,
+        'last_entity_id' => 0,
       ),
       'redirect' => array(
         'last_changed' => 0,
@@ -108,16 +110,14 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1374462302,
-    'apachesolr_last_optimize' => 1374462302,
-    'apachesolr_search_facet_pages' => '',
+    'apachesolr_index_updated' => 1375064468,
+    'apachesolr_last_optimize' => 1375062964,
   );
   $environment->index_bundles = array(
-    'drealty_listing' => array(
-      0 => 'mls_residential_listing',
-    ),
     'node' => array(
       0 => 'listing',
+      1 => 'listing_type',
+      2 => 'page',
     ),
   );
   $export['local_solr'] = $environment;

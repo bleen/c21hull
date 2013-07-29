@@ -20,6 +20,59 @@ function c21_rets_entity_load($entities, $type) {
 }
 
 /**
+ * Implements hook_drealty_import_presave_alter().
+ */
+function c21_rets_drealty_import_presave_alter(&$listing, $context) {
+  foreach ($context['field_mappings'] as $field_name => $mapping) {
+    if ($mapping->field_api_type == 'taxonomy_term_reference' && !empty($context['rets_item'][$mapping->systemname])) {
+      $field_info = field_info_field($field_name);
+      $vocabulary_name = $field_info['settings']['allowed_values'][0]['vocabulary'];
+
+      $term = _c21_rets_get_term_by_name($field_name, $context['rets_item'][$mapping->systemname], $vocabulary_name);
+
+      $listing->{$field_name}[LANGUAGE_NONE][0]['tid'] = $term->tid;
+    }
+  }
+}
+
+/**
+ * Get an existing term object for the given term name or create a new term
+ * object and return than.
+ *
+ * @param  string $field_name
+ *   The term reference field name where this term will be stored.
+ *
+ * @param  string $term_name
+ *   The term name to search for. This might be tweaked before the search based
+ *   on the value of $field_name.
+ *
+ * @param  string $vocabulary_name
+ *   The name of the vocabulary to search.
+ *
+ * @return term object
+ */
+function _c21_rets_get_term_by_name($field_name, $term_name, $vocabulary_name) {
+  switch ($field_name) {
+    case 'field_mls_school_district':
+      $term_name = preg_replace('/^\d{3,}\s?\-?\s?/', '', $term_name);
+      break;
+  }
+
+  $terms = taxonomy_get_term_by_name($term_name, $vocabulary_name);
+  $term = !empty($terms) ? array_shift($terms) : NULL;
+
+  if (is_null($term)) {
+    $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
+    $term = new stdClass();
+    $term->name = $term_name;
+    $term->vid = $vocabulary->vid;
+    taxonomy_term_save($term);
+  }
+
+  return $term;
+}
+
+/**
  * Creates a human-readible title for an MLS listing.
  *
  * @param  drealtyListing $listing
@@ -44,7 +97,17 @@ function _c21_rets_build_listing_title($listing) {
       $stats_values[] = $value . ' ' . $label;
     }
   }
-  $township = $listing->field_mls_city[LANGUAGE_NONE][0]['value'];
+
+  if (isset($listing->field_mls_city[LANGUAGE_NONE][0]['value'])) {
+    $township = $listing->field_mls_city[LANGUAGE_NONE][0]['value'];
+  }
+  elseif (isset($listing->field_mls_city[LANGUAGE_NONE][0]['tid'])) {
+    $term = taxonomy_term_load($listing->field_mls_city[LANGUAGE_NONE][0]['tid']);
+    $township = $term->name;
+  }
+  else {
+    $township = '';
+  }
 
   if (empty($stats_values)) {
     $stats_values[] = $superlatives[array_rand($superlatives)];
@@ -57,3 +120,7 @@ function _c21_rets_build_listing_title($listing) {
 
   return $title;
 }
+
+
+
+
