@@ -10,13 +10,6 @@
 function c21_search_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: administer facets.
-  $permissions['administer facets'] = array(
-    'name' => 'administer facets',
-    'roles' => array(),
-    'module' => 'facetapi',
-  );
-
   // Exported permission: administer search.
   $permissions['administer search'] = array(
     'name' => 'administer search',

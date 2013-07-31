@@ -153,6 +153,13 @@ function c21_search_views_default_views() {
   $handler->display->display_options['fields']['entity_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['entity_type']['element_default_classes'] = FALSE;
+  /* Field: Apache Solr: bundle */
+  $handler->display->display_options['fields']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['fields']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['fields']['bundle']['label'] = '';
+  $handler->display->display_options['fields']['bundle']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['bundle']['element_label_colon'] = FALSE;
   /* Filter criterion: Apache Solr: Search */
   $handler->display->display_options['filters']['keyword']['id'] = 'keyword';
   $handler->display->display_options['filters']['keyword']['table'] = 'apachesolr__local_solr';

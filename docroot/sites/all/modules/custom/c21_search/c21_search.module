@@ -7,17 +7,50 @@
 include_once 'c21_search.features.inc';
 
 /**
- * Implements hook_apachesolr_index_document_build_ENTITY_TYPE().
+ * Implements hook_apachesolr_index_document_build().
  */
-function c21_search_apachesolr_index_document_build_listing(ApacheSolrDocument &$document, $entity, $env_id) {
-  if ($entity->type == 'listing') {
-    $document->addField('ts_field_listing_id', $entity->field_listing_id_prefix['und'][0]['value'] . '-' . $entity->nid);
-    $document->addField('ts_field_mls', $entity->field_listing_mls['und'][0]['value']);
-    $document->addField('fs_field_list_price', round($entity->field_listing_list_price['und'][0]['value']));
-    $document->addField('is_field_bedrooms', $entity->field_listing_bedrooms['und'][0]['value']);
-    $document->addField('fs_field_bathrooms', $entity->field_listing_bathrooms['und'][0]['value']);
-    $document->addField('fs_field_acreage', $entity->field_listing_acreage['und'][0]['value']);
-    $document->addField('is_field_sq_ft', $entity->field_listing_sq_ft_above['und'][0]['value'] + $entity->field_listing_sq_ft_below['und'][0]['value']);
+function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document, $entity, $entity_type, $env_id) {
+  $term_reference_fields = array();
+  switch ($entity_type) {
+    case 'node':
+      if ($entity->type == 'listing') {
+        $term_reference_fields = array(
+          'sewage', 'water', 'heat', 'insulation', 'windows', 'basement', 'garage', 'floors', 'walls', 'additional_bldg', 'development', 'township', 'school_district', 'tags'
+        );
+
+        $document->addField('ts_field_listing_id', $entity->field_listing_id_prefix[LANGUAGE_NONE][0]['value'] . '-' . $entity->nid);
+        $document->addField('ts_field_mls', $entity->field_listing_mls[LANGUAGE_NONE][0]['value']);
+        $document->addField('fs_field_list_price', round($entity->field_listing_list_price[LANGUAGE_NONE][0]['value']));
+        $document->addField('is_field_bedrooms', $entity->field_listing_bedrooms[LANGUAGE_NONE][0]['value']);
+        $document->addField('fs_field_bathrooms', $entity->field_listing_bathrooms[LANGUAGE_NONE][0]['value']);
+        $document->addField('fs_field_acreage', $entity->field_listing_acreage[LANGUAGE_NONE][0]['value']);
+        $document->addField('fs_field_sq_ft', $entity->field_listing_sq_ft_above[LANGUAGE_NONE][0]['value'] + $entity->field_listing_sq_ft_below[LANGUAGE_NONE][0]['value']);
+      }
+      break;
+
+    case 'drealty_listing':
+      if ($entity->type == "mls_residential_listing") {
+        $term_reference_fields = array(
+          'development', 'city', 'school_district'
+        );
+
+        $document->addField('ts_field_mls', $entity->field_mls_number[LANGUAGE_NONE][0]['value']);
+        $document->addField('fs_field_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
+        if (!empty($entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value'])) {
+          $document->addField('is_field_bedrooms', $entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value']);
+        }
+        $document->addField('fs_field_bathrooms', $entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value']);
+        $document->addField('fs_field_acreage', $entity->field_mls_acreage[LANGUAGE_NONE][0]['value']);
+        $document->addField('fs_field_sq_ft', $entity->field_mls_square_feet[LANGUAGE_NONE][0]['value']);
+      }
+      break;
+  }
+
+  foreach ($term_reference_fields as $field) {
+    $field_name = 'field_listing_' . $field;
+    if (isset($entity->{$field_name}[LANGUAGE_NONE][0]['tid'])) {
+      $document->addField('im_field_terms', $entity->{$field_name}[LANGUAGE_NONE][0]['tid']);
+    }
   }
 }
 

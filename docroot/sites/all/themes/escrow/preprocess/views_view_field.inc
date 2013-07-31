@@ -1,28 +1,23 @@
 <?php
 
-if ($variables['view']->name == "c21_search_listings" && $variables['field']->field == "entity_id") {
-  // For the saerch listing view, convert the entity_id field into a
-  // fully rendered entity.
-  switch($variables['row']->entity_type){
-    case 'node':
-      try {
-        $node = node_load($variables['row']->entity_id);
-        if (empty($node)) {
-          throw new Exception("Search index has returned an invalid entity id. Try rebuilding the index.");
-        }
+$view = $variables['view'];
+$row = $variables['row'];
+$view_mode = 'teaser';
 
-        $node_build = node_view($node, 'teaser');
-        $variables['output'] = drupal_render($node_build);
-      }
-      catch (exception $e) {
-        watchdog('search', $e->getMessage(), array(), WATCHDOG_ERROR);
-      }
-      break;
+if (strpos($view->base_table, 'apachesolr') === 0 && !empty($row->entity_id) && !empty($row->entity_type) && !empty($row->bundle)) {
+  try {
+    $entities = entity_load($row->entity_type, array($row->entity_id));
+    if (empty($entities)) {
+      throw new Exception("Search index has returned an invalid entity id. Try rebuilding the index.");
+    }
+    else {
+      $entity = entity_view($row->entity_type, $entities, $view_mode);
+    }
 
-    case 'drealty_listing':
-      $listing = drealty_listing_load($variables['row']->entity_id);
-      $listing_build = drealty_listing_view($listing, 'search');
-      $variables['output'] = drupal_render($listing_build);
-      break;
+    $variables['output'] = drupal_render($entity);
+  }
+  catch (exception $e) {
+    watchdog('search', $e->getMessage(), array(), WATCHDOG_ERROR);
+    $variables['output'] = '';
   }
 }

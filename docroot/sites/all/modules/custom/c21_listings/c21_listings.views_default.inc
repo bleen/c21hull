@@ -347,11 +347,11 @@ function c21_listings_views_default_views() {
   $export['c21_recently_added_listings'] = $view;
 
   $view = new view();
-  $view->name = 'c21_taxonomy_term';
-  $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term.';
+  $view->name = 'c21_taxonomy_terms';
+  $view->description = '';
   $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'c21 Taxonomy Term';
+  $view->base_table = 'apachesolr__local_solr';
+  $view->human_name = 'c21 Taxonomy Terms';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -362,73 +362,49 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'ds';
-  $handler->display->display_options['row_options']['alternating'] = 1;
-  $handler->display->display_options['row_options']['grouping'] = 0;
-  $handler->display->display_options['row_options']['advanced'] = 0;
-  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
-  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
-  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
-  $handler->display->display_options['row_options']['alternating_fieldset']['alternating'] = TRUE;
-  $handler->display->display_options['row_options']['alternating_fieldset']['item_0'] = 'full';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Type */
-  $handler->display->display_options['sorts']['type']['id'] = 'type';
-  $handler->display->display_options['sorts']['type']['table'] = 'node';
-  $handler->display->display_options['sorts']['type']['field'] = 'type';
-  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
-  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['title'] = '%1';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['break_phrase'] = TRUE;
-  /* Filter criterion: Content: Published or admin */
-  $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
-  $handler->display->display_options['filters']['status_extra']['table'] = 'node';
-  $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
-  $handler->display->display_options['filters']['status_extra']['group'] = 0;
-  $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'aggregation_page_detail' => 'aggregation_page_detail',
-    'listing' => 'listing',
-  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Apache Solr: entity_id */
+  $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
+  $handler->display->display_options['fields']['entity_id']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
+  $handler->display->display_options['fields']['entity_id']['label'] = '';
+  $handler->display->display_options['fields']['entity_id']['element_label_colon'] = FALSE;
+  /* Field: Apache Solr: entity_type */
+  $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['label'] = '';
+  $handler->display->display_options['fields']['entity_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
+  /* Field: Apache Solr: bundle_name */
+  $handler->display->display_options['fields']['bundle_name']['id'] = 'bundle_name';
+  $handler->display->display_options['fields']['bundle_name']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['fields']['bundle_name']['field'] = 'bundle_name';
+  $handler->display->display_options['fields']['bundle_name']['label'] = '';
+  $handler->display->display_options['fields']['bundle_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['bundle_name']['element_label_colon'] = FALSE;
+  /* Contextual filter: Apache Solr: im_field_terms */
+  $handler->display->display_options['arguments']['im_field_terms']['id'] = 'im_field_terms';
+  $handler->display->display_options['arguments']['im_field_terms']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['arguments']['im_field_terms']['field'] = 'im_field_terms';
+  $handler->display->display_options['arguments']['im_field_terms']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['im_field_terms']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['im_field_terms']['title'] = '%1';
+  $handler->display->display_options['arguments']['im_field_terms']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['im_field_terms']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['im_field_terms']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['im_field_terms']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['im_field_terms']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['im_field_terms']['validate']['type'] = 'taxonomy_term';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'taxonomy/term/%';
-
-  /* Display: Feed */
-  $handler = $view->new_display('feed', 'Feed', 'feed');
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = 15;
-  $handler->display->display_options['style_plugin'] = 'rss';
-  $handler->display->display_options['row_plugin'] = 'node_rss';
-  $handler->display->display_options['path'] = 'taxonomy/term/%/%/feed';
-  $handler->display->display_options['displays'] = array(
-    'page' => 'page',
-    'default' => 0,
-  );
-  $export['c21_taxonomy_term'] = $view;
+  $export['c21_taxonomy_terms'] = $view;
 
   return $export;
 }

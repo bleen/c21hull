@@ -452,5 +452,5 @@ features[variable][] = representative_image_seller
 features[views_view][] = c21_agents
 features[views_view][] = c21_featured_listings
 features[views_view][] = c21_recently_added_listings
-features[views_view][] = c21_taxonomy_term
+features[views_view][] = c21_taxonomy_terms
 project path = sites/all/modules/custom
