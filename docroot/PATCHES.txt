@@ -29,6 +29,8 @@ APACHESOLR
 APACHESOLR_VIEWS
   * Adding support for exposed filters on numeric fields.
       PATCH: https://drupal.org/node/1807028#comment-7597271
+  * Fixing a strict warning error that appears in php5.4:
+      PATCH: https://drupal.org/node/2036815 (original post)
 
 AURORA
   * Changing the default viewport meta tag to use 1.0 instead of just 1 and
