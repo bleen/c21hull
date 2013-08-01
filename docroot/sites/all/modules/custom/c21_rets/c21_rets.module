@@ -54,7 +54,12 @@ function c21_rets_drealty_import_presave_alter(&$listing, $context) {
 function _c21_rets_get_term_by_name($field_name, $term_name, $vocabulary_name) {
   switch ($field_name) {
     case 'field_mls_school_district':
+      // Remove the digits that  cometimes preceed the school district name.
       $term_name = preg_replace('/^\d{3,}\s?\-?\s?/', '', $term_name);
+      break;
+    case 'field_mls_city':
+      // Remove the ", NY" type state information from the city.
+      $term_name = preg_replace('/\s*,{1}\s*[A-Za-z]{2}$/', '', $term_name);
       break;
   }
 

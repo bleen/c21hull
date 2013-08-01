@@ -6040,7 +6040,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 113,
+      'weight' => 114,
     ),
   );
 
@@ -6465,6 +6465,59 @@ function c21_listings_field_default_field_instances() {
       'settings' => array(),
       'type' => 'numberfield',
       'weight' => 47,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_state'
+  $field_instances['node-listing-field_listing_state'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 'PA',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 106,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_state',
+    'label' => 'State',
+    'required' => 1,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 113,
     ),
   );
 
@@ -7532,6 +7585,7 @@ function c21_listings_field_default_field_instances() {
   t('Square Footage Above');
   t('Square Footage Below');
   t('Square Footage Finished');
+  t('State');
   t('Status');
   t('Street');
   t('Style');

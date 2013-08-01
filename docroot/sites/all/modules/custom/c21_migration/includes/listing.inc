@@ -41,7 +41,7 @@ class C21ListingMigration extends C21Migration {
 
     // Map simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
-    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
+    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'state', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
 
     // Map standard field mappings
     $this->addFieldMapping('is_new')
@@ -150,6 +150,9 @@ class C21ListingMigration extends C21Migration {
     // Prepare the creation date, status, etc...
     $source_row->creation_date = strtotime($source_row->creation_date);
     $source_row->is_hidden = !$source_row->is_hidden;
+
+    // Default the state for all listings to "PA"
+    $source_row->state = 'PA';
 
     // Prepare images for import.
     $source_dir = variable_get('environment', 'local') ? '/Users/alex/Sites/c21hull/source_files/photos' : '/home/hull/c21hull.com/listings/photos';
