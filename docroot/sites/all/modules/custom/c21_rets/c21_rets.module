@@ -64,7 +64,7 @@ function _c21_rets_get_term_by_name($field_name, $term_name, $vocabulary_name) {
   if (is_null($term)) {
     $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
     $term = new stdClass();
-    $term->name = $term_name;
+    $term->name = ucwords($term_name);
     $term->vid = $vocabulary->vid;
     taxonomy_term_save($term);
   }

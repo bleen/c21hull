@@ -12,10 +12,12 @@
 class C21TermsListingMigration extends C21Migration {
 
   private $vocabulary;
+  protected $ucwords;
 
-  public function __construct($arguments, $vocabulary) {
+  public function __construct($arguments, $vocabulary, $ucwords = FALSE) {
     parent::__construct($arguments);
     $this->vocabulary = $vocabulary;
+    $this->ucwords = $ucwords;
     $this->description = t('c21hull.com terms - %vocab', array('%vocab' => $this->vocabulary['name']));
 
     // Setup the source object for the tag data.
@@ -56,7 +58,7 @@ class C21TermsListingMigration extends C21Migration {
       $term = trim($term);
       $normalized_value = trim($this->{$normalize_function}($term));
       if (!empty($normalized_value)) {
-        $normalized_values[] = $normalized_value;
+        $normalized_values[] = $this->ucwords ? ucwords($normalized_value) : $normalized_value;
       }
     }
 
@@ -252,7 +254,7 @@ class C21TermsListingSchoolDistrictMigration extends C21TermsListingMigration {
       'description' => t('School District'),
     );
 
-    parent::__construct($arguments, $vocabulary);
+    parent::__construct($arguments, $vocabulary, TRUE);
   }
 }
 
@@ -269,7 +271,7 @@ class C21TermsListingDevelopmentMigration extends C21TermsListingMigration {
       'description' => t('Development'),
     );
 
-    parent::__construct($arguments, $vocabulary);
+    parent::__construct($arguments, $vocabulary, TRUE);
   }
 }
 
@@ -286,7 +288,7 @@ class C21TermsListingTownshipMigration extends C21TermsListingMigration {
       'description' => t('Township'),
     );
 
-    parent::__construct($arguments, $vocabulary);
+    parent::__construct($arguments, $vocabulary, TRUE);
   }
 }
 
