@@ -16,9 +16,11 @@ class C21ListingMigration extends C21Migration {
     $query->join('listing_building_dtl', 'lbd', 'l.listing_id = lbd.listing_id');
     $query->join('listing_location_dtl', 'lld', 'l.listing_id = lld.listing_id');
     $query->join('listing_web_dtl', 'lwd', 'l.listing_id = lwd.listing_id');
+    $query->join('listing_commercial_dtl', 'lcd', 'l.listing_id = lcd.listing_id');
     $query->fields('l')
           ->fields('lbd')
           ->fields('lld')
+          ->fields('lcd')
           ->fields('lwd');
     $this->source = new MigrateSourceSQL($query, $source_fields, NULL, array('map_joinable' => FALSE));
 
@@ -41,7 +43,7 @@ class C21ListingMigration extends C21Migration {
 
     // Map simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
-    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'state', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
+    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'building_type', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'state', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
 
     // Map standard field mappings
     $this->addFieldMapping('is_new')
@@ -153,6 +155,17 @@ class C21ListingMigration extends C21Migration {
 
     // Default the state for all listings to "PA"
     $source_row->state = 'PA';
+
+    // Prepare the "building type" field. Options include "residence",
+    // "commercial" or "land".
+    $source_row->building_type = 'residence';
+    if ($source_row->is_land == 1) {
+      $source_row->building_type = 'land';
+    }
+    if (!empty($source_row->business_type)) {
+      $source_row->building_type = 'commercial';
+    }
+
 
     // Prepare images for import.
     $source_dir = variable_get('environment', 'local') ? '/Users/alex/Sites/c21hull/source_files/photos' : '/home/hull/c21hull.com/listings/photos';

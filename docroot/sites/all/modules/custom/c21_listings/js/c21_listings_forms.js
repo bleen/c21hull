@@ -17,6 +17,18 @@
         });
       });
 
+      // Show/Hide the building details form if "building type" is set to or
+      // from land.
+      $('select[name="field_listing_building_type[und]"]').change(function(event, context) {
+        formItems = $('.group-listing-building-info .form-wrapper').not('.field-name-field-listing-building-type');
+        if ($(this).val() === 'land') {
+          formItems.slideUp('slow');
+        }
+        else {
+          formItems.slideDown('slow');
+        }
+      });
+      $('select[name="field_listing_building_type[und]"]').change();
 
       // Show/Hide the prefix/suffix for commission based on its current value.
       $(':input[name="field_listing_commission[und][0][value]"]').siblings('.field-prefix').hide();

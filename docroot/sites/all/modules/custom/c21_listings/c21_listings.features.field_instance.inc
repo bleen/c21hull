@@ -1223,7 +1223,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 40,
+      'weight' => 136,
     ),
   );
 
@@ -1340,7 +1340,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 36,
+      'weight' => 132,
     ),
   );
 
@@ -1924,7 +1924,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 23,
+      'weight' => 122,
     ),
   );
 
@@ -2844,7 +2844,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 22,
+      'weight' => 121,
     ),
   );
 
@@ -2902,6 +2902,59 @@ function c21_listings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 108,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_building_type'
+  $field_instances['node-listing-field_listing_building_type'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 'residence',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 107,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_building_type',
+    'label' => 'Building Type',
+    'required' => 1,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 119,
     ),
   );
 
@@ -3020,7 +3073,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 130,
     ),
   );
 
@@ -3948,7 +4001,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 32,
+      'weight' => 128,
     ),
   );
 
@@ -4004,7 +4057,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 38,
+      'weight' => 134,
     ),
   );
 
@@ -4064,7 +4117,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 35,
+      'weight' => 131,
     ),
   );
 
@@ -4120,7 +4173,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 28,
+      'weight' => 125,
     ),
   );
 
@@ -4261,7 +4314,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 29,
+      'weight' => 126,
     ),
   );
 
@@ -5829,7 +5882,7 @@ function c21_listings_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 44,
+      'weight' => 137,
     ),
   );
 
@@ -5977,7 +6030,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 33,
+      'weight' => 129,
     ),
   );
 
@@ -6215,7 +6268,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 24,
+      'weight' => 123,
     ),
   );
 
@@ -6272,7 +6325,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 31,
+      'weight' => 127,
     ),
   );
 
@@ -7160,7 +7213,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 39,
+      'weight' => 135,
     ),
   );
 
@@ -7219,7 +7272,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 26,
+      'weight' => 124,
     ),
   );
 
@@ -7275,7 +7328,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 37,
+      'weight' => 133,
     ),
   );
 
@@ -7351,7 +7404,7 @@ function c21_listings_field_default_field_instances() {
         'year_range' => '1850:+5',
       ),
       'type' => 'date_select',
-      'weight' => 21,
+      'weight' => 120,
     ),
   );
 
@@ -7511,6 +7564,7 @@ function c21_listings_field_default_field_instances() {
   t('Bedrooms');
   t('Bio');
   t('Block');
+  t('Building Type');
   t('Commission');
   t('Company');
   t('Decks');

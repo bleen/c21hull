@@ -41,6 +41,7 @@ function c21_listings_field_group_info() {
       15 => 'field_listing_water',
       16 => 'field_listing_windows',
       17 => 'field_listing_year_built',
+      18 => 'field_listing_building_type',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
