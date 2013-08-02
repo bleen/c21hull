@@ -41,6 +41,57 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_field_collection_item__field_buyer_email';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'redirect' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_field_collection_item__field_buyer_email'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_field_collection_item__field_buyer_phone';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'redirect' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_field_collection_item__field_buyer_phone'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_field_collection_item__field_listing_buyer';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'redirect' => array(
+          'weight' => '6',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_field_collection_item__field_listing_buyer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_field_collection_item__field_listing_seller';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -209,10 +260,10 @@ function c21_listings_strongarm() {
           'weight' => '2',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'display' => array(),
@@ -242,6 +293,40 @@ function c21_listings_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__listing_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__listing_additional_building';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(
+        'description' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_taxonomy_term__listing_additional_building'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

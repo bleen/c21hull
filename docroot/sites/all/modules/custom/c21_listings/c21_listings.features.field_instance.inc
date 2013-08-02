@@ -10,6 +10,554 @@
 function c21_listings_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_buyer_email-field_buyer_email_address'
+  $field_instances['field_collection_item-field_buyer_email-field_buyer_email_address'] = array(
+    'bundle' => 'field_buyer_email',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_email_address',
+    'label' => 'Email Address',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'emailwidget',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_buyer_email-field_buyer_email_type'
+  $field_instances['field_collection_item-field_buyer_email-field_buyer_email_type'] = array(
+    'bundle' => 'field_buyer_email',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_email_type',
+    'label' => 'Email Type',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_buyer_phone-field_buyer_phone_number'
+  $field_instances['field_collection_item-field_buyer_phone-field_buyer_phone_number'] = array(
+    'bundle' => 'field_buyer_phone',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_phone_number',
+    'label' => 'Phone Number',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'masked_input',
+      'settings' => array(
+        'mask' => '(999) 999-9999? x99999',
+        'placeholder' => '_',
+        'size' => 60,
+      ),
+      'type' => 'masked_input',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_buyer_phone-field_buyer_phone_type'
+  $field_instances['field_collection_item-field_buyer_phone-field_buyer_phone_type'] = array(
+    'bundle' => 'field_buyer_phone',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_phone_type',
+    'label' => 'Phone Type',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_listing_buyer-field_buyer_address'
+  $field_instances['field_collection_item-field_listing_buyer-field_buyer_address'] = array(
+    'bundle' => 'field_listing_buyer',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'field_collection_item|field_listing_buyer|field_buyer_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'locality' => '',
+        'administrative_area' => '',
+        'postal_code' => '',
+        'country' => 'US',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 3,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_address',
+    'label' => 'Address',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(
+          'US' => 'US',
+        ),
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_listing_buyer-field_buyer_company'
+  $field_instances['field_collection_item-field_listing_buyer-field_buyer_company'] = array(
+    'bundle' => 'field_listing_buyer',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_company',
+    'label' => 'Company',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_listing_buyer-field_buyer_email'
+  $field_instances['field_collection_item-field_listing_buyer-field_buyer_email'] = array(
+    'bundle' => 'field_listing_buyer',
+    'custom_add_another' => 'Add another email address',
+    'custom_remove' => 'Remove email address',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 4,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_email',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_listing_buyer-field_buyer_first_name'
+  $field_instances['field_collection_item-field_listing_buyer-field_buyer_first_name'] = array(
+    'bundle' => 'field_listing_buyer',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_first_name',
+    'label' => 'First Name',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_listing_buyer-field_buyer_last_name'
+  $field_instances['field_collection_item-field_listing_buyer-field_buyer_last_name'] = array(
+    'bundle' => 'field_listing_buyer',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_last_name',
+    'label' => 'Last Name',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_listing_buyer-field_buyer_phone'
+  $field_instances['field_collection_item-field_listing_buyer-field_buyer_phone'] = array(
+    'bundle' => 'field_listing_buyer',
+    'custom_add_another' => 'Add another phone number',
+    'custom_remove' => 'Remove phone number',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 5,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_buyer_phone',
+    'label' => 'Phone',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_listing_seller-field_seller_address'
   $field_instances['field_collection_item-field_listing_seller-field_seller_address'] = array(
     'bundle' => 'field_listing_seller',
@@ -2958,6 +3506,122 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_buyer'
+  $field_instances['node-listing-field_listing_buyer'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => 'Add another buyer',
+    'custom_remove' => 'Remove buyer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 108,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_buyer',
+    'label' => 'Buyer',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 138,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_closing_date'
+  $field_instances['node-listing-field_listing_closing_date'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 109,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_closing_date',
+    'label' => 'Closing Date',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'none',
+        'text_parts' => array(),
+        'year_range' => '-1:+1',
+      ),
+      'type' => 'date_popup',
+      'weight' => 139,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_commission'
   $field_instances['node-listing-field_listing_commission'] = array(
     'bundle' => 'listing',
@@ -4118,6 +4782,64 @@ function c21_listings_field_default_field_instances() {
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 131,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_gross_commission'
+  $field_instances['node-listing-field_listing_gross_commission'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 112,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_gross_commission',
+    'label' => 'Gross Commission',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'max' => '',
+      'min' => '',
+      'prefix' => '$',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'numberfield',
+      'weight' => 141,
     ),
   );
 
@@ -6034,6 +6756,115 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_sale_agent'
+  $field_instances['node-listing-field_listing_sale_agent'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 111,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_sale_agent',
+    'label' => 'Sale Agent',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 142,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_sale_price'
+  $field_instances['node-listing-field_listing_sale_price'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 110,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_sale_price',
+    'label' => 'Sale Price',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'max' => '',
+      'min' => '',
+      'prefix' => '$',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'numberfield',
+      'weight' => 140,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_school_district'
   $field_instances['node-listing-field_listing_school_district'] = array(
     'bundle' => 'listing',
@@ -6627,7 +7458,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 5,
     ),
   );
 
@@ -7565,6 +8396,8 @@ function c21_listings_field_default_field_instances() {
   t('Bio');
   t('Block');
   t('Building Type');
+  t('Buyer');
+  t('Closing Date');
   t('Commission');
   t('Company');
   t('Decks');
@@ -7591,6 +8424,7 @@ function c21_listings_field_default_field_instances() {
   t('First Name');
   t('Floors');
   t('Garage');
+  t('Gross Commission');
   t('Heat');
   t('Insulation');
   t('Internal Only');
@@ -7630,6 +8464,8 @@ function c21_listings_field_default_field_instances() {
   t('Photos');
   t('Porch');
   t('Primary Office');
+  t('Sale Agent');
+  t('Sale Price');
   t('School District');
   t('Section');
   t('Select which aggregation page on which these details should be displayed.');

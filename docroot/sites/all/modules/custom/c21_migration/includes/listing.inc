@@ -17,10 +17,12 @@ class C21ListingMigration extends C21Migration {
     $query->join('listing_location_dtl', 'lld', 'l.listing_id = lld.listing_id');
     $query->join('listing_web_dtl', 'lwd', 'l.listing_id = lwd.listing_id');
     $query->join('listing_commercial_dtl', 'lcd', 'l.listing_id = lcd.listing_id');
+    $query->join('listing_transaction_dtl', 'ltd', 'l.listing_id = ltd.listing_id');
     $query->fields('l')
           ->fields('lbd')
           ->fields('lld')
           ->fields('lcd')
+          ->fields('ltd', array('closing_date', 'sale_price', 'gcc', 'sale_agent'))
           ->fields('lwd');
     $this->source = new MigrateSourceSQL($query, $source_fields, NULL, array('map_joinable' => FALSE));
 
@@ -43,7 +45,7 @@ class C21ListingMigration extends C21Migration {
 
     // Map simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
-    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'building_type', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'state', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
+    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'closing_date', 'sale_price', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'building_type', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'state', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
 
     // Map standard field mappings
     $this->addFieldMapping('is_new')
@@ -55,7 +57,10 @@ class C21ListingMigration extends C21Migration {
     $this->addFieldMapping('created', 'creation_date');
     $this->addFieldMapping('field_listing_agent', 'agent')
          ->separator('/')
-         ->callbacks(array($this, 'callbackProcessListingAgent'));
+         ->callbacks(array($this, 'callbackProcessAgent'));
+    $this->addFieldMapping('field_listing_sale_agent', 'sale_agent')
+         ->separator('/')
+         ->callbacks(array($this, 'callbackProcessAgent'));
     $this->addFieldMapping('field_listing_description', 'blurb');
     $this->addFieldMapping('field_listing_tags', 'tags')
          ->separator(',');
@@ -76,6 +81,7 @@ class C21ListingMigration extends C21Migration {
          ->defaultValue('rich_text');
     $this->addFieldMapping('field_listing_personal_property:format', NULL)
          ->defaultValue('rich_text');
+    $this->addFieldMapping('field_listing_gross_commission', 'gcc');
 
     // Map "Photos".
     $this->addFieldMapping('field_listing_featured_photo', 'featured_photo_filename');
@@ -165,7 +171,6 @@ class C21ListingMigration extends C21Migration {
     if (!empty($source_row->business_type)) {
       $source_row->building_type = 'commercial';
     }
-
 
     // Prepare images for import.
     $source_dir = variable_get('environment', 'local') ? '/Users/alex/Sites/c21hull/source_files/photos' : '/home/hull/c21hull.com/listings/photos';
@@ -268,12 +273,17 @@ class C21ListingMigration extends C21Migration {
       }
     }
 
-    // Prepare the list date.
+    // Prepare the list date and sale date.
     $list_date_data = array(
       'from' => $source_row->start_date != "0000-00-00" ? $source_row->start_date : NULL,
       'to' => $source_row->end_date != "0000-00-00" ? $source_row->end_date : NULL,
     );
     $source_row->list_date = drupal_json_encode($list_date_data);
+    $closing_date_data = array(
+      'from' => $source_row->closing_date != "0000-00-00" ? $source_row->closing_date : NULL,
+    );
+    $source_row->closing_date = drupal_json_encode($closing_date_data);
+
 
     // Prepare the list price and commission by removing 0 values.
     if ($source_row->list_price == 0) {
@@ -281,6 +291,12 @@ class C21ListingMigration extends C21Migration {
     }
     if ($source_row->commission == 0) {
       $source_row->commission = '';
+    }
+    if ($source_row->sale_price == 0) {
+      $source_row->sale_price = '';
+    }
+    if ($source_row->gcc == 0) {
+      $source_row->gcc = '';
     }
 
     // Prepare the legacy data.
@@ -384,7 +400,7 @@ class C21ListingMigration extends C21Migration {
     return implode(',', $terms);
   }
 
-  function callbackProcessListingAgent($values) {
+  function callbackProcessAgent($values) {
     $ids = array();
 
     foreach ($values as $val) {

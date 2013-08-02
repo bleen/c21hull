@@ -3,22 +3,22 @@
     attach: function(context, settings) {
       // Hide the "former" agents and add a "show former agents" link.
       $.get('/ajax/agents', function(agents) {
-        $('.field-name-field-listing-agent .form-checkboxes .form-item input:not(:checked)').each(function(context) {
+        $('.field-agents .form-checkboxes .form-item input:not(:checked)').each(function(context) {
           if (agents[$(this).val()]['status'] === 'former') {
             $(this).parent('.form-item').hide();
           }
         });
 
-        $('.field-name-field-listing-agent .form-type-checkboxes > label').append('<a href="" class="show-agents">Show former agents</a>');
+        $('.field-agents .form-type-checkboxes > label').append('<a href="" class="show-agents">Show former agents</a>');
         $('.show-agents').click(function(event) {
           event.preventDefault();
-          $('.field-name-field-listing-agent .form-checkboxes .form-item').fadeIn('slow');
+          $('.field-agents .form-checkboxes .form-item').fadeIn('slow');
           $(this).hide();
         });
       });
 
-      // Show/Hide the building details form if "building type" is set to or
-      // from land.
+      // Show/Hide the building details form if "building type" is set to (or
+      // from) land.
       $('select[name="field_listing_building_type[und]"]').change(function(event, context) {
         formItems = $('.group-listing-building-info .form-wrapper').not('.field-name-field-listing-building-type');
         if ($(this).val() === 'land') {
@@ -29,6 +29,17 @@
         }
       });
       $('select[name="field_listing_building_type[und]"]').change();
+
+      // Show/Hide transaction information depending on status.
+      $('.field-name-field-listing-status select').change(function(event, context){
+        if ($(this).val() === 'sold') {
+          $('.group-listing-transaction').slideDown('slow');
+        }
+        else {
+          $('.group-listing-transaction').slideUp('slow');
+        }
+      });
+      $('.field-name-field-listing-status select').change();
 
       // Show/Hide the prefix/suffix for commission based on its current value.
       $(':input[name="field_listing_commission[und][0][value]"]').siblings('.field-prefix').hide();

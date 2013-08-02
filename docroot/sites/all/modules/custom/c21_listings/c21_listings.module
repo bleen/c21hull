@@ -166,9 +166,14 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
     ),
   );
 
-  // Remove the fieldset from "List Date" and "Year Built".
+  // Add some classes to the agent fields.
+  $form['field_listing_agent']['#attributes']['class'][] = 'field-agents';
+  $form['field_listing_sale_agent']['#attributes']['class'][] = 'field-agents';
+
+  // Remove the fieldset from date fields.
   $form['field_listing_list_date'][LANGUAGE_NONE][0]['#theme_wrappers'] = array('form_element');
   $form['field_listing_year_built'][LANGUAGE_NONE][0]['#theme_wrappers'] = array('form_element');
+  $form['field_listing_closing_date'][LANGUAGE_NONE][0]['#theme_wrappers'] = array('form_element');
 
   // Rename the publishing options field.
   $form['options']['#title'] = t('Listing options');

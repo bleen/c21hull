@@ -109,6 +109,11 @@ class MigrateSourceSQL extends MigrateSource {
       SelectQueryInterface $count_query = NULL, array $options = array()) {
     parent::__construct($options);
     $this->originalQuery = $query;
+
+if (!is_object($query)) {
+  dd(debug_backtrace());
+}
+
     $this->query = clone $query;
     $this->fields = $fields;
     if (is_null($count_query)) {

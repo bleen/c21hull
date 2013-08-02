@@ -23,11 +23,11 @@
   text-align: right;
 }
 
-.node-listing-form .field-name-field-listing-agent {
+.node-listing-form .field-agents{
   margin-bottom: 1em;
   overflow: auto;
 }
-.node-listing-form .field-name-field-listing-agent .form-checkboxes .form-item {
+.node-listing-form .field-agents .form-checkboxes .form-item {
   float: left;
   width: 200px;
   padding-right: 10px;
@@ -50,18 +50,23 @@
   clear: left;
 }
 .node-listing-form .field-name-field-seller-first-name,
-.node-listing-form .field-name-field-seller-last-name {
+.node-listing-form .field-name-field-seller-last-name,
+.node-listing-form .field-name-field-buyer-first-name,
+.node-listing-form .field-name-field-buyer-last-name {
   width: 49%;
   float: left;
   margin-bottom: 1em;
 }
-.node-listing-form .field-name-field-seller-first-name {
+.node-listing-form .field-name-field-seller-first-name,
+.node-listing-form .field-name-field-buyer-first-name {
   margin-right: 2%;
 }
-.node-listing-form .field-name-field-seller-company {
+.node-listing-form .field-name-field-seller-company,
+.node-listing-form .field-name-field-buyer-company {
   clear: left;
 }
-.node-listing-form .field-name-field-seller-address {
+.node-listing-form .field-name-field-seller-address,
+.node-listing-form .field-name-field-buyer-address {
   clear: left;
 }
 .node-listing-form .locality-block .form-item {
@@ -69,21 +74,29 @@
 }
 .node-listing-form .field-name-field-seller-email-address,
 .node-listing-form .field-name-field-seller-phone-number,
-.node-listing-form .field-name-field-seller-phone-extension {
+.node-listing-form .field-name-field-seller-phone-extension,
+.node-listing-form .field-name-field-buyer-email-address,
+.node-listing-form .field-name-field-buyer-phone-number,
+.node-listing-form .field-name-field-buyer-phone-extension {
   width: 25%;
   float: left;
   margin-right: 2em;
 }
-.node-listing-form .field-name-field-seller-phone-extension {
+.node-listing-form .field-name-field-seller-phone-extension,
+.node-listing-form .field-name-field-buyer-phone-extension {
   width: 10%;
 }
 .node-listing-form .field-name-field-seller-email-type,
-.node-listing-form .field-name-field-seller-phone-type {
+.node-listing-form .field-name-field-seller-phone-type,
+.node-listing-form .field-name-field-buyer-email-type,
+.node-listing-form .field-name-field-buyer-phone-type {
   width: 10%;
   float: left;
 }
 .node-listing-form #field-seller-phone-values .form-submit,
-.node-listing-form #field-seller-email-values .form-submit {
+.node-listing-form #field-seller-email-values .form-submit,
+.node-listing-form #field-buyer-phone-values .form-submit,
+.node-listing-form #field-buyer-email-values .form-submit {
   position: relative;
   top: 19px;
 }

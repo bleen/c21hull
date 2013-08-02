@@ -12,4 +12,4 @@ files[] = includes/user.inc
 files[] = includes/agent.inc
 files[] = includes/listing.inc
 files[] = includes/terms.inc
-files[] = includes/seller.inc
+files[] = includes/buyerseller.inc

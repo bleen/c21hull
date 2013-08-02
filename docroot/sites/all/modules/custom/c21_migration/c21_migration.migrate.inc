@@ -111,6 +111,34 @@ function c21_migration_migrate_api() {
         'class_name' => 'C21SellerEmailMigration',
         'group_name' => 'listing_content',
       ),
+      'c21Buyer' => array(
+        'class_name' => 'C21BuyerMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21BuyerHomePhone' => array(
+        'class_name' => 'C21BuyerHomePhoneMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21BuyerBusinessPhone' => array(
+        'class_name' => 'C21BuyerBusinessPhoneMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21BuyerLocalPhone' => array(
+        'class_name' => 'C21BuyerLocalPhoneMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21BuyerCellPhone' => array(
+        'class_name' => 'C21BuyerCellPhoneMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21BuyerFaxPhone' => array(
+        'class_name' => 'C21BuyerFaxMigration',
+        'group_name' => 'listing_content',
+      ),
+      'c21BuyerEmail' => array(
+        'class_name' => 'C21BuyerEmailMigration',
+        'group_name' => 'listing_content',
+      ),
     ),
   );
   return $api;

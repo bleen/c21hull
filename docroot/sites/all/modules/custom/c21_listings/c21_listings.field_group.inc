@@ -58,6 +58,34 @@ function c21_listings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_buyers|node|listing|form';
+  $field_group->group_name = 'group_listing_buyers';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_listing_transaction';
+  $field_group->data = array(
+    'label' => 'Buyers',
+    'weight' => '141',
+    'children' => array(
+      0 => 'field_listing_buyer',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Buyers',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_buyers|node|listing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_listing_details|node|listing|form';
   $field_group->group_name = 'group_listing_details';
   $field_group->entity_type = 'node';
@@ -66,7 +94,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Details',
-    'weight' => '5',
+    'weight' => '7',
     'children' => array(
       0 => 'group_listing_building_info',
       1 => 'group_listing_general_info',
@@ -107,11 +135,10 @@ function c21_listings_field_group_info() {
       4 => 'field_listing_list_price',
       5 => 'field_listing_lockbox_key',
       6 => 'field_listing_mls',
-      7 => 'field_listing_status',
-      8 => 'field_listing_style',
-      9 => 'field_listing_taxes',
-      10 => 'field_listing_type',
-      11 => 'field_listing_zoning',
+      7 => 'field_listing_style',
+      8 => 'field_listing_taxes',
+      9 => 'field_listing_type',
+      10 => 'field_listing_zoning',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -451,6 +478,63 @@ function c21_listings_field_group_info() {
     ),
   );
   $export['group_listing_statistics|node|listing|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_transaction_dtls|node|listing|form';
+  $field_group->group_name = 'group_listing_transaction_dtls';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_listing_transaction';
+  $field_group->data = array(
+    'label' => 'Transaction Details',
+    'weight' => '140',
+    'children' => array(
+      0 => 'field_listing_closing_date',
+      1 => 'field_listing_sale_price',
+      2 => 'field_listing_sale_agent',
+      3 => 'field_listing_gross_commission',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'label' => 'Transaction Details',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_transaction_dtls|node|listing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_transaction|node|listing|form';
+  $field_group->group_name = 'group_listing_transaction';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Transaction',
+    'weight' => '6',
+    'children' => array(
+      0 => 'group_listing_transaction_dtls',
+      1 => 'group_listing_buyers',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_listing_transaction|node|listing|form'] = $field_group;
 
   return $export;
 }
