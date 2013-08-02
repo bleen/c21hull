@@ -346,6 +346,15 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['representative_image']['field'] = 'representative_image';
   $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
   $handler->display->display_options['fields']['representative_image']['image_link'] = 'content';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_listing_status']['id'] = 'field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['table'] = 'field_data_field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['field'] = 'field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_status']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_status']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_status']['field_api_classes'] = TRUE;
   /* Field: Content: Listing ID */
   $handler->display->display_options['fields']['field_listing_id_prefix']['id'] = 'field_listing_id_prefix';
   $handler->display->display_options['fields']['field_listing_id_prefix']['table'] = 'field_data_field_listing_id_prefix';
