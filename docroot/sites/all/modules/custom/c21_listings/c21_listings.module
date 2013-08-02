@@ -218,7 +218,7 @@ function c21_listings_date_combo_process_alter(&$element, $form_state, $context)
  * Implements hook_date_popup_process_alter().
  */
 function c21_listings_date_popup_process_alter(&$element, $form_state, $context) {
-  if ($context['form'][$element['#field']['field_name']][LANGUAGE_NONE][0]['#type'] == 'date_combo') {
+  if (isset($element['#field']) && $context['form'][$element['#field']['field_name']][LANGUAGE_NONE][0]['#type'] == 'date_combo') {
     if ($element['#date_title'] == 'List Date End date' && $context['form'][$element['#field']['field_name']][LANGUAGE_NONE][0]['#type'] == 'date_combo') {
       $element['#prefix'] = '<span class="fromto">to</span>';
     }
