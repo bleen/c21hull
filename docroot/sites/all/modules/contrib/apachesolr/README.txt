@@ -191,3 +191,4 @@ Themers
 
 See inline docs in apachesolr_theme and apachesolr_search_theme functions
 within apachesolr.module and apachesolr_search.module.
+

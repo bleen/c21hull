@@ -37,7 +37,7 @@
  */
 
 /**
- * Additional code Copyright (c) 2011 by Peter Wolanin, and
+ * Additional code Copyright (c) 2011 by Peter Wolanin, and 
  * additional contributors.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -54,7 +54,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program as the file LICENSE.txt; if not, please see
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
- */
+ */ 
 
 /**
  * Holds Key / Value pairs that represent a Solr Document along with any associated boost

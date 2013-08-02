@@ -639,3 +639,4 @@ function _apachesolr_drush_variable_like($env_id, $arg = NULL, $starts_with = FA
   }
   return $found;
 }
+

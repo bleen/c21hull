@@ -468,6 +468,7 @@ class DummySolr implements DrupalApacheSolrServiceInterface {
   /**
    * Set context value.
    */
-  function addContext(array $context) {
+  function addContext(array $context) { 
   }
 }
+
