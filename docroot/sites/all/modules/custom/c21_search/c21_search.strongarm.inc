@@ -38,7 +38,7 @@ function c21_search_strongarm() {
   $strongarm->value = array(
     'mlt-001' => array(
       'name' => 'More like this',
-      'mlt_env_id' => 'local_solr',
+      'mlt_env_id' => 'opensolr',
       'num_results' => '5',
       'mlt_fl' => array(
         'label' => 'label',

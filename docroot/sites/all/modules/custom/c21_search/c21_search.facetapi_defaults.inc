@@ -13,8 +13,8 @@ function c21_search_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr::ftm_field_listing_list_price';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr::ftm_field_listing_list_price';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = '';
   $facet->facet = 'ftm_field_listing_list_price';
   $facet->enabled = FALSE;
@@ -42,13 +42,13 @@ function c21_search_facetapi_default_facet_settings() {
     'flatten' => 0,
     'query_type' => 'numeric_range',
   );
-  $export['apachesolr@local_solr::ftm_field_listing_list_price'] = $facet;
+  $export['apachesolr@opensolr::ftm_field_listing_list_price'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:author';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:author';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'author';
   $facet->enabled = FALSE;
@@ -76,13 +76,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:author'] = $facet;
+  $export['apachesolr@opensolr:block:author'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:bundle';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:bundle';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'bundle';
   $facet->enabled = FALSE;
@@ -110,13 +110,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:bundle'] = $facet;
+  $export['apachesolr@opensolr:block:bundle'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:changed';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:changed';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'changed';
   $facet->enabled = FALSE;
@@ -141,13 +141,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:changed'] = $facet;
+  $export['apachesolr@opensolr:block:changed'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:created';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:created';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'created';
   $facet->enabled = FALSE;
@@ -172,13 +172,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:created'] = $facet;
+  $export['apachesolr@opensolr:block:created'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:dm_field_listing_list_date';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:dm_field_listing_list_date';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'dm_field_listing_list_date';
   $facet->enabled = FALSE;
@@ -206,13 +206,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:dm_field_listing_list_date'] = $facet;
+  $export['apachesolr@opensolr:block:dm_field_listing_list_date'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:dm_field_listing_year_built';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:dm_field_listing_year_built';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'dm_field_listing_year_built';
   $facet->enabled = FALSE;
@@ -240,13 +240,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:dm_field_listing_year_built'] = $facet;
+  $export['apachesolr@opensolr:block:dm_field_listing_year_built'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:ftm_field_listing_acreage';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:ftm_field_listing_acreage';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'ftm_field_listing_acreage';
   $facet->enabled = TRUE;
@@ -274,13 +274,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:ftm_field_listing_acreage'] = $facet;
+  $export['apachesolr@opensolr:block:ftm_field_listing_acreage'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:ftm_field_listing_bathrooms';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:ftm_field_listing_bathrooms';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'ftm_field_listing_bathrooms';
   $facet->enabled = TRUE;
@@ -308,13 +308,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:ftm_field_listing_bathrooms'] = $facet;
+  $export['apachesolr@opensolr:block:ftm_field_listing_bathrooms'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:ftm_field_listing_commission';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:ftm_field_listing_commission';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'ftm_field_listing_commission';
   $facet->enabled = FALSE;
@@ -342,13 +342,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:ftm_field_listing_commission'] = $facet;
+  $export['apachesolr@opensolr:block:ftm_field_listing_commission'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:ftm_field_listing_dues';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:ftm_field_listing_dues';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'ftm_field_listing_dues';
   $facet->enabled = FALSE;
@@ -376,13 +376,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:ftm_field_listing_dues'] = $facet;
+  $export['apachesolr@opensolr:block:ftm_field_listing_dues'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:ftm_field_listing_list_price';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:ftm_field_listing_list_price';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'ftm_field_listing_list_price';
   $facet->enabled = TRUE;
@@ -418,13 +418,13 @@ function c21_search_facetapi_default_facet_settings() {
     ),
     'submit_realm' => 'Save and go back to realm settings',
   );
-  $export['apachesolr@local_solr:block:ftm_field_listing_list_price'] = $facet;
+  $export['apachesolr@opensolr:block:ftm_field_listing_list_price'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:ftm_field_listing_taxes';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:ftm_field_listing_taxes';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'ftm_field_listing_taxes';
   $facet->enabled = FALSE;
@@ -452,13 +452,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:ftm_field_listing_taxes'] = $facet;
+  $export['apachesolr@opensolr:block:ftm_field_listing_taxes'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_additional_bldg';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_additional_bldg';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_additional_bldg';
   $facet->enabled = FALSE;
@@ -486,13 +486,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_additional_bldg'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_additional_bldg'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_basement';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_basement';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_basement';
   $facet->enabled = FALSE;
@@ -520,13 +520,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_basement'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_basement'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_development';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_development';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_development';
   $facet->enabled = FALSE;
@@ -554,13 +554,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_development'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_development'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_electric_compan';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_electric_compan';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_electric_compan';
   $facet->enabled = FALSE;
@@ -588,13 +588,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_electric_compan'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_electric_compan'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_floors';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_floors';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_floors';
   $facet->enabled = FALSE;
@@ -622,13 +622,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_floors'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_floors'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_furniture';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_furniture';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_furniture';
   $facet->enabled = FALSE;
@@ -656,13 +656,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_furniture'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_furniture'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_garage';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_garage';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_garage';
   $facet->enabled = FALSE;
@@ -690,13 +690,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_garage'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_garage'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_heat';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_heat';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_heat';
   $facet->enabled = FALSE;
@@ -724,13 +724,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_heat'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_heat'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_insulation';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_insulation';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_insulation';
   $facet->enabled = FALSE;
@@ -758,13 +758,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_insulation'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_insulation'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_road_surface';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_road_surface';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_road_surface';
   $facet->enabled = FALSE;
@@ -792,13 +792,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_road_surface'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_road_surface'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_school_district';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_school_district';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_school_district';
   $facet->enabled = FALSE;
@@ -826,13 +826,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_school_district'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_school_district'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_sewage';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_sewage';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_sewage';
   $facet->enabled = FALSE;
@@ -860,13 +860,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_sewage'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_sewage'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_tags';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_tags';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_tags';
   $facet->enabled = FALSE;
@@ -894,13 +894,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_tags'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_tags'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_township';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_township';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_township';
   $facet->enabled = FALSE;
@@ -928,13 +928,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_township'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_township'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_walls';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_walls';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_walls';
   $facet->enabled = FALSE;
@@ -962,13 +962,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_walls'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_walls'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_water';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_water';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_water';
   $facet->enabled = FALSE;
@@ -996,13 +996,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_water'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_water'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:im_field_listing_windows';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:im_field_listing_windows';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'im_field_listing_windows';
   $facet->enabled = FALSE;
@@ -1030,13 +1030,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:im_field_listing_windows'] = $facet;
+  $export['apachesolr@opensolr:block:im_field_listing_windows'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:itm_field_listing_bedrooms';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:itm_field_listing_bedrooms';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'itm_field_listing_bedrooms';
   $facet->enabled = TRUE;
@@ -1064,13 +1064,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:itm_field_listing_bedrooms'] = $facet;
+  $export['apachesolr@opensolr:block:itm_field_listing_bedrooms'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:itm_field_listing_sq_ft_above';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:itm_field_listing_sq_ft_above';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'itm_field_listing_sq_ft_above';
   $facet->enabled = FALSE;
@@ -1098,13 +1098,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:itm_field_listing_sq_ft_above'] = $facet;
+  $export['apachesolr@opensolr:block:itm_field_listing_sq_ft_above'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:itm_field_listing_sq_ft_below';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:itm_field_listing_sq_ft_below';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'itm_field_listing_sq_ft_below';
   $facet->enabled = FALSE;
@@ -1132,13 +1132,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:itm_field_listing_sq_ft_below'] = $facet;
+  $export['apachesolr@opensolr:block:itm_field_listing_sq_ft_below'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:itm_field_listing_sq_ft_finished';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:itm_field_listing_sq_ft_finished';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'itm_field_listing_sq_ft_finished';
   $facet->enabled = FALSE;
@@ -1166,13 +1166,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:itm_field_listing_sq_ft_finished'] = $facet;
+  $export['apachesolr@opensolr:block:itm_field_listing_sq_ft_finished'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:language';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:language';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'language';
   $facet->enabled = FALSE;
@@ -1200,13 +1200,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:language'] = $facet;
+  $export['apachesolr@opensolr:block:language'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:sm_field_agent_primary_office';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:sm_field_agent_primary_office';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_agent_primary_office';
   $facet->enabled = FALSE;
@@ -1234,13 +1234,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:sm_field_agent_primary_office'] = $facet;
+  $export['apachesolr@opensolr:block:sm_field_agent_primary_office'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:sm_field_agent_status';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:sm_field_agent_status';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_agent_status';
   $facet->enabled = FALSE;
@@ -1268,13 +1268,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:sm_field_agent_status'] = $facet;
+  $export['apachesolr@opensolr:block:sm_field_agent_status'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:sm_field_listing_agent';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:sm_field_listing_agent';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_listing_agent';
   $facet->enabled = FALSE;
@@ -1302,13 +1302,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:sm_field_listing_agent'] = $facet;
+  $export['apachesolr@opensolr:block:sm_field_listing_agent'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:sm_field_listing_status';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:sm_field_listing_status';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_listing_status';
   $facet->enabled = FALSE;
@@ -1336,13 +1336,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:sm_field_listing_status'] = $facet;
+  $export['apachesolr@opensolr:block:sm_field_listing_status'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:sm_field_listing_type';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:sm_field_listing_type';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_listing_type';
   $facet->enabled = FALSE;
@@ -1370,13 +1370,13 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:sm_field_listing_type'] = $facet;
+  $export['apachesolr@opensolr:block:sm_field_listing_type'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'apachesolr@local_solr:block:sm_field_listing_zoning';
-  $facet->searcher = 'apachesolr@local_solr';
+  $facet->name = 'apachesolr@opensolr:block:sm_field_listing_zoning';
+  $facet->searcher = 'apachesolr@opensolr';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_listing_zoning';
   $facet->enabled = FALSE;
@@ -1404,7 +1404,7 @@ function c21_search_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['apachesolr@local_solr:block:sm_field_listing_zoning'] = $facet;
+  $export['apachesolr@opensolr:block:sm_field_listing_zoning'] = $facet;
 
   return $export;
 }

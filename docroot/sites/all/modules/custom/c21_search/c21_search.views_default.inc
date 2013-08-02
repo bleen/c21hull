@@ -14,7 +14,7 @@ function c21_search_views_default_views() {
   $view->name = 'c21_search_listings';
   $view->description = 'Primary search tool for finding listings.';
   $view->tag = 'default';
-  $view->base_table = 'apachesolr__local_solr';
+  $view->base_table = 'apachesolr__opensolr';
   $view->human_name = 'c21 Search Listings';
   $view->core = 7;
   $view->api_version = '3.0';
@@ -139,7 +139,7 @@ function c21_search_views_default_views() {
   $handler->display->display_options['empty']['area']['format'] = 'rich_text';
   /* Field: Apache Solr: entity_id */
   $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
-  $handler->display->display_options['fields']['entity_id']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['fields']['entity_id']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['label'] = '';
   $handler->display->display_options['fields']['entity_id']['element_type'] = '0';
@@ -147,7 +147,7 @@ function c21_search_views_default_views() {
   $handler->display->display_options['fields']['entity_id']['element_wrapper_type'] = '0';
   /* Field: Apache Solr: entity_type */
   $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
-  $handler->display->display_options['fields']['entity_type']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['fields']['entity_type']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
   $handler->display->display_options['fields']['entity_type']['label'] = '';
   $handler->display->display_options['fields']['entity_type']['exclude'] = TRUE;
@@ -155,14 +155,14 @@ function c21_search_views_default_views() {
   $handler->display->display_options['fields']['entity_type']['element_default_classes'] = FALSE;
   /* Field: Apache Solr: bundle */
   $handler->display->display_options['fields']['bundle']['id'] = 'bundle';
-  $handler->display->display_options['fields']['bundle']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['fields']['bundle']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['bundle']['field'] = 'bundle';
   $handler->display->display_options['fields']['bundle']['label'] = '';
   $handler->display->display_options['fields']['bundle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['bundle']['element_label_colon'] = FALSE;
   /* Filter criterion: Apache Solr: Search */
   $handler->display->display_options['filters']['keyword']['id'] = 'keyword';
-  $handler->display->display_options['filters']['keyword']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['keyword']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['keyword']['field'] = 'keyword';
   $handler->display->display_options['filters']['keyword']['group'] = 1;
   $handler->display->display_options['filters']['keyword']['exposed'] = TRUE;
@@ -178,7 +178,7 @@ function c21_search_views_default_views() {
   );
   /* Filter criterion: Apache Solr: im_field_listing_township */
   $handler->display->display_options['filters']['im_field_listing_township']['id'] = 'im_field_listing_township';
-  $handler->display->display_options['filters']['im_field_listing_township']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['im_field_listing_township']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['im_field_listing_township']['field'] = 'im_field_listing_township';
   $handler->display->display_options['filters']['im_field_listing_township']['group'] = 1;
   $handler->display->display_options['filters']['im_field_listing_township']['exposed'] = TRUE;
@@ -195,7 +195,7 @@ function c21_search_views_default_views() {
   );
   /* Filter criterion: Apache Solr: im_field_listing_school_district */
   $handler->display->display_options['filters']['im_field_listing_school_district']['id'] = 'im_field_listing_school_district';
-  $handler->display->display_options['filters']['im_field_listing_school_district']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['im_field_listing_school_district']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['im_field_listing_school_district']['field'] = 'im_field_listing_school_district';
   $handler->display->display_options['filters']['im_field_listing_school_district']['group'] = 1;
   $handler->display->display_options['filters']['im_field_listing_school_district']['exposed'] = TRUE;
@@ -213,7 +213,7 @@ function c21_search_views_default_views() {
   );
   /* Filter criterion: Apache Solr: fts_field_listing_list_price */
   $handler->display->display_options['filters']['fts_field_listing_list_price']['id'] = 'fts_field_listing_list_price';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['fts_field_listing_list_price']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['fts_field_listing_list_price']['field'] = 'fts_field_listing_list_price';
   $handler->display->display_options['filters']['fts_field_listing_list_price']['operator'] = 'between';
   $handler->display->display_options['filters']['fts_field_listing_list_price']['value']['min'] = '150000';
@@ -233,7 +233,7 @@ function c21_search_views_default_views() {
   );
   /* Filter criterion: Apache Solr: its_field_listing_bedrooms */
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['id'] = 'its_field_listing_bedrooms';
-  $handler->display->display_options['filters']['its_field_listing_bedrooms']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['its_field_listing_bedrooms']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['field'] = 'its_field_listing_bedrooms';
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['operator'] = 'between';
   $handler->display->display_options['filters']['its_field_listing_bedrooms']['value']['min'] = '1';
@@ -253,7 +253,7 @@ function c21_search_views_default_views() {
   );
   /* Filter criterion: Apache Solr: fts_field_listing_bathrooms */
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['id'] = 'fts_field_listing_bathrooms';
-  $handler->display->display_options['filters']['fts_field_listing_bathrooms']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['fts_field_listing_bathrooms']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['field'] = 'fts_field_listing_bathrooms';
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['operator'] = 'between';
   $handler->display->display_options['filters']['fts_field_listing_bathrooms']['value']['min'] = '1.5';
@@ -273,7 +273,7 @@ function c21_search_views_default_views() {
   );
   /* Filter criterion: Apache Solr: fts_field_listing_acreage */
   $handler->display->display_options['filters']['fts_field_listing_acreage']['id'] = 'fts_field_listing_acreage';
-  $handler->display->display_options['filters']['fts_field_listing_acreage']['table'] = 'apachesolr__local_solr';
+  $handler->display->display_options['filters']['fts_field_listing_acreage']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['fts_field_listing_acreage']['field'] = 'fts_field_listing_acreage';
   $handler->display->display_options['filters']['fts_field_listing_acreage']['operator'] = 'between';
   $handler->display->display_options['filters']['fts_field_listing_acreage']['value']['min'] = '1.5';

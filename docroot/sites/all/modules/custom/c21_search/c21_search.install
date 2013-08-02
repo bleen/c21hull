@@ -1,0 +1,5 @@
+<?php
+
+function c21_search_install() {
+  apachesolr_environment_delete('solr');
+}
