@@ -125,7 +125,15 @@
 .node-listing-form .field-name-field-seller-internal-only input:checked+label {
   color: #C33;
 }
-
 .node-listing-form .show-agents {
   padding-left: 1em;
 }
+
+#views-exposed-form-c21-reports-listing-report .views-widget-filter-field_listing_list_date_value2 .views-widget > div {
+  float: left;
+}
+#views-exposed-form-c21-reports-listing-report .views-submit-button,
+#views-exposed-form-c21-reports-listing-report .views-reset-button {
+  margin-top: 1.5em;
+}
+

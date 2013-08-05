@@ -366,7 +366,83 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Apply Filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Clear Filters';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+    ),
+    'field_listing_list_date_value2' => array(
+      'bef_format' => 'bef_datepicker',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_listing_agent_target_id' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_listing_building_type_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_listing_status_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -376,31 +452,33 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '10, 25, 50, 100, 200';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
     'field_listing_id_prefix' => 'field_listing_id_prefix',
     'field_listing_mls' => 'field_listing_mls',
-    'field_listing_status' => 'field_listing_status',
     'field_listing_list_price' => 'field_listing_list_price',
     'field_listing_list_date' => 'field_listing_list_date',
+    'field_listing_list_date_1' => 'field_listing_list_date_1',
     'field_listing_agent' => 'field_listing_agent',
     'field_listing_type' => 'field_listing_type',
+    'field_listing_status' => 'field_listing_status',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'field_listing_id_prefix' => array(
+    'nid' => array(
       'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_listing_id_prefix' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_listing_mls' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_listing_status' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -421,12 +499,26 @@ function c21_listings_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_listing_list_date_1' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'field_listing_agent' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_listing_type' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_listing_status' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -441,10 +533,19 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No results were found.';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Listing ID */
   $handler->display->display_options['fields']['field_listing_id_prefix']['id'] = 'field_listing_id_prefix';
   $handler->display->display_options['fields']['field_listing_id_prefix']['table'] = 'field_data_field_listing_id_prefix';
   $handler->display->display_options['fields']['field_listing_id_prefix']['field'] = 'field_listing_id_prefix';
+  $handler->display->display_options['fields']['field_listing_id_prefix']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_listing_id_prefix']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_listing_id_prefix']['type'] = 'listing_id';
   /* Field: Content: MLS # */
   $handler->display->display_options['fields']['field_listing_mls']['id'] = 'field_listing_mls';
@@ -484,6 +585,18 @@ function c21_listings_views_default_views() {
     'multiple_to' => '',
   );
   $handler->display->display_options['fields']['field_listing_list_date']['field_api_classes'] = TRUE;
+  /* Field: Content: List Date */
+  $handler->display->display_options['fields']['field_listing_list_date_1']['id'] = 'field_listing_list_date_1';
+  $handler->display->display_options['fields']['field_listing_list_date_1']['table'] = 'field_data_field_listing_list_date';
+  $handler->display->display_options['fields']['field_listing_list_date_1']['field'] = 'field_listing_list_date';
+  $handler->display->display_options['fields']['field_listing_list_date_1']['label'] = 'Expires On';
+  $handler->display->display_options['fields']['field_listing_list_date_1']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: Agent */
   $handler->display->display_options['fields']['field_listing_agent']['id'] = 'field_listing_agent';
   $handler->display->display_options['fields']['field_listing_agent']['table'] = 'field_data_field_listing_agent';

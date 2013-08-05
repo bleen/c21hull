@@ -344,6 +344,7 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['representative_image']['id'] = 'representative_image';
   $handler->display->display_options['fields']['representative_image']['table'] = 'node';
   $handler->display->display_options['fields']['representative_image']['field'] = 'representative_image';
+  $handler->display->display_options['fields']['representative_image']['label'] = 'Photo';
   $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
   $handler->display->display_options['fields']['representative_image']['image_link'] = 'content';
   /* Field: Content: Status */
