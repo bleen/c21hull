@@ -21,6 +21,21 @@ define('C21_DATE_FORMAT_VERY_LONG', 'l, F d Y, g:ia');
  * Implements hook_workbench_content_alter().
  */
 function c21_workbench_content_alter(&$output) {
+  if (module_exists('c21_listings')) {
+    $report_block = block_load('c21_listings', 'c21_listings_reports');
+
+    $output['c21_workbench_reports'] = array(
+      '#title' => t('Reports'),
+      '#attributes' => array(
+        'class' => array('left', 'clearfix'),
+      ),
+      'report_links' => array('#markup' => c21_listings_reports_links()),
+      '#theme' => 'workbench_element',
+    );
+    $output['#attached']['css'][] = drupal_get_path('module', 'c21') . '/css/c21_workbench.css';
+    unset($output['workbench_current_user']);
+  }
+
   $output['c21_workbench_edits_by_user'] = $output['workbench_edited'];
   $output['c21_workbench_edits_by_user']['#view'] = 'c21_workbench_edits_by_user';
   unset($output['workbench_edited']);
