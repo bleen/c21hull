@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Implements hook_install().
+ */
 function c21_search_install() {
+  // Delete the default solr environment that comes with the solr module.
   apachesolr_environment_delete('solr');
 }
