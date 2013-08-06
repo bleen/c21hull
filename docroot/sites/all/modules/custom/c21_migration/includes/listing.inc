@@ -155,7 +155,7 @@ class C21ListingMigration extends C21Migration {
       $source_row->title = ($source_row->status == 'forsale' ? 'For sale' : 'Unavailable') . ' in ' . $source_row->township;
     }
 
-    // Prepare teh MLS Number by removing errant characters
+    // Prepare the MLS Number by removing errant characters
     if (!empty($source_row->mls)) {
       $source_row->mls = preg_replace('/[^-0-9]/', '', $source_row->mls);
     }
