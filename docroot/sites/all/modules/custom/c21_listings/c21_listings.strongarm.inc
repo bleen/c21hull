@@ -488,7 +488,7 @@ function c21_listings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_listing_pattern';
-  $strongarm->value = 'listing/[node:title]';
+  $strongarm->value = '[node:field-listing-township:name]/[node:field-listing-street]-[node:field-listing-lot]';
   $export['pathauto_node_listing_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

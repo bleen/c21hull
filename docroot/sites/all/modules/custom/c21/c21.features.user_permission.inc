@@ -10,7 +10,7 @@
 function c21_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: access PDF version.
+  // Exported permission: 'access PDF version'.
   $permissions['access PDF version'] = array(
     'name' => 'access PDF version',
     'roles' => array(
@@ -20,7 +20,7 @@ function c21_user_default_permissions() {
     'module' => 'print_pdf',
   );
 
-  // Exported permission: access administration menu.
+  // Exported permission: 'access administration menu'.
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
     'roles' => array(
@@ -31,7 +31,7 @@ function c21_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
-  // Exported permission: access administration pages.
+  // Exported permission: 'access administration pages'.
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
@@ -42,14 +42,14 @@ function c21_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: access all views.
+  // Exported permission: 'access all views'.
   $permissions['access all views'] = array(
     'name' => 'access all views',
     'roles' => array(),
     'module' => 'views',
   );
 
-  // Exported permission: access content.
+  // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
     'roles' => array(
@@ -62,7 +62,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: access content overview.
+  // Exported permission: 'access content overview'.
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
     'roles' => array(
@@ -71,7 +71,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: access contextual links.
+  // Exported permission: 'access contextual links'.
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
     'roles' => array(
@@ -82,7 +82,7 @@ function c21_user_default_permissions() {
     'module' => 'contextual',
   );
 
-  // Exported permission: access devel information.
+  // Exported permission: 'access devel information'.
   $permissions['access devel information'] = array(
     'name' => 'access devel information',
     'roles' => array(
@@ -91,7 +91,7 @@ function c21_user_default_permissions() {
     'module' => 'devel',
   );
 
-  // Exported permission: access overlay.
+  // Exported permission: 'access overlay'.
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
     'roles' => array(
@@ -102,14 +102,14 @@ function c21_user_default_permissions() {
     'module' => 'overlay',
   );
 
-  // Exported permission: access print.
+  // Exported permission: 'access print'.
   $permissions['access print'] = array(
     'name' => 'access print',
     'roles' => array(),
     'module' => 'print',
   );
 
-  // Exported permission: access site in maintenance mode.
+  // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
     'roles' => array(
@@ -118,21 +118,21 @@ function c21_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: access site reports.
+  // Exported permission: 'access site reports'.
   $permissions['access site reports'] = array(
     'name' => 'access site reports',
     'roles' => array(),
     'module' => 'system',
   );
 
-  // Exported permission: access user profiles.
+  // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
     'roles' => array(),
     'module' => 'user',
   );
 
-  // Exported permission: access workbench.
+  // Exported permission: 'access workbench'.
   $permissions['access workbench'] = array(
     'name' => 'access workbench',
     'roles' => array(
@@ -144,147 +144,147 @@ function c21_user_default_permissions() {
     'module' => 'workbench',
   );
 
-  // Exported permission: admin_classes.
+  // Exported permission: 'admin_classes'.
   $permissions['admin_classes'] = array(
     'name' => 'admin_classes',
     'roles' => array(),
     'module' => 'ds_ui',
   );
 
-  // Exported permission: admin_display_suite.
+  // Exported permission: 'admin_display_suite'.
   $permissions['admin_display_suite'] = array(
     'name' => 'admin_display_suite',
     'roles' => array(),
     'module' => 'ds',
   );
 
-  // Exported permission: admin_fields.
+  // Exported permission: 'admin_fields'.
   $permissions['admin_fields'] = array(
     'name' => 'admin_fields',
     'roles' => array(),
     'module' => 'ds_ui',
   );
 
-  // Exported permission: admin_view_modes.
+  // Exported permission: 'admin_view_modes'.
   $permissions['admin_view_modes'] = array(
     'name' => 'admin_view_modes',
     'roles' => array(),
     'module' => 'ds_ui',
   );
 
-  // Exported permission: administer @font-your-face.
+  // Exported permission: 'administer @font-your-face'.
   $permissions['administer @font-your-face'] = array(
     'name' => 'administer @font-your-face',
     'roles' => array(),
     'module' => 'fontyourface',
   );
 
-  // Exported permission: administer actions.
+  // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
     'roles' => array(),
     'module' => 'system',
   );
 
-  // Exported permission: administer block classes.
+  // Exported permission: 'administer block classes'.
   $permissions['administer block classes'] = array(
     'name' => 'administer block classes',
     'roles' => array(),
     'module' => 'block_class',
   );
 
-  // Exported permission: administer block semantics.
+  // Exported permission: 'administer block semantics'.
   $permissions['administer block semantics'] = array(
     'name' => 'administer block semantics',
     'roles' => array(),
     'module' => 'borealis_sb',
   );
 
-  // Exported permission: administer blockify.
+  // Exported permission: 'administer blockify'.
   $permissions['administer blockify'] = array(
     'name' => 'administer blockify',
     'roles' => array(),
     'module' => 'blockify',
   );
 
-  // Exported permission: administer blocks.
+  // Exported permission: 'administer blocks'.
   $permissions['administer blocks'] = array(
     'name' => 'administer blocks',
     'roles' => array(),
     'module' => 'block',
   );
 
-  // Exported permission: administer ckeditor.
+  // Exported permission: 'administer ckeditor'.
   $permissions['administer ckeditor'] = array(
     'name' => 'administer ckeditor',
     'roles' => array(),
     'module' => 'ckeditor',
   );
 
-  // Exported permission: administer content types.
+  // Exported permission: 'administer content types'.
   $permissions['administer content types'] = array(
     'name' => 'administer content types',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: administer contexts.
+  // Exported permission: 'administer contexts'.
   $permissions['administer contexts'] = array(
     'name' => 'administer contexts',
     'roles' => array(),
     'module' => 'context_ui',
   );
 
-  // Exported permission: administer empty page callbacks.
+  // Exported permission: 'administer empty page callbacks'.
   $permissions['administer empty page callbacks'] = array(
     'name' => 'administer empty page callbacks',
     'roles' => array(),
     'module' => 'empty_page',
   );
 
-  // Exported permission: administer features.
+  // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',
     'roles' => array(),
     'module' => 'features',
   );
 
-  // Exported permission: administer field collections.
+  // Exported permission: 'administer field collections'.
   $permissions['administer field collections'] = array(
     'name' => 'administer field collections',
     'roles' => array(),
     'module' => 'field_collection',
   );
 
-  // Exported permission: administer fieldgroups.
+  // Exported permission: 'administer fieldgroups'.
   $permissions['administer fieldgroups'] = array(
     'name' => 'administer fieldgroups',
     'roles' => array(),
     'module' => 'field_group',
   );
 
-  // Exported permission: administer filters.
+  // Exported permission: 'administer filters'.
   $permissions['administer filters'] = array(
     'name' => 'administer filters',
     'roles' => array(),
     'module' => 'filter',
   );
 
-  // Exported permission: administer flexslider.
+  // Exported permission: 'administer flexslider'.
   $permissions['administer flexslider'] = array(
     'name' => 'administer flexslider',
     'roles' => array(),
     'module' => 'flexslider',
   );
 
-  // Exported permission: administer image styles.
+  // Exported permission: 'administer image styles'.
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
     'roles' => array(),
     'module' => 'image',
   );
 
-  // Exported permission: administer menu.
+  // Exported permission: 'administer menu'.
   $permissions['administer menu'] = array(
     'name' => 'administer menu',
     'roles' => array(
@@ -293,42 +293,42 @@ function c21_user_default_permissions() {
     'module' => 'menu',
   );
 
-  // Exported permission: administer modernizr.
+  // Exported permission: 'administer modernizr'.
   $permissions['administer modernizr'] = array(
     'name' => 'administer modernizr',
     'roles' => array(),
     'module' => 'modernizr',
   );
 
-  // Exported permission: administer module filter.
+  // Exported permission: 'administer module filter'.
   $permissions['administer module filter'] = array(
     'name' => 'administer module filter',
     'roles' => array(),
     'module' => 'module_filter',
   );
 
-  // Exported permission: administer modules.
+  // Exported permission: 'administer modules'.
   $permissions['administer modules'] = array(
     'name' => 'administer modules',
     'roles' => array(),
     'module' => 'system',
   );
 
-  // Exported permission: administer nodes.
+  // Exported permission: 'administer nodes'.
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: administer pathauto.
+  // Exported permission: 'administer pathauto'.
   $permissions['administer pathauto'] = array(
     'name' => 'administer pathauto',
     'roles' => array(),
     'module' => 'pathauto',
   );
 
-  // Exported permission: administer permissions.
+  // Exported permission: 'administer permissions'.
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
@@ -337,35 +337,35 @@ function c21_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: administer print.
+  // Exported permission: 'administer print'.
   $permissions['administer print'] = array(
     'name' => 'administer print',
     'roles' => array(),
     'module' => 'print',
   );
 
-  // Exported permission: administer redirects.
+  // Exported permission: 'administer redirects'.
   $permissions['administer redirects'] = array(
     'name' => 'administer redirects',
     'roles' => array(),
     'module' => 'redirect',
   );
 
-  // Exported permission: administer responsive image settings.
+  // Exported permission: 'administer responsive image settings'.
   $permissions['administer responsive image settings'] = array(
     'name' => 'administer responsive image settings',
     'roles' => array(),
     'module' => 'borealis_ri',
   );
 
-  // Exported permission: administer responsive image styles.
+  // Exported permission: 'administer responsive image styles'.
   $permissions['administer responsive image styles'] = array(
     'name' => 'administer responsive image styles',
     'roles' => array(),
     'module' => 'borealis_ri',
   );
 
-  // Exported permission: administer site configuration.
+  // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
     'roles' => array(
@@ -374,14 +374,14 @@ function c21_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: administer software updates.
+  // Exported permission: 'administer software updates'.
   $permissions['administer software updates'] = array(
     'name' => 'administer software updates',
     'roles' => array(),
     'module' => 'system',
   );
 
-  // Exported permission: administer taxonomy.
+  // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
     'roles' => array(
@@ -391,21 +391,21 @@ function c21_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: administer themes.
+  // Exported permission: 'administer themes'.
   $permissions['administer themes'] = array(
     'name' => 'administer themes',
     'roles' => array(),
     'module' => 'system',
   );
 
-  // Exported permission: administer url aliases.
+  // Exported permission: 'administer url aliases'.
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
     'roles' => array(),
     'module' => 'path',
   );
 
-  // Exported permission: administer users.
+  // Exported permission: 'administer users'.
   $permissions['administer users'] = array(
     'name' => 'administer users',
     'roles' => array(
@@ -414,35 +414,35 @@ function c21_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: administer views.
+  // Exported permission: 'administer views'.
   $permissions['administer views'] = array(
     'name' => 'administer views',
     'roles' => array(),
     'module' => 'views',
   );
 
-  // Exported permission: administer workbench.
+  // Exported permission: 'administer workbench'.
   $permissions['administer workbench'] = array(
     'name' => 'administer workbench',
     'roles' => array(),
     'module' => 'workbench',
   );
 
-  // Exported permission: advanced migration information.
+  // Exported permission: 'advanced migration information'.
   $permissions['advanced migration information'] = array(
     'name' => 'advanced migration information',
     'roles' => array(),
     'module' => 'migrate',
   );
 
-  // Exported permission: block IP addresses.
+  // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
     'roles' => array(),
     'module' => 'system',
   );
 
-  // Exported permission: bypass node access.
+  // Exported permission: 'bypass node access'.
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
     'roles' => array(
@@ -451,14 +451,14 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: cancel account.
+  // Exported permission: 'cancel account'.
   $permissions['cancel account'] = array(
     'name' => 'cancel account',
     'roles' => array(),
     'module' => 'user',
   );
 
-  // Exported permission: change own username.
+  // Exported permission: 'change own username'.
   $permissions['change own username'] = array(
     'name' => 'change own username',
     'roles' => array(
@@ -469,7 +469,7 @@ function c21_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: clone node.
+  // Exported permission: 'clone node'.
   $permissions['clone node'] = array(
     'name' => 'clone node',
     'roles' => array(
@@ -479,7 +479,7 @@ function c21_user_default_permissions() {
     'module' => 'clone',
   );
 
-  // Exported permission: clone own nodes.
+  // Exported permission: 'clone own nodes'.
   $permissions['clone own nodes'] = array(
     'name' => 'clone own nodes',
     'roles' => array(
@@ -489,7 +489,7 @@ function c21_user_default_permissions() {
     'module' => 'clone',
   );
 
-  // Exported permission: create aggregation_page_detail content.
+  // Exported permission: 'create aggregation_page_detail content'.
   $permissions['create aggregation_page_detail content'] = array(
     'name' => 'create aggregation_page_detail content',
     'roles' => array(
@@ -499,7 +499,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: create page content.
+  // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
     'roles' => array(
@@ -508,21 +508,21 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: create url aliases.
+  // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
     'roles' => array(),
     'module' => 'path',
   );
 
-  // Exported permission: customize ckeditor.
+  // Exported permission: 'customize ckeditor'.
   $permissions['customize ckeditor'] = array(
     'name' => 'customize ckeditor',
     'roles' => array(),
     'module' => 'ckeditor',
   );
 
-  // Exported permission: delete any aggregation_page_detail content.
+  // Exported permission: 'delete any aggregation_page_detail content'.
   $permissions['delete any aggregation_page_detail content'] = array(
     'name' => 'delete any aggregation_page_detail content',
     'roles' => array(
@@ -532,7 +532,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete any page content.
+  // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
     'roles' => array(
@@ -541,7 +541,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete own aggregation_page_detail content.
+  // Exported permission: 'delete own aggregation_page_detail content'.
   $permissions['delete own aggregation_page_detail content'] = array(
     'name' => 'delete own aggregation_page_detail content',
     'roles' => array(
@@ -551,7 +551,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete own page content.
+  // Exported permission: 'delete own page content'.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
     'roles' => array(
@@ -560,16 +560,16 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete revisions.
+  // Exported permission: 'delete revisions'.
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: delete terms in 1.
-  $permissions['delete terms in 1'] = array(
-    'name' => 'delete terms in 1',
+  // Exported permission: 'delete terms in tags'.
+  $permissions['delete terms in tags'] = array(
+    'name' => 'delete terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
       'staff' => 'staff',
@@ -577,7 +577,7 @@ function c21_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: display drupal links.
+  // Exported permission: 'display drupal links'.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
     'roles' => array(
@@ -586,7 +586,7 @@ function c21_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
-  // Exported permission: edit any aggregation_page_detail content.
+  // Exported permission: 'edit any aggregation_page_detail content'.
   $permissions['edit any aggregation_page_detail content'] = array(
     'name' => 'edit any aggregation_page_detail content',
     'roles' => array(
@@ -596,7 +596,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit any page content.
+  // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
     'roles' => array(
@@ -605,7 +605,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit own aggregation_page_detail content.
+  // Exported permission: 'edit own aggregation_page_detail content'.
   $permissions['edit own aggregation_page_detail content'] = array(
     'name' => 'edit own aggregation_page_detail content',
     'roles' => array(
@@ -615,7 +615,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit own page content.
+  // Exported permission: 'edit own page content'.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
     'roles' => array(
@@ -624,28 +624,28 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: enter aggregation_page_detail revision log entry.
+  // Exported permission: 'enter aggregation_page_detail revision log entry'.
   $permissions['enter aggregation_page_detail revision log entry'] = array(
     'name' => 'enter aggregation_page_detail revision log entry',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: enter page revision log entry.
+  // Exported permission: 'enter page revision log entry'.
   $permissions['enter page revision log entry'] = array(
     'name' => 'enter page revision log entry',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: execute php code.
+  // Exported permission: 'execute php code'.
   $permissions['execute php code'] = array(
     'name' => 'execute php code',
     'roles' => array(),
     'module' => 'devel',
   );
 
-  // Exported permission: flush caches.
+  // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
     'roles' => array(
@@ -654,84 +654,84 @@ function c21_user_default_permissions() {
     'module' => 'admin_menu',
   );
 
-  // Exported permission: manage features.
+  // Exported permission: 'manage features'.
   $permissions['manage features'] = array(
     'name' => 'manage features',
     'roles' => array(),
     'module' => 'features',
   );
 
-  // Exported permission: migration information.
+  // Exported permission: 'migration information'.
   $permissions['migration information'] = array(
     'name' => 'migration information',
     'roles' => array(),
     'module' => 'migrate',
   );
 
-  // Exported permission: node-specific print configuration.
+  // Exported permission: 'node-specific print configuration'.
   $permissions['node-specific print configuration'] = array(
     'name' => 'node-specific print configuration',
     'roles' => array(),
     'module' => 'print',
   );
 
-  // Exported permission: notify of path changes.
+  // Exported permission: 'notify of path changes'.
   $permissions['notify of path changes'] = array(
     'name' => 'notify of path changes',
     'roles' => array(),
     'module' => 'pathauto',
   );
 
-  // Exported permission: override aggregation_page_detail authored by option.
+  // Exported permission: 'override aggregation_page_detail authored by option'.
   $permissions['override aggregation_page_detail authored by option'] = array(
     'name' => 'override aggregation_page_detail authored by option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override aggregation_page_detail authored on option.
+  // Exported permission: 'override aggregation_page_detail authored on option'.
   $permissions['override aggregation_page_detail authored on option'] = array(
     'name' => 'override aggregation_page_detail authored on option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override aggregation_page_detail promote to front page option.
+  // Exported permission: 'override aggregation_page_detail promote to front page option'.
   $permissions['override aggregation_page_detail promote to front page option'] = array(
     'name' => 'override aggregation_page_detail promote to front page option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override aggregation_page_detail published option.
+  // Exported permission: 'override aggregation_page_detail published option'.
   $permissions['override aggregation_page_detail published option'] = array(
     'name' => 'override aggregation_page_detail published option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override aggregation_page_detail revision option.
+  // Exported permission: 'override aggregation_page_detail revision option'.
   $permissions['override aggregation_page_detail revision option'] = array(
     'name' => 'override aggregation_page_detail revision option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override aggregation_page_detail sticky option.
+  // Exported permission: 'override aggregation_page_detail sticky option'.
   $permissions['override aggregation_page_detail sticky option'] = array(
     'name' => 'override aggregation_page_detail sticky option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override page authored on option.
+  // Exported permission: 'override page authored on option'.
   $permissions['override page authored on option'] = array(
     'name' => 'override page authored on option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override page promote to front page option.
+  // Exported permission: 'override page promote to front page option'.
   $permissions['override page promote to front page option'] = array(
     'name' => 'override page promote to front page option',
     'roles' => array(
@@ -740,7 +740,7 @@ function c21_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override page published option.
+  // Exported permission: 'override page published option'.
   $permissions['override page published option'] = array(
     'name' => 'override page published option',
     'roles' => array(
@@ -749,77 +749,77 @@ function c21_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override page revision option.
+  // Exported permission: 'override page revision option'.
   $permissions['override page revision option'] = array(
     'name' => 'override page revision option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override page sticky option.
+  // Exported permission: 'override page sticky option'.
   $permissions['override page sticky option'] = array(
     'name' => 'override page sticky option',
     'roles' => array(),
     'module' => 'override_node_options',
   );
 
-  // Exported permission: revert revisions.
+  // Exported permission: 'revert revisions'.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: select account cancellation method.
+  // Exported permission: 'select account cancellation method'.
   $permissions['select account cancellation method'] = array(
     'name' => 'select account cancellation method',
     'roles' => array(),
     'module' => 'user',
   );
 
-  // Exported permission: show format selection for field_collection_item.
+  // Exported permission: 'show format selection for field_collection_item'.
   $permissions['show format selection for field_collection_item'] = array(
     'name' => 'show format selection for field_collection_item',
     'roles' => array(),
     'module' => 'better_formats',
   );
 
-  // Exported permission: show format selection for node.
+  // Exported permission: 'show format selection for node'.
   $permissions['show format selection for node'] = array(
     'name' => 'show format selection for node',
     'roles' => array(),
     'module' => 'better_formats',
   );
 
-  // Exported permission: show format selection for taxonomy_term.
+  // Exported permission: 'show format selection for taxonomy_term'.
   $permissions['show format selection for taxonomy_term'] = array(
     'name' => 'show format selection for taxonomy_term',
     'roles' => array(),
     'module' => 'better_formats',
   );
 
-  // Exported permission: show format selection for user.
+  // Exported permission: 'show format selection for user'.
   $permissions['show format selection for user'] = array(
     'name' => 'show format selection for user',
     'roles' => array(),
     'module' => 'better_formats',
   );
 
-  // Exported permission: show format tips.
+  // Exported permission: 'show format tips'.
   $permissions['show format tips'] = array(
     'name' => 'show format tips',
     'roles' => array(),
     'module' => 'better_formats',
   );
 
-  // Exported permission: show more format tips link.
+  // Exported permission: 'show more format tips link'.
   $permissions['show more format tips link'] = array(
     'name' => 'show more format tips link',
     'roles' => array(),
     'module' => 'better_formats',
   );
 
-  // Exported permission: switch users.
+  // Exported permission: 'switch users'.
   $permissions['switch users'] = array(
     'name' => 'switch users',
     'roles' => array(
@@ -828,21 +828,21 @@ function c21_user_default_permissions() {
     'module' => 'devel',
   );
 
-  // Exported permission: use text format filtered_html.
+  // Exported permission: 'use text format filtered_html'.
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
     'roles' => array(),
     'module' => 'filter',
   );
 
-  // Exported permission: use text format full_html.
+  // Exported permission: 'use text format full_html'.
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
     'roles' => array(),
     'module' => 'filter',
   );
 
-  // Exported permission: use text format rich_text.
+  // Exported permission: 'use text format rich_text'.
   $permissions['use text format rich_text'] = array(
     'name' => 'use text format rich_text',
     'roles' => array(
@@ -853,7 +853,7 @@ function c21_user_default_permissions() {
     'module' => 'filter',
   );
 
-  // Exported permission: view own unpublished content.
+  // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
@@ -864,7 +864,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: view revisions.
+  // Exported permission: 'view revisions'.
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
     'roles' => array(
@@ -874,7 +874,7 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: view the administration theme.
+  // Exported permission: 'view the administration theme'.
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
