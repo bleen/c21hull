@@ -41,6 +41,9 @@ AUTOCOMPLETE DELUX
     the ESC or DELETE keys) in Chrome. This patch fixes the issue:
       PATCH: https://drupal.org/node/2012742#comment-7501674
 
+CKEDITOR
+  * Added the NodeEmbed & iframedialog plugins to ckeditor.
+
 DATE
   * It's annoying to always see the date_migrate_example module on the features
     page so we made it hidden by adding "hidden = TRUE" to its .info file.

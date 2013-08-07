@@ -42,7 +42,7 @@ function c21_filter_default_formats() {
   $formats['rich_text'] = array(
     'format' => 'rich_text',
     'name' => 'Rich Text',
-    'cache' => 1,
+    'cache' => 0,
     'status' => 1,
     'weight' => 0,
     'filters' => array(
@@ -66,6 +66,11 @@ function c21_filter_default_formats() {
         'settings' => array(
           'filter_url_length' => 72,
         ),
+      ),
+      'node_embed' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
       ),
       'wysiwyg' => array(
         'weight' => 0,

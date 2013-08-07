@@ -26,6 +26,9 @@ CKEDITOR.editorConfig = function(config) {
   config.protectedSource.push(/<code>[\s\S]*?<\/code>/gi); // Code tags
   config.extraPlugins = '';
 
+  config.extraPlugins += (config.extraPlugins ? ',NodeEmbed' : 'NodeEmbed' );
+  CKEDITOR.plugins.addExternal('NodeEmbed', Drupal.settings.ckeditor.module_path+'/plugins/NodeEmbed/');
+
   /*
     * Append here extra CSS rules that should be applied into the editing area.
     * Example:
