@@ -10,7 +10,7 @@
 function c21_rets_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: access drealty admin.
+  // Exported permission: 'access drealty admin'.
   $permissions['access drealty admin'] = array(
     'name' => 'access drealty admin',
     'roles' => array(
@@ -19,7 +19,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: administer drealty connections.
+  // Exported permission: 'administer drealty connections'.
   $permissions['administer drealty connections'] = array(
     'name' => 'administer drealty connections',
     'roles' => array(
@@ -28,7 +28,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: administer drealty_listing types.
+  // Exported permission: 'administer drealty_listing types'.
   $permissions['administer drealty_listing types'] = array(
     'name' => 'administer drealty_listing types',
     'roles' => array(
@@ -37,7 +37,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: administer drealty_listings.
+  // Exported permission: 'administer drealty_listings'.
   $permissions['administer drealty_listings'] = array(
     'name' => 'administer drealty_listings',
     'roles' => array(
@@ -46,7 +46,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: bypass drealty access.
+  // Exported permission: 'bypass drealty access'.
   $permissions['bypass drealty access'] = array(
     'name' => 'bypass drealty access',
     'roles' => array(
@@ -55,7 +55,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: create drealty listing.
+  // Exported permission: 'create drealty listing'.
   $permissions['create drealty listing'] = array(
     'name' => 'create drealty listing',
     'roles' => array(
@@ -64,7 +64,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: delete any drealty listing.
+  // Exported permission: 'delete any drealty listing'.
   $permissions['delete any drealty listing'] = array(
     'name' => 'delete any drealty listing',
     'roles' => array(
@@ -73,7 +73,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: delete own drealty listing.
+  // Exported permission: 'delete own drealty listing'.
   $permissions['delete own drealty listing'] = array(
     'name' => 'delete own drealty listing',
     'roles' => array(
@@ -82,7 +82,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: edit any drealty listing.
+  // Exported permission: 'edit any drealty listing'.
   $permissions['edit any drealty listing'] = array(
     'name' => 'edit any drealty listing',
     'roles' => array(
@@ -91,7 +91,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: edit own drealty listing.
+  // Exported permission: 'edit own drealty listing'.
   $permissions['edit own drealty listing'] = array(
     'name' => 'edit own drealty listing',
     'roles' => array(
@@ -100,7 +100,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'drealty',
   );
 
-  // Exported permission: show format selection for drealty_listing.
+  // Exported permission: 'show format selection for drealty_listing'.
   $permissions['show format selection for drealty_listing'] = array(
     'name' => 'show format selection for drealty_listing',
     'roles' => array(
@@ -109,7 +109,7 @@ function c21_rets_user_default_permissions() {
     'module' => 'better_formats',
   );
 
-  // Exported permission: view drealty listing.
+  // Exported permission: 'view drealty listing'.
   $permissions['view drealty listing'] = array(
     'name' => 'view drealty listing',
     'roles' => array(

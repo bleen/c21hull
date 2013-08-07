@@ -487,9 +487,23 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_aggregation_page_detail_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_aggregation_page_detail_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_listing_pattern';
   $strongarm->value = '[node:field-listing-township:name]/[node:field-listing-street]-[node:field-listing-lot]';
   $export['pathauto_node_listing_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_listing_type_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_listing_type_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
