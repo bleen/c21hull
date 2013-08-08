@@ -22,8 +22,6 @@ define('C21_DATE_FORMAT_VERY_LONG', 'l, F d Y, g:ia');
  */
 function c21_workbench_content_alter(&$output) {
   if (module_exists('c21_listings')) {
-    $report_block = block_load('c21_listings', 'c21_listings_reports');
-
     $output['c21_workbench_reports'] = array(
       '#title' => t('Reports'),
       '#attributes' => array(
