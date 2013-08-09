@@ -14,14 +14,6 @@
 interface DrupalEntityControllerInterface {
 
   /**
-   * Constructor.
-   *
-   * @param $entityType
-   *   The entity type for which the instance is created.
-   */
-  public function __construct($entityType);
-
-  /**
    * Resets the internal, static entity cache.
    *
    * @param $ids
@@ -119,6 +111,9 @@ class DrupalDefaultEntityController implements DrupalEntityControllerInterface {
 
   /**
    * Constructor: sets basic variables.
+   *
+   * @param $entityType
+   *   The entity type for which the instance is created.
    */
   public function __construct($entityType) {
     $this->entityType = $entityType;
@@ -364,20 +359,10 @@ class DrupalDefaultEntityController implements DrupalEntityControllerInterface {
     // Exclude any entities loaded from cache if they don't match $conditions.
     // This ensures the same behavior whether loading from memory or database.
     if ($conditions) {
-      foreach ($entities as $key => $entity) {
+      foreach ($entities as $entity) {
         $entity_values = (array) $entity;
-        foreach ($conditions as $condition_key => $condition_value) {
-          if (is_array($condition_value)) {
-            if (!isset($entity_values[$condition_key])) {
-              unset($entities[$key]);
-            }
-            elseif (!in_array($entity_values[$condition_key], $condition_value)) {
-              unset($entities[$key]);
-            }
-          }
-          elseif (!isset($entity_values[$condition_key]) || $entity_values[$condition_key] != $condition_value) {
-            unset($entities[$key]);
-          }
+        if (array_diff_assoc($conditions, $entity_values)) {
+          unset($entities[$entity->{$this->idKey}]);
         }
       }
     }
@@ -644,7 +629,7 @@ class EntityFieldQuery {
 
   /**
    * Adds a condition on field values.
-   * 
+   *
    * Note that entities with empty field values will be excluded from the
    * EntityFieldQuery results when using this method.
    *
