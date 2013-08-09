@@ -26,6 +26,7 @@ Disallow: /profiles/
 Disallow: /scripts/
 Disallow: /themes/
 Disallow: /print/
+Disallow: /search/
 # Files
 Disallow: /CHANGELOG.txt
 Disallow: /cron.php
