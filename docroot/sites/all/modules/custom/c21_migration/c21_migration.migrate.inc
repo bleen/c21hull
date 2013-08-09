@@ -195,8 +195,8 @@ abstract class C21Migration extends Migration {
     return $terms;
   }
 
-  public function validListingId($lsting_id) {
-    if (!preg_match('/^[a-z]{2,5}-{1}[0-9]{3,5}/i', $lsting_id)) {
+  public function validListingId($listing_id) {
+    if (!preg_match('/^[a-z]{2,5}-{1}[0-9]{3,5}$/i', $listing_id)) {
       return FALSE;
     }
 

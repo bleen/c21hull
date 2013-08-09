@@ -20,7 +20,7 @@ class C21ListingMigration extends C21Migration {
       'l.listing_id = lcd.listing_id');
     $query->leftJoin('listing_transaction_dtl', 'ltd',
       'l.listing_id = ltd.listing_id');
-    $query->fields('l')
+    $query->fields('l', array('listing_id', 'mls', 'listing_type', 'status', 'agent', 'office', 'list_price', 'commission', 'start_date', 'end_date', 'lockbox', 'style', 'acreage', 'taxes', 'dues', 'zoning', 'is_land', 'additional_info', 'creation_date', 'created_by', 'edited_on', 'edited_by'))
           ->fields('lbd')
           ->fields('lld')
           ->fields('lcd')
