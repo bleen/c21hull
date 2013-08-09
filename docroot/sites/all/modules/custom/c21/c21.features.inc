@@ -78,6 +78,7 @@ function c21_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'c21square',
   );
 
   // Exported image style: c21wide.
@@ -101,6 +102,7 @@ function c21_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'c21wide',
   );
 
   return $styles;
