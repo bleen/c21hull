@@ -16,8 +16,10 @@ class C21ListingMigration extends C21Migration {
     $query->join('listing_building_dtl', 'lbd', 'l.listing_id = lbd.listing_id');
     $query->join('listing_location_dtl', 'lld', 'l.listing_id = lld.listing_id');
     $query->join('listing_web_dtl', 'lwd', 'l.listing_id = lwd.listing_id');
-    $query->join('listing_commercial_dtl', 'lcd', 'l.listing_id = lcd.listing_id');
-    $query->join('listing_transaction_dtl', 'ltd', 'l.listing_id = ltd.listing_id');
+    $query->leftJoin('listing_commercial_dtl', 'lcd',
+      'l.listing_id = lcd.listing_id');
+    $query->leftJoin('listing_transaction_dtl', 'ltd',
+      'l.listing_id = ltd.listing_id');
     $query->fields('l')
           ->fields('lbd')
           ->fields('lld')
