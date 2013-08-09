@@ -7,20 +7,16 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function c21_search_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function c21_search_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "apachesolr" && $api == "apachesolr_environments") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "borealis_sb" && $api == "borealis_sb_default") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -29,6 +25,6 @@ function c21_search_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function c21_search_views_api() {
+function c21_search_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
