@@ -46,7 +46,7 @@ $options['environments'] = array(
       'ds_ui' => 1,
       'ds_devel' => 1,
       'search_krumo' => 1,
-      'testing' => 1,
+      'simpletest' => 1,
     ),
     // The list of variables to configure.
     'settings' => array(
@@ -72,7 +72,7 @@ $options['environments'] = array(
       'ds_devel' => 0,
       'migrate_ui' => 0,
       'search_krumo' => 0,
-      'testing' => 0,
+      'simpletest' => 0,
       'c21_migration' => 0,
     ),
     // The list of variables to configure.
