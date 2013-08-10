@@ -2,10 +2,10 @@
 
 T="$(date +%s)"
 
-env = ${1:-dev}
+E=${1:-dev}
 
 drush c21si -y
-drush env $env -y
+drush env $E -y
 drush en c21_rets_connection -y
 drush cc all
 drush dis c21_rets_connection -y
