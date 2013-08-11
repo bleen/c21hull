@@ -105,7 +105,7 @@ class C21BuyerSellerPhoneEmailMigration extends C21Migration {
         $this->dependencies = array('c21Buyer');
         $source_query = Database::getConnection('default', 'legacy')
          ->select('listing_buyers', 'lb')
-         ->isNotNull('lb.' . $phone_type)
+//         ->condition($phone_type, '', '<>')
          ->fields('lb', array('listing_id', 'disp_order', 'home_phone', 'business_phone', 'local_phone', 'cell_phone', 'fax', 'email'));
         break;
 
@@ -113,7 +113,7 @@ class C21BuyerSellerPhoneEmailMigration extends C21Migration {
         $this->dependencies = array('c21Seller');
         $source_query = Database::getConnection('default', 'legacy')
          ->select('listing_sellers', 'ls')
-         ->isNotNull('ls.' . $phone_type)
+//         ->condition($phone_type, '', '<>')
          ->fields('ls', array('listing_id', 'disp_order', 'home_phone', 'business_phone', 'local_phone', 'cell_phone', 'fax', 'email'));
         break;
     }
