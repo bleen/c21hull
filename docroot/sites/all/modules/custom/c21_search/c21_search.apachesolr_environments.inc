@@ -13,8 +13,8 @@ function c21_search_apachesolr_environments() {
   $environment = new stdClass();
   $environment->api_version = 1;
   $environment->env_id = 'opensolr';
-  $environment->name = 'Hosted SOLR support with opensolr.com (Using localhost)';
-  $environment->url = 'http://localhost:8080/solr/c21hull';
+  $environment->name = 'Hosted SOLR support with opensolr.com';
+  $environment->url = 'http://us.opensolr.com/solr/Listings';
   $environment->service_class = '';
   $environment->conf = array(
     'apachesolr_index_last' => array(),
