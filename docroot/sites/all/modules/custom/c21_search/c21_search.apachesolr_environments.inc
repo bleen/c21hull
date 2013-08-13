@@ -22,7 +22,7 @@ function c21_search_apachesolr_environments() {
   $environment->index_bundles = array(
     'node' => array(
       0 => 'listing',
-      1 => 'listing_type',
+      1 => 'aggregation_page_detail',
       2 => 'page',
     ),
   );
