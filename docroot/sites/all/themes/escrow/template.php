@@ -1,6 +1,16 @@
 <?php
 
 /**
+ * Implements hook_preprocess_html().
+ */
+function escrow_preprocess_html(&$variables) {
+  $environment = variable_get('hosting_environment', '');
+  if (!empty($environment)) {
+    $variables['classes_array'][] = 'environment-' . $environment;
+  }
+}
+
+/**
  * Implements hook_preprocess_node().
  */
 function escrow_preprocess_node(&$variables) {

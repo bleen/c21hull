@@ -3,5 +3,7 @@ $gutters: 1/4;
 $output: 'isolation';
 
 body {
-  @include background-grid();
+  &.environment-local {
+    @include background-grid();
+  }
 }
