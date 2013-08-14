@@ -14,7 +14,7 @@ function c21_search_apachesolr_environments() {
   $environment->api_version = 1;
   $environment->env_id = 'opensolr';
   $environment->name = 'Hosted SOLR support with opensolr.com';
-  $environment->url = 'http://us.opensolr.com/solr/Listings';
+  $environment->url = 'http://us-la.opensolr.com/solr/Listings';
   $environment->service_class = '';
   $environment->conf = array(
     'apachesolr_index_last' => array(),
