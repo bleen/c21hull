@@ -4,6 +4,6 @@ $output: 'isolation';
 
 body {
   &.environment-local {
-    @include background-grid();
+   /* @include background-grid();*/
   }
 }

@@ -16,7 +16,10 @@ $bp700: 700px;
 // Colors
 ///////////////////////
 $color_green:    #125819;
-
+$color_green_light: $color_green + rgba(50,50,50,1);
+$color_gold: #ECB429;
+$color_gray: #999;
+$color_gray_light: #EEE;
 
 ///////////////////////
 // Text
@@ -28,3 +31,5 @@ $font_size_title: 1.4em;
 // Layout
 ///////////////////////
 $spacing_default: .5em;
+$spacing_default_neg: -1 * .5em;
+$spacing_large: 1em;

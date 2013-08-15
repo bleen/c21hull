@@ -19,5 +19,5 @@ input[type="submit"] {
 }
 
 .ui-slider-horizontal .ui-slider-range {
-  @include background(linear-gradient(top, $color_green + rgba(50,50,50,1), $color_green));
+  @include background(linear-gradient(top, $color_green_light, $color_green));
 }

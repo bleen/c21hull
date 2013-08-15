@@ -16,6 +16,7 @@ function escrow_preprocess_html(&$variables) {
 function escrow_preprocess_node(&$variables) {
   switch ($variables['type']) {
     case 'listing':
+      $variables['classes_array'][] = 'listing';
       drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
       break;
 

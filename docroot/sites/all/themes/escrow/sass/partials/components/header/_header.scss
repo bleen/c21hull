@@ -1,6 +1,9 @@
 #header {
   @include clearfix();
-  margin-top: 1em;
+  margin: 0 $spacing_default_neg $spacing_large $spacing_default_neg;
+  padding-top: $spacing_large;
+  @include background(linear-gradient(top, $color_gray, $color_gray_light));
+  border-bottom: 3px solid $color_gold;
 }
 
 #offices {
