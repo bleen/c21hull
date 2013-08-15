@@ -132,25 +132,3 @@
   };
 
 })(jQuery);
-
-
-
-
-$('.group-listing-buyers', context).drupalSetSummary(function(context) {
-        var vals = [];
-        $('.field-name-field-listing-buyer #field-listing-buyer-values > tbody > tr').each(function(context) {
-          fullname = $(this).find('.field-name-field-buyer-first-name input').val() + ' ';
-          fullname += $(this).find('.field-name-field-buyer-last-name input').val();
-          vals.push(fullname);
-        });
-
-        return vals.join('<br/>');
-      });
-
-
-
-
-
-
-
-
