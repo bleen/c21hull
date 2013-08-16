@@ -62,6 +62,12 @@ function c21_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
+        'c21-c21_footer' => array(
+          'module' => 'c21',
+          'delta' => 'c21_footer',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
       ),
     ),
   );

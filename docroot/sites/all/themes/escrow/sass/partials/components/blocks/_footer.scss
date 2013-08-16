@@ -1,0 +1,29 @@
+#block-c21-c21-footer {
+  padding-top: 2 * $spacing_default;
+  margin-top: 2 * $spacing_default;
+  border-top: 3px solid $color_gold;
+  text-align: center;
+  font-size: .75 * $font_size_base;
+
+  .address {
+    width: 48%;
+    float: left;
+    margin: $spacing_default 1% 3*$spacing_default 1%;
+
+    span{
+      display: block;
+    }
+    a {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  .copyright {
+    clear: both;
+    color: $color_gray_dark;
+    font-size: .65 * $font_size_base;
+    margin: $spacing_default;
+    padding: $spacing_default;
+  }
+}

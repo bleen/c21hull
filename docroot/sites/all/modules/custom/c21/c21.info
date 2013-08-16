@@ -75,6 +75,7 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[ds_view_modes][] = micro_teaser
 features[ds_view_modes][] = teaser
+features[fe_block_settings][] = c21-c21_footer
 features[fe_block_settings][] = views-9cf22433e0efbd8b206c8e4c2edb177c
 features[fe_block_settings][] = views-b9efce5f9de478ed390efcf7c815f2f5
 features[fe_block_settings][] = views-bdeec0c6a6d8fcdcd6969bf1225f3520
