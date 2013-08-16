@@ -383,6 +383,25 @@ function c21_listings_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
+    'node_link' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'More info',
+        'wrapper' => '',
+        'class' => '',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'more-info',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
     'field_listing_bathrooms' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -403,6 +422,19 @@ function c21_listings_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'stat bedrooms',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_featured_photo' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'photo',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -665,6 +697,7 @@ function c21_listings_ds_layout_settings_info() {
         5 => 'field_listing_bathrooms',
         6 => 'field_listing_sq_ft_finished',
         7 => 'field_listing_school_district',
+        8 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -676,6 +709,7 @@ function c21_listings_ds_layout_settings_info() {
       'field_listing_bathrooms' => 'ds_content',
       'field_listing_sq_ft_finished' => 'ds_content',
       'field_listing_school_district' => 'ds_content',
+      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

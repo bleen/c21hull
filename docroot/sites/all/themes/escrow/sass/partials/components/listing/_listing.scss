@@ -1,4 +1,5 @@
 .listing {
+  position: relative;
 
   &.node-teaser {
     background-color: white;
@@ -8,6 +9,60 @@
 
     .mls-number {
       text-align: right;
+    }
+
+    .more-info{
+      display: block;
+      position: absolute;
+      bottom: $spacing_default;
+      right: $spacing_default;
+      a {
+        @include sassy-button("matte", 10px, .75 * $font_size_base, $color_green, $color_green_light);
+      }
+    }
+
+    @include breakpoint($bp650) {
+      .mls-number {
+        text-align: left;
+      }
+      .listing-title {
+        font-size: 1.10 * $font_size_title;
+        overflow: auto;
+        white-space: normal;
+      }
+      .photo {
+        width: 50%;
+        float: left;
+        margin-right: $spacing_default;
+      }
+      .list-price {
+        position: absolute;
+        bottom: $spacing_default;
+        left: $spacing_default;
+        top: auto;
+        text-align: left;
+        @include background-image(linear-gradient(left, rgba(white,0.75) 0%,rgba(white,0.75) 33%,rgba(white,0) 66%,rgba(white,0) 100%));
+        width: 50%;
+        margin: 0;
+      }
+      .more-info{
+        a {
+          @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
+        }
+      }
+    }
+    @include breakpoint($bp800) {
+      .listing-title {
+        font-size: 1.25 * $font_size_title;
+      }
+      .stat {
+        font-size: 1.15 * $font_size_base;
+      }
+      .more-info{
+        a {
+          @include sassy-button("matte", 10px, $font_size_title, $color_green, $color_green_light);
+        }
+      }
     }
   }
 

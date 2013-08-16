@@ -16,7 +16,33 @@
   }
 
   li:first-child {
-    margin-top: .45em;
-    margin-bottom: 1.15em;
+    margin: $spacing_default 0 2*$spacing_default 0;
+  }
+
+  @include breakpoint($bp650) {
+    @include float-span(4, 'last');
+
+    li:first-child {
+      margin: 9 * $spacing_default 0 0 0;
+    }
+    li {
+      width: 50%;
+      float: left;
+      margin: 9 * $spacing_default 0 0 0;
+    }
+  }
+
+  @include breakpoint($bp800) {
+    font-size: 1.05 * $font_size_base;
+    .office-phone {
+      font-size: 1.05 * $font_size_title;
+    }
+
+    li:first-child {
+      margin: 5 * $spacing_default 0 0 0;
+    }
+    li {
+      margin: 5 * $spacing_default 0 0 0;
+    }
   }
 }

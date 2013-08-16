@@ -10,10 +10,4 @@
     @include replace-text('../images/c21hull_logo.png');
   }
 
-  @include intrinsic-ratio(3/2, 45%);
-
-  @include breakpoint($bp500) {
-    @include intrinsic-ratio(3/2, 33%, "*", false);
-  }
-
 }
