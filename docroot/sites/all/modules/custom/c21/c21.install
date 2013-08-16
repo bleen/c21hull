@@ -12,7 +12,7 @@ function c21_install() {
   $callback = new stdClass();
 
   $callback->path = 'home';
-  $callback->page_title = t('Homepage');
+  $callback->page_title = '';
   $callback->created = REQUEST_TIME;
   $callback->changed = REQUEST_TIME;
 
