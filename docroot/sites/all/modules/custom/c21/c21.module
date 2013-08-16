@@ -42,14 +42,14 @@ function c21_block_view($delta = '') {
             'class' => array('address', 'dingmans'),
           ),
           '#theme_wrappers' => array('container'),
-          '#markup' => '<span class="street">1869 Route 739</span><span class="city-state-zip">Dingmans Ferry, PA 18328</span><a class="phone" href="tel://18004584855">1-800-458-4855</a><a class="phone" href="tel://5708289591">(570) 828-9591</a>',
+          '#markup' => '<span class="street">1869 Route 739</span><span class="city-state-zip">Dingmans Ferry, PA 18328</span><a class="phone" href="tel:18004584855">1-800-458-4855</a><a class="phone" href="tel:5708289591">(570) 828-9591</a>',
         ),
         'address_milford' => array(
           '#attributes' => array(
             'class' => array('address', 'dingmans'),
           ),
           '#theme_wrappers' => array('container'),
-          '#markup' => '<span class="street">205 E. Harford St.</span><span class="city-state-zip">Milford, PA 18337</span><a class="phone" href="tel://18772969921">1-877-296-9921</a><a class="phone" href="tel://5702969921">(570) 296-9921</a>',
+          '#markup' => '<span class="street">205 E. Harford St.</span><span class="city-state-zip">Milford, PA 18337</span><a class="phone" href="tel:18772969921">1-877-296-9921</a><a class="phone" href="tel:5702969921">(570) 296-9921</a>',
         ),
         'copyright' => array(
           '#attributes' => array(
