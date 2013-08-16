@@ -11,6 +11,31 @@ function escrow_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_page().
+ */
+function escrow_preprocess_page(&$variables) {
+  if (drupal_is_front_page()) {
+    $content = &$variables['page']['content'];
+    $content['#sorted'] = FALSE;
+    $content['search-featured-wrap'] = array(
+      '#weight' => -999,
+      '#theme_wrappers' => array('container'),
+      '#attributes' => array(
+        'class' => array('search-featured-wrap'),
+      ),
+    );
+    if (isset($content['views_-exp-c21_search_listings-page'])) {
+      $content['search-featured-wrap']['views_-exp-c21_search_listings-page'] = $content['views_-exp-c21_search_listings-page'];
+      unset($content['views_-exp-c21_search_listings-page']);
+    }
+    if (isset($content['views_c21_featured_listings-block'])) {
+      $content['search-featured-wrap']['views_c21_featured_listings-block'] = $content['views_c21_featured_listings-block'];
+      unset($content['views_c21_featured_listings-block']);
+    }
+  }
+}
+
+/**
  * Implements hook_preprocess_node().
  */
 function escrow_preprocess_node(&$variables) {
