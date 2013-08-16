@@ -1,6 +1,18 @@
 .listing {
+
+  &.node-teaser {
+    background-color: white;
+    padding: $spacing_default;
+    margin-bottom: $spacing_default;
+    @include border-radius(10px);
+
+    .mls-number {
+      text-align: right;
+    }
+  }
+
   .mls-number {
-    color: $color_gray;
+    color: $color_gray_dark;
     font-size: .75em;
   }
 
@@ -11,6 +23,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-transform: uppercase;
   }
 
   .list-price {
@@ -20,7 +33,7 @@
     padding: $spacing_default;
     margin-bottom: -1 * ($font_size_title + ($spacing_default));
     top: -1 * ($font_size_title + ($spacing_default));
-    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 33%,rgba(255,255,255,0.75) 66%,rgba(255,255,255,0.75) 100%));
+    @include background-image(linear-gradient(left, rgba(white,0) 0%,rgba(white,0) 33%,rgba(white,0.75) 66%,rgba(white,0.75) 100%));
     text-align: right;
     font-weight: bold;
   }
@@ -30,6 +43,11 @@
     border-bottom: 1px dotted $color_gray_light;
     padding: .5 * $spacing_default 0;
     margin-left: $spacing_default;
+
+    .label-inline {
+      color: darken($color_gold, 10%);
+      font-weight: bold;
+    }
   }
 
   .description {

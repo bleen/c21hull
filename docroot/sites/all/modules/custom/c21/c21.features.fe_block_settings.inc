@@ -1,22 +1,22 @@
 <?php
 /**
  * @file
- * c21_listings.features.fe_block_settings.inc
+ * c21.features.fe_block_settings.inc
  */
 
 /**
  * Implements hook_default_fe_block_settings().
  */
-function c21_listings_default_fe_block_settings() {
+function c21_default_fe_block_settings() {
   $export = array();
 
   $export['version'] = '2.0';
 
-  $export['views-964ecad519128c5b59d0f4917f6399da'] = array(
+  $export['views-9cf22433e0efbd8b206c8e4c2edb177c'] = array(
     'cache' => -1,
-    'css_class' => 'recently-added-listings',
+    'css_class' => '',
     'custom' => 0,
-    'delta' => '964ecad519128c5b59d0f4917f6399da',
+    'delta' => '9cf22433e0efbd8b206c8e4c2edb177c',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
@@ -45,11 +45,44 @@ function c21_listings_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-c21_featured_listings-block'] = array(
+  $export['views-b9efce5f9de478ed390efcf7c815f2f5'] = array(
     'cache' => -1,
-    'css_class' => 'featured-listings',
+    'css_class' => '',
     'custom' => 0,
-    'delta' => 'c21_featured_listings-block',
+    'delta' => 'b9efce5f9de478ed390efcf7c815f2f5',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'escrow' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'escrow',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-bdeec0c6a6d8fcdcd6969bf1225f3520'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'bdeec0c6a6d8fcdcd6969bf1225f3520',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
