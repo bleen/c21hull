@@ -2446,8 +2446,8 @@ function c21_listings_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => 1,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 1,
           'thousand_separator' => ',',
         ),
         'type' => 'number_decimal',
@@ -3366,7 +3366,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => 1,
+          'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
         ),
@@ -7322,7 +7322,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => 1,
+          'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => '.',
         ),
