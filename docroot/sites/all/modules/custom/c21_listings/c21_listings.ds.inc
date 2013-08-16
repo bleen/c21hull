@@ -373,13 +373,13 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
         'wrapper' => 'h2',
-        'class' => '',
+        'class' => 'listing-title',
         'ft' => array(),
       ),
     ),
@@ -389,7 +389,7 @@ function c21_listings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'span',
-          'ow-cl' => 'bathrooms',
+          'ow-cl' => 'stat bathrooms',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -402,7 +402,7 @@ function c21_listings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'span',
-          'ow-cl' => 'bedrooms',
+          'ow-cl' => 'stat bedrooms',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -442,7 +442,7 @@ function c21_listings_ds_field_settings_info() {
           'lb' => 'Square Feet',
           'ow' => TRUE,
           'ow-el' => 'span',
-          'ow-cl' => 'square-feet',
+          'ow-cl' => 'stat square-feet',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -659,8 +659,8 @@ function c21_listings_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_listing_mls',
         1 => 'field_listing_featured_photo',
-        2 => 'title',
-        3 => 'field_listing_list_price',
+        2 => 'field_listing_list_price',
+        3 => 'title',
         4 => 'field_listing_bedrooms',
         5 => 'field_listing_bathrooms',
         6 => 'field_listing_sq_ft_finished',
@@ -670,8 +670,8 @@ function c21_listings_ds_layout_settings_info() {
     'fields' => array(
       'field_listing_mls' => 'ds_content',
       'field_listing_featured_photo' => 'ds_content',
-      'title' => 'ds_content',
       'field_listing_list_price' => 'ds_content',
+      'title' => 'ds_content',
       'field_listing_bedrooms' => 'ds_content',
       'field_listing_bathrooms' => 'ds_content',
       'field_listing_sq_ft_finished' => 'ds_content',

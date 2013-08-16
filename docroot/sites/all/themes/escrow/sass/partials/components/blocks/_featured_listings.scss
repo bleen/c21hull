@@ -1,6 +1,15 @@
 #block-views-c21-featured-listings-block {
+  @include clearfix();
+  margin-bottom: 2 * $spacing_large;
+
   header {
     font-size: $font_size_title;
+    font-weight: bold;
+    margin-bottom: $spacing_default;
   }
 
+  .more-link {
+    float: right;
+    margin: .5 * $spacing_default $spacing_default 0 0;
+  }
 }

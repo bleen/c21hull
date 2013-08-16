@@ -6,6 +6,7 @@
 body {
   font-family: 'Muli', 'Hevetica', 'Arial';
   padding: 0 $spacing_default (8 * $spacing_default) $spacing_default;
+  background: $color_gray_light;
 }
 
 a {

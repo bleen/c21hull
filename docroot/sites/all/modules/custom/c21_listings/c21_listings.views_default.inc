@@ -156,6 +156,7 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'slideshow';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['flexslider_views_slideshow']['optionset'] = 'c21_random_slide';
   $handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
   $handler->display->display_options['style_options']['skin_info'] = array(

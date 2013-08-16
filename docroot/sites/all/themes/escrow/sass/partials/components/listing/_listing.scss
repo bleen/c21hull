@@ -1,4 +1,41 @@
 .listing {
+  .mls-number {
+    color: $color_gray;
+    font-size: .75em;
+  }
+
+  .listing-title {
+    font-size: $font_size_base;
+    font-weight: bold;
+    padding: .5 * $spacing_default 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .list-price {
+    font-size: $font_size_title;
+    display: block;
+    position: relative;
+    padding: $spacing_default;
+    margin-bottom: -1 * ($font_size_title + ($spacing_default));
+    top: -1 * ($font_size_title + ($spacing_default));
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 33%,rgba(255,255,255,0.75) 66%,rgba(255,255,255,0.75) 100%));
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .stat {
+    display: block;
+    border-bottom: 1px dotted $color_gray_light;
+    padding: .5 * $spacing_default 0;
+    margin-left: $spacing_default;
+  }
+
+  .description {
+    margin: $spacing_default 0 (2 * $spacing_default) 0;
+  }
+
   .links {
     &.inline {
       text-align: right;
@@ -11,27 +48,6 @@
         @include border-radius();
       }
     }
-  }
-
-  .mls-number {
-    color: #999;
-    font-size: .75em;
-  }
-
-  .list-price {
-    font-size: $font_size_title;
-    display: block;
-    position: relative;
-    padding: $spacing_default;
-    margin-bottom: -1 * (.7 * $font_size_title + (2 * $spacing_default));
-    top: -1 * (.8 * $font_size_title + (2 * $spacing_default));
-    background: rgba(255,255,255,.65);
-    text-align: right;
-    font-weight: bold;
-  }
-
-  .description {
-    margin: $spacing_default 0 (2 * $spacing_default) 0;
   }
 
   .group_statistics, {

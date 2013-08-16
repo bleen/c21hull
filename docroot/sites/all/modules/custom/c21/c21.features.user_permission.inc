@@ -380,20 +380,6 @@ function c21_user_default_permissions() {
     'module' => 'redirect',
   );
 
-  // Exported permission: 'administer responsive image settings'.
-  $permissions['administer responsive image settings'] = array(
-    'name' => 'administer responsive image settings',
-    'roles' => array(),
-    'module' => 'borealis_ri',
-  );
-
-  // Exported permission: 'administer responsive image styles'.
-  $permissions['administer responsive image styles'] = array(
-    'name' => 'administer responsive image styles',
-    'roles' => array(),
-    'module' => 'borealis_ri',
-  );
-
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
