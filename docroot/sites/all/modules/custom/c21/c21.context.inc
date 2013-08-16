@@ -21,6 +21,7 @@ function c21_context_default_contexts() {
       'values' => array(
         '~admin/*' => '~admin/*',
         '~node/*/edit' => '~node/*/edit',
+        '~<front>' => '~<front>',
       ),
     ),
     'sitewide' => array(
@@ -94,17 +95,47 @@ function c21_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'blockify-blockify-logo' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-logo',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
+        'blockify-blockify-tabs' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-tabs',
+          'region' => 'main_prefix',
+          'weight' => '-10',
+        ),
+        'blockify-blockify-messages' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-messages',
+          'region' => 'main_prefix',
+          'weight' => '-9',
+        ),
+        'views--exp-c21_search_listings-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-c21_search_listings-page',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'views-c21_featured_listings-block' => array(
           'module' => 'views',
           'delta' => 'c21_featured_listings-block',
           'region' => 'content',
-          'weight' => '-24',
+          'weight' => '-9',
         ),
         'views-964ecad519128c5b59d0f4917f6399da' => array(
           'module' => 'views',
           'delta' => '964ecad519128c5b59d0f4917f6399da',
           'region' => 'content',
-          'weight' => '-23',
+          'weight' => '-8',
+        ),
+        'c21-c21_footer' => array(
+          'module' => 'c21',
+          'delta' => 'c21_footer',
+          'region' => 'footer',
+          'weight' => '-10',
         ),
       ),
     ),
