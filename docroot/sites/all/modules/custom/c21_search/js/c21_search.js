@@ -10,12 +10,14 @@ Drupal.behaviors.c21SearchForm = {
     sliders.each(function(context) {
       var widget = $(this).siblings('.views-widget');
       widget.find('label').hide();
-      widget.find('input[id$="min"]')
-        .after('<span class="slider-num slider-num-min"></span>')
-        .hide();
-      widget.find('input[id$="max"]')
-        .after('<span class="slider-num slider-num-max"></span>')
-        .hide();
+      widget.find('input[id$="min"]').each(function() {
+        val = $(this).val();
+        $(this).after('<span class="slider-num slider-num-min">' + val + '</span>').hide();
+      });
+      widget.find('input[id$="max"]').each(function() {
+        val = $(this).val();
+        $(this).after('<span class="slider-num slider-num-max">' + val + '</span>').hide();
+      });
 
       $(this).bind("slide", function(event, ui) {
         min = Drupal.c21Search.commaSeparateNumber(ui.values[0]);

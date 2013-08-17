@@ -14,7 +14,12 @@ function escrow_preprocess_html(&$variables) {
  * Implements hook_preprocess_page().
  */
 function escrow_preprocess_page(&$variables) {
+  // Add breakpoints.js.
+  drupal_add_js(drupal_get_path('theme','escrow') . '/js/breakpoints.js', array('scope' => 'footer', 'group' => JS_THEME));
+  drupal_add_js(drupal_get_path('theme','escrow') . '/js/escrow.js', array('scope' => 'footer', 'group' => JS_THEME));
+
   if (drupal_is_front_page()) {
+    // Add a wrapper around searh and featured blocks.
     $content = &$variables['page']['content'];
     $content['#sorted'] = FALSE;
     $content['search-featured-wrap'] = array(
