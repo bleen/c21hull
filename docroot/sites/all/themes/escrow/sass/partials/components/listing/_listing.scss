@@ -64,6 +64,11 @@
         }
       }
     }
+    @include breakpoint($bp1075) {
+      .photo {
+        width: 60%;
+      }
+    }
   }
 
   .mls-number {

@@ -80,7 +80,7 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
       // Add a toggle.
       $form['toggle'] = array(
         '#type' => 'markup',
-        '#markup' => '<div class="toggle">' . t('Search') . '</div>',
+        '#markup' => '<h2 class="toggle">' . t('Search Listings') . '</h2>',
       );
       $element_to_insert['filter-toggle'] = array(
         'value' => 'toggle',

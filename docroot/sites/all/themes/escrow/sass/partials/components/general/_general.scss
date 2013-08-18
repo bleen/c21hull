@@ -13,6 +13,12 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  font-size: $font_size_title;
+  font-weight: bold;
+  margin-bottom: $spacing_default;
+}
+
 #page {
   max-width: 1150px;
   margin: 0 auto;

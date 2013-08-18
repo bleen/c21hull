@@ -1,8 +1,8 @@
 #logo {
   display: block;
-  @include float-span(3, 'first');
-  width: 180px;
-  height: 120px;
+  @include float-span(2, 'first');
+  width: 140px;
+  height: 110px;
   background-size: contain;
   @include replace-text('../images/c21hull_logo.svg');
 
@@ -10,4 +10,9 @@
     @include replace-text('../images/c21hull_logo.png');
   }
 
+  @include breakpoint($bp400) {
+    @include float-span(3, 'first');
+    width: 160px;
+    height: 110px;
+  }
 }

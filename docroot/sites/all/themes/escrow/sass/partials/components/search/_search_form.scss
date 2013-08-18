@@ -8,6 +8,8 @@
   margin-left: -48%;
   padding: 1em;
   z-index: 100;
+  @include border-radius(10px);
+  @include box-shadow(3px 3px 30px 5px darken($color_gray_dark, 25%));
 
   &.open {
     @include transition-property('bottom');
@@ -18,7 +20,11 @@
     @include animation(bounce 2s);
     @include transition-property('bottom');
     @include transition-duration(.35s);
-    bottom: -375px;
+    bottom: -350px;
+
+    h2 {
+      cursor: pointer;
+    }
   }
 
   select {
@@ -26,10 +32,17 @@
   }
 
   div.views-widget-filter-fts_field_listing_list_price,
-  div.views-widget-filter-keyword,
-  div.views-submit-button {
+  div.views-widget-filter-keyword {
     width: 100%;
   }
+
+  div.views-submit-button {
+    float: right;
+    padding: 0;
+    margin-right: 0;
+    min-width: 150px;
+  }
+
   .views-exposed-widget {
     position: relative;
     width: 30%;
@@ -47,6 +60,18 @@
       margin-right: 0;
     }
 
+    &.views-widget-filter-toggle {
+      width: 100%;
+      @include breakpoint($bp650) {
+        display: none;
+      }
+    }
+
+    .form-submit {
+      margin-top: 1.3em;
+      @include sassy-button("matte", 10px, .7 * $font_size_base, $color_green, $color_green_light);
+    }
+
     .slider-num {
       position: absolute;
       bottom: 0;
@@ -58,5 +83,38 @@
     .slider-num-max {
       right: .5em;
     }
+  }
+
+  @include breakpoint($bp650) {
+    &.closed {
+      bottom: -375px;
+    }
+
+    .form-submit {
+      @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
+    }
+  }
+}
+
+.search-featured-wrap .search-form {
+  @include breakpoint($bp650) {
+    border: none;
+    background: #fff;
+    position: static;
+    bottom: 0px;
+    left: auto;
+    width: auto;
+    margin-left: auto;
+    font-size: .85 * $font_size_base;
+    @include box-shadow(0 0 0);
+  }
+
+  @include breakpoint($bp800) {
+    @include float-span(2, 'first');
+    font-size: .65 * $font_size_base;
+  }
+
+  @include breakpoint($bp1075) {
+    font-size: .85 * $font_size_base;
   }
 }

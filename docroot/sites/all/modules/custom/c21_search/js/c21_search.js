@@ -11,11 +11,11 @@ Drupal.behaviors.c21SearchForm = {
       var widget = $(this).siblings('.views-widget');
       widget.find('label').hide();
       widget.find('input[id$="min"]').each(function() {
-        val = $(this).val();
+        val = Drupal.c21Search.commaSeparateNumber($(this).val());
         $(this).after('<span class="slider-num slider-num-min">' + val + '</span>').hide();
       });
       widget.find('input[id$="max"]').each(function() {
-        val = $(this).val();
+        val = Drupal.c21Search.commaSeparateNumber($(this).val());
         $(this).after('<span class="slider-num slider-num-max">' + val + '</span>').hide();
       });
 
@@ -66,14 +66,12 @@ Drupal.c21Search.toggleFormTouch = function () {
   });
 };
 
-// Handle the opening and closing of the form based on a drag gesture.
+// Handle the opening and closing of the form based on click.
 Drupal.c21Search.toggleFormClick = function () {
-  if (!Modernizr.touch) {
-    $('.search-form .toggle').toggle(
-      function() { $('.search-form').removeClass('closed').addClass('open'); },
-      function() { $('.search-form').removeClass('open').addClass('closed'); }
-    );
-  }
+  $('.search-form .toggle').toggle(
+    function() { $('.search-form').removeClass('closed').addClass('open'); },
+    function() { $('.search-form').removeClass('open').addClass('closed'); }
+  );
 };
 
 // Helper function to add commas to numbers.

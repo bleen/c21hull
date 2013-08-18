@@ -3,12 +3,6 @@
   @include clearfix();
   margin-bottom: 2 * $spacing_large;
 
-  header h2 {
-    font-size: $font_size_title;
-    font-weight: bold;
-    margin-bottom: $spacing_default;
-  }
-
   .more-link {
     display: block;
     text-align: center;
@@ -16,6 +10,20 @@
 
     a {
       color: $color_gray_dark;
+    }
+  }
+}
+
+.search-featured-wrap {
+  @include clearfix();
+}
+
+.search-featured-wrap .featured-listings {
+  @include breakpoint($bp800) {
+    @include float-span(4, 'last');
+
+    h2 {
+      display: none;
     }
   }
 }
