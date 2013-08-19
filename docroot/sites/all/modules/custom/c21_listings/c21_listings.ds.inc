@@ -46,6 +46,40 @@ function c21_listings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|agent|micro_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'agent';
+  $ds_fieldsetting->view_mode = 'micro_teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
+    'field_agent_photo' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'headshot',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|agent|micro_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|agent|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'agent';
@@ -94,7 +128,6 @@ function c21_listings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'stats-wrapper acreage',
@@ -114,6 +147,10 @@ function c21_listings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
+          'lb' => 'Contact Our Agent(s)',
+          'lb-el' => 'h3',
+          'lb-cl' => 'agents-title',
+          'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'aside',
           'ow-cl' => 'agents',
@@ -133,7 +170,6 @@ function c21_listings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'stats-wrapper bathrooms',
@@ -153,7 +189,6 @@ function c21_listings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'stats-wrapper bedrooms ',
@@ -218,7 +253,6 @@ function c21_listings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'stats-wrapper garage',
@@ -326,7 +360,6 @@ function c21_listings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'stats-wrapper year-built',
@@ -546,6 +579,36 @@ function c21_listings_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
   );
   $export['node|agent|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|agent|micro_teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'agent';
+  $ds_layout->view_mode = 'micro_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_agent_photo',
+        1 => 'title',
+        2 => 'field_agent_phone_number',
+      ),
+    ),
+    'fields' => array(
+      'field_agent_photo' => 'ds_content',
+      'title' => 'ds_content',
+      'field_agent_phone_number' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+  );
+  $export['node|agent|micro_teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

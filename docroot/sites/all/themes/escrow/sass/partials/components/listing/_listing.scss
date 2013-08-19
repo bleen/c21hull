@@ -11,6 +11,18 @@
       text-align: right;
     }
 
+    .stat {
+      display: block;
+      border-bottom: 1px dotted $color_gray_light;
+      padding: .5 * $spacing_default 0;
+      margin-left: $spacing_default;
+
+      .label-inline {
+        color: darken($color_gold, 10%);
+        font-weight: bold;
+      }
+    }
+
     .more-info{
       display: block;
 
@@ -95,15 +107,50 @@
     font-weight: bold;
   }
 
-  .stat {
-    display: block;
-    border-bottom: 1px dotted $color_gray_light;
-    padding: .5 * $spacing_default 0;
-    margin-left: $spacing_default;
+  .group_listing_statistics,
+  .group_listing_location_details {
+    padding: $spacing_default;
+    margin: $spacing_default;
+    background: white;
+    border: 1px solid $color_gray;
+    @include border-radius();
 
-    .label-inline {
-      color: darken($color_gold, 10%);
-      font-weight: bold;
+    .stats-wrapper,
+    .detail-wrapper {
+      padding-bottom: $spacing_default;
+      margin-bottom: $spacing_default;
+      border-bottom: 1px dotted $color_gray;
+
+      .label-inline {
+        color: darken($color_gold, 10%);
+        font-weight: bold;
+        width: 50%;
+        margin-right: 1%;
+        text-align: right;
+      }
+      .stat,
+      .detail {
+        display: inline-block;
+        text-transform: capitalize;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 49%;
+
+        a {
+          color: $color_gray_dark;
+          text-decoration: underline;
+        }
+        a:hover {
+          color: $color_green;
+        }
+      }
+    }
+
+    & div:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -113,6 +160,7 @@
 
   .links {
     &.inline {
+      margin: $spacing_default 0;
       text-align: right;
 
       a {
@@ -125,45 +173,63 @@
     }
   }
 
-  .group_statistics, {
-    @include float-span(3, 'first');
-
-    .stat {
-      diaplay: block;
-      width: 3em;
-      white-space: nowrap;
-      float: left;
-    }
-  }
-  .group_location_details {
-    @include float-span(3, 'last');
-  }
-
   .agents {
-    .phone-number {
-      white-space: nowrap;
+    margin: 2 * $spacing_default 0;
+
+    .agent {
+      background: white;
+      border: 1px solid $color_gray;
+      border-left: 5px solid $color_gold;
+      padding: $spacing_default;
+      margin: $spacing_default 0;
+
+      .headshot {
+        @include float-span(2, 'first');
+        margin: 0 $spacing_default;
+      }
+      .phone-number {
+        white-space: nowrap;
+      }
     }
-
-    @include float-span(6, 'last');
-
-    .headshot {
-      @include float-span(2, 'first');
+    .agents-title {
+      font-weight: bold;
+      font-size: $font_size_base;
     }
   }
 
   @include breakpoint($bp500) {
     .group_statistics {
-      @include float-span(2, 'first');
+      margin: $spacing_default 0;
+      @include float-span(3);
     }
     .group_location_details {
-      @include float-span(2);
+      margin: $spacing_default 0;
+      @include float-span(3, 'last');
     }
     .agents {
-      @include float-span(2, 'last');
-
-      .headshot {
-        width: 25%;
+      @include float-span(6, 'last');
+    }
+  }
+  @include breakpoint($bp650) {
+    .list-price {
+      clear: both;
+      @include background-image(linear-gradient(left, rgba(white,0.75) 0%,rgba(white,0.75) 33%,rgba(white,0) 66%,rgba(white,0) 100%));
+      text-align: left;
+    }
+    .agents {
+      .agent {
+        @include float-span(3);
       }
+    }
+  }
+  @include breakpoint($bp800) {
+    .featured-photo {
+      @include float-span(4, 'first');
+    }
+  }
+  @include breakpoint($bp1075) {
+    .featured-photo {
+      @include float-span(5, 'first');
     }
   }
 
@@ -189,21 +255,4 @@
   }
 }
 
-.node-agent {
-  margin-bottom: 4 * $spacing_default;
-
-  .headshot {
-    padding: $spacing_default 0;
-  }
-
-  .full-name {
-    font-weight: bold;
-    font-size: $font_size_title;
-  }
-
-  .phone-number {
-    display: block;
-    margin: $spacing_default 0;
-  }
-}
 
