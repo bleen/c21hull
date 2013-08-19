@@ -11,6 +11,9 @@
     a {
       color: $color_gray_dark;
     }
+    a:hover {
+      color: black;
+    }
   }
 }
 
@@ -22,7 +25,7 @@
   @include breakpoint($bp800) {
     @include float-span(4, 'last');
 
-    h2 {
+    header h2 {
       display: none;
     }
   }

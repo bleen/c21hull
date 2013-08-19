@@ -13,10 +13,11 @@
 
     .more-info{
       display: block;
-      position: absolute;
-      bottom: $spacing_default;
-      right: $spacing_default;
+
       a {
+        margin-top: $spacing_default;
+        width: 100%;
+        text-align: center;
         @include sassy-button("matte", 10px, .75 * $font_size_base, $color_green, $color_green_light);
       }
     }
@@ -24,11 +25,6 @@
     @include breakpoint($bp650) {
       .mls-number {
         text-align: left;
-      }
-      .listing-title {
-        font-size: 1.10 * $font_size_title;
-        overflow: auto;
-        white-space: normal;
       }
       .photo {
         width: 50%;
@@ -46,6 +42,11 @@
         margin: 0;
       }
       .more-info{
+        position: absolute;
+        bottom: $spacing_default;
+        right: $spacing_default;
+        width: auto;
+
         a {
           @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
         }
@@ -53,20 +54,16 @@
     }
     @include breakpoint($bp800) {
       .listing-title {
-        font-size: 1.25 * $font_size_title;
-      }
-      .stat {
-        font-size: 1.15 * $font_size_base;
-      }
-      .more-info{
-        a {
-          @include sassy-button("matte", 10px, $font_size_title, $color_green, $color_green_light);
-        }
+        white-space: normal;
+        overflow: auto;
       }
     }
     @include breakpoint($bp1075) {
       .photo {
         width: 60%;
+      }
+      .listing-title {
+        font-size: $font_size_title;
       }
     }
   }

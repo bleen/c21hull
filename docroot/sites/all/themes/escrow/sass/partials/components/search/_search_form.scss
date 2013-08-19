@@ -15,15 +15,28 @@
     @include transition-property('bottom');
     @include transition-duration(.35s);
     bottom: -1px;
+
+    @include breakpoint($bp650) {
+      @include transition-duration(0s);
+    }
   }
   &.closed {
     @include animation(bounce 2s);
     @include transition-property('bottom');
     @include transition-duration(.35s);
-    bottom: -350px;
+    bottom: -340px;
 
     h2 {
       cursor: pointer;
+    }
+
+    @include breakpoint($bp650) {
+      @include transition-duration(0s);
+      @include animation(bounce 0s);
+
+      h2 {
+        cursor: auto;
+      }
     }
   }
 
@@ -49,6 +62,7 @@
     padding: 0 0 1.25em 0;
     margin-bottom: .25em;
     margin-right: 5%;
+    font-size: .75 * $font_size_base;
 
     &.views-widget-filter-im_field_listing_township,
     &.views-widget-filter-im_field_listing_school_district {
@@ -60,16 +74,22 @@
       margin-right: 0;
     }
 
+    &.views-widget-filter-fts_field_listing_list_price {
+      margin-bottom: 1em;
+    }
+
     &.views-widget-filter-toggle {
       width: 100%;
+
       @include breakpoint($bp650) {
-        display: none;
+        padding-bottom: 0;
       }
     }
 
     .form-submit {
-      margin-top: 1.3em;
-      @include sassy-button("matte", 10px, .7 * $font_size_base, $color_green, $color_green_light);
+      margin-top: $spacing_default;
+      font-size: 1em;
+      @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
     }
 
     .slider-num {
@@ -86,13 +106,10 @@
   }
 
   @include breakpoint($bp650) {
-    &.closed {
-      bottom: -375px;
-    }
-
-    .form-submit {
-      @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
-    }
+    font-size: $font_size_base;
+  }
+  @include breakpoint($bp800) {
+    font-size: .75 * $font_size_base;
   }
 }
 
@@ -105,16 +122,18 @@
     left: auto;
     width: auto;
     margin-left: auto;
-    font-size: .85 * $font_size_base;
     @include box-shadow(0 0 0);
+
+    .views-exposed-widget:except(.views-submit-button) {
+      font-size: .65 * $font_size_base;
+    }
   }
 
   @include breakpoint($bp800) {
     @include float-span(2, 'first');
-    font-size: .65 * $font_size_base;
+    background: none;
   }
 
   @include breakpoint($bp1075) {
-    font-size: .85 * $font_size_base;
   }
 }
