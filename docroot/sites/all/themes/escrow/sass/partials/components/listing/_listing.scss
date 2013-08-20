@@ -251,6 +251,29 @@
 
 }
 
+.view-page-listing-teasers {
+  @include breakpoint($bp800) {
+    margin: 1em 0 0 2em;
+    @include clearfix();
+
+    .views-row {
+      @include float-span(5);
+    }
+    .pager {
+      clear: both;
+    }
+  }
+
+  @include breakpoint($bp1075) {
+    .views-row {
+      @include float-span(4);
+      clear: none;
+    }
+  }
+}
+
+
+
 .entity-drealty-listing {
   .photos {
     max-height: 25em;
