@@ -28,6 +28,8 @@ APACHESOLR_VIEWS
       PATCH: https://drupal.org/node/1807028#comment-7597271
   * Fixing a strict warning error that appears in php5.4:
       PATCH: https://drupal.org/node/2036815 (original post)
+  * Fixing an "Undefined property" error:
+      PATCH: https://drupal.org/node/1761432#comment-6491348
 
 AURORA
   * Changing the default viewport meta tag to use 1.0 instead of just 1 and
