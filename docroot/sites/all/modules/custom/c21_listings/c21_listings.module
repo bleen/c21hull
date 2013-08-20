@@ -343,5 +343,3 @@ function _c21_format_phone_number_link($phone_number) {
 
   return 'tel:' . $formatted_phone_number;
 }
-
-
