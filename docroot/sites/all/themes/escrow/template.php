@@ -78,9 +78,10 @@ function escrow_preprocess_node(&$variables) {
 function escrow_preprocess_views_view_field(&$variables) {
   $view = $variables['view'];
   $row = $variables['row'];
+  $field = $variables['field'];
   $view_mode = 'teaser';
 
-  if (strpos($view->base_table, 'apachesolr') === 0 && !empty($row->entity_id) && !empty($row->entity_type) && !empty($row->bundle)) {
+  if (strpos($view->base_table, 'apachesolr') === 0 && $field->field_alias == 'entity_id' && !empty($row->entity_id) && !empty($row->entity_type)) {
     try {
       $entities = entity_load($row->entity_type, array($row->entity_id));
       if (empty($entities)) {
