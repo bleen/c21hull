@@ -1,0 +1,24 @@
+.pager {
+  text-align: center;
+
+  li {
+    display: inline;
+  }
+  li a {
+    display: inline-block;
+    padding: $spacing_default;
+    border: 1px solid $color_gray;
+    @include border-radius();
+
+    &:hover {
+      border: 1px solid $color_gray_dark;
+      @include background-image(linear-gradient(top, rgba($color_gray_dark,1) 0%,rgba($color_gray,1) 100%));
+      color: white;
+    }
+  }
+  .pager-current {
+    display: inline-block;
+    padding: $spacing_default;
+    color: $color_gold;
+  }
+}
