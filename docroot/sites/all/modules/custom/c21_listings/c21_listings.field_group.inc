@@ -118,6 +118,42 @@ function c21_listings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_details|node|listing|full';
+  $field_group->group_name = 'group_listing_details';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Listing Details',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_listing_description',
+      1 => 'field_listing_featured_photo',
+      2 => 'field_listing_list_price',
+      3 => 'field_listing_mls',
+      4 => 'field_listing_photos',
+      5 => 'field_listing_tags',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Listing Details',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_details|node|listing|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_listing_general_info|node|listing|form';
   $field_group->group_name = 'group_listing_general_info';
   $field_group->entity_type = 'node';
@@ -220,7 +256,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location Details',
-    'weight' => '8',
+    'weight' => '3',
     'children' => array(
       0 => 'field_listing_development',
       1 => 'field_listing_school_district',
@@ -455,7 +491,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Statistics',
-    'weight' => '7',
+    'weight' => '2',
     'children' => array(
       0 => 'field_listing_acreage',
       1 => 'field_listing_bathrooms',

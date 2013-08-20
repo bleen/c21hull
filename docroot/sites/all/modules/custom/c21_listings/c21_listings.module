@@ -196,7 +196,9 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
  * Implements hook_field_group_build_pre_render_alter().
  */
 function c21_listings_field_group_build_pre_render_alter(&$element) {
-  $element['group_listing_details']['group_listing_measurements']['group_listing_rooms']['#theme'][] = 'c21_listings_render_rooms_group';
+  if (isset($element['#node_edit_form']) && $element['#node_edit_form']) {
+    $element['group_listing_details']['group_listing_measurements']['group_listing_rooms']['#theme'][] = 'c21_listings_render_rooms_group';
+  }
 }
 
 /**

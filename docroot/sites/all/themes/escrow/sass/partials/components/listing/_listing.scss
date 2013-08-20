@@ -170,6 +170,10 @@
         color: #fff;
         @include border-radius();
       }
+
+      @include breakpoint($bp800) {
+        text-align: left;
+      }
     }
   }
 
@@ -185,7 +189,7 @@
 
       .headshot {
         @include float-span(2, 'first');
-        margin: 0 $spacing_default;
+        margin: 0 $spacing_default 0 0;
       }
       .phone-number {
         white-space: nowrap;
@@ -223,14 +227,26 @@
     }
   }
   @include breakpoint($bp800) {
-    .featured-photo {
-      @include float-span(4, 'first');
+    .group-listing-details {
+      @include float-span(4);
     }
-  }
-  @include breakpoint($bp1075) {
-    .featured-photo {
-      @include float-span(5, 'first');
+    .group-listing-statistics {
+      @include float-span(2, 'last');
     }
+    .group-listing-location-details {
+      @include float-span(2, 'last');
+    }
+    .agents {
+      @include float-span(2, 'last');
+      .agent {
+        @include float-span(6);
+        .agents-title {
+          font-weight: bold;
+          font-size: .7 * $font_size_base;
+        }
+      }
+    }
+
   }
 
 }
