@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Implements hook_preprocess_html().
+ * Implements template_preprocess_html().
  */
 function escrow_preprocess_html(&$variables) {
   $environment = variable_get('hosting_environment', '');
@@ -11,7 +11,7 @@ function escrow_preprocess_html(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_page().
+ * Implements template_preprocess_page().
  */
 function escrow_preprocess_page(&$variables) {
   // Add breakpoints.js.
@@ -41,7 +41,7 @@ function escrow_preprocess_page(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_node().
+ * Implements template_preprocess_node().
  */
 function escrow_preprocess_node(&$variables) {
   switch ($variables['type']) {
@@ -73,7 +73,19 @@ function escrow_preprocess_node(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_vies_view_field().
+ * Implements template_preprocess_entity().
+ */
+function escrow_preprocess_entity(&$variables) {
+  switch ($variables['entity_type']) {
+    case 'drealty_listing':
+      $variables['classes_array'][] = 'listing';
+      drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
+      break;
+  }
+}
+
+/**
+ * Implements template_preprocess_vies_view_field().
  */
 function escrow_preprocess_views_view_field(&$variables) {
   $view = $variables['view'];
