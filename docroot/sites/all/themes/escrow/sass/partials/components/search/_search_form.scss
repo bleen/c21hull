@@ -26,18 +26,14 @@
     @include transition-duration(.35s);
     bottom: -340px;
 
-    h2 {
-      cursor: pointer;
-    }
-
     @include breakpoint($bp650) {
       @include transition-duration(0s);
       @include animation(bounce 0s);
-
-      h2 {
-        cursor: auto;
-      }
     }
+  }
+
+  h2 {
+    cursor: pointer;
   }
 
   select {
@@ -107,6 +103,10 @@
 
   @include breakpoint($bp650) {
     font-size: $font_size_base;
+
+    h2 {
+      cursor: auto;
+    }
   }
   @include breakpoint($bp800) {
     font-size: .75 * $font_size_base;
