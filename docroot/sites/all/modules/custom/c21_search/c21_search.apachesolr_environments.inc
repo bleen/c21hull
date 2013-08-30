@@ -20,10 +20,12 @@ function c21_search_apachesolr_environments() {
     'apachesolr_index_last' => array(),
   );
   $environment->index_bundles = array(
+    'drealty_listing' => array(
+      0 => 'mls_residential_listing',
+    ),
     'node' => array(
       0 => 'listing',
-      1 => 'aggregation_page_detail',
-      2 => 'page',
+      1 => 'page',
     ),
   );
   $export['opensolr'] = $environment;
