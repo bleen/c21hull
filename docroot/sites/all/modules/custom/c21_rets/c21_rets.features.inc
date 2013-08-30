@@ -193,7 +193,7 @@ function c21_rets_default_drealty_listing_type() {
         "entity_types" : [ "drealty_listing" ],
         "foreign keys" : { "fid" : { "table" : "file_managed", "columns" : { "fid" : "fid" } } },
         "indexes" : { "fid" : [ "fid" ] },
-        "settings" : { "default_image" : 0, "uri_scheme" : "public" },
+        "settings" : { "uri_scheme" : "public", "default_image" : 0 },
         "translatable" : "0",
         "field_name" : "field_mls_photos",
         "type" : "image",
@@ -1069,41 +1069,42 @@ function c21_rets_default_drealty_listing_type() {
         "label" : "Photos",
         "required" : 0,
         "settings" : {
-          "alt_field" : 0,
-          "custom_add_another" : "",
-          "custom_remove" : "",
-          "default_image" : 0,
           "file_directory" : "mls",
           "file_extensions" : "png gif jpg jpeg",
           "max_filesize" : "",
           "max_resolution" : "",
           "min_resolution" : "",
+          "alt_field" : 0,
           "title_field" : 0,
+          "default_image" : "58876",
+          "custom_add_another" : "",
+          "custom_remove" : "",
           "user_register_form" : false
         },
         "widget" : {
-          "active" : 1,
+          "weight" : 2,
+          "type" : "image_image",
           "module" : "image",
+          "active" : 1,
           "settings" : {
+            "progress_indicator" : "throbber",
+            "preview_image_style" : "thumbnail",
             "filefield_sources" : {
               "filefield_sources" : {
-                "attach" : 0,
-                "clipboard" : 0,
+                "upload" : "upload",
                 "plupload" : 0,
-                "reference" : 0,
                 "remote" : 0,
-                "upload" : "upload"
+                "clipboard" : 0,
+                "reference" : 0,
+                "attach" : 0
               },
-              "source_attach" : { "absolute" : 0, "attach_mode" : "move", "path" : "file_attach" },
+              "source_attach" : { "path" : "file_attach", "absolute" : "0", "attach_mode" : "move" },
               "source_imce" : { "imce_mode" : 0 },
-              "source_reference" : { "autocomplete" : 0 }
-            },
-            "preview_image_style" : "thumbnail",
-            "progress_indicator" : "throbber"
-          },
-          "type" : "image_image",
-          "weight" : 2
+              "source_reference" : { "autocomplete" : "0" }
+            }
+          }
         },
+        "ds_extras_field_template" : "",
         "id" : "186",
         "field_id" : "178",
         "field_name" : "field_mls_photos",
