@@ -1,4 +1,4 @@
-<?php 
+<?php
 // $Id: node_embed.module,v 1.6 2011/02/07 17:03:47 jec006 Exp $
 
 /**
@@ -47,11 +47,11 @@ function node_embed_filter_node_embed_process($text, $filter, $format, $langcode
  * Tips callback for hook_filter
  */
 function node_embed_filter_node_embed_tips($filter, $format, $long) {
-  
+
   return t('[[nid:123]] - Insert a node content');
 
 } // node_embed_filter_node_embed_tips
-  
+
 /**
  * Provides the replacement html to be rendered in place of the embed code.
  * Does not handle nested embeds.
@@ -60,13 +60,13 @@ function node_embed_filter_node_embed_tips($filter, $format, $long) {
  *    numeric node id that has been captured by preg_replace_callback
  * @return
  *    The rendered HTML replacing the embed code
- */ 
+ */
 function _node_make_replacements($matches) {
 
   $node = node_load($matches[1]);
-  
+
   if ($node == FALSE || !node_access('view', $node) || !$node->status) {
-    
+
     return "[[nid:{$matches[1]}]]";
 
   } // if
@@ -96,7 +96,7 @@ function _node_make_replacements($matches) {
  * This is where we add our default template for the fckeditor view page template.
  */
 function node_embed_theme_registry_alter(&$theme_registry) {
-  
+
   //Add 'html--ckeditor-node-embed.tpl.php' template file
   $theme_registry['html__ckeditor_node_embed'] = Array();
   $theme_registry['html__ckeditor_node_embed']['template'] = 'html--ckeditor-node-embed';
@@ -118,7 +118,7 @@ function node_embed_theme_registry_alter(&$theme_registry) {
   $theme_registry['page__ckeditor_node_embed']['theme path'] = path_to_theme();
   $theme_registry['page__ckeditor_node_embed']['preprocess functions'] = Array();
   $theme_registry['page__ckeditor_node_embed']['process functions'] = Array();
-  
+
 } // node_embed_theme_registry_alter
 
 /**
@@ -150,11 +150,11 @@ function node_embed_views_pre_render(&$view) {
 function node_embed_views_default_views() {
 
   $views = array();
-  
+
   if (module_exists('ckeditor') || module_exists('wysiwyg')) {
 
     $pathCK = drupal_get_path('module', 'node_embed') . '/ckeditor/ckeditor_node_embed.view.inc';
-    include_once($pathCK);
+    include $pathCK;
     $views[$view->name] = $view;
 
   } // if
@@ -199,7 +199,7 @@ function node_embed_validate($node, $form) {
 
     $nid = $form['values']['nid'];
 
-    $needle = "[[nid:{$nid}]]";    
+    $needle = "[[nid:{$nid}]]";
 
     $num = 0;
     $language = (isset($form['values']['language']) && $form['values']['language']) ? $form['values']['language'] : LANGUAGE_NONE;
@@ -207,11 +207,11 @@ function node_embed_validate($node, $form) {
     while (isset($form['values']['body'][$language][$num])) {
 
       $found = strpos($form['values']['body'][$form['values']['language']][$num]['value'], $needle);
-  
+
       if ($found == TRUE) {
         form_set_error('edit-body', t('A node is not allowed to embed in itself.'));
       } // if
-      
+
       $num++;
 
     } // while
@@ -247,7 +247,7 @@ function node_embed_wysiwyg_include_directory($type) {
  */
 function node_embed_init() {
 
-	drupal_add_css(drupal_get_path('module', 'node_embed') . '/plugins/node_embed/node_embed.css');	
+	drupal_add_css(drupal_get_path('module', 'node_embed') . '/plugins/node_embed/node_embed.css');
 
 } // node_embed_init
 
