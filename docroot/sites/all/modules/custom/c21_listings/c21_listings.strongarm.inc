@@ -251,6 +251,9 @@ function c21_listings_strongarm() {
         'custom_settings' => FALSE,
       ),
       'micro_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'node_embed' => array(
         'custom_settings' => FALSE,
       ),
     ),

@@ -1,7 +1,8 @@
 .listing {
   position: relative;
 
-  &.node-teaser {
+  &.view-mode-teaser,
+  &.view-mode-micro_teaser {
     background-color: white;
     padding: $spacing_default;
     margin-bottom: $spacing_default;
@@ -53,7 +54,7 @@
         width: 50%;
         margin: 0;
       }
-      .more-info{
+      .more-info {
         position: absolute;
         bottom: $spacing_default;
         right: $spacing_default;
@@ -77,6 +78,13 @@
       .listing-title {
         font-size: $font_size_title;
       }
+    }
+  }
+
+  &.view-mode-micro_teaser {
+    @include breakpoint($bp800) {
+      max-width: 75%;
+      margin: $spacing_default auto;
     }
   }
 

@@ -24,7 +24,7 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => 1,
+          'prefix_suffix' => 0,
           'scale' => 2,
           'thousand_separator' => ',',
         ),
@@ -104,7 +104,7 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => 1,
+          'prefix_suffix' => 0,
           'scale' => 1,
           'thousand_separator' => ',',
         ),
@@ -134,7 +134,7 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => 1,
+          'prefix_suffix' => 0,
           'scale' => 1,
           'thousand_separator' => ',',
         ),
@@ -190,7 +190,7 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => 1,
+          'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
         ),
@@ -432,7 +432,7 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => 1,
+          'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
         ),
@@ -1021,8 +1021,9 @@ function c21_rets_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 0,
       ),
     ),
@@ -1101,8 +1102,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
+          'prefix_suffix' => 0,
+          'scale' => 0,
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',

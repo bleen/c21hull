@@ -31,7 +31,7 @@ function c21_rets_field_group_info() {
     'format_settings' => array(
       'label' => 'Location Details',
       'instance_settings' => array(
-        'classes' => 'group_location_details',
+        'classes' => 'group_listing_details',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -56,9 +56,9 @@ function c21_rets_field_group_info() {
     'label' => 'Statistics',
     'weight' => '3',
     'children' => array(
-      0 => 'field_mls_bedrooms',
+      0 => 'field_mls_acreage',
       1 => 'field_mls_bathrooms',
-      2 => 'field_mls_acreage',
+      2 => 'field_mls_bedrooms',
       3 => 'field_mls_garage',
       4 => 'field_mls_year_built',
     ),
@@ -66,7 +66,7 @@ function c21_rets_field_group_info() {
     'format_settings' => array(
       'label' => 'Statistics',
       'instance_settings' => array(
-        'classes' => 'group_statistics',
+        'classes' => 'group_listing_statistics',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
