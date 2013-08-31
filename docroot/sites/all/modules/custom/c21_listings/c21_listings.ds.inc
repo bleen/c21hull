@@ -498,6 +498,277 @@ function c21_listings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|listing|print';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'listing';
+  $ds_fieldsetting->view_mode = 'print';
+  $ds_fieldsetting->settings = array(
+    'listing_measurements_grid' => array(
+      'weight' => '24',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_listing_acreage' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_additional_bldg' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_agent' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-el' => 'div',
+          'lb-cl' => 'field-label',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field field-name-field-listing-agent field-type-text field-label-inline inline',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-items',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_basement' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_decks' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_dues' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_fireplace' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_floors' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_garage' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_heat' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_id_prefix' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-el' => 'div',
+          'lb-cl' => 'field-label',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field field-name-field-listing-id field-type-text field-label-inline inline',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-items',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_insulation' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_list_price' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_mls' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_personal_property' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_porch' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_school_district' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_sewage' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_siding' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_sq_ft_above' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+          'lb' => 'Sq. Ft. Above',
+        ),
+      ),
+    ),
+    'field_listing_sq_ft_below' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+          'lb' => 'Sq. Ft. Below',
+        ),
+      ),
+    ),
+    'field_listing_sq_ft_finished' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => 'Sq. Ft. Finished',
+          'lb-el' => 'div',
+          'lb-cl' => 'field-label',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field field-name-field-listing-sq-ft-finished field-type-number-integer field-label-inline inline',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-items',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_taxes' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_walls' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_water' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_windows' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_year_built' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_zoning' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+  );
+  $export['node|listing|print'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|listing|search_result';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'listing';
@@ -865,6 +1136,100 @@ function c21_listings_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
   );
   $export['node|listing|micro_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|listing|print';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'listing';
+  $ds_layout->view_mode = 'print';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_listing_id_prefix',
+        1 => 'field_listing_mls',
+        2 => 'field_listing_agent',
+        3 => 'group_print_general_info',
+        4 => 'field_listing_list_price',
+        5 => 'group_print_building_info',
+        6 => 'field_listing_year_built',
+        7 => 'field_listing_acreage',
+        8 => 'field_listing_sewage',
+        9 => 'field_listing_taxes',
+        10 => 'field_listing_dues',
+        11 => 'field_listing_water',
+        12 => 'field_listing_heat',
+        13 => 'field_listing_zoning',
+        14 => 'field_listing_school_district',
+        15 => 'field_listing_insulation',
+        16 => 'field_listing_siding',
+        17 => 'field_listing_fireplace',
+        18 => 'field_listing_porch',
+        19 => 'field_listing_decks',
+        20 => 'field_listing_garage',
+        21 => 'field_listing_basement',
+        22 => 'field_listing_windows',
+        23 => 'field_listing_floors',
+        24 => 'field_listing_walls',
+        25 => 'field_listing_personal_property',
+        26 => 'field_listing_additional_bldg',
+        27 => 'field_listing_sq_ft_above',
+        28 => 'field_listing_sq_ft_below',
+        29 => 'field_listing_sq_ft_finished',
+        30 => 'listing_measurements_grid',
+        31 => 'field_listing_featured_photo',
+        32 => 'field_listing_photos',
+      ),
+    ),
+    'fields' => array(
+      'field_listing_id_prefix' => 'ds_content',
+      'field_listing_mls' => 'ds_content',
+      'field_listing_agent' => 'ds_content',
+      'group_print_general_info' => 'ds_content',
+      'field_listing_list_price' => 'ds_content',
+      'group_print_building_info' => 'ds_content',
+      'field_listing_year_built' => 'ds_content',
+      'field_listing_acreage' => 'ds_content',
+      'field_listing_sewage' => 'ds_content',
+      'field_listing_taxes' => 'ds_content',
+      'field_listing_dues' => 'ds_content',
+      'field_listing_water' => 'ds_content',
+      'field_listing_heat' => 'ds_content',
+      'field_listing_zoning' => 'ds_content',
+      'field_listing_school_district' => 'ds_content',
+      'field_listing_insulation' => 'ds_content',
+      'field_listing_siding' => 'ds_content',
+      'field_listing_fireplace' => 'ds_content',
+      'field_listing_porch' => 'ds_content',
+      'field_listing_decks' => 'ds_content',
+      'field_listing_garage' => 'ds_content',
+      'field_listing_basement' => 'ds_content',
+      'field_listing_windows' => 'ds_content',
+      'field_listing_floors' => 'ds_content',
+      'field_listing_walls' => 'ds_content',
+      'field_listing_personal_property' => 'ds_content',
+      'field_listing_additional_bldg' => 'ds_content',
+      'field_listing_sq_ft_above' => 'ds_content',
+      'field_listing_sq_ft_below' => 'ds_content',
+      'field_listing_sq_ft_finished' => 'ds_content',
+      'listing_measurements_grid' => 'ds_content',
+      'field_listing_featured_photo' => 'ds_content',
+      'field_listing_photos' => 'ds_content',
+    ),
+    'limit' => array(
+      'field_listing_agent' => '1',
+      'field_listing_school_district' => '1',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+  );
+  $export['node|listing|print'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

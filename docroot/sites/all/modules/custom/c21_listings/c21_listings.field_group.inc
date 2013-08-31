@@ -572,5 +572,121 @@ function c21_listings_field_group_info() {
   );
   $export['group_listing_transaction|node|listing|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_print_building_info|node|listing|print';
+  $field_group->group_name = 'group_print_building_info';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'print';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Building Info',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_listing_additional_bldg',
+      1 => 'field_listing_basement',
+      2 => 'field_listing_decks',
+      3 => 'field_listing_fireplace',
+      4 => 'field_listing_floors',
+      5 => 'field_listing_garage',
+      6 => 'field_listing_heat',
+      7 => 'field_listing_insulation',
+      8 => 'field_listing_personal_property',
+      9 => 'field_listing_porch',
+      10 => 'field_listing_sewage',
+      11 => 'field_listing_siding',
+      12 => 'field_listing_sq_ft_above',
+      13 => 'field_listing_sq_ft_below',
+      14 => 'field_listing_sq_ft_finished',
+      15 => 'field_listing_walls',
+      16 => 'field_listing_water',
+      17 => 'field_listing_windows',
+      18 => 'field_listing_year_built',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Building Info',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_print_building_info|node|listing|print'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_print_general_info|node|listing|print';
+  $field_group->group_name = 'group_print_general_info';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'print';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'General Info',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_listing_acreage',
+      1 => 'field_listing_dues',
+      2 => 'field_listing_list_price',
+      3 => 'field_listing_school_district',
+      4 => 'field_listing_taxes',
+      5 => 'field_listing_zoning',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'General Info',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_print_general_info|node|listing|print'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_print_measurements|node|listing|print';
+  $field_group->group_name = 'group_print_measurements';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'print';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Measurements',
+    'weight' => '24',
+    'children' => array(
+      0 => 'listing_measurements_grid',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Measurements',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_print_measurements|node|listing|print'] = $field_group;
+
   return $export;
 }

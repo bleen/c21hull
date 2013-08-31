@@ -46,8 +46,16 @@ function escrow_preprocess_page(&$variables) {
 function escrow_preprocess_node(&$variables) {
   switch ($variables['type']) {
     case 'listing':
+      // Add JS and CSS if needed.
       $variables['classes_array'][] = 'listing';
       drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
+      if ($variables['view_mode'] == 'print') {
+        drupal_add_css(path_to_theme() . '/stylesheets/printer-friendly.css');
+      }
+
+      // Handle preprocess fields.
+      $grid = _escrow_measurements_grid($variables['node']);
+      $variables['listing_measurements_grid'] = drupal_render($grid);
       break;
 
     case 'agent':
@@ -110,5 +118,50 @@ function escrow_preprocess_views_view_field(&$variables) {
       $variables['output'] = '';
     }
   }
+}
 
+/**
+ * Returns a render array of the measurements grid for a given listing.
+ *
+ * @param object $node
+ *   A node object.
+ *
+ * @return array
+ */
+function _escrow_measurements_grid($node) {
+  $grid = array();
+
+  if ($node->type == 'listing') {
+    $floors = c21_listings_get_floors();
+    $rooms = c21_listings_get_rooms();
+
+    $header = array_merge(array(''), array_values($floors));
+    $rows = array();
+    foreach ($rooms as $room_id => $room_label) {
+      $row = array(
+        'data' => array(array('data' => $room_label, 'header' => TRUE)),
+        'no_striping' => TRUE,
+      );
+      foreach ($floors as $floor_id => $floor_label) {
+        $field = $node->{'field_listing_' . $room_id . '_' . $floor_id};
+        $measurement = !empty($field) ? $field[LANGUAGE_NONE][0]['safe_value'] : '';
+        $row['data'][] = $measurement;
+      }
+      $rows[] = $row;
+    }
+
+    $grid = array(
+      'title' => array(
+        '#markup' => '<h3>' . t('Measurements') . '</h3>',
+      ),
+      'grid' => array(
+        '#theme' => 'table',
+        '#header' => $header,
+        '#rows' => $rows,
+        '#attributes' => array('class' => array('measurements-grid')),
+      ),
+    );
+  }
+
+  return $grid;
 }

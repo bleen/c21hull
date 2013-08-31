@@ -137,6 +137,10 @@ function c21_listings_field_formatter_view($entity_type, $entity, $field, $insta
   return $element;
 }
 
+//function c21_listings_ds_pre_render_alter(&$layout_render_array, $context) {
+//  $foo = 'bar';
+//}
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -232,7 +236,7 @@ function c21_listings_date_popup_process_alter(&$element, $form_state, $context)
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function c21_form_views_exposed_form_alter(&$form, &$form_state) {
+function c21_listings_form_views_exposed_form_alter(&$form, &$form_state) {
   switch ($form['#id']) {
     case 'views-exposed-form-c21-reports-listing-report':
       $form['#attached']['css'][] = drupal_get_path('module', 'c21_listings') . '/css/c21_listings_forms.css';
@@ -295,7 +299,7 @@ function c21_listings_reports_links() {
  *   An array agents, keyed by nid, including 'full_name', 'last_name',
  *   'current_office', and 'status'.
  */
-function c21_listing_get_agents() {
+function c21_listings_get_agents() {
   $agents = array();
 
   $result = db_select('node', 'n')
@@ -318,6 +322,49 @@ function c21_listing_get_agents() {
 
   print drupal_json_output($agents);
   exit();
+}
+
+/**
+ * Return an array of the "floors" for which listing data is collected.
+ *
+ * @return array
+ */
+function c21_listings_get_floors() {
+  $floors = array(
+    'f1' => t('Floor 1'),
+    'f2' => t('Floor 2'),
+    'b' => t('Basement'),
+  );
+
+  return $floors;
+}
+
+/**
+ * Return an array of the "rooms" for which listing data is collected.
+ *
+ * @return array
+ */
+function c21_listings_get_rooms() {
+  $rooms = array(
+    'living_room' => t('Living Room'),
+    'dining_room' => t('Dining Room'),
+    'kitchen' => t('Kitchen'),
+    'liv_din' => t('Living/Dining Room'),
+    'din_kitchen' => t('Dining/Kitchen'),
+    'bathroom1' => t('Bathroom 1'),
+    'bathroom2' => t('Bathroom 2'),
+    'bathroom3' => t('Bathroom 3'),
+    'bedroom1' => t('Bedroom 1'),
+    'bedroom2' => t('Bedroom 2'),
+    'bedroom3' => t('Bedroom 3'),
+    'bedroom4' => t('Bedroom 4'),
+    'bedroom5' => t('Bedroom 5'),
+    'family_room' => t('Family Room'),
+    'other1' => t('Other 1'),
+    'other2' => t('Other 2'),
+  );
+
+  return $rooms;
 }
 
 /**

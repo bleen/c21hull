@@ -1,0 +1,86 @@
+////////////////////////
+// Print File
+//
+// This file gets turned into print.css.
+// This file is styles specific to Printed files.
+////////////////////////
+
+////////////////////////
+// Base Import
+////////////////////////
+@import 'partials/global/base';
+
+.listing {
+  &.printer-friendly {
+    text-transform: uppercase;
+
+    p {
+      margin: 0;
+    }
+    h3 {
+      background: $color_gray;
+      text-align: center;
+      padding: $spacing_default;
+      border: 1px solid black;
+    }
+    .field {
+      margin: $spacing_default 0;
+
+      .field-label {
+        width: 13em;
+        font-size: .85em;
+        display: inline-block;
+        text-align: right;
+        color: black;
+        vertical-align: middle;
+      }
+      .field-items {
+        display: inline-block;
+
+        .field-item {
+          padding: $spacing_default;
+          border: 1px solid black;
+          width: 15em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &.field-name-field-listing-personal-property {
+        .field-items {
+          .field-item {
+            white-space: normal;
+          }
+        }
+      }
+    }
+
+    table.measurements-grid {
+      border-spacing: $spacing_default $spacing_default;
+      border-collapse: separate;
+
+      th {
+        color: black;
+        border-bottom-color: white;
+      }
+      thead {
+        tr {
+          th {
+            text-align: center;
+          }
+        }
+      }
+      tr {
+        th {
+          text-align: right;
+        }
+      }
+      td {
+        border: 1px solid black;
+        width: 10em;
+        height: 2em;
+      }
+    }
+  }
+}
