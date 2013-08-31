@@ -78,10 +78,6 @@ DREALTY
     type.
       PATCH: https://drupal.org/node/1931250#comment-7125064
 
-FEATURES
-  * Fixing warning when rebuilding permissions.
-      PATCH: https://drupal.org/node/1722524#comment-7730919
-
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
       PATCH: https://drupal.org/node/1175082#comment-7424400
