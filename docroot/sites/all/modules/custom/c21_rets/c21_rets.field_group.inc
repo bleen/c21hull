@@ -31,7 +31,7 @@ function c21_rets_field_group_info() {
     'format_settings' => array(
       'label' => 'Location Details',
       'instance_settings' => array(
-        'classes' => 'group_listing_details',
+        'classes' => 'group_listing_details group-mls-location-details field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -66,7 +66,7 @@ function c21_rets_field_group_info() {
     'format_settings' => array(
       'label' => 'Statistics',
       'instance_settings' => array(
-        'classes' => 'group_listing_statistics',
+        'classes' => 'group_listing_statistics group-mls-statistics field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',

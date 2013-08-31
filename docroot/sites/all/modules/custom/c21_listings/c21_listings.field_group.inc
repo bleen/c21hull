@@ -139,7 +139,7 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Listing Details',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-listing-details field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -266,7 +266,7 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Location Details',
       'instance_settings' => array(
-        'classes' => 'group_location_details',
+        'classes' => 'group_location_details group-listing-location-details field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -503,7 +503,7 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Statistics',
       'instance_settings' => array(
-        'classes' => 'group_statistics',
+        'classes' => 'group_statistics group-listing-statistics field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -609,7 +609,7 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Building Info',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-print-building-info field-group-div',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
@@ -645,7 +645,7 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'General Info',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-print-general-info field-group-div',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
