@@ -11,7 +11,7 @@ function c21_listings_menu() {
     'title' => 'List Agents',
     'type' => MENU_CALLBACK,
     'access arguments' => array('access administration pages'),
-    'page callback' => 'c21_listing_get_agents',
+    'page callback' => 'c21_listings_get_agents',
   );
 
   return $items;
