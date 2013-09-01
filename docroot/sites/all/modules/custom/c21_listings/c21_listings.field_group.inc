@@ -435,6 +435,9 @@ function c21_listings_field_group_info() {
       48 => 'field_listing_other2_b',
       49 => 'field_listing_other2_f1',
       50 => 'field_listing_other2_f2',
+      51 => 'field_listing_other3_b',
+      52 => 'field_listing_other3_f1',
+      53 => 'field_listing_other3_f2',
     ),
     'format_type' => 'div',
     'format_settings' => array(

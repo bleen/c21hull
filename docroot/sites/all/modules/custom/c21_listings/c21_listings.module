@@ -362,6 +362,7 @@ function c21_listings_get_rooms() {
     'family_room' => t('Family Room'),
     'other1' => t('Other 1'),
     'other2' => t('Other 2'),
+    'other3' => t('Other 3'),
   );
 
   return $rooms;
