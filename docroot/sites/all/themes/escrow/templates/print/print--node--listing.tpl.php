@@ -26,8 +26,8 @@
   <?php if (!empty($print['message'])) {
     print '<div class="print-message">'. $print['message'] .'</div><p />';
   } ?>
-  <div class="print-logo"><?php print $print['logo']; ?></div>
-  <div class="print-site_name"><?php print $print['site_name']; ?></div>
+  <a id="logo" href="/" title="Century21 Roy B. Hull" rel="home">
+    Century21 Roy B. Hull</a>
   <div class="print-content"><?php print $print['content']; ?></div>
   <div class="print-footer"><?php print $print['footer_message']; ?></div>
   <div class="print-source_url"><?php print $print['source_url']; ?></div>

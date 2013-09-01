@@ -19,6 +19,10 @@ h2 {
   margin-bottom: $spacing_default;
 }
 
+table {
+  border-collapse: separate;
+}
+
 #page {
   max-width: 1150px;
   margin: 0 auto;
