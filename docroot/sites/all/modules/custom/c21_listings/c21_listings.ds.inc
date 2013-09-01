@@ -937,6 +937,18 @@ function c21_listings_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'listing_measurements_grid';
+  $ds_field->label = 'Measurements Grid';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'listing|*';
+  $ds_field->properties = array();
+  $export['listing_measurements_grid'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'meet_our_agents';
   $ds_field->label = 'Meet Our Agents';
   $ds_field->field_type = 3;
