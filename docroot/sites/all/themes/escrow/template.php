@@ -56,6 +56,7 @@ function escrow_preprocess_node(&$variables) {
       // Handle preprocess fields.
       $grid = _escrow_measurements_grid($variables['node']);
       $variables['listing_measurements_grid'] = drupal_render($grid);
+//CREATE OFFICE CONTACT FIELD HERE
       break;
 
     case 'agent':

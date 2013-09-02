@@ -1770,7 +1770,7 @@ function c21_listings_field_default_field_instances() {
           'taxonomy_term_separator' => ', ',
         ),
         'type' => 'ds_taxonomy_separator',
-        'weight' => 20,
+        'weight' => 19,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -7836,7 +7836,7 @@ function c21_listings_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 19,
+        'weight' => 23,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -8606,7 +8606,7 @@ function c21_listings_field_default_field_instances() {
           'thousand_separator' => ',',
         ),
         'type' => 'number_integer',
-        'weight' => 21,
+        'weight' => 20,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -8686,7 +8686,7 @@ function c21_listings_field_default_field_instances() {
           'thousand_separator' => ',',
         ),
         'type' => 'number_integer',
-        'weight' => 22,
+        'weight' => 21,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -8772,7 +8772,7 @@ function c21_listings_field_default_field_instances() {
           'thousand_separator' => ',',
         ),
         'type' => 'number_integer',
-        'weight' => 23,
+        'weight' => 22,
       ),
       'search_result' => array(
         'label' => 'above',
