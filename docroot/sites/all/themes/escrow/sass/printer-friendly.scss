@@ -18,6 +18,8 @@ $output: 'isolation';
 
 .print-content {
   clear: both;
+  border-top: 2px solid $color_gold;
+  padding-top: $spacing_default;
 }
 
 .listing {
@@ -26,6 +28,7 @@ $output: 'isolation';
     width: 980px; /* needed for PDF */
     margin: 0 auto;
     font-size: .8em;
+    position: relative;
 
     .group-left {
       @include float-span(5);
@@ -44,6 +47,7 @@ $output: 'isolation';
       margin: 0;
       border: 1px solid black;
       width: 100%;
+      @include clearfix();
     }
     .field {
       white-space: nowrap;
@@ -79,11 +83,6 @@ $output: 'isolation';
       }
 
       &.field-name-field-listing-personal-property {
-        .field-label {
-          display: block;
-          width: 100%;
-          text-align: left;
-        }
         .field-items {
           width: 100%;
           display: block;
@@ -128,6 +127,23 @@ $output: 'isolation';
         border: 1px solid black;
         min-width: 8em;
         height: 2em;
+      }
+    }
+
+    .offices {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: 4em;
+
+      .address {
+        float: right;
+        width: 20em;
+
+        span,
+        a {
+          display: block;
+        }
       }
     }
   }

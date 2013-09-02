@@ -18,6 +18,20 @@ define('C21_DATE_FORMAT_LONG', 'F d Y, g:ia');
 define('C21_DATE_FORMAT_VERY_LONG', 'l, F d Y, g:ia');
 
 /**
+ * Implements hook_theme().
+ */
+function c21_theme(){
+  return array(
+    'c21_office_address' => array(
+      'variables' => array(
+        'office_name' => '',
+        'office_info' => NULL,
+      ),
+    ),
+  );
+}
+
+/**
  * Implements hook_block_info().
  */
 function c21_block_info() {
@@ -29,6 +43,9 @@ function c21_block_info() {
   return $blocks;
 }
 
+/**
+ * Implements hook_block_view().
+ */
 function c21_block_view($delta = '') {
   // This example is adapted from node.module.
   $block = array();
@@ -38,18 +55,14 @@ function c21_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] = array(
         'address_dingmans' => array(
-          '#attributes' => array(
-            'class' => array('address', 'dingmans'),
-          ),
-          '#theme_wrappers' => array('container'),
-          '#markup' => '<span class="street">1869 Route 739</span><span class="city-state-zip">Dingmans Ferry, PA 18328</span><a class="phone" href="tel:18004584855">1-800-458-4855</a><a class="phone" href="tel:5708289591">(570) 828-9591</a>',
+          '#theme' => 'c21_office_address',
+          '#office_name' => 'dingmans',
+          '#office_info' => c21_get_office_info('dingmans'),
         ),
         'address_milford' => array(
-          '#attributes' => array(
-            'class' => array('address', 'dingmans'),
-          ),
-          '#theme_wrappers' => array('container'),
-          '#markup' => '<span class="street">205 E. Harford St.</span><span class="city-state-zip">Milford, PA 18337</span><a class="phone" href="tel:18772969921">1-877-296-9921</a><a class="phone" href="tel:5702969921">(570) 296-9921</a>',
+          '#theme' => 'c21_office_address',
+          '#office_name' => 'milford',
+          '#office_info' => c21_get_office_info('milford'),
         ),
         'copyright' => array(
           '#attributes' => array(
@@ -134,4 +147,61 @@ function c21_date_format_types() {
   $types[C21_DATE_TYPE_VERY_SHORT] = t('Very Short');
   $types[C21_DATE_TYPE_VERY_LONG] = t('Very Long');
   return $types;
+}
+
+/**
+ * Return office location information.
+ *
+ * @param string $office
+ *
+ * @return stdClass || NULL
+ */
+function c21_get_office_info($office) {
+  $office_info = new stdClass();
+
+  switch ($office) {
+    case 'milford':
+      $office_info->street = '205 E. Harford St.';
+      $office_info->city = 'Milford';
+      $office_info->state = 'PA';
+      $office_info->zip = '18337';
+      $office_info->phone1 = '1-877-296-9921';
+      $office_info->phone2 = '(570) 296-9921';
+      break;
+
+    case 'dingmans':
+      $office_info->street = '1869 Route 739';
+      $office_info->city = 'Dingmans Ferry';
+      $office_info->state = 'PA';
+      $office_info->zip = '18328';
+      $office_info->phone1 = '1-800-458-4855';
+      $office_info->phone2 = '(570) 828-9591';
+      break;
+
+    default:
+      return NULL;
+  }
+
+  return $office_info;
+}
+
+/**
+ * Theme function.
+ */
+function theme_c21_office_address($variables) {
+  $office = $variables['office_info'];
+
+  $office_address = "";
+  $office_address .= !empty($office->street) ? "<span class='street'>$office->street</span>" : "";
+  $office_address .= !empty($office->city) && !empty($office->state) && !empty($office->zip) ? "<span class='city-state-zip'>$office->city, $office->state $office->zip</span>" : "";
+  $office_address .= !empty($office->phone1) ? "<a class='phone' href='tel:" . preg_replace('/[^0..9]/', '', $office->phone1) . "'>$office->phone1</a>" : "";
+  $office_address .= !empty($office->phone2) ? "<a class='phone' href='tel:" . preg_replace('/[^0..9]/', '', $office->phone2) . "'>$office->phone2</a>" : "";
+
+  $attributes = array(
+    'class' => array('address'),
+  );
+  if (!empty($variables['office_name'])) {
+    $attributes['class'][] = $variables['office_name'];
+  }
+  return '<div ' . drupal_attributes($attributes) . '>' . $office_address . '</div>';
 }

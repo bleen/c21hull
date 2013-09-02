@@ -56,7 +56,10 @@ function escrow_preprocess_node(&$variables) {
       // Handle preprocess fields.
       $grid = _escrow_measurements_grid($variables['node']);
       $variables['listing_measurements_grid'] = drupal_render($grid);
-//CREATE OFFICE CONTACT FIELD HERE
+
+      $office_info = _escrow_office_info($variables['node']);
+      $variables['listing_office_info'] = drupal_render($office_info);
+
       break;
 
     case 'agent':
@@ -165,4 +168,30 @@ function _escrow_measurements_grid($node) {
   }
 
   return $grid;
+}
+
+/**
+ * Returns a render array for office locations.
+ *
+ * @return array
+ */
+function _escrow_office_info() {
+  $offices = array(
+    'dingmans' => array(
+      '#theme' => 'c21_office_address',
+      '#office_name' => 'dingmans',
+      '#office_info' => c21_get_office_info('dingmans'),
+    ),
+    'milford' => array(
+      '#theme' => 'c21_office_address',
+      '#office_name' => 'milford',
+      '#office_info' => c21_get_office_info('milford'),
+    ),
+    '#theme_wrappers' => array('container'),
+    '#attributes' => array(
+      'class' => 'offices',
+    ),
+  );
+
+  return $offices;
 }
