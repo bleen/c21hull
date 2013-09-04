@@ -16,6 +16,11 @@ class better_exposed_filters_exposed_form_plugin extends views_plugin_exposed_fo
     // Add Better Exposed Filters options to those saved by Views.
     $options['bef'] = array('default' => array());
 
+    // Options for the input required setting.
+    $options['input_required'] = array('default' => FALSE);
+    $options['text_input_required'] = array('default' => t('Select any filter and click on Apply to see results'), 'translatable' => TRUE);
+    $options['text_input_required_format'] = array('default' => NULL);
+
     return $options;
   }
 
@@ -171,6 +176,33 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
     // added to each filter.
     $bef_filter_intro = FALSE;
 
+    $form['input_required'] = array(
+      '#type' => 'checkbox',
+      '#default_value' => isset($this->options['input_required']) ? $this->options['input_required'] : FALSE,
+      '#title' => t('Require input before results are shown'),
+      '#description' => t("Emulates the built in <em>Input Required</em> exposed filter handler")
+    );
+
+    $form['text_input_required'] = array(
+      '#type' => 'container',
+      '#tree' => FALSE,
+      '#states' => array(
+        // Hide this field when the input_required checkbox is disabled.
+        'invisible' => array(
+         ':input[name="exposed_form_options[input_required]"]' => array('checked' => FALSE),
+        ),
+      ),
+    );
+
+    $form['text_input_required']['text_input_required'] = array(
+      '#type' => 'text_format',
+      '#title' => t('Text on demand'),
+      '#description' => t('Text to display instead of results until the user selects and applies an exposed filter.'),
+      '#default_value' => $this->options['text_input_required'],
+      '#format' => isset($this->options['text_input_required_format']) ? $this->options['text_input_required_format'] : filter_default_format(),
+      '#wysiwyg' => FALSE,
+    );
+
     // Go through each filter and add BEF options.
     foreach ($this->display->handler->get_handlers('filter') as $label => $filter) {
       if (!$filter->options['exposed']) {
@@ -249,6 +281,22 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
       // to exclude it specifically.
       if ($filter instanceof views_handler_filter_numeric && !($filter instanceof views_handler_filter_date)) {
         $bef_slider = TRUE;
+      }
+
+      // Search API extends the more general views_handler_filter rather than
+      // operator-specific classes such as views_handler_filter_in_operator.
+      // Handle those options here.
+      if ($filter instanceof SearchApiViewsHandlerFilterOptions) {
+        $bef_standard = TRUE;
+      }
+      elseif ($filter instanceof SearchApiViewsHandlerFilterDate) {
+        $bef_datepicker = TRUE;
+        if ($filter->options['is_grouped']) {
+          $bef_standard = TRUE;
+        }
+      }
+      elseif ($filter instanceof SearchApiViewsHandlerFilterBoolean) {
+        $bef_single = TRUE;
       }
 
       // All filters can use the default filter exposed by Views.
@@ -432,6 +480,14 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
           ),
         ),
         '#description' => t('Places this element in the secondary options portion of the exposed form.'),
+      );
+
+      // Allow "Any" label to be overridden.
+      $bef_options[$label]['more_options']['any_label'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Override "Any" option label'),
+        '#default_value' => $existing[$label]['more_options']['any_label'],
+        '#description' => t('Leave blank to use views default value. <em>Note: overriding this label will break translations and localizations. Leave this field blank if preserving internationalization is important to your site.</em>'),
       );
 
       // Build a description option form element -- available to all exposed
@@ -1271,6 +1327,11 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
       }
     }
 
+    // Override "Any" label, if applicable.
+    if (!empty($options['more_options']['any_label']) && !empty($form[$field_id]['#options']['All'])) {
+      $form[$field_id]['#options']['All'] = $options['more_options']['any_label'];
+    }
+
     // If our form has no visible filters, hide the submit button.
     $form['submit']['#access'] = $show_apply;
     $form['reset']['#access'] = $show_apply;
@@ -1441,6 +1502,11 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
         'bef_collapsible' => FALSE,
         'is_secondary' => FALSE,
         'bef_filter_description' => '',
+        'any_label' => '',
+        'tokens' => array(
+          'list' => array(),
+          'available' => array(),
+        ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
         ),
@@ -1470,5 +1536,83 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
       }
     }
     return $settings;
+  }
+
+  /**
+   * Util function to determine if any filters have been applied.
+   * Borrowed from views_plugin_exposed_form_input_required
+   */
+  function exposed_filter_applied() {
+    static $cache = NULL;
+    if (!isset($cache)) {
+      $view = $this->view;
+      if (is_array($view->filter) && count($view->filter)) {
+        foreach ($view->filter as $filter_id => $filter) {
+          if ($filter->is_exposed()) {
+            $identifier = $filter->options['expose']['identifier'];
+            if (isset($view->exposed_input[$identifier])) {
+              if (!empty($view->exposed_input[$identifier])) {
+                $cache = TRUE;
+                return $cache;
+              }
+            }
+          }
+        }
+      }
+      $cache = FALSE;
+    }
+
+    return $cache;
+  }
+
+  /**
+   * Pre render callback to append the 'no values found' text if input required
+   * options is enabled.
+   */
+  function pre_render($values) {
+    if (!$this->exposed_filter_applied() && !empty($this->options['input_required'])) {
+      $options = array(
+        'id' => 'area',
+        'table' => 'views',
+        'field' => 'area',
+        'label' => '',
+        'relationship' => 'none',
+        'group_type' => 'group',
+        'content' => $this->options['text_input_required'],
+        'format' => $this->options['text_input_required_format'],
+        'empty' => TRUE,
+      );
+      $handler = views_get_handler('views', 'area', 'area');
+      $handler->init($this->view, $options);
+      $this->display->handler->handlers['empty'] = array(
+        'area' => $handler,
+      );
+      $this->display->handler->set_option('empty', array('text' => $options));
+    }
+  }
+
+  /**
+   * Query callback, intervenes if no filters are applied and input is required.
+   */
+  function query() {
+    if (!$this->exposed_filter_applied() && !empty($this->options['input_required'])) {
+      // We return with no query; this will force the empty text.
+      $this->view->built = TRUE;
+      $this->view->executed = TRUE;
+      $this->view->result = array();
+    }
+    else {
+      parent::query();
+    }
+  }
+
+  /**
+   * Submit handler for the options to unpack the format/text from the
+   * text_format field.
+   */
+  function options_submit(&$form, &$form_state) {
+    $form_state['values']['exposed_form_options']['text_input_required_format'] = $form_state['values']['text_input_required']['format'];
+    $form_state['values']['exposed_form_options']['text_input_required'] = $form_state['values']['text_input_required']['value'];
+    parent::options_submit($form, $form_state);
   }
 }
