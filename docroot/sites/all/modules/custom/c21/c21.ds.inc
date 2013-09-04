@@ -25,6 +25,8 @@ function c21_ds_view_modes_info() {
   $ds_view_mode->label = 'Teaser';
   $ds_view_mode->entities = array(
     'drealty_listing' => 'drealty_listing',
+    'field_collection_item' => 'field_collection_item',
+    'node' => 'node',
   );
   $export['teaser'] = $ds_view_mode;
 

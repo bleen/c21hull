@@ -12,6 +12,144 @@ function c21_listings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_listing_seller|teaser';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_listing_seller';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'field_seller_first_name' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+    'field_seller_last_name' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_listing_seller|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_seller_email|teaser';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_seller_email';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'field_seller_email_address' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'email',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_seller_email_type' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'email-type',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_seller_email|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_seller_phone|default';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_seller_phone';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_seller_phone_number' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'phone-number',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_seller_phone_type' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'phone-type',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_seller_phone|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_seller_phone|teaser';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_seller_phone';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'field_seller_phone_number' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'phone-number',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_seller_phone_type' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'span',
+          'fis-cl' => 'phone-type',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_seller_phone|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|agent|default';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'agent';
@@ -781,6 +919,396 @@ function c21_listings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|listing|print_internal';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'listing';
+  $ds_fieldsetting->view_mode = 'print_internal';
+  $ds_fieldsetting->settings = array(
+    'listing_fine_print' => array(
+      'weight' => '100',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'listing_measurements_grid' => array(
+      'weight' => '33',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'listing_office_info' => array(
+      'weight' => '99',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_listing_acreage' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_additional_bldg' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_agent' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-el' => 'div',
+          'lb-cl' => 'field-label',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field field-name-field-listing-agent field-type-text field-label-inline inline',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-items',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_basement' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_block' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_decks' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_development' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_directions' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-el' => 'div',
+          'lb-cl' => 'field-label',
+          'lb-col' => TRUE,
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field field-name-field-listing-directions field-type-text-long field-label-above',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-items',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_dues' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_fireplace' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_floors' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_garage' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_heat' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_id_prefix' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb-el' => 'div',
+          'lb-cl' => 'field-label',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field field-name-field-listing-id field-type-text field-label-inline inline',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-items',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_insulation' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_list_price' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_lockbox_key' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_lot' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_mls' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_notes' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+    'field_listing_personal_property' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_porch' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_school_district' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_section' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_seller' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'seller',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_sewage' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_siding' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_sq_ft_above' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+          'lb' => 'Sq. Ft. Above',
+        ),
+      ),
+    ),
+    'field_listing_sq_ft_below' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+          'lb' => 'Sq. Ft. Below',
+        ),
+      ),
+    ),
+    'field_listing_sq_ft_finished' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => 'Sq. Ft. Finished',
+          'lb-el' => 'div',
+          'lb-cl' => 'field-label',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'field field-name-field-listing-sq-ft-finished field-type-number-integer field-label-inline inline',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-items',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_listing_street' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_tags' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+    'field_listing_tax_map' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_taxes' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_township' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_walls' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_water' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_windows' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_year_built' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+    'field_listing_zoning' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
+  );
+  $export['node|listing|print_internal'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|listing|search_result';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'listing';
@@ -985,6 +1513,132 @@ agent|micro_teaser';
  */
 function c21_listings_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_listing_seller|teaser';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_listing_seller';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_seller_first_name',
+        1 => 'field_seller_last_name',
+        2 => 'field_seller_address',
+        3 => 'field_seller_phone',
+        4 => 'field_seller_email',
+      ),
+    ),
+    'fields' => array(
+      'field_seller_first_name' => 'ds_content',
+      'field_seller_last_name' => 'ds_content',
+      'field_seller_address' => 'ds_content',
+      'field_seller_phone' => 'ds_content',
+      'field_seller_email' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_listing_seller|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_seller_email|teaser';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_seller_email';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_seller_email_address',
+        1 => 'field_seller_email_type',
+      ),
+    ),
+    'fields' => array(
+      'field_seller_email_address' => 'ds_content',
+      'field_seller_email_type' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_seller_email|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_seller_phone|default';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_seller_phone';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_seller_phone_number',
+        1 => 'field_seller_phone_type',
+      ),
+    ),
+    'fields' => array(
+      'field_seller_phone_number' => 'ds_content',
+      'field_seller_phone_type' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_seller_phone|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_seller_phone|teaser';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_seller_phone';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_seller_phone_number',
+        1 => 'field_seller_phone_type',
+      ),
+    ),
+    'fields' => array(
+      'field_seller_phone_number' => 'ds_content',
+      'field_seller_phone_type' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_seller_phone|teaser'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1288,6 +1942,143 @@ function c21_listings_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|listing|print_internal';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'listing';
+  $ds_layout->view_mode = 'print_internal';
+  $ds_layout->layout = 'ds_2col_stacked';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_listing_id_prefix',
+        1 => 'field_listing_mls',
+        2 => 'field_listing_agent',
+        3 => 'group_print_general_info',
+        4 => 'field_listing_list_price',
+        5 => 'field_listing_school_district',
+        6 => 'field_listing_lockbox_key',
+        7 => 'field_listing_style',
+        8 => 'field_listing_acreage',
+        9 => 'field_listing_taxes',
+        10 => 'field_listing_dues',
+        11 => 'field_listing_zoning',
+        12 => 'group_print_building_info',
+        13 => 'field_listing_year_built',
+        14 => 'field_listing_sewage',
+        15 => 'field_listing_water',
+        16 => 'field_listing_heat',
+        17 => 'field_listing_insulation',
+        18 => 'field_listing_siding',
+        19 => 'field_listing_fireplace',
+        20 => 'field_listing_porch',
+        21 => 'field_listing_decks',
+        22 => 'field_listing_garage',
+        23 => 'field_listing_basement',
+        24 => 'field_listing_windows',
+        25 => 'field_listing_floors',
+        26 => 'field_listing_walls',
+        27 => 'field_listing_additional_bldg',
+        28 => 'field_listing_sq_ft_above',
+        29 => 'field_listing_sq_ft_below',
+        30 => 'field_listing_sq_ft_finished',
+        31 => 'field_listing_personal_property',
+      ),
+      'right' => array(
+        32 => 'group_print_measurements',
+        33 => 'listing_measurements_grid',
+        34 => 'group_print_location_info',
+        35 => 'field_listing_tax_map',
+        36 => 'field_listing_development',
+        37 => 'field_listing_lot',
+        38 => 'field_listing_block',
+        39 => 'field_listing_section',
+        40 => 'field_listing_township',
+        41 => 'field_listing_street',
+        42 => 'field_listing_directions',
+        43 => 'group_print_seller_info',
+        44 => 'field_listing_seller',
+        45 => 'group_print_additional_info',
+        46 => 'field_listing_tags',
+        47 => 'field_listing_notes',
+      ),
+      'footer' => array(
+        48 => 'listing_office_info',
+        49 => 'listing_fine_print',
+      ),
+    ),
+    'fields' => array(
+      'field_listing_id_prefix' => 'left',
+      'field_listing_mls' => 'left',
+      'field_listing_agent' => 'left',
+      'group_print_general_info' => 'left',
+      'field_listing_list_price' => 'left',
+      'field_listing_school_district' => 'left',
+      'field_listing_lockbox_key' => 'left',
+      'field_listing_style' => 'left',
+      'field_listing_acreage' => 'left',
+      'field_listing_taxes' => 'left',
+      'field_listing_dues' => 'left',
+      'field_listing_zoning' => 'left',
+      'group_print_building_info' => 'left',
+      'field_listing_year_built' => 'left',
+      'field_listing_sewage' => 'left',
+      'field_listing_water' => 'left',
+      'field_listing_heat' => 'left',
+      'field_listing_insulation' => 'left',
+      'field_listing_siding' => 'left',
+      'field_listing_fireplace' => 'left',
+      'field_listing_porch' => 'left',
+      'field_listing_decks' => 'left',
+      'field_listing_garage' => 'left',
+      'field_listing_basement' => 'left',
+      'field_listing_windows' => 'left',
+      'field_listing_floors' => 'left',
+      'field_listing_walls' => 'left',
+      'field_listing_additional_bldg' => 'left',
+      'field_listing_sq_ft_above' => 'left',
+      'field_listing_sq_ft_below' => 'left',
+      'field_listing_sq_ft_finished' => 'left',
+      'field_listing_personal_property' => 'left',
+      'group_print_measurements' => 'right',
+      'listing_measurements_grid' => 'right',
+      'group_print_location_info' => 'right',
+      'field_listing_tax_map' => 'right',
+      'field_listing_development' => 'right',
+      'field_listing_lot' => 'right',
+      'field_listing_block' => 'right',
+      'field_listing_section' => 'right',
+      'field_listing_township' => 'right',
+      'field_listing_street' => 'right',
+      'field_listing_directions' => 'right',
+      'group_print_seller_info' => 'right',
+      'field_listing_seller' => 'right',
+      'group_print_additional_info' => 'right',
+      'field_listing_tags' => 'right',
+      'field_listing_notes' => 'right',
+      'listing_office_info' => 'footer',
+      'listing_fine_print' => 'footer',
+    ),
+    'limit' => array(
+      'field_listing_agent' => '1',
+      'field_listing_school_district' => '1',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'header' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'footer' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|listing|print_internal'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|listing|search_result';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'listing';
@@ -1370,6 +2161,25 @@ function c21_listings_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|listing|teaser'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function c21_listings_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'print_internal';
+  $ds_view_mode->label = 'Print Internal';
+  $ds_view_mode->entities = array(
+    'drealty_listing' => 'drealty_listing',
+    'node' => 'node',
+  );
+  $export['print_internal'] = $ds_view_mode;
 
   return $export;
 }

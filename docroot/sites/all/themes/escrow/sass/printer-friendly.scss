@@ -134,7 +134,7 @@ $output: 'isolation';
       position: absolute;
       top: 0;
       right: 0;
-      margin-top: 4em;
+      margin-top: 3.5em;
 
       .address {
         float: right;
@@ -145,6 +145,116 @@ $output: 'isolation';
           display: block;
         }
       }
+    }
+  }
+
+  &.view-mode-print_internal {
+    .group-print-seller-info {
+      margin-top: 4em;
+
+      .seller {
+        padding: $spacing_default;
+        width: 30%;
+        float: left;
+        @include clearfix();
+
+        .field-collection-container,
+        .field-collection-view {
+          padding: 0;
+          margin: 0;
+          border: none;
+
+          .phone-number,
+          .email {
+            display: inline-block;
+            margin-right: $spacing_default;
+          }
+          .phone-type,
+          .email-type {
+            font-size: .8em;
+            color: $color_gray_dark;
+            display: inline;
+
+            &:before {
+              content: "(";
+            }
+            &:after {
+              content: ")";
+            }
+          }
+        }
+      }
+    }
+
+    .fine-print {
+      page-break-before: always;
+      font-size: .85em;
+
+      h1 {
+        font-size: 1.5em;
+      }
+      .signature {
+        font-size: 1.25em;
+        width: 40%;
+        margin: $spacing_default 5%;
+        float: left;
+
+        span {
+          display: inline-block;
+          width: 100%;
+          border-bottom: 2px solid black;
+          line-height: 2.5em;
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+
+    .group-print-location-info {
+      position: relative;
+
+      .field {
+        width: 50%;
+
+        &.field-name-field-listing-directions {
+          width: 48%;
+          position: absolute;
+          top: 2.5em;
+          right: 0;
+
+          .field-label {
+            display: block;
+            text-align: center;
+            width: 100%;
+            margin-bottom: $spacing_default;
+            padding-bottom: .5 * $spacing_default;
+            border-bottom: 1px solid black;
+          }
+          .field-items {
+            display: block;
+            width: 100%;
+
+            .field-item {
+              width: 100%;
+              white-space: normal;
+              border: none;
+              padding: $spacing_default;
+            }
+          }
+        }
+
+      }
+    }
+
+    .field-name-field-listing-notes {
+      white-space: normal;
+    }
+
+    .field-name-field-seller-first-name,
+    .field-name-field-seller-last-name {
+      display: inline;
+      padding-right: $spacing_default;
     }
   }
 }

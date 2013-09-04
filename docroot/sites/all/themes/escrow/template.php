@@ -49,7 +49,7 @@ function escrow_preprocess_node(&$variables) {
       // Add JS and CSS if needed.
       $variables['classes_array'][] = 'listing';
       drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
-      if ($variables['view_mode'] == 'print') {
+      if ($variables['view_mode'] == 'print' || $variables['view_mode'] == 'print_internal') {
         drupal_add_css(path_to_theme() . '/stylesheets/printer-friendly.css');
       }
 
@@ -59,6 +59,9 @@ function escrow_preprocess_node(&$variables) {
 
       $office_info = _escrow_office_info($variables['node']);
       $variables['listing_office_info'] = drupal_render($office_info);
+
+      $fine_print = _escrow_fine_print($variables['node']);
+      $variables['listing_fine_print'] = drupal_render($fine_print);
 
       break;
 
@@ -194,4 +197,43 @@ function _escrow_office_info() {
   );
 
   return $offices;
+}
+
+/**
+ * Render the "listing type" node to use as the listing's fine print.
+ *
+ * @param object $node
+ *
+ * @return array
+ */
+function _escrow_fine_print($node) {
+  $fine_print = array();
+
+  if (!empty($node->field_listing_type)) {
+    $listing_type = node_load($node->field_listing_type[LANGUAGE_NONE][0]);
+    $fine_print_title = field_get_items('node', $listing_type, 'field_listing_type_title');
+    $fine_print_body = field_get_items('node', $listing_type, 'field_listing_type_fine_print');
+
+    $fine_print['#theme_wrappers'] = array('container');
+    $fine_print['#attributes'] = array('class' => array('fine-print'));
+    $fine_print['title'] = array(
+      '#markup' => '<h1 class="title">' . $fine_print_title[0]['safe_value'] . '</h1>',
+    );
+    $fine_print['body'] = array(
+      '#markup' => $fine_print_body[0]['value'],
+    );
+
+    $fine_print['agent'] = array(
+      '#markup' => '<p>Century 21 Roy B. Hull</p><span>&nbsp</span><p>Agent</p>',
+      '#theme_wrappers' => array('container'),
+      '#attributes' => array('class' => array('signature agent')),
+    );
+    $fine_print['seller'] = array(
+      '#markup' => '<span class="date">Date: </span><span>&nbsp</span><span>&nbsp</span>',
+      '#theme_wrappers' => array('container'),
+      '#attributes' => array('class' => array('signature seller')),
+    );
+  }
+
+  return $fine_print;
 }
