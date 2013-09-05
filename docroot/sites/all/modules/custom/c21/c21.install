@@ -19,3 +19,10 @@ function c21_install() {
   empty_page_save_callback($callback);
   variable_set('site_frontpage', 'home');
 }
+
+/**
+ * Enable the robotstxt module.
+ */
+function c21_update_7000() {
+  module_enable(array('robotstxt'));
+}
