@@ -44,7 +44,7 @@ function c21_listings_flexslider_default_presets() {
     'move' => '0',
     'animation' => 'slide',
     'slideshow' => 1,
-    'slideshowSpeed' => '7000',
+    'slideshowSpeed' => '12000',
     'directionNav' => 1,
     'controlNav' => '1',
     'prevText' => 'Previous',
