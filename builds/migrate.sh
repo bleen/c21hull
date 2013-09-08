@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "This script was used to do fresh builds during development. Exiting..."
+exit
+
 T="$(date +%s)"
 
 C=${1:-5}
