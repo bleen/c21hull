@@ -9996,9 +9996,11 @@ function c21_listings_field_default_field_instances() {
         'weight' => 63,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_listing_tags',
-    'label' => 'Tags',
+    'label' => 'Special Notes',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -10006,11 +10008,13 @@ function c21_listings_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'autocomplete_deluxe',
       'settings' => array(
         'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
-        'autocomplete_path' => 'taxonomy/autocomplete',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
@@ -10860,7 +10864,9 @@ function c21_listings_field_default_field_instances() {
         'weight' => 52,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_listing_zoning',
     'label' => 'Zoning',
     'required' => 1,
@@ -11124,6 +11130,7 @@ function c21_listings_field_default_field_instances() {
   t('Seller');
   t('Sewage');
   t('Siding');
+  t('Special Notes');
   t('Square Footage Above');
   t('Square Footage Below');
   t('Square Footage Finished');
@@ -11131,7 +11138,6 @@ function c21_listings_field_default_field_instances() {
   t('Status');
   t('Street');
   t('Style');
-  t('Tags');
   t('Tax Map #');
   t('Taxes');
   t('This is used for sorting purposes only. Do not include initials or suffixes. ');

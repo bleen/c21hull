@@ -3881,6 +3881,7 @@ function c21_listings_field_default_field_bases() {
         'residential' => 'Residential',
         'commercial' => 'Commercial',
         'res_comm' => 'Res/Comm',
+        'other' => 'Other',
       ),
       'allowed_values_function' => '',
     ),

@@ -46,11 +46,36 @@ function escrow_preprocess_page(&$variables) {
 function escrow_preprocess_node(&$variables) {
   switch ($variables['type']) {
     case 'listing':
+      $listing_status = $variables['field_listing_status'][LANGUAGE_NONE][0]['value'];
+      $view_mode = $variables['view_mode'];
+
       // Add JS and CSS if needed.
       $variables['classes_array'][] = 'listing';
+      $variables['classes_array'][] = drupal_html_class('status ' . $listing_status);
       drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
-      if ($variables['view_mode'] == 'print' || $variables['view_mode'] == 'print_internal') {
+      if ($view_mode == 'print' || $view_mode == 'print_internal') {
         drupal_add_css(path_to_theme() . '/stylesheets/printer-friendly.css');
+      }
+
+      // Handle "sale pending" flag.
+      if ($listing_status == 'pending') {
+        $sale_pending_flag = array(
+          '#markup' => '<span class="sale-pending-flag"><span class="sale-pending-text">' . t('Sale Pending') . '</span></span>',
+        );
+        switch ($view_mode) {
+          case 'full':
+          case 'teaser':
+          case 'micro-teaser':
+            $featured_photo = $variables['content']['field_listing_featured_photo'];
+            $variables['content']['field_listing_featured_photo'] = array(
+              $sale_pending_flag,
+              $featured_photo,
+              '#weight' => $featured_photo['#weight'],
+              '#theme_wrappers' => array('container'),
+              '#attributes' => array('class' => 'photo-wrap'),
+            );
+            break;
+        }
       }
 
       // Handle preprocess fields.
@@ -210,7 +235,7 @@ function _escrow_fine_print($node) {
   $fine_print = array();
 
   if (!empty($node->field_listing_type)) {
-    $listing_type = node_load($node->field_listing_type[LANGUAGE_NONE][0]);
+    $listing_type = node_load($node->field_listing_type[LANGUAGE_NONE][0]['target_id']);
     $fine_print_title = field_get_items('node', $listing_type, 'field_listing_type_title');
     $fine_print_body = field_get_items('node', $listing_type, 'field_listing_type_fine_print');
 
