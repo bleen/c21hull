@@ -165,6 +165,11 @@ function c21_listings_field_formatter_info() {
       'field types' => array('text'),
       'description' => t('Displays text as a tel: link'),
     ),
+    'email' => array(
+      'label' => t('Email'),
+      'field types' => array('text'),
+      'description' => t('Displays text as a mailto: link'),
+    )
   );
 
   return $info;
@@ -192,6 +197,18 @@ function c21_listings_field_formatter_view($entity_type, $entity, $field, $insta
           'html' => FALSE,
         );
       }
+      break;
+    case 'email':
+      foreach ($items as $delta => $item) {
+        $element[$delta]['#theme'] = 'link';
+        $element[$delta]['#text'] = $item['safe_value'];
+        $element[$delta]['#path'] = 'mailto:' . $item['safe_value'];
+        $element[$delta]['#options'] = array(
+          'attributes' => array('class' => array('email')),
+          'html' => FALSE,
+        );
+      }
+      break;
   }
   return $element;
 }

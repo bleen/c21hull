@@ -1685,12 +1685,14 @@ function c21_listings_ds_layout_settings_info() {
         0 => 'field_agent_photo',
         1 => 'title',
         2 => 'field_agent_phone_number',
+        3 => 'field_agent_email',
       ),
     ),
     'fields' => array(
       'field_agent_photo' => 'ds_content',
       'title' => 'ds_content',
       'field_agent_phone_number' => 'ds_content',
+      'field_agent_email' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1699,6 +1701,8 @@ function c21_listings_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
   );
   $export['node|agent|micro_teaser'] = $ds_layout;
 

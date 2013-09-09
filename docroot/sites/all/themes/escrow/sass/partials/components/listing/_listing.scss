@@ -199,8 +199,11 @@
         @include float-span(2, 'first');
         margin: 0 $spacing_default 0 0;
       }
-      .phone-number {
+      .phone-number,
+      .email {
         white-space: nowrap;
+        display: block;
+        margin-bottom: $spacing_default;
       }
     }
     .agents-title {
