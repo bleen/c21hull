@@ -1993,7 +1993,7 @@ function c21_listings_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_listing_agent',
     'label' => 'Agent',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -10292,7 +10292,11 @@ function c21_listings_field_default_field_instances() {
     'bundle' => 'listing',
     'custom_add_another' => '',
     'custom_remove' => '',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'target_id' => 2,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -10342,7 +10346,9 @@ function c21_listings_field_default_field_instances() {
         'weight' => 53,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_listing_type',
     'label' => 'Listing Type',
     'required' => 1,
