@@ -501,6 +501,7 @@ function c21_listings_field_group_info() {
       2 => 'field_listing_bedrooms',
       3 => 'field_listing_garage',
       4 => 'field_listing_year_built',
+      5 => 'links',
     ),
     'format_type' => 'div',
     'format_settings' => array(

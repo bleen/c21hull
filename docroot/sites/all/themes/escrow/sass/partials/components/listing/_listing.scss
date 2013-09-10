@@ -121,6 +121,7 @@
     margin: $spacing_default;
     background: white;
     border: 1px solid $color_gray;
+    position: relative;
     @include border-radius();
 
     .stats-wrapper,
@@ -161,6 +162,9 @@
       padding-bottom: 0;
     }
   }
+  .group_statistics {
+    margin-top: 5 * $spacing_default;
+  }
 
   .description {
     margin: $spacing_default 0 (2 * $spacing_default) 0;
@@ -168,19 +172,17 @@
 
   .links {
     &.inline {
-      margin: $spacing_default 0;
-      text-align: right;
+      position: absolute;
+      top: -2em;
+      right: 0;
 
+      li {
+        display: inline-block;
+        margin: 0;
+      }
       a {
         display: inline-block;
         padding: $spacing_default;
-        background: #999;
-        color: #fff;
-        @include border-radius();
-      }
-
-      @include breakpoint($bp800) {
-        text-align: left;
       }
     }
   }
