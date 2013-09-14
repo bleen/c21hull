@@ -40,32 +40,13 @@ function c21_listings_theme($existing, $type, $theme, $path) {
 function c21_listings_node_view($node, $view_mode) {
   if ($node->type == 'listing') {
     // Add a map link.
-    if (isset($node->field_listing_lot[LANGUAGE_NONE][0]['safe_value']) && isset($node->field_listing_street[LANGUAGE_NONE][0]['safe_value']) && isset($node->field_listing_township[LANGUAGE_NONE][0]['taxonomy_term']->name)) {
-      $lot = $node->field_listing_lot[LANGUAGE_NONE][0]['safe_value'];
-      $street = $node->field_listing_street[LANGUAGE_NONE][0]['safe_value'];
-      $town = $node->field_listing_township[LANGUAGE_NONE][0]['taxonomy_term']->name;
-
-      $links['c21_map_link'] = array(
-        'title' => t('See map'),
-        'href' => 'http://maps.google.com/maps',
-        'query' => array(
-          'q' => $lot . ' ' . $street . ', ' . $town . ', PA', // Search query.
-          'hl' => 'en', // Language.
-          'iwloc' => 'A', // Information Bubble [A|''].
-          'z' => 12, // Zoom.
-          't' => 'm', // Map type.
-        ),
-        'attributes' => array(
-          'target' => '_blank',
-        ),
-      );
-
+    $map_link = _c21_listings_get_gmap_link($node);
+    if (!empty($map_link)) {
       $link_content = array(
         '#theme' => 'links',
-        '#links' => $links,
+        '#links' => array('c21_map_link' => $map_link),
         '#attributes' => array('class' => array('links', 'inline')),
       );
-
       $node->content['links']['c21_map_link'] = $link_content;
     }
 
@@ -466,4 +447,39 @@ function _c21_format_phone_number_link($phone_number) {
   $formatted_phone_number = preg_replace("/[^0-9,+]/i", '', $formatted_phone_number);
 
   return 'tel:' . $formatted_phone_number;
+}
+
+/**
+ * Given a listing node, build a link to google maps.
+ *
+ * @param object $node
+ *
+ * @return array
+ */
+function _c21_listings_get_gmap_link($node) {
+  $gmap_link = array();
+
+  if (!empty($node->field_listing_lot) && !empty($node->field_listing_street) && !empty($node->field_listing_township)) {
+    $lot = $node->field_listing_lot[LANGUAGE_NONE][0]['safe_value'];
+    $street = $node->field_listing_street[LANGUAGE_NONE][0]['safe_value'];
+    $town = $node->field_listing_township[LANGUAGE_NONE][0]['taxonomy_term']->name;
+    $state = isset($node->field_listing_state) ? $node->field_listing_state[LANGUAGE_NONE][0]['safe_value'] : 'PA';
+
+    $gmap_link = array(
+      'title' => t('See map'),
+      'href' => 'http://maps.google.com/maps',
+      'query' => array(
+        'q' => $lot . ' ' . $street . ', ' . $town . ', ' . $state, // Search query.
+        'hl' => 'en', // Language.
+        'iwloc' => 'A', // Information Bubble [A|''].
+        'z' => 12, // Zoom.
+        't' => 'm', // Map type.
+      ),
+      'attributes' => array(
+        'target' => '_blank',
+      ),
+    );
+  }
+
+  return $gmap_link;
 }
