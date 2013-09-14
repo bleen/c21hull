@@ -19,7 +19,10 @@ function c21_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
+        '~admin' => '~admin',
         '~admin/*' => '~admin/*',
+        '~node/add' => '~node/add',
+        '~node/add/*' => '~node/add/*',
         '~node/*/edit' => '~node/*/edit',
         '~<front>' => '~<front>',
       ),

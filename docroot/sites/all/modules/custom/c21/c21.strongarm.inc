@@ -491,14 +491,14 @@ function c21_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_pdf_content_disposition';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['print_pdf_content_disposition'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_pdf_display_sys_urllist';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['print_pdf_display_sys_urllist'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -556,9 +556,9 @@ function c21_strongarm() {
   $strongarm->name = 'print_pdf_link_pos';
   $strongarm->value = array(
     'link' => 'link',
+    'block' => 'block',
+    'help' => 'help',
     'corner' => 0,
-    'block' => 0,
-    'help' => 0,
   );
   $export['print_pdf_link_pos'] = $strongarm;
 
@@ -650,7 +650,7 @@ function c21_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_sourceurl_enabled';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['print_sourceurl_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -664,7 +664,7 @@ function c21_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_urls';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['print_urls'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -44,7 +44,7 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['fields']['representative_image']['label'] = '';
   $handler->display->display_options['fields']['representative_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
-  /* Field: Drealty Listing: MLS # */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_mls_number']['id'] = 'field_mls_number';
   $handler->display->display_options['fields']['field_mls_number']['table'] = 'field_data_field_mls_number';
   $handler->display->display_options['fields']['field_mls_number']['field'] = 'field_mls_number';
@@ -54,7 +54,6 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['fields']['field_mls_number']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_mls_number']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_mls_number']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_mls_number']['field_api_classes'] = TRUE;
   /* Field: Drealty Listing: Drealty Listing Label */
   $handler->display->display_options['fields']['label']['id'] = 'label';
   $handler->display->display_options['fields']['label']['table'] = 'drealty_listing';
@@ -63,7 +62,7 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['fields']['label']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['label']['alter']['path'] = 'drealty_listing/[id]';
   $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
-  /* Field: Drealty Listing: City */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_mls_city']['id'] = 'field_mls_city';
   $handler->display->display_options['fields']['field_mls_city']['table'] = 'field_data_field_mls_city';
   $handler->display->display_options['fields']['field_mls_city']['field'] = 'field_mls_city';
@@ -71,7 +70,6 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['fields']['field_mls_city']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_mls_city']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_mls_city']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_mls_city']['field_api_classes'] = TRUE;
   /* Field: Drealty Listing: Drealty Active Status */
   $handler->display->display_options['fields']['active']['id'] = 'active';
   $handler->display->display_options['fields']['active']['table'] = 'drealty_listing';
@@ -97,7 +95,7 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'drealty_listing';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = 'mls_residential_listing';
-  /* Filter criterion: Drealty Listing: MLS # (field_mls_number) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_mls_number_value']['id'] = 'field_mls_number_value';
   $handler->display->display_options['filters']['field_mls_number_value']['table'] = 'field_data_field_mls_number';
   $handler->display->display_options['filters']['field_mls_number_value']['field'] = 'field_mls_number_value';
