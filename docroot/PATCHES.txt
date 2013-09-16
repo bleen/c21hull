@@ -104,3 +104,7 @@ REPRESENTATIVE_IMAGE
     choose "link to content".
       PATCH: https://drupal.org/node/2023833#comment-7559157
 
+WORKBENCH
+  * There is a bug with contextual links on the my workbench page.
+      PATCH; https://drupal.org/node/1727284#comment-6971342
+
