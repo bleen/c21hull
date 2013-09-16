@@ -846,6 +846,15 @@ td.views-field-operations-dropbutton .ctools-dropbutton-processed {
 }
 
 /* Manage Products */
+.views-exposed-widgets .views-exposed-widget label,
+.views-exposed-widgets .views-exposed-widget .views-widget {
+   display: inline-block;
+ }
+.views-exposed-widgets .views-widget-filter-date_filter label {
+   float: left;
+   margin-right: 10px;
+ }
+
 .views-exposed-form .views-exposed-widgets {
   margin-bottom: .5em;
   width: auto;
@@ -862,23 +871,7 @@ td.views-field-operations-dropbutton .ctools-dropbutton-processed {
   font-weight: 500;
 }
 
-.views-exposed-form .views-widget-filter-combine .views-widget {
-  max-width: 250px;
-}
-
 /* Making wide enough to fit min and max date fields inline */
-.commerce-backoffice-view .views-exposed-form #edit-date-filter-wrapper {
-  width: 650px;
-}
-
-.commerce-backoffice-view .views-exposed-form #edit-date-filter-wrapper .views-widget {
-  max-width: 650px;
-}
-
-.commerce-backoffice-view .views-exposed-form .date-padding {
-  max-width: 235px;
-}
-
 .views-exposed-form .form-item input {
   border: 1px solid #C8C8C8;
   -moz-border-radius: 3px;
@@ -899,6 +892,7 @@ html.js .views-exposed-form .form-item input.throbbing {
 
 .commerce-backoffice-view .views-exposed-form .date-padding .form-item {
   margin-top: 0;
+  max-width: 100%;
 }
 
 .views-exposed-form label,

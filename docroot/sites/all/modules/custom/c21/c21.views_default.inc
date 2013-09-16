@@ -31,6 +31,7 @@ function c21_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -95,13 +96,6 @@ function c21_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = 'Edited something recently and it\'s not in this list? If a content type isn\'t revisioned and you didn\'t create it, it will not show up in this list when you edit it. You can find it in the \'Content I Can Edit\' tab.';
-  $handler->display->display_options['footer']['area']['format'] = 'plain_text';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -124,23 +118,17 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['representative_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
   $handler->display->display_options['fields']['representative_image']['image_link'] = 'content';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'vid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['nid']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content revision: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node_revision';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'vid';
   $handler->display->display_options['fields']['title']['link_to_node'] = TRUE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['relationship'] = 'vid';
   /* Field: Content: Published */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
@@ -156,13 +144,17 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['label'] = 'Last updated';
   $handler->display->display_options['fields']['timestamp']['date_format'] = 'time ago';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['relationship'] = 'vid';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
   /* Field: Content revision: Vid */
   $handler->display->display_options['fields']['vid']['id'] = 'vid';
   $handler->display->display_options['fields']['vid']['table'] = 'node_revision';
   $handler->display->display_options['fields']['vid']['field'] = 'vid';
-  $handler->display->display_options['fields']['vid']['label'] = '';
   $handler->display->display_options['fields']['vid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
@@ -233,13 +225,6 @@ function c21_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Five of the most recently updated pieces of content.';
-  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -271,7 +256,7 @@ function c21_views_default_views() {
 
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
-  $handler->display->display_options['title'] = 'All Recent Content';
+  $handler->display->display_options['title'] = 'All Recent Listings';
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = 'view all';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -453,21 +438,87 @@ function c21_views_default_views() {
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
   $handler->display->display_options['filters']['type']['value'] = array(
     'listing' => 'listing',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
+  /* Display: Recent Listings (page) */
+  $handler = $view->new_display('page', 'Recent Listings (page)', 'page_1');
+  $handler->display->display_options['display_description'] = 'Recent Content (listings only)';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'admin/workbench/content/all';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
+  $handler->display->display_options['filters']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Listing ID ';
+  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: MLS # (field_listing_mls) */
+  $handler->display->display_options['filters']['field_listing_mls_value']['id'] = 'field_listing_mls_value';
+  $handler->display->display_options['filters']['field_listing_mls_value']['table'] = 'field_data_field_listing_mls';
+  $handler->display->display_options['filters']['field_listing_mls_value']['field'] = 'field_listing_mls_value';
+  $handler->display->display_options['filters']['field_listing_mls_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_listing_mls_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_listing_mls_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_mls_value']['expose']['operator_id'] = 'field_listing_mls_value_op';
+  $handler->display->display_options['filters']['field_listing_mls_value']['expose']['label'] = 'MLS #';
+  $handler->display->display_options['filters']['field_listing_mls_value']['expose']['operator'] = 'field_listing_mls_value_op';
+  $handler->display->display_options['filters']['field_listing_mls_value']['expose']['identifier'] = 'field_listing_mls_value';
+  $handler->display->display_options['filters']['field_listing_mls_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Agent (field_listing_agent) */
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['id'] = 'field_listing_agent_target_id';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['table'] = 'field_data_field_listing_agent';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['field'] = 'field_listing_agent_target_id';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['operator_id'] = 'field_listing_agent_target_id_op';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['label'] = 'Agent';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['operator'] = 'field_listing_agent_target_id_op';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['identifier'] = 'field_listing_agent_target_id';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'listing' => 'listing',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['path'] = 'admin/workbench/content/listings';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'All Recent Content';
+  $handler->display->display_options['menu']['title'] = 'All Recent Listings';
   $handler->display->display_options['menu']['weight'] = '2';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  /* Display: Recent Listings (block) */
+  $handler = $view->new_display('block', 'Recent Listings (block)', 'block_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -481,6 +532,153 @@ function c21_views_default_views() {
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'listing' => 'listing',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Recent Content (page) */
+  $handler = $view->new_display('page', 'Recent Content (page)', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'All Recent Content';
+  $handler->display->display_options['display_description'] = 'Recent Content (excluding listings)';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Representative Image */
+  $handler->display->display_options['fields']['representative_image']['id'] = 'representative_image';
+  $handler->display->display_options['fields']['representative_image']['table'] = 'node';
+  $handler->display->display_options['fields']['representative_image']['field'] = 'representative_image';
+  $handler->display->display_options['fields']['representative_image']['label'] = 'Photo';
+  $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
+  $handler->display->display_options['fields']['representative_image']['image_link'] = 'content';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_listing_status']['id'] = 'field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['table'] = 'field_data_field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['field'] = 'field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_status']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_status']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_status']['field_api_classes'] = TRUE;
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Last updated';
+  $handler->display->display_options['fields']['changed']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['changed']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'time ago';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
+  $handler->display->display_options['fields']['edit_node']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'listing' => 'listing',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['path'] = 'admin/workbench/content/all';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'All Other Content';
+  $handler->display->display_options['menu']['weight'] = '3';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Recent Content (block) */
+  $handler = $view->new_display('block', 'Recent Content (block)', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'All Recent Content';
+  $handler->display->display_options['display_description'] = 'Recent Content (excluding listings)';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Representative Image */
+  $handler->display->display_options['fields']['representative_image']['id'] = 'representative_image';
+  $handler->display->display_options['fields']['representative_image']['table'] = 'node';
+  $handler->display->display_options['fields']['representative_image']['field'] = 'representative_image';
+  $handler->display->display_options['fields']['representative_image']['label'] = 'Photo';
+  $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
+  $handler->display->display_options['fields']['representative_image']['image_link'] = 'content';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_listing_status']['id'] = 'field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['table'] = 'field_data_field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['field'] = 'field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_status']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_status']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_status']['field_api_classes'] = TRUE;
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Last updated';
+  $handler->display->display_options['fields']['changed']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['changed']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'time ago';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
+  $handler->display->display_options['fields']['edit_node']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
   $handler->display->display_options['filters']['type']['value'] = array(
     'listing' => 'listing',
   );

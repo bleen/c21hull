@@ -847,6 +847,7 @@ select.form-select {
   border-top-color: #999;
   background: #fff;
   color: #333;
+  box-sizing: border-box;
 }
 
 input.form-text:focus,

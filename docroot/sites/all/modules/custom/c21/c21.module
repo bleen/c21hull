@@ -91,13 +91,17 @@ function c21_block_view($delta = '') {
  */
 function c21_workbench_content_alter(&$output) {
   if (module_exists('c21_listings')) {
-    $output['c21_workbench_reports'] = array(
-      '#title' => t('Reports'),
+    $output['c21_workbench_links'] = array(
+      'common' => array(
+        '#markup' => '<h2>' . t('Common Tasks') . '</h2>' . c21_listings_workbench_links('common'),
+      ),
+      'reports' => array(
+        '#markup' => '<h2>' . t('Reports') . '</h2>' . c21_listings_workbench_links('report'),
+      ),
+      '#theme' => 'workbench_element',
       '#attributes' => array(
         'class' => array('left', 'clearfix'),
       ),
-      'report_links' => array('#markup' => c21_listings_reports_links()),
-      '#theme' => 'workbench_element',
     );
     $output['#attached']['css'][] = drupal_get_path('module', 'c21') . '/css/c21_workbench.css';
     unset($output['workbench_current_user']);
@@ -105,10 +109,12 @@ function c21_workbench_content_alter(&$output) {
 
   $output['c21_workbench_edits_by_user'] = $output['workbench_edited'];
   $output['c21_workbench_edits_by_user']['#view'] = 'c21_workbench_edits_by_user';
+  $output['c21_workbench_edits_by_user']['#view_display'] = 'block_1';
   unset($output['workbench_edited']);
 
   $output['c21_workbench_recent_content'] = $output['workbench_recent_content'];
   $output['c21_workbench_recent_content']['#view'] = 'c21_workbench_recent_content';
+  $output['c21_workbench_recent_content']['#view_display'] = 'block_1';
   unset($output['workbench_recent_content']);
 
 }

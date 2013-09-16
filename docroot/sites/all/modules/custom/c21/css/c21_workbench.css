@@ -1,12 +1,12 @@
-.c21_listings_report_list {
+.c21_listings_workbench_list {
   list-style: none;
   margin: 0 2em 2em 0;
 }
-.c21_listings_report_list li {
+.c21_listings_workbench_list li {
   padding: .25em;
   margin: 0;
   border-bottom: 1px dotted #ccc;
 }
-.c21_listings_report_list li:last-child {
+.c21_listings_workbench_list li:last-child {
  border-bottom: none;
 }
