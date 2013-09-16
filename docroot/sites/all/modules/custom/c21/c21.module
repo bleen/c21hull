@@ -32,6 +32,15 @@ function c21_theme(){
 }
 
 /**
+ * Implements hook_user_login().
+ */
+function c21_user_login(&$edit, $account) {
+  if (user_access('access workbench')) {
+    drupal_goto('admin/workbench');
+  }
+}
+
+/**
  * Implements hook_block_info().
  */
 function c21_block_info() {
