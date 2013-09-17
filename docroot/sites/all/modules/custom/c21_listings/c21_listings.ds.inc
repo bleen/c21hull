@@ -524,7 +524,7 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'micro_teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '3',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -535,7 +535,7 @@ function c21_listings_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '8',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -550,32 +550,6 @@ function c21_listings_ds_field_settings_info() {
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_listing_bathrooms' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'stat bathroom',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_listing_bedrooms' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'stat bedrooms',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -612,19 +586,6 @@ function c21_listings_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'mls-number',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_listing_sq_ft_finished' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'stat square-feet',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -1815,25 +1776,17 @@ function c21_listings_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_listing_mls',
-        1 => 'field_listing_featured_photo',
-        2 => 'field_listing_list_price',
-        3 => 'title',
-        4 => 'field_listing_bedrooms',
-        5 => 'field_listing_bathrooms',
-        6 => 'field_listing_sq_ft_finished',
-        7 => 'field_listing_school_district',
-        8 => 'node_link',
+        1 => 'title',
+        2 => 'field_listing_featured_photo',
+        3 => 'field_listing_list_price',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_listing_mls' => 'ds_content',
+      'title' => 'ds_content',
       'field_listing_featured_photo' => 'ds_content',
       'field_listing_list_price' => 'ds_content',
-      'title' => 'ds_content',
-      'field_listing_bedrooms' => 'ds_content',
-      'field_listing_bathrooms' => 'ds_content',
-      'field_listing_sq_ft_finished' => 'ds_content',
-      'field_listing_school_district' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -1843,6 +1796,8 @@ function c21_listings_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
   );
   $export['node|listing|micro_teaser'] = $ds_layout;
 
