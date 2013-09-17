@@ -26,3 +26,10 @@ function c21_install() {
 function c21_update_7000() {
   module_enable(array('robotstxt'));
 }
+
+/**
+ * Enable the hide_submit module.
+ */
+function c21_update_7001() {
+  module_enable(array('hide_submit'));
+}

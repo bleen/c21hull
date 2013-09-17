@@ -32,6 +32,14 @@ function c21_theme(){
 }
 
 /**
+ * Implements hook_menu_alter().
+ */
+function c21_menu_alter(&$items) {
+  $items['node']['access callback'] = FALSE;
+  $items['admin/structure/taxonomy']['type'] = MENU_CALLBACK;
+}
+
+/**
  * Implements hook_user_login().
  */
 function c21_user_login(&$edit, $account) {
