@@ -1,0 +1,19 @@
+.entity-drealty-listing {
+  .photos {
+    max-height: 25em;
+    overflow: auto;
+
+    @include breakpoint($bp500) {
+      @include clearfix();
+      img {
+        float: left;
+        width: 49%;
+        margin-bottom: $spacing_default;
+
+        &:nth-child(odd) {
+          margin-right: 2%;
+        }
+      }
+    }
+  }
+}

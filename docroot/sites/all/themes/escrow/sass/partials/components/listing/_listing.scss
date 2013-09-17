@@ -1,93 +1,6 @@
 .listing {
   position: relative;
 
-  &.view-mode-teaser,
-  &.view-mode-micro_teaser {
-    background-color: white;
-    padding: $spacing_default;
-    margin-bottom: $spacing_default;
-    @include border-radius(10px);
-
-    .mls-number {
-      text-align: right;
-    }
-
-    .stat {
-      display: block;
-      border-bottom: 1px dotted $color_gray_light;
-      padding: .5 * $spacing_default 0;
-      margin-left: $spacing_default;
-
-      .label-inline {
-        color: darken($color_gold, 10%);
-        font-weight: bold;
-      }
-    }
-
-    .more-info{
-      display: block;
-
-      a {
-        margin-top: $spacing_default;
-        width: 100%;
-        text-align: center;
-        @include sassy-button("matte", 10px, .75 * $font_size_base, $color_green, $color_green_light);
-      }
-    }
-
-    @include breakpoint($bp650) {
-      .mls-number {
-        text-align: left;
-      }
-      .photo {
-        width: 50%;
-        float: left;
-        margin-right: $spacing_default;
-      }
-      .list-price {
-        position: absolute;
-        bottom: $spacing_default;
-        left: $spacing_default;
-        top: auto;
-        text-align: left;
-        @include background-image(linear-gradient(left, rgba(white,0.75) 0%,rgba(white,0.75) 33%,rgba(white,0) 66%,rgba(white,0) 100%));
-        width: 50%;
-        margin: 0;
-      }
-      .more-info {
-        position: absolute;
-        bottom: $spacing_default;
-        right: $spacing_default;
-        width: auto;
-
-        a {
-          @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
-        }
-      }
-    }
-    @include breakpoint($bp800) {
-      .listing-title {
-        white-space: normal;
-        overflow: auto;
-      }
-    }
-    @include breakpoint($bp1075) {
-      .photo {
-        width: 60%;
-      }
-      .listing-title {
-        font-size: $font_size_title;
-      }
-    }
-  }
-
-  &.view-mode-micro_teaser {
-    @include breakpoint($bp800) {
-      max-width: 75%;
-      margin: $spacing_default auto;
-    }
-  }
-
   .mls-number {
     font-size: .75em;
     margin: $spacing_default 0;
@@ -113,6 +26,17 @@
     @include background-image(linear-gradient(left, rgba(white,0) 0%,rgba(white,0) 33%,rgba(white,0.75) 66%,rgba(white,0.75) 100%));
     text-align: right;
     font-weight: bold;
+  }
+
+  .more-info{
+    display: block;
+
+    a {
+      margin-top: $spacing_default;
+      width: 100%;
+      text-align: center;
+      @include sassy-button("matte", 10px, .75 * $font_size_base, $color_green, $color_green_light);
+    }
   }
 
   .group_statistics,
@@ -280,6 +204,11 @@
       @include background-image(linear-gradient(left, rgba(white,0.75) 0%,rgba(white,0.75) 33%,rgba(white,0) 66%,rgba(white,0) 100%));
       text-align: left;
     }
+    .more-info {
+      a {
+        @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
+      }
+    }
     .agents {
       .agent {
         @include float-span(3);
@@ -332,24 +261,5 @@
   }
 }
 
-.entity-drealty-listing {
-  .photos {
-    max-height: 25em;
-    overflow: auto;
-
-    @include breakpoint($bp500) {
-      @include clearfix();
-      img {
-        float: left;
-        width: 49%;
-        margin-bottom: $spacing_default;
-
-        &:nth-child(odd) {
-          margin-right: 2%;
-        }
-      }
-    }
-  }
-}
 
 

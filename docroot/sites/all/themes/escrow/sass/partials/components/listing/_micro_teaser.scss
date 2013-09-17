@@ -1,0 +1,43 @@
+.listing.view-mode-micro_teaser {
+  border-bottom: 1px dotted $color_gray_dark;
+  padding: 4 * $spacing_default;
+  margin-bottom: $spacing_default;
+
+}
+
+.view-c21-recently-added-listings {
+  .recent-listing {
+    @include breakpoint($bp500) {
+      .view-mode-micro_teaser {
+        border-bottom: none;
+        .listing-title {
+          font-size: .75 * $font_size_title;
+        }
+      }
+    }
+
+    @include breakpoint($bp500 $bp650) {
+      width: 48%;
+      float: left;
+      &:nth-child(odd) {
+        margin-right: 2%;
+      }
+    }
+
+    @include breakpoint($bp650) {
+      width: 32%;
+      float: left;
+      margin-right: 2%;
+      margin-left: 0;
+      &:nth-child(odd) {
+        margin-right: inherit;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      &:nth-child(3n + 1) {
+        clear: left;
+      }
+    }
+  }
+}

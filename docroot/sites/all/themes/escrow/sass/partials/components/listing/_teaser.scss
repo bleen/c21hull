@@ -1,0 +1,67 @@
+.listing.view-mode-teaser {
+  background-color: white;
+  padding: $spacing_default;
+  margin-bottom: $spacing_default;
+  @include border-radius(10px);
+
+  .mls-number {
+    text-align: right;
+  }
+
+  .stat {
+    display: block;
+    border-bottom: 1px dotted $color_gray_light;
+    padding: .5 * $spacing_default 0;
+    margin-left: $spacing_default;
+
+    .label-inline {
+      color: darken($color_gold, 10%);
+      font-weight: bold;
+    }
+  }
+
+  @include breakpoint($bp650) {
+    .mls-number {
+      text-align: left;
+    }
+    .photo {
+      width: 50%;
+      float: left;
+      margin-right: $spacing_default;
+    }
+    .list-price {
+      position: absolute;
+      bottom: $spacing_default;
+      left: $spacing_default;
+      top: auto;
+      text-align: left;
+      @include background-image(linear-gradient(left, rgba(white,0.75) 0%,rgba(white,0.75) 33%,rgba(white,0) 66%,rgba(white,0) 100%));
+      width: 50%;
+      margin: 0;
+    }
+    .more-info {
+      position: absolute;
+      bottom: $spacing_default;
+      right: $spacing_default;
+      width: auto;
+
+      a {
+        @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
+      }
+    }
+  }
+  @include breakpoint($bp800) {
+    .listing-title {
+      white-space: normal;
+      overflow: auto;
+    }
+  }
+  @include breakpoint($bp1075) {
+    .photo {
+      width: 60%;
+    }
+    .listing-title {
+      font-size: $font_size_title;
+    }
+  }
+}
