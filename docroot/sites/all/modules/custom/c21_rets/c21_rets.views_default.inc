@@ -44,7 +44,7 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['fields']['representative_image']['label'] = '';
   $handler->display->display_options['fields']['representative_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
-  /* Field: Broken/missing handler */
+  /* Field: Drealty Listing: MLS # */
   $handler->display->display_options['fields']['field_mls_number']['id'] = 'field_mls_number';
   $handler->display->display_options['fields']['field_mls_number']['table'] = 'field_data_field_mls_number';
   $handler->display->display_options['fields']['field_mls_number']['field'] = 'field_mls_number';
@@ -62,7 +62,7 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['fields']['label']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['label']['alter']['path'] = 'drealty_listing/[id]';
   $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Drealty Listing: City */
   $handler->display->display_options['fields']['field_mls_city']['id'] = 'field_mls_city';
   $handler->display->display_options['fields']['field_mls_city']['table'] = 'field_data_field_mls_city';
   $handler->display->display_options['fields']['field_mls_city']['field'] = 'field_mls_city';
@@ -95,7 +95,7 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'drealty_listing';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = 'mls_residential_listing';
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Drealty Listing: MLS # (field_mls_number) */
   $handler->display->display_options['filters']['field_mls_number_value']['id'] = 'field_mls_number_value';
   $handler->display->display_options['filters']['field_mls_number_value']['table'] = 'field_data_field_mls_number';
   $handler->display->display_options['filters']['field_mls_number_value']['field'] = 'field_mls_number_value';
