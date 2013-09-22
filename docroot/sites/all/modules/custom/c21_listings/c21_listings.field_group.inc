@@ -126,7 +126,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Listing Details',
-    'weight' => '1',
+    'weight' => '0',
     'children' => array(
       0 => 'field_listing_description',
       1 => 'field_listing_featured_photo',
@@ -256,7 +256,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location Details',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_listing_development',
       1 => 'field_listing_school_district',
@@ -494,7 +494,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Statistics',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_listing_acreage',
       1 => 'field_listing_bathrooms',

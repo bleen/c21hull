@@ -257,6 +257,11 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'listing';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'listing_map' => array(
+      'weight' => '39',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'links' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -1431,6 +1436,31 @@ function c21_listings_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'listing_fine_print';
+  $ds_field->label = 'Fine Print';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'listing|print
+listing|print_internal';
+  $ds_field->properties = array();
+  $export['listing_fine_print'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'listing_map';
+  $ds_field->label = 'Map';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'listing|*';
+  $ds_field->properties = array();
+  $export['listing_map'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'listing_measurements_grid';
   $ds_field->label = 'Measurements Grid';
   $ds_field->field_type = 3;
@@ -1710,46 +1740,48 @@ function c21_listings_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'links',
-        1 => 'field_listing_bedrooms',
-        2 => 'group_listing_details',
-        3 => 'field_listing_mls',
-        4 => 'group_listing_statistics',
-        5 => 'field_listing_bathrooms',
-        6 => 'group_listing_location_details',
-        7 => 'field_listing_featured_photo',
-        8 => 'field_listing_garage',
+        1 => 'group_listing_details',
+        2 => 'field_listing_bedrooms',
+        3 => 'group_listing_statistics',
+        4 => 'field_listing_mls',
+        5 => 'group_listing_location_details',
+        6 => 'field_listing_bathrooms',
+        7 => 'field_listing_garage',
+        8 => 'field_listing_featured_photo',
         9 => 'field_listing_list_price',
-        10 => 'field_listing_agent',
-        11 => 'field_listing_acreage',
+        10 => 'field_listing_acreage',
+        11 => 'field_listing_year_built',
         12 => 'field_listing_photos',
-        13 => 'field_listing_year_built',
-        14 => 'field_listing_tags',
-        15 => 'field_listing_description',
-        16 => 'field_listing_township',
-        17 => 'field_listing_development',
-        18 => 'field_listing_school_district',
+        13 => 'field_listing_tags',
+        14 => 'field_listing_description',
+        15 => 'field_listing_township',
+        16 => 'field_listing_development',
+        17 => 'field_listing_school_district',
+        18 => 'listing_map',
+        19 => 'field_listing_agent',
       ),
     ),
     'fields' => array(
       'links' => 'ds_content',
-      'field_listing_bedrooms' => 'ds_content',
       'group_listing_details' => 'ds_content',
-      'field_listing_mls' => 'ds_content',
+      'field_listing_bedrooms' => 'ds_content',
       'group_listing_statistics' => 'ds_content',
-      'field_listing_bathrooms' => 'ds_content',
+      'field_listing_mls' => 'ds_content',
       'group_listing_location_details' => 'ds_content',
-      'field_listing_featured_photo' => 'ds_content',
+      'field_listing_bathrooms' => 'ds_content',
       'field_listing_garage' => 'ds_content',
+      'field_listing_featured_photo' => 'ds_content',
       'field_listing_list_price' => 'ds_content',
-      'field_listing_agent' => 'ds_content',
       'field_listing_acreage' => 'ds_content',
-      'field_listing_photos' => 'ds_content',
       'field_listing_year_built' => 'ds_content',
+      'field_listing_photos' => 'ds_content',
       'field_listing_tags' => 'ds_content',
       'field_listing_description' => 'ds_content',
       'field_listing_township' => 'ds_content',
       'field_listing_development' => 'ds_content',
       'field_listing_school_district' => 'ds_content',
+      'listing_map' => 'ds_content',
+      'field_listing_agent' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

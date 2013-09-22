@@ -88,6 +88,9 @@ function escrow_preprocess_node(&$variables) {
       $fine_print = _escrow_fine_print($variables['node']);
       $variables['listing_fine_print'] = drupal_render($fine_print);
 
+      $map = _escrow_map($variables['node']);
+      $variables['listing_map'] = drupal_render($map);
+
       break;
 
     case 'agent':
@@ -262,3 +265,40 @@ function _escrow_fine_print($node) {
 
   return $fine_print;
 }
+
+/**
+ * Return a render array containing a map of the given listing.
+ *
+ * @param object $node
+ */
+function _escrow_map($node) {
+  $map_link = _c21_listings_get_gmap_link($node);
+
+  // Add a map.
+  $map = array(
+    '#attached' => array(
+      'js' => array(
+        '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' => array('type' => 'external', 'scope' => 'footer', 'weight' => 1),
+        'var listing_address="' . $map_link['query']['q'] . '";' => array('type' => 'inline', 'scope' => 'footer', 'weight' => 5),
+        drupal_get_path('module', 'c21_listings') . '/js/c21_listings_maps.js' => array('type' => 'file', 'scope' => 'footer', 'weight' => 6),
+      ),
+    ),
+    '#theme_wrappers' => array('container'),
+    '#attributes' => array(
+      'id' => 'listing-map-wrapper',
+    ),
+    'map' => array(
+      '#theme_wrappers' => array('container'),
+      '#attributes' => array(
+        'id' => 'listing-map',
+      ),
+    ),
+  );
+
+  if (empty($map_link)) {
+    $map['map']['#attributes']['class'] = array('no-map');
+  }
+
+  return $map;
+}
+

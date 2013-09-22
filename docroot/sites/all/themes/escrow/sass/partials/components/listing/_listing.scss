@@ -28,6 +28,29 @@
     font-weight: bold;
   }
 
+  #listing-map-wrapper {
+    height: 300px;
+    padding: $spacing_default;
+    margin: $spacing_default;
+    background: white;
+    border: 1px solid $color_gray;
+    position: relative;
+    @include border-radius();
+
+    #listing-map {
+      min-height: 100%;
+      background: url("../images/loading.gif") center center no-repeat;
+      background-size: 50%;
+      background-color: $color_gray_light;
+
+      &.no-map {
+        background: url("../images/no-map.png") center center no-repeat;
+        background-size: 100%;
+        background-clip: content-box;
+      }
+    }
+  }
+
   .more-info{
     display: block;
 
@@ -194,8 +217,12 @@
       margin: $spacing_default 0;
       @include float-span(3, 'last');
     }
+    #listing-map-wrapper {
+      @include float-span(3);
+      height: 225px;
+    }
     .agents {
-      @include float-span(6, 'last');
+      @include float-span(3, 'last');
     }
   }
   @include breakpoint($bp650) {
@@ -209,11 +236,6 @@
         @include sassy-button("matte", 10px, $font_size_base, $color_green, $color_green_light);
       }
     }
-    .agents {
-      .agent {
-        @include float-span(3);
-      }
-    }
   }
   @include breakpoint($bp800) {
     .group-listing-details {
@@ -225,10 +247,12 @@
     .group-listing-location-details {
       @include float-span(2, 'last');
     }
+    #listing-map-wrapper {
+      @include float-span(2, 'last');
+    }
     .agents {
       @include float-span(2, 'last');
       .agent {
-        @include float-span(6);
         .agents-title {
           font-weight: bold;
           font-size: .7 * $font_size_base;

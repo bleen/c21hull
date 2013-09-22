@@ -2073,7 +2073,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 43,
+        'weight' => 46,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2172,7 +2172,7 @@ function c21_listings_field_default_field_instances() {
           'view_mode' => 'micro_teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 4,
+        'weight' => 50,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2258,7 +2258,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 42,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2347,7 +2347,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 62,
+        'weight' => 68,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2424,7 +2424,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 61,
+        'weight' => 67,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2501,7 +2501,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 60,
+        'weight' => 66,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2578,7 +2578,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 59,
+        'weight' => 65,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2655,7 +2655,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 63,
+        'weight' => 69,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2732,7 +2732,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 64,
+        'weight' => 70,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2809,7 +2809,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 68,
+        'weight' => 74,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2886,7 +2886,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 67,
+        'weight' => 73,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -2963,7 +2963,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 58,
+        'weight' => 64,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3146,7 +3146,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 65,
+        'weight' => 71,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3223,7 +3223,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 50,
+        'weight' => 53,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3300,7 +3300,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 49,
+        'weight' => 52,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3377,7 +3377,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 91,
+        'weight' => 97,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3454,7 +3454,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 89,
+        'weight' => 95,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3531,7 +3531,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 95,
+        'weight' => 101,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3608,7 +3608,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 92,
+        'weight' => 98,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3685,7 +3685,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 85,
+        'weight' => 91,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3762,7 +3762,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 71,
+        'weight' => 77,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3839,7 +3839,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 84,
+        'weight' => 90,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3916,7 +3916,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 80,
+        'weight' => 86,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -3993,7 +3993,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 82,
+        'weight' => 88,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4070,7 +4070,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 94,
+        'weight' => 100,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4147,7 +4147,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 66,
+        'weight' => 72,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4224,7 +4224,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 87,
+        'weight' => 93,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4407,7 +4407,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 102,
+        'weight' => 108,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4493,7 +4493,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4564,7 +4564,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 17,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4638,7 +4638,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4723,7 +4723,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 29,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -4801,7 +4801,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 37,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5091,7 +5091,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 79,
+        'weight' => 85,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5168,7 +5168,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 81,
+        'weight' => 87,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5245,7 +5245,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 83,
+        'weight' => 89,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5322,7 +5322,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 78,
+        'weight' => 84,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5399,7 +5399,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 77,
+        'weight' => 83,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5476,7 +5476,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 72,
+        'weight' => 78,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5553,7 +5553,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 99,
+        'weight' => 105,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5639,7 +5639,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 33,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5733,7 +5733,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 74,
+        'weight' => 80,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5810,7 +5810,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 76,
+        'weight' => 82,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -5887,7 +5887,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 75,
+        'weight' => 81,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6097,7 +6097,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 35,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6183,7 +6183,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 41,
+        'weight' => 44,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6372,7 +6372,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6446,7 +6446,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 40,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6535,7 +6535,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6649,7 +6649,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 41,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6738,7 +6738,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 96,
+        'weight' => 102,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6815,7 +6815,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 97,
+        'weight' => 103,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6892,7 +6892,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 98,
+        'weight' => 104,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -6969,7 +6969,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 93,
+        'weight' => 99,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7046,7 +7046,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 86,
+        'weight' => 92,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7123,7 +7123,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 88,
+        'weight' => 94,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7200,7 +7200,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 23,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7310,7 +7310,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 27,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7526,7 +7526,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 90,
+        'weight' => 96,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7603,7 +7603,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 73,
+        'weight' => 79,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7680,7 +7680,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 70,
+        'weight' => 76,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7757,7 +7757,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 52,
+        'weight' => 55,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7834,7 +7834,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 51,
+        'weight' => 54,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7911,7 +7911,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 48,
+        'weight' => 51,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -7988,7 +7988,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 30,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8070,7 +8070,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 101,
+        'weight' => 107,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8252,7 +8252,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 105,
+        'weight' => 111,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8361,7 +8361,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 57,
+        'weight' => 63,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8438,7 +8438,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 58,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8515,7 +8515,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 55,
+        'weight' => 59,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8592,7 +8592,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 53,
+        'weight' => 56,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8669,7 +8669,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 56,
+        'weight' => 61,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8746,7 +8746,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 69,
+        'weight' => 75,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8823,7 +8823,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 57,
+        'weight' => 62,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8900,7 +8900,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 54,
+        'weight' => 57,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -8977,7 +8977,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 55,
+        'weight' => 60,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9054,7 +9054,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 47,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9291,7 +9291,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 36,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9378,7 +9378,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9452,7 +9452,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9624,7 +9624,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 103,
+        'weight' => 109,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9711,7 +9711,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 104,
+        'weight' => 110,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9794,7 +9794,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 38,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9886,7 +9886,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 34,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -9976,7 +9976,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 45,
+        'weight' => 48,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -10074,7 +10074,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 46,
+        'weight' => 49,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -10172,7 +10172,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 47,
+        'weight' => 50,
       ),
       'micro_teaser' => array(
         'label' => 'inline',
@@ -10280,7 +10280,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -10354,7 +10354,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 26,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -10428,7 +10428,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -10528,7 +10528,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 31,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -10720,7 +10720,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 100,
+        'weight' => 106,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -10824,7 +10824,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 32,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -11011,7 +11011,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 25,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -11087,7 +11087,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 24,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -11178,7 +11178,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 45,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -11267,7 +11267,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 39,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -11359,7 +11359,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 40,
+        'weight' => 43,
       ),
       'micro_teaser' => array(
         'label' => 'above',
@@ -11568,7 +11568,7 @@ function c21_listings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 28,
       ),
       'micro_teaser' => array(
         'label' => 'above',
