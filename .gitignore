@@ -3,4 +3,5 @@ source_files
 docroot/favicon.*
 docroot/FirePHPCore
 docroot/core
+builds/local-migrate.sh
 .idea/*
