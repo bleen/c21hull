@@ -200,7 +200,7 @@ function c21_rets_default_drealty_listing_type() {
         "entity_types" : [ "drealty_listing" ],
         "foreign keys" : { "fid" : { "table" : "file_managed", "columns" : { "fid" : "fid" } } },
         "indexes" : { "fid" : [ "fid" ] },
-        "settings" : { "default_image" : 0, "uri_scheme" : "public" },
+        "settings" : { "uri_scheme" : "public", "default_image" : 0 },
         "translatable" : "0",
         "field_name" : "field_mls_photos",
         "type" : "image",
@@ -424,22 +424,25 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "number",
-            "settings" : {
-              "decimal_separator" : ".",
-              "prefix_suffix" : 0,
-              "scale" : 2,
-              "thousand_separator" : ",",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "number_decimal",
-            "weight" : 7
+            "weight" : "7",
+            "settings" : {
+              "thousand_separator" : ",",
+              "decimal_separator" : ".",
+              "scale" : "2",
+              "prefix_suffix" : 0
+            },
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "inline", "settings" : [], "type" : "hidden", "weight" : 10 }
+          "teaser" : {
+            "label" : "inline",
+            "type" : "hidden",
+            "weight" : "10",
+            "settings" : []
+          }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -470,8 +473,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : 18
         },
-        "id" : "244",
-        "field_id" : "236",
+        "id" : "223",
+        "field_id" : "215",
         "field_name" : "field_mls_acreage",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -484,34 +487,30 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "number",
-            "settings" : {
-              "decimal_separator" : ".",
-              "prefix_suffix" : 0,
-              "scale" : 1,
-              "thousand_separator" : ",",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "number_decimal",
-            "weight" : 5
+            "weight" : "5",
+            "settings" : {
+              "thousand_separator" : ",",
+              "decimal_separator" : ".",
+              "scale" : "1",
+              "prefix_suffix" : 0
+            },
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "teaser" : {
             "label" : "inline",
-            "module" : "number",
-            "settings" : {
-              "decimal_separator" : ".",
-              "prefix_suffix" : 0,
-              "scale" : 1,
-              "thousand_separator" : ",",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "number_decimal",
-            "weight" : 4
+            "weight" : "4",
+            "settings" : {
+              "thousand_separator" : ",",
+              "decimal_separator" : ".",
+              "scale" : "1",
+              "prefix_suffix" : 0
+            },
+            "module" : "number"
           }
         },
         "drealty" : {
@@ -543,8 +542,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : 13
         },
-        "id" : "245",
-        "field_id" : "237",
+        "id" : "224",
+        "field_id" : "216",
         "field_name" : "field_mls_bathrooms",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -557,34 +556,30 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "number",
-            "settings" : {
-              "decimal_separator" : ".",
-              "prefix_suffix" : 0,
-              "scale" : 0,
-              "thousand_separator" : ",",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "number_integer",
-            "weight" : 4
+            "weight" : "4",
+            "settings" : {
+              "thousand_separator" : ",",
+              "prefix_suffix" : 0,
+              "decimal_separator" : ".",
+              "scale" : 0
+            },
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "teaser" : {
             "label" : "inline",
-            "module" : "number",
-            "settings" : {
-              "decimal_separator" : ".",
-              "prefix_suffix" : 1,
-              "scale" : 0,
-              "thousand_separator" : ",",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "number_integer",
-            "weight" : 3
+            "weight" : "3",
+            "settings" : {
+              "thousand_separator" : ",",
+              "prefix_suffix" : 1,
+              "decimal_separator" : ".",
+              "scale" : 0
+            },
+            "module" : "number"
           }
         },
         "drealty" : {
@@ -616,8 +611,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : 12
         },
-        "id" : "246",
-        "field_id" : "238",
+        "id" : "225",
+        "field_id" : "217",
         "field_name" : "field_mls_bedrooms",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -630,18 +625,15 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "above",
-            "module" : "taxonomy",
-            "settings" : {
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "taxonomy_term_reference_link",
-            "weight" : 18
+            "weight" : "18",
+            "settings" : [],
+            "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "0", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -675,8 +667,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "autocomplete_deluxe_taxonomy",
           "weight" : 9
         },
-        "id" : "247",
-        "field_id" : "239",
+        "id" : "226",
+        "field_id" : "218",
         "field_name" : "field_mls_city",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -689,18 +681,15 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "above",
-            "module" : "taxonomy",
-            "settings" : {
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "taxonomy_term_reference_link",
-            "weight" : 19
+            "weight" : "19",
+            "settings" : [],
+            "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "0", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -734,8 +723,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "autocomplete_deluxe_taxonomy",
           "weight" : 15
         },
-        "id" : "248",
-        "field_id" : "240",
+        "id" : "227",
+        "field_id" : "219",
         "field_name" : "field_mls_development",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -748,22 +737,20 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "number",
-            "settings" : {
-              "decimal_separator" : ".",
-              "prefix_suffix" : 0,
-              "scale" : 0,
-              "thousand_separator" : ",",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "number_integer",
-            "weight" : 6
+            "weight" : "6",
+            "settings" : {
+              "thousand_separator" : ",",
+              "prefix_suffix" : 0,
+              "decimal_separator" : ".",
+              "scale" : 0
+            },
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "inline", "settings" : [], "type" : "hidden", "weight" : 9 }
+          "teaser" : { "label" : "inline", "type" : "hidden", "weight" : "9", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -794,8 +781,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : 19
         },
-        "id" : "249",
-        "field_id" : "241",
+        "id" : "228",
+        "field_id" : "220",
         "field_name" : "field_mls_garage",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -806,11 +793,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 17 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "17", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 20 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "20", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -856,8 +843,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 0
         },
-        "id" : "250",
-        "field_id" : "242",
+        "id" : "229",
+        "field_id" : "221",
         "field_name" : "field_mls_internal_id",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -870,34 +857,30 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "hidden",
-            "module" : "number",
+            "type" : "number_decimal",
+            "weight" : "2",
             "settings" : {
               "decimal_separator" : ".",
               "prefix_suffix" : 1,
               "scale" : 2,
-              "thousand_separator" : ",",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
+              "thousand_separator" : ","
             },
-            "type" : "number_decimal",
-            "weight" : 2
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "teaser" : {
             "label" : "hidden",
-            "module" : "number",
+            "type" : "number_decimal",
+            "weight" : "2",
             "settings" : {
               "decimal_separator" : ".",
               "prefix_suffix" : 1,
               "scale" : 2,
-              "thousand_separator" : ",",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
+              "thousand_separator" : ","
             },
-            "type" : "number_decimal",
-            "weight" : 2
+            "module" : "number"
           }
         },
         "drealty" : {
@@ -929,8 +912,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : 3
         },
-        "id" : "251",
-        "field_id" : "243",
+        "id" : "230",
+        "field_id" : "222",
         "field_name" : "field_mls_list_price",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -941,11 +924,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 8 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 12 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -991,8 +974,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 4
         },
-        "id" : "252",
-        "field_id" : "244",
+        "id" : "231",
+        "field_id" : "223",
         "field_name" : "field_mls_listing_area",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1005,26 +988,20 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "text",
-            "settings" : {
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "text_default",
-            "weight" : 0
+            "weight" : "0",
+            "settings" : [],
+            "module" : "text"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "teaser" : {
             "label" : "inline",
-            "module" : "text",
-            "settings" : {
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "text_default",
-            "weight" : 0
+            "weight" : "0",
+            "settings" : [],
+            "module" : "text"
           }
         },
         "drealty" : {
@@ -1071,8 +1048,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 1
         },
-        "id" : "253",
-        "field_id" : "245",
+        "id" : "232",
+        "field_id" : "224",
         "field_name" : "field_mls_number",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1084,74 +1061,64 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "hidden",
-            "module" : "image",
-            "settings" : {
-              "image_link" : "",
-              "image_style" : "c21wide",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "image",
-            "weight" : 1
+            "weight" : "1",
+            "settings" : { "image_link" : "", "image_style" : "c21wide" },
+            "module" : "image"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "teaser" : {
             "label" : "hidden",
-            "module" : "image",
-            "settings" : {
-              "image_link" : "content",
-              "image_style" : "c21wide",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "image",
-            "weight" : 1
+            "weight" : "1",
+            "settings" : { "image_link" : "content", "image_style" : "c21wide" },
+            "module" : "image"
           }
         },
-        "ds_extras_field_template" : "",
         "fences_wrapper" : "div",
         "label" : "Photos",
         "required" : 0,
         "settings" : {
-          "alt_field" : 0,
-          "custom_add_another" : "",
-          "custom_remove" : "",
-          "default_image" : 58876,
           "file_directory" : "mls",
           "file_extensions" : "png gif jpg jpeg",
           "max_filesize" : "",
           "max_resolution" : "",
           "min_resolution" : "",
+          "alt_field" : 0,
           "title_field" : 0,
+          "default_image" : "58876",
+          "custom_add_another" : "",
+          "custom_remove" : "",
           "user_register_form" : false
         },
         "widget" : {
-          "active" : 1,
+          "weight" : 2,
+          "type" : "image_image",
           "module" : "image",
+          "active" : 1,
           "settings" : {
+            "progress_indicator" : "throbber",
+            "preview_image_style" : "thumbnail",
             "filefield_sources" : {
               "filefield_sources" : {
-                "attach" : 0,
-                "clipboard" : 0,
+                "upload" : "upload",
                 "plupload" : 0,
-                "reference" : 0,
                 "remote" : 0,
-                "upload" : "upload"
+                "clipboard" : 0,
+                "reference" : 0,
+                "attach" : 0
               },
-              "source_attach" : { "absolute" : 0, "attach_mode" : "move", "path" : "file_attach" },
+              "source_attach" : { "path" : "file_attach", "absolute" : "0", "attach_mode" : "move" },
               "source_imce" : { "imce_mode" : 0 },
-              "source_reference" : { "autocomplete" : 0 }
-            },
-            "preview_image_style" : "thumbnail",
-            "progress_indicator" : "throbber"
-          },
-          "type" : "image_image",
-          "weight" : 2
+              "source_reference" : { "autocomplete" : "0" }
+            }
+          }
         },
-        "id" : "254",
-        "field_id" : "246",
+        "ds_extras_field_template" : "",
+        "id" : "233",
+        "field_id" : "225",
         "field_name" : "field_mls_photos",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1164,26 +1131,20 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "above",
-            "module" : "taxonomy",
-            "settings" : {
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "taxonomy_term_reference_link",
-            "weight" : 20
+            "weight" : "20",
+            "settings" : [],
+            "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "teaser" : {
             "label" : "above",
-            "module" : "taxonomy",
-            "settings" : {
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "taxonomy_term_reference_link",
-            "weight" : 0
+            "weight" : "0",
+            "settings" : [],
+            "module" : "taxonomy"
           }
         },
         "drealty" : {
@@ -1218,8 +1179,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "autocomplete_deluxe_taxonomy",
           "weight" : 16
         },
-        "id" : "255",
-        "field_id" : "247",
+        "id" : "234",
+        "field_id" : "226",
         "field_name" : "field_mls_school_district",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1230,23 +1191,21 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 9 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "9", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "teaser" : {
             "label" : "inline",
-            "module" : "number",
-            "settings" : {
-              "decimal_separator" : ".",
-              "prefix_suffix" : 0,
-              "scale" : 0,
-              "thousand_separator" : " ",
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "number_decimal",
-            "weight" : 5
+            "weight" : "5",
+            "settings" : {
+              "thousand_separator" : " ",
+              "decimal_separator" : ".",
+              "scale" : "0",
+              "prefix_suffix" : 0
+            },
+            "module" : "number"
           }
         },
         "drealty" : {
@@ -1278,8 +1237,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : 20
         },
-        "id" : "256",
-        "field_id" : "248",
+        "id" : "235",
+        "field_id" : "227",
         "field_name" : "field_mls_square_feet",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1290,11 +1249,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 15 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 18 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "18", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -1340,8 +1299,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 10
         },
-        "id" : "257",
-        "field_id" : "249",
+        "id" : "236",
+        "field_id" : "228",
         "field_name" : "field_mls_state",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1352,11 +1311,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 12 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 15 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -1402,8 +1361,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 6
         },
-        "id" : "258",
-        "field_id" : "250",
+        "id" : "237",
+        "field_id" : "229",
         "field_name" : "field_mls_street_direction",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1414,11 +1373,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 13 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 16 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "16", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -1464,8 +1423,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 7
         },
-        "id" : "259",
-        "field_id" : "251",
+        "id" : "238",
+        "field_id" : "230",
         "field_name" : "field_mls_street_name",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1476,11 +1435,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 11 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "11", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 14 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -1526,8 +1485,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 5
         },
-        "id" : "260",
-        "field_id" : "252",
+        "id" : "239",
+        "field_id" : "231",
         "field_name" : "field_mls_street_number",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1538,11 +1497,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 14 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 17 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "17", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -1588,8 +1547,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 8
         },
-        "id" : "261",
-        "field_id" : "253",
+        "id" : "240",
+        "field_id" : "232",
         "field_name" : "field_mls_street_suffix",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1600,11 +1559,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 10 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "10", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 13 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -1650,8 +1609,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 14
         },
-        "id" : "262",
-        "field_id" : "254",
+        "id" : "241",
+        "field_id" : "233",
         "field_name" : "field_mls_tax_map",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1664,18 +1623,20 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "text",
-            "settings" : {
-              "empty_fields_handler" : "",
-              "empty_fields_emptyfieldtext_empty_text" : ""
-            },
             "type" : "text_default",
-            "weight" : 8
+            "weight" : "8",
+            "settings" : [],
+            "module" : "text"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "inline", "settings" : [], "type" : "hidden", "weight" : 11 }
+          "teaser" : {
+            "label" : "inline",
+            "type" : "hidden",
+            "weight" : "11",
+            "settings" : []
+          }
         },
         "drealty" : { "hash_exclude" : 0 },
         "fences_wrapper" : "div",
@@ -1712,8 +1673,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 17
         },
-        "id" : "263",
-        "field_id" : "255",
+        "id" : "242",
+        "field_id" : "234",
         "field_name" : "field_mls_year_built",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1724,11 +1685,11 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 16 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "16", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 19 }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "19", "settings" : [] }
         },
         "drealty" : {
           "hash_exclude" : 0,
@@ -1774,8 +1735,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : 11
         },
-        "id" : "264",
-        "field_id" : "256",
+        "id" : "243",
+        "field_id" : "235",
         "field_name" : "field_mls_zipcode",
         "entity_type" : "drealty_listing",
         "deleted" : "0"

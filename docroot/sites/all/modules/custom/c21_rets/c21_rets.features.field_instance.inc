@@ -24,8 +24,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -106,8 +104,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 1,
           'thousand_separator' => ',',
@@ -138,8 +134,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 1,
           'thousand_separator' => ',',
@@ -196,8 +190,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -228,8 +220,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 1,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -284,10 +274,7 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 18,
       ),
@@ -365,10 +352,7 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 19,
       ),
@@ -448,8 +432,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -630,8 +612,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -662,8 +642,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -818,10 +796,7 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -846,10 +821,7 @@ function c21_rets_field_default_field_instances() {
       'teaser' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -926,8 +898,6 @@ function c21_rets_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => 'c21wide',
         ),
@@ -956,8 +926,6 @@ function c21_rets_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'image_link' => 'content',
           'image_style' => 'c21wide',
         ),
@@ -1029,10 +997,7 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 20,
       ),
@@ -1057,10 +1022,7 @@ function c21_rets_field_default_field_instances() {
       'teaser' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
+        'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 0,
       ),
@@ -1140,8 +1102,6 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -1796,10 +1756,7 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 8,
       ),

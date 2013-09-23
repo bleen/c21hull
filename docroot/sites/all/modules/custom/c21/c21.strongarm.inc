@@ -238,48 +238,6 @@ function c21_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'hide_submit_abtext';
-  $strongarm->value = '';
-  $export['hide_submit_abtext'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'hide_submit_atext';
-  $strongarm->value = '';
-  $export['hide_submit_atext'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'hide_submit_hide_fx';
-  $strongarm->value = 0;
-  $export['hide_submit_hide_fx'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'hide_submit_hide_text';
-  $strongarm->value = 'Processing...';
-  $export['hide_submit_hide_text'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'hide_submit_method';
-  $strongarm->value = 'hide';
-  $export['hide_submit_method'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'hide_submit_reset_time';
-  $strongarm->value = '0';
-  $export['hide_submit_reset_time'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'html5_tools_add_chrome_frame_header';
   $strongarm->value = 1;
   $export['html5_tools_add_chrome_frame_header'] = $strongarm;
@@ -533,14 +491,14 @@ function c21_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_pdf_content_disposition';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['print_pdf_content_disposition'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_pdf_display_sys_urllist';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['print_pdf_display_sys_urllist'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -598,9 +556,9 @@ function c21_strongarm() {
   $strongarm->name = 'print_pdf_link_pos';
   $strongarm->value = array(
     'link' => 'link',
-    'block' => 'block',
-    'help' => 'help',
     'corner' => 0,
+    'block' => 0,
+    'help' => 0,
   );
   $export['print_pdf_link_pos'] = $strongarm;
 
@@ -692,7 +650,7 @@ function c21_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_sourceurl_enabled';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['print_sourceurl_enabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -706,7 +664,7 @@ function c21_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_urls';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['print_urls'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -798,9 +756,9 @@ function c21_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'views_block_hashes';
   $strongarm->value = array(
+    'b9efce5f9de478ed390efcf7c815f2f5' => 'c21_workbench_edits_by_user-block_1',
     'bdeec0c6a6d8fcdcd6969bf1225f3520' => 'c21_workbench_recent_content-block_1',
     '5e810b84edb52f2b44293acbfdb9a816' => 'c21_workbench_recent_content-block_2',
-    'b9efce5f9de478ed390efcf7c815f2f5' => 'c21_workbench_edits_by_user-block_1',
     '964ecad519128c5b59d0f4917f6399da' => 'c21_recently_added_listings-block',
     '9cf22433e0efbd8b206c8e4c2edb177c' => 'workbench_recent_content-block_1',
   );

@@ -6032,7 +6032,7 @@ function c21_listings_field_default_field_instances() {
       'alt_field' => 0,
       'custom_add_another' => '',
       'custom_remove' => '',
-      'default_image' => 11182,
+      'default_image' => 0,
       'file_directory' => 'listing-photos/featured',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '5 MB',
