@@ -15,6 +15,6 @@ function c21_search_update_7001() {
   $tables = array('search_dataset', 'search_index', 'search_total', 'search_node_links');
 
   foreach($tables as $table) {
-    db_truncate($table);
+    db_truncate($table)->execute();
   }
 }
