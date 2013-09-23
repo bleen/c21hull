@@ -372,13 +372,17 @@ $conf['theme_escrow_settings'] = array (
   'magic_viewport_indicator' => 0,
   'magic_modernizr_debug' => 0,
   'magic_performance__active_tab' => 'edit-css',
-  'magic_css_excludes_regex' => 
+  'magic_css_excludes_regex' =>
   array (
     'exclude' => '/^(modules\\/system\\/system\\.menus\\.css)$/',
     'include' => '',
   ),
   'magic_js_excludes_regex' => false,
 );
+
+// Search settings. Prevent the default search indexing.
+$conf['search_cron_limit'] = 0;
+$conf['search_default_module'] = 'apachesolr_search';
 
 /**
  * A custom theme can be set for the offline page. This applies when the site

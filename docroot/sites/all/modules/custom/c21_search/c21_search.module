@@ -57,6 +57,15 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
 /**
  * Implements hook_form_FORM_ID_alter().
  */
+function c21_search_form_search_admin_settings_alter(&$form, &$form_state) {
+  $form['indexing_throttle']['search_cron_limit']['#options'][0] = 0;
+  $form['indexing_throttle']['search_cron_limit']['#disabled'] = TRUE;
+  $form['indexing_throttle']['search_cron_limit']['#description'] .= '<strong><br/>' . t('This must remain 0 to prevent the Drupal search module (as opposed to ApacheSOLR) from indexing the site.') . '</strong>';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
 function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
   switch ($form['#id']) {
     case 'views-exposed-form-c21-search-listings-page':
