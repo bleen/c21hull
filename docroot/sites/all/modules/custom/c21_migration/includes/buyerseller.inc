@@ -28,13 +28,13 @@ class C21BuyerSellerMigration extends C21Migration {
 
     switch ($person_type) {
       case 'seller':
-        $source_query = Database::getConnection('default', 'legacy')
+        $source_query = Database::getConnection('default', C21_MIGRATION_SOURCE)
           ->select('listing_sellers', 'ls')
           ->fields('ls', array('listing_id', 'disp_order', 'firstname', 'lastname', 'company', 'address', 'city', 'state', 'zip', 'office_only'))
           ->orderBy('disp_order');
         break;
       case 'buyer':
-        $source_query = Database::getConnection('default', 'legacy')
+        $source_query = Database::getConnection('default', C21_MIGRATION_SOURCE)
           ->select('listing_buyers', 'lb')
           ->fields('lb', array('listing_id', 'disp_order', 'firstname', 'lastname', 'company', 'address', 'city', 'state', 'zip'))
           ->orderBy('disp_order');
@@ -103,7 +103,7 @@ class C21BuyerSellerPhoneEmailMigration extends C21Migration {
     switch ($this->person_type) {
       case 'buyer':
         $this->dependencies = array('c21Buyer');
-        $source_query = Database::getConnection('default', 'legacy')
+        $source_query = Database::getConnection('default', C21_MIGRATION_SOURCE)
          ->select('listing_buyers', 'lb')
 //         ->condition($phone_type, '', '<>')
          ->fields('lb', array('listing_id', 'disp_order', 'home_phone', 'business_phone', 'local_phone', 'cell_phone', 'fax', 'email'));
@@ -111,7 +111,7 @@ class C21BuyerSellerPhoneEmailMigration extends C21Migration {
 
       case 'seller':
         $this->dependencies = array('c21Seller');
-        $source_query = Database::getConnection('default', 'legacy')
+        $source_query = Database::getConnection('default', C21_MIGRATION_SOURCE)
          ->select('listing_sellers', 'ls')
 //         ->condition($phone_type, '', '<>')
          ->fields('ls', array('listing_id', 'disp_order', 'home_phone', 'business_phone', 'local_phone', 'cell_phone', 'fax', 'email'));

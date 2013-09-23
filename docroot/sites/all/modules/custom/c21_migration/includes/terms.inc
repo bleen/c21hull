@@ -21,7 +21,7 @@ class C21TermsListingMigration extends C21Migration {
     $this->description = t('c21hull.com terms - %vocab', array('%vocab' => $this->vocabulary['name']));
 
     // Setup the source object for the tag data.
-    $query = Database::getConnection('default', 'legacy')
+    $query = Database::getConnection('default', C21_MIGRATION_SOURCE)
          ->select($this->vocabulary['table'])
          ->fields($this->vocabulary['table'], array($this->vocabulary['column']))
          ->groupBy($this->vocabulary['column']);

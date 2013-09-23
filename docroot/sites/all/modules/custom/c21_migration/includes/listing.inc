@@ -11,7 +11,7 @@ class C21ListingMigration extends C21Migration {
 
     // Setup the source object for the listing data.
     $source_fields = $this->getSourceFields();
-    $query = Database::getConnection('default', 'legacy')
+    $query = Database::getConnection('default', C21_MIGRATION_SOURCE)
           ->select('listings', 'l');
     $query->join('listing_building_dtl', 'lbd', 'l.listing_id = lbd.listing_id');
     $query->join('listing_location_dtl', 'lld', 'l.listing_id = lld.listing_id');
@@ -98,32 +98,19 @@ class C21ListingMigration extends C21Migration {
         ->defaultValue(MigrateFile::FILE_EXISTS_REUSE);
 
     // Map taxonomies term reference fields.
-    $this->addFieldMapping('field_listing_sewage', 'sewage')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_water', 'water')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_heat', 'heat')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_insulation', 'insulation')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_garage', 'garage')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_basement', 'basement')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_windows', 'windows')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_floors', 'floors')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_walls', 'walls')
-         ->separator(',');
+    $fields = array('sewage', 'water', 'heat', 'insulation', 'garage', 'basement', 'windows', 'floors', 'walls', 'school_district', 'development', 'township');
+    foreach ($fields as $field) {
+      $this->addFieldMapping('field_listing_' . $field, $field)
+        ->separator(',');
+      $this->addFieldMapping('field_listing_' . $field . ':ignore_case')
+        ->defaultValue(TRUE);
+    }
     $this->addFieldMapping('field_listing_additional_bldg', 'add_building')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_school_district', 'school_district')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_development', 'development')
-         ->separator(',');
-    $this->addFieldMapping('field_listing_township', 'township')
-         ->separator(',');
+      ->separator(',');
+    $this->addFieldMapping('field_listing_additional_bldg:ignore_case')
+      ->defaultValue(TRUE);
+    $this->addFieldMapping('field_listing_school_district:create_term')
+      ->defaultValue(TRUE);
 
     // Map room Measurements.
     foreach ($this->getRooms() as $room => $room_data) {
@@ -152,10 +139,11 @@ class C21ListingMigration extends C21Migration {
     $source_row->nid = $id;
     $source_row->id_prefix = $prefix;
 
-    // Make certain the title is present.
+    // Make certain the title is present and make it "title case".
     if (empty($source_row->title)) {
       $source_row->title = ($source_row->status == 'forsale' ? 'For sale' : 'Unavailable') . ' in ' . $source_row->township;
     }
+    $source_row->title = ucwords(strtolower($source_row->title));
 
     // Prepare the MLS Number by removing errant characters
     if (!empty($source_row->mls)) {
@@ -180,7 +168,7 @@ class C21ListingMigration extends C21Migration {
     }
 
     // Prepare images for import.
-    $source_dir = variable_get('hosting_environment', 'local') == 'local' ? '/Users/alex/Sites/c21hull/source_files/photos' : '/home/hull/listing_photos';
+    $source_dir = variable_get('hosting_environment', 'local') == 'local' ? '/Users/alex/Desktop/c21hull_source_files/photos' : '/home/hull/listing_photos';
     $source_dir .= '/' . strtoupper($source_row->listing_id);
 
     if (file_exists($source_dir)) {
@@ -216,7 +204,7 @@ class C21ListingMigration extends C21Migration {
     // the names of schools in the Deleware Valley district. We should alter
     // those values to be "Deleware valley" and add the school name to the
     // notes field.
-    if (strpos($source_row->school_district, 'Del Val -') === 0) {
+    if (stripos($source_row->school_district, 'Del Val -') === 0) {
       switch ($source_row->school_district) {
         case 'Del Val - DD':
           $source_row->additional_info .= ' | Dingman-Deleware Elementary';
@@ -240,9 +228,6 @@ class C21ListingMigration extends C21Migration {
     $extra_water_fields = array(
       'shared' => 'shared',
     );
-    $extra_development_fields = array(
-      'spec_notes' => '@value',
-    );
 
     $source_row->sewage = $this->prepareListingTerms($source_row, 'sewage', 'normalizeSewage', $extra_sewage_fields);
     $source_row->water = $this->prepareListingTerms($source_row, 'water', 'normalizeWater', $extra_water_fields);
@@ -261,14 +246,14 @@ class C21ListingMigration extends C21Migration {
     // Prepare measurements.
     foreach ($this->getRooms() as $room => $room_data) {
       foreach ($this->getFloors() as $floor => $floor_data) {
-        $query = Database::getConnection('default', 'legacy')
+        $query = Database::getConnection('default', C21_MIGRATION_SOURCE)
           ->select('listing_measurements', 'lm')
           ->fields('lm', array('measurement'))
           ->condition('listing_id', $source_row->listing_id)
           ->condition('floor', $floor)
           ->condition('room', $room);
 
-        $measurement = Database::getConnection('default', 'legacy')
+        $measurement = Database::getConnection('default', C21_MIGRATION_SOURCE)
           ->select('listing_measurements', 'lm')
           ->fields('lm', array('measurement'))
           ->condition('listing_id', $source_row->listing_id)

@@ -1,5 +1,12 @@
 <?php
 
+if (variable_get('hosting_environment', '') != 'local') {
+  define('C21_MIGRATION_SOURCE', 'legacy');
+}
+else {
+  define('C21_MIGRATION_SOURCE', 'legacy_local');
+}
+
 /**
  * Implements hook_migrate_api().
  */

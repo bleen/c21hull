@@ -9,7 +9,7 @@ class C21UserMigration extends C21Migration {
     $this->description = t('c21hull.com users');
 
     // Setup the source object for the user data.
-    $query = Database::getConnection('default', 'legacy')
+    $query = Database::getConnection('default', C21_MIGRATION_SOURCE)
          ->select('users', 'u')
          ->fields('u', array('user_id', 'firstname', 'lastname', 'username', 'email', 'password', 'access', 'created_on'));
     $this->source = new MigrateSourceSQL($query, array(), NULL, array('map_joinable' => FALSE));
