@@ -194,9 +194,17 @@ function c21_listings_field_formatter_view($entity_type, $entity, $field, $insta
   return $element;
 }
 
-//function c21_listings_ds_pre_render_alter(&$layout_render_array, $context) {
-//  $foo = 'bar';
-//}
+/**
+ * Implements hook_field_default_field_instances_alter().
+ *
+ * @see https://gist.github.com/sprice/2003047
+ */
+function c21_listings_field_default_field_instances_alter(&$fields) {
+  // Set the default image for listings featured photo field.
+  if (!empty($fields['node-listing-field_listing_featured_photo'])) {
+    $fields['node-listing-field_listing_featured_photo']['settings']['default_image'] = variable_get('c21_listings_default_featured_photo_fid', 0);
+  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().

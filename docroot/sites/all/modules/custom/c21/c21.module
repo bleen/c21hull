@@ -209,6 +209,44 @@ function c21_get_office_info($office) {
 }
 
 /**
+ * Return a file object after saving a default image and storing the fid
+ * in a variable.
+ *
+ * @param array $default_image
+ *   An associative array containing:
+ *   - scheme: File API stream wrapper scheme (ie: 'public://', 'private://')
+ *   - dest_directory: The directory within the files directory the default
+ *     image will be copied to. No leading or trailing slash.
+ *   - source_path: The full path to the existing default image that will
+ *     be copied.
+ *   - file_name: The name of the default image.
+ *   - variable: The variable name that will store the default image fid.
+ *
+ * @return object
+ *   A file object of the saved default image file.
+ *
+ * @see https://gist.github.com/sprice/2003047
+ */
+function c21_image_create($default_image) {
+  $file_uri = $default_image['scheme'] . $default_image['dest_directory'] . '/' . $default_image['file_name'];
+  $full_dir = $default_image['scheme'] . $default_image['dest_directory'];
+  file_prepare_directory($full_dir, FILE_CREATE_DIRECTORY);
+  file_unmanaged_copy($default_image['source_path'], $file_uri, FILE_EXISTS_REPLACE);
+  $file = (object) array(
+    'uid' => 1,
+    'status' => FILE_STATUS_PERMANENT,
+    'filename' => $default_image['file_name'],
+    'uri' => $file_uri,
+    'filemime' => file_get_mimetype($default_image['source_path']),
+  );
+  $file = file_save($file);
+  if ($file) {
+    variable_set($default_image['variable'], $file->fid);
+  }
+  return $file;
+}
+
+/**
  * Theme function.
  */
 function theme_c21_office_address($variables) {

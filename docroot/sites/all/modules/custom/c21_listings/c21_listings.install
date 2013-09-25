@@ -34,4 +34,33 @@ function c21_listings_install() {
       entity_save('node', $entity);
     }
   }
+
+  c21_listings_update_7001();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function c21_listings_uninstall() {
+  $fid = variable_get('c21_listings_default_featured_photo_fid', FALSE);
+  if ($fid) {
+    $file = file_load($fid);
+    file_delete($file, TRUE);
+    variable_del('c21_listings_default_featured_photo_fid');
+  }
+}
+
+/**
+ * Add a default image to be used by the "featured photo" if one is not set.
+ */
+function c21_listings_update_7001() {
+  $default_image = array(
+    'scheme' => 'public://',
+    'dest_directory' => 'default_images',
+    'source_path' => drupal_get_path('theme', 'escrow') . '/images/' . 'no-photo.jpg',
+    'file_name' => 'no-photo.png',
+    'variable' => 'c21_listings_default_featured_photo_fid',
+  );
+
+  c21_image_create($default_image);
 }
