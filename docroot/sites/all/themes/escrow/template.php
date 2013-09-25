@@ -270,19 +270,14 @@ function _escrow_fine_print($node) {
  * Return a render array containing a map of the given listing.
  *
  * @param object $node
+ *
+ * @return array
  */
 function _escrow_map($node) {
   $map_link = _c21_listings_get_gmap_link($node);
 
   // Add a map.
   $map = array(
-    '#attached' => array(
-      'js' => array(
-        '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' => array('type' => 'external', 'scope' => 'footer', 'weight' => 1),
-        'var listing_address="' . $map_link['query']['q'] . '";' => array('type' => 'inline', 'scope' => 'footer', 'weight' => 5),
-        drupal_get_path('module', 'c21_listings') . '/js/c21_listings_maps.js' => array('type' => 'file', 'scope' => 'footer', 'weight' => 6),
-      ),
-    ),
     '#theme_wrappers' => array('container'),
     '#attributes' => array(
       'id' => 'listing-map-wrapper',
@@ -295,7 +290,16 @@ function _escrow_map($node) {
     ),
   );
 
-  if (empty($map_link)) {
+  if (!empty($map_link)) {
+    $map['#attached'] = array(
+      'js' => array(
+        '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' => array('type' => 'external', 'scope' => 'footer', 'weight' => 1),
+        'var listing_address="' . $map_link['query']['q'] . '";' => array('type' => 'inline', 'scope' => 'footer', 'weight' => 5),
+        drupal_get_path('module', 'c21_listings') . '/js/c21_listings_maps.js' => array('type' => 'file', 'scope' => 'footer', 'weight' => 6),
+      ),
+    );
+  }
+  else {
     $map['map']['#attributes']['class'] = array('no-map');
   }
 
