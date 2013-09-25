@@ -200,7 +200,7 @@ function c21_rets_default_drealty_listing_type() {
         "entity_types" : [ "drealty_listing" ],
         "foreign keys" : { "fid" : { "table" : "file_managed", "columns" : { "fid" : "fid" } } },
         "indexes" : { "fid" : [ "fid" ] },
-        "settings" : { "uri_scheme" : "public", "default_image" : 0 },
+        "settings" : { "default_image" : "11612", "uri_scheme" : "public" },
         "translatable" : "0",
         "field_name" : "field_mls_photos",
         "type" : "image",
@@ -413,6 +413,24 @@ function c21_rets_default_drealty_listing_type() {
           "value" : { "type" : "varchar", "length" : 255, "not null" : false },
           "format" : { "type" : "varchar", "length" : 255, "not null" : false }
         }
+      },
+      "field_mls_listing_office" : {
+        "translatable" : "0",
+        "entity_types" : [ "drealty_listing" ],
+        "settings" : { "max_length" : "255" },
+        "foreign keys" : { "format" : { "table" : "filter_format", "columns" : { "format" : "format" } } },
+        "indexes" : { "format" : [ "format" ] },
+        "field_name" : "field_mls_listing_office",
+        "type" : "text",
+        "module" : "text",
+        "active" : "1",
+        "locked" : "0",
+        "cardinality" : "1",
+        "deleted" : "0",
+        "columns" : {
+          "value" : { "type" : "varchar", "length" : "255", "not null" : false },
+          "format" : { "type" : "varchar", "length" : 255, "not null" : false }
+        }
       }
     },
     "field_instances" : {
@@ -430,7 +448,9 @@ function c21_rets_default_drealty_listing_type() {
               "thousand_separator" : ",",
               "decimal_separator" : ".",
               "scale" : "2",
-              "prefix_suffix" : 0
+              "prefix_suffix" : 0,
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           },
@@ -471,7 +491,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 18
+          "weight" : "18"
         },
         "id" : "223",
         "field_id" : "215",
@@ -493,7 +513,9 @@ function c21_rets_default_drealty_listing_type() {
               "thousand_separator" : ",",
               "decimal_separator" : ".",
               "scale" : "1",
-              "prefix_suffix" : 0
+              "prefix_suffix" : 0,
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           },
@@ -508,7 +530,9 @@ function c21_rets_default_drealty_listing_type() {
               "thousand_separator" : ",",
               "decimal_separator" : ".",
               "scale" : "1",
-              "prefix_suffix" : 0
+              "prefix_suffix" : 0,
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           }
@@ -540,7 +564,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 13
+          "weight" : "13"
         },
         "id" : "224",
         "field_id" : "216",
@@ -562,7 +586,9 @@ function c21_rets_default_drealty_listing_type() {
               "thousand_separator" : ",",
               "prefix_suffix" : 0,
               "decimal_separator" : ".",
-              "scale" : 0
+              "scale" : 0,
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           },
@@ -577,7 +603,9 @@ function c21_rets_default_drealty_listing_type() {
               "thousand_separator" : ",",
               "prefix_suffix" : 1,
               "decimal_separator" : ".",
-              "scale" : 0
+              "scale" : 0,
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           }
@@ -609,7 +637,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 12
+          "weight" : "12"
         },
         "id" : "225",
         "field_id" : "217",
@@ -627,7 +655,10 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "above",
             "type" : "taxonomy_term_reference_link",
             "weight" : "18",
-            "settings" : [],
+            "settings" : {
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
             "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -665,7 +696,7 @@ function c21_rets_default_drealty_listing_type() {
             "size" : 60
           },
           "type" : "autocomplete_deluxe_taxonomy",
-          "weight" : 9
+          "weight" : "9"
         },
         "id" : "226",
         "field_id" : "218",
@@ -683,7 +714,10 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "above",
             "type" : "taxonomy_term_reference_link",
             "weight" : "19",
-            "settings" : [],
+            "settings" : {
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
             "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -721,7 +755,7 @@ function c21_rets_default_drealty_listing_type() {
             "size" : 60
           },
           "type" : "autocomplete_deluxe_taxonomy",
-          "weight" : 15
+          "weight" : "15"
         },
         "id" : "227",
         "field_id" : "219",
@@ -743,7 +777,9 @@ function c21_rets_default_drealty_listing_type() {
               "thousand_separator" : ",",
               "prefix_suffix" : 0,
               "decimal_separator" : ".",
-              "scale" : 0
+              "scale" : 0,
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           },
@@ -779,7 +815,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 19
+          "weight" : "19"
         },
         "id" : "228",
         "field_id" : "220",
@@ -793,7 +829,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "17", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -841,7 +877,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 0
+          "weight" : "0"
         },
         "id" : "229",
         "field_id" : "221",
@@ -863,7 +899,9 @@ function c21_rets_default_drealty_listing_type() {
               "decimal_separator" : ".",
               "prefix_suffix" : 1,
               "scale" : 2,
-              "thousand_separator" : ","
+              "thousand_separator" : ",",
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           },
@@ -878,7 +916,9 @@ function c21_rets_default_drealty_listing_type() {
               "decimal_separator" : ".",
               "prefix_suffix" : 1,
               "scale" : 2,
-              "thousand_separator" : ","
+              "thousand_separator" : ",",
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           }
@@ -910,7 +950,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 3
+          "weight" : "3"
         },
         "id" : "230",
         "field_id" : "222",
@@ -924,7 +964,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "6", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -972,7 +1012,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 4
+          "weight" : "4"
         },
         "id" : "231",
         "field_id" : "223",
@@ -990,7 +1030,10 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "inline",
             "type" : "text_default",
             "weight" : "0",
-            "settings" : [],
+            "settings" : {
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
             "module" : "text"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1000,7 +1043,10 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "inline",
             "type" : "text_default",
             "weight" : "0",
-            "settings" : [],
+            "settings" : {
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
             "module" : "text"
           }
         },
@@ -1046,7 +1092,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 1
+          "weight" : "1"
         },
         "id" : "232",
         "field_id" : "224",
@@ -1063,7 +1109,12 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "hidden",
             "type" : "image",
             "weight" : "1",
-            "settings" : { "image_link" : "", "image_style" : "c21wide" },
+            "settings" : {
+              "image_style" : "c21wide",
+              "image_link" : "",
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : "no image"
+            },
             "module" : "image"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1073,7 +1124,12 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "hidden",
             "type" : "image",
             "weight" : "1",
-            "settings" : { "image_link" : "content", "image_style" : "c21wide" },
+            "settings" : {
+              "image_link" : "content",
+              "image_style" : "c21wide",
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
             "module" : "image"
           }
         },
@@ -1088,13 +1144,13 @@ function c21_rets_default_drealty_listing_type() {
           "min_resolution" : "",
           "alt_field" : 0,
           "title_field" : 0,
-          "default_image" : "58876",
+          "default_image" : 0,
           "custom_add_another" : "",
           "custom_remove" : "",
           "user_register_form" : false
         },
         "widget" : {
-          "weight" : 2,
+          "weight" : "2",
           "type" : "image_image",
           "module" : "image",
           "active" : 1,
@@ -1133,7 +1189,10 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "above",
             "type" : "taxonomy_term_reference_link",
             "weight" : "20",
-            "settings" : [],
+            "settings" : {
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
             "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1143,7 +1202,10 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "above",
             "type" : "taxonomy_term_reference_link",
             "weight" : "0",
-            "settings" : [],
+            "settings" : {
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
             "module" : "taxonomy"
           }
         },
@@ -1177,7 +1239,7 @@ function c21_rets_default_drealty_listing_type() {
             "size" : 60
           },
           "type" : "autocomplete_deluxe_taxonomy",
-          "weight" : 16
+          "weight" : "16"
         },
         "id" : "234",
         "field_id" : "226",
@@ -1191,7 +1253,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "9", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "7", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1203,7 +1265,9 @@ function c21_rets_default_drealty_listing_type() {
               "thousand_separator" : " ",
               "decimal_separator" : ".",
               "scale" : "0",
-              "prefix_suffix" : 0
+              "prefix_suffix" : 0,
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
             "module" : "number"
           }
@@ -1235,7 +1299,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 20
+          "weight" : "20"
         },
         "id" : "235",
         "field_id" : "227",
@@ -1249,7 +1313,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1297,7 +1361,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 10
+          "weight" : "10"
         },
         "id" : "236",
         "field_id" : "228",
@@ -1311,7 +1375,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "10", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1359,7 +1423,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 6
+          "weight" : "6"
         },
         "id" : "237",
         "field_id" : "229",
@@ -1373,7 +1437,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "11", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1421,7 +1485,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 7
+          "weight" : "7"
         },
         "id" : "238",
         "field_id" : "230",
@@ -1435,7 +1499,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "11", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "9", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1483,7 +1547,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 5
+          "weight" : "5"
         },
         "id" : "239",
         "field_id" : "231",
@@ -1497,7 +1561,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1545,7 +1609,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 8
+          "weight" : "8"
         },
         "id" : "240",
         "field_id" : "232",
@@ -1559,7 +1623,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "10", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1607,7 +1671,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 14
+          "weight" : "14"
         },
         "id" : "241",
         "field_id" : "233",
@@ -1625,7 +1689,10 @@ function c21_rets_default_drealty_listing_type() {
             "label" : "inline",
             "type" : "text_default",
             "weight" : "8",
-            "settings" : [],
+            "settings" : {
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
             "module" : "text"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1671,7 +1738,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 17
+          "weight" : "17"
         },
         "id" : "242",
         "field_id" : "234",
@@ -1685,7 +1752,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "16", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1733,11 +1800,82 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 11
+          "weight" : "11"
         },
         "id" : "243",
         "field_id" : "235",
         "field_name" : "field_mls_zipcode",
+        "entity_type" : "drealty_listing",
+        "deleted" : "0"
+      },
+      "field_mls_listing_office" : {
+        "label" : "Listing Office",
+        "widget" : {
+          "weight" : "31",
+          "type" : "text_textfield",
+          "module" : "text",
+          "active" : 1,
+          "settings" : { "size" : "60" }
+        },
+        "settings" : {
+          "text_processing" : "0",
+          "better_formats" : {
+            "allowed_formats_toggle" : 0,
+            "allowed_formats" : {
+              "rich_text" : "rich_text",
+              "filtered_html" : "filtered_html",
+              "full_html" : "full_html",
+              "plain_text" : "plain_text"
+            },
+            "default_order_toggle" : 0,
+            "default_order_wrapper" : { "formats" : {
+                "rich_text" : { "weight" : "0" },
+                "filtered_html" : { "weight" : "0" },
+                "full_html" : { "weight" : "1" },
+                "plain_text" : { "weight" : "10" }
+              }
+            }
+          },
+          "custom_add_another" : "",
+          "custom_remove" : "",
+          "user_register_form" : false
+        },
+        "display" : {
+          "default" : {
+            "label" : "above",
+            "type" : "text_default",
+            "weight" : "5",
+            "settings" : {
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
+            },
+            "module" : "text"
+          },
+          "search" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "list" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 },
+          "gallery" : { "type" : "hidden", "label" : "above", "settings" : [], "weight" : 0 }
+        },
+        "required" : 0,
+        "description" : "",
+        "custom_add_another" : "",
+        "custom_remove" : "",
+        "drealty" : {
+          "mappings" : { "1_3_A" : {
+              "conid" : "1",
+              "rid" : "3",
+              "class_id" : "3",
+              "rets_field" : "listing_office_name - ListingOfficeName"
+            }
+          },
+          "hash_exclude" : 0
+        },
+        "fences_wrapper" : "div",
+        "placeholder" : "",
+        "ds_extras_field_template" : "",
+        "default_value" : null,
+        "id" : "244",
+        "field_id" : "236",
+        "field_name" : "field_mls_listing_office",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
       }

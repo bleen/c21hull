@@ -24,6 +24,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -104,6 +106,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 1,
           'thousand_separator' => ',',
@@ -134,6 +138,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 1,
           'thousand_separator' => ',',
@@ -190,6 +196,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -220,6 +228,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 1,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -274,7 +284,10 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 18,
       ),
@@ -352,7 +365,10 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 19,
       ),
@@ -432,6 +448,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -511,7 +529,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 15,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -612,6 +630,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -642,6 +662,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -697,7 +719,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -784,6 +806,105 @@ function c21_rets_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'drealty_listing-mls_residential_listing-field_mls_listing_office'
+  $field_instances['drealty_listing-mls_residential_listing-field_mls_listing_office'] = array(
+    'bundle' => 'mls_residential_listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'gallery' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'drealty' => array(
+      'hash_exclude' => 0,
+      'mappings' => array(
+        '1_3_A' => array(
+          'class_id' => 3,
+          'conid' => 1,
+          'rets_field' => 'listing_office_name - ListingOfficeName',
+          'rid' => 3,
+        ),
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'drealty_listing',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_mls_listing_office',
+    'label' => 'Listing Office',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'drealty_listing-mls_residential_listing-field_mls_number'
   $field_instances['drealty_listing-mls_residential_listing-field_mls_number'] = array(
     'bundle' => 'mls_residential_listing',
@@ -796,7 +917,10 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -821,7 +945,10 @@ function c21_rets_field_default_field_instances() {
       'teaser' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -898,6 +1025,8 @@ function c21_rets_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => 'no image',
+          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => 'c21wide',
         ),
@@ -926,6 +1055,8 @@ function c21_rets_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => 'content',
           'image_style' => 'c21wide',
         ),
@@ -943,7 +1074,7 @@ function c21_rets_field_default_field_instances() {
       'alt_field' => 0,
       'custom_add_another' => '',
       'custom_remove' => '',
-      'default_image' => 58876,
+      'default_image' => 0,
       'file_directory' => 'mls',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -997,7 +1128,10 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 20,
       ),
@@ -1022,7 +1156,10 @@ function c21_rets_field_default_field_instances() {
       'teaser' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 0,
       ),
@@ -1077,7 +1214,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1102,6 +1239,8 @@ function c21_rets_field_default_field_instances() {
         'module' => 'number',
         'settings' => array(
           'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -1157,7 +1296,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 13,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1257,7 +1396,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1357,7 +1496,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1457,7 +1596,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1557,7 +1696,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 12,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1657,7 +1796,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1756,7 +1895,10 @@ function c21_rets_field_default_field_instances() {
       'default' => array(
         'label' => 'inline',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'text_default',
         'weight' => 8,
       ),
@@ -1850,7 +1992,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 14,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1947,6 +2089,7 @@ function c21_rets_field_default_field_instances() {
   t('Garage');
   t('List Price');
   t('Listing Area');
+  t('Listing Office');
   t('MLS #');
   t('MLS Internal ID');
   t('Photos');
