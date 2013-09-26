@@ -24,6 +24,8 @@ function c21_context_default_contexts() {
         '~node/add' => '~node/add',
         '~node/add/*' => '~node/add/*',
         '~node/*/edit' => '~node/*/edit',
+        '~batch' => '~batch',
+        '~batch/*' => '~batch/*',
         '~<front>' => '~<front>',
       ),
     ),
