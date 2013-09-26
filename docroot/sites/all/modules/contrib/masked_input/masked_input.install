@@ -16,7 +16,7 @@ function masked_input_requirements($phase) {
     'masked_input_library' => array(
       'title' => t('Masked Input'),
       'value' => $available ? t('Library is available') : t('Library is missing'),
-      'description' => $available ? NULL : t('Please download the masked input library into "sites/all/libraries" or any alternative path that is supported by the libraries module.'),
+      'description' => $available ? NULL : t('Please download the masked input library into "sites/all/libraries/maskedinput" or any alternative path that is supported by the libraries module. See README.txt for more information.'),
       'severity' => $available ? REQUIREMENT_OK : REQUIREMENT_ERROR,
     ),
   );
