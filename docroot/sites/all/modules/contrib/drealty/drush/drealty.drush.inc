@@ -107,7 +107,7 @@ function drush_drealty_rets_reprocess_images() {
       }
     }
   }
-
+  
   module_load_include('php', 'drealty', 'drealtyDaemon');
   $daemon = new drealtyDaemon();
   $daemon->import_images();
@@ -132,31 +132,31 @@ function drush_drealty_rets_flush() {
   }
 
   $info = entity_get_info($selection);
-
+  
   $bundles = array();
   foreach($info['bundles'] as $key => $bundle) {
     $bundles[$key] = $bundle['label'];
   }
   $bundles['all'] = "All";
-
+  
   $bundle_selection = drush_choice($bundles, dt('Select a class to flush'));
-
+  
   if(!$bundle_selection) {
     return;
   }
-
-
+  
+  
   $query = db_select($selection, "t")
     ->fields("t", array("id"));
-
+  
   if($bundle_selection != 'all') {
     $query->condition('type', $bundle_selection);
   }
-
+  
   $existing_items = $query->execute()->fetchAll();
-
+  
   $confirm = drush_confirm(dt("You are about to flush @count @entity(s) of type @type from the system. This cannot be undone. Are you Sure?", array('@count' => count($existing_items), '@entity' => $selection, '@type' => $bundle_selection)));
-
+  
   if(!$confirm) {
     return;
   }
@@ -171,8 +171,8 @@ function drush_drealty_rets_flush() {
 }
 
 function drush_drealty_rets_force_update() {
-
-
+  
+  
   $options = array('drealty_listing' => dt('Drealty Listings'));
 
   if (module_exists('drealty_office')) {
@@ -187,12 +187,12 @@ function drush_drealty_rets_force_update() {
   if (!$selection) {
     return;
   }
-
+  
   $num_updated = db_update($selection)
     ->fields(array('hash' => ''))
     ->execute();
   drush_log(dt("Forcing update on @num items.", array('@num' => $num_updated)), 'success');
-
+  
 }
 
 /**

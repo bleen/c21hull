@@ -45,7 +45,7 @@ function drealty_requirements($phase) {
       $requirements['drealty'] = array(
         'title' => t('phRets library'),
         'value' => t('!msg', array(
-            '!msg' => $file_exists ? 'Installed' : 'The ' . l('phRets', 'https://github.com/troydavisson/PHRETS') . ' was not found. Please ' . l('download', 'https://github.com/troydavisson/PHRETS') . ' it into the Libraries folder.',
+            '!msg' => $file_exists ? 'Installed' : 'The ' . l('phRets', 'https://github.com/troydavisson/PHRETS') . ' was not found. Please ' . l('download', 'https://github.com/troydavisson/PHRETS') . ' it into the Libraries folder (libraries/phrets/phrets.php).',
           )
         ),
         'severity' => $file_exists ? REQUIREMENT_OK : REQUIREMENT_ERROR,
@@ -121,6 +121,7 @@ function drealty_schema() {
       'disable_encoding_fix' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
       'active' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
       'debug_mode' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+      'nomap_mode' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
     ) + entity_exportable_schema_fields(),
     'primary key' => array('conid'),
   );
@@ -382,4 +383,12 @@ function drealty_update_7305(&$sandbox) {
  */
 function drealty_update_7306(&$sandbox) {
   db_add_field('drealty_connections', 'disable_encoding_fix', array('type' => 'int', 'not null' => FALSE, 'default' => 0, 'description' => 'Disables the XML encoding on a RETS request.'));
+}
+
+/**
+ * Add a nomap_mode property to Drealty Connection.
+ * @param $sandbox
+ */
+function drealty_update_7307(&$sandbox) {
+  db_add_field('drealty_connections', 'nomap_mode', array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0));
 }

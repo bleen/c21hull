@@ -281,6 +281,13 @@ function drealty_connection_entity_edit_form($form, &$form_state, drealtyConnect
     '#default_value' => isset($connection->debug_mode) ? $connection->debug_mode : FALSE,
   );
 
+  $form['nomap_mode'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable "No mapping" Mode'),
+    '#description' => t('This connection will not create or update items and will not be available in field mappings. It may still act on items imported by other connections which have since expired.'),
+    '#default_value' => isset($connection->nomap_mode) ? $connection->nomap_mode: FALSE,
+  );
+
   $form['actions'] = array('#type' => 'actions');
   $form['actions']['submit'] = array(
     '#type' => 'submit',
@@ -653,12 +660,12 @@ function drealty_resource_overview_form($form, &$form_state, drealtyConnectionEn
 
     $dm = new drealtyMetaData();
     if (isset($form_state['input']['prop_resource'])) {
-
       $selected_resource = $dm->FetchResource($form_state['input']['prop_resource']);
-      $results = $connection->fetchClasses($selected_resource);
-    } else {
+      $results = $connection->FetchClasses($selected_resource);
+    }
+    else {
       $selected_resource = $dm->FetchResource($mappings[$entity_type]->rid);
-      $results = $connection->fetchClasses($selected_resource);
+      $results = $connection->FetchClasses($selected_resource);
     }
 
     $life_opts = array(0 => t('Every time')) + drupal_map_assoc(array(
@@ -759,12 +766,9 @@ function drealty_resource_overview_form_submit($form, &$form_state) {
  * Form builder for configuring a resource.
  */
 function drealty_resource_configure_form($form, &$form_state, drealtyConnectionEntity $connection = NULL, $entity_type = NULL, $class = NULL) {
-
-
   $form_state['connection'] = $connection;
   $form_state['entity_type'] = $entity_type;
   $form_state['class'] = $class;
-
 
   $mappings = $connection->resourceMappings();
 
@@ -773,7 +777,6 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
     return $form;
   }
 
-
   // setup the property types for the dropdown
   $bundle_types = entity_load('drealty_listing_type');
   $type_opts = array();
@@ -781,7 +784,6 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
   foreach ($bundle_types as $type) {
     $type_opts[$type->type] = $type->label;
   }
-
 
   $dm = new drealtyMetaData();
   $resource = $dm->FetchResource($mappings[$entity_type]->rid);
@@ -832,11 +834,7 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
     $form_state['bundle'] = $entity_type;
   }
 
-  /*   * ************************************************************** */
-
-
   $form['feed'] = array('#type' => 'fieldset', '#title' => t('RETS Import Options'), '#collapsible' => FALSE, '#description' => t('Use the following settings to configure the import options for the RETS feed.'));
-
 
   switch ($entity_type) {
     case 'drealty_listing':
@@ -873,7 +871,6 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
 
   $dc = new drealtyConnection();
 
-
   if ($dc->connect($connection->conid)) {
     if (!$skip_status) {
       $values = $dc->rets->GetLookupValues($resource->systemname, $lookup_table);
@@ -881,14 +878,17 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
         $opts[$val['Value']] = check_plain($val['LongValue']);
       }
     }
-    $object_types = $dc->rets->GetMetadataObjects($resource->systemname);
-    if ($object_types) {
-      $has_images = TRUE;
-      foreach ($object_types as $type) {
-        $opts_object_types[$type['ObjectType']] = $type['ObjectType'] . ' - ' . $type['Description'];
+    if (empty($connection->nomap_mode)) {
+      $object_types = $dc->rets->GetMetadataObjects($resource->systemname);
+      if ($object_types) {
+        $has_images = TRUE;
+        foreach ($object_types as $type) {
+          $opts_object_types[$type['ObjectType']] = $type['ObjectType'] . ' - ' . $type['Description'];
+        }
       }
     }
   }
+
   $dc->disconnect();
 
   $form_state['has_images'] = $has_images;
@@ -1034,9 +1034,6 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
     ),
   );
 
-
-
-
   $form['feed']['query_options']['chunk'] = array(
     '#title' => t('Record chunk size'),
     '#type' => 'select',
@@ -1080,7 +1077,6 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
       '#disabled' => (count($img_field_opts) >= 1) ? FALSE : TRUE,
     );
 
-
     $form['feed']['images']['modification_timestamp_field'] = array(
       '#type' => 'textfield',
       '#title' => t('Photo Modification Timestamp Field.'),
@@ -1104,8 +1100,6 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
         'visible' => array(':input[name="process_images"]' => array('checked' => TRUE)),
       ),
     );
-
-
 
     if (count($img_field_opts) >= 1) {
       $form['feed']['images']['image_field_name'] = array(
@@ -1137,7 +1131,12 @@ function drealty_resource_configure_form($form, &$form_state, drealtyConnectionE
     );
   }
 
-  /*   * ************************************************************** */
+  $form['feed']['reprocess_listings'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Mark all listings for update?'),
+    '#description' => t('Set all listing hashes to 0 to force updates on the next run.'),
+    '#default_value' => FALSE,
+  );
 
   $form['actions'] = array('#type' => 'actions');
   $form['actions']['submit'] = array(
@@ -1252,14 +1251,15 @@ function drealty_resource_configure_form_submit($form, &$form_state) {
 
   drupal_write_record('drealty_classes', $class, 'cid');
 
-  db_update($entity_type)
-    ->fields(array(
-      'hash' => '0',
-    ))
-    ->condition('conid', $connection->conid)
-    ->condition('class', $class->cid)
-    ->execute();
-
+  if ($form_state['values']['reprocess_listings']) {
+    db_update($entity_type)
+      ->fields(array(
+        'hash' => '0',
+      ))
+      ->condition('conid', $connection->conid)
+      ->condition('class', $class->cid)
+      ->execute();
+  }
 
   drupal_set_message('Configuration options have been saved.');
 }

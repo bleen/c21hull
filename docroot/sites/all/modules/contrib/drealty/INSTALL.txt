@@ -28,7 +28,7 @@ REQUIRED MODULES: Field, Entity API (dev)
 
 3. Download phRETS from http://troda.com/projects/phrets/index.php?title=Download. phRETS is a php wrapper required to talk to RETS servers.
 
-4. Place phRETS in your libraries folder like so: sites/all/libraries/phRets/phRets.php.
+4. Place phRETS in your libraries folder like so: sites/all/libraries/phrets/phrets.php.
 
 5. Enable dRealty module.
 

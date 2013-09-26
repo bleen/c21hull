@@ -228,6 +228,7 @@ class drealtyConnectionEntity extends Entity {
   public $fields;
   public $field_mappings;
   public $debug_mode = FALSE;
+  public $nomap_mode = FALSE;
 
   public function __construct($values = array()) {
     parent::__construct($values, 'drealty_connection_entity');
@@ -373,10 +374,11 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
       'disable_encoding_fix' => '0',
       'active' => FALSE,
       'debug_mode' => FALSE,
+      'nomap_mode' => FALSE,
       'format' => 'COMPACT-DECODED',
     );
-    $dmealtyConnectionEntity = parent::create($values);
-    return $dmealtyConnectionEntity;
+
+    return parent::create($values);
   }
 
   /**
@@ -518,6 +520,8 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
         foreach ($entity->field_fields as $field) {
           if (!field_read_field($field['field_name'], array('include_inactive' => TRUE))) {
             field_create_field($field);
+          } else {
+            drupal_set_message(t('Skipped creating field %field. A field with this name already exists.', array('%field' => $field['field_name'])), 'warning');
           }
         }
       }
@@ -525,8 +529,10 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
       if (isset($entity->field_instances)) {
         foreach ($entity->field_instances as $bundle) {
           foreach ($bundle as $instance) {
-            if (!field_read_instance($instance['entity_type'], $instance['field_name'], $instance['bundle'])) {
+            if (!field_info_instance($instance['entity_type'], $instance['field_name'], $instance['bundle'])) {
               field_create_instance($instance);
+            } else {
+              drupal_set_message(t('Skipped creating instance %instance. An instance with this name already exists.', array('%field' => $instance['label'])), 'warning');
             }
           }
         }

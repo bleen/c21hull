@@ -186,7 +186,7 @@ function drealty_menu_local_tasks_alter(&$data, $router_item, $root_path) {
  * @param type $form
  * @param array $form_state
  * @param drealtyListing $listing
- * @return type
+ * @return type 
  */
 function drealty_update_single_listing($form, &$form_state, $listing = NULL) {
 
@@ -311,7 +311,7 @@ function drealty_help($path, $arg) {
  * Implements hook_permission().
  */
 function drealty_permission() {
-  // We set up permisssions to manage entity types, manage all entities and the
+  // We set up permissions to manage entity types, manage all entities and the
   // permissions for each individual entity
   $permissions = array(
     'access drealty admin' => array(
@@ -332,7 +332,7 @@ function drealty_permission() {
     ),
     'administer drealty_listings' => array(
       'title' => t('Administer Drealty Listings'),
-      'description' => t('Administer Drealty Listings Configuraiton Settings.')
+      'description' => t('Administer Drealty Listings Configuration Settings.')
     ),
   );
 
@@ -678,6 +678,9 @@ function drealty_form_field_ui_field_edit_form_geofield(&$form, &$form_state) {
 
   $connections = $dc->FetchConnections();
   foreach ($connections as $connection) {
+    if (!empty($connection->nomap_mode)) {
+      continue;
+    }
 
     $query = db_select('drealty_classes', 'c');
 
@@ -723,8 +726,11 @@ function drealty_form_field_ui_field_edit_form_addressfield(&$form, &$form_state
   $dc = new drealtyConnection();
   $dm = new drealtyMetaData();
 
-  $connections = $dc->FetchConfiguredConnections();
+  $connections = $dc->FetchConnections();
   foreach ($connections as $connection) {
+    if (!empty($connection->nomap_mode)) {
+      continue;
+    }
 
     $query = db_select('drealty_classes', 'c');
 
@@ -847,6 +853,9 @@ function drealty_form_field_ui_field_edit_form_location(&$form, &$form_state) {
 
   $connections = $dc->FetchConnections();
   foreach ($connections as $connection) {
+    if (!empty($connection->nomap_mode)) {
+      continue;
+    }
 
     $query = db_select('drealty_classes', 'c');
 
@@ -919,6 +928,9 @@ function drealty_form_field_ui_field_edit_form_default(&$form, &$form_state) {
 
   $connections = $dc->FetchConfiguredConnections();
   foreach ($connections as $connection) {
+    if (!empty($connection->nomap_mode)) {
+      continue;
+    }
 
     $classes = $connection->fetchClasses();
 
@@ -1296,7 +1308,7 @@ function drealty_path_alias_types() {
 }
 
 /**
- * Implements hook_entity_insert()
+ * Implements hook_entity_insert() 
  */
 function drealty_entity_insert($entity, $entity_type) {
   if (module_exists('pathauto') && $entity_type == 'drealty_listing') {

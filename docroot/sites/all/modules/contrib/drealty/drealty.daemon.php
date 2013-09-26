@@ -10,13 +10,13 @@ class drealtyDaemon {
 
   /**
    *
-   * @var drealtyConnection
+   * @var drealtyConnection 
    */
   protected $dc;
 
   /**
    *
-   * @var drealtyMetaData
+   * @var drealtyMetaData 
    */
   protected $dm;
 
@@ -80,10 +80,9 @@ class drealtyDaemon {
    * @param drealtyConnectionEntity $connection
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
-   * @param string $entity_type
+   * @param string $entity_type 
    */
   private function ProcessRetsClass(drealtyConnectionEntity $connection, $resource, $class, $entity_type) {
-
     $mappings = $connection->ResourceMappings();
     $resources = $connection->Resources();
     $key_field = "";
@@ -99,6 +98,7 @@ class drealtyDaemon {
     switch ($class->query_type) {
       case 1:
         $this->fetch_listings_offset_not_supported_price($connection, $resource, $class, $key_field);
+        $process = TRUE;
         break;
       case 2:
         $query = array();
@@ -109,6 +109,7 @@ class drealtyDaemon {
         break;
       case 3:
         $this->fetch_listings_offset_not_supported_key($connection, $resource, $class, $key_field);
+        $process = TRUE;
         break;
       case 0:
       default:
@@ -148,7 +149,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $key_field
-   * @return int
+   * @return int 
    */
   function fetch_listings_offset_not_supported_key(drealtyConnectionEntity $connection, $resource, $class, $key_field) {
     $rets = $this->dc->rets;
@@ -198,10 +199,8 @@ class drealtyDaemon {
 
         if ($rets->NumRows($search) > 0) {
           while ($listing = $rets->FetchRow($search)) {
-            $listing['hash'] = $this->calculate_hash($listing, $connection->conid, $class->cid);
-
+            $listing['hash'] = $this->calculate_hash($listing, $connection, $class);
             $this->queue->createItem($listing);
-
             $count++;
           }
 
@@ -236,7 +235,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $key_field
-   * @return int
+   * @return int 
    */
   function fetch_listings_offset_not_supported_price(drealtyConnectionEntity $connection, $resource, $class, $key_field) {
     $rets = $this->dc->rets;
@@ -282,10 +281,8 @@ class drealtyDaemon {
 
         if ($rets->NumRows($search) > 0) {
           while ($listing = $rets->FetchRow($search)) {
-            $listing['hash'] = $this->calculate_hash($listing, $connection->conid, $class->cid);
-
+            $listing['hash'] = $this->calculate_hash($listing, $connection, $class);
             $this->queue->createItem($listing);
-
             $count++;
           }
         }
@@ -316,7 +313,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $query
-   * @return int
+   * @return int 
    */
   function fetch_listings_offset_supported_default(drealtyConnectionEntity $connection, $resource, $class, $query) {
     $offset = 0;
@@ -359,8 +356,7 @@ class drealtyDaemon {
       if ($rets->NumRows() > 0) {
         while ($listing = $rets->FetchRow($search)) {
           // calculate the hash
-          $listing['hash'] = $this->calculate_hash($listing, $connection->conid, $class->cid);
-
+          $listing['hash'] = $this->calculate_hash($listing, $connection, $class);
           $this->queue->createItem($listing);
           drush_log("Resource: {$resource->systemname} Class: $class->systemname - Queuing Item $count");
           $count++;
@@ -421,14 +417,10 @@ class drealtyDaemon {
     if ($this->dc->connect($connection->conid)) {
       $rets = $this->dc->rets;
       $search = $rets->SearchQuery($resource->systemname, $class->systemname, $query, $params);
-
       $item = $rets->FetchRow($search);
-
       $rets->FreeResult($search);
-
-      $listing->hash = $this->calculate_hash($item, $connection->conid, $class->cid);
+      $listing->hash = $this->calculate_hash($item, $connection, $class);
       $listing->changed = time();
-
 
       $this->set_field_data($listing, $item, $field_mappings, $listing->entityType(), $class, TRUE);
       $item_context['rets_item'] = $item;
@@ -467,7 +459,7 @@ class drealtyDaemon {
             $filename = $mlskey . '-' . REQUEST_TIME . '-' . $number . '.jpg';
             $filepath = "{$img_dir}/{$filename}";
             //ensure that there is enough data to actually make a file.
-            if (strlen($photo['Data']) > 173 && $mlskey === $listing->rets_id) {
+            if (strlen($photo['Data']) > 173) {
               if ($file = file_save_data($photo['Data'], $filepath, FILE_EXISTS_REPLACE)) {
                 //make sure we actually save the image
                 $file->alt = '';
@@ -502,7 +494,7 @@ class drealtyDaemon {
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
    * @param string $entity_type
-   * @param int $chunk_count
+   * @param int $chunk_count 
    */
   protected function process_results(drealtyConnectionEntity $connection, $resource, $class, $entity_type) {
 
@@ -528,20 +520,23 @@ class drealtyDaemon {
     $total = $this->queue->numberOfItems();
     $count = 1;
     while ($queue_item = $this->queue->claimItem()) {
-
       $rets_item = $queue_item->data;
-
-
       $in_rets[$rets_item[$id]] = $rets_item[$id];
-
       $force = FALSE;
-      if (!isset($existing_items[$rets_item[$id]]) || $existing_items[$rets_item[$id]]->hash != $rets_item['hash'] || $force) {
+
+      if (!empty($connection->nomap_mode)) {
+        // This connection does not use field mappings, just remove the item
+        // from the queue and handle expired listings.
+        drush_log(dt("Got item @name. [@count of @total]", array("@name" => $rets_item[$id], "@count" => $count, "@total" => $total)));
+        $this->queue->deleteItem($queue_item);
+      }
+      else if (!isset($existing_items[$rets_item[$id]]) || $existing_items[$rets_item[$id]]->hash != $rets_item['hash'] || $force) {
 
         // Allow other modules to preprocess RETS fields before mapping them.
         drupal_alter('drealty_import_rets_item', $rets_item, $item_context);
 
 
-        // this listing either doesn't exist in the IDX or has changed.
+        // this listing either doesn't exist in the IDX or has changed. 
         // determine if we need to update or create a new one.
         if (isset($existing_items[$rets_item[$id]])) {
           // this listing exists so we'll get a reference to it and set the values to what came to us in the RETS result
@@ -577,6 +572,7 @@ class drealtyDaemon {
               $this_time = strtotime($rets_item[$class->photo_timestamp_field]);
               if ($this_time > $last_time) {
                 $item->process_images = TRUE;
+                $item->rets_photo_modification_timestamp = $rets_item[$class->photo_timestamp_field];
               } else {
                 $item->process_images = FALSE;
               }
@@ -620,10 +616,10 @@ class drealtyDaemon {
 
   /**
    * Function to handle the logic of what to do with expired listings
-   *
+   * 
    * @param array $in_rets
    * @param array $conid
-   * @param drealtyRetsClass $class
+   * @param drealtyRetsClass $class 
    */
   protected function handle_expired($in_rets, $conid, $class) {
     $results = db_select('drealty_listing', 'dl')
@@ -649,26 +645,28 @@ class drealtyDaemon {
    * Calculate an md5 hash on the resulting listing used to determine if we need
    * to perform an update
    *
-   * @param array $listing
+   * @param array $items
+   * @param $connection
+   * @param $class
    * @return string
    */
-  protected function calculate_hash(array $items, $connection_id, $class_id) {
+  protected function calculate_hash(array $items, $connection, $class) {
 
     $cache = &drupal_static(__FUNCTION__);
 
-    if (empty($cache[$connection_id]) || empty($cache[$connection_id][$class_id])) {
+    if (empty($cache[$connection->conid]) || empty($cache[$connection->conid][$class->cid])) {
       $field_mappings = db_select('drealty_field_mappings', 'dfm')
         ->fields('dfm')
-        ->condition('conid', $connection_id)
-        ->condition('cid', $class_id)
+        ->condition('conid', $connection->conid)
+        ->condition('cid', $class->cid)
         ->condition('hash_exclude', FALSE)
         ->execute()
         ->fetchAll();
 
-      $cache[$connection_id][$class_id] = $field_mappings;
+      $cache[$connection->conid][$class->cid] = $field_mappings;
     }
 
-    $fields = $cache[$connection_id][$class_id];
+    $fields = $cache[$connection->conid][$class->cid];
 
     $tmp = '';
     foreach ($fields as $field) {
@@ -687,6 +685,12 @@ class drealtyDaemon {
           $tmp .= drupal_strtolower(trim($items[$field->systemname]));
       }
     }
+
+    // Add photo timestamp field so that if photos are added, we update the entry.
+    if ($class->process_images && $class->photo_timestamp_field) {
+      $tmp .= $items[$class->photo_timestamp_field];
+    }
+
     return md5($tmp);
   }
 
@@ -696,7 +700,7 @@ class drealtyDaemon {
    * @param int $conid
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
-   * @return type
+   * @return type 
    */
   public function process_images($conid, $resource, $class) {
 
@@ -768,6 +772,8 @@ class drealtyDaemon {
             return;
           }
 
+          $photos = array();
+
           if (!empty($results)) {
             $length = 0;
             $total = 0;
@@ -828,7 +834,7 @@ class drealtyDaemon {
               $filename = $mlskey . '-' . REQUEST_TIME . '-' . $number . '.jpg';
               $filepath = "{$img_dir}/{$filename}";
               //ensure that there is enough data to actually make a file.
-              if (strlen($photo['Data']) > 173 && $mlskey === $listing->rets_id) {
+              if (strlen($photo['Data']) > 173) {
                 if ($file = file_save_data($photo['Data'], $filepath, FILE_EXISTS_REPLACE)) {
                   //make sure we actually save the image
                   $file->alt = '';

@@ -14,7 +14,7 @@ class drealtyMetaData {
 
   /**
    * Internal Function to log errors.
-   * @param phRETS $rets
+   * @param phRETS $rets 
    */
   private function handleRetsError(phRETS $rets) {
     $error = $rets->Error();
@@ -25,7 +25,7 @@ class drealtyMetaData {
    *
    * @param integer $conid
    * @param drealtyRetsResource $resource
-   * @return drealtyRetsField[]
+   * @return drealtyRetsField[] 
    */
   function GetActiveFields($conid, $resource) {
 
@@ -44,7 +44,7 @@ class drealtyMetaData {
    * @param integer $conid
    * @return drealtyResourceMapping[]
    *  or FALSE if no mappings are found
-   *
+   *   
    */
   function GetResourceMappings($conid) {
 
@@ -76,7 +76,7 @@ class drealtyMetaData {
     if (isset($class)) {
       $query->condition('cid', $class->cid);
     }
-
+    
     if(isset($type)) {
       $query->condition('field_api_type', $type);
     }
@@ -89,14 +89,14 @@ class drealtyMetaData {
     }
     return empty($mappings) ? FALSE : $mappings;
   }
-
+ 
   function ExportFieldMappings($conid) {
     $mappings = db_select('drealty_field_mappings', 'm')
       ->fields('m')
       ->condition('conid', $conid)
       ->execute()
       ->fetchAll();
-
+    
     if (!empty($mappings)) {
       foreach ($mappings as $mapping) {
         $mapping->data = unserialize($mapping->data);
@@ -107,7 +107,7 @@ class drealtyMetaData {
 
   /**
    * Function to return drealtyRetsFeilds from the database
-   *
+   * 
    * @param integer $conid
    * @param drealtyRetsResource $resource
    * @param drealtyRetsClass $class
@@ -177,7 +177,7 @@ class drealtyMetaData {
   /**
    * Retreive a drealtyRetsClass from the db
    * @param integer $id
-   * @return drealtyRetsClass
+   * @return drealtyRetsClass 
    */
   public function FetchClass($id) {
     $result = db_select('drealty_classes', 'dc')
@@ -248,7 +248,7 @@ class drealtyMetaData {
   /**
    *
    * @param int $rid
-   * @return drealtyRetsResource
+   * @return drealtyRetsResource 
    */
   function FetchResource($rid) {
     $resource = db_select('drealty_resources', 'dr')

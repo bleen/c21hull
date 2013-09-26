@@ -18,9 +18,9 @@ files[] = includes/drealty.metadata.inc
 files[] = drealty.daemon.php
 
 package = Real Estate
-; Information added by drupal.org packaging script on 2013-05-12
-version = "7.x-3.0-beta4+4-dev"
+; Information added by drupal.org packaging script on 2013-09-08
+version = "7.x-3.0-beta5"
 core = "7.x"
 project = "drealty"
-datestamp = "1368321525"
+datestamp = "1378680421"
 

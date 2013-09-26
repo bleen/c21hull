@@ -257,7 +257,7 @@ function drealty_listing_edit_form($form, &$form_state, $op, $listing) {
     '#submit' => $submit + array('drealty_listing_edit_form_submit'),
   );
 
-  if (!empty($listing->name) && !$listing->rets_imported) {
+  if (!$listing->rets_imported) {
     $form['actions']['delete'] = array(
       '#type' => 'submit',
       '#value' => t('Delete listing'),
