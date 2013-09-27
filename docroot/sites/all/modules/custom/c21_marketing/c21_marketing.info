@@ -1,0 +1,9 @@
+name = c21 Marketing
+description = Marketing settings and functionality for c21hull.com.
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = c21_marketing
+
+dependencies[] = contact
+dependencies[] = ctools
