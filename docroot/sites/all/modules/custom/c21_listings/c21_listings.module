@@ -329,6 +329,14 @@ function c21_listings_workbench_links($mode = 'common') {
           'title' => t('Create Listing'),
           'href' => 'node/add/listing',
         ),
+        'create-agent' => array(
+          'title' => t('New Agent'),
+          'href' => 'node/add/agent',
+        ),
+        'create-user' => array(
+          'title' => t('New User'),
+          'href' => 'user/add',
+        ),
       );
       break;
     case 'report':
