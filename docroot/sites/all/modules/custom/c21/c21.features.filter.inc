@@ -42,12 +42,12 @@ function c21_filter_default_formats() {
   $formats['rich_text'] = array(
     'format' => 'rich_text',
     'name' => 'Rich Text',
-    'cache' => 0,
+    'cache' => 1,
     'status' => 1,
     'weight' => 0,
     'filters' => array(
       'filter_html' => array(
-        'weight' => -10,
+        'weight' => -49,
         'status' => 1,
         'settings' => array(
           'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
@@ -55,25 +55,20 @@ function c21_filter_default_formats() {
           'filter_html_nofollow' => 0,
         ),
       ),
-      'filter_autop' => array(
-        'weight' => 0,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'filter_url' => array(
-        'weight' => 0,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
-      'node_embed' => array(
-        'weight' => 0,
+      'filter_autop' => array(
+        'weight' => -47,
         'status' => 1,
         'settings' => array(),
       ),
       'wysiwyg' => array(
-        'weight' => 0,
+        'weight' => -46,
         'status' => 1,
         'settings' => array(
           'valid_elements' => 'a[!href|target<_blank|title],
@@ -201,8 +196,13 @@ div,p,br,span,em,strong,cite,code,blockquote,ul,ol,li,dl,dt,dd',
           'rule_style_urls' => array(),
         ),
       ),
+      'block_filter' => array(
+        'weight' => -44,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'filter_htmlcorrector' => array(
-        'weight' => 10,
+        'weight' => -43,
         'status' => 1,
         'settings' => array(),
       ),
