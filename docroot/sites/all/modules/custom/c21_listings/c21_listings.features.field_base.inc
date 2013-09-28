@@ -197,6 +197,7 @@ function c21_listings_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'owner' => 'Owner',
         'current' => 'Current Agent',
         'former' => 'Former Agent',
       ),

@@ -64,3 +64,25 @@ function c21_listings_update_7001() {
 
   c21_image_create($default_image);
 }
+
+/**
+ * Set Roy & Ed as "owners".
+ */
+function c21_listings_update_7002() {
+  $owners = array('Hull', 'Raarup');
+
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'agent')
+    ->fieldCondition('field_agent_last_name', 'value', $owners);
+  $result = $query->execute();
+
+  if (!empty($result['node'])) {
+    $entities = entity_load('node', array_keys($result['node']));
+    foreach ($entities as $entity) {
+      $entity->field_agent_status[LANGUAGE_NONE][0]['value'] = 'owner';
+      entity_save('node', $entity);
+    }
+  }
+}

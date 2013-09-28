@@ -67,13 +67,82 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['filters']['field_agent_status_value']['id'] = 'field_agent_status_value';
   $handler->display->display_options['filters']['field_agent_status_value']['table'] = 'field_data_field_agent_status';
   $handler->display->display_options['filters']['field_agent_status_value']['field'] = 'field_agent_status_value';
+  $handler->display->display_options['filters']['field_agent_status_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_agent_status_value']['value'] = array(
+    'former' => 'former',
+  );
+
+  /* Display: All agents */
+  $handler = $view->new_display('page', 'All agents', 'page');
+  $handler->display->display_options['path'] = 'agents';
+
+  /* Display: Owners */
+  $handler = $view->new_display('block', 'Owners', 'block_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'agent' => 'agent',
+  );
+  /* Filter criterion: Content: Status (field_agent_status) */
+  $handler->display->display_options['filters']['field_agent_status_value']['id'] = 'field_agent_status_value';
+  $handler->display->display_options['filters']['field_agent_status_value']['table'] = 'field_data_field_agent_status';
+  $handler->display->display_options['filters']['field_agent_status_value']['field'] = 'field_agent_status_value';
+  $handler->display->display_options['filters']['field_agent_status_value']['operator'] = 'and';
+  $handler->display->display_options['filters']['field_agent_status_value']['value'] = array(
+    'owner' => 'owner',
+  );
+
+  /* Display: Agents */
+  $handler = $view->new_display('block', 'Agents', 'block_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'micro_teaser';
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_agent_last_name|field_agent_last_name_value';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'micro_teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'agent' => 'agent',
+  );
+  /* Filter criterion: Content: Status (field_agent_status) */
+  $handler->display->display_options['filters']['field_agent_status_value']['id'] = 'field_agent_status_value';
+  $handler->display->display_options['filters']['field_agent_status_value']['table'] = 'field_data_field_agent_status';
+  $handler->display->display_options['filters']['field_agent_status_value']['field'] = 'field_agent_status_value';
+  $handler->display->display_options['filters']['field_agent_status_value']['operator'] = 'and';
   $handler->display->display_options['filters']['field_agent_status_value']['value'] = array(
     'current' => 'current',
   );
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'agents';
   $export['c21_agents'] = $view;
 
   $view = new view();
@@ -757,27 +826,27 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Apache Solr: entity_id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['label'] = '';
   $handler->display->display_options['fields']['entity_id']['element_label_colon'] = FALSE;
-  /* Field: Apache Solr: entity_type */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
   $handler->display->display_options['fields']['entity_type']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
   $handler->display->display_options['fields']['entity_type']['label'] = '';
   $handler->display->display_options['fields']['entity_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
-  /* Field: Apache Solr: bundle_name */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['bundle_name']['id'] = 'bundle_name';
   $handler->display->display_options['fields']['bundle_name']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['bundle_name']['field'] = 'bundle_name';
   $handler->display->display_options['fields']['bundle_name']['label'] = '';
   $handler->display->display_options['fields']['bundle_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['bundle_name']['element_label_colon'] = FALSE;
-  /* Contextual filter: Apache Solr: im_field_terms */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['im_field_terms']['id'] = 'im_field_terms';
   $handler->display->display_options['arguments']['im_field_terms']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['arguments']['im_field_terms']['field'] = 'im_field_terms';
