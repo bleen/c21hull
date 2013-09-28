@@ -52,7 +52,7 @@ DATE
 
   * The date_migrate submodule needs to be patched to work with the latest
     version of migrate.
-      PATCH: https://drupal.org/node/1832544#comment-6694946
+      PATCH: https://drupal.org/node/1832544#comment-6694946 (committed)
 
 DREALTY
   * Exporting the drealty connection to a feature causes things to blow up. See
