@@ -115,6 +115,7 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['representative_image']['table'] = 'node_revision';
   $handler->display->display_options['fields']['representative_image']['field'] = 'representative_image';
   $handler->display->display_options['fields']['representative_image']['relationship'] = 'vid';
+  $handler->display->display_options['fields']['representative_image']['label'] = 'Photo';
   $handler->display->display_options['fields']['representative_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['representative_image']['image_style'] = 'thumbnail';
   $handler->display->display_options['fields']['representative_image']['image_link'] = 'content';
