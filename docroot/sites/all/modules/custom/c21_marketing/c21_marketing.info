@@ -4,6 +4,12 @@ core = 7.x
 package = Features
 version = 7.x-1.0
 project = c21_marketing
-
+dependencies[] = block_filter
 dependencies[] = contact
 dependencies[] = ctools
+dependencies[] = features
+dependencies[] = formblock
+features[ctools][] = ds:ds:1
+features[ctools][] = strongarm:strongarm:1
+project path = sites/all/modules/custom
+
