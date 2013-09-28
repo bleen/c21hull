@@ -15,6 +15,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'create agent content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -25,6 +26,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'create listing content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -35,6 +37,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'create listing_type content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -44,6 +47,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete any agent content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -54,6 +58,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete any listing content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -64,6 +69,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete any listing_type content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -73,6 +79,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete own agent content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -83,6 +90,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete own listing content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -93,6 +101,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete own listing_type content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -102,6 +111,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_additional_building',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -112,6 +122,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_basement',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -122,6 +133,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_development',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -132,6 +144,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_floors',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -142,6 +155,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_garage',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -152,6 +166,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_heat',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -162,6 +177,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_insulation',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -172,6 +188,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_school_district',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -182,6 +199,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_sewage',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -192,6 +210,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_township',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -202,6 +221,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_walls',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -212,6 +232,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_water',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -222,6 +243,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'delete terms in listing_windows',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -232,6 +254,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit any agent content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -242,6 +265,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit any listing content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -252,6 +276,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit any listing_type content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -261,6 +286,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit own agent content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -271,6 +297,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit own listing content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -281,6 +308,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit own listing_type content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -290,6 +318,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_additional_building',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -300,6 +329,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_basement',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -310,6 +340,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_development',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -320,6 +351,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_floors',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -330,6 +362,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_garage',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -340,6 +373,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_heat',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -350,6 +384,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_insulation',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -360,6 +395,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_school_district',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -370,6 +406,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_sewage',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -380,6 +417,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_township',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -390,6 +428,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_walls',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -400,6 +439,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_water',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -410,6 +450,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in listing_windows',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -420,6 +461,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'edit terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -507,6 +549,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'override listing promote to front page option',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'override_node_options',
@@ -517,6 +560,7 @@ function c21_listings_user_default_permissions() {
     'name' => 'override listing published option',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'override_node_options',

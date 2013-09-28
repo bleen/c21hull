@@ -11,5 +11,8 @@ dependencies[] = features
 dependencies[] = formblock
 features[ctools][] = ds:ds:1
 features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = access site-wide contact form
+features[user_permission][] = access user contact forms
+features[user_permission][] = administer contact forms
 project path = sites/all/modules/custom
-

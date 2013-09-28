@@ -26,6 +26,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'agent' => 'agent',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'admin_menu',
@@ -37,6 +38,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'agent' => 'agent',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'system',
@@ -54,6 +56,7 @@ function c21_user_default_permissions() {
     'name' => 'access all webform results',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'webform',
@@ -77,6 +80,7 @@ function c21_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -87,6 +91,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'agent' => 'agent',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'contextual',
@@ -107,6 +112,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'agent' => 'agent',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'overlay',
@@ -117,6 +123,7 @@ function c21_user_default_permissions() {
     'name' => 'access own webform results',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'webform',
@@ -127,6 +134,7 @@ function c21_user_default_permissions() {
     'name' => 'access own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'webform',
   );
@@ -143,6 +151,7 @@ function c21_user_default_permissions() {
     'name' => 'access site in maintenance mode',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'system',
   );
@@ -360,6 +369,7 @@ function c21_user_default_permissions() {
     'name' => 'administer permissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'user',
   );
@@ -378,11 +388,22 @@ function c21_user_default_permissions() {
     'module' => 'redirect',
   );
 
+  // Exported permission: 'administer robots.txt'.
+  $permissions['administer robots.txt'] = array(
+    'name' => 'administer robots.txt',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'robotstxt',
+  );
+
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'system',
   );
@@ -399,6 +420,7 @@ function c21_user_default_permissions() {
     'name' => 'administer taxonomy',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -414,7 +436,9 @@ function c21_user_default_permissions() {
   // Exported permission: 'administer url aliases'.
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'path',
   );
 
@@ -423,6 +447,7 @@ function c21_user_default_permissions() {
     'name' => 'administer users',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'user',
   );
@@ -460,6 +485,7 @@ function c21_user_default_permissions() {
     'name' => 'bypass node access',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -477,6 +503,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'agent' => 'agent',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'user',
@@ -487,6 +514,7 @@ function c21_user_default_permissions() {
     'name' => 'clone node',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'clone',
@@ -497,6 +525,7 @@ function c21_user_default_permissions() {
     'name' => 'clone own nodes',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'clone',
@@ -507,6 +536,7 @@ function c21_user_default_permissions() {
     'name' => 'create aggregation_page_detail content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -517,6 +547,7 @@ function c21_user_default_permissions() {
     'name' => 'create page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -524,7 +555,9 @@ function c21_user_default_permissions() {
   // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'path',
   );
 
@@ -533,6 +566,7 @@ function c21_user_default_permissions() {
     'name' => 'create webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -549,6 +583,7 @@ function c21_user_default_permissions() {
     'name' => 'delete all webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'webform',
   );
@@ -558,6 +593,7 @@ function c21_user_default_permissions() {
     'name' => 'delete any aggregation_page_detail content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -568,6 +604,7 @@ function c21_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -577,6 +614,7 @@ function c21_user_default_permissions() {
     'name' => 'delete any webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -586,6 +624,7 @@ function c21_user_default_permissions() {
     'name' => 'delete own aggregation_page_detail content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -596,6 +635,7 @@ function c21_user_default_permissions() {
     'name' => 'delete own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -605,6 +645,7 @@ function c21_user_default_permissions() {
     'name' => 'delete own webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -614,6 +655,7 @@ function c21_user_default_permissions() {
     'name' => 'delete own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'webform',
   );
@@ -630,6 +672,7 @@ function c21_user_default_permissions() {
     'name' => 'delete terms in tags',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'taxonomy',
@@ -640,6 +683,7 @@ function c21_user_default_permissions() {
     'name' => 'display drupal links',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'admin_menu',
   );
@@ -649,6 +693,7 @@ function c21_user_default_permissions() {
     'name' => 'edit all webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'webform',
   );
@@ -658,6 +703,7 @@ function c21_user_default_permissions() {
     'name' => 'edit any aggregation_page_detail content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -668,6 +714,7 @@ function c21_user_default_permissions() {
     'name' => 'edit any page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -677,6 +724,7 @@ function c21_user_default_permissions() {
     'name' => 'edit any webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -686,6 +734,7 @@ function c21_user_default_permissions() {
     'name' => 'edit own aggregation_page_detail content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -696,6 +745,7 @@ function c21_user_default_permissions() {
     'name' => 'edit own page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -705,6 +755,7 @@ function c21_user_default_permissions() {
     'name' => 'edit own webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -714,6 +765,7 @@ function c21_user_default_permissions() {
     'name' => 'edit own webform submissions',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'webform',
   );
@@ -751,8 +803,16 @@ function c21_user_default_permissions() {
     'name' => 'flush caches',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'admin_menu',
+  );
+
+  // Exported permission: 'generate features'.
+  $permissions['generate features'] = array(
+    'name' => 'generate features',
+    'roles' => array(),
+    'module' => 'features',
   );
 
   // Exported permission: 'manage features'.
@@ -837,6 +897,7 @@ function c21_user_default_permissions() {
     'name' => 'override page promote to front page option',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'override_node_options',
   );
@@ -846,6 +907,7 @@ function c21_user_default_permissions() {
     'name' => 'override page published option',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'override_node_options',
   );
@@ -991,6 +1053,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'agent' => 'agent',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'filter',
@@ -1002,6 +1065,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'agent' => 'agent',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -1012,6 +1076,7 @@ function c21_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'node',
@@ -1023,6 +1088,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'agent' => 'agent',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'system',

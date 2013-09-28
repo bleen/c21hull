@@ -1,3 +1,9 @@
 <?php
+/**
+ * @file
+ * Code for the c21 Marketing feature.
+ */
+
+include_once 'c21_marketing.features.inc';
 
 

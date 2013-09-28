@@ -17,15 +17,56 @@ function c21_search_apachesolr_environments() {
   $environment->url = 'http://us-la.opensolr.com/solr/Listings';
   $environment->service_class = '';
   $environment->conf = array(
-    'apachesolr_index_last' => array(),
+    'apachesolr_index_last' => array(
+      'drealty_listing' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'drealty_listing_type' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'drealty_connection_entity' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'field_collection_item' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'node' => array(
+        'last_changed' => '1380379023',
+        'last_entity_id' => '10427',
+      ),
+      'redirect' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'file' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'taxonomy_term' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'taxonomy_vocabulary' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+      'user' => array(
+        'last_changed' => 0,
+        'last_entity_id' => 0,
+      ),
+    ),
+    'apachesolr_index_updated' => 1380380491,
+    'apachesolr_last_optimize' => 1380312743,
   );
   $environment->index_bundles = array(
-    'drealty_listing' => array(
-      0 => 'mls_residential_listing',
-    ),
     'node' => array(
-      0 => 'listing',
-      1 => 'page',
+      0 => 'aggregation_page_detail',
+      1 => 'listing',
+      2 => 'page',
     ),
   );
   $export['opensolr'] = $environment;

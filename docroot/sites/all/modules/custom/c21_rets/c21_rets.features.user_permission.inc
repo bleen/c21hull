@@ -57,6 +57,7 @@ function c21_rets_user_default_permissions() {
     'name' => 'delete any drealty listing',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
       'staff' => 'staff',
     ),
     'module' => 'drealty',
@@ -88,6 +89,7 @@ function c21_rets_user_default_permissions() {
     'name' => 'show format selection for drealty_listing',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
     ),
     'module' => 'better_formats',
   );
