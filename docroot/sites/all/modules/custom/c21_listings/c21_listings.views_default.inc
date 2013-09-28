@@ -77,7 +77,7 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['path'] = 'agents';
 
   /* Display: Owners */
-  $handler = $view->new_display('block', 'Owners', 'block_1');
+  $handler = $view->new_display('block', 'Owners', 'owners');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -104,7 +104,7 @@ function c21_listings_views_default_views() {
   );
 
   /* Display: Agents */
-  $handler = $view->new_display('block', 'Agents', 'block_2');
+  $handler = $view->new_display('block', 'Agents', 'agents');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
