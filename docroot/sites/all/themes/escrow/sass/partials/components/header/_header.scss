@@ -2,17 +2,25 @@
   @include clearfix();
   margin: 0 $spacing_default_neg $spacing_large $spacing_default_neg;
   padding-top: $spacing_large;
-  @include background(linear-gradient(top, $color_gray_light, $color_gray));
+  padding-left: $spacing_default;
+  @include background(
+    url("../images/lake.jpg") no-repeat center left,
+    linear-gradient(top, $color_gray_light, $color_gray)
+  );
   border-bottom: 3px solid $color_gold;
 }
 
 #offices {
   @include float-span(3, 'last');
+  color: $color_gold;
+  text-shadow: 1px 1px 2px black;
 
   .office-phone {
     display: block;
     font-size: .9 * $font_size_base;
     font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 5px black;
   }
 
   li:first-child {

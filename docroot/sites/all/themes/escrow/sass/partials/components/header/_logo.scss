@@ -4,10 +4,10 @@
   width: 140px;
   height: 110px;
   background-size: contain;
-  @include replace-text('../images/c21hull_logo.svg');
+  @include replace-text('../images/c21hull_logo_white.svg');
 
   @include degrade-from(svg, false) {
-    @include replace-text('../images/c21hull_logo.png');
+    @include replace-text('../images/c21hull_logo_white.png');
   }
 
   @include breakpoint($bp400) {
