@@ -97,13 +97,13 @@ class DrealtyListing extends Entity {
 }
 
 /**
- * 
+ *
  */
 class DrealtyListingController extends EntityAPIController {
 
   /**
    *
-   * @param type $entityType 
+   * @param type $entityType
    */
   public function __construct($entityType) {
     parent::__construct($entityType);
@@ -115,7 +115,7 @@ class DrealtyListingController extends EntityAPIController {
    * @param type $view_mode
    * @param type $langcode
    * @param type $content
-   * @return string 
+   * @return string
    */
   public function buildContent($entity, $view_mode = 'full', $langcode = NULL, $content = array()) {
     $content = parent::buildContent($entity, $view_mode, $langcode, $content);
@@ -174,7 +174,7 @@ class DrealtyListingTypeController extends EntityAPIControllerExportable {
    *
    * @param DrealtyListingType $entity
    * @param string $prefix
-   * @return string 
+   * @return string
    */
   public function export($entity, $prefix = '') {
     $vars = get_object_vars($entity);
@@ -207,8 +207,6 @@ class DrealtyListingTypeController extends EntityAPIControllerExportable {
       foreach ($entity->fields as $field) {
         if (!field_read_field($field['field_name'], array('include_inactive' => TRUE))) {
           field_create_field($field);
-        } else {
-          drupal_set_message(t('Skipped creating field %field. A field with this name already exists.', array('%field' => $field['field_name'])), 'warning');
         }
       }
 

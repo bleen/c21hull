@@ -520,8 +520,6 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
         foreach ($entity->field_fields as $field) {
           if (!field_read_field($field['field_name'], array('include_inactive' => TRUE))) {
             field_create_field($field);
-          } else {
-            drupal_set_message(t('Skipped creating field %field. A field with this name already exists.', array('%field' => $field['field_name'])), 'warning');
           }
         }
       }
@@ -531,8 +529,6 @@ class drealtyConnectionEntityContoller extends EntityAPIControllerExportable {
           foreach ($bundle as $instance) {
             if (!field_info_instance($instance['entity_type'], $instance['field_name'], $instance['bundle'])) {
               field_create_instance($instance);
-            } else {
-              drupal_set_message(t('Skipped creating instance %instance. An instance with this name already exists.', array('%field' => $instance['label'])), 'warning');
             }
           }
         }

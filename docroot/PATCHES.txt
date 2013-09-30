@@ -68,6 +68,10 @@ DREALTY
   * Fixing an error that occurs when exporting a listing type with features.
       PATCH: https://drupal.org/node/2035731#comment-7618671
 
+  * Re-fixing "Skipped creating field field_mls_acreage. A field with this name
+               already exists" errors.
+      PATCH: https://drupal.org/node/1931250#comment-7916879
+
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
       PATCH: https://drupal.org/node/1175082#comment-7424400
