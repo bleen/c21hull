@@ -42,6 +42,7 @@ function c21_listings_field_group_info() {
       16 => 'field_listing_water',
       17 => 'field_listing_windows',
       18 => 'field_listing_year_built',
+      19 => 'field_listing_outside_features',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -608,6 +609,7 @@ function c21_listings_field_group_info() {
       16 => 'field_listing_water',
       17 => 'field_listing_windows',
       18 => 'field_listing_year_built',
+      19 => 'field_listing_outside_features',
     ),
     'format_type' => 'div',
     'format_settings' => array(

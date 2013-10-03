@@ -170,6 +170,29 @@ function c21_listings_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'listing_outside_features' => array(
+      'name' => 'Listing Outside Features',
+      'machine_name' => 'listing_outside_features',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'listing_school_district' => array(
       'name' => 'Listing School District',
       'machine_name' => 'listing_school_district',

@@ -7,7 +7,7 @@
 
 
 /**
- * Defines the migration fo rthe Listing Sewage taxonomy.
+ * Defines the migration for the Listing Sewage taxonomy.
  */
 class C21TermsListingMigration extends C21Migration {
 
@@ -72,7 +72,7 @@ class C21TermsListingMigration extends C21Migration {
 }
 
 /**
- * Defines the migration fo rthe Listing Sewage taxonomy.
+ * Defines the migration for the Listing Sewage taxonomy.
  */
 class C21TermsListingSewageMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -89,7 +89,7 @@ class C21TermsListingSewageMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingWaterMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -106,7 +106,7 @@ class C21TermsListingWaterMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingHeatMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -123,7 +123,7 @@ class C21TermsListingHeatMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingInsulationMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -140,7 +140,7 @@ class C21TermsListingInsulationMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingGarageMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -157,7 +157,7 @@ class C21TermsListingGarageMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingBasementMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -174,7 +174,7 @@ class C21TermsListingBasementMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingWindowsMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -191,7 +191,7 @@ class C21TermsListingWindowsMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingFloorsMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -208,7 +208,7 @@ class C21TermsListingFloorsMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingWallsMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -225,16 +225,16 @@ class C21TermsListingWallsMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
-class C21TermsListingAdditionalBuildingMigration extends C21TermsListingMigration {
+class C21TermsListingOutsideFeaturesMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
     $vocabulary = array(
-      'name' => 'additional building',
+      'name' => 'outside features',
       'table' => 'listing_building_dtl',
       'column' => 'add_building',
-      'vocabulary' => 'listing_additional_building',
-      'description' => t('Additional Building Terms'),
+      'vocabulary' => 'listing_outside_features',
+      'description' => t('Outside Features Terms'),
     );
 
     parent::__construct($arguments, $vocabulary);
@@ -242,7 +242,7 @@ class C21TermsListingAdditionalBuildingMigration extends C21TermsListingMigratio
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingSchoolDistrictMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -259,7 +259,7 @@ class C21TermsListingSchoolDistrictMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingDevelopmentMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -276,7 +276,7 @@ class C21TermsListingDevelopmentMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration fo rthe Listing Water taxonomy.
+ * Defines the migration for the Listing Water taxonomy.
  */
 class C21TermsListingTownshipMigration extends C21TermsListingMigration {
   public function __construct($arguments) {

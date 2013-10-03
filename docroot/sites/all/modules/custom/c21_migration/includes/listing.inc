@@ -47,7 +47,7 @@ class C21ListingMigration extends C21Migration {
 
     // Map simple mappings.
     $this->addSimpleMappings(array('nid', 'title'));
-    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'closing_date', 'sale_price', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'building_type', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'porch', 'decks', 'personal_property', 'directions', 'block', 'lot', 'section', 'state', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
+    $this->addSimpleFieldMappings(array('id_prefix', 'list_date', 'closing_date', 'sale_price', 'mls', 'list_price', 'commission', 'acreage', 'taxes', 'dues', 'style', 'building_type', 'year_built', 'bedrooms', 'bathrooms', 'siding', 'fireplace', 'personal_property', 'directions', 'block', 'lot', 'section', 'state', 'sq_ft_above', 'sq_ft_below', 'sq_ft_finished'));
 
     // Map standard field mappings
     $this->addFieldMapping('is_new')
@@ -228,6 +228,13 @@ class C21ListingMigration extends C21Migration {
     $extra_water_fields = array(
       'shared' => 'shared',
     );
+
+    if (!empty($source_row->decks) && strtolower($source_row->decks) != 'none') {
+      $source_row->add_building . ',' . $source_row->decks . ' deck(s)';
+    }
+    if (!empty($source_row->porch) && strtolower($source_row->porch) != 'none') {
+      $source_row->add_building . ',' . $source_row->porch . ' porch(es)';
+    }
 
     $source_row->sewage = $this->prepareListingTerms($source_row, 'sewage', 'normalizeSewage', $extra_sewage_fields);
     $source_row->water = $this->prepareListingTerms($source_row, 'water', 'normalizeWater', $extra_water_fields);

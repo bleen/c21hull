@@ -392,7 +392,7 @@ $conf['search_default_module'] = 'apachesolr_search';
  * theme. It is located inside 'modules/system/maintenance-page.tpl.php'.
  * Note: This setting does not apply to installation and update pages.
  */
-$conf['maintenance_theme'] = 'escrow';
+# $conf['maintenance_theme'] = 'escrow';
 
 /**
  * Reverse Proxy Configuration:

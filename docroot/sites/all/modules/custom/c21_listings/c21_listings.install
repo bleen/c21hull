@@ -86,3 +86,84 @@ function c21_listings_update_7002() {
     }
   }
 }
+
+/**
+ * Move terms from "additional building" vocab to "outside features".
+ */
+function c21_listings_update_7003(&$sandbox) {
+  $source = 'listing_additional_building';
+  $destination = 'listing_outside_features';
+  $source_vocab = taxonomy_vocabulary_machine_name_load($source);
+  $destination_vocab = taxonomy_vocabulary_machine_name_load($destination);
+
+  if (!array_key_exists('progress', $sandbox)) {
+    $query = new EntityFieldQuery();
+    $query
+      ->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'listing');
+    $result = $query->execute();
+
+    $sandbox['items_per_pass'] = 25;
+    $sandbox['max'] = !empty($result['node']) ? count($result['node']) : 0;
+    $sandbox['progress'] = 0;
+
+    // Migrate terms from the additional building vocabulary to the new outside
+    // features vocabulary.
+    $terms = taxonomy_get_tree($source_vocab->vid, 0, NULL, TRUE);
+    foreach ($terms as $term) {
+      $term->vid = $destination_vocab->vid;
+      taxonomy_term_save($term);
+    }
+  }
+  else {
+    $query = new EntityFieldQuery();
+    $query
+      ->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'listing')
+      ->range($sandbox['progress'], $sandbox['items_per_pass']);
+    $result = $query->execute();
+
+    if (!empty($result['node'])) {
+      $entities = entity_load('node', array_keys($result['node']));
+      foreach ($entities as $entity) {
+        $needs_save = FALSE;
+
+        // Check if there is value for additional building and move it to the
+        // outside features field.
+        if (isset($entity->field_listing_additional_building[LANGUAGE_NONE][0]['tid'])) {
+          $tid = $entity->field_listing_additional_building[LANGUAGE_NONE][0]['tid'];
+          $entity->field_listing_outside_features[LANGUAGE_NONE][] = array('tid' => $tid);
+          $needs_save = TRUE;
+        }
+
+        // Check for a value of the "decks" field & "porch" field.
+        $fields = array('decks', 'porch');
+        foreach ($fields as $field) {
+          if (isset($entity->{'field_listing_' . $field}[LANGUAGE_NONE][0]['value'])) {
+            $value = $entity->{'field_listing_' . $field}[LANGUAGE_NONE][0]['value'] . ' ' . ($field == 'decks' ? 'deck(s)' : 'porch(es)');
+            $terms = taxonomy_get_term_by_name($value, $destination);
+            if (empty($terms)) {
+              $term = new stdClass();
+              $term->vid = $destination_vocab->vid;
+              $term->name = $value;
+              taxonomy_term_save($term);
+            }
+            else {
+              $term = array_pop($terms);
+            }
+            $entity->{'field_listing_' . $field}[LANGUAGE_NONE][] = array('tid' => $term->tid);
+            $needs_save = TRUE;
+          }
+        }
+
+        if ($needs_save) {
+          entity_save('node', $entity);
+        }
+
+        $sandbox['progress']++;
+      }
+    }
+  }
+
+  $sandbox['#finished'] = ($sandbox['progress'] >= $sandbox['max']);
+}
