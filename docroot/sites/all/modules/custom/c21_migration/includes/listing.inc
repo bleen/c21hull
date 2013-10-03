@@ -230,10 +230,10 @@ class C21ListingMigration extends C21Migration {
     );
 
     if (!empty($source_row->decks) && strtolower($source_row->decks) != 'none') {
-      $source_row->add_building . ',' . $source_row->decks . ' deck(s)';
+      $source_row->add_building . ',' . $source_row->decks . ' deck';
     }
     if (!empty($source_row->porch) && strtolower($source_row->porch) != 'none') {
-      $source_row->add_building . ',' . $source_row->porch . ' porch(es)';
+      $source_row->add_building . ',' . $source_row->porch . ' porch';
     }
 
     $source_row->sewage = $this->prepareListingTerms($source_row, 'sewage', 'normalizeSewage', $extra_sewage_fields);

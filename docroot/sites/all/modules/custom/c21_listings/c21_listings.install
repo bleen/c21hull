@@ -130,8 +130,8 @@ function c21_listings_update_7003(&$sandbox) {
 
         // Check if there is value for additional building and move it to the
         // outside features field.
-        if (isset($entity->field_listing_additional_building[LANGUAGE_NONE][0]['tid'])) {
-          $tid = $entity->field_listing_additional_building[LANGUAGE_NONE][0]['tid'];
+        if (isset($entity->field_listing_additional_bldg[LANGUAGE_NONE][0]['tid'])) {
+          $tid = $entity->field_listing_additional_bldg[LANGUAGE_NONE][0]['tid'];
           $entity->field_listing_outside_features[LANGUAGE_NONE][] = array('tid' => $tid);
           $needs_save = TRUE;
         }
@@ -139,19 +139,22 @@ function c21_listings_update_7003(&$sandbox) {
         // Check for a value of the "decks" field & "porch" field.
         $fields = array('decks', 'porch');
         foreach ($fields as $field) {
-          if (isset($entity->{'field_listing_' . $field}[LANGUAGE_NONE][0]['value'])) {
-            $value = $entity->{'field_listing_' . $field}[LANGUAGE_NONE][0]['value'] . ' ' . ($field == 'decks' ? 'deck(s)' : 'porch(es)');
+          if (isset($entity->{'field_listing_' . $field}[LANGUAGE_NONE][0]['value'])
+            && strtolower($entity->{'field_listing_' . $field}[LANGUAGE_NONE][0]['value']) != 'none'
+            && strtolower($entity->{'field_listing_' . $field}[LANGUAGE_NONE][0]['value']) != 'no'
+          ) {
+            $value = $entity->{'field_listing_' . $field}[LANGUAGE_NONE][0]['value'] . ' ' . ($field == 'decks' ? 'deck' : 'porch');
             $terms = taxonomy_get_term_by_name($value, $destination);
             if (empty($terms)) {
               $term = new stdClass();
               $term->vid = $destination_vocab->vid;
-              $term->name = $value;
+              $term->name = strtolower($value);
               taxonomy_term_save($term);
             }
             else {
               $term = array_pop($terms);
             }
-            $entity->{'field_listing_' . $field}[LANGUAGE_NONE][] = array('tid' => $term->tid);
+            $entity->field_listing_outside_features[LANGUAGE_NONE][] = array('tid' => $term->tid);
             $needs_save = TRUE;
           }
         }
