@@ -10,27 +10,21 @@ $aliases['local'] = array(
 
 /* ==============================  R E M O T E ============================== */
 $aliases['stage'] = array(
+  'parent' => '@c21.local',
   'env' => 'stage',
   'remote-user' => 'hull',
   'remote-host' => 'c21hull.com',
-  'parent' => '@c21.local',
   'path-aliases' => array(
     '%drush-script' => '/home/hull/pear/drush',
-    '%dump-dir' => '/home/hull/tmp'
+    '%dump-dir' => '/home/hull/dumps'
   ),
   'root' => '/home/hull/sites/stage.c21hull.com/docroot',
   'uri' => 'http://stage.c21hull.com',
 );
 
 $aliases['prod'] = array(
+  'parent' => '@c21.stage',
   'env' => 'prod',
-  'remote-user' => 'hull',
-  'remote-host' => 'c21hull.com',
-  'parent' => '@c21.local',
-  'path-aliases' => array(
-    '%drush-script' => '/home/hull/pear/drush',
-    '%dump-dir' => '/home/hull/tmp'
-  ),
   'root' => '/home/hull/sites/c21hull.com/docroot',
   'uri' => 'http://d7.c21hull.com',
 );
