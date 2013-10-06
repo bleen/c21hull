@@ -22,6 +22,12 @@ function c21_user_default_roles() {
     'weight' => 5,
   );
 
+  // Exported role: manager.
+  $roles['manager'] = array(
+    'name' => 'manager',
+    'weight' => 3,
+  );
+
   // Exported role: staff.
   $roles['staff'] = array(
     'name' => 'staff',
