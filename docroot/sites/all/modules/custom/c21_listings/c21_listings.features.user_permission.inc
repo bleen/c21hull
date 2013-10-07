@@ -106,17 +106,6 @@ function c21_listings_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete terms in listing_additional_building'.
-  $permissions['delete terms in listing_additional_building'] = array(
-    'name' => 'delete terms in listing_additional_building',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-      'staff' => 'staff',
-    ),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'delete terms in listing_basement'.
   $permissions['delete terms in listing_basement'] = array(
     'name' => 'delete terms in listing_basement',
@@ -311,17 +300,6 @@ function c21_listings_user_default_permissions() {
       'manager' => 'manager',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit terms in listing_additional_building'.
-  $permissions['edit terms in listing_additional_building'] = array(
-    'name' => 'edit terms in listing_additional_building',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-      'staff' => 'staff',
-    ),
-    'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in listing_basement'.

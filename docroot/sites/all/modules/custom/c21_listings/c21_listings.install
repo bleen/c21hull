@@ -174,3 +174,12 @@ function c21_listings_update_7003(&$sandbox) {
 
   $sandbox['#finished'] = ($sandbox['progress'] >= $sandbox['max']);
 }
+
+/**
+ * Delete the additional bldg, porch, & decks fields.
+ */
+function c21_listings_update_7004() {
+  field_delete_field('listing_additional_bldg');
+  field_delete_field('listing_porch');
+  field_delete_field('listing_decks');
+}

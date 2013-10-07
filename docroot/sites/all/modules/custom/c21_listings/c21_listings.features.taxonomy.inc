@@ -9,29 +9,6 @@
  */
 function c21_listings_taxonomy_default_vocabularies() {
   return array(
-    'listing_additional_building' => array(
-      'name' => 'Listing Additional Building',
-      'machine_name' => 'listing_additional_building',
-      'description' => '',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
     'listing_basement' => array(
       'name' => 'Listing Basement',
       'machine_name' => 'listing_basement',

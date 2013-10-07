@@ -624,13 +624,6 @@ function c21_listings_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_listing_additional_bldg' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_field',
-        ),
-      ),
-    ),
     'field_listing_agent' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -658,13 +651,6 @@ function c21_listings_ds_field_settings_info() {
       ),
     ),
     'field_listing_basement' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_field',
-        ),
-      ),
-    ),
-    'field_listing_decks' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_field',
@@ -764,13 +750,6 @@ function c21_listings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_minimal',
-        ),
-      ),
-    ),
-    'field_listing_porch' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_field',
         ),
       ),
     ),
@@ -919,13 +898,6 @@ function c21_listings_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_listing_additional_bldg' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_field',
-        ),
-      ),
-    ),
     'field_listing_agent' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -960,13 +932,6 @@ function c21_listings_ds_field_settings_info() {
       ),
     ),
     'field_listing_block' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_field',
-        ),
-      ),
-    ),
-    'field_listing_decks' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_field',
@@ -1111,13 +1076,6 @@ function c21_listings_ds_field_settings_info() {
       ),
     ),
     'field_listing_personal_property' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_field',
-        ),
-      ),
-    ),
-    'field_listing_porch' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_field',
@@ -1875,15 +1833,12 @@ function c21_listings_ds_layout_settings_info() {
         15 => 'field_listing_school_district',
         16 => 'field_listing_siding',
         17 => 'field_listing_fireplace',
-        18 => 'field_listing_porch',
-        19 => 'field_listing_decks',
         20 => 'field_listing_garage',
         21 => 'field_listing_basement',
         22 => 'field_listing_windows',
         23 => 'field_listing_floors',
         24 => 'field_listing_walls',
         25 => 'field_listing_outside_features',
-        26 => 'field_listing_additional_bldg',
         27 => 'field_listing_sq_ft_above',
         28 => 'field_listing_sq_ft_below',
         29 => 'field_listing_sq_ft_finished',
@@ -1914,15 +1869,12 @@ function c21_listings_ds_layout_settings_info() {
       'field_listing_school_district' => 'left',
       'field_listing_siding' => 'left',
       'field_listing_fireplace' => 'left',
-      'field_listing_porch' => 'left',
-      'field_listing_decks' => 'left',
       'field_listing_garage' => 'left',
       'field_listing_basement' => 'left',
       'field_listing_windows' => 'left',
       'field_listing_floors' => 'left',
       'field_listing_walls' => 'left',
       'field_listing_outside_features' => 'left',
-      'field_listing_additional_bldg' => 'left',
       'field_listing_sq_ft_above' => 'left',
       'field_listing_sq_ft_below' => 'left',
       'field_listing_sq_ft_finished' => 'left',
@@ -1977,14 +1929,11 @@ function c21_listings_ds_layout_settings_info() {
         15 => 'field_listing_insulation',
         16 => 'field_listing_siding',
         17 => 'field_listing_fireplace',
-        18 => 'field_listing_porch',
-        19 => 'field_listing_decks',
         20 => 'field_listing_garage',
         21 => 'field_listing_basement',
         22 => 'field_listing_windows',
         23 => 'field_listing_floors',
         24 => 'field_listing_walls',
-        25 => 'field_listing_additional_bldg',
         26 => 'field_listing_outside_features',
         27 => 'field_listing_sq_ft_above',
         28 => 'field_listing_sq_ft_below',
@@ -2029,14 +1978,11 @@ function c21_listings_ds_layout_settings_info() {
       'field_listing_insulation' => 'left',
       'field_listing_siding' => 'left',
       'field_listing_fireplace' => 'left',
-      'field_listing_porch' => 'left',
-      'field_listing_decks' => 'left',
       'field_listing_garage' => 'left',
       'field_listing_basement' => 'left',
       'field_listing_windows' => 'left',
       'field_listing_floors' => 'left',
       'field_listing_walls' => 'left',
-      'field_listing_additional_bldg' => 'left',
       'field_listing_outside_features' => 'left',
       'field_listing_sq_ft_above' => 'left',
       'field_listing_sq_ft_below' => 'left',

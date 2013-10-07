@@ -2052,98 +2052,6 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listing-field_listing_additional_bldg'
-  $field_instances['node-listing-field_listing_additional_bldg'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'ex: shed',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 36,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 46,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 91,
-      ),
-      'print' => array(
-        'label' => 'inline',
-        'module' => 'ds',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'taxonomy_term_link' => 0,
-          'taxonomy_term_separator' => ', ',
-        ),
-        'type' => 'ds_taxonomy_separator',
-        'weight' => 20,
-      ),
-      'print_internal' => array(
-        'label' => 'inline',
-        'module' => 'ds',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'taxonomy_term_link' => 0,
-          'taxonomy_term_separator' => ', ',
-        ),
-        'type' => 'ds_taxonomy_separator',
-        'weight' => 25,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 78,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 85,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_additional_bldg',
-    'label' => 'Additional Building',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'autocomplete_deluxe',
-      'settings' => array(
-        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
-        'delimiter' => '',
-        'limit' => 10,
-        'min_length' => 0,
-        'size' => 60,
-      ),
-      'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 136,
-    ),
-  );
-
   // Exported field_instance: 'node-listing-field_listing_agent'
   $field_instances['node-listing-field_listing_agent'] = array(
     'bundle' => 'listing',
@@ -4777,92 +4685,6 @@ function c21_listings_field_default_field_instances() {
       'settings' => array(),
       'type' => 'numberfield',
       'weight' => 14,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_decks'
-  $field_instances['node-listing-field_listing_decks'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_default',
-        'weight' => 25,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 37,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 113,
-      ),
-      'print' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_plain',
-        'weight' => 13,
-      ),
-      'print_internal' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_plain',
-        'weight' => 19,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 102,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 107,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_decks',
-    'label' => 'Decks',
-    'placeholder' => '',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 130,
     ),
   );
 
@@ -9358,92 +9180,6 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listing-field_listing_porch'
-  $field_instances['node-listing-field_listing_porch'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_default',
-        'weight' => 24,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 36,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 37,
-      ),
-      'print' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_plain',
-        'weight' => 12,
-      ),
-      'print_internal' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_plain',
-        'weight' => 18,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 31,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_porch',
-    'label' => 'Porch',
-    'placeholder' => '',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 129,
-    ),
-  );
-
   // Exported field_instance: 'node-listing-field_listing_sale_agent'
   $field_instances['node-listing-field_listing_sale_agent'] = array(
     'bundle' => 'listing',
@@ -11858,7 +11594,6 @@ function c21_listings_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Acreage');
-  t('Additional Building');
   t('Address');
   t('Agent');
   t('Aggregation Page');
@@ -11896,7 +11631,6 @@ function c21_listings_field_default_field_instances() {
   t('Closing Date');
   t('Commission');
   t('Company');
-  t('Decks');
   t('Description');
   t('Details');
   t('Development');
@@ -11962,7 +11696,6 @@ function c21_listings_field_default_field_instances() {
   t('Phone Type');
   t('Photo');
   t('Photos');
-  t('Porch');
   t('Primary Office');
   t('Sale Agent');
   t('Sale Price');
@@ -12003,7 +11736,6 @@ function c21_listings_field_default_field_instances() {
   t('ex: http://www.example.com/tour.htm');
   t('ex: lakefront, new construction, foreclosure');
   t('ex: septic, septic needed, central, shared, existing permit');
-  t('ex: shed');
   t('ex: sheetrock, wood, paneling');
   t('ex: single pane, double pane');
 

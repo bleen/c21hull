@@ -379,40 +379,6 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_taxonomy_term__listing_additional_building';
-  $strongarm->value = array(
-    'view_modes' => array(
-      'full' => array(
-        'custom_settings' => TRUE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
-    'extra_fields' => array(
-      'form' => array(),
-      'display' => array(
-        'description' => array(
-          'default' => array(
-            'weight' => '0',
-            'visible' => TRUE,
-          ),
-          'full' => array(
-            'weight' => '0',
-            'visible' => TRUE,
-          ),
-        ),
-      ),
-    ),
-  );
-  $export['field_bundle_settings_taxonomy_term__listing_additional_building'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_agent';
   $strongarm->value = array();
   $export['menu_options_agent'] = $strongarm;
@@ -586,13 +552,6 @@ function c21_listings_strongarm() {
   $strongarm->name = 'pathauto_node_listing_type_pattern';
   $strongarm->value = '';
   $export['pathauto_node_listing_type_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_listing_additional_building_pattern';
-  $strongarm->value = '';
-  $export['pathauto_taxonomy_term_listing_additional_building_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
