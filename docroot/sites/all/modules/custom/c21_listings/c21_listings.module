@@ -500,14 +500,14 @@ function _c21_listings_get_gmap_link($node) {
 
   if (!empty($node->field_listing_street) && !empty($node->field_listing_township)) {
     $street = $node->field_listing_street[LANGUAGE_NONE][0]['safe_value'];
-    $town = $node->field_listing_township[LANGUAGE_NONE][0]['taxonomy_term']->name;
+    $town = taxonomy_term_load($node->field_listing_township[LANGUAGE_NONE][0]['tid']);
     $state = isset($node->field_listing_state) ? $node->field_listing_state[LANGUAGE_NONE][0]['value'] : 'PA';
 
     $gmap_link = array(
       'title' => t('See map'),
       'href' => 'http://maps.google.com/maps',
       'query' => array(
-        'q' => $street . ', ' . $town . ', ' . $state, // Search query.
+        'q' => $street . ', ' . $town->name . ', ' . $state, // Search query.
         'hl' => 'en', // Language.
         'iwloc' => 'A', // Information Bubble [A|''].
         'z' => 12, // Zoom.
