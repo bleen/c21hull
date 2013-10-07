@@ -391,10 +391,7 @@ function c21_user_default_permissions() {
   // Exported permission: 'administer robots.txt'.
   $permissions['administer robots.txt'] = array(
     'name' => 'administer robots.txt',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-    ),
+    'roles' => array(),
     'module' => 'robotstxt',
   );
 
