@@ -72,6 +72,23 @@ class C21TermsListingMigration extends C21Migration {
 }
 
 /**
+ * Defines the migration for the Listing Style taxonomy.
+ */
+class C21TermsListingStyleMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'style',
+      'table' => 'listings',
+      'column' => 'style',
+      'vocabulary' => 'listing_style',
+      'description' => t('Style Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
  * Defines the migration for the Listing Sewage taxonomy.
  */
 class C21TermsListingSewageMigration extends C21TermsListingMigration {
@@ -106,7 +123,7 @@ class C21TermsListingWaterMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Heat taxonomy.
  */
 class C21TermsListingHeatMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -123,7 +140,7 @@ class C21TermsListingHeatMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Insulation taxonomy.
  */
 class C21TermsListingInsulationMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -140,7 +157,7 @@ class C21TermsListingInsulationMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Garage taxonomy.
  */
 class C21TermsListingGarageMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -157,7 +174,7 @@ class C21TermsListingGarageMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Basement taxonomy.
  */
 class C21TermsListingBasementMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -174,7 +191,7 @@ class C21TermsListingBasementMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Windows taxonomy.
  */
 class C21TermsListingWindowsMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -191,7 +208,7 @@ class C21TermsListingWindowsMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Floors taxonomy.
  */
 class C21TermsListingFloorsMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -208,7 +225,7 @@ class C21TermsListingFloorsMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Walls taxonomy.
  */
 class C21TermsListingWallsMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -225,7 +242,41 @@ class C21TermsListingWallsMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Fireplace taxonomy.
+ */
+class C21TermsListingFireplaceMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'fireplace',
+      'table' => 'listing_building_dtl',
+      'column' => 'fireplace',
+      'vocabulary' => 'listing_fireplace',
+      'description' => t('Fireplace Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration for the Listing Siding taxonomy.
+ */
+class C21TermsListingSidingMigration extends C21TermsListingMigration {
+  public function __construct($arguments) {
+    $vocabulary = array(
+      'name' => 'siding',
+      'table' => 'listing_building_dtl',
+      'column' => 'siding',
+      'vocabulary' => 'listing_siding',
+      'description' => t('Siding Terms'),
+    );
+
+    parent::__construct($arguments, $vocabulary);
+  }
+}
+
+/**
+ * Defines the migration for the Listing Outside Features taxonomy.
  */
 class C21TermsListingOutsideFeaturesMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -242,7 +293,7 @@ class C21TermsListingOutsideFeaturesMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing School District taxonomy.
  */
 class C21TermsListingSchoolDistrictMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -259,7 +310,7 @@ class C21TermsListingSchoolDistrictMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Development taxonomy.
  */
 class C21TermsListingDevelopmentMigration extends C21TermsListingMigration {
   public function __construct($arguments) {
@@ -276,7 +327,7 @@ class C21TermsListingDevelopmentMigration extends C21TermsListingMigration {
 }
 
 /**
- * Defines the migration for the Listing Water taxonomy.
+ * Defines the migration for the Listing Township taxonomy.
  */
 class C21TermsListingTownshipMigration extends C21TermsListingMigration {
   public function __construct($arguments) {

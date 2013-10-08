@@ -106,6 +106,17 @@ function c21_listings_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in listing_additional_building'.
+  $permissions['delete terms in listing_additional_building'] = array(
+    'name' => 'delete terms in listing_additional_building',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in listing_basement'.
   $permissions['delete terms in listing_basement'] = array(
     'name' => 'delete terms in listing_basement',
@@ -120,6 +131,17 @@ function c21_listings_user_default_permissions() {
   // Exported permission: 'delete terms in listing_development'.
   $permissions['delete terms in listing_development'] = array(
     'name' => 'delete terms in listing_development',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in listing_fireplace'.
+  $permissions['delete terms in listing_fireplace'] = array(
+    'name' => 'delete terms in listing_fireplace',
     'roles' => array(
       'administrator' => 'administrator',
       'manager' => 'manager',
@@ -172,6 +194,17 @@ function c21_listings_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in listing_outside_features'.
+  $permissions['delete terms in listing_outside_features'] = array(
+    'name' => 'delete terms in listing_outside_features',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in listing_school_district'.
   $permissions['delete terms in listing_school_district'] = array(
     'name' => 'delete terms in listing_school_district',
@@ -186,6 +219,28 @@ function c21_listings_user_default_permissions() {
   // Exported permission: 'delete terms in listing_sewage'.
   $permissions['delete terms in listing_sewage'] = array(
     'name' => 'delete terms in listing_sewage',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in listing_siding'.
+  $permissions['delete terms in listing_siding'] = array(
+    'name' => 'delete terms in listing_siding',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in listing_style'.
+  $permissions['delete terms in listing_style'] = array(
+    'name' => 'delete terms in listing_style',
     'roles' => array(
       'administrator' => 'administrator',
       'manager' => 'manager',
@@ -302,6 +357,17 @@ function c21_listings_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit terms in listing_additional_building'.
+  $permissions['edit terms in listing_additional_building'] = array(
+    'name' => 'edit terms in listing_additional_building',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in listing_basement'.
   $permissions['edit terms in listing_basement'] = array(
     'name' => 'edit terms in listing_basement',
@@ -316,6 +382,17 @@ function c21_listings_user_default_permissions() {
   // Exported permission: 'edit terms in listing_development'.
   $permissions['edit terms in listing_development'] = array(
     'name' => 'edit terms in listing_development',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in listing_fireplace'.
+  $permissions['edit terms in listing_fireplace'] = array(
+    'name' => 'edit terms in listing_fireplace',
     'roles' => array(
       'administrator' => 'administrator',
       'manager' => 'manager',
@@ -368,6 +445,17 @@ function c21_listings_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit terms in listing_outside_features'.
+  $permissions['edit terms in listing_outside_features'] = array(
+    'name' => 'edit terms in listing_outside_features',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in listing_school_district'.
   $permissions['edit terms in listing_school_district'] = array(
     'name' => 'edit terms in listing_school_district',
@@ -382,6 +470,28 @@ function c21_listings_user_default_permissions() {
   // Exported permission: 'edit terms in listing_sewage'.
   $permissions['edit terms in listing_sewage'] = array(
     'name' => 'edit terms in listing_sewage',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in listing_siding'.
+  $permissions['edit terms in listing_siding'] = array(
+    'name' => 'edit terms in listing_siding',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in listing_style'.
+  $permissions['edit terms in listing_style'] = array(
+    'name' => 'edit terms in listing_style',
     'roles' => array(
       'administrator' => 'administrator',
       'manager' => 'manager',

@@ -38,6 +38,10 @@ function c21_migration_migrate_api() {
         'class_name' => 'C21ListingMigration',
         'group_name' => 'listing_content',
       ),
+      'c21TermsListingStyle' => array(
+        'class_name' => 'C21TermsListingStyleMigration',
+        'group_name' => 'listing_vocabularies',
+      ),
       'c21TermsListingSewage' => array(
         'class_name' => 'C21TermsListingSewageMigration',
         'group_name' => 'listing_vocabularies',
@@ -74,8 +78,16 @@ function c21_migration_migrate_api() {
         'class_name' => 'C21TermsListingWallsMigration',
         'group_name' => 'listing_vocabularies',
       ),
-      'c21TermsListingAdditionalBuilding' => array(
-        'class_name' => 'C21TermsListingAdditionalBuildingMigration',
+      'c21TermsListingFireplace' => array(
+        'class_name' => 'C21TermsListingFireplaceMigration',
+        'group_name' => 'listing_vocabularies',
+      ),
+      'c21TermsListingSiding' => array(
+        'class_name' => 'C21TermsListingSidingMigration',
+        'group_name' => 'listing_vocabularies',
+      ),
+      'c21TermsListingOutsideFeatures' => array(
+        'class_name' => 'C21TermsListingOutsideFeaturesMigration',
         'group_name' => 'listing_vocabularies',
       ),
       'c21TermsListingSchoolDistrict' => array(
