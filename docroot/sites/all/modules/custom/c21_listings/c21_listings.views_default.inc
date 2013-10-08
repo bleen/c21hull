@@ -340,6 +340,28 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '0';
+  /* Filter criterion: Content: Style (field_listing_style_info) */
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['id'] = 'field_listing_style_info_tid';
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['table'] = 'field_data_field_listing_style_info';
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['field'] = 'field_listing_style_info_tid';
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['value'] = array(
+    0 => '5047',
+  );
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['expose']['operator_id'] = 'field_listing_style_info_tid_op';
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['expose']['label'] = 'Style (field_listing_style_info)';
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['expose']['operator'] = 'field_listing_style_info_tid_op';
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['expose']['identifier'] = 'field_listing_style_info_tid';
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_listing_style_info_tid']['vocabulary'] = 'listing_style';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
