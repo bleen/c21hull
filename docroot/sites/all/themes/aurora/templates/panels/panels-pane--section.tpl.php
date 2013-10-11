@@ -36,7 +36,7 @@
   <?php endif; ?>
 
   <?php print render($content); ?>
-
+  
   <?php if ($feeds || $links || $more): ?>
     <footer>
       <?php if ($feeds): ?>
@@ -44,7 +44,7 @@
           <?php print $feeds; ?>
         </div>
       <?php endif; ?>
-
+  
       <?php if ($links): ?>
         <div class="links">
           <?php print $links; ?>

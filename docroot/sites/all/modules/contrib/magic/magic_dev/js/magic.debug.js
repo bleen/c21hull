@@ -1,8 +1,10 @@
+/**
+ * @file
+ * Debug functions for the magic_dev module.
+ */
 (function() {
 
-  //////////////////////////////
   // Localstorage Test
-  //////////////////////////////
   function supports_html5_storage() {
     // Please see https://github.com/Modernizr/Modernizr/blob/master/feature-detects/storage/localstorage.js
     // for details.
@@ -16,10 +18,7 @@
     }
   }
 
-  //////////////////////////////
   // Viewport Width Display
-  //////////////////////////////
-
   function viewport_width() {
     var viewportWidth = document.getElementById('magic-viewport-indicator');
     var widthPX = window.innerWidth;
@@ -58,7 +57,6 @@
         removeClass(modernizrDebug, 'open');
         addClass(modernizrDebug, 'closed');
       }
-
     }
   }
 
@@ -114,10 +112,10 @@
     viewport_width();
   }, 20);
 
-  //////////////////////////////
-  // Debounce
-  // Returns a function, that, as long as it continues to be invoked, will not be triggered. The function will be called after it stops being called for N milliseconds. If `immediate` is passed, trigger the function on the leading edge, instead of the trailing.
-  //////////////////////////////
+  // Returns a function, that, as long as it continues to be invoked, will not
+  // be triggered. The function will be called after it stops being called for N
+  // milliseconds. If `immediate` is passed, trigger the function on the leading
+  // edge, instead of the trailing.
   function debounce(func, wait, immediate) {
     var timeout;
     return function() {
@@ -133,20 +131,12 @@
     }
   }
 
-  //////////////////////////////
-  // Has Class
-  //
   // From http://www.avoid.org/?p=78
-  //////////////////////////////
   function hasClass(el, name) {
    return new RegExp('(\\s|^)'+name+'(\\s|$)').test(el.className);
   }
 
-  //////////////////////////////
-  // Remove Class
-  //
   // From http://stackoverflow.com/questions/2155737/remove-css-class-from-element-with-javascript-no-jquery
-  //////////////////////////////
   function removeClass(ele,cls) {
     if (hasClass(ele,cls)) {
       var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
@@ -154,11 +144,7 @@
     }
   }
 
-  //////////////////////////////
-  // Add Class
-  //
   // From http://www.avoid.org/?p=78
-  //////////////////////////////
   function addClass(el, name) {
    if (!hasClass(el, name)) { el.className += (el.className ? ' ' : '') +name; }
   }
