@@ -819,6 +819,15 @@ function c21_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'merge terms'.
+  $permissions['merge terms'] = array(
+    'name' => 'merge terms',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'term_merge',
+  );
+
   // Exported permission: 'migration information'.
   $permissions['migration information'] = array(
     'name' => 'migration information',

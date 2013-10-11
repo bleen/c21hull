@@ -33,3 +33,10 @@ function c21_update_7000() {
 function c21_update_7001() {
   module_enable(array('hide_submit'));
 }
+
+/**
+ * Enable the term_merge module.
+ */
+function c21_update_7002() {
+  module_enable(array('term_merge'));
+}
