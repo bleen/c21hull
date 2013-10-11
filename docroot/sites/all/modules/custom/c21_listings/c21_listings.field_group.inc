@@ -48,7 +48,7 @@ function c21_listings_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-listing-building-info field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -75,7 +75,7 @@ function c21_listings_field_group_info() {
       'label' => 'Buyers',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-listing-buyers field-group-tab',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -109,7 +109,7 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Details',
       'instance_settings' => array(
-        'classes' => 'group-listing-details',
+        'classes' => 'group-listing-details field-group-tabs',
       ),
     ),
   );
@@ -182,7 +182,7 @@ function c21_listings_field_group_info() {
       'label' => 'General Information',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-listing-general-info field-group-tab',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -212,7 +212,7 @@ function c21_listings_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-listing-images-videos field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -239,7 +239,7 @@ function c21_listings_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-listing-ligacy-data field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -308,7 +308,7 @@ function c21_listings_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-listing-location-info field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -338,7 +338,7 @@ function c21_listings_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-listing-measurements field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -365,7 +365,7 @@ function c21_listings_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-listing-notes field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -445,7 +445,7 @@ function c21_listings_field_group_info() {
       'label' => 'Rooms',
       'instance_settings' => array(
         'required_fields' => 0,
-        'classes' => 'rooms',
+        'classes' => 'rooms group-listing-rooms field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -477,7 +477,7 @@ function c21_listings_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-listing-sellers field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -543,7 +543,7 @@ function c21_listings_field_group_info() {
       'label' => 'Transaction Details',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-listing-transaction-dtls field-group-tab',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -571,7 +571,7 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Transaction',
       'instance_settings' => array(
-        'classes' => 'group-listing-transaction',
+        'classes' => 'group-listing-transaction field-group-tabs',
       ),
     ),
   );
@@ -679,7 +679,7 @@ function c21_listings_field_group_info() {
     'format_settings' => array(
       'label' => 'Measurements',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-print-measurements field-group-div',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
