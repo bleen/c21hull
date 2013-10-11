@@ -103,6 +103,39 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
 }
 
 /**
+ * Implements hook_apachesolr_environments_alter().
+ *
+ * Code needed to prevent overridden Features between environments.
+ * ApacheSOLR module puts some time-related data into the Features
+ * exports, which would normally cause things to go overridden right
+ * away.
+ *
+ * @see https://drupal.org/node/1984502#comment-7950629
+ */
+function c21_search_apachesolr_environments_alter(&$data) {
+  // Load the real data with the real temporal information.
+  $environments = apachesolr_load_all_environments();
+
+  // These keys are purely time-based and do not need to be considered.
+  $ephemeral_items = array(
+    'apachesolr_index_last',
+    'apachesolr_index_updated',
+    'apachesolr_last_optimize',
+  );
+
+  // Update the default configs with the current temporal configs so that these
+  // keys do not cause these items to be overridden.
+  foreach ($data as $key => $value) {
+    $index = &$data[$key];
+    foreach($ephemeral_items as $ephemeral_item) {
+      if (isset($environments[$key]['conf'][$ephemeral_item])) {
+        $index->conf[$ephemeral_item] = $environments[$key]['conf'][$ephemeral_item];
+      }
+    }
+  }
+}
+
+/**
  * Form validation function.
  */
 function c21_search_form_validate($form, &$form_state) {
