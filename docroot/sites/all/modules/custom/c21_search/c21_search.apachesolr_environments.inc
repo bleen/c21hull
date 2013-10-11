@@ -35,8 +35,8 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1380379023',
-        'last_entity_id' => '10427',
+        'last_changed' => '1381402801',
+        'last_entity_id' => '10421',
       ),
       'redirect' => array(
         'last_changed' => 0,
@@ -59,14 +59,15 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1380380491,
-    'apachesolr_last_optimize' => 1380312743,
+    'apachesolr_index_updated' => 1381452692,
+    'apachesolr_last_optimize' => 1381444046,
   );
   $environment->index_bundles = array(
     'node' => array(
       0 => 'aggregation_page_detail',
       1 => 'listing',
       2 => 'page',
+      3 => 'webform',
     ),
   );
   $export['opensolr'] = $environment;
