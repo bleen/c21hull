@@ -27,7 +27,7 @@ table {
   max-width: 1150px;
   margin: 0 auto;
   padding: 0 $spacing_default (8 * $spacing_default) $spacing_default;
-  background: $color_gray_light;
+  background: $color_gold_light;
   @include breakpoint($bp800) {
     border-left: 1px solid black;
     border-right: 1px solid black;
