@@ -35,7 +35,7 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1381402801',
+        'last_changed' => '1381454971',
         'last_entity_id' => '10421',
       ),
       'redirect' => array(
@@ -59,15 +59,17 @@ function c21_search_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1381452692,
-    'apachesolr_last_optimize' => 1381444046,
+    'apachesolr_index_updated' => 1381456749,
+    'apachesolr_last_optimize' => 1381456600,
   );
   $environment->index_bundles = array(
+    'drealty_listing' => array(
+      0 => 'basic_drealty_listing',
+    ),
     'node' => array(
       0 => 'aggregation_page_detail',
       1 => 'listing',
       2 => 'page',
-      3 => 'webform',
     ),
   );
   $export['opensolr'] = $environment;
