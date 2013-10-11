@@ -18,6 +18,7 @@ $aliases['stage'] = array(
     '%drush-script' => '/home/hull/pear/drush',
     '%dump-dir' => '/home/hull/dumps'
   ),
+  'php' => '/usr/local/php53/bin/php',
   'root' => '/home/hull/sites/stage.c21hull.com/docroot',
   'uri' => 'http://stage.c21hull.com',
 );
