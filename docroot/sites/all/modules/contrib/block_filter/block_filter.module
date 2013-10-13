@@ -50,11 +50,16 @@ function block_filter_embed($match) {
   // We need to know the current user and theme
   global $user;
   global $theme_key;
+  static $recursion_prevention = array();
 
   // Extract the module and delta from the match
   $module = $match[1];
   $delta = $match[2];
 
+  if (!empty($recursion_prevention[$module][$delta])) {
+    return;
+  }
+  $recursion_prevention[$module][$delta] = TRUE;
 
   // Make sure this module implements the block_ info hook.
   if (!module_hook($module, 'block_info')) return '';

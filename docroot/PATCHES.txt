@@ -38,10 +38,14 @@ AURORA
       PATCH: https://drupal.org/node/2033585 (original post)
       NOTE: https://drupal.org/node/2033585#comment-7622547
 
-AUTOCOMPLETE DELUX
+AUTOCOMPLETE_DELUX
   * The autocomplete_delux module does not properly respond to some keys (ex.
     the ESC or DELETE keys) in Chrome. This patch fixes the issue:
       PATCH: https://drupal.org/node/2012742#comment-7501674
+
+BLOCK_FILTER
+  * Embedding a block with a form in it causes an infinite loop.
+      PATCH: https://drupal.org/node/1793464#comment-7640337
 
 CKEDITOR
   * Added the NodeEmbed & iframedialog plugins to ckeditor.
