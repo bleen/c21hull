@@ -7,6 +7,7 @@
     display: block;
     text-align: center;
     margin: .5 * $spacing_default $spacing_default 0 0;
+    clear: both;
 
     a {
       color: $color_gray_dark;

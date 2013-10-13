@@ -2234,6 +2234,24 @@ function c21_listings_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_listing_latitude'
+  $field_bases['field_listing_latitude'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_latitude',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
+  );
+
   // Exported field_base: 'field_listing_laundry_b'
   $field_bases['field_listing_laundry_b'] = array(
     'active' => 1,
@@ -2599,6 +2617,24 @@ function c21_listings_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_listing_longitude'
+  $field_bases['field_listing_longitude'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_longitude',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
   );
 
   // Exported field_base: 'field_listing_lot'

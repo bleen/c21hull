@@ -258,6 +258,21 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
   $form['field_listing_bathrooms'][LANGUAGE_NONE][0]['value']['#step'] = .5;
   $form['field_listing_acreage'][LANGUAGE_NONE][0]['value']['#step'] = .001;
 
+  // Hide the latitude and longitude fields in a fieldset.
+  $form['map_coordinates'] = array(
+    '#type' => 'fieldset',
+    '#description' => t('Longitude and latitude are only necessary if the automatically generated map is incorrect. <a href="!url" target="_blank">Use this tool</a> to find the proper coordinates', array('!url' => 'http://universimmedia.pagesperso-orange.fr/geo/loc.htm')),
+    '#title' => t('Map Coordinates'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#weight' => 1000,
+  );
+  $form['map_coordinates']['field_listing_longitude'] = $form['field_listing_longitude'];
+  $form['map_coordinates']['field_listing_latitude'] = $form['field_listing_latitude'];
+  unset($form['field_listing_longitude']);
+  unset($form['field_listing_latitude']);
+  $form['#group_children']['map_coordinates'] = 'group_listing_location_info';
+
   // Hide the "legacy data" field if its empty and for non-admins.
   $form['field_listing_legacy_data']['#disabled'] = TRUE;
   if (!user_access('administer site configuration') || empty($form['field_listing_legacy_data'][LANGUAGE_NONE][0]['value']['#default_value'])) {
@@ -497,20 +512,30 @@ function _c21_format_phone_number_link($phone_number) {
  */
 function _c21_listings_get_gmap_link($node) {
   $gmap_link = array();
+  $q = '';
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $latitude = $wrapper->field_listing_latitude->value();
+  $longitude = $wrapper->field_listing_longitude->value();
+  $street = $wrapper->field_listing_street->value();
+  $town = $wrapper->field_listing_township->value()->name;
+  $state = $wrapper->field_listing_state->value();
 
-  if (!empty($node->field_listing_street) && !empty($node->field_listing_township)) {
-    $street = $node->field_listing_street[LANGUAGE_NONE][0]['safe_value'];
-    $town = taxonomy_term_load($node->field_listing_township[LANGUAGE_NONE][0]['tid']);
-    $state = isset($node->field_listing_state) ? $node->field_listing_state[LANGUAGE_NONE][0]['value'] : 'PA';
+  if (!empty($longitude) && !empty($latitude)) {
+    $q = $latitude . ',' . $longitude;
+  }
+  elseif (!empty($street) && !empty($town)) {
+    $q = $street . ', ' . $town . ', ' . (!empty($state) ? $state : 'PA');
+  }
 
+  if (!empty($q)) {
     $gmap_link = array(
       'title' => t('See map'),
       'href' => 'http://maps.google.com/maps',
       'query' => array(
-        'q' => $street . ', ' . $town->name . ', ' . $state, // Search query.
+        'q' => $q,
         'hl' => 'en', // Language.
         'iwloc' => 'A', // Information Bubble [A|''].
-        'z' => 12, // Zoom.
+        'z' => '11', // Zoom.
         't' => 'm', // Map type.
       ),
       'attributes' => array(

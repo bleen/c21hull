@@ -6772,6 +6772,84 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_latitude'
+  $field_instances['node-listing-field_listing_latitude'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 119,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_latitude',
+    'label' => 'Latitude',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 115,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_laundry_b'
   $field_instances['node-listing-field_listing_laundry_b'] = array(
     'bundle' => 'listing',
@@ -7870,6 +7948,84 @@ function c21_listings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_longitude'
+  $field_instances['node-listing-field_listing_longitude'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 118,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_listing_longitude',
+    'label' => 'Longitude',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 116,
     ),
   );
 
@@ -11648,6 +11804,7 @@ function c21_listings_field_default_field_instances() {
   t('Kitchen | Floor 1');
   t('Kitchen | Floor 2');
   t('Last Name');
+  t('Latitude');
   t('Laundry | Basement');
   t('Laundry | Floor 1');
   t('Laundry | Floor 2');
@@ -11663,6 +11820,7 @@ function c21_listings_field_default_field_instances() {
   t('Living/Dining Room | Floor 1');
   t('Living/Dining Room | Floor 2');
   t('Lockbox/Key');
+  t('Longitude');
   t('Lot');
   t('MLS #');
   t('Notes');
