@@ -97,7 +97,7 @@ function _c21_rets_build_listing_title($listing) {
   );
 
   foreach ($stats_fields as $label => $field) {
-    $value = $listing->{'field_mls_' . $field}[LANGUAGE_NONE][0]['value'];
+    $value = !empty($listing->{'field_mls_' . $field}) ? $listing->{'field_mls_' . $field}[LANGUAGE_NONE][0]['value'] : '';
     if (is_numeric($value)) {
       $stats_values[] = $value . ' ' . $label;
     }
