@@ -493,8 +493,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : "18"
         },
-        "id" : "223",
-        "field_id" : "215",
+        "id" : "295",
+        "field_id" : "287",
         "field_name" : "field_mls_acreage",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -566,8 +566,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : "13"
         },
-        "id" : "224",
-        "field_id" : "216",
+        "id" : "296",
+        "field_id" : "288",
         "field_name" : "field_mls_bathrooms",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -639,8 +639,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : "12"
         },
-        "id" : "225",
-        "field_id" : "217",
+        "id" : "297",
+        "field_id" : "289",
         "field_name" : "field_mls_bedrooms",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -698,8 +698,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "autocomplete_deluxe_taxonomy",
           "weight" : "9"
         },
-        "id" : "226",
-        "field_id" : "218",
+        "id" : "298",
+        "field_id" : "290",
         "field_name" : "field_mls_city",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -757,8 +757,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "autocomplete_deluxe_taxonomy",
           "weight" : "15"
         },
-        "id" : "227",
-        "field_id" : "219",
+        "id" : "299",
+        "field_id" : "291",
         "field_name" : "field_mls_development",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -817,8 +817,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : "19"
         },
-        "id" : "228",
-        "field_id" : "220",
+        "id" : "300",
+        "field_id" : "292",
         "field_name" : "field_mls_garage",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -879,8 +879,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "0"
         },
-        "id" : "229",
-        "field_id" : "221",
+        "id" : "301",
+        "field_id" : "293",
         "field_name" : "field_mls_internal_id",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -952,8 +952,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : "3"
         },
-        "id" : "230",
-        "field_id" : "222",
+        "id" : "302",
+        "field_id" : "294",
         "field_name" : "field_mls_list_price",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1014,8 +1014,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "4"
         },
-        "id" : "231",
-        "field_id" : "223",
+        "id" : "303",
+        "field_id" : "295",
         "field_name" : "field_mls_listing_area",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1094,8 +1094,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "1"
         },
-        "id" : "232",
-        "field_id" : "224",
+        "id" : "304",
+        "field_id" : "296",
         "field_name" : "field_mls_number",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1173,8 +1173,8 @@ function c21_rets_default_drealty_listing_type() {
           }
         },
         "ds_extras_field_template" : "",
-        "id" : "233",
-        "field_id" : "225",
+        "id" : "305",
+        "field_id" : "297",
         "field_name" : "field_mls_photos",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1241,8 +1241,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "autocomplete_deluxe_taxonomy",
           "weight" : "16"
         },
-        "id" : "234",
-        "field_id" : "226",
+        "id" : "306",
+        "field_id" : "298",
         "field_name" : "field_mls_school_district",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1301,8 +1301,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "numberfield",
           "weight" : "20"
         },
-        "id" : "235",
-        "field_id" : "227",
+        "id" : "307",
+        "field_id" : "299",
         "field_name" : "field_mls_square_feet",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1363,8 +1363,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "10"
         },
-        "id" : "236",
-        "field_id" : "228",
+        "id" : "308",
+        "field_id" : "300",
         "field_name" : "field_mls_state",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1425,8 +1425,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "6"
         },
-        "id" : "237",
-        "field_id" : "229",
+        "id" : "309",
+        "field_id" : "301",
         "field_name" : "field_mls_street_direction",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1487,8 +1487,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "7"
         },
-        "id" : "238",
-        "field_id" : "230",
+        "id" : "310",
+        "field_id" : "302",
         "field_name" : "field_mls_street_name",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1549,8 +1549,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "5"
         },
-        "id" : "239",
-        "field_id" : "231",
+        "id" : "311",
+        "field_id" : "303",
         "field_name" : "field_mls_street_number",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1611,8 +1611,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "8"
         },
-        "id" : "240",
-        "field_id" : "232",
+        "id" : "312",
+        "field_id" : "304",
         "field_name" : "field_mls_street_suffix",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1673,8 +1673,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "14"
         },
-        "id" : "241",
-        "field_id" : "233",
+        "id" : "313",
+        "field_id" : "305",
         "field_name" : "field_mls_tax_map",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1740,8 +1740,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "17"
         },
-        "id" : "242",
-        "field_id" : "234",
+        "id" : "314",
+        "field_id" : "306",
         "field_name" : "field_mls_year_built",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1802,8 +1802,8 @@ function c21_rets_default_drealty_listing_type() {
           "type" : "text_textfield",
           "weight" : "11"
         },
-        "id" : "243",
-        "field_id" : "235",
+        "id" : "315",
+        "field_id" : "307",
         "field_name" : "field_mls_zipcode",
         "entity_type" : "drealty_listing",
         "deleted" : "0"
@@ -1873,8 +1873,8 @@ function c21_rets_default_drealty_listing_type() {
         "placeholder" : "",
         "ds_extras_field_template" : "",
         "default_value" : null,
-        "id" : "244",
-        "field_id" : "236",
+        "id" : "316",
+        "field_id" : "308",
         "field_name" : "field_mls_listing_office",
         "entity_type" : "drealty_listing",
         "deleted" : "0"

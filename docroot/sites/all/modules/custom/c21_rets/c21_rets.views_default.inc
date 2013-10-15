@@ -112,6 +112,11 @@ function c21_rets_views_default_views() {
     5 => 0,
     4 => 0,
   );
+  /* Filter criterion: Drealty Listing: MLS # (field_mls_number) */
+  $handler->display->display_options['filters']['field_mls_number_value_1']['id'] = 'field_mls_number_value_1';
+  $handler->display->display_options['filters']['field_mls_number_value_1']['table'] = 'field_data_field_mls_number';
+  $handler->display->display_options['filters']['field_mls_number_value_1']['field'] = 'field_mls_number_value';
+  $handler->display->display_options['filters']['field_mls_number_value_1']['operator'] = 'not empty';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
