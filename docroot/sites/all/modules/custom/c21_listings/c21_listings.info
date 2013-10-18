@@ -392,7 +392,6 @@ features[node][] = agent
 features[node][] = aggregation_page_detail
 features[node][] = listing
 features[node][] = listing_type
-features[taxonomy][] = listing_additional_building
 features[taxonomy][] = listing_basement
 features[taxonomy][] = listing_development
 features[taxonomy][] = listing_fireplace
