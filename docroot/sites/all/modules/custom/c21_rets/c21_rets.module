@@ -126,6 +126,46 @@ function _c21_rets_build_listing_title($listing) {
   return $title;
 }
 
+/**
+ * Returns the street portion of a drealty listing address.
+ *
+ * @param object $entity
+ *   A drealty listing entity
+ *
+ * @param string $info
+ *   The type of information being requested. Options are street, town or state.
+ *
+ * @return string
+ */
+function c21_rets_get_address_info($entity, $info) {
+  $return = '';
 
-
-
+  switch ($info) {
+    case 'street':
+      if (isset($entity->field_mls_street_number[LANGUAGE_NONE][0]['value'])) {
+        $return .= $entity->field_mls_street_number[LANGUAGE_NONE][0]['value'];
+      }
+      if (isset($entity->field_mls_street_direction[LANGUAGE_NONE][0]['value'])) {
+        $return .= ' ' . $entity->field_mls_street_direction[LANGUAGE_NONE][0]['value'];
+      }
+      if (isset($entity->field_mls_street_name[LANGUAGE_NONE][0]['value'])) {
+        $return .= ' ' . $entity->field_mls_street_name[LANGUAGE_NONE][0]['value'];
+      }
+      if (isset($entity->field_mls_street_suffix[LANGUAGE_NONE][0]['value'])) {
+        $return .= ' ' . $entity->field_mls_street_suffix[LANGUAGE_NONE][0]['value'];
+      }
+      break;
+    case 'town':
+      if (isset($entity->field_mls_city[LANGUAGE_NONE][0]['tid'])) {
+        $term = taxonomy_term_load($entity->field_mls_city[LANGUAGE_NONE][0]['tid']);
+        $return .= $term->name;
+      }
+      break;
+    case 'state':
+      if (isset($entity->field_mls_state[LANGUAGE_NONE][0]['value'])) {
+        $return .= $entity->field_mls_state[LANGUAGE_NONE][0]['value'];
+      }
+      break;
+  }
+  return $return;
+}

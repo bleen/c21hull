@@ -667,14 +667,14 @@ function c21_rets_default_drealty_listing_type() {
           "teaser" : { "label" : "above", "type" : "hidden", "weight" : "0", "settings" : [] }
         },
         "drealty" : {
-          "hash_exclude" : 0,
           "mappings" : { "1_3_A" : {
-              "class_id" : 3,
-              "conid" : 1,
-              "rets_field" : "LIST_39 - City (Post Office)",
-              "rid" : 3
+              "conid" : "1",
+              "rid" : "3",
+              "class_id" : "3",
+              "rets_field" : "LIST_39 - City (Post Office)"
             }
-          }
+          },
+          "hash_exclude" : 0
         },
         "ds_extras_field_template" : "",
         "fences_wrapper" : "div",
@@ -686,17 +686,17 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "widget" : {
-          "active" : 1,
-          "module" : "autocomplete_deluxe",
-          "settings" : {
-            "autocomplete_deluxe_path" : "autocomplete_deluxe\\/taxonomy",
-            "delimiter" : "",
-            "limit" : 10,
-            "min_length" : 0,
-            "size" : 60
-          },
+          "weight" : "9",
           "type" : "autocomplete_deluxe_taxonomy",
-          "weight" : "9"
+          "module" : "autocomplete_deluxe",
+          "active" : 1,
+          "settings" : {
+            "size" : "60",
+            "limit" : "10",
+            "min_length" : "0",
+            "delimiter" : "",
+            "autocomplete_deluxe_path" : "autocomplete_deluxe\\/taxonomy"
+          }
         },
         "id" : "298",
         "field_id" : "290",
@@ -726,14 +726,14 @@ function c21_rets_default_drealty_listing_type() {
           "teaser" : { "label" : "above", "type" : "hidden", "weight" : "0", "settings" : [] }
         },
         "drealty" : {
-          "hash_exclude" : 0,
           "mappings" : { "1_3_A" : {
-              "class_id" : 3,
-              "conid" : 1,
-              "rets_field" : "LIST_77 - Location\\/Development",
-              "rid" : 3
+              "conid" : "1",
+              "rid" : "3",
+              "class_id" : "3",
+              "rets_field" : "LIST_77 - Location\\/Development"
             }
-          }
+          },
+          "hash_exclude" : 0
         },
         "ds_extras_field_template" : "",
         "fences_wrapper" : "div",
@@ -745,17 +745,17 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "widget" : {
-          "active" : 1,
-          "module" : "autocomplete_deluxe",
-          "settings" : {
-            "autocomplete_deluxe_path" : "autocomplete_deluxe\\/taxonomy",
-            "delimiter" : "",
-            "limit" : 10,
-            "min_length" : 0,
-            "size" : 60
-          },
+          "weight" : "15",
           "type" : "autocomplete_deluxe_taxonomy",
-          "weight" : "15"
+          "module" : "autocomplete_deluxe",
+          "active" : 1,
+          "settings" : {
+            "size" : "60",
+            "limit" : "10",
+            "min_length" : "0",
+            "delimiter" : "",
+            "autocomplete_deluxe_path" : "autocomplete_deluxe\\/taxonomy"
+          }
         },
         "id" : "299",
         "field_id" : "291",
@@ -829,7 +829,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "16", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -964,7 +964,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "6", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "7", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1210,14 +1210,14 @@ function c21_rets_default_drealty_listing_type() {
           }
         },
         "drealty" : {
-          "hash_exclude" : 0,
           "mappings" : { "1_3_A" : {
-              "class_id" : 3,
-              "conid" : 1,
-              "rets_field" : "LIST_93 - School District",
-              "rid" : 3
+              "conid" : "1",
+              "rid" : "3",
+              "class_id" : "3",
+              "rets_field" : "LIST_93 - School District"
             }
-          }
+          },
+          "hash_exclude" : 0
         },
         "ds_extras_field_template" : "",
         "fences_wrapper" : "div",
@@ -1229,17 +1229,17 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "widget" : {
-          "active" : 1,
-          "module" : "autocomplete_deluxe",
-          "settings" : {
-            "autocomplete_deluxe_path" : "autocomplete_deluxe\\/taxonomy",
-            "delimiter" : "",
-            "limit" : 10,
-            "min_length" : 0,
-            "size" : 60
-          },
+          "weight" : "16",
           "type" : "autocomplete_deluxe_taxonomy",
-          "weight" : "16"
+          "module" : "autocomplete_deluxe",
+          "active" : 1,
+          "settings" : {
+            "size" : "60",
+            "limit" : "10",
+            "min_length" : "0",
+            "delimiter" : "",
+            "autocomplete_deluxe_path" : "autocomplete_deluxe\\/taxonomy"
+          }
         },
         "id" : "306",
         "field_id" : "298",
@@ -1253,7 +1253,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "7", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1313,7 +1313,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1375,7 +1375,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "10", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "11", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1437,7 +1437,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "11", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1499,7 +1499,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "9", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "10", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1561,7 +1561,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1623,7 +1623,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "9", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1752,7 +1752,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "15", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },

@@ -37,6 +37,7 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['label'] = 'Id';
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
   /* Field: Drealty Listing: Representative Image */
   $handler->display->display_options['fields']['representative_image']['id'] = 'representative_image';
   $handler->display->display_options['fields']['representative_image']['table'] = 'drealty_listing';
@@ -95,10 +96,12 @@ function c21_rets_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'drealty_listing';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = 'mls_residential_listing';
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Drealty Listing: MLS # (field_mls_number) */
   $handler->display->display_options['filters']['field_mls_number_value']['id'] = 'field_mls_number_value';
   $handler->display->display_options['filters']['field_mls_number_value']['table'] = 'field_data_field_mls_number';
   $handler->display->display_options['filters']['field_mls_number_value']['field'] = 'field_mls_number_value';
+  $handler->display->display_options['filters']['field_mls_number_value']['group'] = 1;
   $handler->display->display_options['filters']['field_mls_number_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_mls_number_value']['expose']['operator_id'] = 'field_mls_number_value_op';
   $handler->display->display_options['filters']['field_mls_number_value']['expose']['label'] = 'MLS #';

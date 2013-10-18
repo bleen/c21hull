@@ -506,19 +506,33 @@ function _c21_format_phone_number_link($phone_number) {
 /**
  * Given a listing node, build a link to google maps.
  *
- * @param object $node
+ * @param object $entity
  *
  * @return array
  */
-function _c21_listings_get_gmap_link($node) {
+function _c21_listings_get_gmap_link($entity) {
   $gmap_link = array();
   $q = '';
-  $wrapper = entity_metadata_wrapper('node', $node);
-  $latitude = $wrapper->field_listing_latitude->value();
-  $longitude = $wrapper->field_listing_longitude->value();
-  $street = $wrapper->field_listing_street->value();
-  $town = $wrapper->field_listing_township->value()->name;
-  $state = $wrapper->field_listing_state->value();
+
+  switch ($entity->type) {
+    case 'node':
+      $wrapper = entity_metadata_wrapper('node', $entity);
+      $latitude = $wrapper->field_listing_latitude->value();
+      $longitude = $wrapper->field_listing_longitude->value();
+      $street = $wrapper->field_listing_street->value();
+      $town = $wrapper->field_listing_township->value()->name;
+      $state = $wrapper->field_listing_state->value();
+      break;
+    case 'drealty_listing':
+    case 'mls_residential_listing':
+      $latitude = '';
+      $longitude = '';
+      $street = c21_rets_get_address_info($entity, 'street');
+      $town = c21_rets_get_address_info($entity, 'town');
+      $state = c21_rets_get_address_info($entity, 'state');
+      break;
+  }
+
 
   if (!empty($longitude) && !empty($latitude)) {
     $q = $latitude . ',' . $longitude;

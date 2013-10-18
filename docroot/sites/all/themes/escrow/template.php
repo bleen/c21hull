@@ -123,6 +123,10 @@ function escrow_preprocess_entity(&$variables) {
     case 'drealty_listing':
       $variables['classes_array'][] = 'listing';
       drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
+
+      $map = _escrow_map($variables['drealty_listing']);
+      $variables['listing_map'] = drupal_render($map);
+
       break;
   }
 }
@@ -269,12 +273,12 @@ function _escrow_fine_print($node) {
 /**
  * Return a render array containing a map of the given listing.
  *
- * @param object $node
+ * @param object $entity
  *
  * @return array
  */
-function _escrow_map($node) {
-  $map_link = _c21_listings_get_gmap_link($node);
+function _escrow_map($entity) {
+  $map_link = _c21_listings_get_gmap_link($entity);
 
   // Add a map.
   $map = array(

@@ -17,6 +17,11 @@ function c21_rets_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'mls_residential_listing';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'listing_map' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'field_mls_acreage' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -284,16 +289,17 @@ function c21_rets_ds_layout_settings_info() {
         1 => 'field_mls_photos',
         2 => 'field_mls_list_price',
         3 => 'group_mls_statistics',
-        4 => 'group_mls_location_details',
-        5 => 'field_mls_bedrooms',
+        4 => 'field_mls_bedrooms',
+        5 => 'group_mls_location_details',
         6 => 'field_mls_bathrooms',
         7 => 'field_mls_listing_office',
-        8 => 'field_mls_garage',
-        9 => 'field_mls_acreage',
-        10 => 'field_mls_year_built',
-        11 => 'field_mls_city',
-        12 => 'field_mls_development',
-        13 => 'field_mls_school_district',
+        8 => 'listing_map',
+        9 => 'field_mls_garage',
+        10 => 'field_mls_acreage',
+        11 => 'field_mls_year_built',
+        12 => 'field_mls_city',
+        13 => 'field_mls_development',
+        14 => 'field_mls_school_district',
       ),
     ),
     'fields' => array(
@@ -301,10 +307,11 @@ function c21_rets_ds_layout_settings_info() {
       'field_mls_photos' => 'ds_content',
       'field_mls_list_price' => 'ds_content',
       'group_mls_statistics' => 'ds_content',
-      'group_mls_location_details' => 'ds_content',
       'field_mls_bedrooms' => 'ds_content',
+      'group_mls_location_details' => 'ds_content',
       'field_mls_bathrooms' => 'ds_content',
       'field_mls_listing_office' => 'ds_content',
+      'listing_map' => 'ds_content',
       'field_mls_garage' => 'ds_content',
       'field_mls_acreage' => 'ds_content',
       'field_mls_year_built' => 'ds_content',

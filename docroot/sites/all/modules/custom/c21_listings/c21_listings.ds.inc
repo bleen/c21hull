@@ -1439,9 +1439,11 @@ listing|print_internal';
   $ds_field->label = 'Map';
   $ds_field->field_type = 3;
   $ds_field->entities = array(
+    'drealty_listing' => 'drealty_listing',
     'node' => 'node',
   );
-  $ds_field->ui_limit = 'listing|*';
+  $ds_field->ui_limit = 'listing|*
+mls_residential_listing|*';
   $ds_field->properties = array();
   $export['listing_map'] = $ds_field;
 
