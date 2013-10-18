@@ -282,7 +282,7 @@ function c21_rets_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
@@ -363,7 +363,7 @@ function c21_rets_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
@@ -816,14 +816,14 @@ function c21_rets_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
           'empty_fields_handler' => '',
         ),
-        'type' => 'text_default',
-        'weight' => 5,
+        'type' => 'text_plain',
+        'weight' => 6,
       ),
       'gallery' => array(
         'label' => 'above',
@@ -1126,7 +1126,7 @@ function c21_rets_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',

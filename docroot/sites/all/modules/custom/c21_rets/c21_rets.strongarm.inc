@@ -21,7 +21,7 @@ function c21_rets_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_drealty_listing_pattern';
-  $strongarm->value = '[drealty_listing:field-mls-city:name]/[drealty_listing:field-mls-street-name]-[drealty_listing:field-mls-street-number]';
+  $strongarm->value = '[drealty_listing:field-mls-city:name]/[drealty_listing:field-mls-street-name]';
   $export['pathauto_drealty_listing_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

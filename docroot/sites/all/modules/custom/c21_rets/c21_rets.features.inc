@@ -442,7 +442,8 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "number",
+            "type" : "number_decimal",
+            "weight" : "7",
             "settings" : {
               "decimal_separator" : ".",
               "empty_fields_emptyfieldtext_empty_text" : "",
@@ -451,8 +452,7 @@ function c21_rets_default_drealty_listing_type() {
               "scale" : 2,
               "thousand_separator" : ","
             },
-            "type" : "number_decimal",
-            "weight" : 7
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -502,7 +502,8 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "number",
+            "type" : "number_decimal",
+            "weight" : "5",
             "settings" : {
               "decimal_separator" : ".",
               "empty_fields_emptyfieldtext_empty_text" : "",
@@ -511,8 +512,7 @@ function c21_rets_default_drealty_listing_type() {
               "scale" : 1,
               "thousand_separator" : ","
             },
-            "type" : "number_decimal",
-            "weight" : 5
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -575,7 +575,8 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "number",
+            "type" : "number_integer",
+            "weight" : "4",
             "settings" : {
               "decimal_separator" : ".",
               "empty_fields_emptyfieldtext_empty_text" : "",
@@ -584,8 +585,7 @@ function c21_rets_default_drealty_listing_type() {
               "scale" : 0,
               "thousand_separator" : ","
             },
-            "type" : "number_integer",
-            "weight" : 4
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -647,14 +647,14 @@ function c21_rets_default_drealty_listing_type() {
         "description" : "",
         "display" : {
           "default" : {
-            "label" : "above",
-            "module" : "taxonomy",
+            "label" : "inline",
+            "type" : "taxonomy_term_reference_link",
+            "weight" : "18",
             "settings" : {
               "empty_fields_emptyfieldtext_empty_text" : "",
               "empty_fields_handler" : ""
             },
-            "type" : "taxonomy_term_reference_link",
-            "weight" : 18
+            "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -706,14 +706,14 @@ function c21_rets_default_drealty_listing_type() {
         "description" : "",
         "display" : {
           "default" : {
-            "label" : "above",
-            "module" : "taxonomy",
+            "label" : "inline",
+            "type" : "taxonomy_term_reference_link",
+            "weight" : "19",
             "settings" : {
               "empty_fields_emptyfieldtext_empty_text" : "",
               "empty_fields_handler" : ""
             },
-            "type" : "taxonomy_term_reference_link",
-            "weight" : 19
+            "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -766,7 +766,8 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "number",
+            "type" : "number_integer",
+            "weight" : "6",
             "settings" : {
               "decimal_separator" : ".",
               "empty_fields_emptyfieldtext_empty_text" : "",
@@ -775,8 +776,7 @@ function c21_rets_default_drealty_listing_type() {
               "scale" : 0,
               "thousand_separator" : ","
             },
-            "type" : "number_integer",
-            "weight" : 6
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -824,7 +824,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 16 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "16", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -888,7 +888,8 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "hidden",
-            "module" : "number",
+            "type" : "number_decimal",
+            "weight" : "2",
             "settings" : {
               "decimal_separator" : ".",
               "empty_fields_emptyfieldtext_empty_text" : "",
@@ -897,8 +898,7 @@ function c21_rets_default_drealty_listing_type() {
               "scale" : 2,
               "thousand_separator" : ","
             },
-            "type" : "number_decimal",
-            "weight" : 2
+            "module" : "number"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -959,7 +959,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 7 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "7", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1023,13 +1023,13 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "text",
+            "type" : "text_default",
+            "weight" : "0",
             "settings" : {
               "empty_fields_emptyfieldtext_empty_text" : "",
               "empty_fields_handler" : ""
             },
-            "type" : "text_default",
-            "weight" : 0
+            "module" : "text"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1102,15 +1102,15 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "hidden",
-            "module" : "image",
+            "type" : "image",
+            "weight" : "1",
             "settings" : {
               "empty_fields_emptyfieldtext_empty_text" : "no image",
               "empty_fields_handler" : "",
               "image_link" : "",
               "image_style" : "c21wide"
             },
-            "type" : "image",
-            "weight" : 1
+            "module" : "image"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1181,14 +1181,14 @@ function c21_rets_default_drealty_listing_type() {
         "description" : "",
         "display" : {
           "default" : {
-            "label" : "above",
-            "module" : "taxonomy",
+            "label" : "inline",
+            "type" : "taxonomy_term_reference_link",
+            "weight" : "20",
             "settings" : {
               "empty_fields_emptyfieldtext_empty_text" : "",
               "empty_fields_handler" : ""
             },
-            "type" : "taxonomy_term_reference_link",
-            "weight" : 20
+            "module" : "taxonomy"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1248,7 +1248,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 8 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1308,7 +1308,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 14 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "14", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1370,7 +1370,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 11 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "11", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1432,7 +1432,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 12 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "12", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1494,7 +1494,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 10 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "10", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1556,7 +1556,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 13 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "13", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1618,7 +1618,7 @@ function c21_rets_default_drealty_listing_type() {
         "default_value" : null,
         "description" : "",
         "display" : {
-          "default" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 9 },
+          "default" : { "label" : "above", "type" : "hidden", "weight" : "9", "settings" : [] },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1682,13 +1682,13 @@ function c21_rets_default_drealty_listing_type() {
         "display" : {
           "default" : {
             "label" : "inline",
-            "module" : "text",
+            "type" : "text_default",
+            "weight" : "8",
             "settings" : {
               "empty_fields_emptyfieldtext_empty_text" : "",
               "empty_fields_handler" : ""
             },
-            "type" : "text_default",
-            "weight" : 8
+            "module" : "text"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
@@ -1805,14 +1805,14 @@ function c21_rets_default_drealty_listing_type() {
         "description" : "",
         "display" : {
           "default" : {
-            "label" : "above",
-            "module" : "text",
+            "label" : "hidden",
+            "type" : "text_plain",
+            "weight" : "6",
             "settings" : {
-              "empty_fields_emptyfieldtext_empty_text" : "",
-              "empty_fields_handler" : ""
+              "empty_fields_handler" : "",
+              "empty_fields_emptyfieldtext_empty_text" : ""
             },
-            "type" : "text_default",
-            "weight" : 5
+            "module" : "text"
           },
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },

@@ -21,7 +21,7 @@ function c21_rets_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location Details',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_mls_city',
       1 => 'field_mls_development',
@@ -31,7 +31,7 @@ function c21_rets_field_group_info() {
     'format_settings' => array(
       'label' => 'Location Details',
       'instance_settings' => array(
-        'classes' => 'group_listing_details group-mls-location-details field-group-div',
+        'classes' => 'group-listing-details group-mls-location-details field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -54,7 +54,7 @@ function c21_rets_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Statistics',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_mls_acreage',
       1 => 'field_mls_bathrooms',
@@ -66,7 +66,7 @@ function c21_rets_field_group_info() {
     'format_settings' => array(
       'label' => 'Statistics',
       'instance_settings' => array(
-        'classes' => 'group_listing_statistics group-mls-statistics field-group-div',
+        'classes' => 'group-listing-statistics group-mls-statistics field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
