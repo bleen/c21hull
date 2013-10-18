@@ -278,6 +278,8 @@ $drupal_hash_salt = 'z1od6f81GNf9XAIeolVMvOJgE4NvCXYxd0rQAPCRVCs';
  * defined there should not be duplicated here so as to avoid conflict issues.
  */
 
+set_time_limit(90);
+
 /**
  * Some distributions of Linux (most notably Debian) ship their PHP
  * installations with garbage collection (gc) disabled. Since Drupal depends on
