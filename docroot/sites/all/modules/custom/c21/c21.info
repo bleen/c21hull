@@ -65,7 +65,6 @@ dependencies[] = term_merge
 dependencies[] = text
 dependencies[] = user
 dependencies[] = views
-dependencies[] = webform
 dependencies[] = workbench
 dependencies[] = wysiwyg_filter
 features[ckeditor_profile][] = CKEditor Global Profile
