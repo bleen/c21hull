@@ -251,6 +251,9 @@
     .group-listing-location-details {
       @include float-span(2, 'last');
     }
+    .listing-office {
+      @include float-span(2, 'last');
+    }
     #listing-map-wrapper {
       @include float-span(2, 'last');
     }

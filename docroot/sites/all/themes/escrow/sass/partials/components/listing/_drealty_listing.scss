@@ -16,4 +16,11 @@
       }
     }
   }
+
+  .group-mls-photos {
+    @include breakpoint($bp800) {
+      @include float-span(4);
+    }
+    margin-right: 0;
+  }
 }
