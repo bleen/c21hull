@@ -34,7 +34,7 @@ function c21_ckeditor_profile_defaults() {
         'uicolor' => 'custom',
         'uicolor_user' => '#D3D3D3',
         'toolbar' => '[
-    [\'Format\',\'Bold\',\'Italic\',\'-\',\'NumberedList\',\'BulletedList\',\'SpecialChar\',\'-\',\'Link\',\'Unlink\',\'-\',\'Source\']
+    [\'Format\',\'Bold\',\'Italic\',\'-\',\'NumberedList\',\'BulletedList\',\'SpecialChar\',\'Blockquote\',\'-\',\'Link\',\'Unlink\',\'-\',\'Source\']
 ]',
         'expand' => 't',
         'width' => '100%',

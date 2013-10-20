@@ -5,3 +5,13 @@
  */
 
 include_once 'c21_marketing.features.inc';
+
+/**
+ * Implements hook_page_alter().
+ */
+function c21_marketing_page_alter(&$page) {
+  // Remove the page title from basic pages.
+  if ($page['#type'] == 'page') {
+    unset($page['content']['blockify_blockify-page-title']);
+  }
+}

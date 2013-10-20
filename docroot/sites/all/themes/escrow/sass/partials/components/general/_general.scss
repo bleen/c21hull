@@ -23,6 +23,11 @@ table {
   border-collapse: separate;
 }
 
+sup {
+  font-size: .5 * $font_size_base;
+  vertical-align: top;
+}
+
 #page {
   max-width: 1150px;
   margin: 0 auto;
