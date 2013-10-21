@@ -200,6 +200,13 @@ function c21_listings_ds_field_settings_info() {
         'ft' => array(),
       ),
     ),
+    'field_agent_phone_number' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
     'field_agent_photo' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -210,6 +217,13 @@ function c21_listings_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_agent_email' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
         ),
       ),
     ),

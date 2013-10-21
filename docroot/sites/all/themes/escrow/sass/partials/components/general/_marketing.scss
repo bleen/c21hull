@@ -41,13 +41,26 @@
     @include clearfix();
   }
 
+  .more-link {
+    color: $color_green;
+  }
   .agent {
     float: left;
-    margin: $spacing_default;
+    margin: $spacing_default $spacing_default 3em $spacing_default;
     font-size: .8 * $font_size_base;
+
+    h2 {
+      font-size: $font_size_base;
+    }
   }
 
   @include breakpoint($bp500) {
+    .agent {
+      h2 {
+        font-size: $font_size_title;
+      }
+    }
+
     #block-views-c21-agents-owners {
       .agent {
         width: 45%;

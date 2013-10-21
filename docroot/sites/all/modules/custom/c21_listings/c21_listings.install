@@ -58,7 +58,7 @@ function c21_listings_update_7001() {
     'scheme' => 'public://',
     'dest_directory' => 'default_images',
     'source_path' => drupal_get_path('theme', 'escrow') . '/images/' . 'no-photo.jpg',
-    'file_name' => 'no-photo.png',
+    'file_name' => 'no-photo.jpg',
     'variable' => 'c21_listings_default_featured_photo_fid',
   );
 
@@ -250,4 +250,19 @@ function c21_listings_update_7005(&$sandbox) {
     }
   }
   $sandbox['#finished'] = ($sandbox['progress'] >= $sandbox['max']);
+}
+
+/**
+ * Add a default image to be used by the "agent photo" if one is not set.
+ */
+function c21_listings_update_7006() {
+  $default_image = array(
+    'scheme' => 'public://',
+    'dest_directory' => 'default_images',
+    'source_path' => drupal_get_path('theme', 'escrow') . '/images/' . 'no-headshot.jpg',
+    'file_name' => 'no-headshot.jpg',
+    'variable' => 'c21_agents_default_photo_fid',
+  );
+
+  c21_image_create($default_image);
 }

@@ -201,12 +201,15 @@ function c21_listings_field_formatter_view($entity_type, $entity, $field, $insta
  */
 function c21_listings_field_default_field_bases_alter(&$fields) {
   if (arg(2) != 'features') {
-    // Set the default image for listings featured photo field.
+    // Set the default image for listings featured photo field & agent photos.
     if (!empty($fields['field_listing_featured_photo'])) {
       $fields['field_listing_featured_photo']['settings']['default_image'] = variable_get('c21_listings_default_featured_photo_fid', 0);
     }
     if (module_exists('c21_rets') && !empty($fields['field_mls_photos'])) {
       $fields['field_mls_photos']['settings']['default_image'] = variable_get('c21_listings_default_featured_photo_fid', 0);
+    }
+    if (!empty($fields['field_agent_photo'])) {
+      $fields['field_agent_photo']['settings']['default_image'] = variable_get('c21_agents_default_photo_fid', 0);
     }
   }
 }
