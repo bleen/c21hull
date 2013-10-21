@@ -26,3 +26,40 @@
     font-size: .8 * $font_size_base;
   }
 }
+
+.node-type-page {
+  #block-views-c21-agents-owners {
+    .agent {
+      width: 75%;
+    }
+    @include clearfix();
+  }
+  #block-views-c21-agents-agents {
+    .agent {
+      width: 45%;
+    }
+    @include clearfix();
+  }
+
+  .agent {
+    float: left;
+    margin: $spacing_default;
+    font-size: .8 * $font_size_base;
+  }
+
+  @include breakpoint($bp500) {
+    #block-views-c21-agents-owners {
+      .agent {
+        width: 45%;
+      }
+    }
+  }
+  @include breakpoint($bp650) {
+    #block-views-c21-agents-agents {
+      .agent {
+        width: 30%;
+      }
+    }
+  }
+
+}

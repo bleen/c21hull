@@ -79,6 +79,8 @@ function c21_listings_views_default_views() {
 
   /* Display: Owners */
   $handler = $view->new_display('block', 'Owners', 'owners');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Meet Our Owners';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
