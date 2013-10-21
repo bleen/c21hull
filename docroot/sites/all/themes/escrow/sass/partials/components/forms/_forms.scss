@@ -16,3 +16,24 @@ button {
 .ui-slider-horizontal .ui-slider-range {
   @include background(linear-gradient(top, $color_green_light, $color_green));
 }
+
+.contact-form {
+  margin: 0 0 $spacing_default $spacing_default;
+  background: $color_gray_light;
+  border: 1px solid $color_gray_dark;
+  padding: $spacing_default;
+
+  .form-required {
+    display: none;
+  }
+
+  @include breakpoint($bp500) {
+    width: 50%;
+    float: right;
+  }
+
+  @include breakpoint($bp800) {
+    width: 30%;
+    float: right;
+  }
+}
