@@ -9,7 +9,6 @@ dependencies[] = admin_menu_toolbar
 dependencies[] = better_formats
 dependencies[] = block
 dependencies[] = block_class
-dependencies[] = block_filter
 dependencies[] = blockify
 dependencies[] = borealis_sb
 dependencies[] = ckeditor

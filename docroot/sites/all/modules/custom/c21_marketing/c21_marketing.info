@@ -4,7 +4,6 @@ core = 7.x
 package = Features
 version = 7.x-1.0
 project = c21_marketing
-dependencies[] = block_filter
 dependencies[] = c21
 dependencies[] = contact
 dependencies[] = ctools
