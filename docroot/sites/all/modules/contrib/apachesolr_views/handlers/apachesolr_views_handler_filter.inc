@@ -43,4 +43,17 @@ class apachesolr_views_handler_filter extends views_handler_filter {
       '#default_value' => $this->value,
     );
   }
+
+  /**
+   * Display the filter on the administrative summary
+   */
+  function admin_summary() {
+    if (is_array($this->value)) {
+      $value = implode(', ', $this->value);
+    }
+    else {
+      $value = $this->value;
+    }
+    return check_plain((string) $this->operator) . ' ' . check_plain((string) $value);
+  }
 }
