@@ -128,7 +128,7 @@ class SolrFilterSubQuery {
     // If the field value contains a colon or a space, wrap it in double quotes,
     // unless it is a range query or is already wrapped in double quotes or
     // parentheses.
-    if (preg_match('/[ :]/', $filter['#value']) && !preg_match('/^[\[\{]\S+ TO \S+[\]\}]/', $filter['#value']) && !preg_match('/^["\(].*["\)]$/', $filter['#value'])) {
+    if (preg_match('/[ :]/', $filter['#value']) && !preg_match('/^[\[\{]\S+ TO \S+[\]\}]$/', $filter['#value']) && !preg_match('/^["\(].*["\)]$/', $filter['#value'])) {
       $filter['#value'] = '"' . $filter['#value'] . '"';
     }
     return $prefix . $filter['#name'] . ':' . $filter['#value'];
@@ -150,10 +150,11 @@ class SolrFilterSubQuery {
    * @return boolean
    */
   public static function validFilterValue($filter) {
-    $opening = 0;
-    $closing = 0;
     $name = NULL;
     $value = NULL;
+    $matches = array();
+    $datefields = array();
+    $datefield_match = array();
 
     if (preg_match('/(?P<name>[^:]+):(?P<value>.+)?$/', $filter, $matches)) {
       foreach ($matches as $match_id => $match) {
@@ -183,13 +184,15 @@ class SolrFilterSubQuery {
       $valid_brackets = TRUE;
       $brackets['opening']['{'] = substr_count($value, '{');
       $brackets['closing']['}'] = substr_count($value, '}');
-      $valid_brackets = ($brackets['opening']['{'] != $brackets['closing']['}']) ? FALSE : TRUE;
+
+      $valid_brackets = $valid_brackets && ($brackets['opening']['{'] == $brackets['closing']['}']);
       $brackets['opening']['['] = substr_count($value, '[');
       $brackets['closing'][']'] = substr_count($value, ']');
-      $valid_brackets = ($brackets['opening']['['] != $brackets['closing'][']']) ? FALSE : TRUE;
+      $valid_brackets = $valid_brackets && ($brackets['opening']['['] == $brackets['closing'][']']);
       $brackets['opening']['('] = substr_count($value, '(');
       $brackets['closing'][')'] = substr_count($value, ')');
-      $valid_brackets = ($brackets['opening']['('] != $brackets['closing'][')']) ? FALSE : TRUE;
+      $valid_brackets = $valid_brackets && ($brackets['opening']['('] == $brackets['closing'][')']);
+
       if (!$valid_brackets) {
         return FALSE;
       }
@@ -432,36 +435,33 @@ class SolrBaseQuery extends SolrFilterSubQuery implements DrupalSolrQueryInterfa
 
   protected function addFq($string, $index = NULL) {
     $string = trim($string);
+    $local = '';
+    $exclude = FALSE;
+    $name = NULL;
+    $value = NULL;
+    $matches = array();
 
-    $filters = explode(' AND ', $string);
-    foreach ($filters as $filter) {
-      $local = '';
-      $exclude = FALSE;
-      $name = NULL;
-      $value = NULL;
-
-      // Check if we are dealing with an exclude
-      if (preg_match('/^-(.*)/', $filter, $matches)) {
-        $exclude = TRUE;
-        $filter = $matches[1];
-      }
-
-      // If {!something} is found as first character then this is a local value
-      if (preg_match('/\{!([^}]+)\}(.*)/', $filter, $matches)) {
-        $local = $matches[1];
-        $filter = $matches[2];
-      }
-
-      // Anything that has a name and value check if we have a : in the string.
-      if (strstr($filter, ':')) {
-        list($name, $value) = explode(":", $filter, 2);
-      }
-      else {
-        $value = $filter;
-      }
-      $this->addFilter($name, $value, $exclude, $local);
+    // Check if we are dealing with an exclude
+    if (preg_match('/^-(.*)/', $string, $matches)) {
+      $exclude = TRUE;
+      $string = $matches[1];
     }
 
+    // If {!something} is found as first character then this is a local value
+    if (preg_match('/\{!([^}]+)\}(.*)/', $string, $matches)) {
+      $local = $matches[1];
+      $string = $matches[2];
+    }
+
+    // Anything that has a name and value
+    // check if we have a : in the string
+    if (strstr($string, ':')) {
+      list($name, $value) = explode(":", $string, 2);
+    }
+    else {
+      $value = $string;
+    }
+    $this->addFilter($name, $value, $exclude, $local);
     return $this;
   }
 
@@ -570,12 +570,21 @@ class SolrBaseQuery extends SolrFilterSubQuery implements DrupalSolrQueryInterfa
     }
     else {
       // Validate and set sort parameter
-      $fields = implode('|', array_keys($this->available_sorts));
+      $fields = array_keys($this->available_sorts);
+      // Loop through available sorts and escape them, to allow for function sorts like geodist() in the preg_match() below
+      foreach ($fields as $key => $field) {
+        $fields[$key] = preg_quote($field);
+      }
+      // Implode the escaped available sorts together, then preg_match() against the sort string
+      $fields = implode('|', $fields);
       if (preg_match('/^(?:(' . $fields . ') (asc|desc),?)+$/', $sortstring, $matches)) {
         // We only use the last match.
         $this->solrsort['#name'] = $matches[1];
         $this->solrsort['#direction'] = $matches[2];
         $this->params['sort'] = array($sortstring);
+      }
+      else {
+        return FALSE;
       }
     }
   }
