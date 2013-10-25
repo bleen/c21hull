@@ -8,7 +8,7 @@
 ================================== CONTRIB =====================================
 ________________________________________________________________________________
 APACHESOLR
-  * In order for numeric filters to work proerly in apachesolr_views I had to
+  * In order for numeric filters to work properly in apachesolr_views I had to
     modify the makeFilterQuery() function by removing the "$" from the regex
     that checks for range querys:
 
