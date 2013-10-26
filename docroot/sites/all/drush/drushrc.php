@@ -134,6 +134,7 @@ $options['environments'] = array(
       'metatag_ui' => 1,
       'search_krumo' => 1,
       'simpletest' => 1,
+      'backup_migrate' => 0,
     ),
     // The list of variables to configure.
     'settings' => array(
@@ -162,6 +163,7 @@ $options['environments'] = array(
       'search_krumo' => 0,
       'simpletest' => 0,
       'c21_migration' => 0,
+      'backup_migrate' => 1,
     ),
     // The list of variables to configure.
     'settings' => array(
