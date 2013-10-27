@@ -24,7 +24,6 @@ $output: 'isolation';
   }
 }
 
-
 .print-content {
   clear: both;
   border-top: 2px solid $color_gold;
@@ -101,11 +100,14 @@ $output: 'isolation';
           }
         }
       }
-      &.field-name-field-listing-photos img {
-        max-width: 32%;
-        margin-right: 1%;
-        margin-bottom: 1%;
-        float: left;
+      &.field-name-field-listing-photos {
+        @include clearfix();
+        img {
+          max-width: 32%;
+          margin-right: 1%;
+          margin-bottom: 1%;
+          float: left;
+        }
       }
     }
 

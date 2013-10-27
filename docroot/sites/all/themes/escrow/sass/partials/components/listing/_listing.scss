@@ -118,22 +118,56 @@
   }
 
   .description {
-    margin: $spacing_default 0 (2 * $spacing_default) 0;
+    margin: $spacing_default 0 (4 * $spacing_default) 0;
   }
 
   .links {
     &.inline {
       position: absolute;
-      top: -2em;
-      right: 0;
+      top: -2.25em;
+      left: 0;
 
       li {
         display: inline-block;
         margin: 0;
+
+        a {
+          display: inline-block;
+          padding: .5 * $spacing_default;
+          color: $color_green;
+        }
+
+
+          &.c21_virtual_tour_link {
+            background: url(../images/icon-360.png) no-repeat 4px center;
+            background-size: contain;
+            padding-left: 24px;
+          }
+          &.print_html {
+            background: url(../images/icon-print.png) no-repeat 4px center;
+            background-size: contain;
+            padding-left: 24px;
+          }
+          &.print_pdf {
+            background: url(../images/icon-pdf.png) no-repeat 4px center;
+            background-size: contain;
+            padding-left: 24px;
+          }
+
+        @include breakpoint($bp800-900) {
+          &.print_pdf {
+            background: none;
+            padding-left: 0px;
+          }
+        }
       }
-      a {
-        display: inline-block;
-        padding: $spacing_default;
+
+      @include breakpoint($bp500-800) {
+        width: 150%;
+      }
+      @include breakpoint($bp800) {
+        right: 0;
+        left: auto;
       }
     }
   }

@@ -41,6 +41,18 @@ function escrow_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_links().
+ */
+function escrow_preprocess_links(&$variables) {
+  if (isset($variables['links']['print_html'])) {
+    $variables['links']['print_html']['title'] = t('Print');
+  }
+  if (isset($variables['links']['print_pdf'])) {
+    $variables['links']['print_pdf']['title'] = t('PDF');
+  }
+}
+
+/**
  * Implements template_preprocess_node().
  */
 function escrow_preprocess_node(&$variables) {
