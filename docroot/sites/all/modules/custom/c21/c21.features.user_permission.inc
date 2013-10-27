@@ -117,15 +117,6 @@ function c21_user_default_permissions() {
     'module' => 'contextual',
   );
 
-  // Exported permission: 'access devel information'.
-  $permissions['access devel information'] = array(
-    'name' => 'access devel information',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'access overlay'.
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
@@ -202,32 +193,11 @@ function c21_user_default_permissions() {
     'module' => 'workbench',
   );
 
-  // Exported permission: 'admin_classes'.
-  $permissions['admin_classes'] = array(
-    'name' => 'admin_classes',
-    'roles' => array(),
-    'module' => 'ds_ui',
-  );
-
   // Exported permission: 'admin_display_suite'.
   $permissions['admin_display_suite'] = array(
     'name' => 'admin_display_suite',
     'roles' => array(),
     'module' => 'ds',
-  );
-
-  // Exported permission: 'admin_fields'.
-  $permissions['admin_fields'] = array(
-    'name' => 'admin_fields',
-    'roles' => array(),
-    'module' => 'ds_ui',
-  );
-
-  // Exported permission: 'admin_view_modes'.
-  $permissions['admin_view_modes'] = array(
-    'name' => 'admin_view_modes',
-    'roles' => array(),
-    'module' => 'ds_ui',
   );
 
   // Exported permission: 'administer @font-your-face'.
@@ -293,13 +263,6 @@ function c21_user_default_permissions() {
     'name' => 'administer content types',
     'roles' => array(),
     'module' => 'node',
-  );
-
-  // Exported permission: 'administer contexts'.
-  $permissions['administer contexts'] = array(
-    'name' => 'administer contexts',
-    'roles' => array(),
-    'module' => 'context_ui',
   );
 
   // Exported permission: 'administer empty page callbacks'.
@@ -573,13 +536,6 @@ function c21_user_default_permissions() {
       'staff' => 'staff',
     ),
     'module' => 'clone',
-  );
-
-  // Exported permission: 'context ajax block access'.
-  $permissions['context ajax block access'] = array(
-    'name' => 'context ajax block access',
-    'roles' => array(),
-    'module' => 'context_ui',
   );
 
   // Exported permission: 'create aggregation_page_detail content'.
@@ -860,13 +816,6 @@ function c21_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: 'execute php code'.
-  $permissions['execute php code'] = array(
-    'name' => 'execute php code',
-    'roles' => array(),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
@@ -1128,15 +1077,6 @@ function c21_user_default_permissions() {
     'name' => 'show more format tips link',
     'roles' => array(),
     'module' => 'better_formats',
-  );
-
-  // Exported permission: 'switch users'.
-  $permissions['switch users'] = array(
-    'name' => 'switch users',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'devel',
   );
 
   // Exported permission: 'use PHP for tracking visibility'.
