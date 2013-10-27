@@ -675,19 +675,21 @@ function _print_pdf_tcpdf_version() {
   require_once(DRUPAL_ROOT . '/' . $print_pdf_pdf_tool);
 
   // Hide warnings, as some TCPDF constants may still be undefined
-  @$pdf = new TCPDF();
+  if (class_exists('TCPDF')) {
+    @$pdf = new TCPDF();
 
-  if (method_exists($pdf, 'getTCPDFVersion')) {
-    return $pdf->getTCPDFVersion();
+    if (class_exists('TCPDF_STATIC')) {
+      return TCPDF_STATIC::getTCPDFVersion();
+    }
+    elseif (method_exists($pdf, 'getTCPDFVersion')) {
+      return $pdf->getTCPDFVersion();
+    }
+    elseif (defined('PDF_PRODUCER')) {
+      sscanf(PDF_PRODUCER, "TCPDF %s", $version);
+      return $version;
+    }
   }
-  elseif (defined('PDF_PRODUCER')) {
-    sscanf(PDF_PRODUCER, "TCPDF %s", $version);
-
-    return $version;
-  }
-  else {
-    return 'unknown';
-  }
+  return 'unknown';
 }
 
 /**
