@@ -860,13 +860,6 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_pdf_pdf_tool';
-  $strongarm->value = 'sites/all/libraries/wkhtmltopdf/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf';
-  $export['print_pdf_pdf_tool'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'print_pdf_show_link';
   $strongarm->value = '2';
   $export['print_pdf_show_link'] = $strongarm;
