@@ -16,6 +16,15 @@ $grids: 12;
 $gutters: 1/4;
 $output: 'isolation';
 
+#logo {
+  @include replace-text('../images/c21hull_logo.svg');
+
+  @include degrade-from(svg, false) {
+    @include replace-text('../images/c21hull_logo.png');
+  }
+}
+
+
 .print-content {
   clear: both;
   border-top: 2px solid $color_gold;
