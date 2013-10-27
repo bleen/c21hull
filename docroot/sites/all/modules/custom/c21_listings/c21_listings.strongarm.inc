@@ -737,7 +737,7 @@ function c21_listings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_html_show_link';
-  $strongarm->value = '2';
+  $strongarm->value = '3';
   $export['print_html_show_link'] = $strongarm;
 
   $strongarm = new stdClass();
