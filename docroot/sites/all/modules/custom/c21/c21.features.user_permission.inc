@@ -51,17 +51,6 @@ function c21_user_default_permissions() {
     'module' => 'views',
   );
 
-  // Exported permission: 'access all webform results'.
-  $permissions['access all webform results'] = array(
-    'name' => 'access all webform results',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-      'staff' => 'staff',
-    ),
-    'module' => 'webform',
-  );
-
   // Exported permission: 'access backup and migrate'.
   $permissions['access backup and migrate'] = array(
     'name' => 'access backup and migrate',
@@ -127,27 +116,6 @@ function c21_user_default_permissions() {
       'staff' => 'staff',
     ),
     'module' => 'overlay',
-  );
-
-  // Exported permission: 'access own webform results'.
-  $permissions['access own webform results'] = array(
-    'name' => 'access own webform results',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-      'staff' => 'staff',
-    ),
-    'module' => 'webform',
-  );
-
-  // Exported permission: 'access own webform submissions'.
-  $permissions['access own webform submissions'] = array(
-    'name' => 'access own webform submissions',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-    ),
-    'module' => 'webform',
   );
 
   // Exported permission: 'access print'.
@@ -585,16 +553,6 @@ function c21_user_default_permissions() {
     'module' => 'ckeditor',
   );
 
-  // Exported permission: 'delete all webform submissions'.
-  $permissions['delete all webform submissions'] = array(
-    'name' => 'delete all webform submissions',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-    ),
-    'module' => 'webform',
-  );
-
   // Exported permission: 'delete any aggregation_page_detail content'.
   $permissions['delete any aggregation_page_detail content'] = array(
     'name' => 'delete any aggregation_page_detail content',
@@ -666,16 +624,6 @@ function c21_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own webform submissions'.
-  $permissions['delete own webform submissions'] = array(
-    'name' => 'delete own webform submissions',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-    ),
-    'module' => 'webform',
-  );
-
   // Exported permission: 'delete revisions'.
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
@@ -702,16 +650,6 @@ function c21_user_default_permissions() {
       'manager' => 'manager',
     ),
     'module' => 'admin_menu',
-  );
-
-  // Exported permission: 'edit all webform submissions'.
-  $permissions['edit all webform submissions'] = array(
-    'name' => 'edit all webform submissions',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-    ),
-    'module' => 'webform',
   );
 
   // Exported permission: 'edit any aggregation_page_detail content'.
@@ -783,16 +721,6 @@ function c21_user_default_permissions() {
       'manager' => 'manager',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own webform submissions'.
-  $permissions['edit own webform submissions'] = array(
-    'name' => 'edit own webform submissions',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-    ),
-    'module' => 'webform',
   );
 
   // Exported permission: 'enter aggregation_page_detail revision log entry'.
