@@ -1,3 +1,5 @@
+
+
 input {
   width: 100%;
   font-size: 1.25em;
@@ -25,5 +27,30 @@ button {
 
   .form-required {
     display: none;
+  }
+}
+
+#user-login {
+  margin: 0 0 $spacing_default $spacing_default;
+  background: $color_gray_light;
+  border: 1px solid $color_gray_dark;
+  padding: $spacing_default;
+
+  .form-actions {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .description {
+    color: $color_gray_dark;
+  }
+
+  @include breakpoint($bp500) {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  @include breakpoint($bp800) {
+    width: 50%;
+    margin: 0 auto;
   }
 }
