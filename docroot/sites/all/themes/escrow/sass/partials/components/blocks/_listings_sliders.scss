@@ -17,6 +17,10 @@
     }
   }
 }
+.recently-added-listings {
+  @include background(linear-gradient(top, lighten($color_gold_light, 15%), $color_gold_light));
+  @include box-shadow(0 5px 5px rgba(0, 0, 0, 0.35) inset);
+}
 
 .search-featured-wrap {
   @include clearfix();
