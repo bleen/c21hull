@@ -280,6 +280,7 @@
       @include float-span(4);
     }
     .group-listing-statistics {
+      margin: 3*$spacing_default 0 $spacing_default 0;
       @include float-span(2, 'last');
     }
     .group-listing-location-details {
