@@ -26,14 +26,4 @@ button {
   .form-required {
     display: none;
   }
-
-  @include breakpoint($bp500) {
-    width: 50%;
-    float: right;
-  }
-
-  @include breakpoint($bp800) {
-    width: 30%;
-    float: right;
-  }
 }

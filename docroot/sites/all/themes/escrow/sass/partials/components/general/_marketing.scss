@@ -63,14 +63,25 @@
 
     #block-views-c21-agents-owners {
       .agent {
-        width: 45%;
+        @include float-span(3);
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
+    }
+    #block-formblock-contact-site {
+      @include float-span(3, 'last');
     }
   }
   @include breakpoint($bp650) {
     #block-views-c21-agents-agents {
       .agent {
-        width: 30%;
+        @include float-span(2);
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
       }
     }
   }

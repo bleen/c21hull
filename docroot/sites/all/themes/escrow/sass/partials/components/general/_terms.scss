@@ -1,0 +1,16 @@
+.page-taxonomy-term {
+  #main {
+    margin-top: 0;
+  }
+  @include breakpoint($bp650) {
+    #main {
+      @include float-span(4, 'first');
+    }
+    #block-formblock-contact-site {
+      @include float-span(2, 'last');
+    }
+    #footer {
+      clear: both;
+    }
+  }
+}

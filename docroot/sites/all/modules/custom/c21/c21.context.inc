@@ -155,5 +155,33 @@ function c21_context_default_contexts() {
   t('A context for layout and settings on the homepage.');
   $export['homepage'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'term-pages';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'taxonomy/term/*' => 'taxonomy/term/*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'formblock-contact_site' => array(
+          'module' => 'formblock',
+          'delta' => 'contact_site',
+          'region' => 'main_suffix',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['term-pages'] = $context;
+
   return $export;
 }
