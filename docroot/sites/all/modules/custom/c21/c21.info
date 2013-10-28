@@ -379,6 +379,6 @@ features[variable][] = webform_submission_access_control
 features[variable][] = webform_use_cookies
 features[views_view][] = c21_workbench_edits_by_user
 features[views_view][] = c21_workbench_recent_content
-features_exclude[variable][] = theme_default
 features_exclude[dependencies][formblock] = formblock
+features_exclude[variable][] = theme_default
 project path = sites/all/modules/custom
