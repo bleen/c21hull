@@ -29,9 +29,7 @@
       float: left;
       margin-right: 2%;
       margin-left: 0;
-      &:nth-child(odd) {
-        margin-right: inherit;
-      }
+
       &:nth-child(3n) {
         margin-right: 0;
       }

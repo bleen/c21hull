@@ -154,7 +154,7 @@
             padding-left: 24px;
           }
 
-        @include breakpoint($bp800-900) {
+        @include breakpoint($bp800 $bp900) {
           &.print_pdf {
             background: none;
             padding-left: 0px;
@@ -162,7 +162,7 @@
         }
       }
 
-      @include breakpoint($bp500-800) {
+      @include breakpoint($bp500 $bp800) {
         width: 150%;
       }
       @include breakpoint($bp800) {
