@@ -104,6 +104,16 @@ function c21_node_view($node, $view_mode, $langcode) {
 }
 
 /**
+ * Implements hook_taxonomy_term_load().
+ */
+function c21_taxonomy_term_load($terms) {
+  // By business rule, all taxonomy terms should be title case.
+  foreach ($terms as $term) {
+    $term->name = ucwords($term->name);
+  }
+}
+
+/**
  * Implements hook_workbench_content_alter().
  */
 function c21_workbench_content_alter(&$output) {
