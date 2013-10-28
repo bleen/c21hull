@@ -48,6 +48,10 @@ sup {
   font-weight: bold;
 }
 
+.node-unpublished {
+  background-color: transparent;
+}
+
 .more-link {
   display: inline-block;
   padding: 0 (.5 * $spacing_default);

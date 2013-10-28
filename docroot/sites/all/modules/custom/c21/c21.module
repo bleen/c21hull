@@ -95,6 +95,15 @@ function c21_block_view($delta = '') {
 }
 
 /**
+ * Implements hook_node_view().
+ */
+function c21_node_view($node, $view_mode, $langcode) {
+  if ($view_mode == 'full' && !$node->status) {
+    drupal_set_message(t('This %type is inactive and cannot be viewed by the public.', array('%type' => $node->type)), 'warning');
+  }
+}
+
+/**
  * Implements hook_workbench_content_alter().
  */
 function c21_workbench_content_alter(&$output) {
