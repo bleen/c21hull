@@ -63,6 +63,11 @@
     &.views-widget-filter-im_field_listing_township,
     &.views-widget-filter-im_field_listing_school_district {
       width: 47.5%;
+
+      label {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
 
     &.views-widget-filter-fts_field_listing_acreage,
@@ -135,5 +140,14 @@
   }
 
   @include breakpoint($bp1075) {
+  }
+}
+
+.front .search-form {
+  @include breakpoint($bp800) {
+    padding-top: 0px;
+    h2 {
+      display: none;
+    }
   }
 }
