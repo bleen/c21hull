@@ -5,3 +5,6 @@ docroot/FirePHPCore
 docroot/core
 builds/local-migrate.sh
 .idea/*
+
+docroot/sites/all/themes/escrow/.bundle
+docroot/sites/all/themes/escrow/vendor
