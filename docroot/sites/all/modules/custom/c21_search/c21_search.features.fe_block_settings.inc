@@ -19,7 +19,8 @@ function c21_search_default_fe_block_settings() {
     'delta' => '-exp-c21_search_listings-page',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'landing
+landing/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
