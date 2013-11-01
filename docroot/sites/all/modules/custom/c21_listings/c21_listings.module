@@ -35,6 +35,20 @@ function c21_listings_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * Implements hook_node_presave().
+ */
+function c21_listings_node_presave($node) {
+  if ($node->type == 'listing') {
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $listing_status = $wrapper->field_listing_status->value();
+    if (in_array($listing_status, array('sold', 'withdrawn', 'inactive'))) {
+      $node->status = FALSE;
+      drupal_set_message(t('Listing "!title" was set to "%listing_status" so it has been marked as "inactive" and will no longer be visible to the public.', array('!title' => $node->title, '%listing_status' => $listing_status)), 'warning');
+    }
+  }
+}
+
+/**
  * Implements hook_node_view().
  */
 function c21_listings_node_view($node, $view_mode) {
