@@ -13,13 +13,6 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_aggregation_page_detail';
-  $strongarm->value = 'edit-submission';
-  $export['additional_settings__active_tab_aggregation_page_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_node_agent';
   $strongarm->value = '0';
   $export['auto_entitylabel_node_agent'] = $strongarm;
@@ -236,29 +229,6 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__aggregation_page_detail';
-  $strongarm->value = array(
-    'view_modes' => array(),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '1',
-        ),
-        'path' => array(
-          'weight' => '4',
-        ),
-        'redirect' => array(
-          'weight' => '3',
-        ),
-      ),
-      'display' => array(),
-    ),
-  );
-  $export['field_bundle_settings_node__aggregation_page_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__listing';
   $strongarm->value = array(
     'view_modes' => array(
@@ -386,13 +356,6 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_aggregation_page_detail';
-  $strongarm->value = array();
-  $export['menu_options_aggregation_page_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_listing';
   $strongarm->value = array();
   $export['menu_options_listing'] = $strongarm;
@@ -410,13 +373,6 @@ function c21_listings_strongarm() {
   $strongarm->name = 'menu_parent_agent';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_agent'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_aggregation_page_detail';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_aggregation_page_detail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -440,15 +396,6 @@ function c21_listings_strongarm() {
     0 => 'status',
   );
   $export['node_options_agent'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_aggregation_page_detail';
-  $strongarm->value = array(
-    0 => 'status',
-  );
-  $export['node_options_aggregation_page_detail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -479,13 +426,6 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_aggregation_page_detail';
-  $strongarm->value = '0';
-  $export['node_preview_aggregation_page_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_listing';
   $strongarm->value = '0';
   $export['node_preview_listing'] = $strongarm;
@@ -507,13 +447,6 @@ function c21_listings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_aggregation_page_detail';
-  $strongarm->value = 0;
-  $export['node_submitted_aggregation_page_detail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_listing';
   $strongarm->value = 0;
   $export['node_submitted_listing'] = $strongarm;
@@ -531,13 +464,6 @@ function c21_listings_strongarm() {
   $strongarm->name = 'pathauto_node_agent_pattern';
   $strongarm->value = '';
   $export['pathauto_node_agent_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_aggregation_page_detail_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_aggregation_page_detail_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -1824,131 +1824,6 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-aggregation_page_detail-field_aggregation_details'
-  $field_instances['node-aggregation_page_detail-field_aggregation_details'] = array(
-    'bundle' => 'aggregation_page_detail',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_aggregation_details',
-    'label' => 'Details',
-    'placeholder' => '',
-    'required' => 1,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 0,
-          'full_html' => 0,
-          'plain_text' => 0,
-          'rich_text' => 'rich_text',
-        ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'rich_text' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-aggregation_page_detail-field_aggregation_page'
-  $field_instances['node-aggregation_page_detail-field_aggregation_page'] = array(
-    'bundle' => 'aggregation_page_detail',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Type the name of the term to which you would like to add a detailed description. ',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_aggregation_page',
-    'label' => 'Aggregation Page',
-    'required' => 1,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'node-listing-field_listing_acreage'
   $field_instances['node-listing-field_listing_acreage'] = array(
     'bundle' => 'listing',
@@ -11741,7 +11616,6 @@ function c21_listings_field_default_field_instances() {
   t('Acreage');
   t('Address');
   t('Agent');
-  t('Aggregation Page');
   t('Basement');
   t('Bathroom 1 | Basement');
   t('Bathroom 1 | Floor 1');
@@ -11777,7 +11651,6 @@ function c21_listings_field_default_field_instances() {
   t('Commission');
   t('Company');
   t('Description');
-  t('Details');
   t('Development');
   t('Dining Room | Basement');
   t('Dining Room | Floor 1');
@@ -11865,7 +11738,6 @@ function c21_listings_field_default_field_instances() {
   t('This title will appear above the fine print on the back of printed listings.');
   t('Title');
   t('Township');
-  t('Type the name of the term to which you would like to add a detailed description. ');
   t('Values less than 100 will be considered a percentage, otherwise a dollar amount');
   t('Virtual Tour');
   t('Walls');
