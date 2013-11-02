@@ -20,7 +20,9 @@ function c21_search_default_fe_block_settings() {
     'module' => 'views',
     'node_types' => array(),
     'pages' => 'landing
-landing/*',
+landing/*
+user
+user/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
