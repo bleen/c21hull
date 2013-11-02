@@ -1,7 +1,0 @@
-[x] - Alter form setting: allow input many vocabulary.
-[x] - Alter widget allow: input many term from many vocabulary.
-[x] - Load default value when edit entity: node, commerce product.
-[ ] - Extend settings: select default value for each vocabulary.
-[ ] - Extend settings: select order for each vocabulary in options list.
-[ ] - Support more widget: radio / check boxes, auto complete term widget.
-[ ] - Test case.

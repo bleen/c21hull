@@ -1,5 +1,0 @@
-name = Vocabulary Reference
-description = One field and reference any term in any vocabulary.
-core = 7.x
-dependencies[] = taxonomy
-package = Fields
