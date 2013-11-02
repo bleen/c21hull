@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function c21_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "borealis_sb" && $api == "borealis_sb_default") {
+    return array("version" => "1");
+  }
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -15,6 +18,9 @@ function c21_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "1");
   }
   if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+  if ($module == "taxonomy_display" && $api == "taxonomy_display") {
     return array("version" => "1");
   }
 }

@@ -192,6 +192,13 @@ function c21_date_format_types() {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function c21_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
+  $form['description']['#format'] = "rich_text";
+}
+
+/**
  * Return office location information.
  *
  * @param string $office

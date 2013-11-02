@@ -870,19 +870,18 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['arguments']['im_field_terms']['id'] = 'im_field_terms';
   $handler->display->display_options['arguments']['im_field_terms']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['arguments']['im_field_terms']['field'] = 'im_field_terms';
-  $handler->display->display_options['arguments']['im_field_terms']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['im_field_terms']['default_action'] = 'default';
   $handler->display->display_options['arguments']['im_field_terms']['title_enable'] = TRUE;
   $handler->display->display_options['arguments']['im_field_terms']['title'] = '%1';
-  $handler->display->display_options['arguments']['im_field_terms']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['im_field_terms']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['im_field_terms']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['im_field_terms']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['im_field_terms']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['im_field_terms']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['im_field_terms']['validate']['type'] = 'taxonomy_term';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'taxonomy/term/%';
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
   $export['c21_taxonomy_terms'] = $view;
 
   return $export;
