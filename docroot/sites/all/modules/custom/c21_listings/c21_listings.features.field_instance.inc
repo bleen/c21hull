@@ -1907,7 +1907,7 @@ function c21_listings_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select which aggregation page on which these details should be displayed.',
+    'description' => 'Type the name of the term to which you would like to add a detailed description. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1931,17 +1931,20 @@ function c21_listings_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_aggregation_page',
     'label' => 'Aggregation Page',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
       'weight' => 0,
     ),
   );
@@ -11845,7 +11848,6 @@ function c21_listings_field_default_field_instances() {
   t('Sale Price');
   t('School District');
   t('Section');
-  t('Select which aggregation page on which these details should be displayed.');
   t('Seller');
   t('Sewage');
   t('Siding');
@@ -11863,6 +11865,7 @@ function c21_listings_field_default_field_instances() {
   t('This title will appear above the fine print on the back of printed listings.');
   t('Title');
   t('Township');
+  t('Type the name of the term to which you would like to add a detailed description. ');
   t('Values less than 100 will be considered a percentage, otherwise a dollar amount');
   t('Virtual Tour');
   t('Walls');

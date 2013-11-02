@@ -296,7 +296,7 @@ function c21_listings_field_default_field_bases() {
         ),
         9 => array(
           'parent' => NULL,
-          'vocabulary' => 'listing_additional_building',
+          'vocabulary' => 'listing_outside_features',
         ),
         10 => array(
           'parent' => NULL,
