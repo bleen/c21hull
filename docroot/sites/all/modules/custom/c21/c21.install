@@ -55,3 +55,10 @@ function c21_update_7004() {
   module_enable(array('taxonomy_display'));
 }
 
+/**
+ * Disable the fences module.
+ */
+function c21_update_7005() {
+  module_disable(array('fences'));
+}
+

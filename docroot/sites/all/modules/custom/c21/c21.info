@@ -24,7 +24,6 @@ dependencies[] = empty_page
 dependencies[] = entity_token
 dependencies[] = fe_block
 dependencies[] = features
-dependencies[] = fences
 dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = field_placeholder

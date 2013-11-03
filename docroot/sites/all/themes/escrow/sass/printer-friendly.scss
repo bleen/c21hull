@@ -60,7 +60,8 @@ $output: 'isolation';
     .field {
       white-space: nowrap;
       margin: $spacing_default 0;
-      clear: both;
+      @include clearfix();
+
       &:first-child {
         margin-top: 0;
       }
@@ -74,6 +75,7 @@ $output: 'isolation';
         text-align: right;
         color: black;
         vertical-align: middle;
+        padding-top: 2 * $spacing_default;
       }
       .field-items {
         display: inline-block;
@@ -199,10 +201,14 @@ $output: 'isolation';
 
     .fine-print {
       page-break-before: always;
-      font-size: .85em;
+      font-size: 1.07em;
 
       h1 {
         font-size: 1.5em;
+      }
+      p {
+        margin-bottom: 2 * $spacing_default;
+        text-transform: none;
       }
       .signature {
         font-size: 1.25em;
