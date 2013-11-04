@@ -82,6 +82,10 @@ FIELD_COLLECTION
   * Adding a migrate handler for field collections.
       PATCH: https://drupal.org/node/1175082#comment-7424400
 
+FIELD_GROUP
+  * Occasionally we get an error about the name property not existing.
+      PATCH: https://drupal.org/comment/7621413#comment-7621413
+
 JQUERY_UPDATE
   * Errors are thrown in the core version of state.js when using jquery >= 1.7.
       PATCH: https://drupal.org/node/1448490#comment-6270412
