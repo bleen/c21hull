@@ -266,3 +266,10 @@ function c21_listings_update_7006() {
 
   c21_image_create($default_image);
 }
+
+/**
+ * Enable imagefield focus.
+ */
+function c21_listings_update_7007() {
+  module_enable(array('imagefield_focus'));
+}

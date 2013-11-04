@@ -67,24 +67,24 @@ function c21_image_default_styles() {
   // Exported image style: c21square.
   $styles['c21square'] = array(
     'name' => 'c21square',
+    'label' => 'c21square',
     'effects' => array(
       2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
+        'label' => 'Focus Scale And Crop',
+        'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
+        'effect callback' => 'imagefield_focus_scale_and_crop_effect',
+        'form callback' => 'imagefield_focus_scale_and_crop_form',
+        'summary theme' => 'imagefield_focus_scale_and_crop_summary',
+        'module' => 'imagefield_focus',
+        'name' => 'imagefield_focus_scale_and_crop',
         'data' => array(
           'width' => 200,
           'height' => 200,
+          'strength' => 'high',
         ),
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
-    'label' => 'c21square',
   );
 
   // Exported image style: c21wide.
@@ -92,18 +92,17 @@ function c21_image_default_styles() {
     'name' => 'c21wide',
     'effects' => array(
       3 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
+        'label' => 'Focus Scale And Crop',
+        'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
+        'effect callback' => 'imagefield_focus_scale_and_crop_effect',
+        'form callback' => 'imagefield_focus_scale_and_crop_form',
+        'summary theme' => 'imagefield_focus_scale_and_crop_summary',
+        'module' => 'imagefield_focus',
+        'name' => 'imagefield_focus_scale_and_crop',
         'data' => array(
           'width' => 800,
           'height' => 600,
-          'upscale' => 1,
+          'strength' => 'high',
         ),
         'weight' => 1,
       ),
