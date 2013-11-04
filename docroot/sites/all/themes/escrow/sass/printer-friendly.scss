@@ -159,15 +159,22 @@ $output: 'isolation';
         }
       }
     }
+    .field-collection-container,
+    .field-collection-view {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
   }
 
   &.view-mode-print_internal {
-    .group-print-seller-info {
+    .group-print-seller-info,
+    .group-print-sellers {
       margin-top: 4em;
 
       .seller {
         padding: $spacing_default;
-        width: 30%;
+        width: 45%;
         float: left;
         @include clearfix();
 

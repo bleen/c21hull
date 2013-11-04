@@ -134,7 +134,7 @@ function c21_listings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '2',
+          'weight' => '200',
         ),
       ),
       'display' => array(),
@@ -164,7 +164,7 @@ function c21_listings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '200',
         ),
       ),
       'display' => array(),

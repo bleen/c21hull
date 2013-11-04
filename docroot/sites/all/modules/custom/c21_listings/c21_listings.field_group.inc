@@ -690,5 +690,68 @@ function c21_listings_field_group_info() {
   );
   $export['group_print_measurements|node|listing|print'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_print_notes|node|listing|print_internal';
+  $field_group->group_name = 'group_print_notes';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'print_internal';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Notes',
+    'weight' => '38',
+    'children' => array(
+      0 => 'field_listing_notes',
+      1 => 'field_listing_tags',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Notes',
+      'instance_settings' => array(
+        'classes' => 'group-print-notes field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_print_notes|node|listing|print_internal'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_print_sellers|node|listing|print_internal';
+  $field_group->group_name = 'group_print_sellers';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'print_internal';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Sellers',
+    'weight' => '37',
+    'children' => array(
+      0 => 'field_listing_seller',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Sellers',
+      'instance_settings' => array(
+        'classes' => 'group-print-sellers field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_print_sellers|node|listing|print_internal'] = $field_group;
+
   return $export;
 }
