@@ -56,9 +56,10 @@ function c21_update_7004() {
 }
 
 /**
- * Disable the fences module.
+ * Enable entity cache and disable the fences module.
  */
 function c21_update_7005() {
+  module_enable(array('entitycache'));
   module_disable(array('fences'));
 }
 
