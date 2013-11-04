@@ -31,7 +31,7 @@ sup {
 #page {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 0 $spacing_default (8 * $spacing_default) $spacing_default;
+  padding: 0 $spacing_default (12 * $spacing_default) $spacing_default;
   background: $color_gold_light;
   @include breakpoint($bp800) {
     border-left: 1px solid black;

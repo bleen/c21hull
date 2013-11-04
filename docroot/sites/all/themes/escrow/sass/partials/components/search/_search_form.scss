@@ -30,6 +30,11 @@
       @include transition-duration(0s);
       @include animation(bounce 0s);
     }
+    @include breakpoint($bp800) {
+      bottom: -250px;
+      width: 700px;
+      margin-left: -350px;
+    }
   }
 
   h2 {
@@ -108,10 +113,6 @@
 
   @include breakpoint($bp650) {
     font-size: $font_size_base;
-
-    h2 {
-      cursor: auto;
-    }
   }
   @include breakpoint($bp800) {
     font-size: .75 * $font_size_base;
