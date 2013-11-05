@@ -80,7 +80,7 @@ function c21_image_default_styles() {
         'data' => array(
           'width' => 200,
           'height' => 200,
-          'strength' => 'high',
+          'strength' => 'low',
         ),
         'weight' => 2,
       ),
@@ -102,7 +102,7 @@ function c21_image_default_styles() {
         'data' => array(
           'width' => 800,
           'height' => 600,
-          'strength' => 'high',
+          'strength' => 'low',
         ),
         'weight' => 1,
       ),

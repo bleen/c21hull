@@ -147,6 +147,7 @@
   width: 49%;
   float: left;
   margin-right: 1%;
+  display: none;
 }
 .node-listing-form .image-widget-data .form-item .description {
   white-space: normal;
