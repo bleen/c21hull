@@ -69,7 +69,7 @@ function c21_image_default_styles() {
     'name' => 'c21square',
     'label' => 'c21square',
     'effects' => array(
-      2 => array(
+      1 => array(
         'label' => 'Focus Scale And Crop',
         'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
         'effect callback' => 'imagefield_focus_scale_and_crop_effect',
@@ -90,8 +90,9 @@ function c21_image_default_styles() {
   // Exported image style: c21wide.
   $styles['c21wide'] = array(
     'name' => 'c21wide',
+    'label' => 'c21wide',
     'effects' => array(
-      3 => array(
+      2 => array(
         'label' => 'Focus Scale And Crop',
         'help' => 'Scale and crop based on data provided by <em>ImageField Focus</em>.',
         'effect callback' => 'imagefield_focus_scale_and_crop_effect',
@@ -107,7 +108,6 @@ function c21_image_default_styles() {
         'weight' => 1,
       ),
     ),
-    'label' => 'c21wide',
   );
 
   return $styles;
