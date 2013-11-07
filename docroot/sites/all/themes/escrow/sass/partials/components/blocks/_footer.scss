@@ -27,3 +27,34 @@
     padding: $spacing_default;
   }
 }
+
+#footer-sitemap {
+  background: lighten($color_gold_light, 15%);
+  padding: $spacing_default;
+  border-top: 1px solid $color_gray_dark;
+  border-bottom: 1px solid $color_gray_dark;
+
+  .title {
+    color: $color_gray_dark;
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+  }
+  .menu-footer-features {
+    @include float-span(3, 'first');
+  }
+  .menu-footer-places {
+    @include float-span(3, 'last');
+  }
+
+  ul {
+    margin-left: $spacing_default;
+    li {
+      float: none;
+
+      a:hover {
+        color: $color_gold;
+      }
+    }
+  }
+}

@@ -171,6 +171,11 @@ function escrow_preprocess_views_view_field(&$variables) {
   }
 }
 
+function escrow_preprocess_footer_menu(&$variables) {
+  $block = module_invoke('menu', 'block_view', $variables['class']);
+  $variables['menu_title'] = isset($block['subject']) ? $block['subject'] : '';
+}
+
 /**
  * Returns a render array of the measurements grid for a given listing.
  *

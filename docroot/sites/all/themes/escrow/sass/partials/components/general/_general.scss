@@ -70,26 +70,6 @@ sup {
   margin-right: $spacing_default;
 }
 
-#footer-sitemap {
-  background: lighten($color_gold_light, 15%);
-  padding: $spacing_default;
-  border-top: 1px solid $color_gray_dark;
-  border-bottom: 1px solid $color_gray_dark;
-
-  .menu-footer-features {
-    @include float-span(3, 'first');
-  }
-  .menu-footer-places {
-    @include float-span(3, 'last');
-  }
-
-  ul {
-    li {
-      float: none;
-    }
-  }
-}
-
 li.krumo-footnote {
   overflow: hidden;
 
