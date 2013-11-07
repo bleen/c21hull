@@ -81,6 +81,7 @@ function c21_default_fe_block_settings() {
   $export['menu-menu-footer-features'] = array(
     'cache' => -1,
     'css_class' => '',
+    'custom' => 0,
     'delta' => 'menu-footer-features',
     'module' => 'menu',
     'node_types' => array(),
@@ -106,11 +107,14 @@ function c21_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => 'Features',
+    'visibility' => 0,
   );
 
   $export['menu-menu-footer-places'] = array(
     'cache' => -1,
     'css_class' => '',
+    'custom' => 0,
     'delta' => 'menu-footer-places',
     'module' => 'menu',
     'node_types' => array(),
@@ -136,6 +140,8 @@ function c21_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views-9cf22433e0efbd8b206c8e4c2edb177c'] = array(
