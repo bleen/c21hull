@@ -1,0 +1,60 @@
+.page-agents {
+  .agent {
+    padding: $spacing_default;
+    text-align: center;
+    margin-bottom: 2 * $spacing_default;
+    @include background(linear-gradient(top, lighten($color_gold_light, 15%), $color_gold_light));
+
+    @include breakpoint($bp500 $bp650) {
+      @include float-span(3);
+      &:nth-child(2n) {
+        @include float-span(3, 'last');
+      }
+      &:nth-child(2n + 1) {
+        clear: both;
+      }
+    }
+    @include breakpoint($bp650) {
+      @include float-span(2);
+      &:nth-child(3n) {
+        @include float-span(2, 'last');
+      }
+      &:nth-child(3n + 1) {
+        clear: both;
+      }
+    }
+
+    .full-name {
+      font-size: .9 * $font_size_base;
+      font-weight: bold;
+    }
+    .more-link {
+      display: block;
+      margin-top: $spacing_default;
+      color: $color_green;
+      font-size: .8em;
+    }
+    .phone-number {
+      display: block;
+      font-size: 1.2em;
+      font-weight: bold;
+      padding-bottom: $spacing_default;
+    }
+  }
+  .view-display-id-owners {
+    .headshot img {
+      width: 100%;
+    }
+
+    .agent {
+      @include breakpoint($bp500) {
+        &:first-child {
+          @include float-span(3, 'first');
+        }
+        &:last-child {
+          @include float-span(3, 'last');
+        }
+      }
+    }
+  }
+}

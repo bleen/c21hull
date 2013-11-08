@@ -41,6 +41,7 @@ sup {
 
 #main {
   margin-top: 1em;
+  @include clearfix();
 }
 
 #page-title {
