@@ -199,6 +199,11 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'agent';
   $ds_fieldsetting->view_mode = 'micro_teaser';
   $ds_fieldsetting->settings = array(
+    'meet_our_agents' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -1683,6 +1688,7 @@ function c21_listings_ds_layout_settings_info() {
         1 => 'title',
         2 => 'field_agent_phone_number',
         3 => 'field_agent_email',
+        4 => 'meet_our_agents',
       ),
     ),
     'fields' => array(
@@ -1690,6 +1696,7 @@ function c21_listings_ds_layout_settings_info() {
       'title' => 'ds_content',
       'field_agent_phone_number' => 'ds_content',
       'field_agent_email' => 'ds_content',
+      'meet_our_agents' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
