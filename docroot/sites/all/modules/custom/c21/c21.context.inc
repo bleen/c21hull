@@ -33,6 +33,8 @@ function c21_context_default_contexts() {
         '~user/*' => '~user/*',
         '~batch' => '~batch',
         '~batch/*' => '~batch/*',
+        '~landing' => '~landing',
+        '~landing/*' => '~landing/*',
         '~<front>' => '~<front>',
       ),
     ),
