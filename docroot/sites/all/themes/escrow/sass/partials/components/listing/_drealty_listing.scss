@@ -23,4 +23,19 @@
     }
     margin-right: 0;
   }
+
+  .lt-ie9 & {
+    @include clearfix();
+    @include float-span(4);
+    margin-right: 0;
+    img {
+      float: left;
+      width: 49%;
+      margin-bottom: $spacing_default;
+
+      &:nth-child(odd) {
+        margin-right: 2%;
+      }
+    }
+  }
 }

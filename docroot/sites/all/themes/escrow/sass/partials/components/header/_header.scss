@@ -65,21 +65,7 @@
   }
 
   .lt-ie9 & {
-    .office-phone {
-      font-size: $font_size_title;
-    }
-
     @include float-span(4, 'last');
-
-    li:first-child {
-      margin: 9 * $spacing_default 0 0 0;
-    }
-    li {
-      width: 50%;
-      float: left;
-      margin: 9 * $spacing_default 0 0 0;
-    }
-
     font-size: 1.05 * $font_size_base;
     .office-phone {
       font-size: 1.05 * $font_size_title;
@@ -89,6 +75,8 @@
       margin: 5 * $spacing_default 0 0 0;
     }
     li {
+      width: 50%;
+      float: left;
       margin: 5 * $spacing_default 0 0 0;
     }
   }

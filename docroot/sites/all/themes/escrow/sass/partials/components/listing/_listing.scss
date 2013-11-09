@@ -26,6 +26,10 @@
     @include background-image(linear-gradient(left, rgba(white,0) 0%,rgba(white,0) 33%,rgba(white,0.75) 66%,rgba(white,0.75) 100%));
     text-align: right;
     font-weight: bold;
+
+    .lt-ie9 & {
+      background: #fff;
+    }
   }
 
   #listing-map-wrapper {
@@ -166,6 +170,11 @@
         width: 150%;
       }
       @include breakpoint($bp800) {
+        right: 0;
+        left: auto;
+      }
+
+      .lt-ie9 & {
         right: 0;
         left: auto;
       }
@@ -311,7 +320,34 @@
         }
       }
     }
+  }
 
+  .lt-ie9 & {
+    .group-listing-details {
+      @include float-span(4);
+    }
+    .group-listing-statistics {
+      margin: 3*$spacing_default 0 $spacing_default 0;
+      @include float-span(2, 'last');
+    }
+    .group-listing-location-details {
+      @include float-span(2, 'last');
+    }
+    .listing-office {
+      @include float-span(2, 'last');
+    }
+    #listing-map-wrapper {
+      @include float-span(2, 'last');
+    }
+    .agents {
+      @include float-span(2, 'last');
+      .agent {
+        .agents-title {
+          font-weight: bold;
+          font-size: .7 * $font_size_base;
+        }
+      }
+    }
   }
 
 }
@@ -329,6 +365,15 @@
   @include breakpoint($bp1075) {
     .views-row {
       clear: none;
+    }
+  }
+
+  .lt-ie9 & {
+    margin: 0 0 0 2em;
+    @include clearfix();
+
+    .pager {
+      clear: both;
     }
   }
 }

@@ -34,4 +34,12 @@
       display: none;
     }
   }
+
+  .lt-ie9 & {
+    @include float-span(4, 'last');
+
+    header h2 {
+      display: none;
+    }
+  }
 }

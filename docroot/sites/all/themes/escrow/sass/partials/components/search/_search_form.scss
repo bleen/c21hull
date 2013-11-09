@@ -35,6 +35,12 @@
       width: 700px;
       margin-left: -350px;
     }
+
+    .lt-ie9 & {
+      bottom: -250px;
+      width: 700px;
+      margin-left: -350px;
+    }
   }
 
   h2 {
@@ -117,6 +123,10 @@
   @include breakpoint($bp800) {
     font-size: .75 * $font_size_base;
   }
+
+  .lt-ie9 & {
+    font-size: .75 * $font_size_base;
+  }
 }
 
 .search-featured-wrap .search-form {
@@ -142,10 +152,34 @@
 
   @include breakpoint($bp1075) {
   }
+
+  .lt-ie9 & {
+    border: none;
+    background: #fff;
+    position: static;
+    bottom: 0px;
+    left: auto;
+    width: auto;
+    margin-left: auto;
+    @include box-shadow(0 0 0);
+
+    .views-exposed-widget:except(.views-submit-button) {
+      font-size: .65 * $font_size_base;
+    }
+    @include float-span(2, 'first');
+    background: none;
+  }
 }
 
 .front .search-form {
   @include breakpoint($bp800) {
+    padding-top: 0px;
+    h2 {
+      display: none;
+    }
+  }
+
+  .lt-ie9 & {
     padding-top: 0px;
     h2 {
       display: none;
