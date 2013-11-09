@@ -324,23 +324,25 @@
 
   .lt-ie9 & {
     .group-listing-details {
-      @include float-span(4);
+      @include float-span(6);
+      @include clearfix();
     }
     .group-listing-statistics {
       margin: 3*$spacing_default 0 $spacing_default 0;
-      @include float-span(2, 'last');
+      clear: both;
     }
     .group-listing-location-details {
-      @include float-span(2, 'last');
+      clear: both;
     }
-    .listing-office {
-      @include float-span(2, 'last');
+    .featured-photo {
+      display: block;
+      margin: 0 auto;
     }
     #listing-map-wrapper {
-      @include float-span(2, 'last');
+      clear: both;
     }
     .agents {
-      @include float-span(2, 'last');
+
       .agent {
         .agents-title {
           font-weight: bold;
