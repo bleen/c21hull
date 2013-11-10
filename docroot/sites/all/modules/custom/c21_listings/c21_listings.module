@@ -146,6 +146,65 @@ function c21_listings_contextual_links_view_alter(&$element, &$items) {
 }
 
 /**
+ * Implements hook_token_info().
+ */
+function c21_listings_token_info() {
+  $info = array();
+
+  // Add any new tokens.
+  $info['tokens']['c21_listings']['sellers'] = t('The sellers of this listing.');
+  $info['tokens']['c21_listings']['price'] = t('The listing price of this listing.');
+  $info['tokens']['c21_listings']['period'] = t('The time frame of this listing.');
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function c21_listings_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+
+  if ($type == 'c21_listings') {
+    $wrapper = entity_metadata_wrapper('node', $data['node']);
+
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'sellers':
+          $seller_names = array();
+          $sellers = $wrapper->field_listing_seller->value();
+          $sellers = !is_array($sellers) ? array($sellers) : $sellers;
+          foreach ($sellers as $seller) {
+            $firstname = $seller->field_seller_first_name[LANGUAGE_NONE][0]['safe_value'];
+            $lastname = $seller->field_seller_last_name[LANGUAGE_NONE][0]['safe_value'];
+            $seller_names[] = $firstname . ' ' . $lastname;
+          }
+
+          $new = implode(' & ', $seller_names);
+          $replacements[$original] = $new;
+          break;
+
+        case 'price':
+          $new = '$' . number_format($wrapper->field_listing_list_price->value(), 2);
+          $replacements[$original] = $new;
+          break;
+
+        case 'period':
+          $dates = $wrapper->field_listing_list_date->value();
+          $months = (int)abs((strtotime($dates['value']) - strtotime($dates['value2'])) / (60*60*24*30));
+
+          $new = $months . ' months, ending on ' . date('F n, Y', strtotime($dates['value2']));
+          $replacements[$original] = $new;
+          break;
+      }
+    }
+  }
+
+  // Return the replacements.
+  return $replacements;
+}
+
+/**
  * Implements hook_field_formatter_info().
  */
 function c21_listings_field_formatter_info() {
@@ -231,7 +290,7 @@ function c21_listings_field_default_field_bases_alter(&$fields) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function c21_listings_form_agent_node_form_alter(&$form, $fom_state) {
+function c21_listings_form_agent_node_form_alter(&$form, &$form_state) {
   // Set a placeholder for the name field.
   $form['title']['#placeholder'] = t('Roy B. Hull, Owner');
 }

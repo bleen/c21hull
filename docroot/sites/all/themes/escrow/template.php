@@ -269,7 +269,7 @@ function _escrow_fine_print($node) {
       '#markup' => '<h1 class="title">' . $fine_print_title[0]['safe_value'] . '</h1>',
     );
     $fine_print['body'] = array(
-      '#markup' => $fine_print_body[0]['value'],
+      '#markup' => token_replace($fine_print_body[0]['value'], array('node' => $node)),
     );
 
     $fine_print['agent'] = array(
