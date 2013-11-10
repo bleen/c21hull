@@ -146,6 +146,44 @@ function c21_listings_contextual_links_view_alter(&$element, &$items) {
 }
 
 /**
+ * Implements hook_cron().
+ */
+function c21_listings_cron() {
+  $queue = DrupalQueue::get('c21ListingExpired');
+  $last_cron_run = variable_get('c21_listings_last_cron_run', 0);
+
+  if (time() - $last_cron_run > 60*60*24) {
+    $query = new EntityFieldQuery;
+    $listings = $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'listing')
+      ->propertyCondition('status', 1)
+      ->fieldCondition('field_listing_list_date', 'value2', date("Y-m-d"), '<=')
+      ->execute();
+
+    if (!empty($listings['node'])) {
+      foreach ($listings['node'] as $nid => $info) {
+        $queue->createItem($nid);
+      }
+    }
+
+    variable_set('c21_listings_last_cron_run', time());
+  }
+}
+
+/**
+ * Implements hook_cron_queue_info().
+ */
+function c21_listings_cron_queue_info() {
+  $queues = array();
+  $queues['c21ListingExpired'] = array(
+    'worker callback' => 'c21_listing_expire_listing',
+    'time' => 60,
+  );
+
+  return $queues;
+}
+
+/**
  * Implements hook_token_info().
  */
 function c21_listings_token_info() {
@@ -489,6 +527,19 @@ function c21_listings_workbench_links($mode = 'common') {
   }
 
   return $output;
+}
+
+/**
+ * Set the provided listing to unpublished.
+ *
+ * @param int $nid
+ *   The node id of the listing to be expired.
+ */
+function c21_listing_expire_listing($nid) {
+  $listing = node_load($nid);
+//  $listing->field_listing_status[LANGUAGE_NONE][0] = 'inactive';
+  $listing->status = 0;
+  node_save($listing);
 }
 
 /**
