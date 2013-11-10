@@ -47,7 +47,7 @@ function c21_default_fe_block_settings() {
 
   $export['footer_sitemap-footer_sitemap'] = array(
     'cache' => 4,
-    'css_class' => 'footer-links',
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'footer_sitemap',
     'module' => 'footer_sitemap',
@@ -107,7 +107,7 @@ function c21_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Features',
+    'title' => '',
     'visibility' => 0,
   );
 
