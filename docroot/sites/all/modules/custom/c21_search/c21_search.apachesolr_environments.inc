@@ -19,48 +19,16 @@ function c21_search_apachesolr_environments() {
   $environment->conf = array(
     'apachesolr_index_last' => array(
       'drealty_listing' => array(
-        'last_changed' => '1383269082',
-        'last_entity_id' => '5863',
-      ),
-      'drealty_listing_type' => array(
-        'last_changed' => 0,
-        'last_entity_id' => 0,
-      ),
-      'drealty_connection_entity' => array(
-        'last_changed' => 0,
-        'last_entity_id' => 0,
-      ),
-      'field_collection_item' => array(
-        'last_changed' => 0,
-        'last_entity_id' => 0,
+        'last_changed' => '1384127632',
+        'last_entity_id' => '6206',
       ),
       'node' => array(
-        'last_changed' => '1383268989',
-        'last_entity_id' => '8338',
-      ),
-      'redirect' => array(
-        'last_changed' => 0,
-        'last_entity_id' => 0,
-      ),
-      'file' => array(
-        'last_changed' => 0,
-        'last_entity_id' => 0,
-      ),
-      'taxonomy_term' => array(
-        'last_changed' => 0,
-        'last_entity_id' => 0,
-      ),
-      'taxonomy_vocabulary' => array(
-        'last_changed' => 0,
-        'last_entity_id' => 0,
-      ),
-      'user' => array(
-        'last_changed' => 0,
-        'last_entity_id' => 0,
+        'last_changed' => '1384127632',
+        'last_entity_id' => '9162',
       ),
     ),
-    'apachesolr_index_updated' => 1383657366,
-    'apachesolr_last_optimize' => 1383615539,
+    'apachesolr_index_updated' => 1384129541,
+    'apachesolr_last_optimize' => 1384106077,
   );
   $environment->index_bundles = array(
     'drealty_listing' => array(
