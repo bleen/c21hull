@@ -32,6 +32,22 @@ function c21_theme(){
 }
 
 /**
+ * Implements hook_menu().
+ */
+function c21_menu() {
+  $items['admin/workbench/content/mls'] = array(
+    'title' => 'MLS Listings',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/content/drealty_listings'),
+    'access callback' => TRUE,
+    'weight' => 20,
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_menu_alter().
  */
 function c21_menu_alter(&$items) {
