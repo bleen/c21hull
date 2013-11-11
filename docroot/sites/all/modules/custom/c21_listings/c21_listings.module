@@ -187,14 +187,30 @@ function c21_listings_cron_queue_info() {
  * Implements hook_token_info().
  */
 function c21_listings_token_info() {
-  $info = array();
+  $type = array(
+    'name' => t('Century21 Listings'),
+    'description' => t('Tokens related to Century21 Listings.')
+  );
 
-  // Add any new tokens.
-  $info['tokens']['c21_listings']['sellers'] = t('The sellers of this listing.');
-  $info['tokens']['c21_listings']['price'] = t('The listing price of this listing.');
-  $info['tokens']['c21_listings']['period'] = t('The time frame of this listing.');
+  $tokens = array(
+    'sellers' => array(
+      'name' => t("The sellers of this listing."),
+      'description' => t("The sellers of this listing."),
+    ),
+    'price' => array(
+      'name' => t("The listing price of this listing."),
+      'description' => t("The listing price of this listing."),
+    ),
+    'period' => array(
+      'name' => t("The time frame of this listing."),
+      'description' => t("The time frame of this listing."),
+    ),
+  );
 
-  return $info;
+  return array(
+    'types' => array('c21_listings' => $type),
+    'tokens' => array('c21_listings' => $tokens),
+  );
 }
 
 /**
