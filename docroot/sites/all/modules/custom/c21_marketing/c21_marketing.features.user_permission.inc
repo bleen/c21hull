@@ -25,10 +25,7 @@ function c21_marketing_user_default_permissions() {
   // Exported permission: 'access user contact forms'.
   $permissions['access user contact forms'] = array(
     'name' => 'access user contact forms',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'manager' => 'manager',
-    ),
+    'roles' => array(),
     'module' => 'contact',
   );
 
@@ -37,7 +34,6 @@ function c21_marketing_user_default_permissions() {
     'name' => 'administer contact forms',
     'roles' => array(
       'administrator' => 'administrator',
-      'manager' => 'manager',
     ),
     'module' => 'contact',
   );
