@@ -95,6 +95,9 @@ MASKED_INPUT
     never be loaded.
       PATCH: https://drupal.org/node/1555020
 
+  * There is a drush error "Use of undefined constant MASKEDINPUT_DOWNLOAD_URI"
+      PATCH: https://drupal.org/comment/8162867#comment-8162867
+
 NODE_EMBED
   * Occasionally there is an "Undefined variable" error. This fixes it.
       PATCH: https://drupal.org/node/1947006#comment-7194922
