@@ -209,6 +209,7 @@ $output: 'isolation';
     .fine-print {
       page-break-before: always;
       font-size: 1.07em;
+      position: relative;
 
       h1 {
         font-size: 1.5em;
@@ -232,6 +233,13 @@ $output: 'isolation';
         p {
           text-align: center;
         }
+      }
+      .listing_id {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: $color_gray_dark;
+        font-style: italic;
       }
     }
 

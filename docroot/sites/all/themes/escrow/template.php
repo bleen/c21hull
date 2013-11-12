@@ -258,8 +258,10 @@ function _escrow_office_info() {
 function _escrow_fine_print($node) {
   $fine_print = array();
 
-  if (!empty($node->field_listing_type)) {
-    $listing_type = node_load($node->field_listing_type[LANGUAGE_NONE][0]['target_id']);
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $type = $wrapper->field_listing_type->value();
+  if (!empty($type)) {
+    $listing_type = node_load($type->nid);
     $fine_print_title = field_get_items('node', $listing_type, 'field_listing_type_title');
     $fine_print_body = field_get_items('node', $listing_type, 'field_listing_type_fine_print');
 
@@ -281,6 +283,9 @@ function _escrow_fine_print($node) {
       '#markup' => '<span class="date">Date: </span><span>&nbsp</span><span>&nbsp</span>',
       '#theme_wrappers' => array('container'),
       '#attributes' => array('class' => array('signature seller')),
+    );
+    $fine_print['listing_id'] = array(
+      '#markup' => '<aside class="listing_id">' . $wrapper->field_listing_id_prefix->value() . '-' . $node->nid . '</aside>',
     );
   }
 

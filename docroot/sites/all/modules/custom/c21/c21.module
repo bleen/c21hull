@@ -52,6 +52,7 @@ function c21_menu() {
  */
 function c21_menu_alter(&$items) {
   $items['node']['access callback'] = FALSE;
+  $items['node/add']['access callback'] = FALSE;
   $items['admin/structure/taxonomy']['access callback'] = FALSE;
 }
 
