@@ -4,8 +4,7 @@
   padding-top: $spacing_large;
   padding-left: $spacing_default;
   @include background(
-    url("../images/lake.jpg") no-repeat center left,
-    linear-gradient(top, $color_gray_light, $color_gray)
+    url("../images/lake.jpg") no-repeat center left
   );
   border-bottom: 3px solid $color_gold;
 
