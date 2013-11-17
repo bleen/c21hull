@@ -233,8 +233,8 @@ function c21_listings_tokens($type, $tokens, array $data = array(), array $optio
           $sellers = $wrapper->field_listing_seller->value();
           $sellers = !is_array($sellers) ? array($sellers) : $sellers;
           foreach ($sellers as $seller) {
-            $firstname = $seller->field_seller_first_name[LANGUAGE_NONE][0]['safe_value'];
-            $lastname = $seller->field_seller_last_name[LANGUAGE_NONE][0]['safe_value'];
+            $firstname = isset($seller->field_seller_first_name[LANGUAGE_NONE]) ? $seller->field_seller_first_name[LANGUAGE_NONE][0]['safe_value'] : '';
+            $lastname = isset($seller->field_seller_last_name[LANGUAGE_NONE]) ? $seller->field_seller_last_name[LANGUAGE_NONE][0]['safe_value'] : '';
             $seller_names[] = $firstname . ' ' . $lastname;
           }
 
