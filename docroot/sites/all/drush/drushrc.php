@@ -133,7 +133,6 @@ $options['environments'] = array(
       'ds_devel' => 1,
       'metatag_ui' => 1,
       'search_krumo' => 1,
-      'simpletest' => 1,
     ),
     // The list of variables to configure.
     'settings' => array(
