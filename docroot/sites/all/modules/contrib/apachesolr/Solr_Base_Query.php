@@ -128,7 +128,7 @@ class SolrFilterSubQuery {
     // If the field value contains a colon or a space, wrap it in double quotes,
     // unless it is a range query or is already wrapped in double quotes or
     // parentheses.
-    if (preg_match('/[ :]/', $filter['#value']) && !preg_match('/^[\[\{]\S+ TO \S+[\]\}]/', $filter['#value']) && !preg_match('/^["\(].*["\)]$/', $filter['#value'])) {
+    if (preg_match('/[ :]/', $filter['#value']) && !preg_match('/^[\[\{]\S+ TO \S+[\]\}]$/', $filter['#value']) && !preg_match('/^["\(].*["\)]$/', $filter['#value'])) {
       $filter['#value'] = '"' . $filter['#value'] . '"';
     }
     return $prefix . $filter['#name'] . ':' . $filter['#value'];
