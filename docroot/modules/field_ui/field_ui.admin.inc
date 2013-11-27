@@ -78,8 +78,7 @@ function field_ui_inactive_message($entity_type, $bundle) {
  */
 function _field_ui_reduce_order($array, $a) {
   $array = !isset($array) ? array() : $array;
-
-  if (!empty($a['name'])) {
+  if ($a['name']) {
     $array[] = $a['name'];
   }
   if (!empty($a['children'])) {
