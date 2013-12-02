@@ -32,7 +32,8 @@ function empty_fields_field_formatter_info_alter(&$info) {
  *   The emptyFieldHandler object for the instance's entity.
  */
 function empty_fields_load_plugin($instance, $view_mode_settings) {
-  static $plugins;
+  $plugins = &drupal_static(__FUNCTION__, array());
+
   $field_name = isset($instance['field_name']) ? $instance['field_name'] : 'custom';
   $entity_type = isset($instance['entity_type']) ? $instance['entity_type'] : 'custom';
   $bundle = isset($instance['bundle']) ? $instance['bundle'] : 'custom';

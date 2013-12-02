@@ -24,7 +24,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -91,7 +91,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 0,
@@ -131,7 +131,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -202,7 +202,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 0,
@@ -252,7 +252,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'addressfield',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_handlers' => array(
             0 => 'address',
           ),
@@ -307,7 +307,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -377,7 +377,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
@@ -418,7 +418,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -488,7 +488,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -558,7 +558,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
@@ -609,7 +609,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'addressfield',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_handlers' => array(
             0 => 'address',
           ),
@@ -623,7 +623,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'addressfield',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_handlers' => array(
             0 => 'address',
           ),
@@ -676,7 +676,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 5,
@@ -746,7 +746,7 @@ function c21_listings_field_default_field_instances() {
           'description' => TRUE,
           'edit' => 'Edit',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -761,7 +761,7 @@ function c21_listings_field_default_field_instances() {
           'description' => 0,
           'edit' => '',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'teaser',
         ),
         'type' => 'field_collection_view',
@@ -800,7 +800,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -810,7 +810,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -856,7 +856,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 6,
@@ -902,7 +902,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -912,7 +912,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -958,7 +958,7 @@ function c21_listings_field_default_field_instances() {
           'description' => TRUE,
           'edit' => 'Edit',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -973,7 +973,7 @@ function c21_listings_field_default_field_instances() {
           'description' => 0,
           'edit' => '',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'teaser',
         ),
         'type' => 'field_collection_view',
@@ -1012,7 +1012,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -1022,7 +1022,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -1079,7 +1079,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 3,
@@ -1089,7 +1089,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 3,
@@ -1127,7 +1127,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -1137,7 +1137,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -1208,7 +1208,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 1,
@@ -1218,7 +1218,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 1,
@@ -1256,7 +1256,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 3,
@@ -1266,7 +1266,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 3,
@@ -1282,7 +1282,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'more_link' => 1,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -1351,7 +1351,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 13,
@@ -1367,7 +1367,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'c21_listings',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'email',
         'weight' => 3,
@@ -1514,7 +1514,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'c21_listings',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'us_phone_number',
         'weight' => 2,
@@ -1524,7 +1524,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'c21_listings',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'us_phone_number',
         'weight' => 2,
@@ -1534,7 +1534,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'c21_listings',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'us_phone_number',
         'weight' => 2,
@@ -1544,7 +1544,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'c21_listings',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'us_phone_number',
         'weight' => 2,
@@ -1614,7 +1614,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => '',
           'image_style' => 'c21square',
         ),
@@ -1626,7 +1626,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => '',
           'image_style' => 'c21square',
         ),
@@ -1638,7 +1638,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => 'content',
           'image_style' => 'c21square',
         ),
@@ -1650,7 +1650,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => 'content',
           'image_style' => 'c21square',
         ),
@@ -1842,7 +1842,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -1856,7 +1856,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -1876,7 +1876,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -1890,7 +1890,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -1947,7 +1947,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1958,7 +1958,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'links' => 0,
           'view_mode' => 'micro_teaser',
         ),
@@ -1976,7 +1976,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'link' => 0,
         ),
         'type' => 'entityreference_label',
@@ -1987,7 +1987,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'link' => 0,
         ),
         'type' => 'entityreference_label',
@@ -2040,7 +2040,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 32,
@@ -2062,7 +2062,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -2074,7 +2074,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -2129,7 +2129,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 58,
@@ -2206,7 +2206,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 57,
@@ -2283,7 +2283,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 56,
@@ -2360,7 +2360,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 55,
@@ -2437,7 +2437,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 59,
@@ -2514,7 +2514,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 60,
@@ -2591,7 +2591,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 64,
@@ -2668,7 +2668,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 63,
@@ -2745,7 +2745,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 54,
@@ -2823,7 +2823,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -2837,7 +2837,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 1,
           'thousand_separator' => ',',
@@ -2869,7 +2869,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -2883,7 +2883,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 1,
           'thousand_separator' => ',',
@@ -2928,7 +2928,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 61,
@@ -3005,7 +3005,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 46,
@@ -3082,7 +3082,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 45,
@@ -3159,7 +3159,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 87,
@@ -3236,7 +3236,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 85,
@@ -3313,7 +3313,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 91,
@@ -3390,7 +3390,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 88,
@@ -3467,7 +3467,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 81,
@@ -3544,7 +3544,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 67,
@@ -3621,7 +3621,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 80,
@@ -3698,7 +3698,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 76,
@@ -3775,7 +3775,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 78,
@@ -3852,7 +3852,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 90,
@@ -3929,7 +3929,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 62,
@@ -4006,7 +4006,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 83,
@@ -4084,7 +4084,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -4098,7 +4098,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -4130,7 +4130,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 1,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -4144,7 +4144,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -4189,7 +4189,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 98,
@@ -4217,7 +4217,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
         'weight' => 32,
@@ -4275,7 +4275,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 107,
@@ -4345,7 +4345,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'field_collection',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
@@ -4415,7 +4415,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -4502,7 +4502,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -4583,7 +4583,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 3,
@@ -4593,7 +4593,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 7,
@@ -4621,7 +4621,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 5,
@@ -4699,7 +4699,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 103,
@@ -4709,7 +4709,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 10,
@@ -4731,7 +4731,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 30,
@@ -4787,7 +4787,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 75,
@@ -4864,7 +4864,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 77,
@@ -4941,7 +4941,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 79,
@@ -5018,7 +5018,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 74,
@@ -5095,7 +5095,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 73,
@@ -5172,7 +5172,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 68,
@@ -5249,7 +5249,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 95,
@@ -5277,7 +5277,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 36,
@@ -5332,7 +5332,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -5358,7 +5358,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -5372,7 +5372,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -5429,7 +5429,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 70,
@@ -5506,7 +5506,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 72,
@@ -5583,7 +5583,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 71,
@@ -5659,7 +5659,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -5671,7 +5671,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => '',
           'image_style' => 'c21wide',
         ),
@@ -5683,7 +5683,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => 'content',
           'image_style' => 'c21wide',
         ),
@@ -5707,7 +5707,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -5719,7 +5719,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => 'content',
           'image_style' => 'c21wide',
         ),
@@ -5796,7 +5796,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 115,
@@ -5818,7 +5818,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -5830,7 +5830,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -5884,7 +5884,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 34,
@@ -5906,7 +5906,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -5918,7 +5918,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -5973,7 +5973,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 31,
@@ -5983,7 +5983,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
@@ -5999,7 +5999,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -6011,7 +6011,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -6070,7 +6070,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -6147,7 +6147,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 28,
@@ -6169,7 +6169,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -6181,7 +6181,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -6236,7 +6236,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'c21_listings',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'listing_id',
         'weight' => 0,
@@ -6258,7 +6258,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'c21_listings',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'listing_id',
         'weight' => 0,
@@ -6268,7 +6268,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'c21_listings',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'listing_id',
         'weight' => 0,
@@ -6350,7 +6350,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 29,
@@ -6372,7 +6372,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -6384,7 +6384,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -6439,7 +6439,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 92,
@@ -6516,7 +6516,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 93,
@@ -6593,7 +6593,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 94,
@@ -6671,7 +6671,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -6748,7 +6748,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 89,
@@ -6825,7 +6825,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 82,
@@ -6902,7 +6902,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 84,
@@ -6979,7 +6979,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 105,
@@ -7084,7 +7084,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -7176,7 +7176,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -7190,7 +7190,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -7204,7 +7204,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 1,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -7218,7 +7218,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -7232,7 +7232,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -7246,7 +7246,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 1,
           'scale' => 2,
           'thousand_separator' => ',',
@@ -7260,7 +7260,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 1,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -7305,7 +7305,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 86,
@@ -7382,7 +7382,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 69,
@@ -7459,7 +7459,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 66,
@@ -7536,7 +7536,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 48,
@@ -7613,7 +7613,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 47,
@@ -7690,7 +7690,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 44,
@@ -7767,7 +7767,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 11,
@@ -7795,7 +7795,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
         'weight' => 5,
@@ -7850,7 +7850,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -7927,7 +7927,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 97,
@@ -7955,7 +7955,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
         'weight' => 31,
@@ -8009,7 +8009,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 5,
@@ -8019,7 +8019,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -8039,7 +8039,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -8049,7 +8049,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -8065,7 +8065,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -8109,7 +8109,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 102,
@@ -8137,7 +8137,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -8218,7 +8218,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 53,
@@ -8295,7 +8295,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 50,
@@ -8372,7 +8372,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 51,
@@ -8449,7 +8449,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 49,
@@ -8526,7 +8526,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 52,
@@ -8603,7 +8603,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 65,
@@ -8680,7 +8680,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 53,
@@ -8757,7 +8757,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 50,
@@ -8834,7 +8834,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 51,
@@ -8911,7 +8911,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 113,
@@ -8933,7 +8933,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -8945,7 +8945,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -8999,7 +8999,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 40,
@@ -9021,7 +9021,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'more_link' => FALSE,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -9038,7 +9038,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'smart_trim',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'more_link' => FALSE,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
@@ -9116,7 +9116,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -9128,7 +9128,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => '',
           'image_style' => 'c21wide',
         ),
@@ -9146,7 +9146,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'image_link' => '',
           'image_style' => 'c21wide',
         ),
@@ -9240,7 +9240,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -9312,7 +9312,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -9389,7 +9389,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 37,
@@ -9399,7 +9399,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 11,
@@ -9415,7 +9415,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -9427,7 +9427,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 4,
@@ -9443,7 +9443,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 7,
@@ -9489,7 +9489,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 99,
@@ -9517,7 +9517,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
         'weight' => 33,
@@ -9575,7 +9575,7 @@ function c21_listings_field_default_field_instances() {
           'description' => TRUE,
           'edit' => 'Edit',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -9608,7 +9608,7 @@ function c21_listings_field_default_field_instances() {
           'description' => 0,
           'edit' => '',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'view_mode' => 'teaser',
         ),
         'type' => 'field_collection_view',
@@ -9659,7 +9659,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 26,
@@ -9681,7 +9681,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -9693,7 +9693,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -9751,7 +9751,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 117,
@@ -9773,7 +9773,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -9785,7 +9785,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -9840,7 +9840,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -9866,7 +9866,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -9880,7 +9880,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -9938,7 +9938,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -9964,7 +9964,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -9978,7 +9978,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -10036,7 +10036,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',
@@ -10062,7 +10062,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -10076,7 +10076,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -10096,7 +10096,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => 0,
           'scale' => 0,
           'thousand_separator' => ',',
@@ -10147,7 +10147,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 106,
@@ -10221,7 +10221,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 6,
@@ -10295,7 +10295,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 100,
@@ -10323,7 +10323,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
         'weight' => 35,
@@ -10395,7 +10395,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 116,
@@ -10423,7 +10423,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -10477,7 +10477,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 4,
@@ -10487,7 +10487,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 6,
@@ -10509,7 +10509,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 1,
           'taxonomy_term_separator' => ', ',
         ),
@@ -10569,7 +10569,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 96,
@@ -10597,7 +10597,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
         'weight' => 29,
@@ -10670,7 +10670,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -10696,7 +10696,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -10710,7 +10710,7 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'decimal_separator' => '.',
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'prefix_suffix' => TRUE,
           'scale' => 2,
           'thousand_separator' => ' ',
@@ -10767,7 +10767,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 104,
@@ -10777,7 +10777,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 9,
@@ -10799,7 +10799,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 34,
@@ -10859,7 +10859,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -10936,7 +10936,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'link_default',
         'weight' => 16,
@@ -11027,7 +11027,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 35,
@@ -11049,7 +11049,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -11061,7 +11061,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -11116,7 +11116,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 27,
@@ -11138,7 +11138,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -11150,7 +11150,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -11208,7 +11208,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 33,
@@ -11230,7 +11230,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -11242,7 +11242,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
@@ -11296,7 +11296,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -11311,7 +11311,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_type' => 'c21_date_type_very_short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -11332,7 +11332,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_type' => 'c21_date_type_very_short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -11347,7 +11347,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'date',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
           'format_type' => 'c21_date_type_very_short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -11417,7 +11417,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 8,
@@ -11439,7 +11439,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 8,
@@ -11449,7 +11449,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'list_default',
         'weight' => 10,
@@ -11501,7 +11501,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -11567,7 +11567,7 @@ function c21_listings_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
+          'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
         'weight' => 0,
