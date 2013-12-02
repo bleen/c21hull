@@ -82,6 +82,8 @@ EMPTY_FIELD
   * Empty field should use drupal_static so we can reset the static variables
     when needed.
       PATCH: https://drupal.org/node/2147655#comment-8230641
+  * Not sure why, but this is needed:
+      PATCH: http://pastebin.com/KsaYVpna
 
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.

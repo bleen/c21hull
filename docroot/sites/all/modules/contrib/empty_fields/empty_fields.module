@@ -210,7 +210,7 @@ function empty_fields_field_attach_view_alter(&$output, $context) {
         case 'text_with_summary':
         case 'text_summary_or_trimmed':
           foreach (element_children($output[$field_name]) as $delta) {
-            if (!empty($output[$field_name][$delta]['#markup']) || drupal_strlen($output[$field_name][$delta]['#markup'])) {
+            if (!isset($output[$field_name][$delta]['#markup']) || !empty($output[$field_name][$delta]['#markup']) || drupal_strlen($output[$field_name][$delta]['#markup'])) {
               continue 3;
             }
           }
