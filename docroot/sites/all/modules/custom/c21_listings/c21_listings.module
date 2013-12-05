@@ -97,60 +97,17 @@ function c21_listings_node_view_alter(&$build, $type) {
   // has permissions to access admin.
   if (user_access('access administration pages') && arg(0) == 'printpdf') {
     $node = $build['#node'];
-    $entity_type = 'node';
-    $bundle = $node->type;
     $view_mode = 'print_internal';
     $langcode = $build['#language'];
     $format = $build['#print_format'];
 
-    if (!module_exists('empty_fields')) {
-      // Check every field for "empty field settings. Much of this code was
-      // taken from empty_fields_field_attach_view_alter().
+    node_build_content($node, $view_mode);
 
-      // Reset the static variable in empty_fields_load_plugin as to not confuse
-      // the print and print_internal view modes.
-      drupal_static_reset('empty_fields_load_plugin');
-
-      foreach (field_info_instances($entity_type, $bundle) as $field_name => $instance) {
-        // Do not add field that is hidden in current display.
-        $display = field_get_display($instance, $view_mode, $node);
-        if (!empty($node->{$field_name}) || $display['type'] == 'hidden' || empty($display['settings']['empty_fields_handler'])) {
-          continue;
-        }
-
-        // Some field types still render, so double check that these have content.
-        // To date, this is limited to the text fields that always save even if
-        // empty.
-        $field = field_info_field($field_name);
-
-        // But firstly, check if the user can access the field.
-        if (field_access('view', $field, $entity_type, $node) && empty($node->{$field_name})) {
-          // Provide additional context for the handlers.
-          $context['entity'] = $node;
-          $context['entity_type'] = $entity_type;
-          $context['field_name'] = $field_name;
-          $context['field'] = $field;
-          $context['instance'] = $instance;
-
-          // Load the configured plugin.
-          $plugin = empty_fields_load_plugin($instance, $display['settings']);
-
-          if ($plugin) {
-            $language = empty($context['language']) ? field_language($entity_type, $node, $field_name) : $language = $context['language'];
-            $markup = $plugin->react($context);
-            $markup = empty($markup) ? '&nbsp;' : $markup;
-            $node->{$field_name} = array($language => array(
-              array(
-                'value' => $markup,
-                'safe_value' => check_markup($markup),
-              ),
-            ));
-          }
-        }
+    foreach (element_children($build) as $field_name) {
+      if (empty($node->content[$field_name][0])) {
+        $node->content[$field_name] = $build[$field_name];
       }
     }
-
-    node_build_content($node, $view_mode);
 
     // Disable the links area
     unset($node->content['links']);
@@ -169,6 +126,118 @@ function c21_listings_node_view_alter(&$build, $type) {
       '#language' => $langcode,
       '#print_format' => $format,
     );
+  }
+}
+
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function c21_listings_entity_view_mode_alter(&$view_mode, $context) {
+  if (user_access('access administration pages') && arg(0) == 'printpdf') {
+    //$view_mode = 'print_internal';
+  }
+}
+
+/**
+ * Implements hook_field_attach_view_alter().
+ *
+ * The majority of this code was taken from
+ * empty_fields_field_attach_view_alter(). It's reworked here because we needed
+ * empty values to be rendered as well.
+ *
+ */
+function c21_listings_field_attach_view_alter(&$output, $context) {
+  // Use a different view mode for the printpdf pages if the current user
+  // has permissions to access admin.
+  if (user_access('access administration pages') && arg(0) == 'printpdf') {
+    $entity_type = $context['entity_type'];
+    $entity = $context['entity'];
+    $view_mode = 'print_internal';
+
+    if (module_exists('empty_fields')) {
+      // This is called per field without field context, so this flag prevents
+      // excessive processing on the entity.
+      if (empty($context['display']) || !empty($context['entity']->empty_fields_processed)) {
+        return;
+      }
+      $context['entity']->empty_fields_processed = TRUE;
+
+      list($id, $vid, $bundle) = entity_extract_ids($entity_type, $entity);
+      $rendered_elements = element_children($output);
+
+      foreach (field_info_instances($entity_type, $bundle) as $field_name => $instance) {
+        // Do not add field that is hidden in current display.
+        $display = field_get_display($instance, $view_mode, $entity);
+        if ($display['type'] == 'hidden') {
+          continue;
+        }
+
+        // Some field types still render, so double check that these have
+        // content. To date, this is limited to the text fields that always save
+        // even if empty.
+        $field = field_info_field($field_name);
+
+        // Provide additional context for the handlers.
+        $context['field_name'] = $field_name;
+        $context['field'] = $field;
+        $context['instance'] = $instance;
+
+        // But firstly, check if the user can access the field.
+        if (!field_access('view', $field, $entity_type, $entity)) {
+          continue;
+        }
+
+        if (in_array($field_name, $rendered_elements)) {
+          switch ($field['type']) {
+            case 'text':
+            case 'text_long':
+            case 'text_with_summary':
+            case 'text_summary_or_trimmed':
+              foreach (element_children($output[$field_name]) as $delta) {
+                if (!isset($output[$field_name][$delta]['#markup']) || !empty($output[$field_name][$delta]['#markup']) || drupal_strlen($output[$field_name][$delta]['#markup'])) {
+                  continue 3;
+                }
+              }
+              break;
+
+            default:
+              continue 2;
+
+          }
+        }
+
+        // Load the configured plugin.
+        $plugin = empty_fields_load_plugin($instance, $display['settings']);
+        if ($plugin) {
+          $markup = $plugin->react($context);
+          $markup = empty($markup) ? '' : $markup;
+          $language = empty($context['language']) ? field_language($entity_type, $entity, $field_name) : $language = $context['language'];
+          $output[$field_name] = array(
+            '#theme' => 'field',
+            '#title' => $instance['label'],
+            '#label_display' => $display['label'],
+            '#weight' => $display['weight'],
+            '#field_type' => $field['type'],
+            '#field_name' => $field_name,
+            '#bundle' => $bundle,
+            '#object' => $entity,
+            '#entity_type' => $entity_type,
+            '#view_mode' => $view_mode,
+            '#language' => $language,
+            '#formatter' => $display['type'],
+            '#items' => array(
+              0 => array('value' => $markup),
+            ),
+            0 => array(
+              '#markup' => $markup,
+            ),
+          );
+
+          // Allow plugins to alter output.
+          $plugin->alterOutput($output[$field_name], $context);
+        }
+      }
+    }
   }
 }
 

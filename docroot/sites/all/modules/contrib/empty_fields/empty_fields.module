@@ -90,8 +90,12 @@ function empty_fields_empty_fields() {
  *   Autoloading of subclasses or research module_invoke_all's cache.
  */
 function empty_fields_plugins() {
-  static $empty_fields_plugins;
-  $empty_fields_plugins = empty($efplugins) ? module_invoke_all('empty_fields') : $efplugins;
+  $empty_fields_plugins = &drupal_static(__FUNCTION__, array());
+
+  if (empty($empty_fields_plugins)) {
+    $empty_fields_plugins = module_invoke_all('empty_fields');
+  }
+
   return $empty_fields_plugins;
 }
 
