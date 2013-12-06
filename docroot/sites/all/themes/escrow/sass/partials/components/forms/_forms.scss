@@ -28,6 +28,12 @@ button {
   .form-required {
     display: none;
   }
+  .form-type-select {
+    label,
+    select {
+      display: inline;
+    }
+  }
 }
 
 #user-login {

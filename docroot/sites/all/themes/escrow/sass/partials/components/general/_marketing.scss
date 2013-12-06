@@ -13,7 +13,8 @@
   }
 
   p {
-    margin: $spacing_default;
+    margin: (2 * $spacing_default) $spacing_default;
+    line-height: 1.25em;
   }
 
   blockquote {
@@ -24,6 +25,10 @@
     margin-left: $spacing_large;
     border-bottom: 1px solid $color_gold;
     font-size: .8 * $font_size_base;
+
+    p {
+      margin: $spacing_default;
+    }
   }
 }
 
