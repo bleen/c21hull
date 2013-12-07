@@ -455,13 +455,27 @@ class SolrBaseQuery extends SolrFilterSubQuery implements DrupalSolrQueryInterfa
 
     // Anything that has a name and value
     // check if we have a : in the string
-    if (strstr($string, ':')) {
-      list($name, $value) = explode(":", $string, 2);
+    if ($filters = explode(' AND ', $string)) {
+      foreach ($filters as $filter) {
+        if (strstr($filter, ':')) {
+          list($name, $value) = explode(":", $filter, 2);
+        }
+        else {
+          $value = $string;
+        }
+        $this->addFilter($name, $value, $exclude, $local);
+      }
     }
     else {
-      $value = $string;
+      if (strstr($string, ':')) {
+        list($name, $value) = explode(":", $string, 2);
+      }
+      else {
+        $value = $string;
+      }
+      $this->addFilter($name, $value, $exclude, $local);
     }
-    $this->addFilter($name, $value, $exclude, $local);
+
     return $this;
   }
 
