@@ -40,7 +40,7 @@ class ApacheSolrFacetapiNumericRange extends FacetapiQueryType implements Faceta
     // See:  http://wiki.apache.org/solr/StatsComponent
     $query->addParam('stats', 'true');
     $query->addParam('stats.field', $this->single_key);
-    $query->addParam('stats.facet', $this->single_key);
+    #$query->addParam('stats.facet', $this->single_key);
     // Range filters don't support OR operator.
     foreach ($active as $value => $item) {
       $query->addFilter($this->single_key, $value);
