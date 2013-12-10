@@ -131,7 +131,13 @@ class SolrFilterSubQuery {
     if (preg_match('/[ :]/', $filter['#value']) && !preg_match('/^[\[\{]\S+ TO \S+[\]\}]$/', $filter['#value']) && !preg_match('/^["\(].*["\)]$/', $filter['#value'])) {
       $filter['#value'] = '"' . $filter['#value'] . '"';
     }
-    return $prefix . $filter['#name'] . ':' . $filter['#value'];
+
+    if (strpos($filter['#name'], 'field_') !== FALSE) {
+      return '-(-' . $prefix . $filter['#name'] . ':' . $filter['#value'] . ' AND ' . $prefix . $filter['#name'] . ':[* TO *])';
+    }
+    else {
+      return '(' . $prefix . $filter['#name'] . ':' . $filter['#value'] . ')';
+    }
   }
 
   /**
