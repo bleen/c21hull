@@ -3,6 +3,9 @@
 class apachesolr_views_handler_filter_numeric extends views_handler_filter_numeric {
 
   function op_between($field) {
+
+    $this->value = isset($_GET[ $this->real_field ]) ? $_GET[ $this->real_field ] : $this->value;
+
     if ($this->operator == 'between') {
       $this->query->add_where($this->options['group'], $this->real_field, array($this->value['min'], $this->value['max']), 'BETWEEN');
     }
