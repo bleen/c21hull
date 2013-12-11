@@ -1542,7 +1542,8 @@ function apachesolr_do_query(DrupalSolrQueryInterface $current_query) {
     foreach ($filters as $delta => $filter) {
       // Move the fq param if it has no local params and is not negative.
       if (!$filter['#exclude'] && !$filter['#local']) {
-        $qalt[] = '(' . $query->makeFilterQuery($filter) . ')';
+        #$qalt[] = '(' . $query->makeFilterQuery($filter) . ')';
+        $qalt[] = $query->makeFilterQuery($filter);
         $query->removeFilter($filter['#name'], $filter['#value'], $filter['#exclude']);
       }
     }
@@ -2028,7 +2029,7 @@ function apachesolr_get_indexer_table($type) {
 
 /**
  * Implements hook_entity_delete().
- * 
+ *
  * Delete the entity's entry from a fictional table of all entities.
  */
 function apachesolr_entity_delete($entity, $entity_type) {
@@ -2042,7 +2043,7 @@ function apachesolr_entity_delete($entity, $entity_type) {
 
 /**
  * Remove a specific entity from a given Solr environment.
- * 
+ *
  * @param string $env_id
  * @param string $entity_type
  * @param string $entity_id
