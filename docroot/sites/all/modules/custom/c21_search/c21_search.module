@@ -21,9 +21,9 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
         $document->addField('ts_field_listing_id', $entity->field_listing_id_prefix[LANGUAGE_NONE][0]['value'] . '-' . $entity->nid);
         $document->addField('ts_field_mls', $entity->field_listing_mls[LANGUAGE_NONE][0]['value']);
         $document->addField('fts_field_listing_list_price', round($entity->field_listing_list_price[LANGUAGE_NONE][0]['value']));
-        $document->addField('is_field_bedrooms', $entity->field_listing_bedrooms[LANGUAGE_NONE][0]['value']);
-        $document->addField('fs_field_bathrooms', $entity->field_listing_bathrooms[LANGUAGE_NONE][0]['value']);
-        $document->addField('fs_field_acreage', $entity->field_listing_acreage[LANGUAGE_NONE][0]['value']);
+        $document->addField('its_field_listing_bedrooms', $entity->field_listing_bedrooms[LANGUAGE_NONE][0]['value']);
+        $document->addField('fts_field_listing_bathrooms', $entity->field_listing_bathrooms[LANGUAGE_NONE][0]['value']);
+        $document->addField('fts_field_listing_acreage', $entity->field_listing_acreage[LANGUAGE_NONE][0]['value']);
         $document->addField('fs_field_sq_ft', $entity->field_listing_sq_ft_above[LANGUAGE_NONE][0]['value'] + $entity->field_listing_sq_ft_below[LANGUAGE_NONE][0]['value']);
       }
       break;
@@ -37,10 +37,10 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
         $document->addField('ts_field_mls', $entity->field_mls_number[LANGUAGE_NONE][0]['value']);
         $document->addField('fts_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
         if (!empty($entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value'])) {
-          $document->addField('is_field_bedrooms', $entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value']);
+          $document->addField('its_field_listing_bedrooms', $entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value']);
         }
-        $document->addField('fs_field_bathrooms', $entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value']);
-        $document->addField('fs_field_acreage', $entity->field_mls_acreage[LANGUAGE_NONE][0]['value']);
+        $document->addField('fts_field_listing_bathrooms', $entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value']);
+        $document->addField('fts_field_listing_acreage', $entity->field_mls_acreage[LANGUAGE_NONE][0]['value']);
         $document->addField('fs_field_sq_ft', $entity->field_mls_square_feet[LANGUAGE_NONE][0]['value']);
       }
       break;
