@@ -132,12 +132,7 @@ class SolrFilterSubQuery {
       $filter['#value'] = '"' . $filter['#value'] . '"';
     }
 
-    if (strpos($filter['#name'], 'field_') !== FALSE) {
-      return '-(-' . $prefix . $filter['#name'] . ':' . $filter['#value'] . ' AND ' . $prefix . $filter['#name'] . ':[* TO *])';
-    }
-    else {
-      return '(' . $prefix . $filter['#name'] . ':' . $filter['#value'] . ')';
-    }
+    return $prefix . $filter['#name'] . ':' . $filter['#value'];
   }
 
   /**

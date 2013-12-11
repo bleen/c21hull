@@ -292,12 +292,6 @@ function c21_search_views_default_views() {
     5 => 0,
     4 => 0,
   );
-  /* Filter criterion: Apache Solr: entity_type */
-  $handler->display->display_options['filters']['entity_type']['id'] = 'entity_type';
-  $handler->display->display_options['filters']['entity_type']['table'] = 'apachesolr__opensolr';
-  $handler->display->display_options['filters']['entity_type']['field'] = 'entity_type';
-  $handler->display->display_options['filters']['entity_type']['operator'] = 'word';
-  $handler->display->display_options['filters']['entity_type']['value'] = 'node drealty_listing';
 
   /* Display: Search Listings Page */
   $handler = $view->new_display('page', 'Search Listings Page', 'page');

@@ -1542,8 +1542,7 @@ function apachesolr_do_query(DrupalSolrQueryInterface $current_query) {
     foreach ($filters as $delta => $filter) {
       // Move the fq param if it has no local params and is not negative.
       if (!$filter['#exclude'] && !$filter['#local']) {
-        #$qalt[] = '(' . $query->makeFilterQuery($filter) . ')';
-        $qalt[] = $query->makeFilterQuery($filter);
+        $qalt[] = '(' . $query->makeFilterQuery($filter) . ')';
         $query->removeFilter($filter['#name'], $filter['#value'], $filter['#exclude']);
       }
     }
