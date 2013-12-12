@@ -14,7 +14,7 @@ function c21_search_default_fe_block_settings() {
 
   $export['views--exp-c21_search_listings-page'] = array(
     'cache' => -1,
-    'css_class' => 'search-form',
+    'css_class' => '',
     'custom' => 0,
     'delta' => '-exp-c21_search_listings-page',
     'module' => 'views',

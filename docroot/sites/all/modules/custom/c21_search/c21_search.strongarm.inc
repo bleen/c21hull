@@ -38,13 +38,12 @@ function c21_search_strongarm() {
   $strongarm->value = array(
     'mlt-001' => array(
       'name' => 'More like this',
-      'mlt_env_id' => 'opensolr',
       'num_results' => '5',
       'mlt_fl' => array(
         'label' => 'label',
         'taxonomy_names' => 'taxonomy_names',
-        'tm_vid_14_names' => 'tm_vid_14_names',
       ),
+      'mlt_env_id' => 'solr',
       'mlt_mintf' => '1',
       'mlt_mindf' => '1',
       'mlt_minwl' => '3',
