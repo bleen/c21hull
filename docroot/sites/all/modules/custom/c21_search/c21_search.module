@@ -42,6 +42,9 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
         $document->addField('fts_field_listing_bathrooms', $entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value']);
         $document->addField('fts_field_listing_acreage', $entity->field_mls_acreage[LANGUAGE_NONE][0]['value']);
         $document->addField('fs_field_sq_ft', $entity->field_mls_square_feet[LANGUAGE_NONE][0]['value']);
+
+        $document->addField('im_field_listing_township', $entity->field_mls_city[LANGUAGE_NONE][0]['value']);
+        $document->addField('im_field_listing_school_district', $entity->field_mls_school_district[LANGUAGE_NONE][0]['value']);
       }
       break;
   }

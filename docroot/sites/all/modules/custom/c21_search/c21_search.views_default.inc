@@ -292,6 +292,12 @@ function c21_search_views_default_views() {
     5 => 0,
     4 => 0,
   );
+  /* Filter criterion: Apache Solr: sm_field_listing_status */
+  $handler->display->display_options['filters']['sm_field_listing_status']['id'] = 'sm_field_listing_status';
+  $handler->display->display_options['filters']['sm_field_listing_status']['table'] = 'apachesolr__opensolr';
+  $handler->display->display_options['filters']['sm_field_listing_status']['field'] = 'sm_field_listing_status';
+  $handler->display->display_options['filters']['sm_field_listing_status']['operator'] = 'word';
+  $handler->display->display_options['filters']['sm_field_listing_status']['value'] = 'for_sale pending';
 
   /* Display: Search Listings Page */
   $handler = $view->new_display('page', 'Search Listings Page', 'page');
