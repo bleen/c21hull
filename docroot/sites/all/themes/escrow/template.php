@@ -306,12 +306,15 @@ function _escrow_map($entity) {
   $map = array(
     '#theme_wrappers' => array('container'),
     '#attributes' => array(
-      'id' => 'listing-map-wrapper',
+      'class' => array('listing-map-wrapper'),
     ),
     'map' => array(
       '#theme_wrappers' => array('container'),
       '#attributes' => array(
-        'id' => 'listing-map',
+        'id' => 'listing-map-' . $entity->nid,
+        'class' => array('listing-map'),
+        'data-listing-nid' => $entity->nid,
+        'data-listing-address' => !empty($map_link) ? $map_link['query']['q'] : '',
       ),
     ),
   );
@@ -320,7 +323,6 @@ function _escrow_map($entity) {
     $map['#attached'] = array(
       'js' => array(
         '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false' => array('type' => 'external', 'scope' => 'footer', 'weight' => 1),
-        'var listing_address="' . $map_link['query']['q'] . '";' => array('type' => 'inline', 'scope' => 'footer', 'weight' => 5),
         drupal_get_path('module', 'c21_listings') . '/js/c21_listings_maps.js' => array('type' => 'file', 'scope' => 'footer', 'weight' => 6),
       ),
     );

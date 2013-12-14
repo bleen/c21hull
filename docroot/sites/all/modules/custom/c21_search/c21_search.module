@@ -158,6 +158,7 @@ function c21_search_form_validate($form, &$form_state) {
 
 }
 
+
 /**
  * Returns a array of taxonomy terms for use with #options in a form field.
  */

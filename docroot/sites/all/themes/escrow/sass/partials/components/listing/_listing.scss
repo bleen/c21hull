@@ -32,7 +32,7 @@
     }
   }
 
-  #listing-map-wrapper {
+  .listing-map-wrapper {
     height: 300px;
     padding: $spacing_default;
     margin: $spacing_default;
@@ -45,7 +45,7 @@
       max-width: none;
     }
 
-    #listing-map {
+    .listing-map {
       min-height: 100%;
       background: url("../images/loading.gif") center center no-repeat;
       background-size: 50%;
@@ -274,7 +274,7 @@
       margin: $spacing_default 0;
       @include float-span(3, 'last');
     }
-    #listing-map-wrapper {
+    .listing-map-wrapper {
       @include float-span(3);
       height: 225px;
     }
@@ -308,7 +308,7 @@
     .listing-office {
       @include float-span(2, 'last');
     }
-    #listing-map-wrapper {
+    .listing-map-wrapper {
       @include float-span(2, 'last');
     }
     .agents {
@@ -338,7 +338,7 @@
       display: block;
       margin: 0 auto;
     }
-    #listing-map-wrapper {
+    .listing-map-wrapper {
       clear: both;
     }
     .agents {
