@@ -10,7 +10,7 @@
   Drupal.c21ListingsMaps.initialize = function(context) {
     $('.listing-map').each(function(){
       var geocoder = new google.maps.Geocoder();
-      var entityId = $(this).attr('listing-map-id');
+      var entityId = $(this).attr('data-listing-id');
       var address = $(this).attr('data-listing-address');
 
       geocoder.geocode( { 'address': address}, function(results, status) {

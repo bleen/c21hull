@@ -317,7 +317,7 @@ function _escrow_map($entity, $entity_type) {
       '#attributes' => array(
         'id' => 'listing-map-' . $id,
         'class' => array('listing-map'),
-        'data-listing-nid' => $id,
+        'data-listing-id' => $id,
         'data-listing-address' => !empty($map_link) ? $map_link['query']['q'] : '',
       ),
     ),
