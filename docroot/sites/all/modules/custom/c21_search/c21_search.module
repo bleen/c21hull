@@ -84,7 +84,7 @@ function c21_search_form_views_exposed_form_alter(&$form, &$form_state) {
 
       $form['im_field_listing_school_district']['#type'] = 'select';
       $form['im_field_listing_school_district']['#empty_option'] = t('- Any -');
-      $form['im_field_listing_school_district']['#options'] = _c21_search_taxonomy_options_array('listing_school_district');
+      $form['im_field_listing_school_district']['#options'] = _c21_search_taxonomy_options_array('listing_school_district', 'ucwords');
 
       // Add javascript to handle the facet sliders. Note that touch-punch does
       // not work when added asynchronously via "yesnope".
