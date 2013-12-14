@@ -10,7 +10,7 @@
   Drupal.c21ListingsMaps.initialize = function(context) {
     $('.listing-map').each(function(){
       var geocoder = new google.maps.Geocoder();
-      var nid = $(this).attr('listing-map-' . $entity->nid);
+      var entityId = $(this).attr('listing-map-id');
       var address = $(this).attr('data-listing-address');
 
       geocoder.geocode( { 'address': address}, function(results, status) {
@@ -23,7 +23,7 @@
             zoomControl: true,
             scaleControl: false
           }
-          var map = new google.maps.Map(document.getElementById('listing-map-' + nid), mapOptions);
+          var map = new google.maps.Map(document.getElementById('listing-map-' + entityId), mapOptions);
           var marker = new google.maps.Marker({
             map: map,
             position: results[0].geometry.location

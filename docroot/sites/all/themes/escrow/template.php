@@ -100,7 +100,7 @@ function escrow_preprocess_node(&$variables) {
       $fine_print = _escrow_fine_print($variables['node']);
       $variables['listing_fine_print'] = drupal_render($fine_print);
 
-      $map = _escrow_map($variables['node']);
+      $map = _escrow_map($variables['node'], 'node');
       $variables['listing_map'] = drupal_render($map);
 
       break;
@@ -136,7 +136,7 @@ function escrow_preprocess_entity(&$variables) {
       $variables['classes_array'][] = 'listing';
       drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
 
-      $map = _escrow_map($variables['drealty_listing']);
+      $map = _escrow_map($variables['drealty_listing'], 'drealty_listing');
       $variables['listing_map'] = drupal_render($map);
 
       break;
@@ -297,10 +297,14 @@ function _escrow_fine_print($node) {
  *
  * @param object $entity
  *
+ * @param string $entity
+ *
  * @return array
  */
-function _escrow_map($entity) {
+function _escrow_map($entity, $entity_type) {
   $map_link = _c21_listings_get_gmap_link($entity);
+
+  list($id, $vid, $bundle) = entity_extract_ids($entity_type, $entity);
 
   // Add a map.
   $map = array(
@@ -311,9 +315,9 @@ function _escrow_map($entity) {
     'map' => array(
       '#theme_wrappers' => array('container'),
       '#attributes' => array(
-        'id' => 'listing-map-' . $entity->nid,
+        'id' => 'listing-map-' . $id,
         'class' => array('listing-map'),
-        'data-listing-nid' => $entity->nid,
+        'data-listing-nid' => $id,
         'data-listing-address' => !empty($map_link) ? $map_link['query']['q'] : '',
       ),
     ),
