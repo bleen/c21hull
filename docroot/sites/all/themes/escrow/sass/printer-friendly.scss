@@ -93,7 +93,8 @@ $output: 'isolation';
         }
       }
 
-      &.field-name-field-listing-personal-property {
+      &.field-name-field-listing-personal-property,
+      &.field-name-field-listing-outside-features {
         .field-items {
           width: 100%;
           display: block;
