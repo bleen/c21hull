@@ -34,17 +34,47 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
           'development', 'city', 'school_district'
         );
 
-        $document->addField('ts_field_mls', $entity->field_mls_number[LANGUAGE_NONE][0]['value']);
-        $document->addField('fts_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
-        if (!empty($entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value'])) {
-          $document->addField('its_field_listing_bedrooms', $entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value']);
+        if (!empty($entity->field_mls_number[LANGUAGE_NONE][0]['tid'])) {
+          $document->addField('ts_field_mls', $entity->field_mls_number[LANGUAGE_NONE][0]['tid']);
         }
-        $document->addField('fts_field_listing_bathrooms', $entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value']);
-        $document->addField('fts_field_listing_acreage', $entity->field_mls_acreage[LANGUAGE_NONE][0]['value']);
-        $document->addField('fs_field_sq_ft', $entity->field_mls_square_feet[LANGUAGE_NONE][0]['value']);
+        elseif (!empty($entity->field_mls_number[0]['tid'])) {
+          $document->addField('ts_field_mls', $entity->field_mls_number[0]['tid']);
+        }
 
-        $document->addField('im_field_listing_township', $entity->field_mls_city[LANGUAGE_NONE][0]['tid']);
-        $document->addField('im_field_listing_school_district', $entity->field_mls_school_district[LANGUAGE_NONE][0]['tid']);
+        $document->addField('fts_field_listing_list_price', isset($entity->field_mls_list_price[LANGUAGE_NONE][0]['value'])
+          ? round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value'])
+          : isset($entity->field_mls_list_price[0]['value']) ? round($entity->field_mls_list_price[0]['value']) : 0);
+
+        if (!empty($entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value'])) {
+          $document->addField('its_field_listing_bedrooms', (int)$entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value']);
+        }
+        elseif (!empty($entity->field_mls_bedrooms[0]['value'])) {
+          $document->addField('its_field_listing_bedrooms', (int)$entity->field_mls_bedrooms[0]['value']);
+        }
+
+        $document->addField('fts_field_listing_bathrooms', isset($entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value'])
+          ? $entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value']
+          : isset($entity->field_mls_bathrooms[0]['value']) ? $entity->field_mls_bathrooms[0]['value'] : 0);
+        $document->addField('fts_field_listing_acreage', isset($entity->field_mls_acreage[LANGUAGE_NONE][0]['value'])
+          ? $entity->field_mls_acreage[LANGUAGE_NONE][0]['value']
+          : isset($entity->field_mls_acreage[0]['value']) ? $entity->field_mls_acreage[0]['value'] : 0);
+        $document->addField('fs_field_sq_ft', isset($entity->field_mls_square_feet[LANGUAGE_NONE][0]['value'])
+          ? $entity->field_mls_square_feet[LANGUAGE_NONE][0]['value']
+          : isset($entity->field_mls_square_feet[0]['value']) ? $entity->field_mls_square_feet[0]['value'] : 0);
+
+        if (!empty($entity->field_mls_city[LANGUAGE_NONE][0]['tid'])) {
+          $document->addField('im_field_listing_township', $entity->field_mls_city[LANGUAGE_NONE][0]['tid']);
+        }
+        elseif (!empty($entity->field_mls_city[0]['tid'])) {
+          $document->addField('im_field_listing_township', $entity->field_mls_city[0]['tid']);
+        }
+
+        if (!empty($entity->field_mls_school_district[LANGUAGE_NONE][0]['tid'])) {
+          $document->addField('im_field_listing_school_district', $entity->field_mls_school_district[LANGUAGE_NONE][0]['tid']);
+        }
+        elseif (!empty($entity->field_mls_school_district[0]['tid'])) {
+          $document->addField('im_field_listing_school_district', $entity->field_mls_school_district[0]['tid']);
+        }
       }
       break;
   }
