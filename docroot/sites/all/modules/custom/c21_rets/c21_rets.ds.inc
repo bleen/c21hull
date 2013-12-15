@@ -150,6 +150,13 @@ function c21_rets_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_mls_listing_office' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_field',
+        ),
+      ),
+    ),
     'field_mls_number' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -214,13 +221,6 @@ function c21_rets_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_mls_listing_office' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_field',
-        ),
-      ),
-    ),
   );
   $export['drealty_listing|mls_residential_listing|default'] = $ds_fieldsetting;
 
@@ -251,6 +251,58 @@ function c21_rets_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'stat bedrooms',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_mls_list_price' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'list-price',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_mls_number' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'mls-number',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_mls_photos' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'photo',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_mls_school_district' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'stat square-feet',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -351,21 +403,21 @@ function c21_rets_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_mls_number',
-        1 => 'field_mls_school_district',
-        2 => 'field_mls_photos',
-        3 => 'field_mls_list_price',
-        4 => 'field_mls_bedrooms',
-        5 => 'field_mls_bathrooms',
+        1 => 'field_mls_photos',
+        2 => 'field_mls_list_price',
+        3 => 'field_mls_bedrooms',
+        4 => 'field_mls_bathrooms',
+        5 => 'field_mls_school_district',
         6 => 'field_mls_square_feet',
       ),
     ),
     'fields' => array(
       'field_mls_number' => 'ds_content',
-      'field_mls_school_district' => 'ds_content',
       'field_mls_photos' => 'ds_content',
       'field_mls_list_price' => 'ds_content',
       'field_mls_bedrooms' => 'ds_content',
       'field_mls_bathrooms' => 'ds_content',
+      'field_mls_school_district' => 'ds_content',
       'field_mls_square_feet' => 'ds_content',
     ),
     'limit' => array(
@@ -378,6 +430,8 @@ function c21_rets_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
   );
   $export['drealty_listing|mls_residential_listing|teaser'] = $ds_layout;
 

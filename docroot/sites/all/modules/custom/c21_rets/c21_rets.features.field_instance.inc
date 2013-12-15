@@ -55,7 +55,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 12,
       ),
     ),
     'drealty' => array(
@@ -313,7 +313,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'drealty' => array(
@@ -394,7 +394,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'drealty' => array(
@@ -479,7 +479,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
     ),
     'drealty' => array(
@@ -553,7 +553,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 22,
       ),
     ),
     'drealty' => array(
@@ -743,7 +743,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
     ),
     'drealty' => array(
@@ -842,6 +842,12 @@ function c21_rets_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
     ),
     'drealty' => array(
@@ -1164,7 +1170,7 @@ function c21_rets_field_default_field_instances() {
           'empty_fields_handler' => '',
         ),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'drealty' => array(
@@ -1249,7 +1255,7 @@ function c21_rets_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_decimal',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
     'drealty' => array(
@@ -1323,7 +1329,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 20,
       ),
     ),
     'drealty' => array(
@@ -1423,7 +1429,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 17,
       ),
     ),
     'drealty' => array(
@@ -1523,7 +1529,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 18,
       ),
     ),
     'drealty' => array(
@@ -1623,7 +1629,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 16,
       ),
     ),
     'drealty' => array(
@@ -1723,7 +1729,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 19,
       ),
     ),
     'drealty' => array(
@@ -1823,7 +1829,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 15,
       ),
     ),
     'drealty' => array(
@@ -1927,7 +1933,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 13,
       ),
     ),
     'drealty' => array(
@@ -2019,7 +2025,7 @@ function c21_rets_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 21,
       ),
     ),
     'drealty' => array(
