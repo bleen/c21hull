@@ -42,10 +42,10 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
         }
 
         if (!empty($entity->field_mls_list_price[LANGUAGE_NONE][0]['value'])) {
-          $document->addField('fts_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']);
+          $document->addField('fts_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
         }
         elseif (!empty($entity->field_mls_list_price[0]['value'])) {
-          $document->addField('fts_field_listing_list_price', round($entity->field_mls_list_price[0]['value']);
+          $document->addField('fts_field_listing_list_price', round($entity->field_mls_list_price[0]['value']));
         }
         else {
           $document->addField('fts_field_listing_list_price', 0);
