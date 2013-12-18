@@ -302,7 +302,7 @@ function c21_rets_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'span',
-          'ow-cl' => 'stat square-feet',
+          'ow-cl' => 'stat school-district',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,

@@ -1284,7 +1284,7 @@ function c21_rets_default_drealty_listing_type() {
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "teaser" : {
-            "label" : "above",
+            "label" : "inline",
             "type" : "taxonomy_term_reference_link",
             "weight" : "5",
             "settings" : {
