@@ -231,8 +231,13 @@ function c21_rets_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'mls_residential_listing';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'rets_listing_title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'listing_map' => array(
-      'weight' => '7',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -334,6 +339,27 @@ function c21_rets_ds_field_settings_info() {
 }
 
 /**
+ * Implements hook_ds_custom_fields_info().
+ */
+function c21_rets_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'rets_listing_title';
+  $ds_field->label = 'RETS Listing Title';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'drealty_listing' => 'drealty_listing',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array();
+  $export['rets_listing_title'] = $ds_field;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function c21_rets_ds_layout_settings_info() {
@@ -408,17 +434,19 @@ function c21_rets_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_mls_number',
-        1 => 'field_mls_photos',
-        2 => 'field_mls_list_price',
-        3 => 'field_mls_bedrooms',
-        4 => 'field_mls_bathrooms',
-        5 => 'field_mls_school_district',
-        6 => 'field_mls_square_feet',
-        7 => 'listing_map',
+        1 => 'rets_listing_title',
+        2 => 'field_mls_photos',
+        3 => 'field_mls_list_price',
+        4 => 'field_mls_bedrooms',
+        5 => 'field_mls_bathrooms',
+        6 => 'field_mls_school_district',
+        7 => 'field_mls_square_feet',
+        8 => 'listing_map',
       ),
     ),
     'fields' => array(
       'field_mls_number' => 'ds_content',
+      'rets_listing_title' => 'ds_content',
       'field_mls_photos' => 'ds_content',
       'field_mls_list_price' => 'ds_content',
       'field_mls_bedrooms' => 'ds_content',

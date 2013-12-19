@@ -29,6 +29,7 @@ features[ctools][] = views:views_default:3.0
 features[drealty_listing_type][] = mls_residential_listing
 features[ds_field_settings][] = drealty_listing|mls_residential_listing|default
 features[ds_field_settings][] = drealty_listing|mls_residential_listing|teaser
+features[ds_fields][] = rets_listing_title
 features[ds_layout_settings][] = drealty_listing|mls_residential_listing|default
 features[ds_layout_settings][] = drealty_listing|mls_residential_listing|teaser
 features[features_api][] = api:2
