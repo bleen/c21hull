@@ -114,6 +114,8 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
         elseif (!empty($entity->field_mls_school_district[0]['tid'])) {
           $document->addField('im_field_listing_school_district', $entity->field_mls_school_district[0]['tid']);
         }
+
+        $document->addField('sm_field_listing_status', 'for_sale');
       }
       break;
   }

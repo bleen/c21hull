@@ -231,6 +231,11 @@ function c21_rets_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'mls_residential_listing';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'listing_map' => array(
+      'weight' => '7',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'field_mls_bathrooms' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -409,6 +414,7 @@ function c21_rets_ds_layout_settings_info() {
         4 => 'field_mls_bathrooms',
         5 => 'field_mls_school_district',
         6 => 'field_mls_square_feet',
+        7 => 'listing_map',
       ),
     ),
     'fields' => array(
@@ -419,6 +425,7 @@ function c21_rets_ds_layout_settings_info() {
       'field_mls_bathrooms' => 'ds_content',
       'field_mls_school_district' => 'ds_content',
       'field_mls_square_feet' => 'ds_content',
+      'listing_map' => 'ds_content',
     ),
     'limit' => array(
       'field_mls_photos' => '1',

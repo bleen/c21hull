@@ -723,7 +723,7 @@ function c21_rets_default_drealty_listing_type() {
           "gallery" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "list" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
           "search" : { "label" : "above", "settings" : [], "type" : "hidden", "weight" : 0 },
-          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "7", "settings" : [] }
+          "teaser" : { "label" : "above", "type" : "hidden", "weight" : "8", "settings" : [] }
         },
         "drealty" : {
           "mappings" : { "1_3_A" : {
