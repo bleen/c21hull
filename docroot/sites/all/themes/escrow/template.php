@@ -136,9 +136,12 @@ function escrow_preprocess_entity(&$variables) {
       $variables['classes_array'][] = 'listing';
       drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
 
+      // Add a map field.
       $map = _escrow_map($variables['drealty_listing'], 'drealty_listing');
       $variables['listing_map'] = drupal_render($map);
 
+      // Add a title field.
+      $variables['rets_listing_title'] = _c21_rets_build_listing_title($variables['drealty_listing']);
       break;
   }
 }
