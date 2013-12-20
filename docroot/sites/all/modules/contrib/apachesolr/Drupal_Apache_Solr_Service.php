@@ -547,14 +547,6 @@ class DrupalApacheSolrService implements DrupalApacheSolrServiceInterface {
    * This is just a wrapper around drupal_http_request().
    */
   protected function _makeHttpRequest($url, array $options = array()) {
-
-    global $user;
-
-    if ($user->uid == 1) {
-      drupal_set_message($url);
-    }
-
-
     if (!isset($options['method']) || $options['method'] == 'GET' || $options['method'] == 'HEAD') {
       // Make sure we are not sending a request body.
       $options['data'] = NULL;
