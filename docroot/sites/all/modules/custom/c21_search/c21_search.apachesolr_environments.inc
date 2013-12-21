@@ -19,27 +19,23 @@ function c21_search_apachesolr_environments() {
   $environment->conf = array(
     'apachesolr_index_last' => array(
       'drealty_listing' => array(
-        'last_changed' => '1387488638',
-        'last_entity_id' => '6091',
-      ),
-      'node' => array(
-        'last_changed' => '1387488638',
-        'last_entity_id' => '10293',
+        'last_changed' => '1387566616',
+        'last_entity_id' => '8636',
       ),
     ),
-    'apachesolr_index_updated' => 1387488647,
-    'apachesolr_last_optimize' => 1387418526,
+    'apachesolr_index_updated' => 0,
+    'apachesolr_last_optimize' => 1387506001,
     'apachesolr_search_changed_boost' => '0:0',
     'apachesolr_search_comment_boost' => '0:0',
     'apachesolr_search_date_boost' => '0:0',
     'apachesolr_search_promote_boost' => '0',
     'apachesolr_search_sticky_boost' => '0',
     'apachesolr_search_type_boosts' => array(
-      'agent' => '21.0',
+      'agent' => '0',
       'page' => '0',
       'listing' => '0',
       'listing_type' => '0',
-      'mls_residential_listing' => '21.0',
+      'mls_residential_listing' => '0',
       'webform' => '0',
     ),
     'field_bias' => array(

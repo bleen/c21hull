@@ -142,6 +142,9 @@ function escrow_preprocess_entity(&$variables) {
 
       // Add a title field.
       $variables['rets_listing_title'] = _c21_rets_build_listing_title($variables['drealty_listing']);
+
+      // Add a "read more" link
+      $variables['read_more'] = _escrow_mls_read_more($variables['drealty_listing']);
       break;
   }
 }
@@ -300,7 +303,7 @@ function _escrow_fine_print($node) {
  *
  * @param object $entity
  *
- * @param string $entity
+ * @param string $entity_type
  *
  * @return array
  */
@@ -341,3 +344,14 @@ function _escrow_map($entity, $entity_type) {
   return $map;
 }
 
+/**
+ * Create a read more link for MLS listings.
+ *
+ * @param object $entity
+ *
+ * @return string
+ */
+function _escrow_mls_read_more($entity) {
+  $link = '<span class="more-info">' . l(t('More info'), 'drealty_listing/' . $entity->id) . '</span>';
+  return $link;
+}

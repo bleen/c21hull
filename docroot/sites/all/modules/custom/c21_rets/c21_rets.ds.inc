@@ -231,6 +231,11 @@ function c21_rets_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'mls_residential_listing';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'read_more' => array(
+      'weight' => '9',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'rets_listing_title' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -442,6 +447,7 @@ function c21_rets_ds_layout_settings_info() {
         6 => 'field_mls_school_district',
         7 => 'field_mls_square_feet',
         8 => 'listing_map',
+        9 => 'read_more',
       ),
     ),
     'fields' => array(
@@ -454,6 +460,7 @@ function c21_rets_ds_layout_settings_info() {
       'field_mls_school_district' => 'ds_content',
       'field_mls_square_feet' => 'ds_content',
       'listing_map' => 'ds_content',
+      'read_more' => 'ds_content',
     ),
     'limit' => array(
       'field_mls_photos' => '1',

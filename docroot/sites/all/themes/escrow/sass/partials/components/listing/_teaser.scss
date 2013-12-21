@@ -1,11 +1,24 @@
 .listing.view-mode-teaser {
-  background-color: white;
+  background-color: rgba(255,255,255,.8);
   padding: $spacing_default;
   margin-bottom: $spacing_default;
   @include border-radius(10px);
 
+  &:hover {
+    background-color: rgba(255,255,255,1);
+    position: relative;
+    top: -2px;
+    left: -2px;
+    @include box-shadow(3px 3px 3px rgba($color_gray_dark, .3));
+  }
+
   .mls-number {
     text-align: right;
+  }
+
+  .listing-map-wrapper {
+    max-height: 125px;
+    width: 100%;
   }
 
   .stat {
@@ -23,6 +36,12 @@
   @include breakpoint($bp650) {
     .mls-number {
       text-align: left;
+    }
+    .listing-map-wrapper {
+      max-height: 125px;
+      width: 45%;
+      float: left;
+      margin: $spacing_default 0;
     }
     .photo {
       width: 50%;
