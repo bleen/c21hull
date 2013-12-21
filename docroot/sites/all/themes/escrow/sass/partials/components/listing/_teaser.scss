@@ -25,6 +25,11 @@
     padding: .5 * $spacing_default 0;
     margin-left: $spacing_default;
 
+    a {
+      color: $color_gray_dark;
+      text-decoration: underline;
+    }
+
     .label-inline {
       color: darken($color_gold, 10%);
       font-weight: bold;
