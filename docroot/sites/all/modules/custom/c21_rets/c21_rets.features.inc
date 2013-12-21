@@ -491,7 +491,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 18
+          "weight" : "18"
         },
         "id" : "493",
         "field_id" : "485",
@@ -564,7 +564,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 13
+          "weight" : "13"
         },
         "id" : "494",
         "field_id" : "486",
@@ -637,7 +637,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 12
+          "weight" : "12"
         },
         "id" : "495",
         "field_id" : "487",
@@ -686,7 +686,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "widget" : {
-          "weight" : 9,
+          "weight" : "9",
           "type" : "autocomplete_deluxe_taxonomy",
           "module" : "autocomplete_deluxe",
           "active" : 1,
@@ -745,7 +745,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "widget" : {
-          "weight" : 15,
+          "weight" : "15",
           "type" : "autocomplete_deluxe_taxonomy",
           "module" : "autocomplete_deluxe",
           "active" : 1,
@@ -820,7 +820,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 19
+          "weight" : "19"
         },
         "id" : "498",
         "field_id" : "490",
@@ -882,7 +882,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 0
+          "weight" : "0"
         },
         "id" : "499",
         "field_id" : "491",
@@ -955,7 +955,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 3
+          "weight" : "3"
         },
         "id" : "500",
         "field_id" : "492",
@@ -1017,7 +1017,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 4
+          "weight" : "4"
         },
         "id" : "501",
         "field_id" : "493",
@@ -1094,7 +1094,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 31
+          "weight" : "31"
         },
         "id" : "502",
         "field_id" : "494",
@@ -1174,7 +1174,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 1
+          "weight" : "1"
         },
         "id" : "503",
         "field_id" : "495",
@@ -1256,7 +1256,7 @@ function c21_rets_default_drealty_listing_type() {
             "progress_indicator" : "throbber"
           },
           "type" : "image_image",
-          "weight" : 2
+          "weight" : "2"
         },
         "id" : "504",
         "field_id" : "496",
@@ -1314,7 +1314,7 @@ function c21_rets_default_drealty_listing_type() {
           "user_register_form" : false
         },
         "widget" : {
-          "weight" : 16,
+          "weight" : "16",
           "type" : "autocomplete_deluxe_taxonomy",
           "module" : "autocomplete_deluxe",
           "active" : 1,
@@ -1384,7 +1384,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "html5_tools",
           "settings" : [],
           "type" : "numberfield",
-          "weight" : 20
+          "weight" : "20"
         },
         "id" : "506",
         "field_id" : "498",
@@ -1446,7 +1446,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 10
+          "weight" : "10"
         },
         "id" : "507",
         "field_id" : "499",
@@ -1508,7 +1508,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 6
+          "weight" : "6"
         },
         "id" : "508",
         "field_id" : "500",
@@ -1570,7 +1570,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 7
+          "weight" : "7"
         },
         "id" : "509",
         "field_id" : "501",
@@ -1632,7 +1632,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 5
+          "weight" : "5"
         },
         "id" : "510",
         "field_id" : "502",
@@ -1694,7 +1694,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 8
+          "weight" : "8"
         },
         "id" : "511",
         "field_id" : "503",
@@ -1756,7 +1756,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 14
+          "weight" : "14"
         },
         "id" : "512",
         "field_id" : "504",
@@ -1823,7 +1823,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 17
+          "weight" : "17"
         },
         "id" : "513",
         "field_id" : "505",
@@ -1885,7 +1885,7 @@ function c21_rets_default_drealty_listing_type() {
           "module" : "text",
           "settings" : { "size" : 60 },
           "type" : "text_textfield",
-          "weight" : 11
+          "weight" : "11"
         },
         "id" : "514",
         "field_id" : "506",
