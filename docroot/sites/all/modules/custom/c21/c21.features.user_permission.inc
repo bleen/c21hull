@@ -14,8 +14,10 @@ function c21_user_default_permissions() {
   $permissions['access PDF version'] = array(
     'name' => 'access PDF version',
     'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
+      'administrator' => 'administrator',
+      'agent' => 'agent',
+      'manager' => 'manager',
+      'staff' => 'staff',
     ),
     'module' => 'print_pdf',
   );
@@ -120,7 +122,10 @@ function c21_user_default_permissions() {
   // Exported permission: 'access print'.
   $permissions['access print'] = array(
     'name' => 'access print',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'print',
   );
 
