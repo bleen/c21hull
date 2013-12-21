@@ -351,6 +351,18 @@ function c21_rets_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'read_more';
+  $ds_field->label = 'Read more';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'drealty_listing' => 'drealty_listing',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array();
+  $export['read_more'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'rets_listing_title';
   $ds_field->label = 'RETS Listing Title';
   $ds_field->field_type = 3;
