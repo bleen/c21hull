@@ -1,14 +1,12 @@
 .listing.view-mode-teaser {
   background-color: rgba(255,255,255,.8);
+  position: relative;
   padding: $spacing_default;
   margin-bottom: $spacing_default;
   @include border-radius(10px);
 
   &:hover {
     background-color: rgba(255,255,255,1);
-    position: relative;
-    top: -2px;
-    left: -2px;
     @include box-shadow(3px 3px 3px rgba($color_gray_dark, .3));
   }
 
