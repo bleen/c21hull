@@ -1,4 +1,4 @@
-name = c21 RETS
+name = c21 RETS (Do not enable - see README.md)
 description = Integrates the import of MLS listings.
 core = 7.x
 package = Features
