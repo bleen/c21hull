@@ -18,13 +18,6 @@ define('C21_DATE_FORMAT_LONG', 'F d Y, g:ia');
 define('C21_DATE_FORMAT_VERY_LONG', 'l, F d Y, g:ia');
 
 /**
- * Implements hook_views_api().
- */
-function c21_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
-}
-
-/**
  * Implements hook_theme().
  */
 function c21_theme(){
