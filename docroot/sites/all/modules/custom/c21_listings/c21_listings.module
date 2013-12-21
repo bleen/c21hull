@@ -795,9 +795,9 @@ function _c21_listings_get_gmap_link($entity) {
     case 'mls_residential_listing':
       $latitude = '';
       $longitude = '';
-      $street = c21_rets_get_address_info($entity, 'street');
-      $town = c21_rets_get_address_info($entity, 'town');
-      $state = c21_rets_get_address_info($entity, 'state');
+      $street = _c21_get_address_info($entity, 'street');
+      $town = _c21_get_address_info($entity, 'town');
+      $state = _c21_get_address_info($entity, 'state');
       break;
   }
 

@@ -141,7 +141,7 @@ function escrow_preprocess_entity(&$variables) {
       $variables['listing_map'] = drupal_render($map);
 
       // Add a title field.
-      $variables['rets_listing_title'] = _c21_rets_build_listing_title($variables['drealty_listing']);
+      $variables['rets_listing_title'] = _c21_build_listing_title($variables['drealty_listing']);
 
       // Add a "read more" link
       $variables['read_more'] = _escrow_mls_read_more($variables['drealty_listing']);

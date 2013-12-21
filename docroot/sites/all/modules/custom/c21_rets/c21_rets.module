@@ -9,11 +9,11 @@ include_once 'c21_rets.features.inc';
 /**
  * Implements hook_entity_load().
  */
-function c21_rets_entity_load($entities, $type) {
+function c21_entity_load($entities, $type) {
   if ($type == 'drealty_listing') {
     foreach ($entities as $id => $listing) {
       if ($listing->type == "mls_residential_listing") {
-        $listing->label = _c21_rets_build_listing_title($listing);
+        $listing->label = _c21_build_listing_title($listing);
       }
     }
   }
@@ -22,13 +22,13 @@ function c21_rets_entity_load($entities, $type) {
 /**
  * Implements hook_drealty_import_presave_alter().
  */
-function c21_rets_drealty_import_presave_alter(&$listing, $context) {
+function c21_drealty_import_presave_alter(&$listing, $context) {
   foreach ($context['field_mappings'] as $field_name => $mapping) {
     if ($mapping->field_api_type == 'taxonomy_term_reference' && !empty($context['rets_item'][$mapping->systemname])) {
       $field_info = field_info_field($field_name);
       $vocabulary_name = $field_info['settings']['allowed_values'][0]['vocabulary'];
 
-      $term = _c21_rets_get_term_by_name($field_name, $context['rets_item'][$mapping->systemname], $vocabulary_name);
+      $term = _c21_get_term_by_name($field_name, $context['rets_item'][$mapping->systemname], $vocabulary_name);
 
       $listing->{$field_name}[LANGUAGE_NONE][0]['tid'] = $term->tid;
     }
@@ -51,7 +51,7 @@ function c21_rets_drealty_import_presave_alter(&$listing, $context) {
  *
  * @return term object
  */
-function _c21_rets_get_term_by_name($field_name, $term_name, $vocabulary_name) {
+function _c21_get_term_by_name($field_name, $term_name, $vocabulary_name) {
   switch ($field_name) {
     case 'field_mls_school_district':
       // Remove the digits that  cometimes preceed the school district name.
@@ -84,7 +84,7 @@ function _c21_rets_get_term_by_name($field_name, $term_name, $vocabulary_name) {
  *
  * @return string
  */
-function _c21_rets_build_listing_title($listing) {
+function _c21_build_listing_title($listing) {
   $stats_values = array();
   $stats_fields = array(
     'bedroom' => 'bedrooms',
@@ -137,7 +137,7 @@ function _c21_rets_build_listing_title($listing) {
  *
  * @return string
  */
-function c21_rets_get_address_info($entity, $info) {
+function _c21_get_address_info($entity, $info) {
   $return = '';
 
   switch ($info) {
