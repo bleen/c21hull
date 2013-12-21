@@ -52,6 +52,11 @@ Drupal.behaviors.c21SearchForm = {
     Drupal.c21Search.toggleFormClick();
     $('.search-form').removeClass('open').addClass('closed');
 
+    // If search keyword field gets focus, open the search form.
+    $('.search-form input').focus(function(){
+      $('.search-form').removeClass('closed').addClass('open');
+    });
+
   }
 };
 
