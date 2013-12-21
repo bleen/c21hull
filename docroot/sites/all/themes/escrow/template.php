@@ -100,7 +100,7 @@ function escrow_preprocess_node(&$variables) {
       $fine_print = _escrow_fine_print($variables['node']);
       $variables['listing_fine_print'] = drupal_render($fine_print);
 
-      $map = _escrow_map($variables['node'], 'node');
+      $map = !drupal_is_front_page() ? array() :  _escrow_map($variables['node'], 'node');
       $variables['listing_map'] = drupal_render($map);
 
       break;

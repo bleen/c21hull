@@ -794,7 +794,7 @@ function _c21_listings_get_gmap_link($entity) {
   $q = '';
 
   switch ($entity->type) {
-    case 'node':
+    case 'listing':
       $wrapper = entity_metadata_wrapper('node', $entity);
       $latitude = $wrapper->field_listing_latitude->value();
       $longitude = $wrapper->field_listing_longitude->value();
