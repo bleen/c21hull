@@ -23,7 +23,6 @@ dependencies[] = flexslider
 dependencies[] = flexslider_views_slideshow
 dependencies[] = html5_tools
 dependencies[] = image
-dependencies[] = imagefield_focus
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = list
