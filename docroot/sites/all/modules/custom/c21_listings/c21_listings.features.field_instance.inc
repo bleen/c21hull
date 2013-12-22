@@ -1950,7 +1950,7 @@ function c21_listings_field_default_field_instances() {
         'weight' => 2,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
