@@ -1231,9 +1231,6 @@ function c21_rets_default_drealty_listing_type() {
           "min_resolution" : "",
           "title_field" : 0,
           "user_register_form" : false,
-          "focus" : 0,
-          "focus_min_size" : "",
-          "focus_lock_ratio" : 0
         },
         "widget" : {
           "active" : 1,

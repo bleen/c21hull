@@ -273,3 +273,11 @@ function c21_listings_update_7006() {
 function c21_listings_update_7007() {
   module_enable(array('imagefield_focus'));
 }
+
+/**
+ * Disable imagefield focus and enable focal point.
+ */
+function c21_listings_update_7008() {
+  module_disable(array('imagefield_focus'));
+  module_enable(array('focal_point'));
+}

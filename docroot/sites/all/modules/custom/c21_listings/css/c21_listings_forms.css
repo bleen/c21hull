@@ -129,7 +129,6 @@
   padding-left: 1em;
 }
 
-.node-listing-form .image-preview,
 .node-listing-form .file,
 .node-listing-form .file-size {
   display: none;
@@ -151,9 +150,6 @@
 }
 .node-listing-form .image-widget-data .form-item .description {
   white-space: normal;
-}
-.node-listing-form .image-widget-data .imagefield-focus {
-  clear: left;
 }
 
 #views-exposed-form-c21-reports-listing-report .views-widget-filter-field_listing_list_date_value2 .views-widget > div {
