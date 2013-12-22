@@ -89,7 +89,10 @@ function c21_drealty_import_presave_alter(&$listing, $context) {
 
       $term = _c21_get_term_by_name($field_name, $context['rets_item'][$mapping->systemname], $vocabulary_name);
 
-      $listing->{$field_name}[LANGUAGE_NONE][0]['tid'] = $term->tid;
+      // Term may come back as NULL.
+      if (!is_null($term)) {
+        $listing->{$field_name}[LANGUAGE_NONE][0]['tid'] = $term->tid;
+      }
     }
   }
 }
@@ -332,7 +335,7 @@ function c21_image_create($default_image) {
  * @param  string $vocabulary_name
  *   The name of the vocabulary to search.
  *
- * @return term object
+ * @return object | NULL
  */
 function _c21_get_term_by_name($field_name, $term_name, $vocabulary_name) {
   switch ($field_name) {
