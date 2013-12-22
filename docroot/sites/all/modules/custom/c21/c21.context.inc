@@ -76,12 +76,6 @@ function c21_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
-        'footer_sitemap-footer_sitemap' => array(
-          'module' => 'footer_sitemap',
-          'delta' => 'footer_sitemap',
-          'region' => 'footer',
-          'weight' => '-26',
-        ),
         'c21-c21_footer' => array(
           'module' => 'c21',
           'delta' => 'c21_footer',
