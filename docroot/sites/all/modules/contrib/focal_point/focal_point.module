@@ -61,22 +61,26 @@ function focal_point_file_load($files) {
  * Implementation of hook_form_FORM_ID_alter().
  */
 function focal_point_form_file_entity_add_upload_alter(&$form, &$form_state) {
+  // Add focal point to the file entity edit form used by the media browser.
   if (_focal_pint_enabled_for('media') && isset($form_state['step']) && $form_state['step'] == 4) {
     $fid = isset($form_state['values']['upload']) ? $form_state['values']['upload'] : $form_state['storage']['upload'];
     $file = file_load($fid);
     if (_focal_point_file_supported($file)) {
-      $preview_variables = array(
-        'style_name' => variable_get('focal_point_preview_image_style', 'thumbnail'),
-        'path' => $file->uri,
-        'alt' => $file->alt,
-        'title' => $file->title,
+      $delta = 0;
+      $field_name = 'media';
+      $thumbnail = array(
+        '#type' => 'markup',
+        '#theme' => 'image_style',
+        '#style_name' => variable_get('focal_point_preview_image_style', 'thumbnail'),
+        '#path' => $file->uri,
+        '#alt' => $file->alt,
+        '#title' => $file->title,
       );
 
       $form['focal_point'] = array(
-        'indicator' => array(
-          '#markup' => _focal_point_indicator('media') . theme('image_style', $preview_variables),
-        ),
-      'focal_point' => _focal_point_field('media'),
+        'indicator' => _focal_point_indicator($field_name),
+        'thumbnail' => $thumbnail,
+        'focal_point' => _focal_point_field($field_name, $delta),
       );
 
       $form['#validate'][] = 'focal_point_form_validate';
@@ -94,9 +98,8 @@ function focal_point_form_file_entity_edit_alter(&$form, &$form_state) {
 
     $delta = _focal_point_media_field_delta();
     $form['focal_point'] = array(
-      'indicator' => array(
-        '#markup' => _focal_point_indicator('media', $delta) . drupal_render($form['preview']),
-      ),
+      'indicator' => _focal_point_indicator('media', $delta),
+      'thumbnail' => $form['preview'],
       'focal_point' => _focal_point_field('media', $delta, $form['#entity']->focal_point),
     );
 
@@ -145,7 +148,12 @@ function focal_point_preprocess_image_widget(&$variables) {
 
   // Add the "indicator" to the default image widget.
   if (isset($element['preview']) && isset($element['#widget_delta'])) {
-    $element['preview']['#markup'] = _focal_point_indicator($element['#field_name'], $element['#widget_delta']) . $element['preview']['#markup'];
+    unset($element['preview']['#weight']);
+    $preview = array(
+      'indicator' => _focal_point_indicator($element['#field_name'], $element['#widget_delta']),
+      'thumbnail' => $element['preview'],
+    );
+    $element['preview'] = $preview;
   }
 }
 
@@ -318,12 +326,13 @@ function focal_point_delete($fid) {
  *
  * @param string $field_name
  *   The name of the field containing the value of the focal point string.
- * @param int $delta (optional)
- *   The delta of the image field to which this focal point field applies.
+ * @param int $delta
+ *   (Optional) The delta of the image field to which this focal point field
+ *   applies.
  * @param string $default_value
  *   The default value of the field
- * @param bool $access (optional)
- *   Whether or not the field should be accessible.
+ * @param bool $access
+ *   (Optional) Whether or not the field should be accessible.
  *
  * @return array
  */
@@ -431,15 +440,16 @@ function _focal_point_flush($fid) {
 }
 
 /**
- * Build the HTML for the focal point indicator crosshair.
+ * Build a render array for the focal point indicator crosshair.
  *
  * @param string $field_name
- *   The name of the image field to which this focal point is referencing.
+ *   (Optional) The name of the image field to which this focal point is
+ *   referencing.
  * @param int $delta
- *   The delta of the image field widget. This is needed to support image fields
- *   that have a cardinality greater than one.
+ *   (Optional) The delta of the image field widget. This is needed to support
+ *   image fields that have a cardinality greater than one.
  *
- * @return string
+ * @return array
  */
 function _focal_point_indicator($field_name = '', $delta = 0) {
   drupal_add_library('system', 'ui.draggable');
@@ -455,7 +465,7 @@ function _focal_point_indicator($field_name = '', $delta = 0) {
   );
 
 
-  return drupal_render($indicator);
+  return $indicator;
 }
 
 /**
@@ -506,7 +516,6 @@ function _focal_point_get_image_styles() {
  * every style that uses a focal point effect.
  *
  * @param int $fid
- *
  * @param bool $show_original
  *   (Optional)
  *
