@@ -22,6 +22,8 @@ APACHESOLR
     In addition, this patch allows for multiple filters:
     https://drupal.org/node/2031495#comment-7672681
 
+    Check the @breathingrock commits in teh repository
+
 
 APACHESOLR_VIEWS
   * Adding support for exposed filters on numeric fields.
