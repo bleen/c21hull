@@ -2,7 +2,7 @@
  * https://gist.github.com/aaronmccall/765595
  */
 
-setup_placeholders = (function() {
+(function ($) {
   $.support.placeholder = false;
   test = document.createElement('input');
   if('placeholder' in test) {
@@ -34,4 +34,4 @@ setup_placeholders = (function() {
       });
     }
   }
-})();
+});
