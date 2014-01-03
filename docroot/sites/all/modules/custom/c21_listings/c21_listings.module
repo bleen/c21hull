@@ -788,7 +788,7 @@ function _c21_listings_get_gmap_link($entity) {
       $latitude = $wrapper->field_listing_latitude->value();
       $longitude = $wrapper->field_listing_longitude->value();
       $street = $wrapper->field_listing_street->value();
-      $town = $wrapper->field_listing_township->value()->name;
+      $town = isset($wrapper->field_listing_township->value()->name) ? $wrapper->field_listing_township->value()->name : '';
       $state = $wrapper->field_listing_state->value();
       break;
     case 'drealty_listing':
