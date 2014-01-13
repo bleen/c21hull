@@ -281,3 +281,28 @@ function c21_listings_update_7008() {
   module_disable(array('imagefield_focus'));
   module_enable(array('focal_point'));
 }
+
+/**
+ * Make sure that all listings have a featured photo if there is a photo
+ * available.
+ */
+function c21_listings_update_7009() {
+  $q = db_select('node', 'n');
+  $q->fields('n', array())
+    ->condition('n.type', 'listing', '=')
+    ->addJoin('LEFT', 'field_data_field_listing_featured_photo', 'flfp', 'flfp.entity_id = n.nid');
+  $q->isNull('flfp.field_listing_featured_photo_fid');
+  $result = $q->execute()->fetchAllAssoc('nid');
+
+  foreach ($result as $nid => $node) {
+    $node = node_load($nid);
+    if (!empty($node->field_listing_photos[LANGUAGE_NONE])) {
+      $node->field_listing_featured_photo = array(
+        LANGUAGE_NONE => array($node->field_listing_photos[LANGUAGE_NONE][0]),
+      );
+      unset($node->field_listing_photos[LANGUAGE_NONE][0]);
+
+      node_save($node);
+    }
+  }
+}
