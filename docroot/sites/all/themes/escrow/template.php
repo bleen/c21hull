@@ -146,6 +146,9 @@ function escrow_preprocess_entity(&$variables) {
 
       // Add a "read more" link
       $variables['read_more'] = _escrow_mls_read_more($variables['drealty_listing']);
+
+      // Add a random agent.
+      $variables['random_agent'] = _escrow_random_agent(TRUE);
       break;
   }
 }
@@ -355,4 +358,35 @@ function _escrow_map($entity, $entity_type) {
 function _escrow_mls_read_more($entity) {
   $link = '<span class="more-info">' . l(t('More info'), 'drealty_listing/' . $entity->id) . '</span>';
   return $link;
+}
+
+
+/**
+ * Choose a random agent and render it for display on a listing.
+ *
+ * @param bool $owner
+ *  If TRUE, only choose from owners.
+ *
+ * @return string
+ */
+function _escrow_random_agent($owner = TRUE) {
+  $agent = array();
+
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'agent')
+    ->propertyCondition('status', 1);
+  if ($owner) {
+    $query->fieldCondition('field_agent_status', 'value', 'owner');
+  }
+  $agents = $query->execute();
+
+  if (!empty($agents['node'])) {
+    $agent_nid = array_rand($agents['node']);
+    $agent_node = node_load($agent_nid);
+    $agent_rendered = node_view($agent_node, 'micro_teaser');
+    $agent['#markup'] = '<aside class="agents"><div class="agent">' . drupal_render($agent_rendered) . '</div></aside>';
+  }
+
+  return $agent;
 }
