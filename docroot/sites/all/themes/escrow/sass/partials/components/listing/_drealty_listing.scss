@@ -1,6 +1,12 @@
 .entity-drealty-listing {
+  .listing {
+    .group-listing-statistics {
+      margin-top: 0;
+    }
+  }
+
   .photos {
-    max-height: 25em;
+    max-height: 40em;
     overflow: auto;
 
     @include breakpoint($bp500) {
