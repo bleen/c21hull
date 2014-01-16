@@ -388,5 +388,5 @@ function _escrow_random_agent($owner = TRUE) {
     $agent['#markup'] = '<aside class="agents"><div class="agent">' . drupal_render($agent_rendered) . '</div></aside>';
   }
 
-  return $agent;
+  return drupal_render($agent);
 }
