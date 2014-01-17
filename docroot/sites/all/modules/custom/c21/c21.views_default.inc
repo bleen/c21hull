@@ -356,6 +356,27 @@ function c21_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_listing_agent']['delta_offset'] = '0';
+  /* Field: Content: Street */
+  $handler->display->display_options['fields']['field_listing_street']['id'] = 'field_listing_street';
+  $handler->display->display_options['fields']['field_listing_street']['table'] = 'field_data_field_listing_street';
+  $handler->display->display_options['fields']['field_listing_street']['field'] = 'field_listing_street';
+  $handler->display->display_options['fields']['field_listing_street']['settings'] = array(
+    'empty_fields_handler' => '',
+    'empty_fields_emptyfieldtext_empty_text' => '',
+  );
+  /* Field: Content: Seller */
+  $handler->display->display_options['fields']['field_listing_seller']['id'] = 'field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['table'] = 'field_data_field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['field'] = 'field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_listing_seller']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_listing_seller']['settings'] = array(
+    'view_mode' => 'micro_teaser',
+    'empty_fields_handler' => '',
+    'empty_fields_emptyfieldtext_empty_text' => '',
+  );
+  $handler->display->display_options['fields']['field_listing_seller']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_listing_seller']['multi_type'] = 'ul';
   /* Field: Content: Listing Type */
   $handler->display->display_options['fields']['field_listing_type']['id'] = 'field_listing_type';
   $handler->display->display_options['fields']['field_listing_type']['table'] = 'field_data_field_listing_type';
@@ -371,11 +392,20 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['changed']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['changed']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['changed']['date_format'] = 'time ago';
+  /* Field: Content: Clone link */
+  $handler->display->display_options['fields']['clone_node']['id'] = 'clone_node';
+  $handler->display->display_options['fields']['clone_node']['table'] = 'node';
+  $handler->display->display_options['fields']['clone_node']['field'] = 'clone_node';
+  $handler->display->display_options['fields']['clone_node']['label'] = '';
+  $handler->display->display_options['fields']['clone_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['clone_node']['element_label_colon'] = FALSE;
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
+  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '[edit_node] [clone_node]';
   $handler->display->display_options['fields']['edit_node']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'edit';
@@ -501,6 +531,25 @@ function c21_views_default_views() {
     2 => '2',
     1 => 0,
     3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Street (field_listing_street) */
+  $handler->display->display_options['filters']['field_listing_street_value']['id'] = 'field_listing_street_value';
+  $handler->display->display_options['filters']['field_listing_street_value']['table'] = 'field_data_field_listing_street';
+  $handler->display->display_options['filters']['field_listing_street_value']['field'] = 'field_listing_street_value';
+  $handler->display->display_options['filters']['field_listing_street_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_listing_street_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_listing_street_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_street_value']['expose']['operator_id'] = 'field_listing_street_value_op';
+  $handler->display->display_options['filters']['field_listing_street_value']['expose']['label'] = 'Street';
+  $handler->display->display_options['filters']['field_listing_street_value']['expose']['operator'] = 'field_listing_street_value_op';
+  $handler->display->display_options['filters']['field_listing_street_value']['expose']['identifier'] = 'field_listing_street_value';
+  $handler->display->display_options['filters']['field_listing_street_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    6 => 0,
     5 => 0,
     4 => 0,
   );

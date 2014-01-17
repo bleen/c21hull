@@ -785,6 +785,7 @@ function c21_ds_view_modes_info() {
   $ds_view_mode->view_mode = 'micro_teaser';
   $ds_view_mode->label = 'Micro Teaser';
   $ds_view_mode->entities = array(
+    'field_collection_item' => 'field_collection_item',
     'node' => 'node',
   );
   $export['micro_teaser'] = $ds_view_mode;

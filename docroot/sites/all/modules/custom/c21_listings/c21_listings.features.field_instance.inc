@@ -618,6 +618,12 @@ function c21_listings_field_default_field_instances() {
         'type' => 'addressfield_default',
         'weight' => 2,
       ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'addressfield',
@@ -679,6 +685,12 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => '',
         ),
         'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -752,6 +764,12 @@ function c21_listings_field_default_field_instances() {
         'type' => 'field_collection_view',
         'weight' => 4,
       ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'field_collection',
@@ -797,6 +815,16 @@ function c21_listings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
@@ -861,6 +889,12 @@ function c21_listings_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 6,
       ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -899,6 +933,16 @@ function c21_listings_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'micro_teaser' => array(
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
@@ -962,6 +1006,12 @@ function c21_listings_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
+        'weight' => 3,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -1665,6 +1715,9 @@ function c21_listings_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'agent/photos',
       'file_extensions' => 'png gif jpg jpeg',
+      'focus' => 0,
+      'focus_lock_ratio' => 0,
+      'focus_min_size' => '',
       'max_filesize' => '5 MB',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -5733,6 +5786,9 @@ function c21_listings_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'listing-photos/featured',
       'file_extensions' => 'png gif jpg jpeg',
+      'focus' => 0,
+      'focus_lock_ratio' => 0,
+      'focus_min_size' => '',
       'max_filesize' => '5 MB',
       'max_resolution' => '',
       'min_resolution' => '',

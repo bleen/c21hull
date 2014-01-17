@@ -107,18 +107,6 @@ function c21_user_default_permissions() {
     'module' => 'contextual',
   );
 
-  // Exported permission: 'access overlay'.
-  $permissions['access overlay'] = array(
-    'name' => 'access overlay',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'agent' => 'agent',
-      'manager' => 'manager',
-      'staff' => 'staff',
-    ),
-    'module' => 'overlay',
-  );
-
   // Exported permission: 'access print'.
   $permissions['access print'] = array(
     'name' => 'access print',
