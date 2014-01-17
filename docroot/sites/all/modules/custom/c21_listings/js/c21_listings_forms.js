@@ -32,11 +32,6 @@
       fields = {'seller':'person'};
       Drupal.c21.drupalSetSummary(fieldset, fields);
 
-      $('.group-listing-images-videos', context).drupalSetSummary(function(context) {
-        return '<img src="' + $('.field-name-field-listing-featured-photo img').attr('src') + '" />';
-      });
-
-
       // Hide the "former" agents and add a "show former agents" link.
       $.get('/ajax/agents', function(agents) {
         $('.field-agents .form-checkboxes .form-item input:not(:checked)').each(function(context) {
