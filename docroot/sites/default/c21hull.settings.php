@@ -386,6 +386,9 @@ $conf['theme_escrow_settings'] = array (
 $conf['search_cron_limit'] = 0;
 $conf['search_default_module'] = 'apachesolr_search';
 
+// Turn off admin menu caching
+$conf['admin_menu_cache_client'] = FALSE;
+
 /**
  * A custom theme can be set for the offline page. This applies when the site
  * is explicitly set to maintenance mode through the administration page or when
