@@ -45,7 +45,6 @@ dependencies[] = modernizr
 dependencies[] = module_filter
 dependencies[] = node
 dependencies[] = node_embed
-dependencies[] = overlay
 dependencies[] = override_node_options
 dependencies[] = path
 dependencies[] = pathauto
