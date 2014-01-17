@@ -142,12 +142,6 @@
   bottom: 0;
   right: 0;
 }
-.node-listing-form .image-widget-data .form-item {
-  width: 49%;
-  float: left;
-  margin-right: 1%;
-  display: none;
-}
 .node-listing-form .image-widget-data .form-item .description {
   white-space: normal;
 }
