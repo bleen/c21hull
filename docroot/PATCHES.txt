@@ -54,6 +54,9 @@ BLOCK_FILTER
 CKEDITOR
   * Added the NodeEmbed & iframedialog plugins to ckeditor.
 
+  * Removed a comment from ckeditor.config.js that was inexplicably causing a
+    syntax error
+
 DATE
   * It's annoying to always see the date_migrate_example module on the features
     page so we made it hidden by adding "hidden = TRUE" to its .info file.
