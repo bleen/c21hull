@@ -7,22 +7,27 @@
 
       // Quick check for the library dependency.
       if ($.mask) {
-        for (var element in config.elements) {
-          $('#' + config.elements[element].id, context).once('masked_input', function(){
+        try {
+          for (var element in config.elements) {
+            $('#' + config.elements[element].id, context).once('masked_input', function(){
 
-            // Register mask definitions from configurations and individual form elements.
-            for (var character in config.definitions) {
-              $.mask.definitions[character] = config.definitions[character];
-            }
+              // Register mask definitions from configurations and individual form elements.
+              for (var character in config.definitions) {
+                $.mask.definitions[character] = config.definitions[character];
+              }
 
-            // Apply masking behavior only when applicable.
-            if (config.elements[element].mask.length) {
-              $(this).mask(config.elements[element].mask, {
-                placeholder: config.elements[element].placeholder,
-                completed: Drupal.behaviors.masked_input.completedCallback
-              });
-            }
-          });
+              // Apply masking behavior only when applicable.
+              if (config.elements[element].mask.length) {
+                $(this).mask(config.elements[element].mask, {
+                  placeholder: config.elements[element].placeholder,
+                  completed: Drupal.behaviors.masked_input.completedCallback
+                });
+              }
+            });
+          }
+        }
+        catch(e) {
+          console.info(e);
         }
       }
     },

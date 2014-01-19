@@ -110,6 +110,9 @@ MASKED_INPUT
   * There is a drush error "Use of undefined constant MASKEDINPUT_DOWNLOAD_URI"
       PATCH: https://drupal.org/comment/8162867#comment-8162867
 
+   * There is an "undefined index" error on the user profile form.
+      PATCH: https://drupal.org/node/1958840 (original post)
+
 NODE_EMBED
   * Occasionally there is an "Undefined variable" error. This fixes it.
       PATCH: https://drupal.org/node/1947006#comment-7194922
