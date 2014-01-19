@@ -881,6 +881,12 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['arguments']['im_field_terms']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['im_field_terms']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['im_field_terms']['validate']['type'] = 'taxonomy_term';
+  /* Filter criterion: Apache Solr: bundle */
+  $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__opensolr';
+  $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['operator'] = '!=';
+  $handler->display->display_options['filters']['bundle']['value'] = 'page';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
