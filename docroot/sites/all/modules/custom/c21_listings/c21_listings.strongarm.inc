@@ -126,6 +126,9 @@ function c21_listings_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'micro_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
