@@ -298,6 +298,11 @@ function c21_search_views_default_views() {
   $handler->display->display_options['filters']['sm_field_listing_status']['field'] = 'sm_field_listing_status';
   $handler->display->display_options['filters']['sm_field_listing_status']['operator'] = 'word';
   $handler->display->display_options['filters']['sm_field_listing_status']['value'] = 'for_sale pending';
+  /* Filter criterion: Apache Solr: bs_status */
+  $handler->display->display_options['filters']['bs_status']['id'] = 'bs_status';
+  $handler->display->display_options['filters']['bs_status']['table'] = 'apachesolr__opensolr';
+  $handler->display->display_options['filters']['bs_status']['field'] = 'bs_status';
+  $handler->display->display_options['filters']['bs_status']['value'] = 'true';
 
   /* Display: Search Listings Page */
   $handler = $view->new_display('page', 'Search Listings Page', 'page');

@@ -19,16 +19,16 @@ function c21_search_apachesolr_environments() {
   $environment->conf = array(
     'apachesolr_index_last' => array(
       'drealty_listing' => array(
-        'last_changed' => '1387643701',
-        'last_entity_id' => '8686',
+        'last_changed' => '1390046401',
+        'last_entity_id' => '11030',
       ),
       'node' => array(
-        'last_changed' => '1387631651',
-        'last_entity_id' => '10450',
+        'last_changed' => '1390095115',
+        'last_entity_id' => '10172',
       ),
     ),
-    'apachesolr_index_updated' => 1387645201,
-    'apachesolr_last_optimize' => 1387636801,
+    'apachesolr_index_updated' => 1390165976,
+    'apachesolr_last_optimize' => 1390165976,
   );
   $environment->index_bundles = array(
     'drealty_listing' => array(
