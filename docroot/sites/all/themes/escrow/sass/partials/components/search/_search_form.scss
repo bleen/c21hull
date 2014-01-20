@@ -31,13 +31,13 @@
       @include animation(bounce 0s);
     }
     @include breakpoint($bp800) {
-      bottom: -250px;
+      bottom: -290px;
       width: 700px;
       margin-left: -350px;
     }
 
     .lt-ie9 & {
-      bottom: -250px;
+      bottom: -290px;
       width: 700px;
       margin-left: -350px;
     }
