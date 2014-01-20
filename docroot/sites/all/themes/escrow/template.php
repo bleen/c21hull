@@ -46,7 +46,7 @@ function escrow_preprocess_page(&$variables) {
  */
 function escrow_preprocess_links(&$variables) {
   if (isset($variables['links']['print_html'])) {
-    $variables['links']['print_html']['title'] = t('Print Listing Info');
+    $variables['links']['print_html']['title'] = t('Print');
   }
   if (isset($variables['links']['print_pdf'])) {
     $variables['links']['print_pdf']['title'] = t('PDF');
