@@ -613,31 +613,31 @@ function c21_listings_workbench_links($mode = 'common') {
       $links = array(
         'expiring-listings-all' => array(
           'title' => t('Expiring Listings (All)'),
-          'href' => '/admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=All&field_listing_status_value=All&items_per_page=100&order=field_listing_list_date_1&sort=desc',
+          'href' => 'admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=All&field_listing_status_value=All&items_per_page=100&order=field_listing_list_date_1&sort=desc',
         ),
         'expiring-listings-land' => array(
           'title' => t('Expiring Listings (Land)'),
-          'href' => '/admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=land&field_listing_status_value=All&items_per_page=100&order=field_listing_list_date_1&sort=desc',
+          'href' => 'admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=land&field_listing_status_value=All&items_per_page=100&order=field_listing_list_date_1&sort=desc',
         ),
         'expiring-listings-residence' => array(
           'title' => t('Expiring Listings (Residences)'),
-          'href' => '/admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=residence&field_listing_status_value=All&items_per_page=100&order=field_listing_list_date_1&sort=desc',
+          'href' => 'admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=residence&field_listing_status_value=All&items_per_page=100&order=field_listing_list_date_1&sort=desc',
         ),
         'mls-listings' => array(
           'title' => t('MLS Listings'),
-          'href' => '/admin/reports/c21/listings?field_listing_list_date_value2[min]&field_listing_list_date_value2[max]&field_listing_agent_target_id=All&field_listing_building_type_value=All&field_listing_status_value=All&items_per_page=100&order=field_listing_mls&sort=asc',
+          'href' => 'admin/reports/c21/listings?field_listing_list_date_value2[min]&field_listing_list_date_value2[max]&field_listing_agent_target_id=All&field_listing_building_type_value=All&field_listing_status_value=All&items_per_page=100&order=field_listing_mls&sort=asc',
         ),
         'listings-by-price-all' => array(
           'title' => t('Listings by Price (All)'),
-          'href' => '/admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=All&field_listing_status_value=All&items_per_page=100&order=field_listing_list_price&sort=desc',
+          'href' => 'admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=All&field_listing_status_value=All&items_per_page=100&order=field_listing_list_price&sort=desc',
         ),
         'listings-by-price-land' => array(
           'title' => t('Listings by Price (Land)'),
-          'href' => '/admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=land&field_listing_status_value=All&items_per_page=100&order=field_listing_list_price&sort=desc',
+          'href' => 'admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=land&field_listing_status_value=All&items_per_page=100&order=field_listing_list_price&sort=desc',
         ),
         'listings-by-price-residence' => array(
           'title' => t('Listings by Price (Residences)'),
-          'href' => '/admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=residence&field_listing_status_value=All&items_per_page=100&order=field_listing_list_price&sort=desc',
+          'href' => 'admin/reports/c21/listings?field_listing_list_date_value2[min][date]=&field_listing_list_date_value2[max][date]=&field_listing_agent_target_id=All&field_listing_building_type_value=residence&field_listing_status_value=All&items_per_page=100&order=field_listing_list_price&sort=desc',
         ),
       );
       break;
