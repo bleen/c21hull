@@ -94,7 +94,8 @@ $output: 'isolation';
       }
 
       &.field-name-field-listing-personal-property,
-      &.field-name-field-listing-outside-features {
+      &.field-name-field-listing-outside-features,
+      &.field-name-field-listing-directions {
         .field-items {
           width: 100%;
           display: block;
@@ -250,34 +251,6 @@ $output: 'isolation';
 
       .field {
         width: 50%;
-
-        &.field-name-field-listing-directions {
-          width: 48%;
-          position: absolute;
-          top: 2.5em;
-          right: 0;
-
-          .field-label {
-            display: block;
-            text-align: center;
-            width: 100%;
-            margin-bottom: $spacing_default;
-            padding-bottom: .5 * $spacing_default;
-            border-bottom: 1px solid black;
-          }
-          .field-items {
-            display: block;
-            width: 100%;
-
-            .field-item {
-              width: 100%;
-              white-space: normal;
-              border: none;
-              padding: $spacing_default;
-            }
-          }
-        }
-
       }
     }
 
