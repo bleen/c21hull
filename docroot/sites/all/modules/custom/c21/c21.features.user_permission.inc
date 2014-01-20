@@ -707,6 +707,8 @@ function c21_user_default_permissions() {
     'name' => 'merge terms',
     'roles' => array(
       'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
     ),
     'module' => 'term_merge',
   );
