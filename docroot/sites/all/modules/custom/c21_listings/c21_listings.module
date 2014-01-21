@@ -6,6 +6,11 @@
 
 include_once 'c21_listings.features.inc';
 
+define('LISTING_TYPE_OPEN_NID', 1);
+define('LISTING_TYPE_EXCLUSIVE_NID', 2);
+define('LISTING_TYPE_EXCLUSIVE_RIGHT_NID', 3);
+
+
 /**
  * Implements hook_menu().
  */
@@ -477,8 +482,8 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
   $form['field_listing_mls']['#states'] = array(
     'visible' => array(
       '#edit-field-listing-type-und' => array(
-        array('value' => 'exclusive'),
-        array('value' => 'exclusive_right'),
+        array('value' => LISTING_TYPE_EXCLUSIVE_NID),
+        array('value' => LISTING_TYPE_EXCLUSIVE_RIGHT_NID),
       ),
     ),
   );
