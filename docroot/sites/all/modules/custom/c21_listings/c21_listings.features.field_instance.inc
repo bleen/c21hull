@@ -10548,7 +10548,7 @@ function c21_listings_field_default_field_instances() {
         'weight' => 42,
       ),
       'print_internal' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'ds',
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
