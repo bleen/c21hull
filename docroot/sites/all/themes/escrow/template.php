@@ -284,8 +284,9 @@ function _escrow_fine_print($node) {
       '#markup' => token_replace($fine_print_body[0]['value'], array('node' => $node)),
     );
 
+    $agent = isset($node->field_listing_agent[LANGUAGE_NONE][0]['entity']->title) ? $node->field_listing_agent[LANGUAGE_NONE][0]['entity']->title : t('Agent');
     $fine_print['agent'] = array(
-      '#markup' => '<p>Century 21 Roy B. Hull</p><span>&nbsp</span><p>Agent</p>',
+      '#markup' => '<p>Century 21 Roy B. Hull</p><span>&nbsp</span><p>' . $agent . '</p>',
       '#theme_wrappers' => array('container'),
       '#attributes' => array('class' => array('signature agent')),
     );
