@@ -187,6 +187,11 @@ $output: 'isolation';
           margin: 0;
           border: none;
 
+          .seller-first-name,
+          .seller-last-name {
+            font-weight: bold;
+            padding-right: $spacing_default;
+          }
           .phone-number,
           .email {
             display: inline-block;
