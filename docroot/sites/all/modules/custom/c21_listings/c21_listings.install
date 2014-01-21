@@ -306,3 +306,27 @@ function c21_listings_update_7009() {
     }
   }
 }
+
+/**
+ * Fix the spelling of Delaware in the notes field.
+ */
+function c21_listings_update_7010() {
+  $tables = array('field_data_field_listing_notes', 'field_revision_field_listing_notes');
+
+  foreach ($tables as $table) {
+    $q = db_select($table, 'fn');
+    $q->fields('fn', array('entity_id', 'revision_id', 'field_listing_notes_value'))
+      ->condition('fn.field_listing_notes_value', '%Deleware%', 'LIKE');
+    $result = $q->execute()->fetchAllAssoc('entity_id');
+
+    foreach ($result as $entity_id => $data) {
+      db_update($table)
+        ->fields(array(
+          'field_listing_notes_value' => str_replace('Deleware', 'Delaware', $data->field_listing_notes_value),
+        ))
+        ->condition('entity_id', $entity_id)
+        ->condition('revision_id', $data->revision_id)
+        ->execute();
+    }
+  }
+}
