@@ -9085,11 +9085,13 @@ function c21_listings_field_default_field_instances() {
         'settings' => array(
           'empty_fields_emptyfieldtext_empty_text' => '',
           'empty_fields_handler' => 'EmptyFieldText',
-          'more_link' => FALSE,
+          'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'full',
           'trim_length' => 300,
-          'trim_options' => array(),
+          'trim_options' => array(
+            'text' => 0,
+          ),
           'trim_suffix' => '...',
           'trim_type' => 'chars',
         ),

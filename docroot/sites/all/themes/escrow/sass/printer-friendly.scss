@@ -93,9 +93,7 @@ $output: 'isolation';
         }
       }
 
-      &.field-name-field-listing-personal-property,
-      &.field-name-field-listing-outside-features,
-      &.field-name-field-listing-directions {
+      &.multiline {
         .field-items {
           width: 100%;
           display: block;
