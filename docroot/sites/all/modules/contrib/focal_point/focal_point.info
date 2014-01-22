@@ -7,9 +7,9 @@ dependencies[] = image
 
 configure = admin/config/media/focal_point
 
-; Information added by Drupal.org packaging script on 2014-01-02
+; Information added by Drupal.org packaging script on 2014-01-22
 version = "7.x-1.x-dev"
 core = "7.x"
 project = "focal_point"
-datestamp = "1388681605"
+datestamp = "1390367905"
 
