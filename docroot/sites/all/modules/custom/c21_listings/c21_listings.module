@@ -361,7 +361,7 @@ function c21_listings_tokens($type, $tokens, array $data = array(), array $optio
           $dates = $wrapper->field_listing_list_date->value();
           $months = (int)abs((strtotime($dates['value']) - strtotime($dates['value2'])) / (60*60*24*30));
 
-          $replacements[$original] = $months . ' months, ending on ' . date('F n, Y', strtotime($dates['value2']));
+          $replacements[$original] = $months . ' months, ending on ' . date('F d, Y', strtotime($dates['value2']));
           break;
 
         case 'commission':
