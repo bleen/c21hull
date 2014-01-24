@@ -8117,12 +8117,39 @@ function c21_listings_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_listing_mls',
     'label' => 'MLS #',
     'placeholder' => 'ex: 12-3456',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'text_processing' => 0,
@@ -8132,7 +8159,7 @@ function c21_listings_field_default_field_instances() {
       'active' => 1,
       'module' => 'masked_input',
       'settings' => array(
-        'mask' => '99-9999',
+        'mask' => '99-99?999',
         'placeholder' => '_',
         'size' => 60,
       ),
