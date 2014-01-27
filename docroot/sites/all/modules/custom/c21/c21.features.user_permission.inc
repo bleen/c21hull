@@ -130,7 +130,11 @@ function c21_user_default_permissions() {
   // Exported permission: 'access site reports'.
   $permissions['access site reports'] = array(
     'name' => 'access site reports',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+      'staff' => 'staff',
+    ),
     'module' => 'system',
   );
 
