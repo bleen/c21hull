@@ -683,6 +683,18 @@ function c21_listings_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_listing_agent']['delta_offset'] = '0';
+  /* Field: Content: Seller */
+  $handler->display->display_options['fields']['field_listing_seller']['id'] = 'field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['table'] = 'field_data_field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['field'] = 'field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_listing_seller']['settings'] = array(
+    'view_mode' => 'micro_teaser',
+    'empty_fields_handler' => '',
+    'empty_fields_emptyfieldtext_empty_text' => '',
+  );
+  $handler->display->display_options['fields']['field_listing_seller']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_listing_seller']['multi_type'] = 'ul';
   /* Field: Content: Listing Type */
   $handler->display->display_options['fields']['field_listing_type']['id'] = 'field_listing_type';
   $handler->display->display_options['fields']['field_listing_type']['table'] = 'field_data_field_listing_type';
