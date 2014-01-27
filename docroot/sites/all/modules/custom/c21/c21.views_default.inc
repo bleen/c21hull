@@ -321,6 +321,12 @@ function c21_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['content'] = 'There is no content available for you to edit.';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+  /* Relationship: Content: Seller (field_listing_seller) */
+  $handler->display->display_options['relationships']['field_listing_seller_value']['id'] = 'field_listing_seller_value';
+  $handler->display->display_options['relationships']['field_listing_seller_value']['table'] = 'field_data_field_listing_seller';
+  $handler->display->display_options['relationships']['field_listing_seller_value']['field'] = 'field_listing_seller_value';
+  $handler->display->display_options['relationships']['field_listing_seller_value']['label'] = 'seller';
+  $handler->display->display_options['relationships']['field_listing_seller_value']['delta'] = '-1';
   /* Field: Content: Township */
   $handler->display->display_options['fields']['field_listing_township']['id'] = 'field_listing_township';
   $handler->display->display_options['fields']['field_listing_township']['table'] = 'field_data_field_listing_township';
@@ -503,7 +509,6 @@ function c21_views_default_views() {
   $handler->display->display_options['filters']['field_listing_mls_value']['id'] = 'field_listing_mls_value';
   $handler->display->display_options['filters']['field_listing_mls_value']['table'] = 'field_data_field_listing_mls';
   $handler->display->display_options['filters']['field_listing_mls_value']['field'] = 'field_listing_mls_value';
-  $handler->display->display_options['filters']['field_listing_mls_value']['operator'] = 'contains';
   $handler->display->display_options['filters']['field_listing_mls_value']['group'] = 1;
   $handler->display->display_options['filters']['field_listing_mls_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_listing_mls_value']['expose']['operator_id'] = 'field_listing_mls_value_op';
@@ -514,6 +519,7 @@ function c21_views_default_views() {
     2 => '2',
     1 => 0,
     3 => 0,
+    6 => 0,
     5 => 0,
     4 => 0,
   );
@@ -546,6 +552,26 @@ function c21_views_default_views() {
   $handler->display->display_options['filters']['field_listing_street_value']['expose']['operator'] = 'field_listing_street_value_op';
   $handler->display->display_options['filters']['field_listing_street_value']['expose']['identifier'] = 'field_listing_street_value';
   $handler->display->display_options['filters']['field_listing_street_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Field collection item: Last Name (field_seller_last_name) */
+  $handler->display->display_options['filters']['field_seller_last_name_value']['id'] = 'field_seller_last_name_value';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['table'] = 'field_data_field_seller_last_name';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['field'] = 'field_seller_last_name_value';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['relationship'] = 'field_listing_seller_value';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_seller_last_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['operator_id'] = 'field_seller_last_name_value_op';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['label'] = 'Seller (Last Name)';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['operator'] = 'field_seller_last_name_value_op';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['identifier'] = 'field_seller_last_name_value';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,

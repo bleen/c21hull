@@ -1,4 +1,5 @@
-#views-exposed-form-c21-reports-listing-report .views-exposed-widgets .views-exposed-widget label {
+#views-exposed-form-c21-reports-listing-report .views-exposed-widgets .views-exposed-widget label,
+.view-c21-workbench-recent-content .views-exposed-widgets .views-exposed-widget label {
   display: block;
 }
 #views-exposed-form-c21-reports-listing-report .views-widget-filter-field_listing_list_date_value2 .views-widget > div {

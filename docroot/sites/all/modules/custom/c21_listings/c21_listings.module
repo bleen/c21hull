@@ -579,6 +579,7 @@ function c21_listings_form_views_exposed_form_alter(&$form, &$form_state) {
   }
 
   if ($form_state['view']->name == 'c21_workbench_recent_content') {
+    $form['#attached']['css'][] = drupal_get_path('module', 'c21_listings') . '/css/c21_listings_reports.css';
     $form['#validate'][] = 'c21_listings_workbench_recent_content_exposed_form_validate';
   }
 }
