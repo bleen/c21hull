@@ -147,7 +147,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
     /*
      * Add options for exposed pager.
      */
-    if (isset($this->display->display_options['pager']) && $this->display->display_options['pager']['options']['expose']['items_per_page']) {
+    if (isset($this->display->display_options['pager']) && !empty($this->display->display_options['pager']['options']['expose']['items_per_page'])) {
       $bef_options['pager']['bef_format'] = array(
         '#type' => 'select',
         '#title' => t('Display exposed pager options as'),
@@ -178,7 +178,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
 
     $form['input_required'] = array(
       '#type' => 'checkbox',
-      '#default_value' => isset($this->options['input_required']) ? $this->options['input_required'] : FALSE,
+      '#default_value' => $existing['general']['input_required'],
       '#title' => t('Require input before results are shown'),
       '#description' => t("Emulates the built in <em>Input Required</em> exposed filter handler")
     );
@@ -1468,6 +1468,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
     // General, sort, pagers, etc.
     $defaults = array(
       'general' => array(
+        'input_required' => FALSE,
         'allow_secondary' => FALSE,
         'secondary_label' => t('Advanced options'),
       ),
