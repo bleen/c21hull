@@ -815,6 +815,7 @@ function c21_listings_get_rooms() {
     'bedroom4' => t('Bedroom 4'),
     'bedroom5' => t('Bedroom 5'),
     'family_room' => t('Family Room'),
+    'laundry' => t('Laundry Room'),
     'other1' => t('Other 1'),
     'other2' => t('Other 2'),
     'other3' => t('Other 3'),
