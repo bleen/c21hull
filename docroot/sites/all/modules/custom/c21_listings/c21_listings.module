@@ -89,7 +89,7 @@ function c21_listings_node_view($node, $view_mode) {
 function c21_listings_node_view_alter(&$build, $type) {
   // Use a different view mode for the printpdf pages if the current user
   // has permissions to access admin.
-  if (user_access('access administration pages') && arg(0) == 'printpdf') {
+  if (user_access('access administration pages') && (arg(0) == 'printpdf' || (arg(0) == 'print' && isset($_GET['debug'])))) {
     $node = $build['#node'];
     $view_mode = 'print_internal';
     $langcode = $build['#language'];
