@@ -29,9 +29,9 @@ features_exclude[field][node-bef_test-field_letters] = node-bef_test-field_lette
 features_exclude[field][node-bef_test-field_numbers] = node-bef_test-field_numbers
 features_exclude[field][node-bef_test-field_location] = node-bef_test-field_location
 
-; Information added by Drupal.org packaging script on 2014-01-24
-version = "7.x-3.0-beta3+60-dev"
+; Information added by Drupal.org packaging script on 2014-01-28
+version = "7.x-3.0-beta3+65-dev"
 core = "7.x"
 project = "better_exposed_filters"
-datestamp = "1390604905"
+datestamp = "1390870706"
 
