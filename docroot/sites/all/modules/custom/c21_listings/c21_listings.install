@@ -392,3 +392,61 @@ function c21_listings_update_7011() {
     }
   }
 }
+
+/**
+ * Fix missing outside feature data.
+ */
+function c21_listings_update_7012() {
+  // Connect to legacy db.
+  db_set_active('legacy');
+
+  // Grab all data from all listings in the legacy db.
+  $result = db_query('SELECT l.listing_id, lbd.add_building FROM listings AS l JOIN listing_building_dtl AS lbd ON lbd.listing_id = l.listing_id');
+  $legacy_data = $result->fetchAll();
+
+  // Change db connection back to default.
+  db_set_active('default');
+
+  foreach ($legacy_data as $legacy_record) {
+    // Parse out the nid
+    $nid_parts = explode('-', $legacy_record->listing_id);
+    if (is_array($nid_parts) && count($nid_parts) == 2) {
+      $nid = array_pop($nid_parts);
+      if (!is_numeric($nid)) {
+        continue;
+      }
+    }
+
+    // Grab the revision id from the listing node in question.
+    $vid = db_select('node', 'n')
+      ->fields('n', array('vid'))
+      ->condition('n.nid', $nid, '=')
+      ->execute()
+      ->fetchField();
+    if (!is_numeric($vid)) {
+      continue;
+    }
+
+    // If the column in question has no legacy data, skip to the next column.
+    if (empty($legacy_record->add_building)) {
+      continue;
+    }
+
+    // Grab the necessary taxonomy information.
+    $legacy_value = strtolower($legacy_record->add_building);
+    $tid = db_select('migrate_map_c21termslistingoutsidefeatures', 'm')
+      ->fields('m', array('destid1'))
+      ->condition('m.sourceid1', $legacy_value, '=')
+      ->execute()
+      ->fetchField();
+    if (empty($tid)) {
+      continue;
+    }
+
+    try {
+      db_query('INSERT INTO field_data_field_listing_outside_features (entity_type, bundle, deleted, entity_id, revision_id, language, delta, field_listing_outside_features_tid) VALUES (\'node\', \'listing\', 0, ' . $nid . ', ' . $vid . ', \'und\', 0, ' . $tid .')');
+      db_query('INSERT INTO field_revision_field_listing_outside_features (entity_type, bundle, deleted, entity_id, revision_id, language, delta, field_listing_outside_features_tid) VALUES (\'node\', \'listing\', 0, ' . $nid . ', ' . $vid . ', \'und\', 0, ' . $tid .')');
+    }
+    catch (Exception $e) {}
+  }
+}
