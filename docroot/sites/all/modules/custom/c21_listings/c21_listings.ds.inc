@@ -951,6 +951,7 @@ function c21_listings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
+          'lb' => 'Agent(s)',
           'lb-el' => 'div',
           'lb-cl' => 'field-label',
           'ow' => TRUE,
@@ -2362,7 +2363,6 @@ function c21_listings_ds_layout_settings_info() {
       'listing_fine_print' => 'footer',
     ),
     'limit' => array(
-      'field_listing_agent' => '1',
       'field_listing_school_district' => '1',
     ),
     'classes' => array(),
