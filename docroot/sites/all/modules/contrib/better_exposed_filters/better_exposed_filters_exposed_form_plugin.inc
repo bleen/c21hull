@@ -29,7 +29,7 @@ class better_exposed_filters_exposed_form_plugin extends views_plugin_exposed_fo
 
     $bef_options = array();
 
-    // Get current settings and default values for new filters/
+    // Get current settings and default values for new filters.
     $existing = $this->_bef_get_settings();
 
     /*
@@ -77,8 +77,9 @@ class better_exposed_filters_exposed_form_plugin extends views_plugin_exposed_fo
           'default' => t('Default select list'),
           'bef' => t('Radio Buttons'),
           'bef_links' => t('Links'),
+          'bef_toggle_links' => t('Toggle Links'),
         ),
-        '#description' => t('Select a format for the exposed sort options.'),
+        '#description' => t('Select a format for the exposed sort options. Note: the "toggle links" option will only work correctly if "Combine sort order with sort by" is checked in the "Advanced Sort Options" section.'),
       );
       $bef_options['sort']['advanced'] = array(
         '#type' => 'fieldset',
@@ -357,7 +358,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
         $bef_options[$label]['slider_options']['bef_slider_min'] = array(
           '#type' => 'textfield',
           '#title' => t('Range minimum'),
-          '#default_value' => $this->options['bef'][$label]['slider_options']['bef_slider_min'],
+          '#default_value' => $existing[$label]['slider_options']['bef_slider_min'],
           '#bef_filter_id' => $label,
           '#states' => array(
             'required' => array(
@@ -370,7 +371,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
         $bef_options[$label]['slider_options']['bef_slider_max'] = array(
           '#type' => 'textfield',
           '#title' => t('Range maximum'),
-          '#default_value' => $this->options['bef'][$label]['slider_options']['bef_slider_max'],
+          '#default_value' => $existing[$label]['slider_options']['bef_slider_max'],
           '#bef_filter_id' => $label,
           '#states' => array(
             'required' => array(
@@ -383,7 +384,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
         $bef_options[$label]['slider_options']['bef_slider_step'] = array(
           '#type' => 'textfield',
           '#title' => t('Step'),
-          '#default_value' => empty($this->options['bef'][$label]['slider_options']['bef_slider_step']) ? 1 : $this->options['bef'][$label]['slider_options']['bef_slider_step'],
+          '#default_value' => empty($existing[$label]['slider_options']['bef_slider_step']) ? 1 : $existing[$label]['slider_options']['bef_slider_step'],
           '#bef_filter_id' => $label,
           '#states' => array(
             'required' => array(
@@ -398,7 +399,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
         $bef_options[$label]['slider_options']['bef_slider_animate'] = array(
           '#type' => 'textfield',
           '#title' => t('Animate'),
-          '#default_value' => $this->options['bef'][$label]['slider_options']['bef_slider_animate'],
+          '#default_value' => $existing[$label]['slider_options']['bef_slider_animate'],
           '#bef_filter_id' => $label,
           '#description' => t('Whether to slide handle smoothly when user click outside handle on the bar. Allowed values are "slow", "normal", "fast" or the number of milliseconds to run the animation (e.g. 1000). If left blank, there will be no animation, the slider will just jump to the new value instantly.'),
           '#element_validate' => array('better_exposed_filters_element_validate_slider_animate'),
@@ -410,7 +411,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
             'horizontal' => t('Horizontal'),
             'vertical' => t('Vertical'),
           ),
-          '#default_value' => $this->options['bef'][$label]['slider_options']['bef_slider_orientation'],
+          '#default_value' => $existing[$label]['slider_options']['bef_slider_orientation'],
           '#bef_filter_id' => $label,
           '#states' => array(
             'required' => array(
@@ -447,7 +448,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
           $bef_options[$label]['more_options']['bef_select_all_none_nested'] = array(
             '#type' => 'checkbox',
             '#title' => t('Add nested all/none selection'),
-            '#default_value' => $this->options['bef'][$label]['more_options']['bef_select_all_none_nested'],
+            '#default_value' => $existing[$label]['more_options']['bef_select_all_none_nested'],
             '#disabled' => !$filter->options['expose']['multiple'] || !$filter->options['hierarchy'],
             '#description' => t(
               'When a parent checkbox is checked, check all its children. If this option
@@ -596,11 +597,20 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
     // search options"). Place this after the exposed filters and before the
     // rest of the items in the exposed form.
     if ($allow_secondary = $settings['general']['allow_secondary']) {
+      // If one of the secondary widgets has exposed input, do not collapse
+      // the secondary fieldset.
+      $secondary_collapse = TRUE;
+      foreach ($this->view->get_exposed_input() as $key => $value) {
+        if (!empty($value) && isset($settings[$key]['more_options']['is_secondary'])) {
+          $secondary_collapse = FALSE;
+          break;
+        }
+      }
       $secondary = array(
         '#type' => 'fieldset',
         '#title' => $settings['general']['secondary_label'],
         '#collapsible' => TRUE,
-        '#collapsed' => TRUE,
+        '#collapsed' => $secondary_collapse,
         '#theme' => 'secondary_exposed_elements',
       );
     }
@@ -626,6 +636,9 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
           '#title' => $form['sort_by']['#title'],
         );
         $options = array();
+        // If using the bef_toggle_links format, determine which links should
+        // not be shown.
+        $hidden_options = array();
 
         // Add reset sort option at the top of the list.
         if ($settings['sort']['advanced']['reset']) {
@@ -636,6 +649,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
         }
 
         $selected = '';
+        $used_sort_keys = array();
         foreach ($form['sort_by']['#options'] as $by_key => $by_val) {
           foreach ($form['sort_order']['#options'] as $order_key => $order_val) {
             // Use a space to separate the two keys, we'll unpack them in our
@@ -646,6 +660,17 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
               // Respect default sort order set in Views. The default sort field
               // will be the first one if there are multiple sort criteria.
               $selected = "$by_key $order_key";
+            }
+           if ($settings['sort']['bef_format'] == 'bef_toggle_links') {
+             if (isset($used_sort_keys[$by_key])
+               || (!empty($form_state['input']['sort_bef_combine']) && $form_state['input']['sort_bef_combine'] == "$by_key $order_key")
+               || (empty($form_state['input']['sort_bef_combine']) && $selected == "$by_key $order_key")
+             ) {
+                $hidden_options["$by_key $order_key"] = "$by_val $order_val";
+             }
+             else {
+                $used_sort_keys[$by_key] = $order_key;
+             }
             }
           }
         }
@@ -679,6 +704,10 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
         $form['sort_bef_combine'] = array(
           '#type' => 'radios',
           '#options' => $options,
+          '#hidden_options' => $hidden_options,
+          '#settings' => array(
+            'toggle_links' => ($settings['sort']['bef_format'] == 'bef_toggle_links'),
+           ),
           '#default_value' => $selected,
           // Already sanitized by Views.
           '#title' => $form['sort_by']['#title'],
@@ -692,6 +721,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
             break;
 
           case 'bef_links':
+          case 'bef_toggle_links':
             $form['sort_bef_combine']['#theme'] = 'select_as_links';
 
             // Exposed form displayed as blocks can appear on pages other than
@@ -1062,6 +1092,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
             $bef_js['datepicker_options']['dateformat'] = str_replace(array_keys($convert), array_values($convert), $format);
           }
           else {
+            $bef_js['datepicker_options']['dateformat'] = '';
             /*
              * Standard Drupal date field.  Depending on the settings, the field
              * can be at $form[$field_id] (single field) or
