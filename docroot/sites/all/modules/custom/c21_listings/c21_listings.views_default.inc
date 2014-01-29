@@ -815,6 +815,135 @@ function c21_listings_views_default_views() {
   /* Display: Listing Report */
   $handler = $view->new_display('page', 'Listing Report', 'listing_report');
   $handler->display->display_options['display_description'] = 'General information about listings';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Seller (field_listing_seller) */
+  $handler->display->display_options['relationships']['field_listing_seller_value']['id'] = 'field_listing_seller_value';
+  $handler->display->display_options['relationships']['field_listing_seller_value']['table'] = 'field_data_field_listing_seller';
+  $handler->display->display_options['relationships']['field_listing_seller_value']['field'] = 'field_listing_seller_value';
+  $handler->display->display_options['relationships']['field_listing_seller_value']['label'] = 'Seller';
+  $handler->display->display_options['relationships']['field_listing_seller_value']['delta'] = '-1';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'listing' => 'listing',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
+  /* Filter criterion: Content: Published or admin */
+  $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['table'] = 'node';
+  $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
+  $handler->display->display_options['filters']['status_extra']['group'] = 1;
+  /* Filter criterion: Content: List Date - end date (field_listing_list_date:value2) */
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['id'] = 'field_listing_list_date_value2';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['table'] = 'field_data_field_listing_list_date';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['field'] = 'field_listing_list_date_value2';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['group'] = 1;
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['expose']['operator_id'] = 'field_listing_list_date_value2_op';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['expose']['label'] = 'Expiration Date';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['expose']['operator'] = 'field_listing_list_date_value2_op';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['expose']['identifier'] = 'field_listing_list_date_value2';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['group_info']['label'] = 'List Date - end date (field_listing_list_date:value2)';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['group_info']['identifier'] = 'field_listing_list_date_value2';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_listing_list_date_value2']['year_range'] = '-10:+1';
+  /* Filter criterion: Content: Agent (field_listing_agent) */
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['id'] = 'field_listing_agent_target_id';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['table'] = 'field_data_field_listing_agent';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['field'] = 'field_listing_agent_target_id';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['operator_id'] = 'field_listing_agent_target_id_op';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['label'] = 'Agent';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['operator'] = 'field_listing_agent_target_id_op';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['identifier'] = 'field_listing_agent_target_id';
+  $handler->display->display_options['filters']['field_listing_agent_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Field collection item: Last Name (field_seller_last_name) */
+  $handler->display->display_options['filters']['field_seller_last_name_value']['id'] = 'field_seller_last_name_value';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['table'] = 'field_data_field_seller_last_name';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['field'] = 'field_seller_last_name_value';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['relationship'] = 'field_listing_seller_value';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_seller_last_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['operator_id'] = 'field_seller_last_name_value_op';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['label'] = 'Seller (Last Name)';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['operator'] = 'field_seller_last_name_value_op';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['identifier'] = 'field_seller_last_name_value';
+  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    6 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'listing' => 'listing',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Building Type (field_listing_building_type) */
+  $handler->display->display_options['filters']['field_listing_building_type_value']['id'] = 'field_listing_building_type_value';
+  $handler->display->display_options['filters']['field_listing_building_type_value']['table'] = 'field_data_field_listing_building_type';
+  $handler->display->display_options['filters']['field_listing_building_type_value']['field'] = 'field_listing_building_type_value';
+  $handler->display->display_options['filters']['field_listing_building_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_listing_building_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_building_type_value']['expose']['operator_id'] = 'field_listing_building_type_value_op';
+  $handler->display->display_options['filters']['field_listing_building_type_value']['expose']['label'] = 'Building Type';
+  $handler->display->display_options['filters']['field_listing_building_type_value']['expose']['operator'] = 'field_listing_building_type_value_op';
+  $handler->display->display_options['filters']['field_listing_building_type_value']['expose']['identifier'] = 'field_listing_building_type_value';
+  $handler->display->display_options['filters']['field_listing_building_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Status (field_listing_status) */
+  $handler->display->display_options['filters']['field_listing_status_value']['id'] = 'field_listing_status_value';
+  $handler->display->display_options['filters']['field_listing_status_value']['table'] = 'field_data_field_listing_status';
+  $handler->display->display_options['filters']['field_listing_status_value']['field'] = 'field_listing_status_value';
+  $handler->display->display_options['filters']['field_listing_status_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_listing_status_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_status_value']['expose']['operator_id'] = 'field_listing_status_value_op';
+  $handler->display->display_options['filters']['field_listing_status_value']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_listing_status_value']['expose']['operator'] = 'field_listing_status_value_op';
+  $handler->display->display_options['filters']['field_listing_status_value']['expose']['identifier'] = 'field_listing_status_value';
+  $handler->display->display_options['filters']['field_listing_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/reports/c21/listings';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Listing Reports';
