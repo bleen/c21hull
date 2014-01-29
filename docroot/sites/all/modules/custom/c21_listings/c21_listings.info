@@ -63,6 +63,7 @@ features[ds_fields][] = listing_fine_print
 features[ds_fields][] = listing_map
 features[ds_fields][] = listing_measurements_grid
 features[ds_fields][] = listing_office_info
+features[ds_fields][] = listing_sq_ft_total
 features[ds_fields][] = meet_our_agents
 features[ds_layout_settings][] = field_collection_item|field_listing_seller|teaser
 features[ds_layout_settings][] = field_collection_item|field_seller_email|teaser

@@ -101,6 +101,9 @@ function escrow_preprocess_node(&$variables) {
       $fine_print = _escrow_fine_print($variables['node']);
       $variables['listing_fine_print'] = drupal_render($fine_print);
 
+      $sq_ft_total = _escrow_sq_ft_total($variables['node']);
+      $variables['listing_sq_ft_total'] = drupal_render($sq_ft_total);
+
       $map = drupal_is_front_page() ? array() :  _escrow_map($variables['node'], 'node');
       $variables['listing_map'] = drupal_render($map);
 
@@ -301,6 +304,27 @@ function _escrow_fine_print($node) {
   }
 
   return $fine_print;
+}
+
+/**
+ * Render the total square footage of the given listing.
+ *
+ * @param object $node
+ *
+ * @return array
+ */
+function _escrow_sq_ft_total($node) {
+  $above = $node->field_listing_sq_ft_above[LANGUAGE_NONE][0]['value'];
+  $below = $node->field_listing_sq_ft_below[LANGUAGE_NONE][0]['value'];
+
+  $above = is_numeric($above) ? $above : 0;
+  $below = is_numeric($below) ? $below : 0;
+
+  $sq_ft_total = array(
+    '#markup' => '<div class="field field-name-field-listing-sq-ft-total field-type-number-integer field-label-inline clearfix"><div class="field-label">Sq. Ft. Total:&nbsp;</div><div class="field-items"><div class="field-item even">' . number_format($above + $below) . '</div></div></div>',
+  );
+
+  return $sq_ft_total;
 }
 
 /**
