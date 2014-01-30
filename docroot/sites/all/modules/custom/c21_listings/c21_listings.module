@@ -527,6 +527,26 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
     $form['field_listing_legacy_data']['#access'] = FALSE;
   }
 
+  // Add a "Save & Print" buttom.
+  $form['actions']['save_print'] = array(
+    '#type' => 'submit',
+    '#access' => TRUE,
+    '#value' => t('Save & Print'),
+    '#weight' => 7,
+    '#submit' => array('node_form_submit', 'c21_listing_save_and_print'),
+  );
+
+}
+
+/**
+ * Form submit function called on the listing node edit form when the "Save &
+ * Print" button has been pressed.
+ */
+function c21_listing_save_and_print($form, &$form_state) {
+  // We use "GET" instead of $form_state[redirect] because the "destination"
+  // takes priority over form['redirect']
+  $_GET['destination'] = 'printpdf/node/' . $form_state['values']['nid'];
+  drupal_redirect_form($form_state);
 }
 
 /**
