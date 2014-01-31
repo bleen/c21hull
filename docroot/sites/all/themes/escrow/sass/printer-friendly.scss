@@ -281,8 +281,20 @@ $output: 'isolation';
     .field-name-field-listing-sq-ft-below,
     .field-name-field-listing-sq-ft-finished,
     .field-name-field-listing-sq-ft-total,
-    .measurements-grid {
-      display: none;
+    table.measurements-grid {
+      /* NOTE: we cannot use opacity here because the PDF generator borks on dreamhost */
+      color:  $color_gray;
+
+      th,
+      td,
+      .field-label {
+        color:  $color_gray;
+      }
+
+      td,
+      .field-items .field-item {
+        border: 1px solid $color_gray;
+      }
     }
   }
 }

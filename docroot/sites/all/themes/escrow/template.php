@@ -223,7 +223,7 @@ function _escrow_measurements_grid($node) {
 
     $grid = array(
       'title' => array(
-        '#markup' => '<h3>' . t('Measurements') . '</h3>',
+        '#markup' => '<h3 class="measurements-grid-header">' . t('Measurements') . '</h3>',
       ),
       'grid' => array(
         '#theme' => 'table',
