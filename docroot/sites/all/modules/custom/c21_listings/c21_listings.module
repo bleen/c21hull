@@ -124,15 +124,6 @@ function c21_listings_node_view_alter(&$build, $type) {
 }
 
 /**
- * Implements hook_entity_view_mode_alter().
- */
-function c21_listings_entity_view_mode_alter(&$view_mode, $context) {
-  if (user_access('access administration pages') && arg(0) == 'printpdf') {
-    //$view_mode = 'print_internal';
-  }
-}
-
-/**
  * Implements hook_field_attach_view_alter().
  *
  * The majority of this code was taken from
