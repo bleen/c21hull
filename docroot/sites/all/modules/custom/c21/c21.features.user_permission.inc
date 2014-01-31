@@ -461,6 +461,7 @@ function c21_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'manager' => 'manager',
+      'staff' => 'staff',
     ),
     'module' => 'node',
   );
