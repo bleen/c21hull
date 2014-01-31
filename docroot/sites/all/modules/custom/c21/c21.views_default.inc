@@ -341,6 +341,11 @@ function c21_views_default_views() {
   $handler->display->display_options['relationships']['field_listing_seller_value']['field'] = 'field_listing_seller_value';
   $handler->display->display_options['relationships']['field_listing_seller_value']['label'] = 'seller';
   $handler->display->display_options['relationships']['field_listing_seller_value']['delta'] = '-1';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   /* Field: Content: Township */
   $handler->display->display_options['fields']['field_listing_township']['id'] = 'field_listing_township';
   $handler->display->display_options['fields']['field_listing_township']['table'] = 'field_data_field_listing_township';
