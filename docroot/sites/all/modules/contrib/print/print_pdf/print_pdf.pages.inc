@@ -431,7 +431,7 @@ function _print_pdf_wkhtmltopdf($print, $html, $filename = NULL) {
   }
   else {
     drupal_set_message(t('Unable to generate PDF file.'), 'error');
-    drupal_goto($meta['url']);
+    drupal_goto($print['url']);
     return NULL;
   }
 }

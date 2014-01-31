@@ -117,6 +117,10 @@ NODE_EMBED
   * Occasionally there is an "Undefined variable" error. This fixes it.
       PATCH: https://drupal.org/node/1947006#comment-7194922
 
+PRINT
+  * Error "Undefined variable: meta in _print_pdf_wkhtmltopdf()"
+      PATCH: https://drupal.org/comment/6973750#comment-6973750
+
 REPRESENTATIVE_IMAGE
   * There is a bug where revision views don't work unless the vid field is
     included in the view.
