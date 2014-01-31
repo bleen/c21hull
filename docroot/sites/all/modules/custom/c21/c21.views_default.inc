@@ -110,6 +110,12 @@ function c21_views_default_views() {
   $handler->display->display_options['relationships']['vid']['id'] = 'vid';
   $handler->display->display_options['relationships']['vid']['table'] = 'node_revision';
   $handler->display->display_options['relationships']['vid']['field'] = 'vid';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'vid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   /* Field: Content revision: Representative Image */
   $handler->display->display_options['fields']['representative_image']['id'] = 'representative_image';
   $handler->display->display_options['fields']['representative_image']['table'] = 'node_revision';
@@ -145,12 +151,20 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['label'] = 'Last updated';
   $handler->display->display_options['fields']['timestamp']['date_format'] = 'time ago';
+  /* Field: Content: Clone link */
+  $handler->display->display_options['fields']['clone_node']['id'] = 'clone_node';
+  $handler->display->display_options['fields']['clone_node']['table'] = 'node';
+  $handler->display->display_options['fields']['clone_node']['field'] = 'clone_node';
+  $handler->display->display_options['fields']['clone_node']['relationship'] = 'vid';
+  $handler->display->display_options['fields']['clone_node']['exclude'] = TRUE;
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['relationship'] = 'vid';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
+  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '[edit_node] [clone_node] <a href="/printpdf/node/[nid]">PDF</a>';
   /* Field: Content revision: Vid */
   $handler->display->display_options['fields']['vid']['id'] = 'vid';
   $handler->display->display_options['fields']['vid']['table'] = 'node_revision';
@@ -411,7 +425,7 @@ function c21_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
   $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '[edit_node] [clone_node]';
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '[edit_node] [clone_node] <a href="/printpdf/node/[nid]">PDF</a>';
   $handler->display->display_options['fields']['edit_node']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'edit';
