@@ -314,8 +314,8 @@ function _escrow_fine_print($node) {
  * @return array
  */
 function _escrow_sq_ft_total($node) {
-  $above = $node->field_listing_sq_ft_above[LANGUAGE_NONE][0]['value'];
-  $below = $node->field_listing_sq_ft_below[LANGUAGE_NONE][0]['value'];
+  $above = isset($node->field_listing_sq_ft_above[LANGUAGE_NONE][0]['value']) ? $node->field_listing_sq_ft_above[LANGUAGE_NONE][0]['value'] : 0;
+  $below = isset($node->field_listing_sq_ft_below[LANGUAGE_NONE][0]['value']) ? $node->field_listing_sq_ft_below[LANGUAGE_NONE][0]['value'] : 0;
 
   $above = is_numeric($above) ? $above : 0;
   $below = is_numeric($below) ? $below : 0;
