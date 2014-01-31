@@ -53,7 +53,7 @@
       $('select[name="field_listing_building_type[und]"]').change(function(event, context) {
         formItems = $('.group-listing-building-info .form-wrapper').not('.field-name-field-listing-building-type');
         if ($(this).val() === 'land') {
-          formItems.slideUp('slow');
+          formItems.slideUp('slow', function() { $(this).css('display', 'none'); });
         }
         else {
           formItems.slideDown('slow');

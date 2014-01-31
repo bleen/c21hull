@@ -60,10 +60,12 @@ function escrow_preprocess_node(&$variables) {
   switch ($variables['type']) {
     case 'listing':
       $listing_status = $variables['field_listing_status'][LANGUAGE_NONE][0]['value'];
+      $listing_building_type = $variables['field_listing_building_type'][LANGUAGE_NONE][0]['value'];
       $view_mode = $variables['view_mode'];
 
       // Add JS and CSS if needed.
       $variables['classes_array'][] = 'listing';
+      $variables['classes_array'][] = drupal_html_class('building type ' . $listing_building_type);
       $variables['classes_array'][] = drupal_html_class('status ' . $listing_status);
       drupal_add_js(drupal_get_path('theme','escrow') . '/js/horizontal-scroller.js', array('scope' => 'footer', 'group' => JS_THEME));
       if ($view_mode == 'print' || $view_mode == 'print_internal') {

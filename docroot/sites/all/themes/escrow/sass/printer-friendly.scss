@@ -266,4 +266,23 @@ $output: 'isolation';
       padding-right: $spacing_default;
     }
   }
+
+  &.building-type-land {
+    .field-name-field-listing-heat,
+    .field-name-field-listing-insulation,
+    .field-name-field-listing-siding-info,
+    .field-name-field-listing-fireplace-info,
+    .field-name-field-listing-garage,
+    .field-name-field-listing-basement,
+    .field-name-field-listing-windows,
+    .field-name-field-listing-floors,
+    .field-name-field-listing-walls,
+    .field-name-field-listing-sq-ft-above,
+    .field-name-field-listing-sq-ft-below,
+    .field-name-field-listing-sq-ft-finished,
+    .field-name-field-listing-sq-ft-total,
+    .measurements-grid {
+      opacity: 0.25;
+    }
+  }
 }

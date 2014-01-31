@@ -10,6 +10,7 @@ define('LISTING_TYPE_OPEN_NID', 1);
 define('LISTING_TYPE_EXCLUSIVE_NID', 2);
 define('LISTING_TYPE_EXCLUSIVE_RIGHT_NID', 3);
 
+define('LISTING_LAND_TID', 1033);
 
 /**
  * Implements hook_menu().
@@ -518,7 +519,7 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
     $form['field_listing_legacy_data']['#access'] = FALSE;
   }
 
-  // Add a "Save & Print" buttom.
+  // Add a "Save & Print" button.
   $form['actions']['save_print'] = array(
     '#type' => 'submit',
     '#access' => TRUE,
@@ -527,6 +528,13 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
     '#submit' => array('node_form_submit', 'c21_listing_save_and_print'),
   );
 
+  // Hide structure-based fields if "land" is selected. We cannot use #states
+  // because autocomplete delux does not support it. Instead we use custom js.
+  $structure_fields = array('field_listing_acreage');
+  $form['#attached']['js'][] = array(
+    'data' => array('listing_structural_fields' => $structure_fields),
+    'type' => 'setting',
+  );
 }
 
 /**
