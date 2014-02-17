@@ -340,7 +340,16 @@ function c21_listings_tokens($type, $tokens, array $data = array(), array $optio
             $firstname = isset($seller->field_seller_first_name[LANGUAGE_NONE]) ? $seller->field_seller_first_name[LANGUAGE_NONE][0]['safe_value'] : '';
             $lastname = isset($seller->field_seller_last_name[LANGUAGE_NONE]) ? $seller->field_seller_last_name[LANGUAGE_NONE][0]['safe_value'] : '';
             $company = isset($seller->field_seller_company[LANGUAGE_NONE]) ? $seller->field_seller_company[LANGUAGE_NONE][0]['safe_value'] : '';
-            $seller_names[] = empty($company) ? $firstname . ' ' . $lastname : $company;
+
+            if (!empty($company) && !empty($firstname) && !empty($lastname)) {
+              $seller_names[] = $company . ' c/o ' . $firstname . ' ' . $lastname;
+            }
+            elseif (!empty($company)) {
+              $seller_names[] = $company;
+            }
+            elseif (!empty($firstname) && !empty($lastname)) {
+              $seller_names[] = $firstname . ' ' . $lastname;
+            }
           }
 
           $replacements[$original] = implode(' & ', $seller_names);
