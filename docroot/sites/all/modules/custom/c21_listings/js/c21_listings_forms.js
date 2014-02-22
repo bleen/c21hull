@@ -51,7 +51,7 @@
       // Show/Hide the building details form if "building type" is set to (or
       // from) land.
       $('select[name="field_listing_building_type[und]"]').change(function(event, context) {
-        formItems = $('.group-listing-building-info .form-wrapper').not('.field-name-field-listing-building-type');
+        formItems = $('.group-listing-building-info .form-wrapper').not('#edit-field-listing-building-type').not('#edit-field-listing-sewage').not('#edit-field-listing-water');
         if ($(this).val() === 'land') {
           formItems.slideUp('slow', function() { $(this).css('display', 'none'); });
         }
