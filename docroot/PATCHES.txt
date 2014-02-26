@@ -102,6 +102,12 @@ JQUERY_UPDATE
   * Errors are thrown in the core version of state.js when using jquery >= 1.7.
       PATCH: https://drupal.org/node/1448490#comment-6270412
 
+LIBRARIES API
+  * A couple "undefined index errors" showed up in the 7.x-2.2 update.
+      FIX: https://drupal.org/comment/8473907#comment-8473907
+           https://drupal.org/comment/8504329#comment-8504329
+
+
 MASKED_INPUT
   * There is a typo in the hook_requirements so that the jQuery library will
     never be loaded.
