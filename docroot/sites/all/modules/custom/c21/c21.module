@@ -248,6 +248,13 @@ function c21_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function c21_form_user_profile_form_alter(&$form, &$form_id) {
+  $form['picture']['#access'] = FALSE;
+}
+
+/**
  * Return office location information.
  *
  * @param string $office
