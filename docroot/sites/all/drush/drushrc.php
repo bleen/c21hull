@@ -133,6 +133,7 @@ $options['environments'] = array(
       'ds_devel' => 1,
       'metatag_ui' => 1,
       'search_krumo' => 1,
+      'stage_file_proxy' => 1,
     ),
     // The list of variables to configure.
     'settings' => array(
@@ -163,6 +164,7 @@ $options['environments'] = array(
       'simpletest' => 0,
       'c21_migration' => 0,
       'backup_migrate' => 1,
+      'stage_file_proxy' => 0,
     ),
     // The list of variables to configure.
     'settings' => array(
