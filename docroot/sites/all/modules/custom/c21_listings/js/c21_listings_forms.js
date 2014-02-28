@@ -85,6 +85,15 @@
         }
       });
       $(':input[name="field_listing_commission[und][0][value]"]').keyup();
+
+      // If the user hit "back" to get to a node/add page, reset the values to
+      // avoid duplication.
+      $(window).bind("pageshow", function() {
+        if (document.location.pathname == '/node/add/listing') {
+          var form = $("form");
+          form[0].reset();
+        }
+      });
     }
   };
 
