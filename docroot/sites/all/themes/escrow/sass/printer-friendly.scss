@@ -283,17 +283,17 @@ $output: 'isolation';
     .field-name-field-listing-sq-ft-total,
     table.measurements-grid {
       /* NOTE: we cannot use opacity here because the PDF generator borks on dreamhost */
-      color:  $color_gray;
+      color:  $color_gray_light;
 
       th,
       td,
       .field-label {
-        color:  $color_gray;
+        color:  $color_gray_light;
       }
 
       td,
       .field-items .field-item {
-        border: 1px solid $color_gray;
+        border: 1px solid $color_gray_light;
       }
     }
   }
