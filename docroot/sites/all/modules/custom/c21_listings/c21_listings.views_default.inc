@@ -629,9 +629,16 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['fields']['field_listing_mls']['id'] = 'field_listing_mls';
   $handler->display->display_options['fields']['field_listing_mls']['table'] = 'field_data_field_listing_mls';
   $handler->display->display_options['fields']['field_listing_mls']['field'] = 'field_listing_mls';
+  $handler->display->display_options['fields']['field_listing_mls']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_listing_mls']['alter']['text'] = '#[field_listing_mls]';
   $handler->display->display_options['fields']['field_listing_mls']['element_type'] = '0';
   $handler->display->display_options['fields']['field_listing_mls']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_listing_mls']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_mls']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_listing_mls']['settings'] = array(
+    'empty_fields_handler' => '',
+    'empty_fields_emptyfieldtext_empty_text' => '',
+  );
   $handler->display->display_options['fields']['field_listing_mls']['field_api_classes'] = TRUE;
   /* Field: Content: List Price */
   $handler->display->display_options['fields']['field_listing_list_price']['id'] = 'field_listing_list_price';
@@ -965,6 +972,8 @@ function c21_listings_views_default_views() {
     'listing_report' => 'listing_report',
     'default' => 0,
   );
+  $handler->display->display_options['use_batch'] = 'batch';
+  $handler->display->display_options['segment_size'] = '100';
   $export['c21_reports'] = $view;
 
   $view = new view();

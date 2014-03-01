@@ -29,8 +29,6 @@ function c21_context_default_contexts() {
         '~drealty_listing/*/edit' => '~drealty_listing/*/edit',
         '~taxonomy/term/*/edit' => '~taxonomy/term/*/edit',
         '~taxonomy/vocabulary/*/edit' => '~taxonomy/vocabulary/*/edit',
-        '~batch' => '~batch',
-        '~batch/*' => '~batch/*',
         '~landing' => '~landing',
         '~landing/*' => '~landing/*',
         '~user/*/edit' => '~user/*/edit',
