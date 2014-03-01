@@ -83,6 +83,10 @@ DREALTY
                already exists" errors.
       PATCH: https://drupal.org/node/1931250#comment-7916879
 
+ENTITY CACHE
+  * Getting an "array_flip" error
+      PATCH: https://drupal.org/node/1851398 (Original Post)
+
 EMPTY_FIELD
   * Empty field should use drupal_static so we can reset the static variables
     when needed.
