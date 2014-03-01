@@ -58,7 +58,6 @@ $output: 'isolation';
       @include clearfix();
     }
     .field {
-      white-space: nowrap;
       margin: $spacing_default 0;
       @include clearfix();
 
@@ -83,10 +82,7 @@ $output: 'isolation';
         .field-item {
           padding: $spacing_default;
           border: 1px solid black;
-          /*width: 14.5em;*/
           width: 100%;
-          white-space: nowrap;
-          overflow: hidden;
           text-overflow: ellipsis;
           min-height: 30px;
         }
