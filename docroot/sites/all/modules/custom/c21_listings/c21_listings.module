@@ -557,7 +557,7 @@ function c21_listings_form_taxonomy_manager_form_alter(&$form, &$form_state) {
       '#title' => 'Normalization terms',
       '#weight' => 15,
       '#rows' => 2,
-      '#description' => t('These terms will be converted to %term during MLS import. Separate multiple terms with a comma.<br/><strong>Warning: adding terms here will cause existing terms to be merged into %term. This cannot be undone.</strong>', array('%term' => $form['term_data']['name']['#default_value'])),
+      '#description' => t('These terms will be converted to %term during MLS import. Separate multiple terms with a comma.', array('%term' => $form['term_data']['name']['#default_value'])),
       '#default_value' => c21_listings_get_term_normalizations($form['term_data']['tid']['#value']),
     );
     $form['term_data']['save']['#submit'][] = 'c21_listings_form_taxonomy_manager_form_submit';
