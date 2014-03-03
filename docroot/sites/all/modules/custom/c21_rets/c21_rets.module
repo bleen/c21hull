@@ -61,7 +61,7 @@ function _c21_rets_get_term_by_name($field_name, $term_name, $vocabulary_name) {
       // Remove the ", NY" type state information from the city.
       $term_name = preg_replace('/\s*,{1}\s*[A-Za-z]{2}$/', '', $term_name);
       // Remove the " - Foo County" information from the city.
-      $term_name = preg_replace('/\s?-{1}\s?[A-Za-z]+\s{1}([C|c]ounty){1}$/', '', $term_name);
+      $term_name = preg_replace('/\s?(twp)|(Twp)|(TWP)\s?-{1}\s?[A-Za-z]+\s{1}([C|c]ounty){1}$/', '', $term_name);
       break;
   }
 
