@@ -585,31 +585,6 @@ function c21_listings_form_taxonomy_manager_form_submit($form, &$form_state) {
         'term_to_normalize' => $term_to_normalize,
       );
       drupal_write_record('c21_listings_term_normalization', $record);
-
-      // Find the existing term id for the term to normalize.
-      $terms = taxonomy_get_term_by_name($term_to_normalize, $vocabulary);
-      if (!empty($terms)) {
-        foreach ($terms as $term) {
-          // Which listing field is a term reference field to this vocabulary?
-          $fields = _c21_get_reference_fields($vocabulary, 'listing');
-
-          foreach ($fields as $field_name => $field) {
-            // Update the field data and revision tables. This is essentially a
-            // quick and dirty term merge.
-            db_update('field_data_' . $field_name)
-              ->fields(array($field_name . '_tid' => $tid))
-              ->condition($field_name . '_tid', $term->tid)
-              ->execute();
-            db_update('field_revision_' . $field_name)
-              ->fields(array($field_name . '_tid' => $tid))
-              ->condition($field_name . '_tid', $term->tid)
-              ->execute();
-          }
-
-          // Delete the existing term.
-          taxonomy_term_delete($term->tid);
-        }
-      }
     }
   }
 }
