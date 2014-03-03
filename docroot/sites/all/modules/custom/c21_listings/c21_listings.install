@@ -1,6 +1,31 @@
 <?php
 
 /**
+ * Implements hook_schema().
+ */
+function c21_listings_schema() {
+  $schema['c21_listings_term_normalization'] = array(
+    'description' => 'Term mapping to use during an MLS import',
+    'fields' => array(
+      'tid' => array(
+        'description' => 'The tid of the term to map to',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0),
+      'term_to_normalize' => array(
+        'description' => 'A string which when encountered should be set to the corresponding tid',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''),
+    ),
+  );
+
+  return $schema;
+}
+
+/**
  * Implements hook_install().
  */
 function c21_listings_install() {
@@ -448,5 +473,15 @@ function c21_listings_update_7012() {
       db_query('INSERT INTO field_revision_field_listing_outside_features (entity_type, bundle, deleted, entity_id, revision_id, language, delta, field_listing_outside_features_tid) VALUES (\'node\', \'listing\', 0, ' . $nid . ', ' . $vid . ', \'und\', 0, ' . $tid .')');
     }
     catch (Exception $e) {}
+  }
+}
+
+/**
+ * Add a table to the database for term normalization.
+ */
+function c21_listings_update_7013() {
+  //Check if table exists, if not install the schema.
+  if(db_table_exists('c21_listings_term_normalization') == FALSE) {
+    drupal_install_schema('c21_listings');
   }
 }

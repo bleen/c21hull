@@ -548,6 +548,95 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function c21_listings_form_taxonomy_manager_form_alter(&$form, &$form_state) {
+  if (isset($form['term_data']['tid'])) {
+    $form['term_data']['c21_term_normalize'] = array(
+      '#type' => 'textarea',
+      '#title' => 'Normalization terms',
+      '#weight' => 15,
+      '#rows' => 2,
+      '#description' => t('These terms will be converted to %term during MLS import. Separate multiple terms with a comma.<br/><strong>Warning: adding terms here will cause existing terms to be merged into %term. This cannot be undone.</strong>', array('%term' => $form['term_data']['name']['#default_value'])),
+      '#default_value' => c21_listings_get_term_normalizations($form['term_data']['tid']['#value']),
+    );
+    $form['term_data']['save']['#submit'][] = 'c21_listings_form_taxonomy_manager_form_submit';
+  }
+}
+
+/**
+ * Form submit function for the taxonomy manager term edit form.
+ */
+function c21_listings_form_taxonomy_manager_form_submit($form, &$form_state) {
+  if (isset($form_state['values']['tid']) && isset($form_state['values']['c21_term_normalize'])) {
+    $terms_to_normalize = array_map('trim', explode(',', $form_state['values']['c21_term_normalize']));
+    $tid = $form_state['values']['tid'];
+    $vocabulary = $form_state['values']['vocabulary_machine_name'];
+
+    // Delete all term normalizations for this term.
+    db_delete('c21_listings_term_normalization')
+      ->condition('tid', $tid)
+      ->execute();
+
+    // Add terms to normalize based on the current submission.
+    foreach ($terms_to_normalize as $term_to_normalize) {
+      $record = array(
+        'tid' => $tid,
+        'term_to_normalize' => $term_to_normalize,
+      );
+      drupal_write_record('c21_listings_term_normalization', $record);
+
+      // Find the existing term id for the term to normalize.
+      $terms = taxonomy_get_term_by_name($term_to_normalize, $vocabulary);
+      if (!empty($terms)) {
+        foreach ($terms as $term) {
+          // Which listing field is a term reference field to this vocabulary?
+          $fields = _c21_get_reference_fields($vocabulary, 'listing');
+
+          foreach ($fields as $field_name => $field) {
+            // Update the field data and revision tables. This is essentially a
+            // quick and dirty term merge.
+            db_update('field_data_' . $field_name)
+              ->fields(array($field_name . '_tid' => $tid))
+              ->condition($field_name . '_tid', $term->tid)
+              ->execute();
+            db_update('field_revision_' . $field_name)
+              ->fields(array($field_name . '_tid' => $tid))
+              ->condition($field_name . '_tid', $term->tid)
+              ->execute();
+          }
+
+          // Delete the existing term.
+          taxonomy_term_delete($term->tid);
+        }
+      }
+    }
+  }
+}
+
+function _c21_get_reference_fields($vocabulary_machine_name, $bundle, $entity_type = 'node') {
+  $reference_fields = array();
+
+  $fields = field_info_instances($entity_type, $bundle);
+  foreach ($fields as $field) {
+    $info = field_info_field($field['field_name']);
+    if ($info['type'] == 'taxonomy_term_reference') {
+      $allowed_vocabs = array();
+      foreach ($info['settings']['allowed_values'] as $allowed_value) {
+        $allowed_vocabs[] = $allowed_value['vocabulary'];
+      }
+
+      if (in_array($vocabulary_machine_name, $allowed_vocabs)) {
+        $reference_fields[$field['field_name']] = $field;
+      }
+    }
+  }
+
+  return $reference_fields;
+}
+
+
+/**
  * Form submit function called on the listing node edit form when the "Save &
  * Print" button has been pressed.
  */
@@ -776,6 +865,23 @@ function c21_listing_expire_listing($nid) {
 //  $listing->field_listing_status[LANGUAGE_NONE][0] = 'inactive';
   $listing->status = 0;
   node_save($listing);
+}
+
+/**
+ * Get the normalization terms for a given tid as a comma delimited list.
+ *
+ * @param $tid
+ *
+ * @return string
+ */
+function c21_listings_get_term_normalizations($tid) {
+  $result = db_select('c21_listings_term_normalization', 'cltn')
+    ->fields('cltn', array('term_to_normalize'))
+    ->condition('tid', $tid)
+    ->execute()
+    ->fetchAllKeyed(0, 0);
+
+  return implode(', ', $result);
 }
 
 /**
