@@ -53,6 +53,7 @@
       $('select[name="field_listing_building_type[und]"]').change(function(event, context) {
         formItems = $('.group-listing-building-info .form-wrapper').not('#edit-field-listing-building-type').not('#edit-field-listing-sewage').not('#edit-field-listing-water');
         if ($(this).val() === 'land') {
+          formItems.find('select').val("");
           formItems.slideUp('slow', function() { $(this).css('display', 'none'); });
         }
         else {
