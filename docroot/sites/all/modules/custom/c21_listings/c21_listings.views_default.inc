@@ -634,7 +634,6 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['fields']['field_listing_mls']['element_type'] = '0';
   $handler->display->display_options['fields']['field_listing_mls']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_listing_mls']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_listing_mls']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_listing_mls']['settings'] = array(
     'empty_fields_handler' => '',
     'empty_fields_emptyfieldtext_empty_text' => '',
@@ -963,17 +962,19 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['display_description'] = 'Provides an Excel export of this view';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
-  $handler->display->display_options['style_options']['provide_file'] = 1;
-  $handler->display->display_options['style_options']['filename'] = 'listing_report.xls';
-  $handler->display->display_options['style_options']['parent_sort'] = 1;
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 0;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 0;
   $handler->display->display_options['path'] = 'listings_report.xls';
   $handler->display->display_options['displays'] = array(
     'listing_report' => 'listing_report',
     'default' => 0,
   );
-  $handler->display->display_options['use_batch'] = 'batch';
-  $handler->display->display_options['segment_size'] = '100';
   $export['c21_reports'] = $view;
 
   $view = new view();
