@@ -351,6 +351,8 @@ function _c21_get_term_by_name($field_name, $term_name, $vocabulary_name) {
       $term_name = preg_replace('/^\d{3,}\s?\-?\s?/', '', $term_name);
       break;
     case 'field_mls_city':
+      // Remove the " - Foo County" information from the city.
+      $term_name = preg_replace('/\s+((Boro)|(Twp))\s?-{1}\s?[A-Za-z]+\s{1}([Cc]ounty){1}$/', '', $term_name);
       // Remove the ", NY" type state information from the city.
       $term_name = preg_replace('/\s*,{1}\s*[A-Za-z]{2}$/', '', $term_name);
       break;
@@ -360,11 +362,24 @@ function _c21_get_term_by_name($field_name, $term_name, $vocabulary_name) {
   $term = !empty($terms) ? array_shift($terms) : NULL;
 
   if (is_null($term)) {
-    $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
-    $term = new stdClass();
-    $term->name = ucwords($term_name);
-    $term->vid = $vocabulary->vid;
-    taxonomy_term_save($term);
+    // First check if this term can be normalized.
+    $normalized_tid = db_select('c21_listings_term_normalization', 'cltn')
+      ->fields('cltn', 'tid')
+      ->condition('term_to_normalize', $term_name)
+      ->execute()
+      ->fetchField();
+
+    if (!empty($normalized_tid)) {
+      $term = taxonomy_term_load($normalized_tid);
+    }
+    else {
+      // This is a new term and there is no normalization.
+      $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary_name);
+      $term = new stdClass();
+      $term->name = ucwords($term_name);
+      $term->vid = $vocabulary->vid;
+      taxonomy_term_save($term);
+    }
   }
 
   return $term;
