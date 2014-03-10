@@ -630,7 +630,7 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['fields']['field_listing_mls']['table'] = 'field_data_field_listing_mls';
   $handler->display->display_options['fields']['field_listing_mls']['field'] = 'field_listing_mls';
   $handler->display->display_options['fields']['field_listing_mls']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_listing_mls']['alter']['text'] = '#[field_listing_mls]';
+  $handler->display->display_options['fields']['field_listing_mls']['alter']['text'] = '="[field_listing_mls]"';
   $handler->display->display_options['fields']['field_listing_mls']['element_type'] = '0';
   $handler->display->display_options['fields']['field_listing_mls']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_listing_mls']['element_default_classes'] = FALSE;
