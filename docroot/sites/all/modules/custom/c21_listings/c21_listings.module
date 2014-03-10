@@ -641,7 +641,7 @@ function c21_listings_date_popup_process_alter(&$element, $form_state, $context)
  * Implements hook_form_FORM_ID_alter().
  */
 function c21_listings_form_views_exposed_form_alter(&$form, &$form_state) {
-  if ($form['#id'] == 'views-exposed-form-c21-reports-listing-report') {
+  if ($form['#id'] == 'views-exposed-form-c21-reports-listing-report' || $form['#id'] = 'views-exposed-form-c21-reports-views-data-export-1') {
     $form['#attached']['css'][] = drupal_get_path('module', 'c21_listings') . '/css/c21_listings_reports.css';
     $form['field_listing_list_date_value2']['min']['#title'] = '';
     $form['field_listing_list_date_value2']['min']['#attributes']['placeholder'] = t('From');
