@@ -629,7 +629,6 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['fields']['field_listing_mls']['id'] = 'field_listing_mls';
   $handler->display->display_options['fields']['field_listing_mls']['table'] = 'field_data_field_listing_mls';
   $handler->display->display_options['fields']['field_listing_mls']['field'] = 'field_listing_mls';
-  $handler->display->display_options['fields']['field_listing_mls']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_listing_mls']['alter']['text'] = '="[field_listing_mls]"';
   $handler->display->display_options['fields']['field_listing_mls']['element_type'] = '0';
   $handler->display->display_options['fields']['field_listing_mls']['element_wrapper_type'] = '0';
@@ -970,6 +969,113 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['style_options']['keep_html'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Listing ID */
+  $handler->display->display_options['fields']['field_listing_id_prefix']['id'] = 'field_listing_id_prefix';
+  $handler->display->display_options['fields']['field_listing_id_prefix']['table'] = 'field_data_field_listing_id_prefix';
+  $handler->display->display_options['fields']['field_listing_id_prefix']['field'] = 'field_listing_id_prefix';
+  $handler->display->display_options['fields']['field_listing_id_prefix']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_listing_id_prefix']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_listing_id_prefix']['type'] = 'listing_id';
+  /* Field: Content: MLS # */
+  $handler->display->display_options['fields']['field_listing_mls']['id'] = 'field_listing_mls';
+  $handler->display->display_options['fields']['field_listing_mls']['table'] = 'field_data_field_listing_mls';
+  $handler->display->display_options['fields']['field_listing_mls']['field'] = 'field_listing_mls';
+  $handler->display->display_options['fields']['field_listing_mls']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_listing_mls']['alter']['text'] = '="[field_listing_mls]"';
+  $handler->display->display_options['fields']['field_listing_mls']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_mls']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_mls']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_mls']['settings'] = array(
+    'empty_fields_handler' => '',
+    'empty_fields_emptyfieldtext_empty_text' => '',
+  );
+  $handler->display->display_options['fields']['field_listing_mls']['field_api_classes'] = TRUE;
+  /* Field: Content: List Price */
+  $handler->display->display_options['fields']['field_listing_list_price']['id'] = 'field_listing_list_price';
+  $handler->display->display_options['fields']['field_listing_list_price']['table'] = 'field_data_field_listing_list_price';
+  $handler->display->display_options['fields']['field_listing_list_price']['field'] = 'field_listing_list_price';
+  $handler->display->display_options['fields']['field_listing_list_price']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_list_price']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_list_price']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_list_price']['settings'] = array(
+    'thousand_separator' => ',',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['fields']['field_listing_list_price']['field_api_classes'] = TRUE;
+  /* Field: Content: List Date */
+  $handler->display->display_options['fields']['field_listing_list_date']['id'] = 'field_listing_list_date';
+  $handler->display->display_options['fields']['field_listing_list_date']['table'] = 'field_data_field_listing_list_date';
+  $handler->display->display_options['fields']['field_listing_list_date']['field'] = 'field_listing_list_date';
+  $handler->display->display_options['fields']['field_listing_list_date']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_list_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_list_date']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_list_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_list_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  $handler->display->display_options['fields']['field_listing_list_date']['field_api_classes'] = TRUE;
+  /* Field: Content: List Date */
+  $handler->display->display_options['fields']['field_listing_list_date_1']['id'] = 'field_listing_list_date_1';
+  $handler->display->display_options['fields']['field_listing_list_date_1']['table'] = 'field_data_field_listing_list_date';
+  $handler->display->display_options['fields']['field_listing_list_date_1']['field'] = 'field_listing_list_date';
+  $handler->display->display_options['fields']['field_listing_list_date_1']['label'] = 'Expires On';
+  $handler->display->display_options['fields']['field_listing_list_date_1']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Agent */
+  $handler->display->display_options['fields']['field_listing_agent']['id'] = 'field_listing_agent';
+  $handler->display->display_options['fields']['field_listing_agent']['table'] = 'field_data_field_listing_agent';
+  $handler->display->display_options['fields']['field_listing_agent']['field'] = 'field_listing_agent';
+  $handler->display->display_options['fields']['field_listing_agent']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_listing_agent']['delta_offset'] = '0';
+  /* Field: Content: Seller */
+  $handler->display->display_options['fields']['field_listing_seller']['id'] = 'field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['table'] = 'field_data_field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['field'] = 'field_listing_seller';
+  $handler->display->display_options['fields']['field_listing_seller']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_listing_seller']['settings'] = array(
+    'view_mode' => 'micro_teaser',
+    'empty_fields_handler' => '',
+    'empty_fields_emptyfieldtext_empty_text' => '',
+  );
+  $handler->display->display_options['fields']['field_listing_seller']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_listing_seller']['multi_type'] = 'ul';
+  /* Field: Content: Listing Type */
+  $handler->display->display_options['fields']['field_listing_type']['id'] = 'field_listing_type';
+  $handler->display->display_options['fields']['field_listing_type']['table'] = 'field_data_field_listing_type';
+  $handler->display->display_options['fields']['field_listing_type']['field'] = 'field_listing_type';
+  $handler->display->display_options['fields']['field_listing_type']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_listing_status']['id'] = 'field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['table'] = 'field_data_field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['field'] = 'field_listing_status';
+  $handler->display->display_options['fields']['field_listing_status']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_status']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_listing_status']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_status']['field_api_classes'] = TRUE;
   $handler->display->display_options['path'] = 'listings_report.xls';
   $handler->display->display_options['displays'] = array(
     'listing_report' => 'listing_report',
