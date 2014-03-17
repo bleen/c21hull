@@ -3,7 +3,7 @@
 </a>
 <ul id="offices">
   <li>
-    <span class="office-name">Dingman's Ferry</span>
+    <span class="office-name">Dingmans Ferry</span>
     <a class="office-phone" href="tel://1-800-458-4855">1-800-458-4855</a>
   </li>
   <li>
