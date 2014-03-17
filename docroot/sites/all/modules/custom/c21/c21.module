@@ -364,7 +364,7 @@ function _c21_get_term_by_name($field_name, $term_name, $vocabulary_name) {
   if (is_null($term)) {
     // First check if this term can be normalized.
     $normalized_tid = db_select('c21_listings_term_normalization', 'cltn')
-      ->fields('cltn', 'tid')
+      ->fields('cltn', array('tid'))
       ->condition('term_to_normalize', $term_name)
       ->execute()
       ->fetchField();
