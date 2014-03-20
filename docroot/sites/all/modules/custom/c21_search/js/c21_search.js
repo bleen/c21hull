@@ -6,7 +6,7 @@ Drupal.c21Search = Drupal.c21Search || {};
 Drupal.behaviors.c21SearchForm = {
   attach: function (context) {
     // Add text indicators to range sliders and hide the min/max form fields.
-    var sliders = $('#views-exposed-form-c21-reports-views-data-export-1').find('.bef-slider');
+    var sliders = $('#views-exposed-form-c21-search-listings-page').find('.bef-slider');
     sliders.each(function(context) {
       var widget = $(this).siblings('.views-widget');
       widget.find('label').hide();
