@@ -33,7 +33,11 @@ function c21_listings_theme($existing, $type, $theme, $path) {
   $theme_hooks = array(
     'c21_listings_render_rooms_group' => array(
       'render element' => 'form',
-      'file' => 'theme/c21_listings_forms.inc',
+      'file' => 'theme/c21_listings_theme.inc',
+    ),
+    'c21_workbench_links' => array(
+      'render element' => 'links',
+      'file' => 'theme/c21_listings_theme.inc'
     ),
   );
 
@@ -689,111 +693,67 @@ function c21_listings_workbench_links($mode = 'common') {
       );
       break;
     case 'report':
+      $default_query = array(
+        'field_listing_list_date_value2[min][date]' => '',
+        'field_listing_list_date_value2[max][date]' => '',
+        'field_listing_agent_target_id' => 'All',
+        'field_listing_building_type_value' => 'All',
+        'field_listing_status_value' => 'All',
+        'items_per_page' => '25',
+        'order' => 'field_listing_list_date_1',
+        'sort' => 'desc',
+      );
+      $link_defaults = array(
+        'href' => 'admin/reports/c21/listings',
+      );
+      if (module_exists('views_data_export')) {
+        $link_defaults['export_href'] = 'listings_report.xls';
+        $link_defaults['export_icon_src'] = drupal_get_path('module', 'views_data_export') . '/images/xls.png';
+        $link_defaults['export_file_type'] = 'xls';
+      }
+
       $links = array(
         'expiring-listings-all' => array(
           'title' => t('Expiring Listings (All)'),
-          'href' => 'admin/reports/c21/listings',
-          'query' => array(
-            'field_listing_list_date_value2[min][date]' => '',
-            'field_listing_list_date_value2[max][date]' => '',
-            'field_listing_agent_target_id' => 'All',
-            'field_listing_building_type_value' => 'All',
-            'field_listing_status_value' => 'All',
-            'items_per_page' => '25',
-            'order' => 'field_listing_list_date_1',
-            'sort' => 'desc',
-          ),
-        ),
+          'query' => $default_query,
+        ) + $link_defaults,
         'expiring-listings-land' => array(
           'title' => t('Expiring Listings (Land)'),
-          'href' => 'admin/reports/c21/listings',
-          'query' => array(
-            'field_listing_list_date_value2[min][date]' => '',
-            'field_listing_list_date_value2[max][date]' => '',
-            'field_listing_agent_target_id' => 'All',
-            'field_listing_building_type_value' => 'land',
-            'field_listing_status_value' => 'All',
-            'items_per_page' => '25',
-            'order' => 'field_listing_list_date_1',
-            'sort' => 'desc',
-          ),
-        ),
+          'query' => array('field_listing_list_date_1' => 'land') + $default_query,
+        ) + $link_defaults,
         'expiring-listings-residence' => array(
           'title' => t('Expiring Listings (Residences)'),
-          'href' => 'admin/reports/c21/listings',
-          'query' => array(
-            'field_listing_list_date_value2[min][date]' => '',
-            'field_listing_list_date_value2[max][date]' => '',
-            'field_listing_agent_target_id' => 'All',
-            'field_listing_building_type_value' => 'residence',
-            'field_listing_status_value' => 'All',
-            'items_per_page' => '25',
-            'order' => 'field_listing_list_date_1',
-            'sort' => 'desc',
-          ),
-        ),
+          'query' => array('field_listing_building_type_value' => 'residence') + $default_query,
+        ) + $link_defaults,
         'mls-listings' => array(
           'title' => t('MLS Listings'),
-          'href' => 'admin/reports/c21/listings',
           'query' => array(
-            'field_listing_list_date_value2[min]' => '',
-            'field_listing_list_date_value2[max]' => '',
-            'field_listing_agent_target_id' => 'All',
-            'field_listing_building_type_value' => 'All',
-            'field_listing_status_value' => 'for_sale',
-            'items_per_page' => '25',
-            'order' => 'field_listing_mls',
-            'sort' => 'asc',
-          ),
-        ),
+              'field_listing_status_value' => 'for_sale',
+              'order' => 'field_listing_mls',
+              'sort' => 'asc') + $default_query,
+        ) + $link_defaults,
         'listings-by-price-all' => array(
           'title' => t('Listings by Price (All)'),
-          'href' => 'admin/reports/c21/listings',
-          'query' => array(
-            'field_listing_list_date_value2[min]' => '',
-            'field_listing_list_date_value2[max]' => '',
-            'field_listing_agent_target_id' => 'All',
-            'field_listing_building_type_value' => 'All',
-            'field_listing_status_value' => 'All',
-            'items_per_page' => '25',
-            'order' => 'field_listing_list_price',
-            'sort' => 'desc',
-          ),
-        ),
+          'query' => array('order' => 'field_listing_list_price') + $default_query,
+        ) + $link_defaults,
         'listings-by-price-land' => array(
           'title' => t('Listings by Price (Land)'),
-          'href' => 'admin/reports/c21/listings',
           'query' => array(
-            'field_listing_list_date_value2[min]' => '',
-            'field_listing_list_date_value2[max]' => '',
-            'field_listing_agent_target_id' => 'All',
-            'field_listing_building_type_value' => 'land',
-            'field_listing_status_value' => 'All',
-            'items_per_page' => '25',
-            'order' => 'field_listing_list_price',
-            'sort' => 'desc',
-          ),
-        ),
+              'field_listing_building_type_value' => 'land',
+              'order' => 'field_listing_list_price') + $default_query,
+        ) + $link_defaults,
         'listings-by-price-residence' => array(
           'title' => t('Listings by Price (Residences)'),
-          'href' => 'admin/reports/c21/listings',
           'query' => array(
-            'field_listing_list_date_value2[min]' => '',
-            'field_listing_list_date_value2[max]' => '',
-            'field_listing_agent_target_id' => 'All',
-            'field_listing_building_type_value' => 'residence',
-            'field_listing_status_value' => 'All',
-            'items_per_page' => '25',
-            'order' => 'field_listing_list_price',
-            'sort' => 'desc',
-          ),
-        ),
+              'field_listing_building_type_value' => 'residence',
+              'order' => 'field_listing_list_price') + $default_query,
+        ) + $link_defaults,
       );
       break;
   }
 
   if (!empty($links)) {
-    $output = theme('links', array(
+    $output = theme('c21_workbench_links', array(
       'links' => $links,
       'attributes' => array(
         'class' => 'c21_listings_workbench_list c21_listings_' . $mode . '_list',
