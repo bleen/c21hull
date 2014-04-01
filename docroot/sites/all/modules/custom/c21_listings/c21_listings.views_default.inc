@@ -1071,6 +1071,11 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['fields']['field_listing_status']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_listing_status']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_listing_status']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: MLS # (field_listing_mls) */
+  $handler->display->display_options['sorts']['field_listing_mls_value']['id'] = 'field_listing_mls_value';
+  $handler->display->display_options['sorts']['field_listing_mls_value']['table'] = 'field_data_field_listing_mls';
+  $handler->display->display_options['sorts']['field_listing_mls_value']['field'] = 'field_listing_mls_value';
   $handler->display->display_options['path'] = 'listings_report.xls';
   $handler->display->display_options['displays'] = array(
     'listing_report' => 'listing_report',
