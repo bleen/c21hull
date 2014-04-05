@@ -170,6 +170,8 @@ function print_pdf_block_info() {
  * Implements hook_block_view().
  */
 function print_pdf_block_view($delta = 0) {
+  $block = array();
+
       switch ($delta) {
       case 'print_pdf-top':
         $block['subject'] = t('Most PDFd');
@@ -408,9 +410,15 @@ function print_pdf_node_insert($node) {
  */
 function print_pdf_node_update($node) {
   if (user_access('administer print') || user_access('node-specific print configuration')) {
-    if (!isset($node->print_pdf_display)) $node->print_pdf_display = variable_get('print_pdf_display_' . $node->type, PRINT_TYPE_SHOW_LINK_DEFAULT);
-    if (!isset($node->print_pdf_display_comment)) $node->print_pdf_display_comment = variable_get('print_pdf_display_comment_' . $node->type, PRINT_TYPE_COMMENT_LINK_DEFAULT);
-    if (!isset($node->print_pdf_display_urllist)) $node->print_pdf_display_urllist = variable_get('print_pdf_display_urllist_' . $node->type, PRINT_TYPE_URLLIST_DEFAULT);
+    if (!isset($node->print_pdf_display) || $node->print_pdf_display === NULL) {
+      $node->print_pdf_display = variable_get('print_pdf_display_' . $node->type, PRINT_TYPE_SHOW_LINK_DEFAULT);
+    }
+    if (!isset($node->print_pdf_display_comment) || $node->print_pdf_display_comment === NULL) {
+      $node->print_pdf_display_comment = variable_get('print_pdf_display_comment_' . $node->type, PRINT_TYPE_COMMENT_LINK_DEFAULT);
+    }
+    if (!isset($node->print_pdf_display_urllist) || $node->print_pdf_display_urllist === NULL) {
+      $node->print_pdf_display_urllist = variable_get('print_pdf_display_urllist_' . $node->type, PRINT_TYPE_URLLIST_DEFAULT);
+    }
 
     _print_pdf_node_conf_modify($node->nid, $node->print_pdf_display, $node->print_pdf_display_comment, $node->print_pdf_display_urllist);
   }
@@ -686,6 +694,7 @@ function _print_pdf_tcpdf_version() {
     }
     elseif (defined('PDF_PRODUCER')) {
       sscanf(PDF_PRODUCER, "TCPDF %s", $version);
+
       return $version;
     }
   }
