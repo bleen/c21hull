@@ -320,7 +320,7 @@
 
     // Override the resize function, so that the suggestion list doesn't resizes
     // all the time.
-    jqObject.data("autocomplete")._resizeMenu = function()  {};
+ //   jqObject.data("autocomplete")._resizeMenu = function()  {};
 
     jqObject.show();
 

@@ -47,6 +47,12 @@ AUTOCOMPLETE_DELUX
     the ESC or DELETE keys) in Chrome. This patch fixes the issue:
       PATCH: https://drupal.org/node/2012742#comment-7501674
 
+  * After the most recent update to jquery_update I started getting an error
+    about the "_resizeMenu" function. This error causes the node edit page to
+    fail badly. To fix this quick I just commented out the following line from
+    autocomplete_delux.js:
+      LINE: jqObject.data("autocomplete")._resizeMenu = function()  {};
+
 BLOCK_FILTER
   * Embedding a block with a form in it causes an infinite loop.
       PATCH: https://drupal.org/node/1793464#comment-7640337
