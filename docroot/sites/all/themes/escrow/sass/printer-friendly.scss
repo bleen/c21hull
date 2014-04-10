@@ -193,7 +193,7 @@ $output: 'isolation';
           .phone-type,
           .email-type {
             font-size: .8em;
-            color: $color_gray_dark;
+            font-style: italic;
             display: inline;
 
             &:before {
