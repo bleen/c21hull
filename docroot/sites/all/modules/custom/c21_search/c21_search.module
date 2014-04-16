@@ -43,9 +43,6 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
 
     case 'drealty_listing':
       if ($entity->type == "mls_residential_listing") {
-
-        $document->addField('bs_status', !empty($entity->active));
-
         $term_reference_fields = array(
           'development', 'city', 'school_district'
         );
