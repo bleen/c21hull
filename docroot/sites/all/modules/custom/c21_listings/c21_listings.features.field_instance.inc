@@ -11464,6 +11464,7 @@ function c21_listings_field_default_field_instances() {
         'weight' => 60,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_listing_year_built',
     'label' => 'Year Built',
@@ -11471,7 +11472,7 @@ function c21_listings_field_default_field_instances() {
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'default_value' => 'strtotime',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '-30 years',
       'default_value_code2' => '',
