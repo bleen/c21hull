@@ -485,3 +485,49 @@ function c21_listings_update_7013() {
     drupal_install_schema('c21_listings');
   }
 }
+
+/**
+ * Fix missing "year built" data.
+ */
+function c21_listings_update_7014(&$sandbox) {
+  if (!array_key_exists('progress', $sandbox)) {
+    $query = new EntityFieldQuery();
+    $query
+      ->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'listing');
+    $result = $query->execute();
+
+    $sandbox['items_per_pass'] = 25;
+    $sandbox['max'] = !empty($result['node']) ? count($result['node']) : 0;
+    $sandbox['progress'] = 0;
+  }
+
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'listing')
+    ->range($sandbox['progress'], $sandbox['items_per_pass']);
+  $result = $query->execute();
+
+  if (!empty($result['node'])) {
+    $entities = entity_load('node', array_keys($result['node']));
+    foreach ($entities as $entity) {
+      // Check how many revisions there are for this node.
+      $query = db_select('node_revision', 'nr')
+        ->fields('nid', array('nid'))
+        ->condition('nid', $entity->nid);
+      $revision_count = $query->countQuery()->execute()->fetchField();
+
+      // If there is legacy data, grab the "year built".
+      if ($revision_count > 1 && !empty($entity->field_listing_legacy_data[LANGUAGE_NONE][0]['value'])) {
+        $legacy_data = drupal_json_decode($entity->field_listing_legacy_data[LANGUAGE_NONE][0]['value']);
+        $year_built = is_integer($legacy_data['year_built']) ? $legacy_data['year_built'] . '-01-01 00:00:00' : NULL;
+        $entity->field_listing_year_built[LANGUAGE_NONE][0] = array('value' => $year_built);
+        entity_save('node', $entity);
+      }
+
+      $sandbox['progress']++;
+    }
+  }
+  $sandbox['#finished'] = ($sandbox['progress'] >= $sandbox['max']);
+}
