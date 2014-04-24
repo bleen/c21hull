@@ -540,7 +540,7 @@ function c21_listings_update_7015() {
   db_set_active('legacy');
 
   // Grab all data from all listings in the legacy db.
-  $result = db_query('SELECT lm.listing_id, lm.measurement FROM listing_measurements AS lm WHERE lm.floor = 2 AND lm.room = "familyroom"');
+  $result = db_query("SELECT lm.listing_id, lm.measurement FROM listing_measurements AS lm WHERE lm.floor = 2 AND lm.room = 'familyroom'");
   $legacy_data = $result->fetchAll();
 
   // Change db connection back to default.
