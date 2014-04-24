@@ -531,3 +531,34 @@ function c21_listings_update_7014(&$sandbox) {
   }
   $sandbox['#finished'] = ($sandbox['progress'] >= $sandbox['max']);
 }
+
+/**
+ * Fix missing family room, floor 2.
+ */
+function c21_listings_update_7015() {
+  // Connect to legacy db.
+  db_set_active('legacy');
+
+  // Grab all data from all listings in the legacy db.
+  $result = db_query('SELECT lm.listing_id, lm.measurement FROM listing_measurements AS lm WHERE lm.floor = 2 AND lm.room = "familyroom"');
+  $legacy_data = $result->fetchAll();
+
+  // Change db connection back to default.
+  db_set_active('default');
+
+  foreach ($legacy_data as $legacy_record) {
+    // Parse out the nid
+    $nid_parts = explode('-', $legacy_record->listing_id);
+    if (is_array($nid_parts) && count($nid_parts) == 2) {
+      $nid = array_pop($nid_parts);
+      if (!is_numeric($nid)) {
+        continue;
+      }
+    }
+
+    if ($node = node_load($nid)) {
+      $node->field_listing_family_room_f2[LANGUAGE_NONE][0] = array('value' => $legacy_record->measurement);
+      node_save($node);
+    }
+  }
+}
