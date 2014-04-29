@@ -970,3 +970,19 @@ function _c21_listing_get_nid($listing_id) {
     return is_numeric($nid) ? $nid : FALSE;
   }
 }
+
+/**
+ * Given an nid, return the most recently created vid.
+ *
+ * @param $nid
+ *
+ * @return bool|int|string
+ */
+function _c21_listing_get_vid($nid) {
+  $vid = db_select('node', 'n')
+    ->fields('n', array('vid'))
+    ->condition('n.nid', $nid, '=')
+    ->execute()
+    ->fetchField();
+  return is_numeric($vid) ? $vid : FALSE;
+}

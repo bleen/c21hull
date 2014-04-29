@@ -31,8 +31,8 @@ function c21_listings_schema() {
 function c21_listings_install() {
   $query = new EntityFieldQuery();
   $entities = $query->entityCondition('entity_type', 'node')
-                    ->entityCondition('bundle', 'listing_type')
-                    ->execute();
+    ->entityCondition('bundle', 'listing_type')
+    ->execute();
   $nodes = empty($entities) ? array() : node_load_multiple(array_keys($entities['node']));
 
   if (empty($nodes)) {
@@ -688,5 +688,68 @@ function c21_listings_update_7017() {
       }
       catch (Exception $e) {}
     }
+  }
+}
+
+/**
+ * Fix missing family room ... again!
+ */
+function c21_listings_update_7018() {
+  // Connect to legacy db.
+  db_set_active('legacy');
+
+  // Grab all data from all listings in the legacy db.
+  $result = db_query("select * from {listing_measurements} where room = 'familyroom'");
+  $legacy_data = $result->fetchAll();
+
+  // Change db connection back to default.
+  db_set_active('default');
+
+  foreach ($legacy_data as $legacy_record) {
+    module_load_include('module', 'c21_listings');
+    $nid = _c21_listing_get_nid($legacy_record->listing_id);
+    $vid = _c21_listing_get_vid($nid);
+    if (!$nid || !$vid) {
+      continue;
+    }
+
+    $column = 'family_room_' . ($legacy_record->floor == 0 ? 'b' : 'f' . $legacy_record->floor);
+    $measurement = $legacy_record->measurement;
+    $result = db_query('SELECT * FROM {field_data_field_listing_' . $column . '} WHERE entity_id = ' . $nid);
+
+    try {
+      if ($result->rowCount()) {
+        $fields = array(
+          'field_listing_' . $column . '_value' => $measurement,
+        );
+        db_update('field_data_field_listing_' . $column)
+          ->fields($fields)
+          ->condition('entity_id', $nid)
+          ->execute();
+        db_update('field_revision_field_listing_' . $column)
+          ->fields($fields)
+          ->condition('entity_id', $nid)
+          ->execute();
+      }
+      else {
+        $fields = array(
+          'entity_type' => 'node',
+          'bundle' => 'listing',
+          'entity_id' => $nid,
+          'revision_id' => $vid,
+          'language' => LANGUAGE_NONE,
+          'delta' => 0,
+          'field_listing_' . $column . '_value' => $measurement,
+        );
+
+        db_insert('field_data_field_listing_' . $column)
+          ->fields($fields)
+          ->execute();
+        db_insert('field_revision_field_listing_' . $column)
+          ->fields($fields)
+          ->execute();
+      }
+    }
+    catch (Exception $e) {}
   }
 }
