@@ -580,7 +580,7 @@ function c21_listings_update_7016() {
   foreach ($legacy_data as $legacy_record) {
     module_load_include('module', 'c21_listings');
     $nid = _c21_listing_get_nid($legacy_record->listing_id);
-    if (!$nid || $nid != 10022) {
+    if (!$nid) {
       continue;
     }
 
