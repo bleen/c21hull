@@ -640,3 +640,53 @@ function c21_listings_update_7016() {
     }
   }
 }
+
+/**
+ * Fix missing year built... again!
+ */
+function c21_listings_update_7017() {
+  // Connect to legacy db.
+  db_set_active('legacy');
+
+  // Grab all data from all listings in the legacy db.
+  $result = db_query('SELECT l.listing_id, lbd.year_built FROM listings AS l JOIN listing_building_dtl AS lbd ON lbd.listing_id = l.listing_id');
+  $legacy_data = $result->fetchAll();
+
+  // Change db connection back to default.
+  db_set_active('default');
+
+  foreach ($legacy_data as $legacy_record) {
+    if (is_numeric($legacy_record->year_built) && $legacy_record->year_built > 0) {
+      module_load_include('module', 'c21_listings');
+      $nid = _c21_listing_get_nid($legacy_record->listing_id);
+      if (!$nid) {
+        continue;
+      }
+
+      // Grab the revision id from the listing node in question.
+      $vid = db_select('node', 'n')
+        ->fields('n', array('vid'))
+        ->condition('n.nid', $nid, '=')
+        ->execute()
+        ->fetchField();
+      if (!is_numeric($vid)) {
+        continue;
+      }
+
+      $result = db_query('SELECT * FROM {field_data_field_listing_year_built} WHERE entity_id = ' . $nid);
+      $year_built = "'" . $legacy_record->year_built . "-01-01 00:00:00'";
+
+      try {
+        if ($result->rowCount()) {
+          db_query('UPDATE {field_data_field_listing_year_built} SET field_listing_year_built_value = ' . $year_built . ' WHERE entity_id = ' . $nid);
+          db_query('UPDATE {field_revision_field_listing_year_built} SET field_listing_year_built_value = ' . $year_built . ' WHERE entity_id = ' . $nid);
+        }
+        else {
+          db_query('INSERT INTO {field_data_field_listing_year_built} (entity_type, bundle, deleted, entity_id, revision_id, language, delta, field_listing_year_built_value) VALUES (\'node\', \'listing\', 0, ' . $nid . ', ' . $vid . ', \'und\', 0, ' . $year_built . ')');
+          db_query('INSERT INTO {field_revision_field_listing_year_built} (entity_type, bundle, deleted, entity_id, revision_id, language, delta, field_listing_year_built_value) VALUES (\'node\', \'listing\', 0, ' . $nid . ', ' . $vid . ', \'und\', 0, ' . $year_built . ')');
+        }
+      }
+      catch (Exception $e) {}
+    }
+  }
+}
