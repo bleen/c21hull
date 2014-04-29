@@ -562,3 +562,81 @@ function c21_listings_update_7015() {
     }
   }
 }
+
+/**
+ * Fix missing fireplace, siding and style data... again!
+ */
+function c21_listings_update_7016() {
+  // Connect to legacy db.
+  db_set_active('legacy');
+
+  // Grab all data from all listings in the legacy db.
+  $result = db_query('SELECT l.listing_id, l.style, lbd.fireplace, lbd.siding FROM listings AS l JOIN listing_building_dtl AS lbd ON lbd.listing_id = l.listing_id');
+  $legacy_data = $result->fetchAll();
+
+  // Change db connection back to default.
+  db_set_active('default');
+
+  foreach ($legacy_data as $legacy_record) {
+    module_load_include('module', 'c21_listings');
+    $nid = _c21_listing_get_nid($legacy_record->listing_id);
+    if (!$nid || $nid != 10022) {
+      continue;
+    }
+
+    // Grab the revision id from the listing node in question.
+    $vid = db_select('node', 'n')
+      ->fields('n', array('vid'))
+      ->condition('n.nid', $nid, '=')
+      ->execute()
+      ->fetchField();
+    if (!is_numeric($vid)) {
+      continue;
+    }
+
+    // Update the field and field revision tables with the needed data.
+    $columns = array('fireplace', 'siding', 'style');
+    foreach ($columns as $column) {
+      // If the column in question has no legacy data, skip to the next column.
+      if (empty($legacy_record->{$column})) {
+        continue;
+      }
+
+      // Grab the necessary taxonomy information.
+      $legacy_value = strtolower($legacy_record->{$column});
+      $tid = db_select('migrate_map_c21termslisting' . $column, 'm')
+        ->fields('m', array('destid1'))
+        ->condition('m.sourceid1', $legacy_value, '=')
+        ->execute()
+        ->fetchField();
+      if (empty($tid)) {
+        continue;
+      }
+
+      $vocabulary = taxonomy_vocabulary_machine_name_load('listing_' . $column);
+      // If the tid does not have a term associated with it, then create one.
+      $term = taxonomy_term_load($tid);
+      if (!$term) {
+        // Before creating a new term, check if an exact match exists.
+        $terms = taxonomy_get_term_by_name($legacy_value, $vocabulary->vid);
+        if (!empty($terms)) {
+          $term = array_pop($terms);
+        }
+        else {
+          $term = (object) array(
+            'name' => $legacy_value,
+            'vid' => $vocabulary->vid,
+          );
+          taxonomy_term_save($term);
+        }
+        $tid = $term->tid;
+      }
+
+      try {
+        db_query('INSERT INTO field_data_field_listing_' . $column . '_info (entity_type, bundle, deleted, entity_id, revision_id, language, delta, field_listing_' . $column . '_info_tid) VALUES (\'node\', \'listing\', 0, ' . $nid . ', ' . $vid . ', \'und\', 0, ' . $tid .')');
+        db_query('INSERT INTO field_revision_field_listing_' . $column . '_info (entity_type, bundle, deleted, entity_id, revision_id, language, delta, field_listing_' . $column . '_info_tid) VALUES (\'node\', \'listing\', 0, ' . $nid . ', ' . $vid . ', \'und\', 0, ' . $tid .')');
+      }
+      catch (Exception $e) {}
+    }
+  }
+}

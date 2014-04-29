@@ -955,3 +955,18 @@ function _c21_listings_get_gmap_link($entity) {
 
   return $gmap_link;
 }
+
+/**
+ * Given a listing ID, return the corresponding node id.
+ *
+ * @param string $listing_id
+ *
+ * @return bool|int
+ */
+function _c21_listing_get_nid($listing_id) {
+  $nid_parts = explode('-', $listing_id);
+  if (is_array($nid_parts) && count($nid_parts) == 2) {
+    $nid = array_pop($nid_parts);
+    return is_numeric($nid) ? $nid : FALSE;
+  }
+}
