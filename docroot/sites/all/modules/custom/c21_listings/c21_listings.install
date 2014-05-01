@@ -713,3 +713,82 @@ function c21_listings_update_7018() {
     catch (Exception $e) {}
   }
 }
+
+/**
+ * Fixing outside features.
+ */
+function c21_listings_update_7019() {
+  // Connect to legacy db.
+  db_set_active('legacy');
+
+  // Grab all data from all listings in the legacy db.
+  $result = db_query("SELECT listing_id, decks, porch, add_building FROM {listing_building_dtl}");
+  $legacy_data = $result->fetchAll();
+  $legacy_columns = array('decks' => 'deck(s)', 'porch' => 'porch(es)', 'add_building' => 'outdoor structure(s)');
+
+  // Change db connection back to default.
+  db_set_active('default');
+
+  // Prepare to dig into the correct taxonomy.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('listing_outside_features');
+
+  foreach ($legacy_data as $legacy_record) {
+    module_load_include('module', 'c21_listings');
+    $nid = _c21_listing_get_nid($legacy_record->listing_id);
+    $vid = _c21_listing_get_vid($nid);
+    if (!$nid || !$vid) {
+      continue;
+    }
+
+    $legacy_values = array();
+    foreach ($legacy_columns as $column => $column_title) {
+      $legacy_value = strtolower($legacy_record->{$column});
+      $legacy_value = str_replace('yes', $column_title, $legacy_value);
+      $legacy_values = array_merge($legacy_values, explode(',', $legacy_value));
+
+      foreach ($legacy_values as &$legacy_value) {
+        // Do a bunch of cleanup
+        $legacy_value = str_replace('*', '', $legacy_value);
+        $legacy_value = trim($legacy_value);
+        if (is_numeric($legacy_value)) {
+          $legacy_value = $legacy_value . ' ' . $column_title;
+        }
+      }
+    }
+    $legacy_values = array_unique($legacy_values);
+
+    foreach ($legacy_values as $legacy_value) {
+      $terms = taxonomy_get_term_by_name($legacy_value, $vocabulary->vid);
+      if (!empty($terms)) {
+        $term = array_pop($terms);
+      }
+      else {
+        $term = (object) array(
+          'name' => $legacy_value,
+          'vid' => $vocabulary->vid,
+        );
+        taxonomy_term_save($term);
+      }
+      $tid = $term->tid;
+
+      $result = db_query('SELECT * FROM {field_data_field_listing_outside_features} WHERE entity_id = ' . $nid . ' and field_listing_outside_features_tid = ' . $tid . ' ORDER BY delta');
+      try {
+        if ($result->rowCount() == 0) {
+          $delta = db_query('SELECT delta FROM {field_data_field_listing_outside_features} WHERE entity_id = ' . $nid . ' ORDER BY delta DESC')->fetchField();
+          $fields = array(
+            'entity_type' => 'node',
+            'bundle' => 'listing',
+            'entity_id' => $nid,
+            'revision_id' => $vid,
+            'language' => LANGUAGE_NONE,
+            'delta' => ++$delta,
+            'field_listing_outside_features_tid' => $tid,
+          );
+          db_insert('field_data_field_listing_outside_features')->fields($fields)->execute();
+          db_insert('field_revision_field_listing_outside_features')->fields($fields)->execute();
+        }
+      }
+      catch (Exception $e) {}
+    }
+  }
+}
