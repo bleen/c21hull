@@ -371,22 +371,10 @@ function c21_listings_update_7011() {
   db_set_active('default');
 
   foreach ($legacy_data as $legacy_record) {
-    // Parse out the nid
-    $nid_parts = explode('-', $legacy_record->listing_id);
-    if (is_array($nid_parts) && count($nid_parts) == 2) {
-      $nid = array_pop($nid_parts);
-      if (!is_numeric($nid)) {
-        continue;
-      }
-    }
-
-    // Grab the revision id from the listing node in question.
-    $vid = db_select('node', 'n')
-      ->fields('n', array('vid'))
-      ->condition('n.nid', $nid, '=')
-      ->execute()
-      ->fetchField();
-    if (!is_numeric($vid)) {
+    module_load_include('module', 'c21_listings');
+    $nid = _c21_listing_get_nid($legacy_record->listing_id);
+    $vid = _c21_listing_get_vid($nid);
+    if (!$nid || !$vid) {
       continue;
     }
 
@@ -580,17 +568,8 @@ function c21_listings_update_7016() {
   foreach ($legacy_data as $legacy_record) {
     module_load_include('module', 'c21_listings');
     $nid = _c21_listing_get_nid($legacy_record->listing_id);
-    if (!$nid) {
-      continue;
-    }
-
-    // Grab the revision id from the listing node in question.
-    $vid = db_select('node', 'n')
-      ->fields('n', array('vid'))
-      ->condition('n.nid', $nid, '=')
-      ->execute()
-      ->fetchField();
-    if (!is_numeric($vid)) {
+    $vid = _c21_listing_get_vid($nid);
+    if (!$nid || !$vid) {
       continue;
     }
 
@@ -659,17 +638,8 @@ function c21_listings_update_7017() {
     if (is_numeric($legacy_record->year_built) && $legacy_record->year_built > 0) {
       module_load_include('module', 'c21_listings');
       $nid = _c21_listing_get_nid($legacy_record->listing_id);
-      if (!$nid) {
-        continue;
-      }
-
-      // Grab the revision id from the listing node in question.
-      $vid = db_select('node', 'n')
-        ->fields('n', array('vid'))
-        ->condition('n.nid', $nid, '=')
-        ->execute()
-        ->fetchField();
-      if (!is_numeric($vid)) {
+      $vid = _c21_listing_get_vid($nid);
+      if (!$nid || !$vid) {
         continue;
       }
 
@@ -722,14 +692,8 @@ function c21_listings_update_7018() {
         $fields = array(
           'field_listing_' . $column . '_value' => $measurement,
         );
-        db_update('field_data_field_listing_' . $column)
-          ->fields($fields)
-          ->condition('entity_id', $nid)
-          ->execute();
-        db_update('field_revision_field_listing_' . $column)
-          ->fields($fields)
-          ->condition('entity_id', $nid)
-          ->execute();
+        db_update('field_data_field_listing_' . $column)->fields($fields)->condition('entity_id', $nid)->execute();
+        db_update('field_revision_field_listing_' . $column)->fields($fields)->condition('entity_id', $nid)->execute();
       }
       else {
         $fields = array(
@@ -742,12 +706,8 @@ function c21_listings_update_7018() {
           'field_listing_' . $column . '_value' => $measurement,
         );
 
-        db_insert('field_data_field_listing_' . $column)
-          ->fields($fields)
-          ->execute();
-        db_insert('field_revision_field_listing_' . $column)
-          ->fields($fields)
-          ->execute();
+        db_insert('field_data_field_listing_' . $column)->fields($fields)->execute();
+        db_insert('field_revision_field_listing_' . $column)->fields($fields)->execute();
       }
     }
     catch (Exception $e) {}
