@@ -533,6 +533,10 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
     $form['field_listing_legacy_data']['#access'] = FALSE;
   }
 
+  // Handle the "tbd" taxes checkbox.
+  //$form['field_listing_taxes'][] = $form['field_listing_taxes_tbd'];
+  //unset($form['field_listing_taxes_tbd']);
+
   // Add a "Save & Print" button.
   $form['actions']['save_print'] = array(
     '#type' => 'submit',

@@ -36,6 +36,18 @@
   text-overflow: ellipsis;
 }
 
+.node-listing-form .form-item-field-listing-taxes-und-0-value,
+.node-listing-form .field-name-field-listing-taxes-tbd {
+  float: left;
+}
+.node-listing-form .field-name-field-listing-taxes-tbd {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.node-listing-form .field-name-field-listing-dues {
+  clear: both;
+}
+
 .node-listing-form #edit-field-listing-lot,
 .node-listing-form #edit-field-listing-block,
 .node-listing-form #edit-field-listing-section {

@@ -173,6 +173,7 @@ function c21_listings_field_group_info() {
       8 => 'field_listing_type',
       9 => 'field_listing_zoning',
       10 => 'field_listing_style_info',
+      11 => 'field_listing_taxes_tbd',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -299,8 +300,8 @@ function c21_listings_field_group_info() {
       7 => 'field_listing_street',
       8 => 'field_listing_tax_map',
       9 => 'field_listing_township',
-      10 => 'field_listing_longitude',
-      11 => 'field_listing_latitude',
+      10 => 'field_listing_latitude',
+      11 => 'field_listing_longitude',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

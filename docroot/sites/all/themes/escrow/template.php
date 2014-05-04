@@ -72,6 +72,11 @@ function escrow_preprocess_node(&$variables) {
         drupal_add_css(path_to_theme() . '/stylesheets/printer-friendly.css');
       }
 
+      // Handle taxes field.
+      if (isset($variables['content']['field_listing_taxes'][0]['#markup']) && !empty($variables['field_listing_taxes_tbd'][LANGUAGE_NONE][0]['value'])) {
+        $variables['content']['field_listing_taxes'][0]['#markup'] = 'TBD';
+      }
+
       // Handle "sale pending" flag.
       if ($listing_status == 'pending') {
         $sale_pending_flag = array(
