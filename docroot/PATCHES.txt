@@ -1,7 +1,7 @@
 ==================================== CORE ======================================
 * There is a bug caused by using array_diff_assoc() with multi-dimensional
   arrays.
-    PATCH: https://drupal.org/node/1525176#comment-8314323
+    PATCH: https://drupal.org/node/1525176#comment-8302347
 
 
 
