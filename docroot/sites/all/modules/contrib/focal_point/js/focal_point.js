@@ -6,13 +6,14 @@
  */
 
 (function($) {
+  'use strict';
 
   /**
    * Focal Point indicator.
    */
   Drupal.behaviors.focalPointIndicator = {
     attach: function(context, settings) {
-      $(".focal-point-indicator", context).once(function(){
+      $(".focal-point-indicator", context).once(function() {
         // Set some variables for the different pieces at play.
         var $indicator = $(this);
         var $img = $(this).siblings('img');
@@ -32,11 +33,15 @@
         // Set the position of the indicator on image load and any time the
         // field value changes. We use a bit of hackery to make certain that the
         // image is loaded before moving the crosshair. See http://goo.gl/B02vFO
-        $img.one('load', function(){
-          focalPointSetIndicator($indicator, $(this), $field);
-        }).each(function() {
-          if(this.complete) $(this).load();
-        });
+        // The setTimeout was added to ensure the focal point is set properly on
+        // modal windows. See http://goo.gl/s73ge.
+        setTimeout(function() {
+          $img.one('load', function(){
+            focalPointSetIndicator($indicator, $(this), $field);
+          }).each(function() {
+            if (this.complete) $(this).load();
+          });
+        }, 0);
 
         // Make the focal point indicator draggable and tell it to update the
         // appropriate field when it is moved by the user.
