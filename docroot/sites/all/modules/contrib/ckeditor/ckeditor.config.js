@@ -16,18 +16,17 @@ CKEDITOR.editorConfig = function(config) {
   // The minimum editor width, in pixels, when resizing it with the resize handle.
   config.resize_minWidth = 450;
 
-
+  // Protect PHP code tags (<?...?>) so CKEditor will not break them when
   // switching from Source to WYSIWYG.
   // Uncommenting this line doesn't mean the user will not be able to type PHP
   // code in the source. This kind of prevention must be done in the server
   // side
   // (as does Drupal), so just leave this line as is.
   config.protectedSource.push(/<\?[\s\S]*?\?>/g); // PHP Code
-  config.protectedSource.push(/<code>[\s\S]*?<\/code>/gi); // Code tags
-  config.extraPlugins = '';
 
-  config.extraPlugins += (config.extraPlugins ? ',NodeEmbed' : 'NodeEmbed' );
-  CKEDITOR.plugins.addExternal('NodeEmbed', Drupal.settings.ckeditor.module_path+'/plugins/NodeEmbed/');
+  // [#1762328] Uncomment the line below to protect <code> tags in CKEditor (hide them in wysiwyg mode).
+  // config.protectedSource.push(/<code>[\s\S]*?<\/code>/gi);
+  config.extraPlugins = '';
 
   /*
     * Append here extra CSS rules that should be applied into the editing area.
@@ -73,28 +72,27 @@ Drupal.settings.cke_toolbar_DrupalBasic = [ [ 'Format', 'Bold', 'Italic', '-', '
 Drupal.settings.cke_toolbar_DrupalAdvanced = [
   ['Source'],
   ['Cut','Copy','Paste','PasteText','PasteFromWord','-','SpellChecker', 'Scayt'],
-  ['Undo','Redo','Find','Replace','-','SelectAll','RemoveFormat'],
+  ['Undo','Redo','Find','Replace','-','SelectAll'],
   ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar'],
   ['Maximize', 'ShowBlocks'],
   '/',
   ['Format'],
-  ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+  ['Bold','Italic','Underline','Strike','-','Subscript','Superscript','-','RemoveFormat'],
   ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
-  ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiRtl','BidiLtr'],
-  ['Link','Unlink','Anchor','Linkit','LinkToNode','LinkToMenu'],
-  ['DrupalBreak', 'DrupalPageBreak']
+  ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl'],
+  ['Link','Unlink','Anchor','Linkit','LinkToNode','LinkToMenu']
 ];
 
-// Toolbar definiton for all buttons
+// Toolbar definition for all buttons
 Drupal.settings.cke_toolbar_DrupalFull = [
   ['Source'],
   ['Cut','Copy','Paste','PasteText','PasteFromWord','-','SpellChecker', 'Scayt'],
-  ['Undo','Redo','Find','Replace','-','SelectAll','RemoveFormat'],
+  ['Undo','Redo','Find','Replace','-','SelectAll'],
   ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','Iframe'],
   '/',
-  ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+  ['Bold','Italic','Underline','Strike','-','Subscript','Superscript','-','RemoveFormat'],
   ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
-  ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiRtl','BidiLtr'],
+  ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl','-','Language'],
   ['Link','Unlink','Anchor','Linkit','LinkToNode', 'LinkToMenu'],
   '/',
   ['Format','Font','FontSize'],
