@@ -53,6 +53,10 @@ AUTOCOMPLETE_DELUX
     autocomplete_delux.js:
       LINE: jqObject.data("autocomplete")._resizeMenu = function()  {};
 
+BACKUP & MIGRATE
+  * Illegal string offset 'value' in backup_file->transfer()  error.
+      PATCH: https://drupal.org/node/2129019#comment-8209023
+
 BLOCK_FILTER
   * Embedding a block with a form in it causes an infinite loop.
       PATCH: https://drupal.org/node/1793464#comment-7640337
