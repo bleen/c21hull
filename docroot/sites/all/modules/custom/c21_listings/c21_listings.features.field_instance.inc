@@ -9201,7 +9201,7 @@ function c21_listings_field_default_field_instances() {
     'custom_add_another' => '',
     'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'To upload multiple images, hold down the ctrl key (cmd on macs) while selecting images.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -9284,33 +9284,12 @@ function c21_listings_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'multiupload_imagefield_widget',
       'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'plupload' => 0,
-            'reference' => 0,
-            'remote' => 0,
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'image_miw',
       'weight' => 20,
     ),
   );
@@ -11916,6 +11895,7 @@ function c21_listings_field_default_field_instances() {
   t('This is used for sorting purposes only. Do not include initials or suffixes. ');
   t('This title will appear above the fine print on the back of printed listings.');
   t('Title');
+  t('To upload multiple images, hold down the ctrl key (cmd on macs) while selecting images.');
   t('Township');
   t('Values less than 100 will be considered a percentage, otherwise a dollar amount');
   t('Virtual Tour');

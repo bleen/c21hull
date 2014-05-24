@@ -260,7 +260,11 @@ function c21_listings_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_buyer_email',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
@@ -393,7 +397,11 @@ function c21_listings_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_buyer_phone',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
@@ -1355,7 +1363,11 @@ function c21_listings_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_listing_buyer',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
@@ -3097,7 +3109,11 @@ function c21_listings_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_listing_seller',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
@@ -3878,7 +3894,11 @@ function c21_listings_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_seller_email',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
@@ -4037,7 +4057,11 @@ function c21_listings_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_seller_phone',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(

@@ -28,7 +28,7 @@ function focal_point_menu() {
     'title' => 'Focal Point Test Drive',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('focal_point_test_drive_form'),
-    'access arguments' => array('administer site configuration'),
+    'access arguments' => array('preview focal point'),
     'file' => 'focal_point.admin.inc',
   );
   $items['focal_point/preview/%/%'] = array(
@@ -36,11 +36,22 @@ function focal_point_menu() {
     'title' => 'Focal Point Preview',
     'page callback' => 'focal_point_preview_page',
     'page arguments' => array(2,3),
-    'access arguments' => array('administer site configuration'),
+    'access arguments' => array('preview focal point'),
     'file' => 'focal_point.admin.inc',
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function focal_point_permission() {
+  return array (
+    'preview focal point' => array (
+      'title' => t('Preview focal point results'),
+    ),
+  );
 }
 
 /**
@@ -120,10 +131,10 @@ function focal_point_file_load($files) {
  */
 function focal_point_form_file_entity_add_upload_alter(&$form, &$form_state) {
   // Add focal point to the file entity edit form used by the media browser.
-  if (_focal_point_enabled_for('media') && isset($form_state['step']) && $form_state['step'] == 4) {
+  if (_focal_point_supported_field_type('media') && isset($form_state['step']) && $form_state['step'] == 4) {
     $fid = isset($form_state['values']['upload']) ? $form_state['values']['upload'] : $form_state['storage']['upload'];
     $file = file_load($fid);
-    if (_focal_point_file_supported($file)) {
+    if (_focal_point_supported_file($file)) {
       $delta = 0;
       $field_name = 'media';
       $thumbnail = array(
@@ -156,7 +167,7 @@ function focal_point_form_file_entity_edit_alter(&$form, &$form_state) {
     return;
   }
 
-  if (_focal_point_enabled_for('media') && _focal_point_file_supported($form['#entity'])) {
+  if (_focal_point_supported_field_type('media') && _focal_point_supported_file($form['#entity'])) {
     $form['preview']['#image_style'] = $form['preview']['#style_name'] = 'focal_point_preview';
 
     $delta = _focal_point_media_field_delta();
@@ -174,17 +185,16 @@ function focal_point_form_file_entity_edit_alter(&$form, &$form_state) {
 }
 
 /**
- * Implementation of hook_widget_form_alter().
+ * Implements hook_field_widget_form_alter().
  */
 function focal_point_field_widget_form_alter(&$element, &$form_state, $context) {
-  if (_focal_point_widget_supported($context['instance'])) {
-    $widget_type = $context['instance']['widget']['type'];
+  $widget_type = $context['instance']['widget']['type'];
+
+  if (_focal_point_supported_widget_type($widget_type)) {
     foreach (element_children($element) as $delta) {
       $element[$delta]['#attributes']['class'][] = 'focal_point';
-      if (function_exists('focal_point_widget_'. $widget_type .'_process')) {
-        $element[$delta]['#process'][] = 'focal_point_widget_'. $widget_type .'_process';
-        $element[$delta]['#widget_delta'] = $delta;
-      }
+      $element[$delta]['#process'][] = 'focal_point_widget_process';
+      $element[$delta]['#widget_delta'] = $delta;
     }
   }
 }
@@ -192,7 +202,7 @@ function focal_point_field_widget_form_alter(&$element, &$form_state, $context) 
 /**
  * Field widget process function.
  */
-function focal_point_widget_image_image_process($element, &$form_state, $form) {
+function focal_point_widget_process($element, &$form_state, $form) {
   // If a file has already been uploaded, include the necessary components of
   // for the focal point widget.
   $access = (bool) !empty($element['#file']);
@@ -202,8 +212,7 @@ function focal_point_widget_image_image_process($element, &$form_state, $form) {
   else {
     $default_value = isset($element['#default_value']['focal_point']) ? $element['#default_value']['focal_point'] : '';
   }
-  $delta = $element['#widget_delta'];
-  $element['focal_point'] = _focal_point_field($element['#field_name'], $delta, $default_value, $access);
+  $element['focal_point'] = _focal_point_field($element['#field_name'], $element['#widget_delta'], $default_value, $access);
 
   return $element;
 }
@@ -240,9 +249,9 @@ function focal_point_form_validate($form, &$form_state) {
  * Validation function for the focal point widget.
  */
 function focal_point_element_form_validate($element, &$form_state, $form) {
-  $focal_point = isset($element['#value']['focal_point']) ? $element['#value']['focal_point'] : '';
-  if (!empty($element['#file']) && !focal_point_validate($focal_point)) {
-    form_error($element['focal_point'], t('Focal points should be in the format ##,## without spaces where the numbers are between 1 and 100.'));
+  $focal_point = isset($element['#value']) ? $element['#value'] : '';
+  if (!focal_point_validate($focal_point)) {
+    form_error($element, t('Focal points should be in the format ##,## without spaces where the numbers are between 1 and 100.'));
   }
 }
 
@@ -256,7 +265,7 @@ function focal_point_field_attach_presave($entity_type, $entity) {
   // support, save the focal point data.
   foreach (field_info_instances($entity_type, $bundle) as $instance) {
     $field_name = $instance['field_name'];
-    if (_focal_point_widget_supported($instance)) {
+    if (_focal_point_supported_widget_type($instance['widget']['type'])) {
       $wrapper = entity_metadata_wrapper($entity_type, $entity);
       $images = $wrapper->{$field_name}->value();
       if (is_array($images)) {
@@ -451,7 +460,7 @@ function _focal_point_guess_default($fid) {
   }
 
   // Default to the center of the image.
-  return '50,50';
+  return FOCAL_POINT_DEFAULT;
 }
 
 /**
@@ -510,19 +519,19 @@ function _focal_point_images_save($images) {
 /**
  * Determine whether or not the provided field can use focal point support.
  *
- * @param array $instance
- *  A Drupal field instance definition
+ * @param string $instance
+ *  A drupal field widget type.
  *
  * @return bool
  */
-function _focal_point_widget_supported($instance) {
+function _focal_point_supported_widget_type($type) {
   $supported = FALSE;
 
-  if (_focal_point_enabled_for('image')) {
-    $supported_widget_types = array('image_image');
+  if (_focal_point_supported_field_type('image')) {
+    $supported_widget_types = array('image_image', 'image_miw');
     drupal_alter('focal_point_supported_widget_types', $supported_widget_types);
 
-    if (in_array($instance['widget']['type'], $supported_widget_types)) {
+    if (in_array($type, $supported_widget_types)) {
       $supported = TRUE;
     }
   }
@@ -538,7 +547,7 @@ function _focal_point_widget_supported($instance) {
  *
  * @return bool
  */
-function _focal_point_enabled_for($type) {
+function _focal_point_supported_field_type($type) {
   $enabled_for = variable_get('focal_point_enabled_for', array('image', 'media'));
   return in_array($type, $enabled_for, TRUE);
 }
@@ -551,7 +560,7 @@ function _focal_point_enabled_for($type) {
  *
  * @return bool
  */
-function _focal_point_file_supported($file) {
+function _focal_point_supported_file($file) {
   if (is_int($file)) {
     $file = file_load($file);
   }
