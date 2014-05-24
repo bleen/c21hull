@@ -2165,7 +2165,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 132,
+      'weight' => 131,
     ),
   );
 
@@ -2964,7 +2964,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 122,
+      'weight' => 123,
     ),
   );
 
@@ -4225,7 +4225,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 121,
+      'weight' => 122,
     ),
   );
 
@@ -6009,7 +6009,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 134,
+      'weight' => 133,
     ),
   );
 
@@ -6105,7 +6105,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 131,
+      'weight' => 130,
     ),
   );
 
@@ -6272,7 +6272,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 125,
+      'weight' => 126,
     ),
   );
 
@@ -6475,7 +6475,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 126,
+      'weight' => 127,
     ),
   );
 
@@ -9071,7 +9071,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 136,
+      'weight' => 135,
     ),
   );
 
@@ -9191,7 +9191,7 @@ function c21_listings_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 137,
+      'weight' => 136,
     ),
   );
 
@@ -9801,7 +9801,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 123,
+      'weight' => 124,
     ),
   );
 
@@ -9889,7 +9889,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 127,
+      'weight' => 128,
     ),
   );
 
@@ -10892,6 +10892,81 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_to_be_built'
+  $field_instances['node-listing-field_listing_to_be_built'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 121,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_to_be_built',
+    'label' => 'To be built',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 121,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_township'
   $field_instances['node-listing-field_listing_township'] = array(
     'bundle' => 'listing',
@@ -11242,7 +11317,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 135,
+      'weight' => 134,
     ),
   );
 
@@ -11334,7 +11409,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 124,
+      'weight' => 125,
     ),
   );
 
@@ -11423,7 +11498,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 133,
+      'weight' => 132,
     ),
   );
 
@@ -11895,6 +11970,7 @@ function c21_listings_field_default_field_instances() {
   t('This is used for sorting purposes only. Do not include initials or suffixes. ');
   t('This title will appear above the fine print on the back of printed listings.');
   t('Title');
+  t('To be built');
   t('To upload multiple images, hold down the ctrl key (cmd on macs) while selecting images.');
   t('Township');
   t('Values less than 100 will be considered a percentage, otherwise a dollar amount');

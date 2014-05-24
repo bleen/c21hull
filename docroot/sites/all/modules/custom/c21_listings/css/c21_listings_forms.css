@@ -37,14 +37,18 @@
 }
 
 .node-listing-form .form-item-field-listing-taxes-und-0-value,
-.node-listing-form .field-name-field-listing-taxes-tbd {
+.node-listing-form .field-name-field-listing-taxes-tbd,
+.node-listing-form .field-name-field-listing-year-built,
+.node-listing-form .field-name-field-listing-to-be-built {
   float: left;
 }
-.node-listing-form .field-name-field-listing-taxes-tbd {
+.node-listing-form .field-name-field-listing-taxes-tbd,
+.node-listing-form .field-name-field-listing-to-be-built {
   margin-top: 30px;
   margin-left: 20px;
 }
-.node-listing-form .field-name-field-listing-dues {
+.node-listing-form .field-name-field-listing-dues,
+.node-listing-form .field-name-field-listing-bedrooms {
   clear: both;
 }
 

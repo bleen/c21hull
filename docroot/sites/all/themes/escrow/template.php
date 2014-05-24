@@ -77,6 +77,11 @@ function escrow_preprocess_node(&$variables) {
         $variables['content']['field_listing_taxes'][0]['#markup'] = 'TBD';
       }
 
+      // Handle year built field.
+      if (isset($variables['content']['field_listing_year_built'][0]['#markup']) && !empty($variables['field_listing_to_be_built'][LANGUAGE_NONE][0]['value'])) {
+        $variables['content']['field_listing_year_built'][0]['#markup'] = 'To be Built';
+      }
+
       // Handle "sale pending" flag.
       if ($listing_status == 'pending') {
         $sale_pending_flag = array(

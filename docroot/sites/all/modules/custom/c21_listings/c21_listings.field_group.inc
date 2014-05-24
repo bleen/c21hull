@@ -40,6 +40,7 @@ function c21_listings_field_group_info() {
       14 => 'field_listing_outside_features',
       15 => 'field_listing_fireplace_info',
       16 => 'field_listing_siding_info',
+      17 => 'field_listing_to_be_built',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
