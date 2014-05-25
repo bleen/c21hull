@@ -332,7 +332,8 @@ function c21_listings_field_group_info() {
       0 => 'field_listing_sq_ft_above',
       1 => 'field_listing_sq_ft_below',
       2 => 'field_listing_sq_ft_finished',
-      3 => 'group_listing_rooms',
+      3 => 'field_listing_measurements',
+      4 => 'group_listing_rooms',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -384,7 +385,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = 'group_listing_measurements';
   $field_group->data = array(
     'label' => 'Rooms',
-    'weight' => '48',
+    'weight' => '49',
     'children' => array(
       0 => 'field_listing_bathroom1_b',
       1 => 'field_listing_bathroom1_f1',

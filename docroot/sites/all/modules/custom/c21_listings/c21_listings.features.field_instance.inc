@@ -8058,6 +8058,73 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-listing-field_listing_measurements'
+  $field_instances['node-listing-field_listing_measurements'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => NULL,
+        'settings' => array(),
+        'type' => 'default',
+        'weight' => 122,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_measurements',
+    'label' => 'Measurements',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'grid_columns' => '',
+      'grid_rows' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'grid',
+      'settings' => array(),
+      'type' => 'grid_field',
+      'weight' => 48,
+    ),
+  );
+
   // Exported field_instance: 'node-listing-field_listing_mls'
   $field_instances['node-listing-field_listing_mls'] = array(
     'bundle' => 'listing',
@@ -11931,6 +11998,7 @@ function c21_listings_field_default_field_instances() {
   t('Longitude');
   t('Lot');
   t('MLS #');
+  t('Measurements');
   t('Notes');
   t('Other 1 | Basement');
   t('Other 1 | Floor 1');

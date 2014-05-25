@@ -794,8 +794,15 @@ function c21_listings_update_7019() {
 }
 
 /**
- * Enable imagefield focus.
+ * Enable multiupload widget.
  */
 function c21_listings_update_7020() {
   module_enable(array('multiupload_imagefield_widget'));
+}
+
+/**
+ * Enable grid module.
+ */
+function c21_listings_update_7021() {
+  module_enable(array('grid'));
 }

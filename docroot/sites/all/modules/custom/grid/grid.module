@@ -1,0 +1,145 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function grid_theme($existing, $type, $theme, $path) {
+  $theme_hooks = array(
+    'grid_field' => array(
+      'render element' => 'form',
+      'file' => 'theme/grid_theme.inc',
+    ),
+  );
+
+  return $theme_hooks;
+}
+
+/**
+ * Implements hook_field_info().
+ */
+function grid_field_info() {
+  return array(
+    'grid' => array(
+      'label' => t('Grid'),
+      'description' => t('Stores a simple grid of text fields'),
+      'instance_settings' => array('grid_rows' => '', 'grid_columns' => ''),
+      'default_widget' => 'grid_field',
+      'default_formatter' => 'default',
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_widget_info().
+ */
+function grid_field_widget_info() {
+  return array(
+    'grid_field' => array(
+      'label' => t('Grid'),
+      'description' => t('A simple grid of text fields'),
+      'field types' => array('grid'),
+      'behaviors' => array(
+        'multiple values' => FIELD_BEHAVIOR_CUSTOM,
+        'default value' => FIELD_BEHAVIOR_NONE,
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_settings_form().
+ */
+function grid_field_settings_form($field, $instance, $has_data) {
+  $settings = $field['settings'];
+
+  $form['grid_rows'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Rows'),
+    '#description' => t('Enter a comma separated list of row names.'),
+    '#default_value' => isset($settings['grid_rows']) ? $settings['grid_rows'] : '',
+    '#required' => TRUE,
+  );
+  $form['grid_columns'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Columns'),
+    '#description' => t('Enter a comma separated list of column names.'),
+    '#default_value' => isset($settings['grid_columns']) ? $settings['grid_columns'] : '',
+    '#required' => TRUE,
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_widget_form().
+ */
+function grid_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+  $element['#theme'] = 'grid_field';
+  $element['#theme_wrappers'] = array('form_element');
+
+  $element['#grid_rows'] = explode(',', $field['settings']['grid_rows']);
+  $element['#grid_columns']  = explode(',', $field['settings']['grid_columns']);
+  array_walk($element['#grid_rows'], 'trim');
+  array_walk($element['#grid_columns'], 'trim');
+
+  foreach ($element['#grid_rows'] as $row) {
+    foreach ($element['#grid_columns'] as $column) {
+      $key = drupal_html_class($row) . '_' . drupal_html_class($column);
+
+      // Get the widget default value
+      if (!empty($form_state['input'][$field['field_name']][$langcode][$delta]['grid_data'][$key])) {
+        $default_value = $form_state['input'][$field['field_name']][$langcode][$delta]['grid_data'][$key];
+      }
+      else {
+        $default_value = isset($items[$delta]['grid_data'][$key]) ? $items[$delta]['grid_data'][$key] : '';
+      }
+
+      $element['grid_data'][$key] = array(
+        '#type' => 'textfield',
+        '#maxlength' => 2048,
+        '#size' => 0,
+        '#attributes' => array(
+          'id' => 'grid_' . $delta . '_' . $key,
+          'class' => array('grid-cell', 'grid-row-' . $row, 'grid-col-' . $column),
+        ),
+        '#default_value' => $default_value,
+      );
+    }
+  }
+  return $element;
+}
+
+/**
+ * Implements hook_field_presave().
+ */
+function grid_field_presave($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  foreach ($items as &$item) {
+    $item = array('value' => serialize($item));
+  }
+}
+
+/**
+ * Implements hook_field_load().
+ */
+function grid_field_load($entity_type, $entities, $field, $instances, $langcode, &$items, $age) {
+  foreach ($items as $entity_id => $table) {
+    foreach ($table as $delta => $data) {
+      if (isset($data['value'])) {
+        $items[$entity_id][$delta]['grid_data'] = unserialize($data['value']);
+        unset($items[$entity_id][$delta]['value']);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_is_empty().
+ */
+function grid_field_is_empty($item, $field) {
+  foreach ($item as $data) {
+    if (!empty($data)) {
+      return FALSE;
+    }
+  }
+  return TRUE;
+}

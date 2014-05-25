@@ -2565,6 +2565,25 @@ function c21_listings_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_listing_measurements'
+  $field_bases['field_listing_measurements'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_measurements',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'grid',
+    'settings' => array(
+      'grid_columns' => 'Floor 1,Floor 2, Basement',
+      'grid_rows' => 'Living Room,Dining Room,Kitchen,Living/Dining Room,Dining/Kitchen,Bathroom 1,Bathroom 2,Bathroom 3,Bedroom 1,Bedroom 2,Bedroom 3,Bedroom 4,Bedroom 5,Family Room,Laundry Room,Other 1,Other 2,Other 3',
+    ),
+    'translatable' => 0,
+    'type' => 'grid',
+  );
+
   // Exported field_base: 'field_listing_mls'
   $field_bases['field_listing_mls'] = array(
     'active' => 1,

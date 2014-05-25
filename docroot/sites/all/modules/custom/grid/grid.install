@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_field_schema().
+ */
+function grid_field_schema($field) {
+  return array(
+    'columns' => array(
+      'value' => array(
+        'type' => 'text',
+        'size' => 'big',
+      ),
+    ),
+  );
+}
