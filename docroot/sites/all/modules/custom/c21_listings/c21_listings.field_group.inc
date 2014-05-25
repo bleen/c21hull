@@ -673,10 +673,8 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Measurements',
-    'weight' => '32',
-    'children' => array(
-      0 => 'listing_measurements_grid',
-    ),
+    'weight' => '34',
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Measurements',

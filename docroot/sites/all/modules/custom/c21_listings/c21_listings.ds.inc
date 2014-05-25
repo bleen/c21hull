@@ -656,13 +656,8 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'listing';
   $ds_fieldsetting->view_mode = 'print';
   $ds_fieldsetting->settings = array(
-    'listing_measurements_grid' => array(
-      'weight' => '24',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'listing_office_info' => array(
-      'weight' => '6',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -930,8 +925,8 @@ function c21_listings_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'listing_measurements_grid' => array(
-      'weight' => '31',
+    'listing_office_info' => array(
+      'weight' => '42',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -943,11 +938,6 @@ function c21_listings_ds_field_settings_info() {
         'empty_fields_handler' => '',
         'empty_fields_emptyfieldtext_empty_text' => '',
       ),
-    ),
-    'listing_office_info' => array(
-      'weight' => '42',
-      'label' => 'hidden',
-      'format' => 'default',
     ),
     'field_listing_acreage' => array(
       'formatter_settings' => array(
@@ -1362,6 +1352,13 @@ function c21_listings_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_listing_measurements' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
   );
   $export['node|listing|print_internal'] = $ds_fieldsetting;
 
@@ -1557,18 +1554,6 @@ listing|print_internal';
 mls_residential_listing|*';
   $ds_field->properties = array();
   $export['listing_map'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'listing_measurements_grid';
-  $ds_field->label = 'Measurements Grid';
-  $ds_field->field_type = 3;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'listing|*';
-  $ds_field->properties = array();
-  $export['listing_measurements_grid'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -2214,33 +2199,33 @@ function c21_listings_ds_layout_settings_info() {
         3 => 'group_print_general_info',
         4 => 'field_listing_list_price',
         5 => 'group_print_building_info',
-        7 => 'field_listing_year_built',
-        8 => 'field_listing_acreage',
+        6 => 'field_listing_acreage',
+        8 => 'field_listing_year_built',
         9 => 'field_listing_sewage',
         10 => 'field_listing_taxes',
+        11 => 'field_listing_water',
         12 => 'field_listing_dues',
-        13 => 'field_listing_water',
-        14 => 'field_listing_heat',
-        15 => 'field_listing_zoning',
-        16 => 'field_listing_school_district',
+        15 => 'field_listing_heat',
+        16 => 'field_listing_zoning',
         17 => 'field_listing_insulation',
-        18 => 'field_listing_siding_info',
-        19 => 'field_listing_fireplace_info',
-        20 => 'field_listing_garage',
-        21 => 'field_listing_basement',
-        22 => 'field_listing_windows',
-        23 => 'field_listing_floors',
-        24 => 'field_listing_walls',
-        25 => 'field_listing_outside_features',
-        26 => 'field_listing_sq_ft_above',
-        27 => 'field_listing_sq_ft_below',
-        28 => 'field_listing_sq_ft_finished',
-        29 => 'field_listing_personal_property',
+        18 => 'field_listing_school_district',
+        19 => 'field_listing_siding_info',
+        20 => 'field_listing_fireplace_info',
+        21 => 'field_listing_garage',
+        22 => 'field_listing_basement',
+        23 => 'field_listing_windows',
+        24 => 'field_listing_floors',
+        25 => 'field_listing_walls',
+        26 => 'field_listing_outside_features',
+        27 => 'field_listing_sq_ft_above',
+        28 => 'field_listing_sq_ft_below',
+        29 => 'field_listing_sq_ft_finished',
+        30 => 'field_listing_personal_property',
       ),
       'right' => array(
-        6 => 'field_listing_photos',
-        11 => 'listing_office_info',
-        30 => 'listing_measurements_grid',
+        7 => 'field_listing_measurements',
+        13 => 'field_listing_photos',
+        14 => 'listing_office_info',
       ),
     ),
     'fields' => array(
@@ -2250,18 +2235,19 @@ function c21_listings_ds_layout_settings_info() {
       'group_print_general_info' => 'left',
       'field_listing_list_price' => 'left',
       'group_print_building_info' => 'left',
-      'field_listing_photos' => 'right',
-      'field_listing_year_built' => 'left',
       'field_listing_acreage' => 'left',
+      'field_listing_measurements' => 'right',
+      'field_listing_year_built' => 'left',
       'field_listing_sewage' => 'left',
       'field_listing_taxes' => 'left',
-      'listing_office_info' => 'right',
-      'field_listing_dues' => 'left',
       'field_listing_water' => 'left',
+      'field_listing_dues' => 'left',
+      'field_listing_photos' => 'right',
+      'listing_office_info' => 'right',
       'field_listing_heat' => 'left',
       'field_listing_zoning' => 'left',
-      'field_listing_school_district' => 'left',
       'field_listing_insulation' => 'left',
+      'field_listing_school_district' => 'left',
       'field_listing_siding_info' => 'left',
       'field_listing_fireplace_info' => 'left',
       'field_listing_garage' => 'left',
@@ -2274,7 +2260,6 @@ function c21_listings_ds_layout_settings_info() {
       'field_listing_sq_ft_below' => 'left',
       'field_listing_sq_ft_finished' => 'left',
       'field_listing_personal_property' => 'left',
-      'listing_measurements_grid' => 'right',
     ),
     'limit' => array(
       'field_listing_agent' => '1',
@@ -2304,39 +2289,39 @@ function c21_listings_ds_layout_settings_info() {
     'regions' => array(
       'left' => array(
         0 => 'field_listing_id_prefix',
-        1 => 'field_listing_mls',
-        2 => 'field_listing_agent',
-        3 => 'field_listing_type',
-        4 => 'field_listing_list_date',
-        5 => 'field_listing_list_price',
-        6 => 'field_listing_school_district',
-        7 => 'field_listing_lockbox_key',
-        8 => 'field_listing_style_info',
-        9 => 'field_listing_acreage',
-        10 => 'field_listing_taxes',
-        11 => 'field_listing_dues',
-        12 => 'field_listing_zoning',
-        13 => 'field_listing_year_built',
-        14 => 'field_listing_sewage',
-        15 => 'field_listing_water',
-        16 => 'field_listing_heat',
-        17 => 'field_listing_insulation',
-        18 => 'field_listing_siding_info',
-        19 => 'field_listing_fireplace_info',
-        20 => 'field_listing_garage',
-        21 => 'field_listing_basement',
-        22 => 'field_listing_windows',
-        23 => 'field_listing_floors',
-        24 => 'field_listing_walls',
-        25 => 'field_listing_sq_ft_above',
-        26 => 'field_listing_sq_ft_below',
-        27 => 'listing_sq_ft_total',
-        28 => 'field_listing_sq_ft_finished',
-        29 => 'field_listing_outside_features',
-        30 => 'field_listing_personal_property',
+        2 => 'field_listing_mls',
+        3 => 'field_listing_agent',
+        4 => 'field_listing_type',
+        5 => 'field_listing_list_date',
+        6 => 'field_listing_list_price',
+        7 => 'field_listing_school_district',
+        8 => 'field_listing_lockbox_key',
+        9 => 'field_listing_style_info',
+        10 => 'field_listing_acreage',
+        11 => 'field_listing_taxes',
+        12 => 'field_listing_dues',
+        13 => 'field_listing_zoning',
+        14 => 'field_listing_year_built',
+        15 => 'field_listing_sewage',
+        16 => 'field_listing_water',
+        17 => 'field_listing_heat',
+        18 => 'field_listing_insulation',
+        19 => 'field_listing_siding_info',
+        20 => 'field_listing_fireplace_info',
+        21 => 'field_listing_garage',
+        22 => 'field_listing_basement',
+        23 => 'field_listing_windows',
+        24 => 'field_listing_floors',
+        25 => 'field_listing_walls',
+        26 => 'field_listing_sq_ft_above',
+        27 => 'field_listing_sq_ft_below',
+        28 => 'listing_sq_ft_total',
+        29 => 'field_listing_sq_ft_finished',
+        30 => 'field_listing_outside_features',
+        31 => 'field_listing_personal_property',
       ),
       'right' => array(
-        31 => 'listing_measurements_grid',
+        1 => 'field_listing_measurements',
         32 => 'field_listing_tax_map',
         33 => 'field_listing_development',
         34 => 'field_listing_lot',
@@ -2358,6 +2343,7 @@ function c21_listings_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_listing_id_prefix' => 'left',
+      'field_listing_measurements' => 'right',
       'field_listing_mls' => 'left',
       'field_listing_agent' => 'left',
       'field_listing_type' => 'left',
@@ -2388,7 +2374,6 @@ function c21_listings_ds_layout_settings_info() {
       'field_listing_sq_ft_finished' => 'left',
       'field_listing_outside_features' => 'left',
       'field_listing_personal_property' => 'left',
-      'listing_measurements_grid' => 'right',
       'field_listing_tax_map' => 'right',
       'field_listing_development' => 'right',
       'field_listing_lot' => 'right',

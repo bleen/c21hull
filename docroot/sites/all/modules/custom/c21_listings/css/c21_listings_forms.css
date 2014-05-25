@@ -13,8 +13,9 @@
   float: left;
 }
 
-.node-listing-form .field-name-field-listing-measurements {
+.node-listing-form .rooms {
   display: none;
+  display: block;
 }
 .node-listing-form .field-name-field-listing-measurements td,
 .node-listing-form .rooms td {

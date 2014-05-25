@@ -104,9 +104,6 @@ function escrow_preprocess_node(&$variables) {
       }
 
       // Handle preprocess fields.
-      $grid = _escrow_measurements_grid($variables['node']);
-      $variables['listing_measurements_grid'] = drupal_render($grid);
-
       $office_info = _escrow_office_info($variables['node']);
       $variables['listing_office_info'] = drupal_render($office_info);
 
@@ -199,52 +196,6 @@ function escrow_preprocess_views_view_field(&$variables) {
 function escrow_preprocess_footer_menu(&$variables) {
   $block = module_invoke('menu', 'block_view', $variables['class']);
   $variables['menu_title'] = isset($block['subject']) ? $block['subject'] : '';
-}
-
-/**
- * Returns a render array of the measurements grid for a given listing.
- *
- * @param object $node
- *   A node object.
- *
- * @return array
- */
-function _escrow_measurements_grid($node) {
-  $grid = array();
-
-  if ($node->type == 'listing') {
-    $floors = c21_listings_get_floors();
-    $rooms = c21_listings_get_rooms();
-
-    $header = array_merge(array(''), array_values($floors));
-    $rows = array();
-    foreach ($rooms as $room_id => $room_label) {
-      $row = array(
-        'data' => array(array('data' => $room_label, 'header' => TRUE)),
-        'no_striping' => TRUE,
-      );
-      foreach ($floors as $floor_id => $floor_label) {
-        $field = $node->{'field_listing_' . $room_id . '_' . $floor_id};
-        $measurement = !empty($field) ? $field[LANGUAGE_NONE][0]['safe_value'] : '';
-        $row['data'][] = $measurement;
-      }
-      $rows[] = $row;
-    }
-
-    $grid = array(
-      'title' => array(
-        '#markup' => '<h3 class="measurements-grid-header">' . t('Measurements') . '</h3>',
-      ),
-      'grid' => array(
-        '#theme' => 'table',
-        '#header' => $header,
-        '#rows' => $rows,
-        '#attributes' => array('class' => array('measurements-grid')),
-      ),
-    );
-  }
-
-  return $grid;
 }
 
 /**

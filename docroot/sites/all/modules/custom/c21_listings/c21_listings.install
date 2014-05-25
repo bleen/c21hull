@@ -806,3 +806,93 @@ function c21_listings_update_7020() {
 function c21_listings_update_7021() {
   module_enable(array('grid'));
 }
+
+/**
+ * Migrate measurement data.
+ */
+function c21_listings_update_7022() {
+  $result = db_query("SELECT n.nid, n.vid, bathroom1_b.field_listing_bathroom1_b_value, bathroom1_f1.field_listing_bathroom1_f1_value, bathroom1_f2.field_listing_bathroom1_f2_value, bathroom2_b.field_listing_bathroom2_b_value, bathroom2_f1.field_listing_bathroom2_f1_value, bathroom2_f2.field_listing_bathroom2_f2_value, bathroom3_b.field_listing_bathroom3_b_value, bathroom3_f1.field_listing_bathroom3_f1_value, bathroom3_f2.field_listing_bathroom3_f2_value, bedroom1_b.field_listing_bedroom1_b_value, bedroom1_f1.field_listing_bedroom1_f1_value, bedroom1_f2.field_listing_bedroom1_f2_value, bedroom2_b.field_listing_bedroom2_b_value, bedroom2_f1.field_listing_bedroom2_f1_value, bedroom2_f2.field_listing_bedroom2_f2_value, bedroom3_b.field_listing_bedroom3_b_value, bedroom3_f1.field_listing_bedroom3_f1_value, bedroom3_f2.field_listing_bedroom3_f2_value, bedroom4_b.field_listing_bedroom4_b_value, bedroom4_f1.field_listing_bedroom4_f1_value, bedroom4_f2.field_listing_bedroom4_f2_value, bedroom5_b.field_listing_bedroom5_b_value, bedroom5_f1.field_listing_bedroom5_f1_value, bedroom5_f2.field_listing_bedroom5_f2_value, din_kitchen_b.field_listing_din_kitchen_b_value, din_kitchen_f1.field_listing_din_kitchen_f1_value, din_kitchen_f2.field_listing_din_kitchen_f2_value, dining_room_b.field_listing_dining_room_b_value, dining_room_f1.field_listing_dining_room_f1_value, dining_room_f2.field_listing_dining_room_f2_value, family_room_b.field_listing_family_room_b_value, family_room_f1.field_listing_family_room_f1_value, family_room_f2.field_listing_family_room_f2_value, kitchen_b.field_listing_kitchen_b_value, kitchen_f1.field_listing_kitchen_f1_value, kitchen_f2.field_listing_kitchen_f2_value, laundry_b.field_listing_laundry_b_value, laundry_f1.field_listing_laundry_f1_value, laundry_f2.field_listing_laundry_f2_value, liv_din_b.field_listing_liv_din_b_value, liv_din_f1.field_listing_liv_din_f1_value, liv_din_f2.field_listing_liv_din_f2_value, living_room_b.field_listing_living_room_b_value, living_room_f1.field_listing_living_room_f1_value, living_room_f2.field_listing_living_room_f2_value, other1_b.field_listing_other1_b_value, other1_f1.field_listing_other1_f1_value, other1_f2.field_listing_other1_f2_value, other2_b.field_listing_other2_b_value, other2_f1.field_listing_other2_f1_value, other2_f2.field_listing_other2_f2_value, other3_b.field_listing_other3_b_value, other3_f1.field_listing_other3_f1_value, other3_f2.field_listing_other3_f2_value
+    FROM node as n
+    LEFT JOIN field_data_field_listing_bathroom1_b as bathroom1_b ON n.nid = bathroom1_b.entity_id
+    LEFT JOIN field_data_field_listing_bathroom1_f1 as bathroom1_f1 ON n.nid = bathroom1_f1.entity_id
+    LEFT JOIN field_data_field_listing_bathroom1_f2 as bathroom1_f2 ON n.nid = bathroom1_f2.entity_id
+    LEFT JOIN field_data_field_listing_bathroom2_b as bathroom2_b ON n.nid = bathroom2_b.entity_id
+    LEFT JOIN field_data_field_listing_bathroom2_f1 as bathroom2_f1 ON n.nid = bathroom2_f1.entity_id
+    LEFT JOIN field_data_field_listing_bathroom2_f2 as bathroom2_f2 ON n.nid = bathroom2_f2.entity_id
+    LEFT JOIN field_data_field_listing_bathroom3_b as bathroom3_b ON n.nid = bathroom3_b.entity_id
+    LEFT JOIN field_data_field_listing_bathroom3_f1 as bathroom3_f1 ON n.nid = bathroom3_f1.entity_id
+    LEFT JOIN field_data_field_listing_bathroom3_f2 as bathroom3_f2 ON n.nid = bathroom3_f2.entity_id
+    LEFT JOIN field_data_field_listing_bedroom1_b as bedroom1_b ON n.nid = bedroom1_b.entity_id
+    LEFT JOIN field_data_field_listing_bedroom1_f1 as bedroom1_f1 ON n.nid = bedroom1_f1.entity_id
+    LEFT JOIN field_data_field_listing_bedroom1_f2 as bedroom1_f2 ON n.nid = bedroom1_f2.entity_id
+    LEFT JOIN field_data_field_listing_bedroom2_b as bedroom2_b ON n.nid = bedroom2_b.entity_id
+    LEFT JOIN field_data_field_listing_bedroom2_f1 as bedroom2_f1 ON n.nid = bedroom2_f1.entity_id
+    LEFT JOIN field_data_field_listing_bedroom2_f2 as bedroom2_f2 ON n.nid = bedroom2_f2.entity_id
+    LEFT JOIN field_data_field_listing_bedroom3_b as bedroom3_b ON n.nid = bedroom3_b.entity_id
+    LEFT JOIN field_data_field_listing_bedroom3_f1 as bedroom3_f1 ON n.nid = bedroom3_f1.entity_id
+    LEFT JOIN field_data_field_listing_bedroom3_f2 as bedroom3_f2 ON n.nid = bedroom3_f2.entity_id
+    LEFT JOIN field_data_field_listing_bedroom4_b as bedroom4_b ON n.nid = bedroom4_b.entity_id
+    LEFT JOIN field_data_field_listing_bedroom4_f1 as bedroom4_f1 ON n.nid = bedroom4_f1.entity_id
+    LEFT JOIN field_data_field_listing_bedroom4_f2 as bedroom4_f2 ON n.nid = bedroom4_f2.entity_id
+    LEFT JOIN field_data_field_listing_bedroom5_b as bedroom5_b ON n.nid = bedroom5_b.entity_id
+    LEFT JOIN field_data_field_listing_bedroom5_f1 as bedroom5_f1 ON n.nid = bedroom5_f1.entity_id
+    LEFT JOIN field_data_field_listing_bedroom5_f2 as bedroom5_f2 ON n.nid = bedroom5_f2.entity_id
+    LEFT JOIN field_data_field_listing_din_kitchen_b as din_kitchen_b ON n.nid = din_kitchen_b.entity_id
+    LEFT JOIN field_data_field_listing_din_kitchen_f1 as din_kitchen_f1 ON n.nid = din_kitchen_f1.entity_id
+    LEFT JOIN field_data_field_listing_din_kitchen_f2 as din_kitchen_f2 ON n.nid = din_kitchen_f2.entity_id
+    LEFT JOIN field_data_field_listing_dining_room_b as dining_room_b ON n.nid = dining_room_b.entity_id
+    LEFT JOIN field_data_field_listing_dining_room_f1 as dining_room_f1 ON n.nid = dining_room_f1.entity_id
+    LEFT JOIN field_data_field_listing_dining_room_f2 as dining_room_f2 ON n.nid = dining_room_f2.entity_id
+    LEFT JOIN field_data_field_listing_family_room_b as family_room_b ON n.nid = family_room_b.entity_id
+    LEFT JOIN field_data_field_listing_family_room_f1 as family_room_f1 ON n.nid = family_room_f1.entity_id
+    LEFT JOIN field_data_field_listing_family_room_f2 as family_room_f2 ON n.nid = family_room_f2.entity_id
+    LEFT JOIN field_data_field_listing_kitchen_b as kitchen_b ON n.nid = kitchen_b.entity_id
+    LEFT JOIN field_data_field_listing_kitchen_f1 as kitchen_f1 ON n.nid = kitchen_f1.entity_id
+    LEFT JOIN field_data_field_listing_kitchen_f2 as kitchen_f2 ON n.nid = kitchen_f2.entity_id
+    LEFT JOIN field_data_field_listing_laundry_b as laundry_b ON n.nid = laundry_b.entity_id
+    LEFT JOIN field_data_field_listing_laundry_f1 as laundry_f1 ON n.nid = laundry_f1.entity_id
+    LEFT JOIN field_data_field_listing_laundry_f2 as laundry_f2 ON n.nid = laundry_f2.entity_id
+    LEFT JOIN field_data_field_listing_liv_din_b as liv_din_b ON n.nid = liv_din_b.entity_id
+    LEFT JOIN field_data_field_listing_liv_din_f1 as liv_din_f1 ON n.nid = liv_din_f1.entity_id
+    LEFT JOIN field_data_field_listing_liv_din_f2 as liv_din_f2 ON n.nid = liv_din_f2.entity_id
+    LEFT JOIN field_data_field_listing_living_room_b as living_room_b ON n.nid = living_room_b.entity_id
+    LEFT JOIN field_data_field_listing_living_room_f1 as living_room_f1 ON n.nid = living_room_f1.entity_id
+    LEFT JOIN field_data_field_listing_living_room_f2 as living_room_f2 ON n.nid = living_room_f2.entity_id
+    LEFT JOIN field_data_field_listing_other1_b as other1_b ON n.nid = other1_b.entity_id
+    LEFT JOIN field_data_field_listing_other1_f1 as other1_f1 ON n.nid = other1_f1.entity_id
+    LEFT JOIN field_data_field_listing_other1_f2 as other1_f2 ON n.nid = other1_f2.entity_id
+    LEFT JOIN field_data_field_listing_other2_b as other2_b ON n.nid = other2_b.entity_id
+    LEFT JOIN field_data_field_listing_other2_f1 as other2_f1 ON n.nid = other2_f1.entity_id
+    LEFT JOIN field_data_field_listing_other2_f2 as other2_f2 ON n.nid = other2_f2.entity_id
+    LEFT JOIN field_data_field_listing_other3_b as other3_b ON n.nid = other3_b.entity_id
+    LEFT JOIN field_data_field_listing_other3_f1 as other3_f1 ON n.nid = other3_f1.entity_id
+    LEFT JOIN field_data_field_listing_other3_f2 as other3_f2 ON n.nid = other3_f2.entity_id
+    WHERE field_listing_bathroom1_b_value IS NOT NULL OR field_listing_bathroom1_f1_value IS NOT NULL OR field_listing_bathroom1_f2_value IS NOT NULL OR field_listing_bathroom2_b_value IS NOT NULL OR field_listing_bathroom2_f1_value IS NOT NULL OR field_listing_bathroom2_f2_value IS NOT NULL OR field_listing_bathroom3_b_value IS NOT NULL OR field_listing_bathroom3_f1_value IS NOT NULL OR field_listing_bathroom3_f2_value IS NOT NULL OR field_listing_bedroom1_b_value IS NOT NULL OR field_listing_bedroom1_f1_value IS NOT NULL OR field_listing_bedroom1_f2_value IS NOT NULL OR field_listing_bedroom2_b_value IS NOT NULL OR field_listing_bedroom2_f1_value IS NOT NULL OR field_listing_bedroom2_f2_value IS NOT NULL OR field_listing_bedroom3_b_value IS NOT NULL OR field_listing_bedroom3_f1_value IS NOT NULL OR field_listing_bedroom3_f2_value IS NOT NULL OR field_listing_bedroom4_b_value IS NOT NULL OR field_listing_bedroom4_f1_value IS NOT NULL OR field_listing_bedroom4_f2_value IS NOT NULL OR field_listing_bedroom5_b_value IS NOT NULL OR field_listing_bedroom5_f1_value IS NOT NULL OR field_listing_bedroom5_f2_value IS NOT NULL OR field_listing_din_kitchen_b_value IS NOT NULL OR field_listing_din_kitchen_f1_value IS NOT NULL OR field_listing_din_kitchen_f2_value IS NOT NULL OR field_listing_dining_room_b_value IS NOT NULL OR field_listing_dining_room_f1_value IS NOT NULL OR field_listing_dining_room_f2_value IS NOT NULL OR field_listing_family_room_b_value IS NOT NULL OR field_listing_family_room_f1_value IS NOT NULL OR field_listing_family_room_f2_value IS NOT NULL OR field_listing_kitchen_b_value IS NOT NULL OR field_listing_kitchen_f1_value IS NOT NULL OR field_listing_kitchen_f2_value IS NOT NULL OR field_listing_laundry_b_value IS NOT NULL OR field_listing_laundry_f1_value IS NOT NULL OR field_listing_laundry_f2_value IS NOT NULL OR field_listing_liv_din_b_value IS NOT NULL OR field_listing_liv_din_f1_value IS NOT NULL OR field_listing_liv_din_f2_value IS NOT NULL OR field_listing_living_room_b_value IS NOT NULL OR field_listing_living_room_f1_value IS NOT NULL OR field_listing_living_room_f2_value IS NOT NULL OR field_listing_other1_b_value IS NOT NULL OR field_listing_other1_f1_value IS NOT NULL OR field_listing_other1_f2_value IS NOT NULL OR field_listing_other2_b_value IS NOT NULL OR field_listing_other2_f1_value IS NOT NULL OR field_listing_other2_f2_value IS NOT NULL OR field_listing_other3_b_value IS NOT NULL OR field_listing_other3_f1_value IS NOT NULL OR field_listing_other3_f2_value IS NOT NULL
+    ");
+  $old_records = $result->fetchAll();
+
+  foreach ($old_records as $old_record) {
+    $measurements = array();
+    foreach (c21_listings_get_rooms() as $room => $room_name) {
+      foreach (c21_listings_get_floors() as $floor => $floor_name) {
+        $new_key = drupal_html_class($room_name) . '_' . drupal_html_class($floor_name);
+        $column = 'field_listing_' . $room . '_' . $floor . '_value';
+        $measurements[$new_key] = $old_record->{$column};
+      }
+    }
+
+    $new_record = array(
+      'entity_type' => 'node',
+      'bundle' => 'listing',
+      'deleted' => 0,
+      'entity_id' => $old_record->nid,
+      'revision_id' => $old_record->vid,
+      'language' => LANGUAGE_NONE,
+      'delta' => 0,
+      'field_listing_measurements_value' => serialize($measurements),
+    );
+
+    drupal_write_record('field_data_field_listing_measurements',$new_record);
+    drupal_write_record('field_revision_field_listing_measurements',$new_record);
+  }
+}

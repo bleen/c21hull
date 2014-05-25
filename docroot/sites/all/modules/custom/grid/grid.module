@@ -47,6 +47,18 @@ function grid_field_widget_info() {
 }
 
 /**
+ * Implements hook_field_formatter_info().
+ */
+function grid_field_formatter_info() {
+  return array(
+    'grid_default' => array(
+      'label' => t('Default'),
+      'field types' => array('grid'),
+    ),
+  );
+}
+
+/**
  * Implements hook_settings_form().
  */
 function grid_field_settings_form($field, $instance, $has_data) {
@@ -77,10 +89,8 @@ function grid_field_widget_form(&$form, &$form_state, $field, $instance, $langco
   $element['#theme'] = 'grid_field';
   $element['#theme_wrappers'] = array('form_element');
 
-  $element['#grid_rows'] = explode(',', $field['settings']['grid_rows']);
-  $element['#grid_columns']  = explode(',', $field['settings']['grid_columns']);
-  array_walk($element['#grid_rows'], 'trim');
-  array_walk($element['#grid_columns'], 'trim');
+  $element['#grid_rows'] = _grid_explode_field_setting($field['settings']['grid_rows']);
+  $element['#grid_columns']  = _grid_explode_field_setting($field['settings']['grid_columns']);
 
   foreach ($element['#grid_rows'] as $row) {
     foreach ($element['#grid_columns'] as $column) {
@@ -107,6 +117,52 @@ function grid_field_widget_form(&$form, &$form_state, $field, $instance, $langco
     }
   }
   return $element;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function grid_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $output = array();
+  $settings = $field['settings'];
+
+  switch ($display['type']) {
+    case 'grid_default':
+      $grid_rows = _grid_explode_field_setting($settings['grid_rows']);
+      $grid_columns = _grid_explode_field_setting($settings['grid_columns']);
+
+      $header = array_merge(array(''), $grid_columns);
+      $rows = array();
+
+      foreach ($items as $delta => $item) {
+        foreach ($grid_rows as $grid_row) {
+          $row = array(
+            'data' => array(array('data' => $grid_row, 'header' => TRUE)),
+            'no_striping' => TRUE,
+          );
+          foreach ($grid_columns as $grid_column) {
+            $row['data'][] = $item['grid_data'][drupal_html_class($grid_row) . '_' . drupal_html_class($grid_column)];
+          }
+          $rows[] = $row;
+        }
+
+        $output[$delta] = array(
+          'title' => array(
+            '#markup' => '<h3 class="measurements-grid-header">' . t('Measurements') . '</h3>',
+          ),
+          'grid' => array(
+            '#theme' => 'table',
+            '#header' => $header,
+            '#rows' => $rows,
+            '#attributes' => array('class' => array('measurements-grid')),
+          ),
+        );
+      }
+
+      break;
+  }
+
+  return $output;
 }
 
 /**
@@ -142,4 +198,11 @@ function grid_field_is_empty($item, $field) {
     }
   }
   return TRUE;
+}
+
+function _grid_explode_field_setting($setting) {
+  $exploded_setting = explode(',', $setting);
+  array_walk($exploded_setting, create_function('&$val', '$val = trim($val);'));
+
+  return $exploded_setting;
 }
