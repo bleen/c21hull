@@ -896,3 +896,14 @@ function c21_listings_update_7022() {
     drupal_write_record('field_revision_field_listing_measurements',$new_record);
   }
 }
+
+/**
+ * Delete deprecated measurement fields.
+ */
+function c21_listings_update_7023() {
+  foreach (c21_listings_get_rooms() as $room => $room_name) {
+    foreach (c21_listings_get_floors() as $floor => $floor_name) {
+      field_delete_field('field_listing_' . $room . '_' . $floor);
+    }
+  }
+}
