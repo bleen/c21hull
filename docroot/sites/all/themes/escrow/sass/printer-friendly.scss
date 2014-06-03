@@ -21,10 +21,10 @@ body.printer-friendly {
 }
 
 #logo {
-  @include replace-text('../images/c21hull_logo.svg');
+  content: url('../images/c21hull_logo.svg');
 
   @include degrade-from(svg, false) {
-    @include replace-text('../images/c21hull_logo.png');
+    content: url('../images/c21hull_logo.png');
   }
 }
 
