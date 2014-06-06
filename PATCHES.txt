@@ -98,6 +98,8 @@ ENTITY CACHE
       PATCH: https://drupal.org/node/1851398 (Original Post)
 
 EMPTY_FIELD
+  * Empty fields with should still display.
+      PATCH: https://drupal.org/node/2281403#comment-8850519
   * Empty field should use drupal_static so we can reset the static variables
     when needed.
       PATCH: https://drupal.org/node/2147655#comment-8230641

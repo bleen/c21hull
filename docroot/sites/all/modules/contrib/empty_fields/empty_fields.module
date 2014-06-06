@@ -32,8 +32,7 @@ function empty_fields_field_formatter_info_alter(&$info) {
  *   The emptyFieldHandler object for the instance's entity.
  */
 function empty_fields_load_plugin($instance, $view_mode_settings) {
-  $plugins = &drupal_static(__FUNCTION__, array());
-
+  static $plugins;
   $field_name = isset($instance['field_name']) ? $instance['field_name'] : 'custom';
   $entity_type = isset($instance['entity_type']) ? $instance['entity_type'] : 'custom';
   $bundle = isset($instance['bundle']) ? $instance['bundle'] : 'custom';
@@ -90,12 +89,8 @@ function empty_fields_empty_fields() {
  *   Autoloading of subclasses or research module_invoke_all's cache.
  */
 function empty_fields_plugins() {
-  $empty_fields_plugins = &drupal_static(__FUNCTION__, array());
-
-  if (empty($empty_fields_plugins)) {
-    $empty_fields_plugins = module_invoke_all('empty_fields');
-  }
-
+  static $empty_fields_plugins;
+  $empty_fields_plugins = empty($efplugins) ? module_invoke_all('empty_fields') : $efplugins;
   return $empty_fields_plugins;
 }
 
@@ -214,7 +209,7 @@ function empty_fields_field_attach_view_alter(&$output, $context) {
         case 'text_with_summary':
         case 'text_summary_or_trimmed':
           foreach (element_children($output[$field_name]) as $delta) {
-            if (!isset($output[$field_name][$delta]['#markup']) || !empty($output[$field_name][$delta]['#markup']) || drupal_strlen($output[$field_name][$delta]['#markup'])) {
+            if (!empty($output[$field_name][$delta]['#markup']) || drupal_strlen($output[$field_name][$delta]['#markup'])) {
               continue 3;
             }
           }
@@ -232,7 +227,7 @@ function empty_fields_field_attach_view_alter(&$output, $context) {
     if ($plugin) {
       $markup = $plugin->react($context);
       // Do not render empty values.
-      if (!empty($markup) || drupal_strlen($markup)) {
+//      if (!empty($markup) || drupal_strlen($markup)) {
         if (empty($context['language'])) {
           $language = field_language($entity_type, $entity, $field_name);
         }
@@ -264,5 +259,5 @@ function empty_fields_field_attach_view_alter(&$output, $context) {
         $plugin->alterOutput($output[$field_name], $context);
       }
     }
-  }
+//  }
 }
