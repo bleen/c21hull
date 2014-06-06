@@ -134,6 +134,8 @@ function grid_field_formatter_view($entity_type, $entity, $field, $instance, $la
       $header = array_merge(array(''), $grid_columns);
       $rows = array();
 
+      $output = _grid_empty_view($grid_rows, $grid_columns);
+
       foreach ($items as $delta => $item) {
         foreach ($grid_rows as $grid_row) {
           $row = array(
@@ -205,4 +207,43 @@ function _grid_explode_field_setting($setting) {
   array_walk($exploded_setting, create_function('&$val', '$val = trim($val);'));
 
   return $exploded_setting;
+}
+
+
+/**
+ * Create a themed version of an empty grid.
+ *
+ * @param array $grid_rows
+ * @param array $grid_columns
+ *
+ * @return array
+ */
+function _grid_empty_view($grid_rows, $grid_columns) {
+  $header = array_merge(array(''), $grid_columns);
+  $rows = array();
+
+  foreach ($grid_rows as $grid_row) {
+    $row = array(
+      'data' => array(array('data' => $grid_row, 'header' => TRUE)),
+      'no_striping' => TRUE,
+    );
+    foreach ($grid_columns as $grid_column) {
+      $row['data'][] = '';
+    }
+    $rows[] = $row;
+  }
+
+  return array(
+    'title' => array(
+      '#markup' => '<h3 class="measurements-grid-header">' . t('Measurements') . '</h3>',
+    ),
+    'grid' => array(
+      '#theme' => 'table',
+      '#header' => $header,
+      '#rows' => $rows,
+      '#attributes' => array('class' => array('measurements-grid')),
+    ),
+  );
+
+
 }
