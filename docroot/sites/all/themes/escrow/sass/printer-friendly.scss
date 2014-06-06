@@ -169,10 +169,10 @@ $output: 'isolation';
       margin-top: 4em;
 
       .seller {
-        padding: $spacing_default;
-        width: 45%;
-        float: left;
-        @include clearfix();
+        font-size:  1.35em;
+        padding-bottom: .5 * $spacing_default;
+        margin: $spacing_default;
+        border-bottom: 1px dotted $color_gray;
 
         .field-collection-container,
         .field-collection-view {
@@ -188,7 +188,7 @@ $output: 'isolation';
           .phone-number,
           .email {
             display: inline-block;
-            margin-right: $spacing_default;
+            margin:  .5 * $spacing_default $spacing_default .5 * $spacing_default 3 * $spacing_default;
           }
           .phone-type,
           .email-type {
@@ -203,6 +203,11 @@ $output: 'isolation';
               content: ")";
             }
           }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+          border-bottom: none;
         }
       }
     }
