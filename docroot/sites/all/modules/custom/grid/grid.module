@@ -157,6 +157,7 @@ function grid_field_formatter_view($entity_type, $entity, $field, $instance, $la
             '#header' => $header,
             '#rows' => $rows,
             '#attributes' => array('class' => array('measurements-grid')),
+            '#sticky' => FALSE,
           ),
         );
       }
@@ -242,6 +243,7 @@ function _grid_empty_view($grid_rows, $grid_columns) {
       '#header' => $header,
       '#rows' => $rows,
       '#attributes' => array('class' => array('measurements-grid')),
+      '#sticky' => FALSE,
     ),
   );
 
