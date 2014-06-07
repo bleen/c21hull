@@ -97,6 +97,12 @@ function c21_listings_node_view_alter(&$build, $type) {
     $langcode = $build['#language'];
     $format = $build['#print_format'];
 
+    // Note: if you are here because the display order for printing is wrong,
+    //   for some reason the "node_build_content" below does not fix the field
+    //   weight if the view mode was not originally intended to be
+    //   "print_internal". Not sure how to fix this so manually set the field
+    //   weights to fit your needs noting that changing the weights in the
+    //   original view mode will effect this display.
     node_build_content($node, $view_mode);
 
     foreach (element_children($build) as $field_name) {
