@@ -426,13 +426,13 @@ function ds_get_field_value($key, $field, $entity, $entity_type, $bundle, $view_
 
   // Special case for ds_views which can handle custom fields now.
   if ($field['field_type'] != DS_FIELD_TYPE_PREPROCESS && $entity_type == 'ds_views') {
-    $entity->preprocess_fields[] = $key;
+    $entity->preprocess_fields[$key] = $field['weight'];
   }
 
   switch ($field['field_type']) {
 
     case DS_FIELD_TYPE_PREPROCESS:
-      $entity->preprocess_fields[] = $key;
+      $entity->preprocess_fields[$key] = $field['weight'];
       break;
 
     case DS_FIELD_TYPE_FUNCTION:
@@ -511,34 +511,35 @@ function ds_field_attach_view_alter(&$build, $context) {
     }
   }
 
-  // Add Display Suite display fields.
-  $fields = ds_get_fields($entity_type);
-  $field_values = ds_get_field_settings($entity_type, $bundle, $layout['view_mode']);
+  // Get a list of defined DS fields.
+  $ds_fields = ds_get_fields($entity_type);
 
-  foreach ($field_values as $key => $field) {
+  // Get the field instance for the current view_mode.
+  $field_instances = ds_get_field_settings($entity_type, $bundle, $layout['view_mode']);
 
+  foreach ($field_instances as $key => $instance_settings) {
     // Ignore if this field is not a DS field.
-    if (!isset($fields[$key])) {
+    if (!isset($ds_fields[$key])) {
       continue;
     }
 
-    $field = $fields[$key];
-    if (isset($field_values[$key]['format'])) {
-      $field['formatter'] = $field_values[$key]['format'];
+    // Merge field definition with the instance settings.
+    $field = array_merge($ds_fields[$key], $instance_settings);
+
+    if (isset($field['format'])) {
+      $field['formatter'] = $field['format'];
     }
 
-    if (isset($field_values[$key]['formatter_settings'])) {
-      $field['formatter_settings'] = $field_values[$key]['formatter_settings'];
-    }
+    // Get the field value.
     $field_value = ds_get_field_value($key, $field, $entity, $entity_type, $bundle, $view_mode, $build);
 
-    // Title label.
-    if ($key == 'title' && $entity_type == 'node') {
-      $node_type = node_type_get_type($entity);
-      $field['title'] = function_exists('i18n_node_translate_type') ? i18n_node_translate_type($node_type->type, 'title_label', $node_type->title_label) : $node_type->title_label;
-    }
-
     if (!empty($field_value) || (string) $field_value === '0') {
+
+      // Title label.
+      if ($key == 'title' && $entity_type == 'node') {
+        $node_type = node_type_get_type($entity);
+        $field['title'] = function_exists('i18n_node_translate_type') ? i18n_node_translate_type($node_type->type, 'title_label', $node_type->title_label) : $node_type->title_label;
+      }
 
       // Special case for views.
       if (!empty($build['render_code_fields'])) {
@@ -550,8 +551,8 @@ function ds_field_attach_view_alter(&$build, $context) {
           '#field_type' => 'ds',
           '#skip_edit' => TRUE,
           '#title' => $field['title'],
-          '#weight' => isset($field_values[$key]['weight']) ? $field_values[$key]['weight'] : 0,
-          '#label_display' => isset($field_values[$key]['label']) ? $field_values[$key]['label'] : 'inline',
+          '#weight' => isset($field['weight']) ? $field['weight'] : 0,
+          '#label_display' => isset($field['label']) ? $field['label'] : 'inline',
           '#field_name' => $key,
           '#bundle' => $bundle,
           '#object' => $entity,
@@ -606,7 +607,7 @@ function ds_entity_variables(&$vars) {
       $object = 'term';
     }
     if (isset($vars[$object]->preprocess_fields)) {
-      foreach ($vars[$object]->preprocess_fields as $field) {
+      foreach ($vars[$object]->preprocess_fields as $field => $weight) {
 
         // Process RDF if the module is enabled before moving preprocess fields.
         if (module_exists('rdf')) {
@@ -618,7 +619,10 @@ function ds_entity_variables(&$vars) {
         // Move the field to content so it renders, remove it
         // because we don't need it anymore.
         if (isset($vars[$field])) {
-          $vars[$render_container][$field] = array('#markup' => $vars[$field]);
+          $vars[$render_container][$field] = array(
+            '#markup' => $vars[$field],
+            '#weight' => $weight,
+          );
           if (!isset($vars['preprocess_keep'])) {
             unset($vars[$field]);
           }

@@ -505,7 +505,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Building Info',
-    'weight' => '4',
+    'weight' => '100',
     'children' => array(
       0 => 'field_listing_basement',
       1 => 'field_listing_floors',
@@ -524,6 +524,7 @@ function c21_listings_field_group_info() {
       14 => 'field_listing_outside_features',
       15 => 'field_listing_fireplace_info',
       16 => 'field_listing_siding_info',
+      17 => 'listing_sq_ft_total',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -552,7 +553,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'General Info',
-    'weight' => '3',
+    'weight' => '30',
     'children' => array(
       0 => 'field_listing_acreage',
       1 => 'field_listing_dues',
@@ -588,7 +589,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Notes',
-    'weight' => '41',
+    'weight' => '302',
     'children' => array(
       0 => 'field_listing_notes',
       1 => 'field_listing_tags',
@@ -620,7 +621,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Sellers',
-    'weight' => '40',
+    'weight' => '300',
     'children' => array(
       0 => 'field_listing_seller',
     ),

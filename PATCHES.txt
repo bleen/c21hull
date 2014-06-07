@@ -93,6 +93,10 @@ DREALTY
                already exists" errors.
       PATCH: https://drupal.org/node/1931250#comment-7916879
 
+DISPLAY SUITE
+  * Fix field display order
+      PATCH: https://drupal.org/node/2035531#comment-7916673
+
 ENTITY CACHE
   * Getting an "array_flip" error
       PATCH: https://drupal.org/node/1851398 (Original Post)
