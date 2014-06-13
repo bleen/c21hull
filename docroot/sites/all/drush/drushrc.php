@@ -135,6 +135,7 @@ $options['environments'] = array(
       'metatag_ui' => 1,
       'search_krumo' => 1,
       'stage_file_proxy' => 1,
+      'cloudflare' => 0,
     ),
     // The list of variables to configure.
     'settings' => array(
