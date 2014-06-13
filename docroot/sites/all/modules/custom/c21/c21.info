@@ -63,6 +63,7 @@ dependencies[] = term_merge
 dependencies[] = text
 dependencies[] = user
 dependencies[] = views
+dependencies[] = views_content_cache
 dependencies[] = workbench
 dependencies[] = wysiwyg_filter
 features[borealis_sb][] = formblock_contact_site
