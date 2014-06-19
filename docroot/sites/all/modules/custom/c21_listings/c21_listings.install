@@ -907,3 +907,145 @@ function c21_listings_update_7023() {
     }
   }
 }
+
+/**
+ * Move all buyer & seller data to the new non-field collection fields.
+ */
+function c21_listings_update_7024() {
+  foreach (array('buyer', 'seller') as $ilk) {
+    // Get existing buyer/seller data.
+    $data = db_query("
+SELECT DISTINCT
+  ls.entity_id AS entity_id,
+  ls.delta AS delta,
+  sfn.field_" . $ilk . "_first_name_value AS firstname,
+  sln.field_" . $ilk . "_last_name_value AS lastname,
+  sa.field_" . $ilk . "_address_country AS country,
+  sa.field_" . $ilk . "_address_administrative_area AS state,
+  sa.field_" . $ilk . "_address_locality AS city,
+  sa.field_" . $ilk . "_address_postal_code AS zip,
+  sa.field_" . $ilk . "_address_thoroughfare AS street,
+  sa.field_" . $ilk . "_address_premise AS street2,
+  sc.field_" . $ilk . "_company_value AS company
+FROM
+  {field_data_field_listing_" . $ilk . "} AS ls
+LEFT JOIN
+  {field_data_field_" . $ilk . "_first_name} AS sfn ON ls.field_listing_" . $ilk . "_value = sfn.entity_id
+LEFT JOIN
+  {field_data_field_" . $ilk . "_last_name} AS sln ON ls.field_listing_" . $ilk . "_value = sln.entity_id
+LEFT JOIN
+  {field_data_field_" . $ilk . "_address} AS sa ON ls.field_listing_" . $ilk . "_value = sa.entity_id
+LEFT JOIN
+  {field_data_field_" . $ilk . "_company} AS sc ON ls.field_listing_" . $ilk . "_value = sc.entity_id
+    ");
+
+    foreach ($data as $record) {
+      $record->phone_numbers = array();
+      $record->email_addresses = array();
+
+      // Get the phone numbers.
+      $phone_numbers = db_query("
+SELECT DISTINCT
+  spn.field_" . $ilk . "_phone_number_value AS phone_number,
+  spt.field_" . $ilk . "_phone_type_value AS phone_type
+FROM
+  {field_data_field_listing_" . $ilk . "} AS ls
+LEFT JOIN
+  {field_data_field_" . $ilk . "_phone} AS sp ON ls.field_listing_" . $ilk . "_value = sp.entity_id
+LEFT JOIN
+  {field_data_field_" . $ilk . "_phone_number} AS spn ON sp.field_" . $ilk . "_phone_value = spn.entity_id
+LEFT JOIN
+  {field_data_field_" . $ilk . "_phone_type} AS spt ON sp.field_" . $ilk . "_phone_value = spt.entity_id
+WHERE
+  ls.entity_id = :eid
+ORDER BY
+  sp.delta
+      ", array(':eid' => $record->entity_id));
+      foreach ($phone_numbers as $number) {
+        $record->phone_numbers[] = $number;
+      }
+
+      // Get the email address(es).
+      $email_addresses = db_query("
+SELECT DISTINCT
+  sea.field_" . $ilk . "_email_address_value AS email_address,
+  sety.field_" . $ilk . "_email_type_value AS email_type
+FROM
+  {field_data_field_listing_" . $ilk . "} AS ls
+LEFT JOIN
+  {field_data_field_" . $ilk . "_email} AS se ON ls.field_listing_" . $ilk . "_value = se.entity_id
+LEFT JOIN
+  {field_data_field_" . $ilk . "_email_address} AS sea ON se.field_" . $ilk . "_email_value = sea.entity_id
+LEFT JOIN
+  {field_data_field_" . $ilk . "_email_type} AS sety ON se.field_" . $ilk . "_email_value = sety.entity_id
+WHERE
+  ls.entity_id = :eid
+ORDER BY
+  se.delta
+      ", array(':eid' => $record->entity_id));
+      foreach ($email_addresses as $email) {
+        $record->email_addresses[] = $email;
+      }
+
+      // Save the data in the new fields.
+      if ($record->delta > 1) { continue; }
+      $num = $record->delta == 0 ? 1 : 2;
+      $tbl_types = array('data', 'revision');
+      $replacements = array(
+        ':type' => "node",
+        ':bundle' => "listing",
+        ':lang' => LANGUAGE_NONE,
+        ':eid' => $record->entity_id,
+        ':vid' => $record->entity_id,
+      );
+
+      foreach ($tbl_types as $tbl) {
+        if (!empty($record->firstname) || !empty($record->lastname)) {
+          db_query("INSERT INTO {field_" . $tbl . "_field_listing_" . $ilk . $num . "_name} VALUES (:type, :bundle, 0, :eid, :vid, :lang, 0, :firstname, :lastname)", array(
+            ':firstname' => $record->firstname,
+            ':lastname' => $record->lastname
+          ) + $replacements);
+        }
+        if (!empty($record->company)) {
+          db_query("INSERT INTO {field_" . $tbl . "_field_listing_" . $ilk . $num . "_company} VALUES (:type, :bundle, 0, :eid, :vid, :lang, 0, :company, NULL)", array(
+            ':company' => $record->company
+          ) + $replacements);
+        }
+        if (!empty($record->country) || !empty($record->state) || !empty($record->city) || !empty($record->zip) || !empty($record->street) || !empty($record->street2)) {
+          db_query("INSERT INTO {field_" . $tbl . "_field_listing_" . $ilk . $num . "_address} VALUES (:type, :bundle, 0, :eid, :vid, :lang, 0, :country, :state, NULL, :city, NULL, :zip, :street, :street2, NULL, NULL, NULL, NULL, NULL, NULL)", array(
+            ':country' => $record->country,
+            ':state' => $record->state,
+            ':city' => $record->city,
+            ':zip' => $record->zip,
+            ':street' => $record->street,
+            ':street2' => $record->street2
+          ) + $replacements);
+        }
+        foreach ($record->phone_numbers as $delta => $phone_number) {
+          if (!empty($phone_number->phone_number) || !empty($phone_number->phone_type)) {
+            db_query("INSERT INTO {field_" . $tbl . "_field_listing_" . $ilk . $num . "_phone} VALUES (:type, :bundle, 0, :eid, :vid, :lang, :delta, :number, :phone_type)", array(
+              ':delta' => $delta,
+              ':number' => $phone_number->phone_number,
+              ':phone_type' => $phone_number->phone_type,
+            ) + $replacements);
+          }
+        }
+        foreach ($record->email_addresses as $delta => $email_address) {
+          if (!empty($email_address->email_address) || !empty($email_address->email_type)) {
+            db_query("INSERT INTO {field_" . $tbl . "_field_listing_" . $ilk . $num . "_email} VALUES (:type, :bundle, 0, :eid, :vid, :lang, :delta, :email, :email_type)", array(
+              ':delta' => $delta,
+              ':email' => $email_address->email_address,
+              ':email_type' => $email_address->email_type,
+            ) + $replacements);
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  $error = 'Always throw this error';
+  throw new Exception($error);
+}
