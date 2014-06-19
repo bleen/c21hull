@@ -132,6 +132,13 @@ function c21_listings_node_view_alter(&$build, $type) {
 }
 
 /**
+ * Implements hook_element_info_alter().
+ */
+function c21_listings_element_info_alter(&$type) {
+  $type['textfield']['#process'][] = 'c21_listings_element_process';
+}
+
+/**
  * Implements hook_field_attach_view_alter().
  *
  * The majority of this code was taken from
@@ -594,6 +601,30 @@ function c21_listings_form_taxonomy_manager_form_submit($form, &$form_state) {
       drupal_write_record('c21_listings_term_normalization', $record);
     }
   }
+}
+
+/**
+ * Element process function.
+ *
+ * Adds a phone number mask to seller/buyer phone fields.
+ */
+function c21_listings_element_process($element, &$form_state, $form) {
+  if (preg_match('/^field_listing_(seller|buyer)([1-9]+)_phone/', $element['#name'])) {
+    $data['masked_input']['elements'][$element['#id']] = array(
+      'id' => $element['#id'],
+      'mask' => '(999) 999-9999? x99999',
+      'placeholder' => '_',
+    );
+
+    $element['#attached']['js'][] = libraries_get_path('maskedinput') . '/jquery.maskedinput-1.3.js';
+    $element['#attached']['js'][] = drupal_get_path('module','masked_input') . '/js/masked_input.js';
+    $element['#attached']['js'][] = array(
+      'type' => 'setting',
+      'data' => $data,
+    );
+  }
+
+  return $element;
 }
 
 /**

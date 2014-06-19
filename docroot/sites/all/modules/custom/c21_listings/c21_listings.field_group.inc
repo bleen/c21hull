@@ -333,7 +333,6 @@ function c21_listings_field_group_info() {
       1 => 'field_listing_sq_ft_below',
       2 => 'field_listing_sq_ft_finished',
       3 => 'field_listing_measurements',
-      4 => 'group_listing_rooms',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
