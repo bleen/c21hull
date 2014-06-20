@@ -57,6 +57,80 @@ function c21_listings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_buyer1|node|listing|form';
+  $field_group->group_name = 'group_listing_buyer1';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_listing_buyers';
+  $field_group->data = array(
+    'label' => 'Buyer 1',
+    'weight' => '156',
+    'children' => array(
+      0 => 'field_listing_buyer1_address',
+      1 => 'field_listing_buyer1_company',
+      2 => 'field_listing_buyer1_email',
+      3 => 'field_listing_buyer1_name',
+      4 => 'field_listing_buyer1_phone',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Buyer 1',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-listing-buyer1 group-listing-buyer group-listing-buysell field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_buyer1|node|listing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_buyer2|node|listing|form';
+  $field_group->group_name = 'group_listing_buyer2';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_listing_buyers';
+  $field_group->data = array(
+    'label' => 'Buyer 2',
+    'weight' => '157',
+    'children' => array(
+      0 => 'field_listing_buyer2_address',
+      1 => 'field_listing_buyer2_company',
+      2 => 'field_listing_buyer2_email',
+      3 => 'field_listing_buyer2_name',
+      4 => 'field_listing_buyer2_phone',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Buyer 2',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-listing-buyer2 group-listing-buyer group-listing-buysell field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_buyer2|node|listing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_listing_buyers|node|listing|form';
   $field_group->group_name = 'group_listing_buyers';
   $field_group->entity_type = 'node';
@@ -68,6 +142,8 @@ function c21_listings_field_group_info() {
     'weight' => '141',
     'children' => array(
       0 => 'field_listing_buyer',
+      1 => 'group_listing_buyer1',
+      2 => 'group_listing_buyer2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -144,6 +220,7 @@ function c21_listings_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_listing_full_group_listing_details',
       ),
       'formatter' => 'open',
     ),
@@ -272,6 +349,7 @@ function c21_listings_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'none',
+        'id' => 'node_listing_full_group_listing_location_details',
       ),
       'formatter' => 'open',
     ),
@@ -376,6 +454,80 @@ function c21_listings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_seller1|node|listing|form';
+  $field_group->group_name = 'group_listing_seller1';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_listing_sellers';
+  $field_group->data = array(
+    'label' => 'Seller 1',
+    'weight' => '166',
+    'children' => array(
+      0 => 'field_listing_seller1_phone',
+      1 => 'field_listing_seller1_name',
+      2 => 'field_listing_seller1_company',
+      3 => 'field_listing_seller1_email',
+      4 => 'field_listing_seller1_address',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Seller 1',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-listing-seller1 group-listing-seller group-listing-buysell field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_seller1|node|listing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_listing_seller2|node|listing|form';
+  $field_group->group_name = 'group_listing_seller2';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_listing_sellers';
+  $field_group->data = array(
+    'label' => 'Seller 2',
+    'weight' => '167',
+    'children' => array(
+      0 => 'field_listing_seller2_address',
+      1 => 'field_listing_seller2_company',
+      2 => 'field_listing_seller2_email',
+      3 => 'field_listing_seller2_name',
+      4 => 'field_listing_seller2_phone',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Seller 2',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-listing-seller2 group-listing-seller group-listing-buysell field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_listing_seller2|node|listing|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_listing_sellers|node|listing|form';
   $field_group->group_name = 'group_listing_sellers';
   $field_group->entity_type = 'node';
@@ -387,6 +539,8 @@ function c21_listings_field_group_info() {
     'weight' => '13',
     'children' => array(
       0 => 'field_listing_seller',
+      1 => 'group_listing_seller1',
+      2 => 'group_listing_seller2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -430,6 +584,7 @@ function c21_listings_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'none',
+        'id' => 'node_listing_full_group_listing_statistics',
       ),
       'formatter' => 'open',
     ),
@@ -535,6 +690,7 @@ function c21_listings_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_listing_print_group_print_building_info',
       ),
       'formatter' => 'open',
     ),
@@ -571,6 +727,7 @@ function c21_listings_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_listing_print_group_print_general_info',
       ),
       'formatter' => 'open',
     ),
@@ -603,6 +760,7 @@ function c21_listings_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_listing_print_internal_group_print_notes',
       ),
       'formatter' => 'open',
     ),
@@ -634,6 +792,7 @@ function c21_listings_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_listing_print_internal_group_print_sellers',
       ),
       'formatter' => 'open',
     ),

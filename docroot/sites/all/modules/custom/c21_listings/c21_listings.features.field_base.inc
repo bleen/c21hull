@@ -682,6 +682,282 @@ function c21_listings_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
+  // Exported field_base: 'field_listing_buyer1_address'
+  $field_bases['field_listing_buyer1_address'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer1_address',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'addressfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'addressfield',
+  );
+
+  // Exported field_base: 'field_listing_buyer1_company'
+  $field_bases['field_listing_buyer1_company'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer1_company',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_listing_buyer1_email'
+  $field_bases['field_listing_buyer1_email'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer1_email',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'double_field',
+    'settings' => array(
+      'first' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+      'second' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'double_field',
+  );
+
+  // Exported field_base: 'field_listing_buyer1_name'
+  $field_bases['field_listing_buyer1_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer1_name',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'double_field',
+    'settings' => array(
+      'first' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+      'second' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'double_field',
+  );
+
+  // Exported field_base: 'field_listing_buyer1_phone'
+  $field_bases['field_listing_buyer1_phone'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer1_phone',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'double_field',
+    'settings' => array(
+      'first' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+      'second' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'double_field',
+  );
+
+  // Exported field_base: 'field_listing_buyer2_address'
+  $field_bases['field_listing_buyer2_address'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer2_address',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'addressfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'addressfield',
+  );
+
+  // Exported field_base: 'field_listing_buyer2_company'
+  $field_bases['field_listing_buyer2_company'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer2_company',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_listing_buyer2_email'
+  $field_bases['field_listing_buyer2_email'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer2_email',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'double_field',
+    'settings' => array(
+      'first' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+      'second' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'double_field',
+  );
+
+  // Exported field_base: 'field_listing_buyer2_name'
+  $field_bases['field_listing_buyer2_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer2_name',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'double_field',
+    'settings' => array(
+      'first' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+      'second' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'double_field',
+  );
+
+  // Exported field_base: 'field_listing_buyer2_phone'
+  $field_bases['field_listing_buyer2_phone'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_listing_buyer2_phone',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'double_field',
+    'settings' => array(
+      'first' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+      'second' => array(
+        'maxlength' => 255,
+        'precision' => 10,
+        'scale' => 2,
+        'size' => 'normal',
+        'type' => 'text',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'double_field',
+  );
+
   // Exported field_base: 'field_listing_closing_date'
   $field_bases['field_listing_closing_date'] = array(
     'active' => 1,
@@ -1829,282 +2105,6 @@ function c21_listings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_listing_seller2_phone',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'double_field',
-    'settings' => array(
-      'first' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-      'second' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'double_field',
-  );
-
-  // Exported field_base: 'field_listing_buyer1_address'
-  $field_bases['field_listing_buyer1_address'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer1_address',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'addressfield',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'addressfield',
-  );
-
-  // Exported field_base: 'field_listing_buyer1_company'
-  $field_bases['field_listing_buyer1_company'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer1_company',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_listing_buyer1_email'
-  $field_bases['field_listing_buyer1_email'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer1_email',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'double_field',
-    'settings' => array(
-      'first' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-      'second' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'double_field',
-  );
-
-  // Exported field_base: 'field_listing_buyer1_name'
-  $field_bases['field_listing_buyer1_name'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer1_name',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'double_field',
-    'settings' => array(
-      'first' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-      'second' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'double_field',
-  );
-
-  // Exported field_base: 'field_listing_buyer1_phone'
-  $field_bases['field_listing_buyer1_phone'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer1_phone',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'double_field',
-    'settings' => array(
-      'first' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-      'second' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'double_field',
-  );
-
-  // Exported field_base: 'field_listing_buyer2_address'
-  $field_bases['field_listing_buyer2_address'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer2_address',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'addressfield',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'addressfield',
-  );
-
-  // Exported field_base: 'field_listing_buyer2_company'
-  $field_bases['field_listing_buyer2_company'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer2_company',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_listing_buyer2_email'
-  $field_bases['field_listing_buyer2_email'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer2_email',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'double_field',
-    'settings' => array(
-      'first' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-      'second' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'double_field',
-  );
-
-  // Exported field_base: 'field_listing_buyer2_name'
-  $field_bases['field_listing_buyer2_name'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer2_name',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'double_field',
-    'settings' => array(
-      'first' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-      'second' => array(
-        'maxlength' => 255,
-        'precision' => 10,
-        'scale' => 2,
-        'size' => 'normal',
-        'type' => 'text',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'double_field',
-  );
-
-  // Exported field_base: 'field_listing_buyer2_phone'
-  $field_bases['field_listing_buyer2_phone'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_listing_buyer2_phone',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,

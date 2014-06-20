@@ -2604,7 +2604,1045 @@ function c21_listings_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 138,
+      'weight' => 163,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer1_address'
+  $field_instances['node-listing-field_listing_buyer1_address'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'node|listing|field_listing_buyer1_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'locality' => '',
+        'administrative_area' => '',
+        'postal_code' => '',
+        'country' => 'US',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 127,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer1_address',
+    'label' => 'Address',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(
+          'US' => 'US',
+        ),
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 159,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer1_company'
+  $field_instances['node-listing-field_listing_buyer1_company'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 125,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer1_company',
+    'label' => 'Company',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 158,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer1_email'
+  $field_instances['node-listing-field_listing_buyer1_email'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'double_field',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'first' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => ':&nbsp;',
+          ),
+          'second' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => '',
+          ),
+          'style' => 'inline',
+        ),
+        'type' => 'double_field_unformatted_list',
+        'weight' => 126,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer1_email',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'double_field',
+      'settings' => array(
+        'first' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => '',
+            'size' => 10,
+          ),
+        ),
+        'inline' => 1,
+        'second' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'select' => array(
+            'allowed_values' => array(
+              'Personal' => 'Personal',
+              'Business' => 'Business',
+              'Other' => 'Other',
+            ),
+          ),
+        ),
+      ),
+      'type' => 'textfield_&_select',
+      'weight' => 161,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer1_name'
+  $field_instances['node-listing-field_listing_buyer1_name'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'double_field',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'first' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => ':&nbsp;',
+          ),
+          'second' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => '',
+          ),
+          'style' => 'inline',
+        ),
+        'type' => 'double_field_unformatted_list',
+        'weight' => 124,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer1_name',
+    'label' => 'Name',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'double_field',
+      'settings' => array(
+        'first' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => 'First Name',
+            'size' => 15,
+          ),
+        ),
+        'inline' => 1,
+        'second' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => 'Last Name',
+            'size' => 15,
+          ),
+        ),
+      ),
+      'type' => 'textfield_&_textfield',
+      'weight' => 157,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer1_phone'
+  $field_instances['node-listing-field_listing_buyer1_phone'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'double_field',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'first' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => ':&nbsp;',
+          ),
+          'second' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => '',
+          ),
+          'style' => 'inline',
+        ),
+        'type' => 'double_field_unformatted_list',
+        'weight' => 123,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer1_phone',
+    'label' => 'Phone',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'double_field',
+      'settings' => array(
+        'first' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 0,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => '',
+            'size' => 10,
+          ),
+        ),
+        'inline' => 1,
+        'second' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'select' => array(
+            'allowed_values' => array(
+              'Business' => 'Business',
+              'Cell' => 'Cell',
+              'Fax' => 'Fax',
+              'Home' => 'Home',
+              'Local' => 'Local',
+            ),
+          ),
+        ),
+      ),
+      'type' => 'textfield_&_select',
+      'weight' => 160,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer2_address'
+  $field_instances['node-listing-field_listing_buyer2_address'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'node|listing|field_listing_buyer2_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'locality' => '',
+        'administrative_area' => '',
+        'postal_code' => '',
+        'country' => 'US',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 127,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer2_address',
+    'label' => 'Address',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(
+          'US' => 'US',
+        ),
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 160,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer2_company'
+  $field_instances['node-listing-field_listing_buyer2_company'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 125,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer2_company',
+    'label' => 'Company',
+    'placeholder' => '',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'rich_text' => 'rich_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'rich_text' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 159,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer2_email'
+  $field_instances['node-listing-field_listing_buyer2_email'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'double_field',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'first' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => ':&nbsp;',
+          ),
+          'second' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => '',
+          ),
+          'style' => 'inline',
+        ),
+        'type' => 'double_field_unformatted_list',
+        'weight' => 126,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer2_email',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'double_field',
+      'settings' => array(
+        'first' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => '',
+            'size' => 10,
+          ),
+        ),
+        'inline' => 1,
+        'second' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'select' => array(
+            'allowed_values' => array(
+              'Personal' => 'Personal',
+              'Business' => 'Business',
+              'Other' => 'Other',
+            ),
+          ),
+        ),
+      ),
+      'type' => 'textfield_&_select',
+      'weight' => 162,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer2_name'
+  $field_instances['node-listing-field_listing_buyer2_name'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'double_field',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'first' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => ':&nbsp;',
+          ),
+          'second' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => '',
+          ),
+          'style' => 'inline',
+        ),
+        'type' => 'double_field_unformatted_list',
+        'weight' => 124,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer2_name',
+    'label' => 'Name',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'double_field',
+      'settings' => array(
+        'first' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => 'First Name',
+            'size' => 15,
+          ),
+        ),
+        'inline' => 1,
+        'second' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => 'Last Name',
+            'size' => 15,
+          ),
+        ),
+      ),
+      'type' => 'textfield_&_textfield',
+      'weight' => 158,
+    ),
+  );
+
+  // Exported field_instance: 'node-listing-field_listing_buyer2_phone'
+  $field_instances['node-listing-field_listing_buyer2_phone'] = array(
+    'bundle' => 'listing',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'double_field',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'first' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => ':&nbsp;',
+          ),
+          'second' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => '',
+          ),
+          'style' => 'inline',
+        ),
+        'type' => 'double_field_unformatted_list',
+        'weight' => 123,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'micro_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'print_internal' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => 'theme_field',
+    'entity_type' => 'node',
+    'field_name' => 'field_listing_buyer2_phone',
+    'label' => 'Phone',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'double_field',
+      'settings' => array(
+        'first' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 0,
+            'suffix' => '',
+          ),
+          'textfield' => array(
+            'placeholder' => '',
+            'size' => 10,
+          ),
+        ),
+        'inline' => 1,
+        'second' => array(
+          'general' => array(
+            'prefix' => '',
+            'required' => 1,
+            'suffix' => '',
+          ),
+          'select' => array(
+            'allowed_values' => array(
+              'Business' => 'Business',
+              'Cell' => 'Cell',
+              'Fax' => 'Fax',
+              'Home' => 'Home',
+              'Local' => 'Local',
+            ),
+          ),
+        ),
+      ),
+      'type' => 'textfield_&_select',
+      'weight' => 161,
     ),
   );
 
@@ -5626,7 +6664,7 @@ function c21_listings_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 115,
+      'weight' => 173,
     ),
   );
 
@@ -5720,7 +6758,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 147,
+      'weight' => 169,
     ),
   );
 
@@ -5819,7 +6857,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 144,
+      'weight' => 168,
     ),
   );
 
@@ -5928,7 +6966,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'type' => 'textfield_&_select',
-      'weight' => 146,
+      'weight' => 171,
     ),
   );
 
@@ -6034,7 +7072,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'type' => 'textfield_&_textfield',
-      'weight' => 143,
+      'weight' => 167,
     ),
   );
 
@@ -6145,7 +7183,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'type' => 'textfield_&_select',
-      'weight' => 145,
+      'weight' => 170,
     ),
   );
 
@@ -6239,7 +7277,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 147,
+      'weight' => 170,
     ),
   );
 
@@ -6338,7 +7376,7 @@ function c21_listings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 144,
+      'weight' => 169,
     ),
   );
 
@@ -6447,7 +7485,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'type' => 'textfield_&_select',
-      'weight' => 146,
+      'weight' => 172,
     ),
   );
 
@@ -6553,7 +7591,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'type' => 'textfield_&_textfield',
-      'weight' => 143,
+      'weight' => 168,
     ),
   );
 
@@ -6664,1045 +7702,7 @@ function c21_listings_field_default_field_instances() {
         ),
       ),
       'type' => 'textfield_&_select',
-      'weight' => 145,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer1_address'
-  $field_instances['node-listing-field_listing_buyer1_address'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'element_key' => 'node|listing|field_listing_buyer1_address|und|0',
-        'thoroughfare' => '',
-        'premise' => '',
-        'locality' => '',
-        'administrative_area' => '',
-        'postal_code' => '',
-        'country' => 'US',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'addressfield',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 127,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  ),
-      'print' => array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  ),
-      'print_internal' => array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  ),
-      'teaser' => array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer1_address',
-    'label' => 'Address',
-    'required' => 0,
-    'settings' => array(
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'user_register_form' => FALSE,
-  ),
-    'widget' => array(
-    'active' => 1,
-    'module' => 'addressfield',
-    'settings' => array(
-      'available_countries' => array(
-        'US' => 'US',
-      ),
-      'format_handlers' => array(
-        'address' => 'address',
-        'address-hide-country' => 'address-hide-country',
-        'organisation' => 0,
-        'name-full' => 0,
-        'name-oneline' => 0,
-      ),
-    ),
-    'type' => 'addressfield_standard',
-    'weight' => 147,
-  ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer1_company'
-  $field_instances['node-listing-field_listing_buyer1_company'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_default',
-        'weight' => 125,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => 'theme_field',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer1_company',
-    'label' => 'Company',
-    'placeholder' => '',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'rich_text' => 'rich_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'rich_text' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 144,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer1_email'
-  $field_instances['node-listing-field_listing_buyer1_email'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'double_field',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'first' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => ':&nbsp;',
-          ),
-          'second' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => '',
-          ),
-          'style' => 'inline',
-        ),
-        'type' => 'double_field_unformatted_list',
-        'weight' => 126,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => 'theme_field',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer1_email',
-    'label' => 'Email',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'double_field',
-      'settings' => array(
-        'first' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'textfield' => array(
-            'placeholder' => '',
-            'size' => 10,
-          ),
-        ),
-        'inline' => 1,
-        'second' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'select' => array(
-            'allowed_values' => array(
-              'Personal' => 'Personal',
-              'Business' => 'Business',
-              'Other' => 'Other',
-            ),
-          ),
-        ),
-      ),
-      'type' => 'textfield_&_select',
-      'weight' => 146,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer1_name'
-  $field_instances['node-listing-field_listing_buyer1_name'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'double_field',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'first' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => ':&nbsp;',
-          ),
-          'second' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => '',
-          ),
-          'style' => 'inline',
-        ),
-        'type' => 'double_field_unformatted_list',
-        'weight' => 124,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => 'theme_field',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer1_name',
-    'label' => 'Name',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'double_field',
-      'settings' => array(
-        'first' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'textfield' => array(
-            'placeholder' => 'First Name',
-            'size' => 15,
-          ),
-        ),
-        'inline' => 1,
-        'second' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'textfield' => array(
-            'placeholder' => 'Last Name',
-            'size' => 15,
-          ),
-        ),
-      ),
-      'type' => 'textfield_&_textfield',
-      'weight' => 143,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer1_phone'
-  $field_instances['node-listing-field_listing_buyer1_phone'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'double_field',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'first' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => ':&nbsp;',
-          ),
-          'second' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => '',
-          ),
-          'style' => 'inline',
-        ),
-        'type' => 'double_field_unformatted_list',
-        'weight' => 123,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => 'theme_field',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer1_phone',
-    'label' => 'Phone',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'double_field',
-      'settings' => array(
-        'first' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 0,
-            'suffix' => '',
-          ),
-          'textfield' => array(
-            'placeholder' => '',
-            'size' => 10,
-          ),
-        ),
-        'inline' => 1,
-        'second' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'select' => array(
-            'allowed_values' => array(
-              'Business' => 'Business',
-              'Cell' => 'Cell',
-              'Fax' => 'Fax',
-              'Home' => 'Home',
-              'Local' => 'Local',
-            ),
-          ),
-        ),
-      ),
-      'type' => 'textfield_&_select',
-      'weight' => 145,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer2_address'
-  $field_instances['node-listing-field_listing_buyer2_address'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'element_key' => 'node|listing|field_listing_buyer2_address|und|0',
-        'thoroughfare' => '',
-        'premise' => '',
-        'locality' => '',
-        'administrative_area' => '',
-        'postal_code' => '',
-        'country' => 'US',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'addressfield',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 127,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer2_address',
-    'label' => 'Address',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'addressfield',
-      'settings' => array(
-        'available_countries' => array(
-          'US' => 'US',
-        ),
-        'format_handlers' => array(
-          'address' => 'address',
-          'address-hide-country' => 'address-hide-country',
-          'organisation' => 0,
-          'name-full' => 0,
-          'name-oneline' => 0,
-        ),
-      ),
-      'type' => 'addressfield_standard',
-      'weight' => 147,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer2_company'
-  $field_instances['node-listing-field_listing_buyer2_company'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-        ),
-        'type' => 'text_default',
-        'weight' => 125,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => 'theme_field',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer2_company',
-    'label' => 'Company',
-    'placeholder' => '',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'rich_text' => 'rich_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'rich_text' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 144,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer2_email'
-  $field_instances['node-listing-field_listing_buyer2_email'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'double_field',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'first' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => ':&nbsp;',
-          ),
-          'second' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => '',
-          ),
-          'style' => 'inline',
-        ),
-        'type' => 'double_field_unformatted_list',
-        'weight' => 126,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => 'theme_field',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer2_email',
-    'label' => 'Email',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'double_field',
-      'settings' => array(
-        'first' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'textfield' => array(
-            'placeholder' => '',
-            'size' => 10,
-          ),
-        ),
-        'inline' => 1,
-        'second' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'select' => array(
-            'allowed_values' => array(
-              'Personal' => 'Personal',
-              'Business' => 'Business',
-              'Other' => 'Other',
-            ),
-          ),
-        ),
-      ),
-      'type' => 'textfield_&_select',
-      'weight' => 146,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer2_name'
-  $field_instances['node-listing-field_listing_buyer2_name'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'double_field',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'first' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => ':&nbsp;',
-          ),
-          'second' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => '',
-          ),
-          'style' => 'inline',
-        ),
-        'type' => 'double_field_unformatted_list',
-        'weight' => 124,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => 'theme_field',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer2_name',
-    'label' => 'Name',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'double_field',
-      'settings' => array(
-        'first' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'textfield' => array(
-            'placeholder' => 'First Name',
-            'size' => 15,
-          ),
-        ),
-        'inline' => 1,
-        'second' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'textfield' => array(
-            'placeholder' => 'Last Name',
-            'size' => 15,
-          ),
-        ),
-      ),
-      'type' => 'textfield_&_textfield',
-      'weight' => 143,
-    ),
-  );
-
-  // Exported field_instance: 'node-listing-field_listing_buyer2_phone'
-  $field_instances['node-listing-field_listing_buyer2_phone'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'double_field',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'first' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => ':&nbsp;',
-          ),
-          'second' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => '',
-          ),
-          'style' => 'inline',
-        ),
-        'type' => 'double_field_unformatted_list',
-        'weight' => 123,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => 'theme_field',
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_buyer2_phone',
-    'label' => 'Phone',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'double_field',
-      'settings' => array(
-        'first' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 0,
-            'suffix' => '',
-          ),
-          'textfield' => array(
-            'placeholder' => '',
-            'size' => 10,
-          ),
-        ),
-        'inline' => 1,
-        'second' => array(
-          'general' => array(
-            'prefix' => '',
-            'required' => 1,
-            'suffix' => '',
-          ),
-          'select' => array(
-            'allowed_values' => array(
-              'Business' => 'Business',
-              'Cell' => 'Cell',
-              'Fax' => 'Fax',
-              'Home' => 'Home',
-              'Local' => 'Local',
-            ),
-          ),
-        ),
-      ),
-      'type' => 'textfield_&_select',
-      'weight' => 145,
+      'weight' => 171,
     ),
   );
 

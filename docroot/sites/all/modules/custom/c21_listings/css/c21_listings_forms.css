@@ -65,57 +65,44 @@
 .node-listing-form #edit-field-listing-street {
   clear: left;
 }
-.node-listing-form .field-name-field-seller-first-name,
-.node-listing-form .field-name-field-seller-last-name,
-.node-listing-form .field-name-field-buyer-first-name,
-.node-listing-form .field-name-field-buyer-last-name {
+
+.node-listing-form .group-listing-buysell {
+  margin-left: 1em;
+}
+.node-listing-form .group-listing-buysell h3 {
+  border-bottom: 1px solid #999999;
+  margin-left: -1em;
+}
+
+.node-listing-form .field-name-field-listing-seller1-name input,
+.node-listing-form .field-name-field-listing-seller2-name input,
+.node-listing-form .field-name-field-listing-buyer1-name input,
+.node-listing-form .field-name-field-listing-buyer2-name input {
   width: 49%;
   float: left;
   margin-bottom: 1em;
 }
-.node-listing-form .field-name-field-seller-first-name,
-.node-listing-form .field-name-field-buyer-first-name {
-  margin-right: 2%;
+.node-listing-form #edit-field-listing-seller1-name-und-0-first,
+.node-listing-form #edit-field-listing-seller2-name-und-0-first,
+.node-listing-form #edit-field-listing-buyer1-name-und-0-first,
+.node-listing-form #edit-field-listing-buyer2-name-und-0-first {
+  margin-right: 1%;
 }
-.node-listing-form .field-name-field-seller-company,
-.node-listing-form .field-name-field-buyer-company {
-  clear: left;
+.node-listing-form #field-listing-seller1-phone-values input.form-text,
+.node-listing-form #field-listing-seller2-phone-values input.form-text,
+.node-listing-form #field-listing-buyer1-phone-values input.form-text,
+.node-listing-form #field-listing-buyer2-phone-values input.form-text,
+.node-listing-form #field-listing-seller1-email-values input.form-text,
+.node-listing-form #field-listing-seller2-email-values input.form-text,
+.node-listing-form #field-listing-buyer1-email-values input.form-text,
+.node-listing-form #field-listing-buyer2-email-values input.form-text{
+  max-width: 50%;
 }
-.node-listing-form .field-name-field-seller-address,
-.node-listing-form .field-name-field-buyer-address {
-  clear: left;
-}
+
 .node-listing-form .locality-block .form-item {
   max-width: 35%;
 }
-.node-listing-form .field-name-field-seller-email-address,
-.node-listing-form .field-name-field-seller-phone-number,
-.node-listing-form .field-name-field-seller-phone-extension,
-.node-listing-form .field-name-field-buyer-email-address,
-.node-listing-form .field-name-field-buyer-phone-number,
-.node-listing-form .field-name-field-buyer-phone-extension {
-  width: 25%;
-  float: left;
-  margin-right: 2em;
-}
-.node-listing-form .field-name-field-seller-phone-extension,
-.node-listing-form .field-name-field-buyer-phone-extension {
-  width: 10%;
-}
-.node-listing-form .field-name-field-seller-email-type,
-.node-listing-form .field-name-field-seller-phone-type,
-.node-listing-form .field-name-field-buyer-email-type,
-.node-listing-form .field-name-field-buyer-phone-type {
-  width: 10%;
-  float: left;
-}
-.node-listing-form #field-seller-phone-values .form-submit,
-.node-listing-form #field-seller-email-values .form-submit,
-.node-listing-form #field-buyer-phone-values .form-submit,
-.node-listing-form #field-buyer-email-values .form-submit {
-  position: relative;
-  top: 19px;
-}
+
 .node-listing-form .field-name-field-listing-list-date .fromto {
   display: inline-block;
   float: left;
@@ -123,24 +110,7 @@
   top: 5px;
   padding: 0 5px;
 }
-.node-listing-form #field-listing-seller-values td {
-  position: relative;
-}
-.node-listing-form .field-name-field-seller-internal-only {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: #666;
-  text-align: right;
-  max-width: 50%;
-}
-.node-listing-form .field-name-field-seller-internal-only input+label {
-  color: #666;
-  font-weight: bold;
-}
-.node-listing-form .field-name-field-seller-internal-only input:checked+label {
-  color: #C33;
-}
+
 .node-listing-form .show-agents {
   padding-left: 1em;
 }
