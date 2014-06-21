@@ -775,16 +775,16 @@ function c21_listings_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'listing';
   $field_group->mode = 'print_internal';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_print_sellers';
   $field_group->data = array(
     'label' => 'Seller1',
     'weight' => '301',
     'children' => array(
-      0 => 'field_listing_seller1_phone',
-      1 => 'field_listing_seller1_name',
-      2 => 'field_listing_seller1_company',
-      3 => 'field_listing_seller1_email',
-      4 => 'field_listing_seller1_address',
+      0 => 'field_listing_seller1_address',
+      1 => 'field_listing_seller1_company',
+      2 => 'field_listing_seller1_email',
+      3 => 'field_listing_seller1_name',
+      4 => 'field_listing_seller1_phone',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -811,16 +811,16 @@ function c21_listings_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'listing';
   $field_group->mode = 'print_internal';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_print_sellers';
   $field_group->data = array(
     'label' => 'Seller2',
     'weight' => '350',
     'children' => array(
-      0 => 'field_listing_seller2_address',
-      1 => 'field_listing_seller2_company',
-      2 => 'field_listing_seller2_email',
-      3 => 'field_listing_seller2_name',
-      4 => 'field_listing_buyer2_phone',
+      0 => 'field_listing_buyer2_phone',
+      1 => 'field_listing_seller2_address',
+      2 => 'field_listing_seller2_company',
+      3 => 'field_listing_seller2_email',
+      4 => 'field_listing_seller2_name',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -851,7 +851,10 @@ function c21_listings_field_group_info() {
   $field_group->data = array(
     'label' => 'Sellers',
     'weight' => '300',
-    'children' => array(),
+    'children' => array(
+      0 => 'group_print_seller1',
+      1 => 'group_print_seller2',
+    ),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Sellers',

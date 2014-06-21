@@ -18,6 +18,8 @@ $output: 'isolation';
 
 #logo {
   content: url('../images/c21hull_logo.svg');
+  width: 200px;
+  height:  110px;
 
   @include degrade-from(svg, false) {
     content: url('../images/c21hull_logo.png');
@@ -32,9 +34,8 @@ $output: 'isolation';
 
 .listing {
   &.printer-friendly {
-    background:  #cf0;
     text-transform: uppercase;
-    width: 730px; /* needed for PDF */
+    width: 960px; /* needed for PDF */
     margin: 0 auto;
     font-size: .8em;
     position: relative;
@@ -136,7 +137,7 @@ $output: 'isolation';
       td {
         border: 1px solid black;
         min-width: 8em;
-        height: 2em;
+        height: 1.75em;
       }
     }
 
@@ -165,51 +166,48 @@ $output: 'isolation';
   }
 
   &.view-mode-print_internal {
+    /* This might be needed for space... but looks bad.
+    .field-name-field-listing-lot,
+    .field-name-field-listing-block,
+    .field-name-field-listing-section {
+      width:  30%;
+      float:  left;
+      margin-right:  5%;
+    }
+    .field-name-field-listing-section {
+      margin-right: 0;
+    }
+    */
+
     .group-print-seller-info,
     .group-print-sellers {
-      margin-top: 4em;
+      margin-top: 2em;
 
-      .seller {
+      .field-group-div {
         font-size:  1.35em;
         padding-bottom: .5 * $spacing_default;
         margin: $spacing_default;
         border-bottom: 1px dotted $color_gray;
 
-        .field-collection-container,
-        .field-collection-view {
-          padding: 0;
-          margin: 0;
-          border: none;
+        .seller-name,
+        .seller-name {
+          font-weight: bold;
+          padding-right: $spacing_default;
+        }
+        .seller-phoneemail {
+          margin:  .5 * $spacing_default $spacing_default .5 * $spacing_default 3 * $spacing_default;
 
-          .seller-first-name,
-          .seller-last-name {
-            font-weight: bold;
-            padding-right: $spacing_default;
-          }
-          .phone-number,
-          .email {
-            display: inline-block;
-            margin:  .5 * $spacing_default $spacing_default .5 * $spacing_default 3 * $spacing_default;
-          }
-          .phone-type,
-          .email-type {
+          .double-field-second {
             font-size: .8em;
             font-style: italic;
             display: inline;
-
-            &:before {
-              content: "(";
-            }
-            &:after {
-              content: ")";
-            }
           }
         }
+      }
 
-        &:last-child {
-          margin-bottom: 0;
-          border-bottom: none;
-        }
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
       }
     }
 
