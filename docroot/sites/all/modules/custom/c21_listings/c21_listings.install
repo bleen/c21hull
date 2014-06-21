@@ -1046,6 +1046,4 @@ ORDER BY
 
   }
 
-  $error = 'Always throw this error';
-  throw new Exception($error);
 }
