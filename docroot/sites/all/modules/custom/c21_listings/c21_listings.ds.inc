@@ -926,12 +926,12 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'print_internal';
   $ds_fieldsetting->settings = array(
     'listing_fine_print' => array(
-      'weight' => '306',
+      'weight' => '404',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'listing_office_info' => array(
-      'weight' => '305',
+      'weight' => '403',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -1169,19 +1169,6 @@ function c21_listings_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_listing_seller' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'seller',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
     'field_listing_sewage' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -1362,6 +1349,16 @@ function c21_listings_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
         ),
+      ),
+    ),
+    'field_listing_seller1_phone' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_listing_buyer2_phone' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );
@@ -2338,14 +2335,25 @@ function c21_listings_ds_layout_settings_info() {
         38 => 'field_listing_street',
         39 => 'field_listing_directions',
         40 => 'group_print_sellers',
-        41 => 'field_listing_seller',
-        42 => 'group_print_notes',
-        43 => 'field_listing_tags',
-        44 => 'field_listing_notes',
+        41 => 'group_print_seller1',
+        42 => 'field_listing_seller1_name',
+        43 => 'field_listing_seller1_company',
+        44 => 'field_listing_seller1_address',
+        45 => 'field_listing_seller1_phone',
+        46 => 'field_listing_seller1_email',
+        47 => 'group_print_seller2',
+        48 => 'field_listing_seller2_name',
+        49 => 'field_listing_seller2_company',
+        50 => 'field_listing_seller2_address',
+        51 => 'field_listing_buyer2_phone',
+        52 => 'field_listing_seller2_email',
+        53 => 'group_print_notes',
+        54 => 'field_listing_tags',
+        55 => 'field_listing_notes',
       ),
       'footer' => array(
-        45 => 'listing_office_info',
-        46 => 'listing_fine_print',
+        56 => 'listing_office_info',
+        57 => 'listing_fine_print',
       ),
     ),
     'fields' => array(
@@ -2390,7 +2398,18 @@ function c21_listings_ds_layout_settings_info() {
       'field_listing_street' => 'right',
       'field_listing_directions' => 'right',
       'group_print_sellers' => 'right',
-      'field_listing_seller' => 'right',
+      'group_print_seller1' => 'right',
+      'field_listing_seller1_name' => 'right',
+      'field_listing_seller1_company' => 'right',
+      'field_listing_seller1_address' => 'right',
+      'field_listing_seller1_phone' => 'right',
+      'field_listing_seller1_email' => 'right',
+      'group_print_seller2' => 'right',
+      'field_listing_seller2_name' => 'right',
+      'field_listing_seller2_company' => 'right',
+      'field_listing_seller2_address' => 'right',
+      'field_listing_buyer2_phone' => 'right',
+      'field_listing_seller2_email' => 'right',
       'group_print_notes' => 'right',
       'field_listing_tags' => 'right',
       'field_listing_notes' => 'right',

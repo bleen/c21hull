@@ -745,7 +745,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Notes',
-    'weight' => '302',
+    'weight' => '400',
     'children' => array(
       0 => 'field_listing_notes',
       1 => 'field_listing_tags',
@@ -770,6 +770,78 @@ function c21_listings_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_print_seller1|node|listing|print_internal';
+  $field_group->group_name = 'group_print_seller1';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'print_internal';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Seller1',
+    'weight' => '301',
+    'children' => array(
+      0 => 'field_listing_seller1_phone',
+      1 => 'field_listing_seller1_name',
+      2 => 'field_listing_seller1_company',
+      3 => 'field_listing_seller1_email',
+      4 => 'field_listing_seller1_address',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Seller1',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-print-seller1 group-print-seller field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_print_seller1|node|listing|print_internal'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_print_seller2|node|listing|print_internal';
+  $field_group->group_name = 'group_print_seller2';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'listing';
+  $field_group->mode = 'print_internal';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Seller2',
+    'weight' => '350',
+    'children' => array(
+      0 => 'field_listing_seller2_address',
+      1 => 'field_listing_seller2_company',
+      2 => 'field_listing_seller2_email',
+      3 => 'field_listing_seller2_name',
+      4 => 'field_listing_buyer2_phone',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Seller2',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-print-seller2  group-print-seller  field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_print_seller2|node|listing|print_internal'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_print_sellers|node|listing|print_internal';
   $field_group->group_name = 'group_print_sellers';
   $field_group->entity_type = 'node';
@@ -779,9 +851,7 @@ function c21_listings_field_group_info() {
   $field_group->data = array(
     'label' => 'Sellers',
     'weight' => '300',
-    'children' => array(
-      0 => 'field_listing_seller',
-    ),
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Sellers',

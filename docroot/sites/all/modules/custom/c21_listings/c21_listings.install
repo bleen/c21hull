@@ -912,6 +912,8 @@ function c21_listings_update_7023() {
  * Move all buyer & seller data to the new non-field collection fields.
  */
 function c21_listings_update_7024() {
+  module_enable(array('double_field'));
+
   foreach (array('buyer', 'seller') as $ilk) {
     // Get existing buyer/seller data.
     $data = db_query("

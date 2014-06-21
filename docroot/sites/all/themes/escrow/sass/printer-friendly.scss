@@ -32,8 +32,9 @@ $output: 'isolation';
 
 .listing {
   &.printer-friendly {
+    background:  #cf0;
     text-transform: uppercase;
-    width: 980px; /* needed for PDF */
+    width: 730px; /* needed for PDF */
     margin: 0 auto;
     font-size: .8em;
     position: relative;
