@@ -25,11 +25,11 @@
       Drupal.c21.drupalSetSummary(fieldset, fields);
 
       fieldset = $('.group-listing-buyers', context);
-      fields = {'buyer':'person'};
+      fields = {'field-listing-buyer1':'person', 'field-listing-buyer2':'person'};
       Drupal.c21.drupalSetSummary(fieldset, fields);
 
       fieldset = $('.group-listing-sellers', context);
-      fields = {'seller':'person'};
+      fields = {'field-listing-seller1':'person', 'field-listing-seller2':'person'};
       Drupal.c21.drupalSetSummary(fieldset, fields);
 
       // Hide the "former" agents and add a "show former agents" link.
@@ -120,9 +120,9 @@
             field = field.join(' to ');
             break;
           case 'person':
-            $('.field-name-field-listing-' + key + ' #field-listing-' + key + '-values > tbody > tr').each(function(context) {
-              field = $(this).find('.field-name-field-' + key + '-first-name input').val() + ' ';
-              field += $(this).find('.field-name-field-' + key + '-last-name input').val();
+            var field = '';
+            $('.field-name-' + key + '-name input').each(function(context) {
+              field += $(this).val() + ' ';
             });
             break;
           default:
