@@ -348,12 +348,11 @@ function c21_listings_tokens($type, $tokens, array $data = array(), array $optio
       switch ($name) {
         case 'sellers':
           $seller_names = array();
-          $sellers = $wrapper->field_listing_seller->value();
-          $sellers = !is_array($sellers) ? array($sellers) : $sellers;
-          foreach ($sellers as $seller) {
-            $firstname = isset($seller->field_seller_first_name[LANGUAGE_NONE]) ? $seller->field_seller_first_name[LANGUAGE_NONE][0]['safe_value'] : '';
-            $lastname = isset($seller->field_seller_last_name[LANGUAGE_NONE]) ? $seller->field_seller_last_name[LANGUAGE_NONE][0]['safe_value'] : '';
-            $company = isset($seller->field_seller_company[LANGUAGE_NONE]) ? $seller->field_seller_company[LANGUAGE_NONE][0]['safe_value'] : '';
+          for ($i = 1; $i <= 2; $i++) {
+            $name = $wrapper->{'field_listing_seller' . $i . '_name'}->value();
+            $company = $wrapper->{'field_listing_seller' . $i . '_company'}->value();
+            $firstname = !empty($name['first']) ? $name['first'] : '';
+            $lastname = !empty($name['second']) ? $name['second'] : '';
 
             if (!empty($company) && !empty($firstname) && !empty($lastname)) {
               $seller_names[] = $company . ' c/o ' . $firstname . ' ' . $lastname;
