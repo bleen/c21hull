@@ -1247,77 +1247,6 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listing-field_listing_buyer'
-  $field_instances['node-listing-field_listing_buyer'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => 'Add another buyer',
-    'custom_remove' => 'Remove buyer',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => 'EmptyFieldText',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_fields',
-        'weight' => 108,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 61,
-      ),
-      'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 65,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_listing_buyer',
-    'label' => 'Buyer',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 163,
-    ),
-  );
-
   // Exported field_instance: 'node-listing-field_listing_buyer1_address'
   $field_instances['node-listing-field_listing_buyer1_address'] = array(
     'bundle' => 'listing',
@@ -5307,85 +5236,6 @@ function c21_listings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-listing-field_listing_seller'
-  $field_instances['node-listing-field_listing_seller'] = array(
-    'bundle' => 'listing',
-    'custom_add_another' => 'Add another seller',
-    'custom_remove' => 'Remove seller',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => 'EmptyFieldText',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 101,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 110,
-      ),
-      'micro_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 52,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 107,
-      ),
-      'print_internal' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 301,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 38,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 58,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_listing_seller',
-    'label' => 'Seller',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 173,
-    ),
-  );
-
   // Exported field_instance: 'node-listing-field_listing_seller1_address'
   $field_instances['node-listing-field_listing_seller1_address'] = array(
     'bundle' => 'listing',
@@ -8674,7 +8524,6 @@ function c21_listings_field_default_field_instances() {
   t('Bio');
   t('Block');
   t('Building Type');
-  t('Buyer');
   t('Closing Date');
   t('Commission');
   t('Company');
@@ -8716,7 +8565,6 @@ function c21_listings_field_default_field_instances() {
   t('Sale Price');
   t('School District');
   t('Section');
-  t('Seller');
   t('Sewage');
   t('Siding');
   t('Special Notes');
