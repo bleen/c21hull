@@ -688,18 +688,29 @@ function c21_listings_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_listing_agent']['delta_offset'] = '0';
-  /* Field: Content: Seller */
-  $handler->display->display_options['fields']['field_listing_seller']['id'] = 'field_listing_seller';
-  $handler->display->display_options['fields']['field_listing_seller']['table'] = 'field_data_field_listing_seller';
-  $handler->display->display_options['fields']['field_listing_seller']['field'] = 'field_listing_seller';
-  $handler->display->display_options['fields']['field_listing_seller']['type'] = 'field_collection_fields';
-  $handler->display->display_options['fields']['field_listing_seller']['settings'] = array(
-    'view_mode' => 'micro_teaser',
+  /* Field: Content: Name */
+  $handler->display->display_options['fields']['field_listing_seller1_name']['id'] = 'field_listing_seller1_name';
+  $handler->display->display_options['fields']['field_listing_seller1_name']['table'] = 'field_data_field_listing_seller1_name';
+  $handler->display->display_options['fields']['field_listing_seller1_name']['field'] = 'field_listing_seller1_name';
+  $handler->display->display_options['fields']['field_listing_seller1_name']['label'] = 'Seller Name';
+  $handler->display->display_options['fields']['field_listing_seller1_name']['click_sort_column'] = 'first';
+  $handler->display->display_options['fields']['field_listing_seller1_name']['settings'] = array(
+    'style' => 'inline',
+    'first' => array(
+      'hidden' => 0,
+      'format' => '_none',
+      'prefix' => '',
+      'suffix' => '&nbsp;',
+    ),
+    'second' => array(
+      'hidden' => 0,
+      'format' => '_none',
+      'prefix' => '',
+      'suffix' => '',
+    ),
     'empty_fields_handler' => '',
     'empty_fields_emptyfieldtext_empty_text' => '',
   );
-  $handler->display->display_options['fields']['field_listing_seller']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_listing_seller']['multi_type'] = 'ul';
   /* Field: Content: Listing Type */
   $handler->display->display_options['fields']['field_listing_type']['id'] = 'field_listing_type';
   $handler->display->display_options['fields']['field_listing_type']['table'] = 'field_data_field_listing_type';
@@ -821,12 +832,6 @@ function c21_listings_views_default_views() {
   $handler = $view->new_display('page', 'Listing Report', 'listing_report');
   $handler->display->display_options['display_description'] = 'General information about listings';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Seller (field_listing_seller) */
-  $handler->display->display_options['relationships']['field_listing_seller_value']['id'] = 'field_listing_seller_value';
-  $handler->display->display_options['relationships']['field_listing_seller_value']['table'] = 'field_data_field_listing_seller';
-  $handler->display->display_options['relationships']['field_listing_seller_value']['field'] = 'field_listing_seller_value';
-  $handler->display->display_options['relationships']['field_listing_seller_value']['label'] = 'Seller';
-  $handler->display->display_options['relationships']['field_listing_seller_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -887,26 +892,6 @@ function c21_listings_views_default_views() {
     5 => 0,
     4 => 0,
   );
-  /* Filter criterion: Field collection item: Last Name (field_seller_last_name) */
-  $handler->display->display_options['filters']['field_seller_last_name_value']['id'] = 'field_seller_last_name_value';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['table'] = 'field_data_field_seller_last_name';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['field'] = 'field_seller_last_name_value';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['relationship'] = 'field_listing_seller_value';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_seller_last_name_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['operator_id'] = 'field_seller_last_name_value_op';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['label'] = 'Seller (Last Name)';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['operator'] = 'field_seller_last_name_value_op';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['identifier'] = 'field_seller_last_name_value';
-  $handler->display->display_options['filters']['field_seller_last_name_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    6 => 0,
-    5 => 0,
-    4 => 0,
-  );
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -946,6 +931,24 @@ function c21_listings_views_default_views() {
     2 => '2',
     1 => 0,
     3 => 0,
+    5 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Name (field_listing_seller1_name:second) */
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['id'] = 'field_listing_seller1_name_second';
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['table'] = 'field_data_field_listing_seller1_name';
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['field'] = 'field_listing_seller1_name_second';
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['operator_id'] = 'field_listing_seller1_name_second_op';
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['label'] = 'Seller1 (Last Name)';
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['operator'] = 'field_listing_seller1_name_second_op';
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['identifier'] = 'field_listing_seller1_name_second';
+  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    6 => 0,
     5 => 0,
     4 => 0,
   );
@@ -1043,18 +1046,10 @@ function c21_listings_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_listing_agent']['delta_offset'] = '0';
-  /* Field: Content: Seller */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_listing_seller']['id'] = 'field_listing_seller';
   $handler->display->display_options['fields']['field_listing_seller']['table'] = 'field_data_field_listing_seller';
   $handler->display->display_options['fields']['field_listing_seller']['field'] = 'field_listing_seller';
-  $handler->display->display_options['fields']['field_listing_seller']['type'] = 'field_collection_fields';
-  $handler->display->display_options['fields']['field_listing_seller']['settings'] = array(
-    'view_mode' => 'micro_teaser',
-    'empty_fields_handler' => '',
-    'empty_fields_emptyfieldtext_empty_text' => '',
-  );
-  $handler->display->display_options['fields']['field_listing_seller']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_listing_seller']['multi_type'] = 'ul';
   /* Field: Content: Listing Type */
   $handler->display->display_options['fields']['field_listing_type']['id'] = 'field_listing_type';
   $handler->display->display_options['fields']['field_listing_type']['table'] = 'field_data_field_listing_type';
