@@ -4543,7 +4543,7 @@ function c21_listings_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 402,
+        'weight' => 283,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -7252,7 +7252,7 @@ function c21_listings_field_default_field_instances() {
           'taxonomy_term_separator' => ', ',
         ),
         'type' => 'ds_taxonomy_separator',
-        'weight' => 401,
+        'weight' => 282,
       ),
       'search_result' => array(
         'label' => 'above',

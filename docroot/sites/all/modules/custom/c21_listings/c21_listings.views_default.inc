@@ -1046,7 +1046,7 @@ function c21_listings_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_listing_agent']['delta_offset'] = '0';
-  /* Field: Broken/missing handler */
+  /* Field: : field_listing_seller */
   $handler->display->display_options['fields']['field_listing_seller']['id'] = 'field_listing_seller';
   $handler->display->display_options['fields']['field_listing_seller']['table'] = 'field_data_field_listing_seller';
   $handler->display->display_options['fields']['field_listing_seller']['field'] = 'field_listing_seller';
