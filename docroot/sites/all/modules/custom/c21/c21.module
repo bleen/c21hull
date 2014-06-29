@@ -67,9 +67,27 @@ function c21_cron() {
   $result = $query->execute();
 
   if (!empty($result['drealty_listing'])) {
-    $ids = array_keys($result['drealty_listing']);
-    entity_delete_multiple('drealty_listing', $ids);
+    $queue = DrupalQueue::get('c21InactiveMLSListings');
+    foreach (array_keys($result['drealty_listing']) as $id) {
+      $queue->createItem($id);
+    }
   }
+}
+
+/**
+ * Implements hook_cron_queue_info().
+ */
+function c21_cron_queue_info() {
+  $queues['c21InactiveMLSListings'] = array(
+    'worker callback' => 'c21_delete_inactive_mls_listing',
+    'time' => 60,
+  );
+
+  return $queues;
+}
+
+function c21_delete_inactive_mls_listing($id) {
+  entity_delete('drealty_listing', $id);
 }
 
 /**
