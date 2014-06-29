@@ -382,6 +382,9 @@ $conf['theme_escrow_settings'] = array (
   'magic_js_excludes_regex' => false,
 );
 
+// Turn off poor mans cron.
+$conf['cron_safe_threshold'] = 0;
+
 // Search settings. Prevent the default search indexing.
 $conf['search_cron_limit'] = 0;
 $conf['search_default_module'] = 'apachesolr_search';
