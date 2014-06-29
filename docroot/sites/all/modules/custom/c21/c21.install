@@ -63,3 +63,35 @@ function c21_update_7005() {
   module_disable(array('fences'));
 }
 
+/**
+ * Deleting inactive MLS listings.
+ */
+function c21_update_7006(&$sandbox) {
+  if (!array_key_exists('progress', $sandbox)) {
+    $query = new EntityFieldQuery();
+    $query
+      ->entityCondition('entity_type', 'drealty_listing')
+      ->propertyCondition('active', 0);
+    $result = $query->execute();
+
+    $sandbox['items_per_pass'] = 25;
+    $sandbox['max'] = !empty($result['drealty_listing']) ? count($result['drealty_listing']) : 0;
+    $sandbox['progress'] = 0;
+  }
+
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'drealty_listing')
+    ->propertyCondition('active', 0)
+    ->range($sandbox['progress'], $sandbox['items_per_pass']);
+  $result = $query->execute();
+
+  if (!empty($result['drealty_listing'])) {
+    $ids = array_keys($result['drealty_listing']);
+    entity_delete_multiple('drealty_listing', $ids);
+
+    $sandbox['progress'] += count($result['drealty_listing']);
+  }
+
+  $sandbox['#finished'] = ($sandbox['progress'] >= $sandbox['max']);
+}
