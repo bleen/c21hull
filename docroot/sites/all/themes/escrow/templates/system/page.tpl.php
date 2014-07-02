@@ -71,6 +71,7 @@
 <?php if ($page['header']): ?>
   <header id="header" role="banner">
     <?php print render($page['header']); ?>
+    <?php if ($primary_nav): print $primary_nav; endif; ?>
   </header>
 <?php endif; ?>
 

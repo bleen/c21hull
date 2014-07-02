@@ -39,6 +39,23 @@ function escrow_preprocess_page(&$variables) {
       unset($content['views_c21_featured_listings-block']);
     }
   }
+
+  if (isset($variables['main_menu'])) {
+    $variables['primary_nav'] = theme('links__system_main_menu', array(
+      'links' => $variables['main_menu'],
+      'attributes' => array(
+        'class' => array('links', 'inline', 'main-menu'),
+      ),
+      'heading' => array(
+        'text' => t('Main menu'),
+        'level' => 'h2',
+        'class' => array('element-invisible'),
+      )
+    ));
+  }
+  else {
+    $variables['primary_nav'] = FALSE;
+  }
 }
 
 /**

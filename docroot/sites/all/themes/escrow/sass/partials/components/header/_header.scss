@@ -1,15 +1,40 @@
 #header {
   @include clearfix();
+  position: relative;
   margin: 0 $spacing_default_neg $spacing_large $spacing_default_neg;
   padding-top: $spacing_large;
   padding-left: $spacing_default;
+  border-bottom: 3px solid $color_gold;
   @include background(
     url("../images/lake.jpg") no-repeat center left
   );
-  border-bottom: 3px solid $color_gold;
 
   .lt-ie9 & {
     background-image: url("../images/lake.jpg");
+  }
+
+  .main-menu {
+    position: absolute;
+    bottom:  -10px;
+    left:  0px;
+    width:  100%;
+    padding: 3px 0;
+    margin:  0;
+    background-color: $color_gold;
+    font-size: .8 * $font_size_base;
+
+    a {
+      color:  white;
+      display:  inline-block;
+      padding:  2px $spacing_default;
+    }
+
+    @include breakpoint($bp650) {
+      width:  auto;
+      left: auto;
+      right:  0;
+      bottom: -3px;
+    }
   }
 }
 
