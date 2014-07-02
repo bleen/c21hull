@@ -536,12 +536,6 @@ function c21_listings_form_listing_node_form_alter(&$form, &$form_state) {
   unset($form['field_listing_latitude']);
   $form['#group_children']['map_coordinates'] = 'group_listing_location_info';
 
-  // Hide the "legacy data" field if its empty and for non-admins.
-  $form['field_listing_legacy_data']['#disabled'] = TRUE;
-  if (!user_access('administer site configuration') || empty($form['field_listing_legacy_data'][LANGUAGE_NONE][0]['value']['#default_value'])) {
-    $form['field_listing_legacy_data']['#access'] = FALSE;
-  }
-
   // Add a "Save & Print" button.
   $form['actions']['save_print'] = array(
     '#type' => 'submit',

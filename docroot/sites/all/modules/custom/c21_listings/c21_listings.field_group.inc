@@ -174,7 +174,6 @@ function c21_listings_field_group_info() {
       0 => 'group_listing_building_info',
       1 => 'group_listing_general_info',
       2 => 'group_listing_images_videos',
-      3 => 'group_listing_ligacy_data',
       4 => 'group_listing_location_info',
       5 => 'group_listing_measurements',
       6 => 'group_listing_notes',
@@ -294,33 +293,6 @@ function c21_listings_field_group_info() {
     ),
   );
   $export['group_listing_images_videos|node|listing|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_listing_ligacy_data|node|listing|form';
-  $field_group->group_name = 'group_listing_ligacy_data';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'listing';
-  $field_group->mode = 'form';
-  $field_group->parent_name = 'group_listing_details';
-  $field_group->data = array(
-    'label' => 'Legacy Data',
-    'weight' => '15',
-    'children' => array(
-      0 => 'field_listing_legacy_data',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => ' group-listing-ligacy-data field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_listing_ligacy_data|node|listing|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
