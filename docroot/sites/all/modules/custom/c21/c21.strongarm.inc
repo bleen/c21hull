@@ -1518,7 +1518,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_name';
-  $strongarm->value = 'Century21 Roy B. Hull';
+  $strongarm->value = 'Century21 Roy B Hull';
   $export['site_name'] = $strongarm;
 
   $strongarm = new stdClass();
