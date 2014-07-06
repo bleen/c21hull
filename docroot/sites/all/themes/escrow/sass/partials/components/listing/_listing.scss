@@ -211,6 +211,14 @@
         padding-top: $spacing_default;
         border-top: 1px solid $color_gray;
       }
+
+      form {
+        clear: left;
+        padding:  $spacing_default;
+        margin: $spacing_default 0;
+        background-color: white;
+        border: none;
+      }
     }
     .agents-title {
       font-weight: bold;

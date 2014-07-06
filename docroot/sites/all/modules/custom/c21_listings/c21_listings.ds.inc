@@ -51,8 +51,13 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'agent';
   $ds_fieldsetting->view_mode = 'micro_teaser';
   $ds_fieldsetting->settings = array(
-    'meet_our_agents' => array(
+    'contact_form' => array(
       'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'meet_our_agents' => array(
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -1428,6 +1433,18 @@ function c21_listings_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'contact_form';
+  $ds_field->label = 'Contact Form';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'agent|micro_teaser';
+  $ds_field->properties = array();
+  $export['contact_form'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'listing_fine_print';
   $ds_field->label = 'Fine Print';
   $ds_field->field_type = 3;
@@ -1490,6 +1507,30 @@ agent|micro_teaser';
   $ds_field->properties = array();
   $export['meet_our_agents'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'random_agent';
+  $ds_field->label = 'Random Agent';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'drealty_listing' => 'drealty_listing',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array();
+  $export['random_agent'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'read_more';
+  $ds_field->label = 'Read more';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'drealty_listing' => 'drealty_listing',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array();
+  $export['read_more'] = $ds_field;
+
   return $export;
 }
 
@@ -1545,7 +1586,8 @@ function c21_listings_ds_layout_settings_info() {
         1 => 'title',
         2 => 'field_agent_phone_number',
         3 => 'field_agent_email',
-        4 => 'meet_our_agents',
+        4 => 'contact_form',
+        5 => 'meet_our_agents',
       ),
     ),
     'fields' => array(
@@ -1553,6 +1595,7 @@ function c21_listings_ds_layout_settings_info() {
       'title' => 'ds_content',
       'field_agent_phone_number' => 'ds_content',
       'field_agent_email' => 'ds_content',
+      'contact_form' => 'ds_content',
       'meet_our_agents' => 'ds_content',
     ),
     'classes' => array(),

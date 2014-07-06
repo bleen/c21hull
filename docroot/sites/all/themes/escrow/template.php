@@ -153,6 +153,13 @@ function escrow_preprocess_node(&$variables) {
         ),
       );
       $variables['meet_our_agents'] = l(t('Meet Our Agents'), 'agents', $options);
+
+      module_load_include('inc', 'contact', 'contact.pages');
+      $contact_form = drupal_get_form('contact_site_form');
+      $contact_form['#title_display'] = 'invisible';
+      unset($contact_form['blurb']);
+      $variables['contact_form'] = drupal_render($contact_form);
+
       break;
   }
 }
@@ -403,7 +410,9 @@ function _escrow_random_agent($owner = TRUE) {
     $agent_nid = array_rand($agents['node']);
     $agent_node = node_load($agent_nid);
     $agent_rendered = node_view($agent_node, 'micro_teaser');
-    $agent['#markup'] = '<aside class="agents"><div class="agent">' . drupal_render($agent_rendered) . '</div></aside>';
+    $agent['#prefix'] = '<aside class="agents"><div class="agent">';
+    $agent['agent'] = array('#markup' => drupal_render($agent_rendered));
+    $agent['#suffix'] = '</div></aside>';
   }
 
   return drupal_render($agent);
