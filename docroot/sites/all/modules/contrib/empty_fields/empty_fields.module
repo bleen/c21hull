@@ -224,7 +224,7 @@ function empty_fields_field_attach_view_alter(&$output, $context) {
     // Load the configured plugin.
     $plugin = empty_fields_load_plugin($instance, $display['settings']);
 
-    if ($plugin) {
+    if ($plugin && $bundle != 'agent') {
       $markup = $plugin->react($context);
       // Do not render empty values.
 //      if (!empty($markup) || drupal_strlen($markup)) {

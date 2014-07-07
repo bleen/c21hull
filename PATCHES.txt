@@ -101,7 +101,7 @@ ENTITY CACHE
   * Getting an "array_flip" error
       PATCH: https://drupal.org/node/1851398 (Original Post)
 
-EMPTY_FIELD
+EMPTY_FIELDS
   * Empty fields with should still display.
       PATCH: https://drupal.org/node/2281403#comment-8850519
   * Empty field should use drupal_static so we can reset the static variables
@@ -109,6 +109,10 @@ EMPTY_FIELD
       PATCH: https://drupal.org/node/2147655#comment-8230641
   * Not sure why, but this is needed:
       PATCH: http://pastebin.com/KsaYVpna
+  * HACK: Ignoring this module when rendering agents.
+    See empty_fields_field_attach_view_alter() and note the if statement that
+    check if $bundle != 'agent'. Removing this hack will cause email and phone
+    number to be rendered empty on listings.
 
 FIELD_COLLECTION
   * Adding a migrate handler for field collections.
