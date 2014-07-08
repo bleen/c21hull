@@ -132,13 +132,9 @@ function c21_listings_field_default_field_instances() {
       ),
       'micro_teaser' => array(
         'label' => 'hidden',
-        'module' => 'c21_listings',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => 'EmptyFieldText',
-        ),
-        'type' => 'email',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',

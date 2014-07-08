@@ -52,12 +52,12 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'micro_teaser';
   $ds_fieldsetting->settings = array(
     'contact_form' => array(
-      'weight' => '4',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'meet_our_agents' => array(
-      'weight' => '5',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -89,13 +89,6 @@ function c21_listings_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_agent_email' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_field',
         ),
       ),
     ),
@@ -1585,16 +1578,14 @@ function c21_listings_ds_layout_settings_info() {
         0 => 'field_agent_photo',
         1 => 'title',
         2 => 'field_agent_phone_number',
-        3 => 'field_agent_email',
-        4 => 'contact_form',
-        5 => 'meet_our_agents',
+        3 => 'contact_form',
+        4 => 'meet_our_agents',
       ),
     ),
     'fields' => array(
       'field_agent_photo' => 'ds_content',
       'title' => 'ds_content',
       'field_agent_phone_number' => 'ds_content',
-      'field_agent_email' => 'ds_content',
       'contact_form' => 'ds_content',
       'meet_our_agents' => 'ds_content',
     ),
