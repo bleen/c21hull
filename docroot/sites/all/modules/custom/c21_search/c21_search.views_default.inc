@@ -79,7 +79,7 @@ function c21_search_views_default_views() {
         ),
       ),
     ),
-    'fts_field_listing_list_price' => array(
+    'fs_field_listing_list_price' => array(
       'bef_format' => 'bef_slider',
       'slider_options' => array(
         'bef_slider_min' => '1000',
@@ -212,20 +212,20 @@ function c21_search_views_default_views() {
     5 => 0,
     4 => 0,
   );
-  /* Filter criterion: Apache Solr: fts_field_listing_list_price */
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['id'] = 'fts_field_listing_list_price';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['table'] = 'apachesolr__opensolr';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['field'] = 'fts_field_listing_list_price';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['operator'] = 'between';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['value']['min'] = '15000';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['value']['max'] = '1000000';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['group'] = 1;
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['expose']['operator_id'] = 'fts_field_listing_list_price_op';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['expose']['label'] = 'List Price';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['expose']['operator'] = 'fts_field_listing_list_price_op';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['expose']['identifier'] = 'fts_field_listing_list_price';
-  $handler->display->display_options['filters']['fts_field_listing_list_price']['expose']['remember_roles'] = array(
+  /* Filter criterion: Apache Solr: fs_field_listing_list_price */
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['id'] = 'fs_field_listing_list_price';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['table'] = 'apachesolr__opensolr';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['field'] = 'fs_field_listing_list_price';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['operator'] = 'between';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['value']['min'] = '15000';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['value']['max'] = '1000000';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['group'] = 1;
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['expose']['operator_id'] = 'fs_field_listing_list_price_op';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['expose']['label'] = 'List Price';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['expose']['operator'] = 'fs_field_listing_list_price_op';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['expose']['identifier'] = 'fs_field_listing_list_price';
+  $handler->display->display_options['filters']['fs_field_listing_list_price']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
