@@ -18,25 +18,25 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
           'sewage', 'water', 'heat', 'insulation', 'windows', 'basement', 'garage', 'floors', 'walls', 'additional_bldg', 'development', 'township', 'school_district', 'tags'
         );
 
-        $document->addField('ts_field_listing_id', $entity->field_listing_id_prefix[LANGUAGE_NONE][0]['value'] . '-' . $entity->nid);
+        $document->setField('ts_field_listing_id', $entity->field_listing_id_prefix[LANGUAGE_NONE][0]['value'] . '-' . $entity->nid);
 
         if (!empty($entity->field_listing_mls)) {
-          $document->addField('ts_field_mls', $entity->field_listing_mls[LANGUAGE_NONE][0]['value']);
+          $document->setField('ts_field_mls', $entity->field_listing_mls[LANGUAGE_NONE][0]['value']);
         }
         if (!empty($entity->field_listing_list_price)){
-          $document->addField('fts_field_listing_list_price', $entity->field_listing_list_price[LANGUAGE_NONE][0]['value']);
+          $document->setField('fts_field_listing_list_price', $entity->field_listing_list_price[LANGUAGE_NONE][0]['value']);
         }
         if (!empty($entity->field_listing_bedrooms)){
-          $document->addField('its_field_listing_bedrooms', $entity->field_listing_bedrooms[LANGUAGE_NONE][0]['value']);
+          $document->setField('its_field_listing_bedrooms', $entity->field_listing_bedrooms[LANGUAGE_NONE][0]['value']);
         }
         if (!empty($entity->field_listing_bathrooms)){
-          $document->addField('fts_field_listing_bathrooms', $entity->field_listing_bathrooms[LANGUAGE_NONE][0]['value']);
+          $document->setField('fts_field_listing_bathrooms', $entity->field_listing_bathrooms[LANGUAGE_NONE][0]['value']);
         }
         if (!empty($entity->field_listing_acreage)){
-          $document->addField('fts_field_listing_acreage', $entity->field_listing_acreage[LANGUAGE_NONE][0]['value']);
+          $document->setField('fts_field_listing_acreage', $entity->field_listing_acreage[LANGUAGE_NONE][0]['value']);
         }
         if (!empty($entity->field_listing_sq_ft_above) && !empty($entity->field_listing_sq_ft_below)){
-          $document->addField('fs_field_sq_ft', $entity->field_listing_sq_ft_above[LANGUAGE_NONE][0]['value'] + $entity->field_listing_sq_ft_below[LANGUAGE_NONE][0]['value']);
+          $document->setField('fs_field_sq_ft', $entity->field_listing_sq_ft_above[LANGUAGE_NONE][0]['value'] + $entity->field_listing_sq_ft_below[LANGUAGE_NONE][0]['value']);
         }
       }
       break;
@@ -48,57 +48,57 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
         );
 
         if (!empty($entity->field_mls_number[LANGUAGE_NONE][0]['tid'])) {
-          $document->addField('ts_field_mls', $entity->field_mls_number[LANGUAGE_NONE][0]['tid']);
+          $document->setField('ts_field_mls', $entity->field_mls_number[LANGUAGE_NONE][0]['tid']);
         }
         elseif (!empty($entity->field_mls_number[0]['tid'])) {
-          $document->addField('ts_field_mls', $entity->field_mls_number[0]['tid']);
+          $document->setField('ts_field_mls', $entity->field_mls_number[0]['tid']);
         }
 
         if (!empty($entity->field_mls_list_price[LANGUAGE_NONE][0]['value'])) {
-          $document->addField('fts_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
+          $document->setField('fts_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
         }
         elseif (!empty($entity->field_mls_list_price[0]['value'])) {
-          $document->addField('fts_field_listing_list_price', round($entity->field_mls_list_price[0]['value']));
+          $document->setField('fts_field_listing_list_price', round($entity->field_mls_list_price[0]['value']));
         }
         else {
-          $document->addField('fts_field_listing_list_price', 0);
+          $document->setField('fts_field_listing_list_price', 0);
         }
 
         if (!empty($entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value'])) {
-          $document->addField('its_field_listing_bedrooms', (int)$entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value']);
+          $document->setField('its_field_listing_bedrooms', (int)$entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value']);
         }
         elseif (!empty($entity->field_mls_bedrooms[0]['value'])) {
-          $document->addField('its_field_listing_bedrooms', (int)$entity->field_mls_bedrooms[0]['value']);
+          $document->setField('its_field_listing_bedrooms', (int)$entity->field_mls_bedrooms[0]['value']);
         }
 
         if (!empty($entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value'])) {
-          $document->addField('fts_field_listing_bathrooms', (int)$entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value']);
+          $document->setField('fts_field_listing_bathrooms', (int)$entity->field_mls_bathrooms[LANGUAGE_NONE][0]['value']);
         }
         elseif (!empty($entity->field_mls_bathrooms[0]['value'])) {
-          $document->addField('fts_field_listing_bathrooms', (int)$entity->field_mls_bathrooms[0]['value']);
+          $document->setField('fts_field_listing_bathrooms', (int)$entity->field_mls_bathrooms[0]['value']);
         }
         else {
-          $document->addField('fts_field_listing_bathrooms', 0);
+          $document->setField('fts_field_listing_bathrooms', 0);
         }
 
         if (!empty($entity->field_mls_acreage[LANGUAGE_NONE][0]['value'])) {
-          $document->addField('fts_field_listing_acreage', (int)$entity->field_mls_acreage[LANGUAGE_NONE][0]['value']);
+          $document->setField('fts_field_listing_acreage', (int)$entity->field_mls_acreage[LANGUAGE_NONE][0]['value']);
         }
         elseif (!empty($entity->field_mls_acreage[0]['value'])) {
-          $document->addField('fts_field_listing_acreage', (int)$entity->field_mls_acreage[0]['value']);
+          $document->setField('fts_field_listing_acreage', (int)$entity->field_mls_acreage[0]['value']);
         }
         else {
-          $document->addField('fts_field_listing_acreage', 0);
+          $document->setField('fts_field_listing_acreage', 0);
         }
 
         if (!empty($entity->field_mls_square_feet[LANGUAGE_NONE][0]['value'])) {
-          $document->addField('fs_field_sq_ft', (int)$entity->field_mls_square_feet[LANGUAGE_NONE][0]['value']);
+          $document->setField('fs_field_sq_ft', (int)$entity->field_mls_square_feet[LANGUAGE_NONE][0]['value']);
         }
         elseif (!empty($entity->field_mls_square_feet[0]['value'])) {
-          $document->addField('fs_field_sq_ft', (int)$entity->field_mls_square_feet[0]['value']);
+          $document->setField('fs_field_sq_ft', (int)$entity->field_mls_square_feet[0]['value']);
         }
         else {
-          $document->addField('fs_field_sq_ft', 0);
+          $document->setField('fs_field_sq_ft', 0);
         }
 
         if (!empty($entity->field_mls_city[LANGUAGE_NONE][0]['tid'])) {
