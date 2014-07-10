@@ -24,8 +24,11 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
           $document->setField('ts_field_mls', $entity->field_listing_mls[LANGUAGE_NONE][0]['value']);
         }
         if (!empty($entity->field_listing_list_price)){
-          unset($document->fs_field_listing_list_price);
-          $document->setField('fs_field_listing_list_price', $entity->field_listing_list_price[LANGUAGE_NONE][0]['value']);
+          // We add two fields because the "fts" can have multiple values which
+          // is needed for search, and the "fs" can have only a single value
+          // which is needed for sort.
+          $document->setField('fts_field_listing_list_price', $entity->field_listing_list_price[LANGUAGE_NONE][0]['value']);
+          $document->addField('fs_field_listing_list_price', $entity->field_listing_list_price[LANGUAGE_NONE][0]['value']);
         }
         if (!empty($entity->field_listing_bedrooms)){
           $document->setField('its_field_listing_bedrooms', $entity->field_listing_bedrooms[LANGUAGE_NONE][0]['value']);
@@ -55,15 +58,17 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
           $document->setField('ts_field_mls', $entity->field_mls_number[0]['tid']);
         }
 
-        unset($document->fs_field_listing_list_price);
         if (!empty($entity->field_mls_list_price[LANGUAGE_NONE][0]['value'])) {
-          $document->setField('fs_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
+          $document->setField('fts_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
+          $document->addField('fs_field_listing_list_price', round($entity->field_mls_list_price[LANGUAGE_NONE][0]['value']));
         }
         elseif (!empty($entity->field_mls_list_price[0]['value'])) {
-          $document->setField('fs_field_listing_list_price', round($entity->field_mls_list_price[0]['value']));
+          $document->setField('fts_field_listing_list_price', round($entity->field_mls_list_price[0]['value']));
+          $document->addField('fs_field_listing_list_price', round($entity->field_mls_list_price[0]['value']));
         }
         else {
-          $document->setField('fs_field_listing_list_price', 0);
+          $document->setField('fts_field_listing_list_price', 0);
+          $document->addField('fs_field_listing_list_price', 0);
         }
 
         if (!empty($entity->field_mls_bedrooms[LANGUAGE_NONE][0]['value'])) {
