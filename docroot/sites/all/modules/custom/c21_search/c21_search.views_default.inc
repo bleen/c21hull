@@ -161,6 +161,10 @@ function c21_search_views_default_views() {
   $handler->display->display_options['fields']['bundle']['label'] = '';
   $handler->display->display_options['fields']['bundle']['exclude'] = TRUE;
   $handler->display->display_options['fields']['bundle']['element_label_colon'] = FALSE;
+  /* Sort criterion: Apache Solr: fs_field_listing_list_price */
+  $handler->display->display_options['sorts']['fs_field_listing_list_price']['id'] = 'fs_field_listing_list_price';
+  $handler->display->display_options['sorts']['fs_field_listing_list_price']['table'] = 'apachesolr__opensolr';
+  $handler->display->display_options['sorts']['fs_field_listing_list_price']['field'] = 'fs_field_listing_list_price';
   /* Filter criterion: Apache Solr: Search */
   $handler->display->display_options['filters']['keyword']['id'] = 'keyword';
   $handler->display->display_options['filters']['keyword']['table'] = 'apachesolr__opensolr';
