@@ -123,7 +123,7 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
           $lakefront_value = $entity->field_mls_lakefront[0]['value'];
         }
         if (!empty($lakefront_value) && !in_array(strtolower($lakefront_value), array('no', 'none', '0', 'n'))) {
-          $document->addField('sm_field_listing_lakefront', "lakefront, waterfront, riverfront, water, pond, stream, lake, river");
+          $document->content .= " || lakefront, waterfront, riverfront, water, pond, stream, lake, river";
         }
 
         if (!empty($entity->field_mls_school_district[LANGUAGE_NONE][0]['tid'])) {
