@@ -115,6 +115,17 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
           $document->addField('im_field_listing_township', $entity->field_mls_city[0]['tid']);
         }
 
+        $lakefront_value = '';
+        if (!empty($entity->field_mls_lakefront[LANGUAGE_NONE][0]['value'])) {
+          $lakefront_value = $entity->field_mls_lakefront[LANGUAGE_NONE][0]['value'];
+        }
+        elseif (!empty($entity->field_mls_lakefront[0]['value'])) {
+          $lakefront_value = $entity->field_mls_lakefront[0]['value'];
+        }
+        if (!empty($lakefront_value) && !in_array(strtolower($lakefront_value), array('no', 'none', '0', 'n'))) {
+          $document->addField('sm_field_listing_lakefront', "lakefront, waterfront, riverfront, water, pond, stream, lake, river");
+        }
+
         if (!empty($entity->field_mls_school_district[LANGUAGE_NONE][0]['tid'])) {
           $document->addField('im_field_listing_school_district', $entity->field_mls_school_district[LANGUAGE_NONE][0]['tid']);
         }
