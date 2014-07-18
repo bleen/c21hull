@@ -132,6 +132,22 @@ function c21_drealty_import_presave_alter(&$listing, $context) {
 }
 
 /**
+ * Implements hook_entity_view_alter().
+ */
+function c21_entity_view_alter(&$build, $type) {
+  if ($type == 'drealty_listing' && $build['#view_mode'] == 'search') {
+    if (!empty($build['entity']->field_mls_lakefront[LANGUAGE_NONE][0]['value'])) {
+      $lakefront_value = $build['entity']->field_mls_lakefront[LANGUAGE_NONE][0]['value'];
+      if (!empty($lakefront_value) && !in_array(strtolower($lakefront_value), array('no', 'none', '0', 'n'))) {
+        $build['extra_lakefront_info'] = array(
+          '#markup' => "lakefront, waterfront, riverfront, water, pond, stream, lake, river"
+        );
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_block_info().
  */
 function c21_block_info() {
