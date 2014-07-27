@@ -297,7 +297,7 @@
   @include breakpoint($bp650) {
     .list-price {
       clear: both;
-      @include background-image(linear-gradient(left, rgba(white,0.75) 0%,rgba(white,0.75) 33%,rgba(white,0) 66%,rgba(white,0) 100%));
+      @include background-image(linear-gradient(left, rgba(white,0.95) 0%,rgba(white,0.95) 33%,rgba(white,0) 66%,rgba(white,0) 100%));
       text-align: left;
     }
     .more-info {
