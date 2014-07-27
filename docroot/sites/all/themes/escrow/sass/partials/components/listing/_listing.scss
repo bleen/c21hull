@@ -125,6 +125,10 @@
     margin: $spacing_default 0 (4 * $spacing_default) 0;
   }
 
+  .field-name-field-mls-listing-office {
+    font-size: .5 * $font_size_base;
+  }
+
   .links {
     &.inline {
       position: absolute;
