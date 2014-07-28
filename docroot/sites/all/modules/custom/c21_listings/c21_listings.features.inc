@@ -31,7 +31,7 @@ function c21_listings_ctools_plugin_api($module = NULL, $api = NULL) {
 function c21_listings_views_api($module = NULL, $api = NULL) {
   return array(
     'api' => 3,
-    
+
   );
 }
 
