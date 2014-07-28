@@ -415,29 +415,11 @@ function c21_views_default_views() {
     'empty_fields_handler' => '',
     'empty_fields_emptyfieldtext_empty_text' => '',
   );
-  /* Field: Content: Name */
-  $handler->display->display_options['fields']['field_listing_seller1_name']['id'] = 'field_listing_seller1_name';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['table'] = 'field_data_field_listing_seller1_name';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['field'] = 'field_listing_seller1_name';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['label'] = 'Seller 1';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['click_sort_column'] = 'first';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['settings'] = array(
-    'style' => 'inline',
-    'first' => array(
-      'hidden' => 0,
-      'format' => '_none',
-      'prefix' => '',
-      'suffix' => '&nbsp;',
-    ),
-    'second' => array(
-      'hidden' => 0,
-      'format' => '_none',
-      'prefix' => '',
-      'suffix' => '',
-    ),
-    'empty_fields_handler' => '',
-    'empty_fields_emptyfieldtext_empty_text' => '',
-  );
+  /* Field: Content: Comprehensive Seller */
+  $handler->display->display_options['fields']['seller']['id'] = 'seller';
+  $handler->display->display_options['fields']['seller']['table'] = 'node';
+  $handler->display->display_options['fields']['seller']['field'] = 'seller';
+  $handler->display->display_options['fields']['seller']['label'] = 'Seller';
   /* Field: Content: Listing Type */
   $handler->display->display_options['fields']['field_listing_type']['id'] = 'field_listing_type';
   $handler->display->display_options['fields']['field_listing_type']['table'] = 'field_data_field_listing_type';
@@ -614,18 +596,18 @@ function c21_views_default_views() {
     5 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Name (field_listing_seller1_name:second) */
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['id'] = 'field_listing_seller1_name_second';
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['table'] = 'field_data_field_listing_seller1_name';
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['field'] = 'field_listing_seller1_name_second';
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['group'] = 1;
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['operator_id'] = 'field_listing_seller1_name_second_op';
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['label'] = 'Seller 1 (Last Name)';
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['operator'] = 'field_listing_seller1_name_second_op';
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['identifier'] = 'field_listing_seller1_name_second';
-  $handler->display->display_options['filters']['field_listing_seller1_name_second']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Comprehensive Seller */
+  $handler->display->display_options['filters']['seller']['id'] = 'seller';
+  $handler->display->display_options['filters']['seller']['table'] = 'node';
+  $handler->display->display_options['filters']['seller']['field'] = 'seller';
+  $handler->display->display_options['filters']['seller']['operator'] = 'contains';
+  $handler->display->display_options['filters']['seller']['group'] = 1;
+  $handler->display->display_options['filters']['seller']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['seller']['expose']['operator_id'] = 'seller_op';
+  $handler->display->display_options['filters']['seller']['expose']['label'] = 'Seller';
+  $handler->display->display_options['filters']['seller']['expose']['operator'] = 'seller_op';
+  $handler->display->display_options['filters']['seller']['expose']['identifier'] = 'seller';
+  $handler->display->display_options['filters']['seller']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,

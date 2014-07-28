@@ -4,6 +4,10 @@ core = 7.x
 package = Features
 version = 7.x-1.0
 project = c21_listings
+
+files[] = views/c21_listings_handler_seller.inc
+files[] = views/c21_listings_handler_filter_seller.inc
+
 dependencies[] = addressfield
 dependencies[] = autocomplete_deluxe
 dependencies[] = better_exposed_filters

@@ -106,13 +106,6 @@ function c21_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_page';
-  $strongarm->value = 0;
-  $export['comment_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'date_api_use_iso8601';
   $strongarm->value = 0;
   $export['date_api_use_iso8601'] = $strongarm;
@@ -1575,10 +1568,9 @@ user/*/*';
   $strongarm->api_version = 1;
   $strongarm->name = 'views_block_hashes';
   $strongarm->value = array(
-    'b9efce5f9de478ed390efcf7c815f2f5' => 'c21_workbench_edits_by_user-block_1',
     'bdeec0c6a6d8fcdcd6969bf1225f3520' => 'c21_workbench_recent_content-block_1',
     '5e810b84edb52f2b44293acbfdb9a816' => 'c21_workbench_recent_content-block_2',
-    '964ecad519128c5b59d0f4917f6399da' => 'c21_recently_added_listings-block',
+    'b9efce5f9de478ed390efcf7c815f2f5' => 'c21_workbench_edits_by_user-block_1',
     '9cf22433e0efbd8b206c8e4c2edb177c' => 'workbench_recent_content-block_1',
   );
   $export['views_block_hashes'] = $strongarm;
@@ -1686,41 +1678,6 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'webform_csv_delimiter';
-  $strongarm->value = '\\t';
-  $export['webform_csv_delimiter'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'webform_default_format';
-  $strongarm->value = 0;
-  $export['webform_default_format'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'webform_default_from_address';
-  $strongarm->value = 'admin@c21hull.com';
-  $export['webform_default_from_address'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'webform_default_from_name';
-  $strongarm->value = 'Century21 Roy B. Hull';
-  $export['webform_default_from_name'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'webform_default_subject';
-  $strongarm->value = 'Form submission from: %title';
-  $export['webform_default_subject'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'webform_disabled_components';
   $strongarm->value = array();
   $export['webform_disabled_components'] = $strongarm;
@@ -1742,22 +1699,6 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'webform_format_override';
-  $strongarm->value = 0;
-  $export['webform_format_override'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'webform_node_types';
-  $strongarm->value = array(
-    0 => 'webform',
-  );
-  $export['webform_node_types'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'webform_search_index';
   $strongarm->value = 0;
   $export['webform_search_index'] = $strongarm;
@@ -1768,13 +1709,6 @@ user/*/*';
   $strongarm->name = 'webform_submission_access_control';
   $strongarm->value = '0';
   $export['webform_submission_access_control'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'webform_use_cookies';
-  $strongarm->value = 0;
-  $export['webform_use_cookies'] = $strongarm;
 
   return $export;
 }

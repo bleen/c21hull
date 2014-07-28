@@ -366,13 +366,6 @@ function c21_user_default_permissions() {
     'module' => 'redirect',
   );
 
-  // Exported permission: 'administer robots.txt'.
-  $permissions['administer robots.txt'] = array(
-    'name' => 'administer robots.txt',
-    'roles' => array(),
-    'module' => 'robotstxt',
-  );
-
   // Exported permission: 'administer site configuration'.
   $permissions['administer site configuration'] = array(
     'name' => 'administer site configuration',
