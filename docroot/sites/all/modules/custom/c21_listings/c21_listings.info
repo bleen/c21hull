@@ -4,10 +4,6 @@ core = 7.x
 package = Features
 version = 7.x-1.0
 project = c21_listings
-
-files[] = c21_listings_handler_seller.inc
-files[] = c21_listings_handler_filter_seller.inc
-
 dependencies[] = addressfield
 dependencies[] = autocomplete_deluxe
 dependencies[] = better_exposed_filters
@@ -602,4 +598,6 @@ features_exclude[field_instance][field_collection_item-field_seller_email-field_
 features_exclude[field_instance][field_collection_item-field_seller_phone-field_seller_phone_number] = field_collection_item-field_seller_phone-field_seller_phone_number
 features_exclude[field_instance][field_collection_item-field_seller_phone-field_seller_phone_type] = field_collection_item-field_seller_phone-field_seller_phone_type
 features_exclude[taxonomy][listing_additional_building] = listing_additional_building
+files[] = c21_listings_handler_seller.inc
+files[] = c21_listings_handler_filter_seller.inc
 project path = sites/all/modules/custom

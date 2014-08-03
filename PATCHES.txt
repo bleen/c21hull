@@ -22,8 +22,10 @@ APACHESOLR
     In addition, this patch allows for multiple filters:
     https://drupal.org/node/2031495#comment-7672681
 
-    Check the @breathingrock commits in teh repository
+    Check the @breathingrock commits in the repository
 
+  * Dont let apachesolr add timebased changes to features.
+      PATCH: https://www.drupal.org/node/1984502#comment-8726587
 
 APACHESOLR_VIEWS
   * Adding support for exposed filters on numeric fields.

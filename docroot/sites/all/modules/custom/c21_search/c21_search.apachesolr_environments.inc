@@ -16,20 +16,7 @@ function c21_search_apachesolr_environments() {
   $environment->name = 'Hosted SOLR support with opensolr.com';
   $environment->url = 'http://us-la.opensolr.com/solr/Listings';
   $environment->service_class = '';
-  $environment->conf = array(
-    'apachesolr_index_last' => array(
-      'drealty_listing' => array(
-        'last_changed' => '1390046401',
-        'last_entity_id' => '11030',
-      ),
-      'node' => array(
-        'last_changed' => '1390095115',
-        'last_entity_id' => '10172',
-      ),
-    ),
-    'apachesolr_index_updated' => 1390165976,
-    'apachesolr_last_optimize' => 1390165976,
-  );
+  $environment->conf = array();
   $environment->index_bundles = array(
     'drealty_listing' => array(
       0 => 'mls_residential_listing',
