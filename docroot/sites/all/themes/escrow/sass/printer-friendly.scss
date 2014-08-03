@@ -37,7 +37,7 @@ $output: 'isolation';
     text-transform: uppercase;
     width: 960px; /* needed for PDF */
     margin: 0 auto;
-    font-size: .75em;
+    font-size: .8em;
     position: relative;
 
     .group-left {
@@ -221,7 +221,7 @@ $output: 'isolation';
 
     .fine-print {
       page-break-before: always;
-      font-size: 1.07em;
+      font-size: 1.04em;
       position: relative;
 
       h1 {
