@@ -16,13 +16,14 @@ features[field][] = "node-date_migrate_example-field_datetime_range"
 features[node][] = "date_migrate_example"
 files[] = date_migrate_example.migrate.inc
 name = "Date Migration Example"
+hidden = TRUE
 package = "Features"
 project = "date_migrate_example"
 version = "7.x-2.0"
 
-; Information added by Drupal.org packaging script on 2013-12-21
-version = "7.x-2.7"
+; Information added by Drupal.org packaging script on 2014-07-29
+version = "7.x-2.8"
 core = "7.x"
 project = "date"
-datestamp = "1387659206"
+datestamp = "1406653438"
 
