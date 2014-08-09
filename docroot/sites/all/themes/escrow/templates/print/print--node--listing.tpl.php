@@ -32,6 +32,9 @@
   <div class="print-footer"><?php print $print['footer_message']; ?></div>
   <div class="print-source_url"><?php print $print['source_url']; ?></div>
   <div class="print-links"><?php print $print['pfp_links']; ?></div>
+
+  <script>window.google_analytics_uacct = "UA-824005-1";</script>
+  <script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-824005-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
   <?php print $print['footer_scripts']; ?>
 </body>
 </html>
