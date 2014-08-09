@@ -89,6 +89,11 @@ function c21_marketing_form_contact_site_form_alter(&$form, &$form_state) {
     ),
   );
 
+  $form['quemment'] = array(
+    '#title' => t('Question / Comment'),
+    '#type' => 'textarea',
+  );
+
   $order = array(
     'blurb',
     'name',
@@ -97,6 +102,7 @@ function c21_marketing_form_contact_site_form_alter(&$form, &$form_state) {
     'cid',
     'buy_sell',
     'when',
+    'quemment',
     'submit'
   );
   foreach ($order as $key => $field) {
@@ -179,5 +185,7 @@ function c21_marketing_mail_alter(&$message) {
     }
     $message['body'][] = t('Interested in: ') . $message['params']['buy_sell'];
     $message['body'][] = t('He/She would like to buy or sell in: ') . $message['params']['when'];
+    $message['body'][] = t('Question or comment: ') . $message['params']['quemment'];
+
   }
 }
