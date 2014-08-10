@@ -124,6 +124,9 @@ function escrow_preprocess_node(&$variables) {
       $office_info = _escrow_office_info($variables['node']);
       $variables['listing_office_info'] = drupal_render($office_info);
 
+      $slogan = variable_get('site_slogan', '');
+      $variables['slogan'] = !empty($slogan) ? '<aside class="slogan">' . $slogan . '</aside>' : '';
+
       $fine_print = _escrow_fine_print($variables['node']);
       $variables['listing_fine_print'] = drupal_render($fine_print);
 

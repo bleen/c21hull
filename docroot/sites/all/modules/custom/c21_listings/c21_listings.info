@@ -65,6 +65,7 @@ features[ds_fields][] = listing_sq_ft_total
 features[ds_fields][] = meet_our_agents
 features[ds_fields][] = random_agent
 features[ds_fields][] = read_more
+features[ds_fields][] = slogan
 features[ds_layout_settings][] = node|agent|default
 features[ds_layout_settings][] = node|agent|micro_teaser
 features[ds_layout_settings][] = node|agent|teaser

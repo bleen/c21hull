@@ -717,7 +717,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Notes',
-    'weight' => '281',
+    'weight' => '31',
     'children' => array(
       0 => 'field_listing_notes',
       1 => 'field_listing_tags',
@@ -822,7 +822,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Sellers',
-    'weight' => '300',
+    'weight' => '41',
     'children' => array(
       0 => 'group_print_seller1',
       1 => 'group_print_seller2',
