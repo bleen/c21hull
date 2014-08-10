@@ -42,7 +42,7 @@ $output: 'isolation';
 
     .group-left {
       @include float-span(5);
-      min-height:  120em; /* Needed so the slogan will appear at the very bottom of page 1 */
+      min-height:  117em; /* Needed so the slogan will appear at the very bottom of page 1 */
     }
     .group-right {
       @include float-span(7, 'last');
@@ -231,7 +231,7 @@ $output: 'isolation';
 
     .fine-print {
       page-break-before: always;
-      font-size: 1.04em;
+      font-size: 1.07em;
       position: relative;
 
       h1 {
