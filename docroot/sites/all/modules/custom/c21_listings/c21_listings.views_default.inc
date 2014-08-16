@@ -183,19 +183,6 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['draggableviews']['save_button_label'] = 'Save Order';
   $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
-  /* Field: Content: Photo */
-  $handler->display->display_options['fields']['field_agent_photo']['id'] = 'field_agent_photo';
-  $handler->display->display_options['fields']['field_agent_photo']['table'] = 'field_data_field_agent_photo';
-  $handler->display->display_options['fields']['field_agent_photo']['field'] = 'field_agent_photo';
-  $handler->display->display_options['fields']['field_agent_photo']['label'] = '';
-  $handler->display->display_options['fields']['field_agent_photo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_agent_photo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_agent_photo']['settings'] = array(
-    'image_style' => 'c21square',
-    'image_link' => '',
-    'empty_fields_handler' => '',
-    'empty_fields_emptyfieldtext_empty_text' => '',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -220,6 +207,13 @@ function c21_listings_views_default_views() {
     'agent' => 'agent',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Status (field_agent_status) */
+  $handler->display->display_options['filters']['field_agent_status_value']['id'] = 'field_agent_status_value';
+  $handler->display->display_options['filters']['field_agent_status_value']['table'] = 'field_data_field_agent_status';
+  $handler->display->display_options['filters']['field_agent_status_value']['field'] = 'field_agent_status_value';
+  $handler->display->display_options['filters']['field_agent_status_value']['value'] = array(
+    'current' => 'current',
+  );
   $handler->display->display_options['path'] = 'admin/workbench/sort/agents';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Sort Agents';
