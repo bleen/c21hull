@@ -10,6 +10,16 @@
 function c21_listings_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access draggableviews'.
+  $permissions['access draggableviews'] = array(
+    'name' => 'access draggableviews',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'draggableviews',
+  );
+
   // Exported permission: 'create agent content'.
   $permissions['create agent content'] = array(
     'name' => 'create agent content',

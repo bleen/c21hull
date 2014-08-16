@@ -1049,3 +1049,10 @@ ORDER BY
   }
 
 }
+
+/**
+ * Enable draggableviews focus.
+ */
+function c21_listings_update_7025() {
+  module_enable(array('draggableviews'));
+}
