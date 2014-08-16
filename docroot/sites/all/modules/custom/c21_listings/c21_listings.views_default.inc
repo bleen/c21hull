@@ -212,6 +212,7 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['filters']['field_agent_status_value']['table'] = 'field_data_field_agent_status';
   $handler->display->display_options['filters']['field_agent_status_value']['field'] = 'field_agent_status_value';
   $handler->display->display_options['filters']['field_agent_status_value']['value'] = array(
+    'owner' => 'owner',
     'current' => 'current',
   );
   $handler->display->display_options['path'] = 'admin/workbench/sort/agents';
