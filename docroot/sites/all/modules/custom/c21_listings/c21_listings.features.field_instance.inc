@@ -1132,7 +1132,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
-        'weight' => 36,
+        'weight' => 294,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -2630,7 +2630,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 34,
+        'weight' => 292,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -2714,7 +2714,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_default',
-        'weight' => 40,
+        'weight' => 298,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -4140,7 +4140,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
-        'weight' => 35,
+        'weight' => 293,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -4222,7 +4222,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => '',
         ),
         'type' => 'grid_default',
-        'weight' => 32,
+        'weight' => 290,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5089,7 +5089,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
-        'weight' => 37,
+        'weight' => 295,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -6954,7 +6954,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
-        'weight' => 39,
+        'weight' => 297,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -7228,7 +7228,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'text_plain',
-        'weight' => 33,
+        'weight' => 291,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -7576,7 +7576,7 @@ function c21_listings_field_default_field_instances() {
           'empty_fields_handler' => 'EmptyFieldText',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 38,
+        'weight' => 296,
       ),
       'search_result' => array(
         'label' => 'above',

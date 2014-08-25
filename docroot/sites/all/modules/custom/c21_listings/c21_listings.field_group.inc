@@ -822,7 +822,7 @@ function c21_listings_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Sellers',
-    'weight' => '41',
+    'weight' => '300',
     'children' => array(
       0 => 'group_print_seller1',
       1 => 'group_print_seller2',
