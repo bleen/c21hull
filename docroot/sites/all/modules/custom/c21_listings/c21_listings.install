@@ -1051,8 +1051,16 @@ ORDER BY
 }
 
 /**
- * Enable draggableviews focus.
+ * Enable draggableviews.
  */
 function c21_listings_update_7025() {
   module_enable(array('draggableviews'));
 }
+
+/**
+ * Enable field_slideshow & viewfield.
+ */
+function c21_listings_update_7026() {
+  module_enable(array('field_slideshow', 'viewfield'));
+}
+

@@ -353,6 +353,90 @@ function c21_listings_views_default_views() {
   $export['c21_featured_listings'] = $view;
 
   $view = new view();
+  $view->name = 'c21_listing_photos';
+  $view->description = 'Photo slideshow for an individual listing';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'c21 Listing Photos';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'c21 Listing Photos';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Photos */
+  $handler->display->display_options['fields']['field_listing_photos']['id'] = 'field_listing_photos';
+  $handler->display->display_options['fields']['field_listing_photos']['table'] = 'field_data_field_listing_photos';
+  $handler->display->display_options['fields']['field_listing_photos']['field'] = 'field_listing_photos';
+  $handler->display->display_options['fields']['field_listing_photos']['label'] = '';
+  $handler->display->display_options['fields']['field_listing_photos']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_listing_photos']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_listing_photos']['type'] = 'slideshow';
+  $handler->display->display_options['fields']['field_listing_photos']['settings'] = array(
+    'slideshow_image_style' => 'c21wide',
+    'slideshow_link' => '',
+    'slideshow_caption' => '',
+    'slideshow_caption_link' => '',
+    'slideshow_fx' => 'fade',
+    'slideshow_speed' => '1000',
+    'slideshow_timeout' => '4000',
+    'slideshow_order' => '',
+    'slideshow_controls' => 1,
+    'slideshow_controls_pause' => 0,
+    'slideshow_controls_position' => 'before',
+    'slideshow_pause' => 0,
+    'slideshow_start_on_hover' => 0,
+    'slideshow_pager' => 'image',
+    'slideshow_pager_position' => 'after',
+    'slideshow_pager_image_style' => 'c21square',
+    'slideshow_carousel_image_style' => '',
+    'slideshow_carousel_visible' => '3',
+    'slideshow_carousel_scroll' => '1',
+    'slideshow_carousel_speed' => '500',
+    'slideshow_carousel_skin' => '',
+    'slideshow_carousel_follow' => 0,
+    'slideshow_carousel_vertical' => 0,
+    'slideshow_carousel_circular' => 0,
+    'empty_fields_handler' => '',
+    'empty_fields_emptyfieldtext_empty_text' => '',
+  );
+  $handler->display->display_options['fields']['field_listing_photos']['delta_offset'] = '0';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'listing' => 'listing',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'listing-photos';
+  $export['c21_listing_photos'] = $view;
+
+  $view = new view();
   $view->name = 'c21_recently_added_listings';
   $view->description = 'A view of the most recently added listings that are not marked as "featured"';
   $view->tag = 'default';
@@ -1152,27 +1236,27 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Apache Solr: entity_id */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['label'] = '';
   $handler->display->display_options['fields']['entity_id']['element_label_colon'] = FALSE;
-  /* Field: Apache Solr: entity_type */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
   $handler->display->display_options['fields']['entity_type']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
   $handler->display->display_options['fields']['entity_type']['label'] = '';
   $handler->display->display_options['fields']['entity_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
-  /* Field: Apache Solr: bundle_name */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['bundle_name']['id'] = 'bundle_name';
   $handler->display->display_options['fields']['bundle_name']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['bundle_name']['field'] = 'bundle_name';
   $handler->display->display_options['fields']['bundle_name']['label'] = '';
   $handler->display->display_options['fields']['bundle_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['bundle_name']['element_label_colon'] = FALSE;
-  /* Contextual filter: Apache Solr: im_field_terms */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['im_field_terms']['id'] = 'im_field_terms';
   $handler->display->display_options['arguments']['im_field_terms']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['arguments']['im_field_terms']['field'] = 'im_field_terms';
@@ -1185,7 +1269,7 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['arguments']['im_field_terms']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['im_field_terms']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['im_field_terms']['validate']['type'] = 'taxonomy_term';
-  /* Filter criterion: Apache Solr: bundle */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['bundle']['field'] = 'bundle';

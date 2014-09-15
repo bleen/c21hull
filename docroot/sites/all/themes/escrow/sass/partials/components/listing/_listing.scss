@@ -19,16 +19,77 @@
   .list-price {
     font-size: $font_size_title;
     display: block;
-    position: relative;
     padding: $spacing_default;
-    margin-bottom: -1 * ($font_size_title + ($spacing_default));
-    top: -1 * ($font_size_title + ($spacing_default));
     @include background-image(linear-gradient(left, rgba(white,0) 0%,rgba(white,0) 33%,rgba(white,0.75) 66%,rgba(white,0.75) 100%));
     text-align: right;
     font-weight: bold;
 
     .lt-ie9 & {
       background: #fff;
+    }
+  }
+
+
+  .listing-slideshow {
+    position: relative;
+
+    .field-slideshow {
+      z-index: 10;
+    }
+    .field-slideshow-controls {
+      position: absolute;
+      top:  7em;
+      z-index: 11;
+      width:  100%;
+
+      a {
+        display: block;
+        width: 78px;
+        height: 78px;
+        @include replace-text('../images/buttons_next_prev.png');
+        opacity: .65;
+        transform: scale(.75);
+
+        &.prev {
+          background-position: -7px -7px;
+          float: left;
+          margin-left: 5px;
+        }
+        &.next {
+          background-position: -100px -7px;
+          float:  right;
+          margin-right: 5px;
+        }
+        &:hover {
+          opacity: .85;
+        }
+      }
+    }
+
+    .field-slideshow-pager {
+      @include clearfix();
+
+      li {
+        width: 15%;
+
+        &.activeSlide img {
+          border:  3px solid $color_gold;
+        }
+      }
+    }
+
+    @include breakpoint($bp550) {
+      .field-slideshow-controls {
+        top:  14em;
+      }
+      .field-slideshow-controls {
+        a {
+          transform: scale(1);
+        }
+      }
+      .field-slideshow-pager li {
+        width:  10%;
+      }
     }
   }
 

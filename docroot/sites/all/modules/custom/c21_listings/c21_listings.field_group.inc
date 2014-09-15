@@ -141,9 +141,8 @@ function c21_listings_field_group_info() {
     'label' => 'Buyers',
     'weight' => '141',
     'children' => array(
-      0 => 'field_listing_buyer',
-      1 => 'group_listing_buyer1',
-      2 => 'group_listing_buyer2',
+      0 => 'group_listing_buyer1',
+      1 => 'group_listing_buyer2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -174,10 +173,10 @@ function c21_listings_field_group_info() {
       0 => 'group_listing_building_info',
       1 => 'group_listing_general_info',
       2 => 'group_listing_images_videos',
-      4 => 'group_listing_location_info',
-      5 => 'group_listing_measurements',
-      6 => 'group_listing_notes',
-      7 => 'group_listing_sellers',
+      3 => 'group_listing_location_info',
+      4 => 'group_listing_measurements',
+      5 => 'group_listing_notes',
+      6 => 'group_listing_sellers',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -203,11 +202,10 @@ function c21_listings_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_listing_description',
-      1 => 'field_listing_featured_photo',
-      2 => 'field_listing_list_price',
-      3 => 'field_listing_mls',
-      4 => 'field_listing_photos',
-      5 => 'field_listing_tags',
+      1 => 'field_listing_list_price',
+      2 => 'field_listing_mls',
+      3 => 'field_listing_tags',
+      4 => 'field_slideshow',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -436,11 +434,11 @@ function c21_listings_field_group_info() {
     'label' => 'Seller 1',
     'weight' => '166',
     'children' => array(
-      0 => 'field_listing_seller1_phone',
-      1 => 'field_listing_seller1_name',
-      2 => 'field_listing_seller1_company',
-      3 => 'field_listing_seller1_email',
-      4 => 'field_listing_seller1_address',
+      0 => 'field_listing_seller1_address',
+      1 => 'field_listing_seller1_company',
+      2 => 'field_listing_seller1_email',
+      3 => 'field_listing_seller1_name',
+      4 => 'field_listing_seller1_phone',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -510,9 +508,8 @@ function c21_listings_field_group_info() {
     'label' => 'Sellers',
     'weight' => '13',
     'children' => array(
-      0 => 'field_listing_seller',
-      1 => 'group_listing_seller1',
-      2 => 'group_listing_seller2',
+      0 => 'group_listing_seller1',
+      1 => 'group_listing_seller2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

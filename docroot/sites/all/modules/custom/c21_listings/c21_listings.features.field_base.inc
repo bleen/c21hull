@@ -2536,5 +2536,21 @@ function c21_listings_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_slideshow'
+  $field_bases['field_slideshow'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_slideshow',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'viewfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'viewfield',
+  );
+
   return $field_bases;
 }
