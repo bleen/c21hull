@@ -52,10 +52,6 @@
       margin-right: $spacing_default;
     }
     .list-price {
-      position: absolute;
-      bottom: $spacing_default;
-      left: $spacing_default;
-      top: auto;
       text-align: left;
       @include background-image(linear-gradient(left, rgba(white,0.75) 0%,rgba(white,0.75) 33%,rgba(white,0) 66%,rgba(white,0) 100%));
       width: 50%;

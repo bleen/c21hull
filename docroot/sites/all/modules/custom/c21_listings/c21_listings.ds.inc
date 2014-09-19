@@ -1267,12 +1267,12 @@ function c21_listings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'listing_map' => array(
-      'weight' => '8',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'title' => array(
-      'weight' => '3',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -2277,26 +2277,26 @@ function c21_listings_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_listing_mls',
         1 => 'field_listing_featured_photo',
-        2 => 'field_listing_list_price',
-        3 => 'title',
-        4 => 'field_listing_bedrooms',
-        5 => 'field_listing_bathrooms',
-        6 => 'field_listing_sq_ft_finished',
-        7 => 'field_listing_school_district',
-        8 => 'listing_map',
+        2 => 'title',
+        3 => 'field_listing_bedrooms',
+        4 => 'field_listing_bathrooms',
+        5 => 'field_listing_sq_ft_finished',
+        6 => 'field_listing_school_district',
+        7 => 'listing_map',
+        8 => 'field_listing_list_price',
         9 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_listing_mls' => 'ds_content',
       'field_listing_featured_photo' => 'ds_content',
-      'field_listing_list_price' => 'ds_content',
       'title' => 'ds_content',
       'field_listing_bedrooms' => 'ds_content',
       'field_listing_bathrooms' => 'ds_content',
       'field_listing_sq_ft_finished' => 'ds_content',
       'field_listing_school_district' => 'ds_content',
       'listing_map' => 'ds_content',
+      'field_listing_list_price' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'limit' => array(
