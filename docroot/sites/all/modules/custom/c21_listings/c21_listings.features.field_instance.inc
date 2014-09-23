@@ -2222,25 +2222,8 @@ function c21_listings_field_default_field_instances() {
       ),
       'print_internal' => array(
         'label' => 'hidden',
-        'module' => 'double_field',
-        'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
-          'first' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '',
-            'suffix' => ':&nbsp;',
-          ),
-          'second' => array(
-            'format' => '_none',
-            'hidden' => 0,
-            'prefix' => '(',
-            'suffix' => ')',
-          ),
-          'style' => 'inline',
-        ),
-        'type' => 'double_field_unformatted_list',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 355,
       ),
       'teaser' => array(
@@ -6201,10 +6184,27 @@ function c21_listings_field_default_field_instances() {
         'weight' => 0,
       ),
       'print_internal' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 46,
+        'label' => 'hidden',
+        'module' => 'double_field',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'first' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '',
+            'suffix' => ':&nbsp;',
+          ),
+          'second' => array(
+            'format' => '_none',
+            'hidden' => 0,
+            'prefix' => '(',
+            'suffix' => ')',
+          ),
+          'style' => 'inline',
+        ),
+        'type' => 'double_field_unformatted_list',
+        'weight' => 355,
       ),
       'teaser' => array(
         'label' => 'above',

@@ -785,11 +785,11 @@ function c21_listings_field_group_info() {
     'label' => 'Seller2',
     'weight' => '350',
     'children' => array(
-      0 => 'field_listing_buyer2_phone',
-      1 => 'field_listing_seller2_address',
-      2 => 'field_listing_seller2_company',
-      3 => 'field_listing_seller2_email',
-      4 => 'field_listing_seller2_name',
+      0 => 'field_listing_seller2_address',
+      1 => 'field_listing_seller2_company',
+      2 => 'field_listing_seller2_email',
+      3 => 'field_listing_seller2_name',
+      4 => 'field_listing_seller2_phone',
     ),
     'format_type' => 'div',
     'format_settings' => array(
