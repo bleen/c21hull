@@ -455,6 +455,7 @@ function c21_user_default_permissions() {
       'administrator' => 'administrator',
       'manager' => 'manager',
       'staff' => 'staff',
+      'agent' => 'agent',
     ),
     'module' => 'node',
   );
