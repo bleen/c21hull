@@ -57,6 +57,24 @@ function c21_menu_alter(&$items) {
 }
 
 /**
+ * Check if an item already exists in the queue.
+ *
+ * @param $name
+ * @param $data
+ * @return bool
+ */
+function c21_in_queue($name, $data) {
+  $already_in_queue = db_select('queue', 'q')
+    ->fields('q', array('item_id'))
+    ->condition('name', $name)
+    ->condition('data', $data)
+    ->execute()
+    ->fetchField();
+
+  return !is_null($already_in_queue);
+}
+
+/**
  * Implements hook_cron().
  */
 function c21_cron() {
@@ -70,7 +88,9 @@ function c21_cron() {
   if (!empty($result['drealty_listing'])) {
     $queue = DrupalQueue::get('c21InactiveMLSListings');
     foreach (array_keys($result['drealty_listing']) as $id) {
-      $queue->createItem($id);
+      if (!c21_in_queue('c21InactiveMLSListings', 'i:' . $id . ';')) {
+        $queue->createItem($id);
+      }
     }
   }
 
@@ -84,7 +104,9 @@ function c21_cron() {
   if (!empty($result['drealty_listing'])) {
     $queue = DrupalQueue::get('c21OwnMLSListings');
     foreach (array_keys($result['drealty_listing']) as $id) {
-      $queue->createItem($id);
+      if (!c21_in_queue('c21OwnMLSListings', 'i:' . $id . ';')) {
+        $queue->createItem($id);
+      }
     }
   }
 }
