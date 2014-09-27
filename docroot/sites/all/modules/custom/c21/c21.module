@@ -60,6 +60,7 @@ function c21_menu_alter(&$items) {
  * Implements hook_cron().
  */
 function c21_cron() {
+  // Delete inactive listings.
   $query = new EntityFieldQuery();
   $query
     ->entityCondition('entity_type', 'drealty_listing')
@@ -72,6 +73,20 @@ function c21_cron() {
       $queue->createItem($id);
     }
   }
+
+  // Delete C21hull listings.
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'drealty_listing')
+    ->fieldCondition('field_mls_listing_office', 'field_mls_listing_office_value', '%Century 21 Roy B. Hull%', 'LIKE');
+  $result = $query->execute();
+
+  if (!empty($result['drealty_listing'])) {
+    $queue = DrupalQueue::get('c21OwnMLSListings');
+    foreach (array_keys($result['drealty_listing']) as $id) {
+      $queue->createItem($id);
+    }
+  }
 }
 
 /**
@@ -79,14 +94,18 @@ function c21_cron() {
  */
 function c21_cron_queue_info() {
   $queues['c21InactiveMLSListings'] = array(
-    'worker callback' => 'c21_delete_inactive_mls_listing',
+    'worker callback' => 'c21_delete_mls_listing',
+    'time' => 60,
+  );
+  $queues['c21OwnMLSListings'] = array(
+    'worker callback' => 'c21_delete_mls_listing',
     'time' => 60,
   );
 
   return $queues;
 }
 
-function c21_delete_inactive_mls_listing($id) {
+function c21_delete_mls_listing($id) {
   entity_delete('drealty_listing', $id);
 }
 
