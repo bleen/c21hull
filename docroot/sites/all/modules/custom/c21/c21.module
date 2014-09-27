@@ -78,7 +78,7 @@ function c21_cron() {
   $query = new EntityFieldQuery();
   $query
     ->entityCondition('entity_type', 'drealty_listing')
-    ->fieldCondition('field_mls_listing_office', 'field_mls_listing_office_value', '%Century 21 Roy B. Hull%', 'LIKE');
+    ->fieldCondition('field_mls_listing_office', 'value', '%Century 21 Roy B. Hull%', 'LIKE');
   $result = $query->execute();
 
   if (!empty($result['drealty_listing'])) {
