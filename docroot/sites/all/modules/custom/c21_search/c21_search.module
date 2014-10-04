@@ -136,6 +136,23 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
 }
 
 /**
+ * Implements hook_apachesolr_query_alter().
+ */
+function c21_search_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
+  $price_filter = $query->getFilters('fts_field_listing_list_price');
+
+  if (!empty($price_filter)) {
+    $price = $price_filter[0]['#value'];
+    list($min, $max) = explode(' TO ', substr($price, 1, -1));
+
+    if ($max >= 1500000) {
+      $query->removeFilter('fts_field_listing_list_price');
+      $query->addFilter('fts_field_listing_list_price', "[$min TO *]");
+    }
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function c21_search_form_search_admin_settings_alter(&$form, &$form_state) {
