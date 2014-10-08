@@ -139,15 +139,24 @@ function c21_search_apachesolr_index_document_build(ApacheSolrDocument $document
  * Implements hook_apachesolr_query_alter().
  */
 function c21_search_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
-  $price_filter = $query->getFilters('fts_field_listing_list_price');
+  $filters = array(
+    'fts_field_listing_list_price' => array('min' => 0, 'max' => 1500000),
+    'fts_field_listing_acreage' => array('min' => 0, 'max' => 10),
+    'its_field_listing_bedrooms' => array('min' => 0, 'max' => 10),
+    'its_field_listing_bathrooms' => array('min' => 0, 'max' => 10),
+  );
 
-  if (!empty($price_filter)) {
-    $price = $price_filter[0]['#value'];
-    list($min, $max) = explode(' TO ', substr($price, 1, -1));
+  foreach ($filters as $filter_name => $filter_details) {
+    $filter = $query->getFilters($filter_name);
 
-    if ($max >= 1500000) {
-      $query->removeFilter('fts_field_listing_list_price');
-      $query->addFilter('fts_field_listing_list_price', "[$min TO *]");
+    if (!empty($filter)) {
+      $value = $filter[0]['#value'];
+      list($min, $max) = explode(' TO ', substr($value, 1, -1));
+
+      $max = $max >= $filter_details['max'] ? '*' : $max;
+      $min = $min <= $filter_details['min'] ? '*' : $min;
+      $query->removeFilter($filter_name);
+      $query->addFilter($filter_name, "[$min TO $max]");
     }
   }
 }
