@@ -824,29 +824,12 @@ function c21_listings_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_listing_agent']['delta_offset'] = '0';
-  /* Field: Content: Name */
-  $handler->display->display_options['fields']['field_listing_seller1_name']['id'] = 'field_listing_seller1_name';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['table'] = 'field_data_field_listing_seller1_name';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['field'] = 'field_listing_seller1_name';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['label'] = 'Seller Name';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['click_sort_column'] = 'first';
-  $handler->display->display_options['fields']['field_listing_seller1_name']['settings'] = array(
-    'style' => 'inline',
-    'first' => array(
-      'hidden' => 0,
-      'format' => '_none',
-      'prefix' => '',
-      'suffix' => '&nbsp;',
-    ),
-    'second' => array(
-      'hidden' => 0,
-      'format' => '_none',
-      'prefix' => '',
-      'suffix' => '',
-    ),
-    'empty_fields_handler' => '',
-    'empty_fields_emptyfieldtext_empty_text' => '',
-  );
+  /* Field: Content: Comprehensive Seller */
+  $handler->display->display_options['fields']['seller']['id'] = 'seller';
+  $handler->display->display_options['fields']['seller']['table'] = 'node';
+  $handler->display->display_options['fields']['seller']['field'] = 'seller';
+  $handler->display->display_options['fields']['seller']['label'] = 'Seller';
+  $handler->display->display_options['fields']['seller']['element_label_colon'] = FALSE;
   /* Field: Content: Listing Type */
   $handler->display->display_options['fields']['field_listing_type']['id'] = 'field_listing_type';
   $handler->display->display_options['fields']['field_listing_type']['table'] = 'field_data_field_listing_type';
@@ -1236,27 +1219,27 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Broken/missing handler */
+  /* Field: Apache Solr: entity_id */
   $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['label'] = '';
   $handler->display->display_options['fields']['entity_id']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Apache Solr: entity_type */
   $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
   $handler->display->display_options['fields']['entity_type']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
   $handler->display->display_options['fields']['entity_type']['label'] = '';
   $handler->display->display_options['fields']['entity_type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['entity_type']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Apache Solr: bundle_name */
   $handler->display->display_options['fields']['bundle_name']['id'] = 'bundle_name';
   $handler->display->display_options['fields']['bundle_name']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['fields']['bundle_name']['field'] = 'bundle_name';
   $handler->display->display_options['fields']['bundle_name']['label'] = '';
   $handler->display->display_options['fields']['bundle_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['bundle_name']['element_label_colon'] = FALSE;
-  /* Contextual filter: Broken/missing handler */
+  /* Contextual filter: Apache Solr: im_field_terms */
   $handler->display->display_options['arguments']['im_field_terms']['id'] = 'im_field_terms';
   $handler->display->display_options['arguments']['im_field_terms']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['arguments']['im_field_terms']['field'] = 'im_field_terms';
@@ -1269,7 +1252,7 @@ function c21_listings_views_default_views() {
   $handler->display->display_options['arguments']['im_field_terms']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['im_field_terms']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['im_field_terms']['validate']['type'] = 'taxonomy_term';
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Apache Solr: bundle */
   $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__opensolr';
   $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
