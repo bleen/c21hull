@@ -1,0 +1,28 @@
+body {
+  font-family: 'Muli','Hevetica','Verdana','Arial';
+  background: #999;
+}
+
+#page {
+  border: 1px solid black;
+  border-top: none;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 0.5em 6em 0.5em;
+  background: #d8d4c9;
+}
+
+#header {
+  position: relative;
+  margin: 0 -0.5em 1em -0.5em;
+  padding-top: 1em;
+  padding-left: 0.5em;
+  border-bottom: 3px solid #ecb429;
+  background: url(photo.jpg) no-repeat center left;
+  min-height: 140px;
+}
+
+#main {
+  width: 90%;
+  margin: auto;
+}
